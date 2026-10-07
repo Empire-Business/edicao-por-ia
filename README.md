@@ -1,53 +1,54 @@
 # Fábrica de vídeos
 
-Edite vídeos conversando com a IA, escolhendo **um formato de edição (F)** e **uma identidade visual (ID)**. Trabalhos, arquivos e memória ficam na sua pasta local.
+Edite vídeos conversando com a IA. Escolha um formato de edição e uma identidade visual; gravações, trabalhos e memória ficam na sua pasta local.
 
-**Já usa uma versão antiga ou sua pasta ficou misturada após sincronizar? Leia [Atualizar e recuperar a pasta](99%20-%20Sistema/ATUALIZACAO.md) antes de baixar algo por cima.**
+## Instalação guiada pelo Claude
 
-## Primeira instalação
+[Abra e baixe o guia em PDF](99%20-%20Sistema/method/CLAUDE_INSTALL_GUIDE.pdf), anexe-o ao Claude e envie. O documento já contém o pedido de instalação: o Claude pergunta onde criar a pasta, conduz sua autenticação no GitHub e prepara/verifica o sistema. Use um ambiente com acesso real aos seus arquivos e terminal, como Claude Code; um chat sem essas ferramentas não instala no computador.
 
-1. No GitHub, escolha **Code → Download ZIP** e extraia em uma pasta nova chamada `edicao-por-ia`. Não extraia dentro de uma instalação existente.
-2. Abra essa pasta no Codex ou Claude Code e peça: **“Prepare esta fábrica para usar neste computador. Verifique o que falta e me explique antes de instalar programas.”**
-3. Abra `00 - COMECE AQUI.html`. A preparação cria o catálogo legível, as IDs e o arquivo de chaves. Python 3.11 ou mais recente é necessário; a IA prepara as dependências de acordo com o trabalho pedido.
-4. Coloque gravações e materiais em `01 - Enviar vídeos`. Você encontra entregas em `02 - Ver vídeos`.
+A conta é a sua própria. Não envie senha, token ou chave na conversa. O fluxo guiado exige login antes do download/preparação, mesmo com o repositório público. Downloads manuais anônimos continuam possíveis no GitHub. A escrita no central é restrita às permissões de mantenedor; suas criações particulares ficam locais.
 
-A pasta pode ser copiada para outro computador. Os materiais acompanham a cópia; programas e ambiente Python precisam ser preparados na nova máquina.
+A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **1408655066**. O anterior, **edicao-por-ia-antigo-nao-usar**, é apenas arquivo privado; não instalar, atualizar, publicar ou importar histórico dele.
 
-## Escolher a edição
+## Escolher os modelos
 
-Em `04 - Formatos`, cada pasta tem um código F, instruções e **GUIA DA EDIÇÃO.html**. Em `05 - IDs Visuais`, escolha as cores e fontes.
+[Abra a galeria visual](https://modelos-edicao.empirebusiness.com.br/) para ver exemplos, pesquisar e copiar o pedido. Formato e identidade são escolhas separadas; não há um par padrão.
 
-Exemplo de pedido: **“Edite esta gravação com F02 e ID03.”** Nenhum formato escolhe cores, fontes, pessoa ou logo automaticamente. Logotipos só entram quando pedidos para aquele vídeo.
+| Código | Formato ativo |
+| --- | --- |
+| F01 | WhatsApp Narrado |
+| F04 | Pessoa → Animação |
+| F05 | Notícia Comentada |
+| F06 | Diagramas |
+| F07 | Motion Institucional |
+| F08 | Pessoa + Tela |
+| F10 | Produto Explicado |
+| F12 | Documentário |
+| F13 | Dados Dark |
+| F14 | Lista em Tela |
+| F15 | Dois Lados |
+| F16 | Comentário com B-roll |
 
-| Código | Formato | Código | Formato |
-| --- | --- | --- | --- |
-| F01 | Chat | F07 | Tela Animada |
-| F02 | Dinâmico | F08 | Camadas |
-| F03 | Foto Falante | F09 | Conversa e Tela |
-| F04 | Gancho e Animação | F10 | Pessoa e Tela |
-| F05 | Editorial | F11 | Formulários |
-| F06 | Diagramas | F12 | Documentário |
+Os códigos e nomes consolidados são preservados. Novos formatos oficiais ocupam o menor número ativo disponível com identidade interna própria; um código reaproveitado não herda a geração retirada. Todo oficial novo também precisa aparecer na galeria com exemplo real.
 
-Veja a [biblioteca de referências dos 12 formatos](99%20-%20Sistema/examples/reference-library/README.md), com vídeos, fotos, pranchas e análises disponíveis. Ela acompanha o download e a atualização. As [ilustrações didáticas](99%20-%20Sistema/examples/formats/README.md) também continuam disponíveis. As ilustrações demonstram a sequência de edição; os materiais reais e as prévias históricas são identificados separadamente. Toda ID pode ser combinada com todo F. A IA atribui um código E a cada trabalho: **“Na E01, aos 12 segundos, tire o texto.”**
+## Uso diário
 
-## Integrações
+Depois da preparação, abra `00 - COMECE AQUI.html`. Envie materiais em `01 - Enviar vídeos` e confira entregas em `02 - Ver vídeos`. Consulte `04 - Formatos` e `05 - IDs Visuais` para escolher os códigos explicitamente. A parte técnica está em `99 - Sistema`.
 
-A preparação cria **CHAVES DAS INTEGRAÇÕES.txt** na raiz, visível e fora do Git. Cole as chaves nos campos ScrapeCreators e ElevenLabs e salve. Não envie esse arquivo para outras pessoas.
+A pessoa e os materiais vêm do seu trabalho, cores/fontes da identidade escolhida e mecanismo da receita do formato. Logos, assinaturas e textos de marca não entram automaticamente. A edição é planejada pela referência e a prévia/render real passa pelo QA; uma receita draft não é certificação artística.
 
-Cenas pedidas de TikTok e YouTube são pesquisadas e obtidas exclusivamente pelo ScrapeCreators. Se a API não disponibilizar a mídia, a IA informa a pendência sem trocar de serviço. ElevenLabs é usado quando solicitado; as integrações dependem das chaves e dos créditos da sua conta.
+## Oficial e particular
+
+Oficiais usam F/ID; particulares novos usam FP/IDP. Nas cópias de uso, edições novas usam EP e revisões VP; códigos antigos são preservados. Para personalizar uma ID oficial, copie para IDP. Não fazer push, alterar oficiais ou publicar seus dados por iniciativa própria.
 
 ## Atualizar sem perder trabalhos
 
-Feche as edições em andamento e peça à IA: **“Atualize esta fábrica pelo atualizador seguro, preservando meus trabalhos e configurações.”**
+Peça à IA: “Atualize esta fábrica pela main preservando meus dados.” O atualizador seguro fixa um commit, verifica o manifesto e usa backup/rollback. Trabalhos, originais, memória, cadastros particulares, chaves, configurações e gastos permanecem.
 
-O atualizador baixa apenas o código declarado no pacote, verifica os arquivos e mantém backup. Trabalhos, originais, memória, IDs, catálogo, chaves e gastos são preservados. Conflitos precisam de revisão; não são resolvidos apagando suas alterações.
+Não usar pull, reset, clean, mescla de históricos ou ZIP extraído por cima como instalação/atualização. Para cópias antigas ou misturadas, [leia o guia de recuperação](03%20-%20Ajuda/ATUALIZAR%20SEM%20PERDER%20TRABALHOS.html).
 
-**Não use sincronização do GitHub Desktop, `git pull`, reset ou extração de ZIP por cima como instalador.** Quem tem versão muito antiga, conflitos ou pastas duplicadas deve seguir o [guia de recuperação](99%20-%20Sistema/ATUALIZACAO.md). O caminho assistido cria outra pasta completa e mantém a antiga intacta.
+## Integrações e referências
 
-## Novos formatos
+A preparação cria o arquivo de integrações local e fora do Git. Nunca compartilhar suas chaves. Pesquisas de TikTok/YouTube usam o provedor previsto nas regras; não há fallback por conta própria. Serviços pagos exigem consentimento.
 
-Peça o cadastro com nome simples e um link HTTP/HTTPS de exemplo (Instagram, Drive, X ou outro). A fábrica cria um código estável, guarda a descrição da edição e atualiza as pastas visíveis. Cor e fonte são cadastradas separadamente como ID visual.
-
-## Versões e dados
-
-Veja o [histórico de mudanças](99%20-%20Sistema/CHANGELOG.md). A parte técnica fica em `99 - Sistema`. O GitHub distribui todos os formatos padrão, receitas, ferramentas, fontes, exemplos e referências disponíveis selecionadas pelo autor; cada usuário mantém seus trabalhos e aprendizados localmente. A cópia da pasta e o backup dos dados continuam necessários: o GitHub não é o backup dos seus vídeos.
+A distribuição contém receitas, ferramentas, fontes e as referências selecionadas do autor, verificadas por hash. Não inclui seus trabalhos nem bancos pessoais. Programas e ambiente precisam ser preparados na máquina nova; copiar a pasta não torna o ambiente executável portátil.

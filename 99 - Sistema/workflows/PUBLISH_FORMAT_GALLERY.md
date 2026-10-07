@@ -30,3 +30,5 @@ Inventariar cada pasta do ZIP solicitado e registrar seu destino: código novo, 
 
 ## Ordem, autoria e gerações
 A galeria mantém ordem numérica de F, sem renomear/renumerar os atuais. FP/IDP são particulares e não entram automaticamente no catálogo do autor. Novos F usam o menor número livre entre ativos e um UID/loja novos; nunca recuperar referência rejeitada só porque o número foi reaproveitado. Conferir locks dos consolidados. A decisão atual mantém um repositório privado, main; não criar a distribuição separada proposta anteriormente.
+
+A lista de formatos do README público deve refletir apenas os cadastros ativos e seus nomes atuais, em ordem numérica. Atualizar essa lista ao criar, renomear ou retirar um formato; códigos antigos não retornam por documentação desatualizada.
