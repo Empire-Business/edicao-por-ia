@@ -8,9 +8,39 @@
   ],
   "F02": [
     {
-      "path": "examples/formats/F02.png",
-      "caption": "F02 · Dinâmico — três estados ilustrativos da edição.",
-      "status": "illustrative_storyboard"
+      "path": "examples/reference-library/F02/talking-head-20261007/opening.jpg",
+      "sha256": "0bc889874f477206e7171884771b7d7cb86e7b0f45e7b4ce3df51089b21bbdcb",
+      "caption": "Gancho em faixa entre B-roll superior e apresentador inferior."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/headline.jpg",
+      "sha256": "9735e387d93f73978371b42faf26250f329c85f4c7cbbc4f7af885884e6cef49",
+      "caption": "Manchete real destacada acima do apresentador."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/full.jpg",
+      "sha256": "cd9d6faab25dfcb1fc5639a10ab7c308b108b43bb12cc5515db2cc82301175ce",
+      "caption": "Apresentador em tela cheia com legenda curta."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/broll.jpg",
+      "sha256": "5c2008d621f659080c21c32be1ffc4da8f4ffa866c66a8a1d958dd3c69aa9d10",
+      "caption": "B-roll real em tela cheia, relacionado ao assunto."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/split.jpg",
+      "sha256": "45a268258c0be3a06df1d1f5a605ace2df7938d929db9f9b5abcf3ea51427fe8",
+      "caption": "B-roll superior e câmera inferior com emenda suave."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/card.jpg",
+      "sha256": "3cd6a269d070785c9c1b4e3e6886d17ca1718fd2e4bd8ad4a2919dd7f43ef279",
+      "caption": "Mídia em cartão com cantos arredondados e fundo liso."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/closing.jpg",
+      "sha256": "964368bae5890ffc82545a982dc2c7101380135067f352e1a7454698d2c7f358",
+      "caption": "Retorno ao apresentador no fechamento, sem cartela automática."
     }
   ],
   "F03": [

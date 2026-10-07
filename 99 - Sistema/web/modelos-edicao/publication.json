@@ -1,7 +1,6 @@
 {
   "scope": "Explicit author selection for the public gallery, from the active local catalogue",
   "excluded_codes": [
-    "F02",
     "F03",
     "F09",
     "F11",
@@ -14,6 +13,26 @@
       "name": "WhatsApp Narrado",
       "description": "A voz conduz uma conversa em tela cheia; mensagens, áudios e apoios surgem dentro do chat.",
       "pattern": "f01-v1"
+    },
+    {
+      "code": "F02",
+      "name": "Talking Head",
+      "description": "A pessoa comenta um assunto com B-roll real, manchetes e legendas curtas; alterna tela cheia, split e cartões, com faixa de gancho na abertura.",
+      "pattern": "f02-talking-head-v1",
+      "uid": "official.d28a1fefc46c478abbd1c9d9b0620a2d",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa comentando um assunto, B-roll e documentos/manchetes pertinentes, com fontes verificáveis. Escolher uma ID visual separadamente.",
+        "mechanism": "O apresentador conduz um comentário por casos reais. A abertura combina mídia, pessoa e faixa de gancho; o corpo alterna câmera inteira, B-roll, split com emenda suave e cartões, com legendas curtas e manchetes destacadas.",
+        "steps": [
+          "Montar a fala, preservando sentido, gestos e pausas intencionais.",
+          "Abrir com mídia pertinente acima da pessoa e uma faixa com pergunta/gancho; retirar a faixa após a abertura.",
+          "Alternar pessoa em tela cheia, B-roll, tela dividida e cartões conforme cada ideia.",
+          "Usar manchetes/documentos reais nos argumentos de prova, destacar a linha relevante e reposicionar as legendas sem cobrir rosto ou ação.",
+          "Voltar à pessoa ao longo do corpo e fechar pela fala atual; revisar leitura, emendas, sincronia e áudio na prévia."
+        ],
+        "avoid": "Não copiar o guia errado de Diagramas do ZIP, inventar notícia/dado, usar B-roll genérico, esticar mídia ou impor cor vermelha, fonte, pessoa, logo ou marca do exemplo. Aparência vem da ID; não reduzir automaticamente o vídeo a apresentador com legenda ou apenas a split screen."
+      },
+      "asset_id": "F02-talking-head-20261007"
     },
     {
       "code": "F04",
@@ -244,6 +263,14 @@
         "evidence_label": "Referência externa",
         "evidence_note": "Referência de comentário com mídia real e gráficos. O workflow também inclui pesquisa de B-roll; o vídeo de exemplo não é uma comprovação da pesquisa. Sua marca, pessoa e aparência não são herdadas."
       }
+    ],
+    "F02": [
+      {
+        "path": "examples/reference-library/F02/talking-head-20261007/reference.mp4",
+        "sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de",
+        "evidence_label": "Referência externa",
+        "evidence_note": "Vídeo completo indicado no ZIP pelo autor, comprimido para publicação. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são defaults."
+      }
     ]
   },
   "extra_examples": {
@@ -284,5 +311,32 @@
       }
     ]
   },
-  "reference_frames": {}
+  "reference_frames": {
+    "F02": [
+      {
+        "reference": {
+          "path": "examples/reference-library/F02/talking-head-20261007/opening.jpg",
+          "sha256": "0bc889874f477206e7171884771b7d7cb86e7b0f45e7b4ce3df51089b21bbdcb"
+        },
+        "caption": "Gancho em faixa entre B-roll superior e apresentador inferior."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F02/talking-head-20261007/headline.jpg",
+          "sha256": "9735e387d93f73978371b42faf26250f329c85f4c7cbbc4f7af885884e6cef49"
+        },
+        "caption": "Manchete real destacada acima do apresentador."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F02/talking-head-20261007/card.jpg",
+          "sha256": "3cd6a269d070785c9c1b4e3e6886d17ca1718fd2e4bd8ad4a2919dd7f43ef279"
+        },
+        "caption": "Mídia em cartão com cantos arredondados e fundo liso."
+      }
+    ]
+  },
+  "excluded_uids": [
+    "factory.f02"
+  ]
 }

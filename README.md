@@ -17,6 +17,7 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | Código | Formato ativo |
 | --- | --- |
 | F01 | WhatsApp Narrado |
+| F02 | Talking Head |
 | F04 | Pessoa → Animação |
 | F05 | Notícia Comentada |
 | F06 | Diagramas |

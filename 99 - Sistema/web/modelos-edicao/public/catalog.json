@@ -63,6 +63,93 @@
       "examples": []
     },
     {
+      "code": "F02",
+      "name": "Talking Head",
+      "description": "A pessoa comenta um assunto com B-roll real, manchetes e legendas curtas; alterna tela cheia, split e cartões, com faixa de gancho na abertura.",
+      "category": "presenter",
+      "tags": [
+        "Apresentador",
+        "B-roll",
+        "Manchetes"
+      ],
+      "use": "Comentar notícias, casos e ideias mostrando evidências reais sem perder a presença da pessoa.",
+      "inputs": "Vídeo da pessoa comentando um assunto, B-roll e documentos/manchetes pertinentes, com fontes verificáveis. Escolher uma ID visual separadamente.",
+      "mechanism": "O apresentador conduz um comentário por casos reais. A abertura combina mídia, pessoa e faixa de gancho; o corpo alterna câmera inteira, B-roll, split com emenda suave e cartões, com legendas curtas e manchetes destacadas.",
+      "steps": [
+        "Montar a fala, preservando sentido, gestos e pausas intencionais.",
+        "Abrir com mídia pertinente acima da pessoa e uma faixa com pergunta/gancho; retirar a faixa após a abertura.",
+        "Alternar pessoa em tela cheia, B-roll, tela dividida e cartões conforme cada ideia.",
+        "Usar manchetes/documentos reais nos argumentos de prova, destacar a linha relevante e reposicionar as legendas sem cobrir rosto ou ação.",
+        "Voltar à pessoa ao longo do corpo e fechar pela fala atual; revisar leitura, emendas, sincronia e áudio na prévia."
+      ],
+      "avoid": "Não copiar o guia errado de Diagramas do ZIP, inventar notícia/dado, usar B-roll genérico, esticar mídia ou impor cor vermelha, fonte, pessoa, logo ou marca do exemplo. Aparência vem da ID; não reduzir automaticamente o vídeo a apresentador com legenda ou apenas a split screen.",
+      "pattern": "f02-talking-head-v1",
+      "video": "assets/videos/F02-talking-head-20261007.mp4",
+      "vimeo": null,
+      "duration": 185,
+      "evidence": "video",
+      "evidenceLabel": "Referência externa",
+      "evidenceNote": "Vídeo completo indicado no ZIP pelo autor, comprimido para publicação. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são defaults.",
+      "cameraRequired": true,
+      "startingMaterials": [
+        "Vídeo",
+        "B-roll",
+        "Documentos"
+      ],
+      "buildingBlocks": [
+        "Faixa de gancho",
+        "Apresentador",
+        "B-roll real",
+        "Manchetes",
+        "Tela dividida",
+        "Cartões"
+      ],
+      "searchTerms": [
+        "talking head",
+        "talkinghead",
+        "pessoa falando",
+        "pessoa em camera",
+        "apresentador",
+        "comentario",
+        "analise",
+        "opiniao",
+        "noticias",
+        "casos",
+        "negocios",
+        "marketing",
+        "varejo",
+        "gancho",
+        "faixa de gancho",
+        "broll",
+        "b-roll",
+        "midia real",
+        "manchete",
+        "documentos",
+        "tela dividida",
+        "split screen",
+        "cartao",
+        "legendas curtas",
+        "reels"
+      ],
+      "hasPersonOnScreen": true,
+      "poster": "assets/posters/F02-talking-head-20261007.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F02-talking-head-20261007-frame-0.jpg",
+          "caption": "Gancho em faixa entre B-roll superior e apresentador inferior."
+        },
+        {
+          "poster": "assets/posters/F02-talking-head-20261007-frame-1.jpg",
+          "caption": "Manchete real destacada acima do apresentador."
+        },
+        {
+          "poster": "assets/posters/F02-talking-head-20261007-frame-2.jpg",
+          "caption": "Mídia em cartão com cantos arredondados e fundo liso."
+        }
+      ],
+      "examples": []
+    },
+    {
       "code": "F04",
       "name": "Pessoa → Animação",
       "description": "A pessoa aparece na abertura; depois a voz continua sobre animações e imagens.",

@@ -47,7 +47,7 @@ F09/F11 permanecem consolidados em F08/F07, e os materiais rejeitados de F17/F18
 6. Depois do render, preencher `qa/format-fidelity.json`: comparar os mecanismos, composição e ritmo com cenas observadas da referência; indicar frames do render, o render exato e seus hashes. A ausência, reprovação ou evidência de outro trabalho bloqueia QA/entrega no controlador.
 7. Exceção de um vídeo só vale quando consta da instrução atual daquele trabalho; não muda a receita consolidada. Falta de ator/material/ferramenta precisa ser reportada e resolvida, nunca escondida por um efeito genérico.
 
-`tools/format_fidelity.py --prepare` pode gerar a estrutura **pendente**, sem aprovação automática. O coordenador produz/inspeciona as evidências e completa a comparação. Um teste de hash/completude não prova gosto ou semelhança artística; a comprovação editorial vem da prévia real comparada e revisada. O teste atual de contratos dos 12 formatos confirma receita e referências verificáveis, não uma nova execução artística de cada modelo.
+`tools/format_fidelity.py --prepare` pode gerar a estrutura **pendente**, sem aprovação automática. O coordenador produz/inspeciona as evidências e completa a comparação. Um teste de hash/completude não prova gosto ou semelhança artística; a comprovação editorial vem da prévia real comparada e revisada. O teste atual de contratos dos 13 formatos confirma receita e referências verificáveis, não uma nova execução artística de cada modelo.
 
 F16 mantém pesquisa de B-roll e gráficos próprios, sem simplificação ao F08. TikTok/YouTube usam ScrapeCreators, conforme as regras vigentes. O exemplo não escolhe pessoa, cores, fontes, “EMPIRE” ou outra marca no novo vídeo. A ID selecionada continua fonte exclusiva de aparência; logotipos exigem pedido atual específico.
 
@@ -84,3 +84,5 @@ Um repo ativo público independente; o arquivo antigo fica privado, main como fo
 
 ## Portão de publicidade e instrução para Claude
 A auditoria encontrou 1.563 caminhos históricos de trabalhos no repositório anterior. Ele continua privado e foi renomeado; o novo público é independente, recebe apenas uma árvore revisada e não herda esses commits, PRs ou caches. Nunca transformar o arquivo antigo em público nem reenviar sua história. O prompt vigente está em method/CLAUDE_INSTALL_PROMPT.txt e o guia em workflows/INSTALL_WITH_CLAUDE.md. Autenticação usa a sessão oficial própria; nenhum token vai para a conversa ou o pacote. Um chat sem arquivos/terminal não instala localmente: usar Claude Code ou ambiente com essas capacidades.
+
+F02 Talking Head foi criado em 07/10/2026 a partir do novo ZIP selecionado e seu vídeo real do Drive. Usa UID oficial.d28a1fefc46c478abbd1c9d9b0620a2d, memória própria e f02-talking-head-v1 (draft). Não é restauração do F02 Dinâmico ou do Talking Head retirado; F06 Diagramas e as 12 receitas anteriores estão preservados.

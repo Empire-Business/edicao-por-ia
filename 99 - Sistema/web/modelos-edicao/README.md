@@ -12,7 +12,7 @@ A implantação deste site é independente do pacote de atualização da fábric
 
 ## Conteúdo publicado
 
-`publication.json` congela a seleção autorizada a partir dos códigos ativos do catálogo local. F02 e F03 estão descartados; F09 foi incorporado ao F08 e F11 ao F07. A seleção contém 12 modelos, com F14 Lista em Tela, F15 Dois Lados e F16 Comentário com B-roll. O F16 preserva a pesquisa e a montagem rica de mídia como workflow independente. Nenhum cadastro privado é descoberto ou publicado automaticamente. O build rejeita códigos descartados e entradas que não constam da seleção.
+`publication.json` congela a seleção autorizada a partir dos códigos ativos do catálogo local. A geração antiga factory.f02 está retirada; F02 agora é Talking Head, com UID/memória e mídia próprios. F03 está descartado; F09 foi incorporado ao F08 e F11 ao F07. A seleção contém 13 modelos, com F14 Lista em Tela, F15 Dois Lados e F16 Comentário com B-roll. O F16 preserva a pesquisa e a montagem rica de mídia como workflow independente. Nenhum cadastro privado é descoberto ou publicado automaticamente. O build rejeita códigos descartados e entradas que não constam da seleção.
 
 `public/catalog.json` guarda somente os campos públicos necessários à interface. As fontes das IDs vêm dos presets distribuídos, sem herdar pessoa, marca ou logotipo. Os guias do painel são uma versão sanitizada das receitas, com materiais e sequência de edição.
 

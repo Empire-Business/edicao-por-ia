@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "format_code": "F02",
+  "format_uid": "official.d28a1fefc46c478abbd1c9d9b0620a2d",
+  "example_url": "https://drive.google.com/file/d/1fZ6nLA9MgV0GTf63uPiRoi-yMiP8IS0h/view?usp=drive_link",
+  "mechanism_details": {
+    "inputs": "Vídeo da pessoa comentando um assunto, B-roll e documentos/manchetes pertinentes, com fontes verificáveis. Escolher uma ID visual separadamente.",
+    "mechanism": "O apresentador conduz um comentário por casos reais. A abertura combina mídia, pessoa e faixa de gancho; o corpo alterna câmera inteira, B-roll, split com emenda suave e cartões, com legendas curtas e manchetes destacadas.",
+    "steps": [
+      "Montar a fala, preservando sentido, gestos e pausas intencionais.",
+      "Abrir com mídia pertinente acima da pessoa e uma faixa com pergunta/gancho; retirar a faixa após a abertura.",
+      "Alternar pessoa em tela cheia, B-roll, tela dividida e cartões conforme cada ideia.",
+      "Usar manchetes/documentos reais nos argumentos de prova, destacar a linha relevante e reposicionar as legendas sem cobrir rosto ou ação.",
+      "Voltar à pessoa ao longo do corpo e fechar pela fala atual; revisar leitura, emendas, sincronia e áudio na prévia."
+    ],
+    "avoid": "Não copiar o guia errado de Diagramas do ZIP, inventar notícia/dado, usar B-roll genérico, esticar mídia ou impor cor vermelha, fonte, pessoa, logo ou marca do exemplo. Aparência vem da ID; não reduzir automaticamente o vídeo a apresentador com legenda ou apenas a split screen."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/reference.mp4",
+      "sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de"
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/opening.jpg",
+      "sha256": "0bc889874f477206e7171884771b7d7cb86e7b0f45e7b4ce3df51089b21bbdcb"
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/headline.jpg",
+      "sha256": "9735e387d93f73978371b42faf26250f329c85f4c7cbbc4f7af885884e6cef49"
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/full.jpg",
+      "sha256": "cd9d6faab25dfcb1fc5639a10ab7c308b108b43bb12cc5515db2cc82301175ce"
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/broll.jpg",
+      "sha256": "5c2008d621f659080c21c32be1ffc4da8f4ffa866c66a8a1d958dd3c69aa9d10"
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/split.jpg",
+      "sha256": "45a268258c0be3a06df1d1f5a605ace2df7938d929db9f9b5abcf3ea51427fe8"
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/card.jpg",
+      "sha256": "3cd6a269d070785c9c1b4e3e6886d17ca1718fd2e4bd8ad4a2919dd7f43ef279"
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/closing.jpg",
+      "sha256": "964368bae5890ffc82545a982dc2c7101380135067f352e1a7454698d2c7f358"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/opening.jpg",
+      "sha256": "0bc889874f477206e7171884771b7d7cb86e7b0f45e7b4ce3df51089b21bbdcb",
+      "at_seconds": 0.5,
+      "caption": "Gancho em faixa entre B-roll superior e apresentador inferior."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/headline.jpg",
+      "sha256": "9735e387d93f73978371b42faf26250f329c85f4c7cbbc4f7af885884e6cef49",
+      "at_seconds": 12,
+      "caption": "Manchete real destacada acima do apresentador."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/full.jpg",
+      "sha256": "cd9d6faab25dfcb1fc5639a10ab7c308b108b43bb12cc5515db2cc82301175ce",
+      "at_seconds": 16,
+      "caption": "Apresentador em tela cheia com legenda curta."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/broll.jpg",
+      "sha256": "5c2008d621f659080c21c32be1ffc4da8f4ffa866c66a8a1d958dd3c69aa9d10",
+      "at_seconds": 20,
+      "caption": "B-roll real em tela cheia, relacionado ao assunto."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/split.jpg",
+      "sha256": "45a268258c0be3a06df1d1f5a605ace2df7938d929db9f9b5abcf3ea51427fe8",
+      "at_seconds": 68,
+      "caption": "B-roll superior e câmera inferior com emenda suave."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/card.jpg",
+      "sha256": "3cd6a269d070785c9c1b4e3e6886d17ca1718fd2e4bd8ad4a2919dd7f43ef279",
+      "at_seconds": 52,
+      "caption": "Mídia em cartão com cantos arredondados e fundo liso."
+    },
+    {
+      "path": "examples/reference-library/F02/talking-head-20261007/closing.jpg",
+      "sha256": "964368bae5890ffc82545a982dc2c7101380135067f352e1a7454698d2c7f358",
+      "at_seconds": 184,
+      "caption": "Retorno ao apresentador no fechamento, sem cartela automática."
+    }
+  ],
+  "inspected_frames": 27,
+  "inspected_frame_times": [
+    0.5,
+    4,
+    8,
+    12,
+    16,
+    20,
+    28,
+    36,
+    44,
+    52,
+    60,
+    68,
+    76,
+    84,
+    92,
+    100,
+    108,
+    116,
+    124,
+    132,
+    140,
+    148,
+    156,
+    164,
+    172,
+    180,
+    184
+  ],
+  "source": {
+    "archive_name": "F06 - Talking head 1.zip",
+    "archive_sha256": "4cfb75db4da0fb6df225c1db8b0a66ad2947eca3410d98bcedad2b7ab4f88bd6",
+    "drive_file_id": "1fZ6nLA9MgV0GTf63uPiRoi-yMiP8IS0h",
+    "original_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+    "original_bytes": 166157493,
+    "duration_seconds": 185.366667,
+    "geometry": [
+      1080,
+      1920
+    ],
+    "fps": 30
+  },
+  "source_document_conflict": "COMO USAR/ESTILO descrevem talking head; GUIA DA EDIÇÃO repete Diagramas/F06. O mecanismo registrado foi derivado dos frames reais do vídeo ligado no ZIP.",
+  "publication_derivative": {
+    "full_duration": true,
+    "video_compression": "1080x1920 H.264 CRF21 capped at 3000k; no cuts or new graphics",
+    "audio": "AAC stream copied without remix",
+    "original_unchanged": true,
+    "bytes": 72505902
+  },
+  "limitations": {
+    "new_job_pilot_rendered": false,
+    "artistic_similarity_certified": false,
+    "full_audio_listening_done": false,
+    "exact_motion_easings_measured": false
+  }
+}

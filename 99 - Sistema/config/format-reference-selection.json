@@ -108,6 +108,14 @@
         "sha256": "37b838822e92247f5ae5cf18ea682dd4070e18e00c5485a0db64c5ccdfc9cb5f"
       },
       "reference_conflicts": []
+    },
+    "official.d28a1fefc46c478abbd1c9d9b0620a2d": {
+      "code": "F02",
+      "primary_reference": {
+        "path": "examples/reference-library/F02/talking-head-20261007/reference.mp4",
+        "sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de"
+      },
+      "reference_conflicts": []
     }
   }
 }

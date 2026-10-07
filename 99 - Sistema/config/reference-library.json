@@ -50,31 +50,92 @@
     },
     "F02": {
       "code": "F02",
-      "name": "Dinâmico",
-      "uid": "factory.f02",
+      "name": "Talking Head",
+      "uid": "official.d28a1fefc46c478abbd1c9d9b0620a2d",
       "references": [
         {
-          "path": "examples/reference-library/F02/example-01.jpg",
-          "kind": "actual_reference_image",
-          "sha256": "88414585cee0e9003452c09c19e7f969b4b9339c0ee7098e6fe183aef7633d36",
-          "bytes": 30208,
-          "source_sha256": "88414585cee0e9003452c09c19e7f969b4b9339c0ee7098e6fe183aef7633d36",
-          "caption": "Variação de enquadramento e explicação visual."
-        },
-        {
-          "path": "examples/reference-library/F02/example-02.jpg",
-          "kind": "actual_reference_image",
-          "sha256": "651a7a14a841c243539bfd82f2d83515d152fb9a430cf7c9ad02483eff5b3ab1",
-          "bytes": 95697,
-          "source_sha256": "651a7a14a841c243539bfd82f2d83515d152fb9a430cf7c9ad02483eff5b3ab1",
-          "caption": "Quadros reais de uma entrega final (img-9021_9x16_brunoguzela_MOTION_V4.mp4). Os momentos foram amostrados ao longo do vídeo. A aparência e a pessoa pertencem ao exemplo histórico, não às regras do formato."
-        },
-        {
-          "path": "examples/reference-library/F02/video-example-02.mp4",
+          "path": "examples/reference-library/F02/talking-head-20261007/reference.mp4",
           "kind": "actual_reference_video",
-          "sha256": "b0ee462fb42a7051c94104296b64687a55fa171d04114e12aef8029be2af741f",
-          "bytes": 103095033,
-          "source_sha256": "b0ee462fb42a7051c94104296b64687a55fa171d04114e12aef8029be2af741f"
+          "sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de",
+          "bytes": 72505902,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/opening.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0bc889874f477206e7171884771b7d7cb86e7b0f45e7b4ce3df51089b21bbdcb",
+          "bytes": 80822,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+          "caption": "Gancho em faixa entre B-roll superior e apresentador inferior.",
+          "at_seconds": 0.5
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/headline.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9735e387d93f73978371b42faf26250f329c85f4c7cbbc4f7af885884e6cef49",
+          "bytes": 74601,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+          "caption": "Manchete real destacada acima do apresentador.",
+          "at_seconds": 12
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/split.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "45a268258c0be3a06df1d1f5a605ace2df7938d929db9f9b5abcf3ea51427fe8",
+          "bytes": 59860,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+          "caption": "B-roll superior e câmera inferior com emenda suave.",
+          "at_seconds": 68
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/card.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "3cd6a269d070785c9c1b4e3e6886d17ca1718fd2e4bd8ad4a2919dd7f43ef279",
+          "bytes": 54537,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+          "caption": "Mídia em cartão com cantos arredondados e fundo liso.",
+          "at_seconds": 52
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/full.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "cd9d6faab25dfcb1fc5639a10ab7c308b108b43bb12cc5515db2cc82301175ce",
+          "bytes": 53093,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+          "caption": "Apresentador em tela cheia com legenda curta.",
+          "at_seconds": 16
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/broll.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5c2008d621f659080c21c32be1ffc4da8f4ffa866c66a8a1d958dd3c69aa9d10",
+          "bytes": 44867,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+          "caption": "B-roll real em tela cheia, relacionado ao assunto.",
+          "at_seconds": 20
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/closing.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "964368bae5890ffc82545a982dc2c7101380135067f352e1a7454698d2c7f358",
+          "bytes": 51117,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad",
+          "caption": "Retorno ao apresentador no fechamento, sem cartela automática.",
+          "at_seconds": 184
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "2451e979d96ed5a660a6cbd04b9bcbd0bafa0e6ad4bd623c845ab77de1b239f0",
+          "bytes": 6283,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/README.md",
+          "kind": "reference_analysis",
+          "sha256": "f41907f94d30ae866e491d12bf10f8df667e9da8f66cdb062e76070007b3c329",
+          "bytes": 1025,
+          "source_sha256": "973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad"
         }
       ],
       "missing_sources": []
@@ -3929,6 +3990,49 @@
     "examples/reference-library/F13/preview-frame.jpg": "3f38b5e6b43743687fa7a08fec91dc7a9044f38a289da5c0d40a168f578ed32f",
     "examples/reference-library/F14/preview-frame.jpg": "6fdf29b6e6f69a27d20787c5b2af35c5999ed4f65ba14c0ef380c3188557bbf7",
     "examples/reference-library/F15/preview-frame.jpg": "2b00a3f74d33e972b258fde5537b82063194d9456eeeb22a73044824b657c1a3",
-    "examples/reference-library/F16/preview-frame.jpg": "bc6452d9a328ff53e23f09de94273450fb497b66d72e0786b93f20610e7b9ec5"
+    "examples/reference-library/F16/preview-frame.jpg": "bc6452d9a328ff53e23f09de94273450fb497b66d72e0786b93f20610e7b9ec5",
+    "examples/reference-library/F02/talking-head-20261007/README.md": "f41907f94d30ae866e491d12bf10f8df667e9da8f66cdb062e76070007b3c329",
+    "examples/reference-library/F02/talking-head-20261007/analysis.json": "2451e979d96ed5a660a6cbd04b9bcbd0bafa0e6ad4bd623c845ab77de1b239f0",
+    "examples/reference-library/F02/talking-head-20261007/broll.jpg": "5c2008d621f659080c21c32be1ffc4da8f4ffa866c66a8a1d958dd3c69aa9d10",
+    "examples/reference-library/F02/talking-head-20261007/card.jpg": "3cd6a269d070785c9c1b4e3e6886d17ca1718fd2e4bd8ad4a2919dd7f43ef279",
+    "examples/reference-library/F02/talking-head-20261007/closing.jpg": "964368bae5890ffc82545a982dc2c7101380135067f352e1a7454698d2c7f358",
+    "examples/reference-library/F02/talking-head-20261007/full.jpg": "cd9d6faab25dfcb1fc5639a10ab7c308b108b43bb12cc5515db2cc82301175ce",
+    "examples/reference-library/F02/talking-head-20261007/headline.jpg": "9735e387d93f73978371b42faf26250f329c85f4c7cbbc4f7af885884e6cef49",
+    "examples/reference-library/F02/talking-head-20261007/opening.jpg": "0bc889874f477206e7171884771b7d7cb86e7b0f45e7b4ce3df51089b21bbdcb",
+    "examples/reference-library/F02/talking-head-20261007/reference.mp4": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de",
+    "examples/reference-library/F02/talking-head-20261007/split.jpg": "45a268258c0be3a06df1d1f5a605ace2df7938d929db9f9b5abcf3ea51427fe8"
+  },
+  "retired_generations": {
+    "factory.f02": {
+      "code": "F02",
+      "name": "Dinâmico",
+      "uid": "factory.f02",
+      "references": [
+        {
+          "path": "examples/reference-library/F02/example-01.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "88414585cee0e9003452c09c19e7f969b4b9339c0ee7098e6fe183aef7633d36",
+          "bytes": 30208,
+          "source_sha256": "88414585cee0e9003452c09c19e7f969b4b9339c0ee7098e6fe183aef7633d36",
+          "caption": "Variação de enquadramento e explicação visual."
+        },
+        {
+          "path": "examples/reference-library/F02/example-02.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "651a7a14a841c243539bfd82f2d83515d152fb9a430cf7c9ad02483eff5b3ab1",
+          "bytes": 95697,
+          "source_sha256": "651a7a14a841c243539bfd82f2d83515d152fb9a430cf7c9ad02483eff5b3ab1",
+          "caption": "Quadros reais de uma entrega final (img-9021_9x16_brunoguzela_MOTION_V4.mp4). Os momentos foram amostrados ao longo do vídeo. A aparência e a pessoa pertencem ao exemplo histórico, não às regras do formato."
+        },
+        {
+          "path": "examples/reference-library/F02/video-example-02.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "b0ee462fb42a7051c94104296b64687a55fa171d04114e12aef8029be2af741f",
+          "bytes": 103095033,
+          "source_sha256": "b0ee462fb42a7051c94104296b64687a55fa171d04114e12aef8029be2af741f"
+        }
+      ],
+      "missing_sources": []
+    }
   }
 }

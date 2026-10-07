@@ -421,5 +421,56 @@
       "grafico",
       "argumento"
     ]
+  },
+  "F02": {
+    "category": "presenter",
+    "tags": [
+      "Apresentador",
+      "B-roll",
+      "Manchetes"
+    ],
+    "use": "Comentar notícias, casos e ideias mostrando evidências reais sem perder a presença da pessoa.",
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "B-roll",
+      "Documentos"
+    ],
+    "buildingBlocks": [
+      "Faixa de gancho",
+      "Apresentador",
+      "B-roll real",
+      "Manchetes",
+      "Tela dividida",
+      "Cartões"
+    ],
+    "searchTerms": [
+      "talking head",
+      "talkinghead",
+      "pessoa falando",
+      "pessoa em camera",
+      "apresentador",
+      "comentario",
+      "analise",
+      "opiniao",
+      "noticias",
+      "casos",
+      "negocios",
+      "marketing",
+      "varejo",
+      "gancho",
+      "faixa de gancho",
+      "broll",
+      "b-roll",
+      "midia real",
+      "manchete",
+      "documentos",
+      "tela dividida",
+      "split screen",
+      "cartao",
+      "legendas curtas",
+      "reels"
+    ],
+    "hasPersonOnScreen": true
   }
 }

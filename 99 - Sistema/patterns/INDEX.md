@@ -51,3 +51,5 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 
 
 - F17 e F18 — retirados pelo autor; códigos reservados. Receitas e exemplos rejeitados ficam fora da distribuição.
+
+- `f02-talking-head-v1`: F02 Talking Head, nova geração a partir do vídeo do ZIP de 07/10/2026. Draft; preserva as receitas anteriores.

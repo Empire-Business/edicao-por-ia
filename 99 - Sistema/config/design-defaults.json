@@ -20,6 +20,70 @@
       "example_kind": "published_reference_collection"
     },
     {
+      "code": "F02",
+      "name": "Talking Head",
+      "memory_store": "talking-head-20261007",
+      "pattern": "f02-talking-head-v1",
+      "description": "A pessoa comenta um assunto com B-roll real, manchetes e legendas curtas; alterna tela cheia, split e cartões, com faixa de gancho na abertura.",
+      "uid": "official.d28a1fefc46c478abbd1c9d9b0620a2d",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://drive.google.com/file/d/1fZ6nLA9MgV0GTf63uPiRoi-yMiP8IS0h/view?usp=drive_link",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa comentando um assunto, B-roll e documentos/manchetes pertinentes, com fontes verificáveis. Escolher uma ID visual separadamente.",
+        "mechanism": "O apresentador conduz um comentário por casos reais. A abertura combina mídia, pessoa e faixa de gancho; o corpo alterna câmera inteira, B-roll, split com emenda suave e cartões, com legendas curtas e manchetes destacadas.",
+        "steps": [
+          "Montar a fala, preservando sentido, gestos e pausas intencionais.",
+          "Abrir com mídia pertinente acima da pessoa e uma faixa com pergunta/gancho; retirar a faixa após a abertura.",
+          "Alternar pessoa em tela cheia, B-roll, tela dividida e cartões conforme cada ideia.",
+          "Usar manchetes/documentos reais nos argumentos de prova, destacar a linha relevante e reposicionar as legendas sem cobrir rosto ou ação.",
+          "Voltar à pessoa ao longo do corpo e fechar pela fala atual; revisar leitura, emendas, sincronia e áudio na prévia."
+        ],
+        "avoid": "Não copiar o guia errado de Diagramas do ZIP, inventar notícia/dado, usar B-roll genérico, esticar mídia ou impor cor vermelha, fonte, pessoa, logo ou marca do exemplo. Aparência vem da ID; não reduzir automaticamente o vídeo a apresentador com legenda ou apenas a split screen."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/reference.mp4",
+          "sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/opening.jpg",
+          "sha256": "0bc889874f477206e7171884771b7d7cb86e7b0f45e7b4ce3df51089b21bbdcb"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/headline.jpg",
+          "sha256": "9735e387d93f73978371b42faf26250f329c85f4c7cbbc4f7af885884e6cef49"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/full.jpg",
+          "sha256": "cd9d6faab25dfcb1fc5639a10ab7c308b108b43bb12cc5515db2cc82301175ce"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/broll.jpg",
+          "sha256": "5c2008d621f659080c21c32be1ffc4da8f4ffa866c66a8a1d958dd3c69aa9d10"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/split.jpg",
+          "sha256": "45a268258c0be3a06df1d1f5a605ace2df7938d929db9f9b5abcf3ea51427fe8"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/card.jpg",
+          "sha256": "3cd6a269d070785c9c1b4e3e6886d17ca1718fd2e4bd8ad4a2919dd7f43ef279"
+        },
+        {
+          "path": "examples/reference-library/F02/talking-head-20261007/closing.jpg",
+          "sha256": "964368bae5890ffc82545a982dc2c7101380135067f352e1a7454698d2c7f358"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F02/talking-head-20261007/analysis.json",
+        "sha256": "2451e979d96ed5a660a6cbd04b9bcbd0bafa0e6ad4bd623c845ab77de1b239f0"
+      }
+    },
+    {
       "code": "F04",
       "name": "Pessoa → Animação",
       "memory_store": "format-f04",

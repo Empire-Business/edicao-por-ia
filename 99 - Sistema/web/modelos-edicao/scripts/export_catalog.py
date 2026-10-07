@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import html
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -32,6 +33,13 @@ POSTER_TIME = {'F01': 11, 'F03': 3, 'F04': 23, 'F05': 20, 'F06': 30, 'F07': 20, 
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def media_asset_id(item):
+    code = item['code']
+    asset = item.get('asset_id', code)
+    if not isinstance(asset, str) or not re.fullmatch(re.escape(code) + r'(?:-[a-z0-9][a-z0-9-]{0,63})?', asset):
+        raise ValueError('Identificação de mídia inválida: ' + code)
+    return asset
 
 def authorized_file(reference):
     path = ENGINE / reference['path']
@@ -71,7 +79,12 @@ def export(media=False):
     formats = []
     for item in sorted(publication['formats'], key=lambda item: int(item['code'][1:])):
         code = item['code']
+        asset_id = media_asset_id(item)
         if code in publication['excluded_codes']: raise ValueError('Um formato descartado não pode ser publicado: ' + code)
+        stock = next((f for f in defaults['formats'] if f['code'] == code), None)
+        group = library['formats'].get(code, {})
+        if not stock or group.get('uid') != stock.get('uid') or (item.get('uid') and item['uid'] != stock['uid']) or stock['uid'] in publication.get('excluded_uids', []):
+            raise ValueError('A geração da referência não corresponde ao formato ativo: ' + code)
         descriptor = descriptors.get(code)
         if not descriptor: raise ValueError('Complete os descritores de busca antes de publicar ' + code)
         spec = item.get('mechanism_details') or DETAILS.get(code)
@@ -90,7 +103,7 @@ def export(media=False):
         if video_ref:
             source = authorized_file(video_ref)
             probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'quiet', '-show_streams', '-show_format', '-of', 'json', str(source)]))
-            data.update(video=f'assets/videos/{code}.mp4', poster=f'assets/posters/{code}.jpg',
+            data.update(video=f'assets/videos/{asset_id}.mp4', poster=f'assets/posters/{asset_id}.jpg',
                         duration=round(float(probe['format']['duration'])), evidence='video', evidenceLabel='Exemplo em vídeo')
             data['evidenceNote'] = 'Vídeo histórico de referência. A pessoa, marca, cores e fontes deste exemplo não são escolhas para a sua edição.'
             if video_ref.get('evidence_label'): data['evidenceLabel'] = video_ref['evidence_label']
@@ -120,7 +133,7 @@ def export(media=False):
             source = authorized_file(frame['reference'])
             if source.suffix.lower() not in ['.jpg', '.jpeg', '.png']:
                 raise ValueError('Quadro de referência precisa ser uma imagem real.')
-            target = f'assets/posters/{code}-frame-{index}{source.suffix.lower()}'
+            target = f'assets/posters/{asset_id}-frame-{index}{source.suffix.lower()}'
             shutil.copyfile(source, output / target)
             data['referenceFrames'].append({'poster': target, 'caption': frame['caption']})
         data['examples'] = []
@@ -128,7 +141,7 @@ def export(media=False):
             if not variant['id'].replace('-', '').isalnum(): raise ValueError('Código de exemplo inválido.')
             source = authorized_file(variant['reference'])
             probe = json.loads(subprocess.check_output(['ffprobe', '-v', 'quiet', '-show_format', '-of', 'json', str(source)]))
-            suffix = code + '-' + variant['id']
+            suffix = asset_id + '-' + variant['id']
             example = {'id': variant['id'], 'label': variant['label'], 'video': f'assets/videos/{suffix}.mp4', 'poster': f'assets/posters/{suffix}.jpg',
                        'duration': round(float(probe['format']['duration'])), 'evidenceLabel': 'Exemplo histórico',
                        'evidenceNote': 'Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática.'}

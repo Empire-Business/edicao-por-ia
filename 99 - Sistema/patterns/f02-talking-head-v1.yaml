@@ -1,0 +1,154 @@
+id: f02-talking-head-v1
+version: 1
+status: draft
+format_code: F02
+purpose: Comentário com apresentador, gancho em faixa, B-roll real, manchetes verificadas
+  e alternância entre tela cheia, tela dividida e cartões.
+engine: hybrid
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  min_jump_cut_interval_seconds: 0.6
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.2
+    keep_pause_seconds: 0.08
+    word_handle_seconds: 0.08
+    minimum_cut_seconds: 0.15
+    trim_edges: true
+  presenter_on_camera: throughout_body_with_broll_intervals
+  one_information_at_a_time: true
+  timing_policy: Montar a fala primeiro; parâmetros de corte são pontos iniciais ajustáveis,
+    não medições do exemplo. Preservar gestos, sentido e pausas intencionais.
+visual:
+  opening: Pessoa na região inferior e mídia pertinente acima, ligadas por faixa com
+    pergunta/gancho curto. A faixa é da abertura; não persistir por todo o vídeo.
+  presenter_policy: A pessoa volta durante o corpo e no fechamento; não limitar a
+    presença ao gancho.
+  composition: Alternar full, split e card conforme a frase. B-roll cobre ideias concretas
+    e a voz mantém a continuidade.
+  media_policy: Usar a ação, lugar, produto ou documento relacionado à fala; não preencher
+    com mídia sem relação.
+  headline_policy: Print real de uma fonte verificável; destacar somente a linha relevante,
+    sem inventar notícia ou dado.
+  punch_ins: selective
+  max_punch_in_scale: 1.2
+  random_effects: false
+layouts:
+  opening_split:
+    mechanism: Mídia no topo, pessoa no bloco inferior, faixa de pergunta na emenda.
+      Cor, fonte e contraste vêm da ID.
+    top_media_fraction: aproximadamente metade da altura, ajustada à pessoa e à mídia
+      atuais
+    hook_banner: uma ou duas linhas curtas; retirar ao encerrar o gancho
+  full:
+    mechanism: Pessoa em tela cheia com variações discretas de enquadramento ou B-roll
+      ocupando toda a tela; legenda legível sem cobrir rosto/ação.
+    preserve_face_and_gestures: true
+  split:
+    mechanism: Mídia/documento acima e câmera no bloco inferior, com emenda suave
+      por degradê de transparência. É composição por faixas; não presumir recorte
+      de silhueta.
+    avoid: Não esticar B-roll nem cobrir rosto ou linha importante da manchete.
+    caption_policy: Reposicionar a legenda para a área livre, conforme rosto, emenda
+      e ação.
+  card:
+    mechanism: Mídia dentro de cartão com cantos arredondados sobre fundo liso da
+      ID; preserva enquadramento e coloca a legenda dentro do cartão quando houver
+      espaço.
+    forbidden: blurred_self_fill
+captions:
+  enabled: true
+  max_lines: 2
+  max_words: 4
+  word_highlight: false
+  font_source: explicit_visual_identity
+  language: from_job
+  readability: Trechos curtos em alto contraste, com sombra/contorno discretos se
+    necessários. Evitar duplicar a faixa de gancho ou a manchete; não copiar a fonte/cor
+    do exemplo.
+motion:
+  hook: Entrada simples da faixa e retirada no fim do gancho, sincronizadas à fala
+    atual.
+  headline: Destacar a linha correspondente ao argumento com marcador da ID; preservar
+    autoria/contexto da fonte.
+  transitions: Cortes diretos motivados pela ideia; suavizar a emenda do split sem
+    efeitos aleatórios.
+  parameters_note: A inspeção amostrou frames; duração/easing exatos devem ser comparados
+    na prévia real, não alegados como medidos.
+research:
+  when: Após montar a fala, selecionar materiais por ideia retida.
+  source_policy: Materiais fornecidos/autorizados ou pesquisa pertinente; guardar
+    origem e hash locais.
+  tiktok_and_youtube_exclusive_provider: ScrapeCreators
+  download_policy: Sem extrator alternativo; ausência de mídia/credito necessário
+    é pendência explícita.
+  factuality: Não inventar manchetes, números, datas ou cenas de prova.
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  music: optional
+  mix_policy: A voz conduz todos os layouts. Ouvir a referência e a prévia antes de
+    decidir trilha, ducking e níveis. Os alvos são defaults de trabalho, não medições
+    desta referência.
+insertion_assets:
+  policy: proof-heavy
+  density: adaptive_by_retained_ideas
+  default_preferred_duration_s: 2.0
+  default_max_duration_s: 6.0
+  prefer_the_real_thing: true
+  allow_image_motion: true
+  note: Duração e densidade dependem da fala e da evidência; não preencher uma cota
+    de B-roll.
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 1.0
+  verify_reference_plan_and_render: true
+  verify_presenter_returns_in_body: true
+  verify_banner_only_during_hook: true
+  verify_broll_against_speech: true
+  verify_actual_headline_and_highlight: true
+  verify_split_seam_and_caption_position: true
+  verify_cards_preserve_media_framing: true
+  verify_no_inherited_brand_signatures: true
+  verify_readability_and_audio: true
+forbidden:
+- unrelated_broll
+- fabricated_fact
+- random_transition
+- stretch_video
+- blurred_self_background
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_personal_identity
+- delete_source
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+delivery:
+  preview_before_final: true
+  artistic_approval: Requires a real pilot on the chosen job; reference analysis is
+    not artistic execution approval.
+reference_materials:
+  video: examples/reference-library/F02/talking-head-20261007/reference.mp4
+  source_url: https://drive.google.com/file/d/1fZ6nLA9MgV0GTf63uPiRoi-yMiP8IS0h/view?usp=drive_link
+  original_sha256: 973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad

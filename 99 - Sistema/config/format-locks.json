@@ -85,6 +85,11 @@
       "pattern": "f16-v1",
       "definition_sha256": "cbcc75a09f25b4bd9c977431eb222805e4c27bc3119239b5ef6fc87d06a538fb",
       "pattern_sha256": "b4c6c30c765209f49f5f477b5e67f2851c78396b81c9aa1699a64357a1bfe6e3"
+    },
+    "official.d28a1fefc46c478abbd1c9d9b0620a2d": {
+      "code": "F02",
+      "definition_sha256": "1fc8ef19980ee290a3e2edafa048f524bd29300804e5ad4f8187adf47b3f73d4",
+      "pattern_sha256": "db1a14878804cc0061b628aade6d50196a2e78c60886eeb7178f374ff2361dbe"
     }
   }
 }

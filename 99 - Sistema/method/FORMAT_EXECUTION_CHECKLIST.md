@@ -5,6 +5,7 @@ Este roteiro não altera nomes, receitas nem as escolhas visuais. O coordenador 
 | Formato | O que precisa aparecer de verdade | Execução e prova |
 | --- | --- | --- |
 | F01 WhatsApp Narrado | Narração conduz mensagens/áudio/cenas dentro do chat, com leitura coerente e identidade da conversa do trabalho | Cena de interface ilustrativa em HTML/JS ou motion equivalente, retimada pela fala final; inspecionar balões, waveform/tempo, expansão e volta à conversa. Não entregar só pessoa com legenda. |
+| F02 Talking Head | Apresentador durante o corpo, faixa de gancho apenas na abertura, B-roll real, manchetes, split suave e cartões | Montar a fala, ligar apoio a cada ideia e comparar os layouts do exemplo do ZIP de 07/10/2026. Não usar o guia errado de Diagramas nem herdar vermelho/fonte/pessoa. |
 | F04 Pessoa → Animação | Pessoa na abertura; corpo narrado com animações/imagens pertinentes | Montagem híbrida com intro real, corpo visual criado na timeline final e continuidade de voz; conferir a transição e presença da pessoa apenas onde previsto. |
 | F05 Notícia Comentada | Títulos, fontes verificadas, dados/diagramas e imagens organizam o comentário | Cena editorial motivada, hierarquia e leitura no celular; conferir fonte factual e ausência de EMPIRE/assinatura automática. |
 | F06 Diagramas | Relações visíveis entre módulos, passos, ícones e números | Animações que realmente mostram o vínculo/progressão no tempo da fala; texto ou legenda isolados não comprovam um diagrama. |
