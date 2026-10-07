@@ -1,0 +1,939 @@
+{
+  "schema": 1,
+  "scope": "author_distributed_stock_only",
+  "formats": [
+    {
+      "code": "F01",
+      "name": "WhatsApp Narrado",
+      "description": "A voz conduz uma conversa em tela cheia; mensagens, áudios e apoios surgem dentro do chat.",
+      "category": "stories",
+      "tags": [
+        "Narração",
+        "Conversas"
+      ],
+      "use": "Transformar uma explicação em uma conversa fácil de acompanhar.",
+      "inputs": "Áudio ou vídeo com uma fala clara. Roteiro e cenas de apoio são opcionais.",
+      "mechanism": "A fala é dividida em mensagens de uma conversa ilustrativa. Um balão de áudio pode virar uma cena maior e depois voltar ao chat.",
+      "steps": [
+        "Abrir com a frase mais interessante, sem esperar uma animação longa de digitação.",
+        "Separar as ideias em mensagens curtas e fáceis de ler.",
+        "Mostrar reprodução do áudio com duração e movimento coerentes com a voz real.",
+        "Transformar a mensagem principal em comparação, lista, diagrama ou cena de apoio.",
+        "Voltar à conversa e encerrar com uma mensagem que resume a ideia."
+      ],
+      "avoid": "Não simular depoimentos reais, inventar mensagens atribuídas a pessoas ou usar uma tela de celular tão pequena que ninguém consiga ler.",
+      "pattern": "f01-v1",
+      "video": "assets/videos/F01.mp4",
+      "vimeo": null,
+      "duration": 47,
+      "evidence": "video",
+      "evidenceLabel": "Exemplo em vídeo",
+      "evidenceNote": "Vídeo histórico de referência. A pessoa, marca, cores e fontes deste exemplo não são escolhas para a sua edição.",
+      "cameraRequired": false,
+      "startingMaterials": [
+        "Áudio",
+        "Vídeo"
+      ],
+      "buildingBlocks": [
+        "Mensagens",
+        "Áudio em tela",
+        "Conversa em celular"
+      ],
+      "searchTerms": [
+        "whatsapp",
+        "zap",
+        "wpp",
+        "chat",
+        "mensagens",
+        "conversa",
+        "bate papo",
+        "audio",
+        "voz",
+        "narracao",
+        "sem aparecer",
+        "sem gravar camera",
+        "historias",
+        "prints",
+        "celular",
+        "reels"
+      ],
+      "hasPersonOnScreen": false,
+      "poster": "assets/posters/F01.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F04",
+      "name": "Pessoa → Animação",
+      "description": "A pessoa aparece na abertura; depois a voz continua sobre animações e imagens.",
+      "category": "stories",
+      "tags": [
+        "Apresentador",
+        "Animação"
+      ],
+      "use": "Abrir com a pessoa e explicar o restante com imagens.",
+      "inputs": "Vídeo curto da pessoa na abertura e gravação do restante da fala.",
+      "mechanism": "A pessoa aparece no gancho. Depois, a fala continua sobre animações e imagens que explicam o assunto.",
+      "steps": [
+        "Montar uma abertura curta com a pessoa e a promessa do vídeo.",
+        "Passar para o corpo narrado sem mudar o volume ou o timbre da voz.",
+        "Criar uma cena visual para cada ideia importante.",
+        "Usar comparações, diagramas e imagens quando forem mais claros que texto.",
+        "Fechar com a conclusão gravada ou com o pedido final informado para o trabalho."
+      ],
+      "avoid": "Não manter a pessoa em tela por hábito e não repetir integralmente a legenda em outra animação.",
+      "pattern": "f04-v1",
+      "video": "assets/videos/F04.mp4",
+      "vimeo": null,
+      "duration": 104,
+      "evidence": "video",
+      "evidenceLabel": "Prévia histórica",
+      "evidenceNote": "Prévia local: pessoa na abertura e narração sobre composições animadas no restante. Marca e aparência pertencem ao exemplo histórico.",
+      "cameraRequired": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Áudio"
+      ],
+      "buildingBlocks": [
+        "Pessoa no gancho",
+        "Narração",
+        "Animações no corpo"
+      ],
+      "searchTerms": [
+        "pessoa depois animacao",
+        "gancho",
+        "abertura",
+        "rosto no inicio",
+        "voz",
+        "narracao",
+        "motion",
+        "historia",
+        "explicacao",
+        "apresentador",
+        "vsl",
+        "aula",
+        "argumento"
+      ],
+      "hasPersonOnScreen": true,
+      "poster": "assets/posters/F04.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F05",
+      "name": "Notícia Comentada",
+      "description": "A pessoa comenta notícias, documentos e dados mostrados como recortes de uma matéria.",
+      "category": "stories",
+      "tags": [
+        "Notícias",
+        "Recortes"
+      ],
+      "use": "Explicar um assunto com a organização visual de uma matéria.",
+      "inputs": "Gancho gravado, narração e referências do assunto.",
+      "mechanism": "A apresentação parece uma matéria visual: títulos, informações e imagens se organizam para contar uma história. A fonte não é obrigatoriamente serifada; vem da ID visual.",
+      "steps": [
+        "Apresentar o assunto com um título curto e um gancho.",
+        "Construir uma sequência de problema, explicação e conclusão.",
+        "Organizar dados e relações em diagramas e composições legíveis.",
+        "Deixar cada estado tempo suficiente para ler e compreender.",
+        "Retomar a ideia principal antes de encerrar."
+      ],
+      "avoid": "Não escrever EMPIRE como cabeçalho, assinatura ou marca da edição. Não inserir logotipo, nome fixo de empresa ou marca da referência. Cores/fontes vêm da ID escolhida; preservar o assunto da notícia sem transformar a empresa citada em assinatura visual.",
+      "pattern": "f05-v1",
+      "video": "assets/videos/F05.mp4",
+      "vimeo": null,
+      "duration": 90,
+      "evidence": "video",
+      "evidenceLabel": "Prévia histórica",
+      "evidenceNote": "Prévia local de uma notícia comentada com apresentador, recortes e explicação visual. Não é uma nova entrega final.",
+      "cameraRequired": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Áudio",
+        "Documentos"
+      ],
+      "buildingBlocks": [
+        "Notícia",
+        "Recortes de matéria",
+        "Comentário da pessoa"
+      ],
+      "searchTerms": [
+        "noticia",
+        "jornal",
+        "jornalismo",
+        "materia",
+        "manchete",
+        "artigo",
+        "recorte",
+        "atualidades",
+        "reportagem",
+        "comentario",
+        "opiniao",
+        "documento",
+        "analise",
+        "fatos"
+      ],
+      "hasPersonOnScreen": true,
+      "poster": "assets/posters/F05.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F06",
+      "name": "Diagramas",
+      "description": "A explicação vira fluxos, módulos, conexões e números animados.",
+      "category": "explain",
+      "tags": [
+        "Diagramas",
+        "Processos"
+      ],
+      "use": "Tornar uma ideia, relação ou processo mais fácil de entender.",
+      "inputs": "Fala ou roteiro de explicação, com dados e materiais verificáveis.",
+      "mechanism": "Ideias abstratas viram módulos, ícones, conexões, passos e números. Os diagramas explicam relações, em vez de decorar a tela.",
+      "steps": [
+        "Identificar a relação que a fala quer explicar.",
+        "Escolher a representação mais simples: fluxo, comparação, etapas ou quantidade.",
+        "Apresentar um elemento por vez, de acordo com a frase.",
+        "Destacar o elemento importante sem cobrir os demais.",
+        "Mostrar a conclusão do diagrama e seguir para a próxima ideia."
+      ],
+      "avoid": "Não criar dados falsos, animar tudo ao mesmo tempo ou depender só da cor para explicar uma relação.",
+      "pattern": "f06-v1",
+      "video": "assets/videos/F06.mp4",
+      "vimeo": null,
+      "duration": 69,
+      "evidence": "video",
+      "evidenceLabel": "Prévia com gráficos",
+      "evidenceNote": "Exemplo local de narração com módulos, números e gráficos animados. Demonstra recursos de explicação visual da receita, com a aparência do trabalho histórico.",
+      "cameraRequired": false,
+      "startingMaterials": [
+        "Áudio",
+        "Roteiro",
+        "Dados"
+      ],
+      "buildingBlocks": [
+        "Módulos",
+        "Conexões",
+        "Etapas e números"
+      ],
+      "searchTerms": [
+        "diagrama",
+        "fluxograma",
+        "fluxo",
+        "processo",
+        "etapas",
+        "passo a passo",
+        "conexao",
+        "mapa mental",
+        "esquema",
+        "grafico",
+        "explicar",
+        "explicacao",
+        "aula",
+        "didatico",
+        "sem aparecer",
+        "voz",
+        "tutorial"
+      ],
+      "hasPersonOnScreen": false,
+      "poster": "assets/posters/F06.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F07",
+      "name": "Motion Institucional",
+      "description": "Apresentação de uma plataforma por telas recriadas e animadas: recursos, navegação, formulários e resultados, sem apresentador em câmera.",
+      "category": "products",
+      "tags": [
+        "Interface",
+        "Sem apresentador"
+      ],
+      "use": "Apresentar uma plataforma e demonstrar seus recursos.",
+      "inputs": "Roteiro ou narração, telas ou acesso de referência à plataforma e indicação dos recursos que devem aparecer. Escolha também a ID visual e o tamanho do vídeo.",
+      "mechanism": "Apresentação de uma plataforma por telas recriadas e animadas: recursos, navegação, formulários e resultados, sem apresentador em câmera.",
+      "steps": [
+        "Abrir com a proposta ou benefício central da plataforma.",
+        "Apresentar as telas e os recursos em uma sequência curta e compreensível.",
+        "Demonstrar ações: navegar, escolher, preencher, enviar e observar o resultado.",
+        "Usar movimentos de câmera e transições para orientar a atenção e ligar as etapas.",
+        "Fechar com uma síntese do produto; chamada final e logotipo somente quando pedidos."
+      ],
+      "avoid": "Não inventar recursos, usar dados pessoais reais, mostrar um mockup como função já implementada ou herdar a marca, paleta e fontes do exemplo. Tour e formulário são tipos de cena deste mesmo formato.",
+      "pattern": "f07-v2",
+      "video": "assets/videos/F07.mp4",
+      "vimeo": null,
+      "duration": 102,
+      "evidence": "video",
+      "evidenceLabel": "Prévia histórica",
+      "evidenceNote": "Prévia histórica de uma interface. Demonstra cenas do formato, sem representar a conclusão de uma nova edição.",
+      "cameraRequired": false,
+      "startingMaterials": [
+        "Telas",
+        "Roteiro",
+        "Áudio"
+      ],
+      "buildingBlocks": [
+        "Interface recriada",
+        "Ações em tela",
+        "Recursos da plataforma"
+      ],
+      "searchTerms": [
+        "motion institucional",
+        "plataforma",
+        "software",
+        "saas",
+        "app",
+        "aplicativo",
+        "interface",
+        "ui",
+        "ux",
+        "tela",
+        "produto digital",
+        "tour",
+        "demo",
+        "demonstracao",
+        "tutorial",
+        "navegacao",
+        "formulario",
+        "preenchimento",
+        "sem aparecer",
+        "sem apresentador"
+      ],
+      "hasPersonOnScreen": false,
+      "poster": "assets/posters/F07.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F08",
+      "name": "Pessoa + Tela",
+      "description": "A pessoa explica telas, cenas e conversas, recortada no cenário ou junto da demonstração.",
+      "category": "presenter",
+      "tags": [
+        "Apresentador",
+        "Telas e conversas"
+      ],
+      "use": "Explicar conteúdos com a pessoa integrada ao cenário ou junto de uma tela ou conversa.",
+      "inputs": "Vídeo da pessoa e telas, conversas ou cenas relacionadas à fala. Materiais de atendimento devem usar dados fictícios quando houver informações privadas.",
+      "mechanism": "Uma pessoa explica telas, cenas e conversas. Pode aparecer recortada e integrada ao cenário ou junto de uma tela de demonstração; são variações do mesmo formato.",
+      "steps": [
+        "Montar a fala e identificar o conteúdo visual de cada ideia.",
+        "Escolher entre pessoa integrada ao cenário e pessoa junto da tela ou conversa.",
+        "Mostrar mensagens, ações e apoios no momento correspondente da explicação.",
+        "Alternar pessoa, tela e resultado para manter contexto e legibilidade.",
+        "Revisar recorte quando houver, leitura no celular e dados privados antes de entregar a prévia."
+      ],
+      "avoid": "Não cobrir o rosto, perder bordas importantes do recorte, exibir contatos reais, inventar depoimentos ou usar telas sem relação com a fala.",
+      "pattern": "f08-v2",
+      "video": "assets/videos/F08.mp4",
+      "vimeo": null,
+      "duration": 51,
+      "evidence": "video",
+      "evidenceLabel": "Exemplo em vídeo",
+      "evidenceNote": "Vídeo histórico de referência. A pessoa, marca, cores e fontes deste exemplo não são escolhas para a sua edição.",
+      "cameraRequired": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Telas"
+      ],
+      "buildingBlocks": [
+        "Pessoa e conteúdo visual",
+        "Cenários, telas ou conversas",
+        "Recorte ou composição em camadas"
+      ],
+      "searchTerms": [
+        "pessoa recortada",
+        "recorte",
+        "fundo",
+        "cenario",
+        "camadas",
+        "chroma",
+        "greenscreen",
+        "tela verde",
+        "apresentador",
+        "pessoa e tela",
+        "integracao",
+        "rosto",
+        "sobreposicao",
+        "chat comentado",
+        "conversa",
+        "whatsapp",
+        "mensagens",
+        "atendimento",
+        "sdr",
+        "vendas",
+        "chatbot",
+        "bot",
+        "automacao",
+        "suporte",
+        "cliente",
+        "chat e apresentador",
+        "F09",
+        "pessoa mais tela",
+        "tela dividida",
+        "split screen",
+        "broll",
+        "b roll",
+        "pessoa e cenas",
+        "midia real",
+        "comparacao de marcas",
+        "marcas",
+        "pessoa e midia",
+        "comentario com midia"
+      ],
+      "hasPersonOnScreen": true,
+      "poster": "assets/posters/F08.jpg",
+      "referenceFrames": [],
+      "examples": [
+        {
+          "id": "conversas",
+          "label": "Conversas e telas",
+          "video": "assets/videos/F08-conversas.mp4",
+          "poster": "assets/posters/F08-conversas.jpg",
+          "duration": 49,
+          "evidenceLabel": "Exemplo histórico",
+          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática."
+        },
+        {
+          "id": "tela-dividida",
+          "label": "Tela dividida",
+          "video": "assets/videos/F08-tela-dividida.mp4",
+          "poster": "assets/posters/F08-tela-dividida.jpg",
+          "duration": 212,
+          "evidenceLabel": "Exemplo histórico",
+          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática."
+        },
+        {
+          "id": "comparacao",
+          "label": "Recorte e comparação",
+          "video": "assets/videos/F08-comparacao.mp4",
+          "poster": "assets/posters/F08-comparacao.jpg",
+          "duration": 54,
+          "evidenceLabel": "Exemplo histórico",
+          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática."
+        }
+      ]
+    },
+    {
+      "code": "F10",
+      "name": "Produto Explicado",
+      "description": "Uma pessoa demonstra o produto, alternando sua fala com telas e cenas de uso.",
+      "category": "products",
+      "tags": [
+        "Produto",
+        "Demonstração"
+      ],
+      "use": "Apresentar um produto alternando pessoa, tela e uso real.",
+      "inputs": "Vídeo com apresentador e telas/cenas do produto ou serviço.",
+      "mechanism": "A pessoa apresenta a ideia e a tela mostra a aplicação. Pode haver cenas reais de apoio, em tela cheia ou junto da pessoa.",
+      "steps": [
+        "Abrir com uma situação concreta ou benefício explicado pela fala.",
+        "Cortar erros claros e repetições da gravação.",
+        "Mostrar a interface quando a pessoa falar daquela ação.",
+        "Usar apoio real quando ele demonstrar melhor a situação.",
+        "Fechar com uma conclusão ou pedido final fornecido para o vídeo."
+      ],
+      "avoid": "Não usar cenas genéricas sem relação com o áudio ou prometer resultados que a gravação não comprova.",
+      "pattern": "f10-v1",
+      "video": "assets/videos/F10.mp4",
+      "vimeo": null,
+      "duration": 69,
+      "evidence": "video",
+      "evidenceLabel": "Exemplo em vídeo",
+      "evidenceNote": "Vídeo histórico de referência. A pessoa, marca, cores e fontes deste exemplo não são escolhas para a sua edição.",
+      "cameraRequired": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Telas"
+      ],
+      "buildingBlocks": [
+        "Apresentador",
+        "Demonstração",
+        "Cenas de uso"
+      ],
+      "searchTerms": [
+        "produto",
+        "demonstracao",
+        "demo",
+        "review",
+        "analise",
+        "servico",
+        "beneficio",
+        "como funciona",
+        "como usar",
+        "uso real",
+        "tutorial",
+        "apresentador",
+        "software",
+        "vendas",
+        "vsl"
+      ],
+      "hasPersonOnScreen": true,
+      "poster": "assets/posters/F10.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F12",
+      "name": "Documentário",
+      "description": "A narração conta uma história com imagens, objetos, datas, números e comparações.",
+      "category": "stories",
+      "tags": [
+        "Narração",
+        "Histórias"
+      ],
+      "use": "Contar uma história com imagens, dados e comparações.",
+      "inputs": "Narração, roteiro quando houver e imagens/fontes do assunto.",
+      "mechanism": "Uma história é contada com imagens, objetos recortados, números, etiquetas e comparações. Pode voltar à imagem inicial no encerramento.",
+      "steps": [
+        "Abrir com um contraste concreto que desperte curiosidade.",
+        "Apresentar a pergunta ou o problema da história.",
+        "Explicar a evolução com imagens e demonstrações por etapas.",
+        "Usar números e comparações para mostrar a mudança de escala.",
+        "Retomar o gancho e concluir a história antes do pedido final opcional."
+      ],
+      "avoid": "Não copiar a marca ou o pedido comercial da referência, tomar dígitos intermediários de um contador como fatos ou inventar dados históricos.",
+      "pattern": "f12-v1",
+      "video": "assets/videos/F12.mp4",
+      "vimeo": null,
+      "duration": 80,
+      "evidence": "video",
+      "evidenceLabel": "Referência externa",
+      "evidenceNote": "Referência externa que orienta a receita. Não é um novo vídeo produzido pela fábrica.",
+      "cameraRequired": false,
+      "startingMaterials": [
+        "Áudio",
+        "Roteiro",
+        "Dados"
+      ],
+      "buildingBlocks": [
+        "História narrada",
+        "Objetos e imagens",
+        "Comparações"
+      ],
+      "searchTerms": [
+        "documentario",
+        "historia",
+        "storytelling",
+        "narrador",
+        "narracao",
+        "voz",
+        "sem aparecer",
+        "sem apresentador",
+        "cinema",
+        "objetos",
+        "recortes",
+        "antes depois",
+        "comparacao",
+        "datas",
+        "evolucao",
+        "explicacao"
+      ],
+      "hasPersonOnScreen": false,
+      "poster": "assets/posters/F12.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F13",
+      "name": "Dados Dark",
+      "description": "Sem apresentador em câmera: a narração é explicada com mapas, pontos que representam quantidades, contadores, rankings e comparações animadas.",
+      "category": "explain",
+      "tags": [
+        "Dados",
+        "Sem apresentador"
+      ],
+      "use": "Explicar quantidades e comparações com mapas, pontos e rankings.",
+      "inputs": "Narração ou roteiro, dados com suas fontes e recortes geográficos quando houver. Não precisa de vídeo de apresentador.",
+      "mechanism": "Sem apresentador em câmera: a narração é explicada com mapas, pontos que representam quantidades, contadores, rankings e comparações animadas.",
+      "steps": [
+        "Abrir com uma pergunta ou comparação baseada em dados fornecidos.",
+        "Estabelecer o universo da comparação em um mapa ou conjunto de pontos.",
+        "Reorganizar os elementos em grade, ranking ou grupos, preservando suas quantidades.",
+        "Destacar o número principal e aproximar um caso concreto para explicar a escala.",
+        "Voltar ao conjunto e concluir com a síntese da narração; chamada final apenas quando fornecida pelo usuário."
+      ],
+      "avoid": "Não inventar dados, mudar denominadores entre comparações, exibir valores intermediários como fatos ou herdar tema, políticos, retratos, marca ou chamada eleitoral da referência.",
+      "pattern": "f13-v2",
+      "video": "assets/videos/F13.mp4",
+      "vimeo": null,
+      "duration": 30,
+      "evidence": "video",
+      "evidenceLabel": "Referência externa",
+      "evidenceNote": "Referência externa que orienta a receita. Não é um novo vídeo produzido pela fábrica.",
+      "cameraRequired": false,
+      "startingMaterials": [
+        "Áudio",
+        "Roteiro",
+        "Dados"
+      ],
+      "buildingBlocks": [
+        "Mapas",
+        "Pontos e quantidades",
+        "Rankings e comparações"
+      ],
+      "searchTerms": [
+        "dados",
+        "mapa",
+        "geografia",
+        "pontos",
+        "quantidade",
+        "contagem",
+        "contador",
+        "ranking",
+        "comparacao",
+        "estatistica",
+        "infografico",
+        "numeros",
+        "escala",
+        "sem aparecer",
+        "sem apresentador",
+        "voz",
+        "narracao",
+        "explicacao"
+      ],
+      "hasPersonOnScreen": false,
+      "poster": "assets/posters/F13.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F14",
+      "name": "Lista em Tela",
+      "description": "A pessoa explica uma lista que se completa item por item, com os pontos anteriores visíveis.",
+      "category": "presenter",
+      "tags": [
+        "Apresentador",
+        "Lista cumulativa"
+      ],
+      "use": "Organizar dicas, etapas, motivos, regras ou checklists em uma lista que o público acompanha enquanto você fala.",
+      "inputs": "Vídeo da pessoa falando e os itens da lista, extraídos da fala ou fornecidos explicitamente. Escolher a ID visual e a proporção.",
+      "mechanism": "Os itens numerados entram junto da explicação e permanecem na tela, formando uma lista cumulativa ao lado da pessoa.",
+      "steps": [
+        "Montar a fala e conferir a ordem e a quantidade real dos itens.",
+        "Reservar espaço para a lista sem cobrir a pessoa.",
+        "Exibir o número ou marcador e completar o texto quando a ideia correspondente é falada.",
+        "Manter os itens anteriores visíveis para facilitar a comparação e a lembrança.",
+        "Revisar a lista final, sincronia e leitura no celular."
+      ],
+      "avoid": "Não inventar itens, fixar os quatro números do exemplo, usar texto longo ou herdar ator, tema, marca, cores e fonte da referência.",
+      "pattern": "f14-v1",
+      "video": "assets/videos/F14.mp4",
+      "vimeo": null,
+      "duration": 41,
+      "evidence": "video",
+      "evidenceLabel": "Prévia de referência",
+      "evidenceNote": "Prévia real fornecida na pasta recebida. Nome e mecânica foram conferidos pelo vídeo; pessoa, assunto e aparência não são escolhas para a sua edição.",
+      "cameraRequired": true,
+      "hasPersonOnScreen": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Itens da lista"
+      ],
+      "buildingBlocks": [
+        "Pessoa em câmera",
+        "Itens numerados",
+        "Lista que se completa"
+      ],
+      "searchTerms": [
+        "lista",
+        "listagem",
+        "checklist",
+        "itens",
+        "numerado",
+        "passos",
+        "etapas",
+        "dicas",
+        "motivos",
+        "regras",
+        "top",
+        "enumeracao",
+        "lista em tela",
+        "passo a passo",
+        "apresentador"
+      ],
+      "poster": "assets/posters/F14.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F15",
+      "name": "Dois Lados",
+      "description": "A pessoa classifica opções em duas colunas, e cada item ocupa o lado indicado pela fala.",
+      "category": "presenter",
+      "tags": [
+        "Apresentador",
+        "Classificação A/B"
+      ],
+      "use": "Separar opções em dois grupos: faço/não faço, vale/não vale, certo/errado ou outras escolhas fornecidas na fala.",
+      "inputs": "Vídeo da pessoa, os dois critérios de classificação e itens ou imagens relacionados à fala. Escolher a ID visual e a proporção.",
+      "mechanism": "Duas áreas com rótulos organizam a comparação. Cada item aparece quando é citado e vai para o lado escolhido, permanecendo até o quadro final.",
+      "steps": [
+        "Conferir os dois critérios e a classificação de cada item na fala.",
+        "Criar duas áreas legíveis sem cobrir rosto, mãos ou legenda.",
+        "Apresentar cada item no momento correspondente e posicioná-lo no lado correto.",
+        "Manter os itens já classificados para formar a comparação final.",
+        "Revisar sentido, posição, leitura e sincronia antes da entrega."
+      ],
+      "avoid": "Não inverter o sentido da classificação, fabricar recomendações, fixar verde/vermelho como parte do formato ou transformar um exemplo de finanças em conselho para outro vídeo.",
+      "pattern": "f15-v1",
+      "video": "assets/videos/F15.mp4",
+      "vimeo": null,
+      "duration": 32,
+      "evidence": "video",
+      "evidenceLabel": "Prévia de referência",
+      "evidenceNote": "Prévia real fornecida na pasta recebida. Nome e mecânica foram conferidos pelo vídeo; pessoa, assunto e aparência não são escolhas para a sua edição.",
+      "cameraRequired": true,
+      "hasPersonOnScreen": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Itens da comparação"
+      ],
+      "buildingBlocks": [
+        "Duas colunas",
+        "Rótulos de escolha",
+        "Itens classificados"
+      ],
+      "searchTerms": [
+        "dois lados",
+        "duas colunas",
+        "comparacao",
+        "comparar",
+        "bom ruim",
+        "bomxruim",
+        "faco nao faco",
+        "certo errado",
+        "vale nao vale",
+        "pros contras",
+        "a b",
+        "opcoes",
+        "classificacao",
+        "escolhas",
+        "sim nao",
+        "icons",
+        "icones",
+        "decisao",
+        "apresentador"
+      ],
+      "poster": "assets/posters/F15.jpg",
+      "referenceFrames": [],
+      "examples": []
+    },
+    {
+      "code": "F16",
+      "name": "Comentário com B-roll",
+      "description": "Comentário com apresentador, B-roll pesquisado para cada ideia e gráficos nos pontos-chave.",
+      "category": "stories",
+      "tags": [
+        "Pesquisa",
+        "Mídia real"
+      ],
+      "use": "Comentar um assunto com cenas reais que sustentam a fala, pesquisa de B-roll e gráficos explicativos nos pontos-chave.",
+      "inputs": "Gravação do apresentador, assunto e fontes ou materiais do tema. A pesquisa de B-roll faz parte do planejamento; música é opcional. Escolher também a ID visual.",
+      "mechanism": "O apresentador comenta o assunto enquanto cenas reais pesquisadas sustentam cada ideia. A edição alterna pessoa, mídia e gráficos importantes, com planejamento de pesquisa além da composição de tela.",
+      "steps": [
+        "Montar a fala, escolher as melhores tomadas e separar as ideias retidas; câmera lateral é opcional e precisa de sincronia.",
+        "Pesquisar B-roll da coisa citada, guardar fontes e arquivos locais e inspecionar quadros no layout. TikTok/YouTube usam ScrapeCreators.",
+        "Alternar câmera, split com profundidade, cartão de vídeo e gráfico em tela cheia; manter enquadramento estável e uma informação por estado.",
+        "Usar legendas curtas, esconder a legenda durante destaques e gráficos e aplicar entradas suaves na zona da legenda.",
+        "Ajustar a voz e a trilha autorizada pela narrativa; revisar recorte, leitura, qualidade da mídia, fatos e ausência de assinaturas de marca."
+      ],
+      "avoid": "Não simplificar este formato a pessoa mais tela, usar B-roll genérico por conveniência, trocar o provedor de TikTok/YouTube, inventar fatos ou herdar marca, logotipo, textos de assinatura, ator, paleta e fonte da referência.",
+      "pattern": "f16-v1",
+      "video": "assets/videos/F16.mp4",
+      "vimeo": null,
+      "duration": 144,
+      "evidence": "video",
+      "evidenceLabel": "Referência externa",
+      "evidenceNote": "Referência de comentário com mídia real e gráficos. O workflow também inclui pesquisa de B-roll; o vídeo de exemplo não é uma comprovação da pesquisa. Sua marca, pessoa e aparência não são herdadas.",
+      "cameraRequired": true,
+      "hasPersonOnScreen": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Fontes do assunto"
+      ],
+      "buildingBlocks": [
+        "Apresentador",
+        "B-roll pesquisado",
+        "Gráficos e destaques"
+      ],
+      "searchTerms": [
+        "comentario",
+        "pesquisa",
+        "broll",
+        "b roll",
+        "b-roll",
+        "tiktok",
+        "midia real",
+        "video de apoio",
+        "cenas reais",
+        "fontes",
+        "reportagem",
+        "noticia",
+        "analise",
+        "contexto",
+        "empire reels",
+        "historia",
+        "apresentador",
+        "grafico",
+        "argumento"
+      ],
+      "poster": "assets/posters/F16.jpg",
+      "referenceFrames": [],
+      "examples": []
+    }
+  ],
+  "identities": [
+    {
+      "code": "ID01",
+      "name": "Verde",
+      "palette": {
+        "background": "#0B141A",
+        "text": "#E9EDEF",
+        "primary": "#25D366",
+        "surface": "#202C33",
+        "muted": "#AEBAC1"
+      },
+      "typography": {
+        "headline": "Inter",
+        "body": "Inter",
+        "labels": "IBM Plex Mono"
+      }
+    },
+    {
+      "code": "ID02",
+      "name": "Lima",
+      "palette": {
+        "background": "#101010",
+        "text": "#FFFFFF",
+        "primary": "#D7FF3A",
+        "surface": "#202020",
+        "muted": "#A3A3A3"
+      },
+      "typography": {
+        "headline": "Inter",
+        "body": "Inter",
+        "labels": "IBM Plex Mono"
+      }
+    },
+    {
+      "code": "ID03",
+      "name": "Azul",
+      "palette": {
+        "background": "#0C1118",
+        "text": "#F2F6FC",
+        "primary": "#4A92E6",
+        "surface": "#172333",
+        "muted": "#9AA8B8"
+      },
+      "typography": {
+        "headline": "Inter",
+        "body": "Inter",
+        "labels": "IBM Plex Mono"
+      }
+    },
+    {
+      "code": "ID04",
+      "name": "Dourado",
+      "palette": {
+        "background": "#171714",
+        "text": "#F1EEE5",
+        "primary": "#D6B46A",
+        "surface": "#282720",
+        "muted": "#B6B09F"
+      },
+      "typography": {
+        "headline": "Libre Baskerville",
+        "body": "Inter",
+        "labels": "IBM Plex Mono"
+      }
+    },
+    {
+      "code": "ID05",
+      "name": "Roxo",
+      "palette": {
+        "background": "#F7F4FB",
+        "text": "#17092C",
+        "primary": "#820AD1",
+        "surface": "#FFFFFF",
+        "muted": "#5C0F8B"
+      },
+      "typography": {
+        "headline": "Manrope",
+        "body": "Manrope",
+        "labels": "JetBrains Mono"
+      }
+    },
+    {
+      "code": "ID06",
+      "name": "Azul Claro",
+      "palette": {
+        "background": "#F5F8FC",
+        "text": "#13233C",
+        "primary": "#0A4DFF",
+        "surface": "#FFFFFF",
+        "muted": "#64748B"
+      },
+      "typography": {
+        "headline": "Inter",
+        "body": "Inter",
+        "labels": "IBM Plex Mono"
+      }
+    },
+    {
+      "code": "ID07",
+      "name": "Laranja",
+      "palette": {
+        "background": "#F7F6F3",
+        "text": "#101828",
+        "primary": "#F05A28",
+        "surface": "#FFFFFF",
+        "muted": "#667085"
+      },
+      "typography": {
+        "headline": "Inter",
+        "body": "Inter",
+        "labels": "IBM Plex Mono"
+      }
+    },
+    {
+      "code": "ID08",
+      "name": "Azul e Papel",
+      "palette": {
+        "background": "#141B25",
+        "text": "#F5F4F0",
+        "primary": "#67ACE0",
+        "surface": "#EDE9DF",
+        "muted": "#9AA8B8"
+      },
+      "typography": {
+        "headline": "Inter",
+        "body": "Inter",
+        "labels": "IBM Plex Mono"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "label": "Todos os modelos"
+    },
+    {
+      "id": "presenter",
+      "label": "Com apresentador"
+    },
+    {
+      "id": "stories",
+      "label": "Histórias e narração"
+    },
+    {
+      "id": "products",
+      "label": "Produtos e telas"
+    },
+    {
+      "id": "explain",
+      "label": "Ideias e processos"
+    }
+  ]
+}

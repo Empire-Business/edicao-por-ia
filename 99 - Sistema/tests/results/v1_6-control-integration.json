@@ -1,0 +1,38 @@
+{
+  "kind": "Local FFmpeg/filesystem/subprocess integration; provider protocols are synthetic fixtures",
+  "checks": {
+    "two_child_jobs_one_batch": true,
+    "repeat_request_resumes": true,
+    "setup_no_unexpected_conflicts": true,
+    "setup_rerun_idempotent": true,
+    "two_native_agent_directories": true,
+    "no_models_inferred_as_available": true,
+    "child_1_real_render_duration": true,
+    "child_1_waits_for_approval": true,
+    "child_1_scope_enforced": true,
+    "child_2_real_render_duration": true,
+    "child_2_waits_for_approval": true,
+    "child_2_scope_enforced": true,
+    "original_hash_preserved": true,
+    "claude_fixture_subprocess_success": true,
+    "reported_model_not_assumed_alias": true,
+    "completed_packet_reused": true,
+    "codex_dollar_native_fails_closed": true,
+    "tokens_only_cost_stays_unknown": true,
+    "unknown_retains_reservation": true,
+    "shared_budget_reconciled": true,
+    "cross_process_resume_without_retranscribing": true,
+    "cross_process_budget_not_reset": true,
+    "timeout_kills_fake_process_and_records_unknown": true,
+    "timeout_not_assumed_free": true,
+    "asset_change_keeps_transcription": true
+  },
+  "passed": 25,
+  "total": 25,
+  "limitations": [
+    "No live Codex/Claude invocation, login, model access or paid consumption.",
+    "No actual speech transcription or semantic/visual recognition.",
+    "Approval gate waits; no human artistic approval was simulated as real.",
+    "Windows/macOS installers not executed; tested on this Linux container."
+  ]
+}

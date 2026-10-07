@@ -1,0 +1,17 @@
+{
+  "sources": [
+    "workspace://01 - Enviar vídeos/gravacao.mp4"
+  ],
+  "expected_outputs": 1,
+  "profile": "equilibrado",
+  "reference_scripts": [],
+  "reference_assignments": {},
+  "supporting_assets": [],
+  "budget": {
+    "mode": "unknown"
+  },
+  "name": null,
+  "format": "F01",
+  "notes": "Exemplo de estrutura. A pessoa precisa escolher F e ID explicitamente; estes códigos não são uma dupla padrão.",
+  "visual_identity": "ID03"
+}

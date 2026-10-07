@@ -1,0 +1,32 @@
+# Conferência operacional dos formatos consolidados
+
+Este roteiro não altera nomes, receitas nem as escolhas visuais. O coordenador lê a receita exata e a referência do UID selecionado, planeja cenas e compara a execução. Receitas atuais têm status `draft`: mecanismos foram descritos e referências preservadas, mas isso não certifica uma nova edição artística para cada entrada. A primeira aplicação em novos materiais exige piloto/prévia real.
+
+| Formato | O que precisa aparecer de verdade | Execução e prova |
+| --- | --- | --- |
+| F01 WhatsApp Narrado | Narração conduz mensagens/áudio/cenas dentro do chat, com leitura coerente e identidade da conversa do trabalho | Cena de interface ilustrativa em HTML/JS ou motion equivalente, retimada pela fala final; inspecionar balões, waveform/tempo, expansão e volta à conversa. Não entregar só pessoa com legenda. |
+| F04 Pessoa → Animação | Pessoa na abertura; corpo narrado com animações/imagens pertinentes | Montagem híbrida com intro real, corpo visual criado na timeline final e continuidade de voz; conferir a transição e presença da pessoa apenas onde previsto. |
+| F05 Notícia Comentada | Títulos, fontes verificadas, dados/diagramas e imagens organizam o comentário | Cena editorial motivada, hierarquia e leitura no celular; conferir fonte factual e ausência de EMPIRE/assinatura automática. |
+| F06 Diagramas | Relações visíveis entre módulos, passos, ícones e números | Animações que realmente mostram o vínculo/progressão no tempo da fala; texto ou legenda isolados não comprovam um diagrama. |
+| F07 Motion Institucional | Interface recriada com ações, mudanças de estado e resultados verificados | Fluxo de product motion/Hyperframes ou kit de cena seekável; testar cursor, campos, menus e proporções. Prints sem ações não comprovam o mecanismo. |
+| F08 Pessoa + Tela | Pessoa junto do conteúdo explicado, na variação adequada | Integração ou tela explicada conforme a receita; máscara real e bordas conferidas quando houver recorte, leitura e conteúdo relacionado. Estimativa de caixa não é máscara. |
+| F10 Produto Explicado | Pessoa demonstra o produto e a tela/cena explica a aplicação | Montagem por ideias gravadas, cenas reais/screens no momento correto e conclusão fornecida; não usar apoio genérico ou promessa inventada. |
+| F12 Documentário | História narrada com objetos/imagens, dados e comparações de escala | Timeline de cenas e motion narrativo, contador/callout/retomada do gancho quando úteis; dados verdadeiros e leitura no ritmo da narração. |
+| F13 Dados Dark | Mapas, pontos/quantidades, contadores e comparações sem apresentador | Motion de dados na timeline narrada; provar escala, unidades, período e reorganização sem alterar significado. Não copiar pessoa, apelo político ou identidade do exemplo. |
+| F14 Lista em Tela | A lista entra item a item e preserva o conjunto durante a fala | Derivar itens da gravação, retimar entradas, manter anteriores e conferir rosto/leitura. Número de itens não é fixo pela referência. |
+| F15 Dois Lados | Classificação aparece em duas áreas e acumula itens de acordo com a fala | Rótulos/posições/símbolos dão sentido, com movimento e persistência dos itens; conferir cada classificação contra a gravação, sem depender só de cores. |
+| F16 Comentário com B-roll | Apresentador alterna com mídia pesquisada e gráficos relevantes; ênfases, legendas e trilha obedecem à receita | Pesquisa por ideia via provedor autorizado, mídia local e origem registrada; layouts full/split/card/graphic, máscara real, timing de destaque/legenda, voz inteligível e adaptação das referências históricas sem marca. Não reduzir ao F08. |
+
+## Provas exigidas
+
+Antes da montagem, registrar frames/cenas reais da referência, decisões por critério e aplicação das regras de visual/motion, captions, áudio, pesquisa e layouts do contrato. O plano não é uma aprovação do resultado. Durante execução, usar as ferramentas locais adequadas: EDL, retiming, criação de cena JS/HTML seekável, render, inspeção de frames e QA. Componentes históricos só entram após adaptação à ID e retirada de assinaturas.
+
+Após render, comparar cenas de referência e do vídeo exato, entradas/holds/saídas, ritmo, composição, voz e leitura. A revisão cobre também restrições e identidade, não apenas o aspecto parecido. Se uma ferramenta, máscara, fonte, gravação, referência ou pesquisa requerida não estiver disponível, a tarefa fica pendente com motivo concreto. Não declarar executado por um nome de arquivo, JSON preenchido ou imagem estática.
+
+Um teste de programação confirma gates, provenance e integridade; capacidade estética depende do piloto real com formato/ID explicitamente escolhidos e materiais autorizados. Não selecionar um par por conta própria nem renderizar vídeos não pedidos para anunciar que todos os formatos foram certificados.
+
+## Divergência realmente observada: F05
+
+Na inspeção de frames do exemplo publicado, a pessoa permanece em cenas do corpo (aproximadamente 31,7s e 67,8s). A receita f05-v1 guarda `visual.presenter_on_camera: opening_only`. A receita consolidada não foi alterada. O contrato registra esse conflito e exige uma instrução atual para a edição ou ordem expressa do autor para revisão; o coordenador não pode escolher um comportamento contraditório e alegar que a semelhança ficou comprovada.
+
+A referência primária dos 12 contratos passa a coincidir com o vídeo efetivamente escolhido na galeria, inclusive as prévias explícitas de F04/F05/F06. Uma referência histórica alternativa não substitui esse exemplo por conveniência.

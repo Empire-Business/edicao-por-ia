@@ -1,0 +1,8 @@
+{
+  "root": "/mnt/data/cvf_v16_build/claude-video-factory",
+  "version": "1.6.0",
+  "required_count": 135,
+  "errors": [],
+  "warnings": [],
+  "ok": true
+}

@@ -1,0 +1,52 @@
+id: talking-head-clean-v1
+version: 1
+status: starter
+purpose: Clean talking-head edit that feels natural rather than hyper-edited.
+engine: ffmpeg
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: natural
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 1.5
+  min_jump_cut_interval_seconds: 0.9
+  preserve_required_phrases: []
+visual:
+  punch_ins: selective
+  max_punch_in_scale: 1.06
+  random_effects: false
+captions:
+  enabled: true
+  max_lines: 2
+  max_chars_per_line: 34
+  word_highlight: false
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+forbidden:
+  - gratuitous_zoom
+  - random_transition
+  - stretch_video
+  - delete_source
+
+insertion_assets:
+  policy: optional
+  density: low
+  default_preferred_duration_s: 2.0
+  default_max_duration_s: 5.0
+  allow_image_motion: false

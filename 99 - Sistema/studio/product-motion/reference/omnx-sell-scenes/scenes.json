@@ -1,0 +1,98 @@
+{
+  "formats": {
+    "h": {
+      "W": 1920,
+      "H": 1080
+    },
+    "v": {
+      "W": 1080,
+      "H": 1920
+    }
+  },
+  "overlap": 0.4,
+  "scenes": [
+    {
+      "id": "s01-intro",
+      "dur": 4.5
+    },
+    {
+      "id": "s02-shell",
+      "dur": 5.5
+    },
+    {
+      "id": "s03-agenda",
+      "dur": 7
+    },
+    {
+      "id": "s04-precall",
+      "dur": 8
+    },
+    {
+      "id": "s05-room",
+      "dur": 10,
+      "cls": "dark-scene"
+    },
+    {
+      "id": "s06-spy",
+      "dur": 7,
+      "cls": "dark-scene"
+    },
+    {
+      "id": "s07-roomtools",
+      "dur": 6,
+      "cls": "dark-scene"
+    },
+    {
+      "id": "s08-gravacoes",
+      "dur": 7
+    },
+    {
+      "id": "s09-analise-list",
+      "dur": 6
+    },
+    {
+      "id": "s10-analise",
+      "dur": 9
+    },
+    {
+      "id": "s11-insights",
+      "dur": 7
+    },
+    {
+      "id": "s12-oraculo",
+      "dur": 6
+    },
+    {
+      "id": "s13-plano-pdi",
+      "dur": 8
+    },
+    {
+      "id": "s14-dashboards",
+      "dur": 8
+    },
+    {
+      "id": "s15-biblioteca",
+      "dur": 7
+    },
+    {
+      "id": "s16-agente",
+      "dur": 7
+    },
+    {
+      "id": "s17-auto",
+      "dur": 7
+    },
+    {
+      "id": "s18-workspace",
+      "dur": 7
+    },
+    {
+      "id": "s19-outro",
+      "dur": 6
+    }
+  ],
+  "music": {
+    "src": "assets/audio/bed.wav",
+    "volume": 0.9
+  }
+}

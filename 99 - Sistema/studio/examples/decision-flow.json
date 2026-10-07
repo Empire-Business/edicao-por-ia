@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "decision-flow",
+  "child_id": "synthetic-demo",
+  "entry": {
+    "path": "decision-flow.html",
+    "sha256": "dcb94dc37a6dc9a49e65d81b48fd03d7e82fdd8dce2196cbf9934a4b3ac10947"
+  },
+  "assets": [],
+  "width": 640,
+  "height": 360,
+  "fps": 24,
+  "duration_frames": 144,
+  "mode": "full_frame",
+  "cut_frames": []
+}

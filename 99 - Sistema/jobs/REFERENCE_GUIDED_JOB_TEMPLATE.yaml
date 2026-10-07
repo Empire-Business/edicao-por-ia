@@ -1,0 +1,21 @@
+id: example-reference-guided
+status: created
+pattern: talking-head-clean-v2
+expected_outputs: 1
+sources:
+  - path: /absolute/path/to/recording.mp4
+    role: primary
+reference_script:
+  enabled: true
+  paths: [references/roteiro.md]
+  mode: flexible
+  reorder_policy: preserve_unless_requested
+  missing_content_policy: report_do_not_invent
+silence_removal:
+  enabled: true
+  mode: natural
+  protected_ranges_path: edit/protected_ranges.json
+requirements:
+  speech_cleanup: true
+  captions: pattern_default
+notes: "Use the script as a guide; preserve equivalent paraphrases and remove dead time."

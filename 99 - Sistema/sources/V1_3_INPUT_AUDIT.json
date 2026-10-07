@@ -1,0 +1,17 @@
+{
+  "input_archive": "claude-video-factory-v1.2.0.zip",
+  "sha256": "a9cec9ddcaa8c46e860d2798e7bb52f811260427f31ec9ec60e545d2fb93ecfd",
+  "received_archive_entries": 141,
+  "skipped_generated_bytecode": [
+    "claude-video-factory/tools/__pycache__/",
+    "claude-video-factory/tools/__pycache__/plan_silence_cuts.cpython-313.pyc",
+    "claude-video-factory/tools/__pycache__/render_edl.cpython-313.pyc",
+    "claude-video-factory/tools/__pycache__/prepare_script_comparison.cpython-313.pyc",
+    "claude-video-factory/tools/__pycache__/prepare_supporting_assets.cpython-313.pyc"
+  ],
+  "notes": [
+    "Original source files preserved; generated stale Python bytecode omitted.",
+    "No client media was supplied for this revision.",
+    "v1/v2 video presets preserved byte-for-byte relative to v1.2 archive."
+  ]
+}

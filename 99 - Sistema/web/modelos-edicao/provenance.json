@@ -1,0 +1,19 @@
+{
+  "scope": "author_distributed_stock_only",
+  "catalog_sha256": "b8842dde0d915300e0cd0895c68caa116ea56129f6e0a10a21c5f29c43eb1d05",
+  "publication_sha256": "1eed638fe6645f8023e9e73025eeb458dff8cd8cc4e8986c78ec50079fa37546",
+  "excluded_codes": [
+    "F02",
+    "F03",
+    "F09",
+    "F11",
+    "F17",
+    "F18"
+  ],
+  "sources": {
+    "config/design-defaults.json": "ff5b18289654cfc4a26cdf30cabe7f2d2454b6704f759ef4ac929ff7385bbd9a",
+    "config/reference-library.json": "cf7da32f81874450ec7a1b32566dc2931f86026d643c24968c2e2c9a31e8a62f",
+    "tools/format_guides.py": "f30aa58625e0d7f84bd998d908fc185a85d1474465a9d1f4aac740fe851ecbab"
+  },
+  "media_policy": "Verified author-indexed originals preserved. Web derivatives only; no jobs, user catalogues or memory included."
+}

@@ -1,0 +1,425 @@
+{
+  "F01": {
+    "cameraRequired": false,
+    "startingMaterials": [
+      "Áudio",
+      "Vídeo"
+    ],
+    "buildingBlocks": [
+      "Mensagens",
+      "Áudio em tela",
+      "Conversa em celular"
+    ],
+    "searchTerms": [
+      "whatsapp",
+      "zap",
+      "wpp",
+      "chat",
+      "mensagens",
+      "conversa",
+      "bate papo",
+      "audio",
+      "voz",
+      "narracao",
+      "sem aparecer",
+      "sem gravar camera",
+      "historias",
+      "prints",
+      "celular",
+      "reels"
+    ],
+    "hasPersonOnScreen": false
+  },
+  "F04": {
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Áudio"
+    ],
+    "buildingBlocks": [
+      "Pessoa no gancho",
+      "Narração",
+      "Animações no corpo"
+    ],
+    "searchTerms": [
+      "pessoa depois animacao",
+      "gancho",
+      "abertura",
+      "rosto no inicio",
+      "voz",
+      "narracao",
+      "motion",
+      "historia",
+      "explicacao",
+      "apresentador",
+      "vsl",
+      "aula",
+      "argumento"
+    ],
+    "hasPersonOnScreen": true
+  },
+  "F05": {
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Áudio",
+      "Documentos"
+    ],
+    "buildingBlocks": [
+      "Notícia",
+      "Recortes de matéria",
+      "Comentário da pessoa"
+    ],
+    "searchTerms": [
+      "noticia",
+      "jornal",
+      "jornalismo",
+      "materia",
+      "manchete",
+      "artigo",
+      "recorte",
+      "atualidades",
+      "reportagem",
+      "comentario",
+      "opiniao",
+      "documento",
+      "analise",
+      "fatos"
+    ],
+    "hasPersonOnScreen": true
+  },
+  "F06": {
+    "cameraRequired": false,
+    "startingMaterials": [
+      "Áudio",
+      "Roteiro",
+      "Dados"
+    ],
+    "buildingBlocks": [
+      "Módulos",
+      "Conexões",
+      "Etapas e números"
+    ],
+    "searchTerms": [
+      "diagrama",
+      "fluxograma",
+      "fluxo",
+      "processo",
+      "etapas",
+      "passo a passo",
+      "conexao",
+      "mapa mental",
+      "esquema",
+      "grafico",
+      "explicar",
+      "explicacao",
+      "aula",
+      "didatico",
+      "sem aparecer",
+      "voz",
+      "tutorial"
+    ],
+    "hasPersonOnScreen": false
+  },
+  "F07": {
+    "cameraRequired": false,
+    "startingMaterials": [
+      "Telas",
+      "Roteiro",
+      "Áudio"
+    ],
+    "buildingBlocks": [
+      "Interface recriada",
+      "Ações em tela",
+      "Recursos da plataforma"
+    ],
+    "searchTerms": [
+      "motion institucional",
+      "plataforma",
+      "software",
+      "saas",
+      "app",
+      "aplicativo",
+      "interface",
+      "ui",
+      "ux",
+      "tela",
+      "produto digital",
+      "tour",
+      "demo",
+      "demonstracao",
+      "tutorial",
+      "navegacao",
+      "formulario",
+      "preenchimento",
+      "sem aparecer",
+      "sem apresentador"
+    ],
+    "hasPersonOnScreen": false
+  },
+  "F08": {
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Telas"
+    ],
+    "buildingBlocks": [
+      "Pessoa e conteúdo visual",
+      "Cenários, telas ou conversas",
+      "Recorte ou composição em camadas"
+    ],
+    "searchTerms": [
+      "pessoa recortada",
+      "recorte",
+      "fundo",
+      "cenario",
+      "camadas",
+      "chroma",
+      "greenscreen",
+      "tela verde",
+      "apresentador",
+      "pessoa e tela",
+      "integracao",
+      "rosto",
+      "sobreposicao",
+      "chat comentado",
+      "conversa",
+      "whatsapp",
+      "mensagens",
+      "atendimento",
+      "sdr",
+      "vendas",
+      "chatbot",
+      "bot",
+      "automacao",
+      "suporte",
+      "cliente",
+      "chat e apresentador",
+      "F09",
+      "pessoa mais tela",
+      "tela dividida",
+      "split screen",
+      "broll",
+      "b roll",
+      "pessoa e cenas",
+      "midia real",
+      "comparacao de marcas",
+      "marcas",
+      "pessoa e midia",
+      "comentario com midia"
+    ],
+    "hasPersonOnScreen": true
+  },
+  "F10": {
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Telas"
+    ],
+    "buildingBlocks": [
+      "Apresentador",
+      "Demonstração",
+      "Cenas de uso"
+    ],
+    "searchTerms": [
+      "produto",
+      "demonstracao",
+      "demo",
+      "review",
+      "analise",
+      "servico",
+      "beneficio",
+      "como funciona",
+      "como usar",
+      "uso real",
+      "tutorial",
+      "apresentador",
+      "software",
+      "vendas",
+      "vsl"
+    ],
+    "hasPersonOnScreen": true
+  },
+  "F12": {
+    "cameraRequired": false,
+    "startingMaterials": [
+      "Áudio",
+      "Roteiro",
+      "Dados"
+    ],
+    "buildingBlocks": [
+      "História narrada",
+      "Objetos e imagens",
+      "Comparações"
+    ],
+    "searchTerms": [
+      "documentario",
+      "historia",
+      "storytelling",
+      "narrador",
+      "narracao",
+      "voz",
+      "sem aparecer",
+      "sem apresentador",
+      "cinema",
+      "objetos",
+      "recortes",
+      "antes depois",
+      "comparacao",
+      "datas",
+      "evolucao",
+      "explicacao"
+    ],
+    "hasPersonOnScreen": false
+  },
+  "F13": {
+    "cameraRequired": false,
+    "startingMaterials": [
+      "Áudio",
+      "Roteiro",
+      "Dados"
+    ],
+    "buildingBlocks": [
+      "Mapas",
+      "Pontos e quantidades",
+      "Rankings e comparações"
+    ],
+    "searchTerms": [
+      "dados",
+      "mapa",
+      "geografia",
+      "pontos",
+      "quantidade",
+      "contagem",
+      "contador",
+      "ranking",
+      "comparacao",
+      "estatistica",
+      "infografico",
+      "numeros",
+      "escala",
+      "sem aparecer",
+      "sem apresentador",
+      "voz",
+      "narracao",
+      "explicacao"
+    ],
+    "hasPersonOnScreen": false
+  },
+  "F14": {
+    "category": "presenter",
+    "tags": [
+      "Apresentador",
+      "Lista cumulativa"
+    ],
+    "use": "Organizar dicas, etapas, motivos, regras ou checklists em uma lista que o público acompanha enquanto você fala.",
+    "cameraRequired": true,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Itens da lista"
+    ],
+    "buildingBlocks": [
+      "Pessoa em câmera",
+      "Itens numerados",
+      "Lista que se completa"
+    ],
+    "searchTerms": [
+      "lista",
+      "listagem",
+      "checklist",
+      "itens",
+      "numerado",
+      "passos",
+      "etapas",
+      "dicas",
+      "motivos",
+      "regras",
+      "top",
+      "enumeracao",
+      "lista em tela",
+      "passo a passo",
+      "apresentador"
+    ]
+  },
+  "F15": {
+    "category": "presenter",
+    "tags": [
+      "Apresentador",
+      "Classificação A/B"
+    ],
+    "use": "Separar opções em dois grupos: faço/não faço, vale/não vale, certo/errado ou outras escolhas fornecidas na fala.",
+    "cameraRequired": true,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Itens da comparação"
+    ],
+    "buildingBlocks": [
+      "Duas colunas",
+      "Rótulos de escolha",
+      "Itens classificados"
+    ],
+    "searchTerms": [
+      "dois lados",
+      "duas colunas",
+      "comparacao",
+      "comparar",
+      "bom ruim",
+      "bomxruim",
+      "faco nao faco",
+      "certo errado",
+      "vale nao vale",
+      "pros contras",
+      "a b",
+      "opcoes",
+      "classificacao",
+      "escolhas",
+      "sim nao",
+      "icons",
+      "icones",
+      "decisao",
+      "apresentador"
+    ]
+  },
+  "F16": {
+    "category": "stories",
+    "tags": [
+      "Pesquisa",
+      "Mídia real"
+    ],
+    "use": "Comentar um assunto com cenas reais que sustentam a fala, pesquisa de B-roll e gráficos explicativos nos pontos-chave.",
+    "cameraRequired": true,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Fontes do assunto"
+    ],
+    "buildingBlocks": [
+      "Apresentador",
+      "B-roll pesquisado",
+      "Gráficos e destaques"
+    ],
+    "searchTerms": [
+      "comentario",
+      "pesquisa",
+      "broll",
+      "b roll",
+      "b-roll",
+      "tiktok",
+      "midia real",
+      "video de apoio",
+      "cenas reais",
+      "fontes",
+      "reportagem",
+      "noticia",
+      "analise",
+      "contexto",
+      "empire reels",
+      "historia",
+      "apresentador",
+      "grafico",
+      "argumento"
+    ]
+  }
+}

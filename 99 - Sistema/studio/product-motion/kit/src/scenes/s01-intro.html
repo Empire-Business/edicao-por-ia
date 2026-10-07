@@ -1,0 +1,36 @@
+<style>
+  [data-composition-id="s01-intro"] .stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px; }
+  [data-composition-id="s01-intro"] .wordmark { font-size: 150px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--fg); }
+  [data-composition-id="s01-intro"] .line { display: flex; gap: 20px; font-size: 76px; font-weight: 600; letter-spacing: -0.02em; color: var(--fg); }
+  [data-composition-id="s01-intro"] .line span { display: block; }
+  [data-composition-id="s01-intro"] .line .g { color: var(--primary); }
+  [data-composition-id="s01-intro"] .tag { font-size: 30px; color: var(--muted-fg); text-align: center; max-width: 1100px; }
+  [data-composition-id="s01-intro"] .rule { width: 140px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--gold), var(--primary)); display: block; }
+  #root.fmt-v [data-composition-id="s01-intro"] .wordmark { font-size: 120px; }
+  #root.fmt-v [data-composition-id="s01-intro"] .line { flex-wrap: wrap; justify-content: center; font-size: 78px; max-width: 900px; row-gap: 0; }
+  #root.fmt-v [data-composition-id="s01-intro"] .tag { font-size: 34px; max-width: 860px; }
+</style>
+<div class="paper"></div>
+<div class="paper-grid" data-layout-allow-overflow></div>
+<div class="stage" data-layout-allow-overflow>
+  {{partial:logo:intro}}
+  <div class="rule"></div>
+  <!-- TODO: promise line (4 words, last one .g gold) + one-line tagline, in the client's language -->
+  <div class="line"><span>Palavra</span><span>palavra</span><span>palavra</span><span class="g">resultado.</span></div>
+  <div class="tag">Uma frase que explica o produto.</div>
+</div>
+<script>
+(() => {
+  const all = document.querySelectorAll('[data-composition-id="{{ID}}"]');
+  const root = all[all.length - 1];
+  const $ = gsap.utils.selector(root);
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo($('.paper-grid'), { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 2.4, ease: 'power2.out' }, 0);
+  if ($('.wordmark').length) tl.fromTo($('.wordmark'), { y: 40, opacity: 0, clipPath: 'inset(0 100% 0 0)' }, { y: 0, opacity: 1, clipPath: 'inset(0 0% 0 0)', duration: 0.8, ease: 'expo.out' }, 0.2);
+  tl.fromTo($('.rule'), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: 'power3.inOut' }, 1.0);
+  tl.fromTo($('.line span'), { y: 50, opacity: 0, filter: 'blur(8px)' }, { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.6, stagger: 0.09, ease: 'power3.out' }, 1.2);
+  tl.fromTo($('.tag'), { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' }, 1.8);
+  tl.to($('.stage'), { scale: 1.12, opacity: 0, filter: 'blur(6px)', duration: 0.55, ease: 'power2.in' }, {{DUR}} - 0.6);
+  window.__timelines["{{ID}}"] = tl;
+})();
+</script>

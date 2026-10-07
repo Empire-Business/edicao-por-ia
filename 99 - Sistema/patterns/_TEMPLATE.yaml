@@ -1,0 +1,58 @@
+id: pattern-name-v1
+version: 1
+status: draft
+purpose: ""
+engine: ffmpeg
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: natural
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 1.2
+  min_jump_cut_interval_seconds: 0.8
+  preserve_required_phrases: []
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.8
+    keep_pause_seconds: 0.30
+    word_handle_seconds: 0.10
+    minimum_cut_seconds: 0.10
+    trim_edges: true
+visual:
+  punch_ins: selective
+  max_punch_in_scale: 1.08
+  random_effects: false
+captions:
+  enabled: false
+  max_lines: 2
+  max_chars_per_line: 32
+  word_highlight: false
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+forbidden:
+  - stretch_video
+  - delete_source
+  - invent_brand_assets
+
+insertion_assets:
+  policy: optional   # none | optional | encouraged | proof-heavy
+  density: low       # low | medium | high
+  default_preferred_duration_s: 2.0
+  default_max_duration_s: 6.0
+  allow_image_motion: false

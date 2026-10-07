@@ -1,0 +1,138 @@
+id: bruno-wpp-chat-v1
+version: 1
+status: draft
+purpose: "Vídeos sem rosto conduzidos pelo áudio de Bruno, em conversa WhatsApp encenada com balões que se transformam em conteúdo visual."
+engine: hybrid
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: contain
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  preserve_required_phrases: []
+  max_unmotivated_silence_seconds: 0.5
+  min_jump_cut_interval_seconds: 0.65
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.5
+    keep_pause_seconds: 0.18
+    word_handle_seconds: 0.10
+    minimum_cut_seconds: 0.10
+    trim_edges: true
+  speech_is_master_clock: true
+  never_wait_for_typing_to_finish_speech: true
+visual:
+  source_mode: audio_only
+  scene: staged_whatsapp_conversation
+  default_theme: dark
+  palette:
+    background: '#0B141A'
+    incoming: '#202C33'
+    outgoing: '#005C4B'
+    accent: '#25D366'
+    text: '#E9EDEF'
+    secondary: '#AEBAC1'
+  font: system_sans
+  font_assets: verify_locally_before_render
+  punch_ins: motivated_focus_on_message
+  max_punch_in_scale: 1.10
+  random_effects: false
+  safe_margins_px: {top: 180, bottom: 280, left: 72, right: 120}
+  message_min_font_px: 46
+  message_max_lines: 3
+  simultaneous_reading_targets: 1
+  conversation_identity: Bruno
+  recipient: fictional_neutral_no_real_person_claim
+  reconstruction_label: "Conversa ilustrativa"
+captions:
+  enabled: true
+  placement: active_message_or_expanded_card
+  max_lines: 2
+  max_chars_per_line: 28
+  word_highlight: selective
+  exact_speech_captions: true
+  summary_messages: visibly_distinct_from_verbatim_transcript
+  avoid_duplicate_caption_tracks: true
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  isolation:
+    preferred_service: elevenlabs
+    order: full_source_before_edl
+    compare_with_original: true
+    reject_metallic_or_missing_speech: true
+    cost_and_upload_gate: method/EXTERNAL_SERVICES.md
+  music: optional_per_story
+  ui_sfx: sparse_below_softest_speech
+  broll_audio: muted_unless_essential_and_reviewed
+insertion_assets:
+  policy: encouraged
+  density: medium
+  default_preferred_duration_s: 2.5
+  default_max_duration_s: 6.0
+  allow_image_motion: true
+  search_source: tiktok_when_semantically_relevant
+  placement: video_message_with_optional_expansion
+  source_log_required: true
+  rights_review_required: true
+  no_clip_available: use_local_typography_or_diagram
+motion:
+  implementation: reusable_javascript_seek_t
+  intensity: energetic_with_reading_holds
+  master_timing: final_edl_frames
+  signature: voice_bubble_to_visual_to_chat
+  entry_duration_s: [0.18, 0.32]
+  exit_duration_s: [0.15, 0.25]
+  minimum_reading_hold_s: 1.2
+  maximum_attention_events_per_second: 1
+  primitives:
+    - voice_note_with_waveform_from_real_audio
+    - send_message_and_delivery_ticks
+    - reply_quote_from_retained_speech
+    - video_message_player
+    - bubble_morph_to_diagram
+    - pinned_keyphrase
+    - motivated_chat_scroll
+  recording_indicator: brief_narrative_beat_never_entire_recording_duration
+  waveform: actual_final_voice_amplitude_not_random_bars
+  voice_note_duration: actual_retained_audio_duration
+  playback_cursor: synchronized_to_final_audio
+  sfx_sync_tolerance_frames: 2
+  max_new_design_iterations: 2
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.35
+  long_silence_seconds: 1.5
+  intentional_pauses_exempt_with_evidence: true
+  caption_sync_tolerance_ms: 100
+  audio_visual_sync_tolerance_ms: 80
+  inspect_small_screen_readability: true
+  inspect_every_signature_transition: true
+  speech_intelligibility_over_effects: true
+  first_representative_job_required_before_approval: true
+allowed:
+  - fictional_chat_framing
+  - semantically_relevant_video_messages
+  - visual_explanation_from_spoken_ideas
+  - selective_scale_and_focus
+forbidden:
+  - fabricate_recorded_words
+  - pretend_fictional_chat_is_real_customer_evidence
+  - random_broll
+  - effect_every_sentence
+  - endless_typing_or_recording_wait
+  - tiny_full_phone_mockup
+  - stock_fake_waveform
+  - unreadable_chat_scroll
+  - unlicensed_third_party_reuse
+  - overwrite_source

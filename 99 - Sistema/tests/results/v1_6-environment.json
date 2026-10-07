@@ -1,0 +1,54 @@
+{
+  "ok": true,
+  "python": "3.13.5",
+  "interpreter": "/opt/pyvenv/bin/python",
+  "system": "Linux",
+  "machine": "x86_64",
+  "tools": {
+    "ffmpeg": "/usr/bin/ffmpeg",
+    "ffprobe": "/usr/bin/ffprobe",
+    "node": "/opt/nvm/versions/node/v22.16.0/bin/node",
+    "codex": null,
+    "claude": null
+  },
+  "modules": {
+    "yaml": true,
+    "faster_whisper": false,
+    "mlx_whisper": false,
+    "playwright": true
+  },
+  "capabilities": {
+    "package_setup": {
+      "available": true,
+      "end_to_end_tested": false
+    },
+    "cuts": {
+      "available": true,
+      "end_to_end_tested": true
+    },
+    "speech_editing": {
+      "available": false,
+      "end_to_end_tested": false,
+      "weights": "NOT_CHECKED"
+    },
+    "javascript_motion": {
+      "available": true,
+      "end_to_end_tested": false,
+      "browser": "NOT_CHECKED"
+    },
+    "client_memory": {
+      "available": true,
+      "end_to_end_tested": false
+    }
+  },
+  "messages": [
+    "Cortes disponíveis; falta preparar a análise da fala. Não chamar a fábrica inteira de pronta."
+  ],
+  "tests_executed": [
+    "synthetic_cut_export"
+  ],
+  "authentication": "NOT_VERIFIED",
+  "model_access": "NOT_VERIFIED",
+  "provider_extra_credits": "NOT_VERIFIED",
+  "no_network_requests": true
+}

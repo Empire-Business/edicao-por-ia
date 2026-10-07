@@ -1,0 +1,119 @@
+<!doctype html><html lang="pt-BR"><meta charset="UTF-8"><title>Empire IKEA overlay</title>
+<style>html,body{margin:0;background:transparent}canvas{display:block}</style><canvas id="stage"></canvas>
+<script>
+'use strict';
+// v9 (user feedback on v8, 2026-10-02): Empire GREEN (dark green carousel) instead of navy; no written annotations/labels;
+// split top = video only (exception: PT headline with a highlighter on the spoken figure, nothing else written);
+// emphasis ("Ponto importante", "Mais valor", "Zero demissões", "Comente IA") at caption height, replacing the caption,
+// fading in from a soft blur (no pop/scale); red X over the negated question; CTA full screen (no split). v8: overlay-v8.src.html.
+const cfg=window.__STUDIO_SPEC__, M=CVFStudioMotion, cv=document.querySelector('canvas');
+cv.width=cfg.width;cv.height=cfg.height;const g=cv.getContext('2d');
+const W=cv.width,H=cv.height,MX=64,TOPH=1150,F0=700,F1=1150;   // v10: depth split, panel runs behind the presenter
+const L=/*LAYOUT*/null;
+const A=L.anchors, SHOTS=L.shots;
+// green sampled from the user's Empire carousel print (slide 02): #2b3527 / #212d1f
+const C={g1:'#34412f',g2:'#2b3527',ink:'#1a2418',cream:'#f4efde',or:'#e38b1a',or2:'#f0a03a',red:'#d9261c',line:'rgba(244,239,222,.10)'};
+const SERIF='Georgia,"Times New Roman",serif',SANS='"Segoe UI","Avenir Next",Arial,sans-serif';
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));const eo=x=>{x=cl(x);return 1-Math.pow(1-x,3)};const eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+const lerp=(a,b,u)=>a+(b-a)*u;
+const FS=(sz,it)=>`${it?'italic ':''}400 ${sz}px ${SERIF}`, FL=sz=>`600 ${sz}px ${SANS}`;
+function LS(px){g.letterSpacing=px+'px'}
+// title: parts = [[text, italicOrange?], ...] on one centred line; blur in px for the soft reveal
+function title(parts,cx,y,sz,a=1,blur=0,col=C.cream){if(a<=0)return;g.save();g.globalAlpha*=a;LS(-0.5);let tot=0;const ws=parts.map(([s,it])=>{g.font=FS(sz,it);const w=g.measureText(s).width;tot+=w;return w});
+  let x=cx-tot/2;g.textBaseline='alphabetic';g.textAlign='left';if(blur>.05)g.filter=`blur(${blur.toFixed(2)}px)`;g.shadowColor='rgba(0,0,0,.45)';g.shadowBlur=20;
+  parts.forEach(([s,it],i)=>{g.font=FS(sz,it);g.fillStyle=it?C.or2:col;g.fillText(s,x,y);x+=ws[i]});g.restore();return {x0:cx-tot/2,ws}}
+function dash(cx,y,a=1,w=56){if(a<=0)return;g.save();g.globalAlpha*=a;g.fillStyle=C.or;g.fillRect(cx-w/2,y,w,4);g.restore()}
+const IMG={};
+function shotAt(t){for(const s of SHOTS)if(t>=s.t0-1e-6&&t<s.t1-1e-6)return s;return SHOTS[SHOTS.length-1]}
+// soft reveal: opacity + blur 14px -> 0 + 10px drift, ~0.7 s; optional soft exit
+function reveal(t,t0,t1){const k=t-t0;if(k<0)return null;const u=eo(k/.7);let a=cl(k/.45),b=(1-u)*14,dy=(1-u)*10;
+  if(t1!=null){const v=cl((t1-t)/.3);a*=v;b+=(1-v)*10}return a>0?{a,b,dy}:null}
+// ---------- architectural line drawings (subtle, sides only) ----------
+function L2(x1,y1,x2,y2){g.beginPath();g.moveTo(x1,y1);g.lineTo(x2,y2);g.stroke()}
+function dim(x1,y1,x2,y2,lab){L2(x1,y1,x2,y2);const a=Math.atan2(y2-y1,x2-x1),n=[-Math.sin(a)*7,Math.cos(a)*7];L2(x1-n[0],y1-n[1],x1+n[0],y1+n[1]);L2(x2-n[0],y2-n[1],x2+n[0],y2+n[1]);
+  if(lab){g.save();g.font=FL(13);LS(3);g.fillStyle='rgba(244,239,222,.2)';g.textAlign='center';g.translate((x1+x2)/2,(y1+y2)/2);g.rotate(a);g.fillText(lab,0,-10);g.restore()}}
+function arch(y0,y1,t){g.save();g.strokeStyle=C.line;g.lineWidth=1.2;const h=y1-y0,dr=Math.sin(t*.25)*4;
+  const lx=26+dr;L2(lx,y0+90,lx,y1-90);L2(lx+64,y0+90,lx+64,y1-90);
+  for(let k=0;k<3;k++){const y=y0+90+k*(h-180)/2;g.strokeRect(lx-10,y-14,84,14)}
+  g.beginPath();g.arc(lx+32,y0+h*.36,120,-1.2,0.35);g.stroke();
+  g.setLineDash([4,8]);L2(0,y0+h*.36,190,y0+h*.36);g.setLineDash([]);
+  dim(lx+96,y0+h*.18,lx+96,y0+h*.58,'2.400');
+  const rx=W-150-dr,ry=y0+h*.62;g.beginPath();g.moveTo(rx,ry);g.lineTo(rx+70,ry-40);g.lineTo(rx+140,ry);g.lineTo(rx+70,ry+40);g.closePath();g.stroke();
+  L2(rx,ry,rx,ry+110);L2(rx+70,ry+40,rx+70,ry+150);L2(rx+140,ry,rx+140,ry+110);L2(rx,ry+110,rx+70,ry+150);L2(rx+70,ry+150,rx+140,ry+110);
+  for(let k=0;k<9;k++){const y=y0+110+k*34;L2(W-26,y,W-(k%3?14:2),y)}L2(W-26,y0+110,W-26,y0+110+8*34);
+  dim(rx-10,ry-150,rx+150,ry-150,'1:50');g.restore()}
+function panel(y0,y1,t){const gr=g.createRadialGradient(W*.3,y0+(y1-y0)*.2,60,W*.5,y0+(y1-y0)*.5,Math.max(W,y1-y0)*.85);
+  gr.addColorStop(0,C.g1);gr.addColorStop(.55,C.g2);gr.addColorStop(1,C.ink);g.fillStyle=gr;g.fillRect(0,y0,W,y1-y0);arch(y0,y1,t)}
+// ---------- 5 s: real PT headline only, highlighter on the spoken figure (no extra text) ----------
+// c-click.jpg (1800 px wide, 2x capture): header + headline = rows 0..545; phrase "faturou 1,3 bilhão de euros" = x 222..832, y 468..534
+const HL={sh:545,x0:222,xm:402,x1:832,y0:468,y1:534};
+const G={};
+G.g_fatur=(t,s)=>{panel(0,TOPH,t);const im=IMG['c-click'];if(!im)return;
+  const ds=960/im.width,dw=960,dh=HL.sh*ds;const r=reveal(t,s.t0-.05);if(!r)return;
+  const pz=eio(cl((t-s.t0-.15)/2.4)),z=lerp(1.08,1.6,pz);                 // slow push toward the highlighted line
+  const fx=lerp(0,((HL.x0+HL.x1)/2-im.width/2)*ds,pz),fy=lerp(0,((HL.y0+HL.y1)/2-HL.sh/2)*ds,pz);
+  g.save();g.globalAlpha=r.a;if(r.b>.05)g.filter=`blur(${r.b.toFixed(2)}px)`;g.translate(W/2,430+r.dy);g.scale(z,z);g.translate(-fx,-fy);
+  g.shadowColor='rgba(0,0,0,.55)';g.shadowBlur=46;g.shadowOffsetY=16;g.fillStyle='#fff';g.beginPath();g.roundRect(-dw/2-6,-dh/2-6,dw+12,dh+12,14);g.fill();
+  g.shadowBlur=0;g.shadowOffsetY=0;g.save();g.beginPath();g.roundRect(-dw/2,-dh/2,dw,dh,10);g.clip();g.drawImage(im,0,0,im.width,HL.sh,-dw/2,-dh/2,dw,dh);
+  // highlighter (multiply, so the black type stays on top): "faturou" with "faturamento", "1,3 bilhão de euros" with "1,4 bilhão"
+  // v10: one continuous wipe (v9 stopped between "faturou" and "1,3 bilhão")
+  const pw=cl((t-A.faturamento+.05)/(A.dolares+.25-A.faturamento)),p1=pw>0?1:0,xe=lerp(HL.x0,HL.x1,pw<.5?2*pw*pw:1-Math.pow(-2*pw+2,2)/2);
+  if(p1>0){g.globalCompositeOperation='multiply';g.fillStyle='rgba(247,182,82,.92)';const X=(-im.width/2+HL.x0-6)*ds,Y=(-HL.sh/2+HL.y0)*ds,Wd=(xe-HL.x0+12)*ds,Hd=(HL.y1-HL.y0)*ds;
+    g.beginPath();g.moveTo(X+2,Y+3);g.lineTo(X+Wd,Y);g.lineTo(X+Wd-2,Y+Hd-1);g.lineTo(X,Y+Hd+2);g.closePath();g.fill()}
+  g.restore();g.restore()};
+// ---------- 29-33 s: question with a strong red X, then the right question ----------
+G.g_pergunta=(t,s)=>{panel(0,H,t);const cx=W/2;
+  const out=cl((t-A.mas+.05)/.3);                                          // first question leaves (blur out) on "mas"
+  const r1=reveal(t,s.t0);if(r1&&out<1){const a=r1.a*(1-out),b=r1.b+out*12;
+    title([['Quantas pessoas',0]],cx,850+r1.dy,92,a,b);title([['a IA pode substituir?',0]],cx,955+r1.dy,80,a,b);
+    const x0=cx-430,x1=cx+430,y0=760,y1=1010,k1=eo(cl((t-A.substituir+.12)/.2)),k2=eo(cl((t-A.substituir+.12-.16)/.2));
+    g.save();g.globalAlpha=1-out;if(out>0)g.filter=`blur(${(out*12).toFixed(2)}px)`;g.strokeStyle=C.red;g.lineWidth=18;g.lineCap='round';g.shadowColor='rgba(0,0,0,.4)';g.shadowBlur=14;
+    if(k1>0)L2(x0,y0,lerp(x0,x1,k1),lerp(y0,y1,k1));if(k2>0)L2(x1,y0,lerp(x1,x0,k2),lerp(y0,y1,k2));g.restore()}
+  const r2=reveal(t,A.quanto-.12);if(r2){title([['Quanto ',0],['valor',1]],cx,880+r2.dy,140,r2.a,r2.b);title([['a IA consegue gerar?',0]],cx,990+r2.dy,76,r2.a,r2.b);
+    dash(cx,1040,r2.a)}};
+// ---------- emphasis at caption height (replaces the caption while visible) ----------
+function emph(t,s){const r=reveal(t,s.emph_from,s.emph_to);if(!r)return;const k=s.emph;
+  if(s.mode==='full'){const cy=k==='comente'?1250:k==='ganhos'?1215:1210;g.save();g.globalAlpha=r.a;g.translate(W/2,cy);g.scale(1,k==='ganhos'?.5:.32);const rg=g.createRadialGradient(0,0,0,0,0,560);rg.addColorStop(0,'rgba(16,36,20,.62)');rg.addColorStop(.6,'rgba(16,36,20,.34)');rg.addColorStop(1,'rgba(16,36,20,0)');g.fillStyle=rg;g.fillRect(-560,-560,1120,1120);g.restore()}
+  if(k==='ponto'){title([['Ponto ',0],['importante.',1]],W/2,1230+r.dy,92,r.a,r.b);dash(W/2,1268,r.a*cl((t-s.emph_from-.25)/.3))}
+  if(k==='valor'){title([['Mais ',0],['valor',1]],W/2,1230+r.dy,104,r.a,r.b);dash(W/2,1270,r.a*cl((t-s.emph_from-.25)/.3))}
+  if(k==='zero'){title([['Zero',1],[' demissões.',0]],W/2,1352+r.dy,84,r.a,r.b)}
+  if(k==='comente'){const m=title([['Comente ',0],['“IA”',1]],W/2,1222+r.dy,104,r.a,r.b);
+    // hand-drawn orange underline under "IA" (marker stroke, not a box)
+    const u=eo(cl((t-A.ia)/.35));if(m&&u>0){const xa=m.x0+m.ws[0]+6,xb=xa+(m.ws[1]-12)*u;g.save();g.globalAlpha=r.a;if(r.b>.05)g.filter=`blur(${r.b.toFixed(2)}px)`;
+      g.strokeStyle=C.or;g.lineWidth=9;g.lineCap='round';g.beginPath();g.moveTo(xa,1250);g.quadraticCurveTo((xa+xb)/2,1243,xb,1252);g.stroke();g.restore()}
+    const r2=reveal(t,A.aqui-.08,s.emph_to);if(r2)title([['aqui embaixo',0]],W/2,1318+r2.dy,54,r2.a,r2.b)}
+  if(k==='ganhos'){ // v10: three gains stacked at caption height, each on its word, marker stroke under the keyword
+    [[[['Mais ',0],['receita',1]],A.mais2,A.receita],[[['Menos ',0],['custos',1]],A.menos,A.custos],[[['Melhor ',0],['entrega',1]],A.melhorar,A.entrega]].forEach(([p,ta,tk],i)=>{
+      const q=reveal(t,ta-.12);if(!q)return;const y=1120+i*96+q.dy,m=title(p,W/2,y,80,q.a,q.b);const u=eo(cl((t-tk)/.35));
+      if(m&&u>0){const xa=m.x0+m.ws[0]+4,xb=xa+(m.ws[1]-8)*u;g.save();g.globalAlpha=q.a;g.strokeStyle=C.or;g.lineWidth=7;g.lineCap='round';g.beginPath();g.moveTo(xa,y+20);g.quadraticCurveTo((xa+xb)/2,y+14,xb,y+22);g.stroke();g.restore()}})}}
+// ---------- captions (approved v4: narrow bold serif, white, ≤3 words) ----------
+const CAPF=sz=>`700 ${sz}px "Times New Roman",Times,serif`;
+const CHUNKS=[];(function(){for(const seg of L.captions){let cur=[];const ws=seg.words;
+  ws.forEach((w,i)=>{cur.push(w);const nx=ws[i+1],len=cur.map(x=>x.w).join(' ').length;
+    const brk=/[.:?!,]$/.test(w.w)||cur.length>=3||(nx&&len+1+nx.w.length>19);if(brk||i===ws.length-1){CHUNKS.push(cur);cur=[]}});}
+  for(let i=0;i<CHUNKS.length;i++){const c=CHUNKS[i],nx=CHUNKS[i+1];c.t0=c[0].s-.04;c.t1=nx?Math.min(nx[0].s-.04,c[c.length-1].e+.6):c[c.length-1].e+.4}})();
+function captions(t,s){if(s.mode==='gfx')return;if(s.emph&&t>=s.emph_from-.02&&(s.emph_to==null||t<s.emph_to))return;
+  const c=CHUNKS.find(c=>t>=c.t0&&t<c.t1);if(!c)return;
+  // a chunk already replaced by an emphasis (or a gfx) in an earlier shot must not reappear after the cut
+  if(c.t0<s.t0-1e-3){const ws=c[0].s,p=shotAt(ws);if(p.mode==="gfx"||(p.emph&&ws>=p.emph_from-.02&&(p.emph_to==null||ws<p.emph_to)))return}
+  const y=s.mode==='split'?1690:s.mode==='full'?1230:1352,size=56;const words=c.map(w=>w.w.replace(/[,:]$/,'').replace(/"/g,''));
+  g.save();g.font=CAPF(size);LS(-0.5);const ws=words.map(w=>g.measureText(w).width),gap=size*.24;let tot=ws.reduce((a,b)=>a+b,0)+gap*(ws.length-1);
+  const sc=Math.min(1,(W-2*MX-40)/tot);g.translate(W/2,y);g.scale(sc,sc);
+  let x=-tot/2;c.forEach((w,i)=>{g.font=CAPF(size);LS(-0.5);g.textAlign='left';g.textBaseline='alphabetic';
+    g.shadowColor=s.mode==='split'?'rgba(0,0,0,.9)':'rgba(0,0,0,.55)';g.shadowBlur=s.mode==='split'?24:18;g.shadowOffsetY=2;g.fillStyle='#ffffff';g.fillText(words[i],x,size*.2);if(s.mode==='split')g.fillText(words[i],x,size*.2);x+=ws[i]+gap});g.restore()}
+// ---------- main ----------
+const CARD={x:60,y:486,w:960,h:948,r:52};
+window.seek=(t)=>{if(!Number.isFinite(t))throw Error('Bad timeline time');
+  g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;g.filter='none';g.clearRect(0,0,W,H);const s=shotAt(t);
+  if(s.mode==='gfx'){G[s.top](t,s)}
+  else if(s.mode==='split'){if(s.top!=='video'&&G[s.top])G[s.top](t,s);
+    // diffuse seam: fade the top layer so the presenter (composited below) rises over the media
+    g.save();g.globalCompositeOperation='destination-out';const fm=g.createLinearGradient(0,F0,0,F1);fm.addColorStop(0,'rgba(0,0,0,0)');fm.addColorStop(1,'rgba(0,0,0,1)');g.fillStyle=fm;g.fillRect(0,F0,W,H-F0);g.restore();
+    const sb=g.createLinearGradient(0,1450,0,H);sb.addColorStop(0,'rgba(20,42,24,0)');sb.addColorStop(1,'rgba(20,42,24,.45)');g.fillStyle=sb;g.fillRect(0,1450,W,H-1450)}
+  else if(s.mode==='full'){const y0=s.emph?1040:1300,gr=g.createLinearGradient(0,y0,0,H);gr.addColorStop(0,'rgba(20,42,24,0)');gr.addColorStop(1,'rgba(20,42,24,.42)');g.fillStyle=gr;g.fillRect(0,y0,W,H-y0)}
+  else if(s.mode==='card'){g.save();g.beginPath();g.roundRect(CARD.x,CARD.y,CARD.w,CARD.h,CARD.r);g.clip();
+    const gr=g.createLinearGradient(0,CARD.y+CARD.h-300,0,CARD.y+CARD.h);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(0,0,0,.6)');g.fillStyle=gr;g.fillRect(CARD.x,CARD.y+CARD.h-300,CARD.w,300);g.restore()}
+  if(s.emph)emph(t,s);
+  captions(t,s);return true};
+window.__STUDIO_READY__=(async()=>{for(const id of /*IMGS*/[]){const im=new Image();im.decoding='sync';im.src=window.studioAsset(id);await im.decode();IMG[id]=im}})();
+</script></html>

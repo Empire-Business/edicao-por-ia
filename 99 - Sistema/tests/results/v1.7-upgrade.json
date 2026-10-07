@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "checks": {
+    "dry_run_no_version_change": true,
+    "dry_run_lists_custom_role_conflict": true,
+    "upgraded_version": true,
+    "new_renderer_installed": true,
+    "new_codex_skill_installed": true,
+    "new_claude_skill_installed": true,
+    "preserved_custom_file_1": true,
+    "preserved_custom_file_2": true,
+    "preserved_custom_file_3": true,
+    "custom_role_not_overwritten": true,
+    "native_claude_settings_preserved": true,
+    "native_codex_config_preserved": true,
+    "needs_merge_explicit": true,
+    "backup_receipt_exists": true
+  },
+  "passed": 14,
+  "total": 14,
+  "scope": "Actual local updater on an extracted v1.6 fixture. No agent login or real personal files."
+}

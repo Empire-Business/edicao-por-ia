@@ -1,0 +1,225 @@
+<style>
+  [data-composition-id="s10-analise"] .lay { position: absolute; inset: 0; }
+  [data-composition-id="s10-analise"] .cam { width: 1440px; height: 900px; }
+  [data-composition-id="s10-analise"] .sbw { position: absolute; left: 0; top: 0; width: 240px; height: 900px; z-index: 2; }
+  [data-composition-id="s10-analise"] .main { overflow: visible; }
+  [data-composition-id="s10-analise"] .col { position: absolute; left: 0; top: 0; width: 1200px; padding: 28px 44px 60px; }
+  [data-composition-id="s10-analise"] .back { font-size: 13px; color: var(--muted-fg); display: flex; gap: 6px; align-items: center; }
+  [data-composition-id="s10-analise"] .ttlrow { display: flex; align-items: flex-start; margin-top: 10px; }
+  [data-composition-id="s10-analise"] .ttlrow .pg-title { font-size: 25px; }
+  [data-composition-id="s10-analise"] .ttlrow .btn { margin-left: auto; padding: 8px 14px; font-size: 13.5px; }
+  [data-composition-id="s10-analise"] .tabs { margin-top: 18px; }
+  [data-composition-id="s10-analise"] .meta { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; padding: 14px 18px; }
+  [data-composition-id="s10-analise"] .meta span { font-size: 15px; font-weight: 500; display: flex; gap: 8px; align-items: center; }
+  [data-composition-id="s10-analise"] .meta span small { font-size: 10.5px; letter-spacing: .1em; color: var(--muted-fg); font-weight: 500; }
+  [data-composition-id="s10-analise"] .score { margin-top: 14px; display: flex; align-items: center; gap: 14px; padding: 16px 18px; flex-wrap: wrap; }
+  [data-composition-id="s10-analise"] .score .l { font-size: 14px; color: var(--muted-fg); }
+  [data-composition-id="s10-analise"] .nota { background: #fbf1dc; border-radius: 10px; padding: 4px 12px; color: #9b5a00; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; }
+  [data-composition-id="s10-analise"] .nota small { font-size: 13px; font-weight: 500; }
+  [data-composition-id="s10-analise"] .up { font-size: 13.5px; color: var(--muted-fg); }
+  [data-composition-id="s10-analise"] .up b { color: #0c7a3a; font-weight: 600; }
+  [data-composition-id="s10-analise"] .chips { margin-left: auto; display: flex; gap: 8px; }
+  [data-composition-id="s10-analise"] .ch { border-radius: 99px; padding: 5px 12px; font-size: 13px; display: flex; gap: 6px; align-items: center; border: 1px solid; }
+  [data-composition-id="s10-analise"] .ch b { font-size: 14px; font-weight: 700; }
+  [data-composition-id="s10-analise"] .ch.a { border-color: #f0dcb4; background: #fdf8ec; color: #6b665b; } [data-composition-id="s10-analise"] .ch.a b { color: #9b5a00; }
+  [data-composition-id="s10-analise"] .ch.r { border-color: #f5c9c9; background: #fdf1f1; color: #6b665b; } [data-composition-id="s10-analise"] .ch.r b { color: #d01d1c; }
+  [data-composition-id="s10-analise"] .ch.g { border-color: #c8e6d2; background: #f0f8f3; color: #6b665b; } [data-composition-id="s10-analise"] .ch.g b { color: #0c7a3a; }
+  [data-composition-id="s10-analise"] .sum { margin-top: 18px; padding: 22px 24px; }
+  [data-composition-id="s10-analise"] .sum h5 { font-size: 17px; font-weight: 600; display: flex; gap: 8px; align-items: center; }
+  [data-composition-id="s10-analise"] .sum h5 .ic { color: var(--primary); }
+  [data-composition-id="s10-analise"] .sum p { font-size: 15.5px; line-height: 1.6; color: #2a261d; margin-top: 12px; }
+  [data-composition-id="s10-analise"] .sum .sec { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+  [data-composition-id="s10-analise"] .sum ul { list-style: none; margin-top: 8px; }
+  [data-composition-id="s10-analise"] .sum li { position: relative; padding: 4px 0 4px 18px; font-size: 15px; color: #2a261d; line-height: 1.5; }
+  [data-composition-id="s10-analise"] .sum li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 6px; height: 6px; border-radius: 99px; background: #c79a33; }
+  [data-composition-id="s10-analise"] .ckh { margin-top: 34px; display: flex; align-items: flex-end; }
+  [data-composition-id="s10-analise"] .ckh h5 { font-size: 16px; font-weight: 600; color: var(--primary); }
+  [data-composition-id="s10-analise"] .ckh p { font-size: 13px; color: var(--muted-fg); margin-top: 2px; }
+  [data-composition-id="s10-analise"] .ckh .tot { margin-left: auto; font-size: 13px; color: var(--muted-fg); }
+  [data-composition-id="s10-analise"] .ckh .tot b { font-size: 28px; font-weight: 600; color: var(--fg); letter-spacing: -0.02em; }
+  [data-composition-id="s10-analise"] .ck { margin-top: 12px; overflow: hidden; }
+  [data-composition-id="s10-analise"] .cr { display: grid; grid-template-columns: 1fr 70px 70px 120px; align-items: center; padding: 0 18px; min-height: 44px; border-bottom: 1px solid var(--border); font-size: 14px; position: relative; }
+  [data-composition-id="s10-analise"] .cr.hd { min-height: 34px; background: var(--muted); font-size: 11px; font-weight: 600; letter-spacing: .08em; color: var(--muted-fg); }
+  [data-composition-id="s10-analise"] .cr .n { display: flex; gap: 10px; align-items: center; text-transform: uppercase; font-weight: 500; letter-spacing: .02em; font-size: 13.5px; padding: 8px 0; }
+  [data-composition-id="s10-analise"] .cr .n .ic { color: var(--muted-fg); flex: none; }
+  [data-composition-id="s10-analise"] .cr .p { text-align: right; color: var(--muted-fg); font-size: 13px; }
+  [data-composition-id="s10-analise"] .cr .s { text-align: right; font-weight: 600; font-size: 15px; }
+  [data-composition-id="s10-analise"] .cr .s.w { color: #9b5a00; }
+  [data-composition-id="s10-analise"] .cr .m { text-align: right; font-size: 12.5px; color: var(--muted-fg); }
+  [data-composition-id="s10-analise"] .cr .m .u { color: #0c7a3a; font-weight: 600; }
+  [data-composition-id="s10-analise"] .cr .m .d { color: #d01d1c; font-weight: 600; }
+  [data-composition-id="s10-analise"] .cr .hl { position: absolute; inset: 2px 4px; border-radius: 8px; box-shadow: 0 0 0 2px #c79a33; background: rgba(232,196,106,.12); opacity: 0; }
+  [data-composition-id="s10-analise"] .note { margin-top: 10px; background: var(--muted); border-radius: 10px; padding: 10px 14px; font-size: 13px; color: var(--muted-fg); line-height: 1.5; }
+  [data-composition-id="s10-analise"] .note b { color: var(--fg); font-weight: 500; }
+  [data-composition-id="s10-analise"] .tpe { margin-top: 26px; padding: 18px 22px 16px; }
+  [data-composition-id="s10-analise"] .tpe .h { display: flex; align-items: center; }
+  [data-composition-id="s10-analise"] .tpe .h b { font-size: 15.5px; font-weight: 600; }
+  [data-composition-id="s10-analise"] .tpe .h .cmp { margin-left: auto; font-size: 12.5px; color: var(--fg); border: 1px solid var(--border); border-radius: 99px; padding: 4px 12px; display: flex; gap: 8px; align-items: center; }
+  [data-composition-id="s10-analise"] .tpe .h .cmp i { display: block; width: 18px; height: 8px; border-radius: 9px; background: #cfcac0; }
+  [data-composition-id="s10-analise"] .bar-g { margin-top: 14px; }
+  [data-composition-id="s10-analise"] .bar-g .lb { font-size: 11.5px; letter-spacing: .08em; font-weight: 600; color: var(--muted-fg); display: flex; gap: 7px; align-items: center; }
+  [data-composition-id="s10-analise"] .bar-g .lb i { display: block; width: 8px; height: 8px; border-radius: 99px; }
+  [data-composition-id="s10-analise"] .bline { display: flex; align-items: center; gap: 14px; margin-top: 6px; }
+  [data-composition-id="s10-analise"] .track { flex: 1; height: 10px; border-radius: 99px; background: #f1eee7; position: relative; overflow: hidden; }
+  [data-composition-id="s10-analise"] .track i { display: block; width: 100%; height: 100%; border-radius: 99px; transform-origin: 0 50%; }
+  [data-composition-id="s10-analise"] .bline.avg .track { height: 8px; background: transparent; }
+  [data-composition-id="s10-analise"] .bline.avg .track i { background: #cfcac0; }
+  [data-composition-id="s10-analise"] .bline span { width: 56px; text-align: right; font-size: 13px; font-weight: 600; }
+  [data-composition-id="s10-analise"] .bline.avg span { font-weight: 400; color: var(--muted-fg); }
+  [data-composition-id="s10-analise"] .tpe .note { margin-top: 14px; }
+
+  /* ---------- vertical ---------- */
+  [data-composition-id="s10-analise"] .fmt-v .cam { width: 625px; height: 960px; }
+  [data-composition-id="s10-analise"] .fmt-v .sbw { display: none; }
+  [data-composition-id="s10-analise"] .fmt-v .main { left: 0; }
+  [data-composition-id="s10-analise"] .fmt-v .col { width: 625px; padding: 22px 20px 60px; }
+  [data-composition-id="s10-analise"] .fmt-v .ttlrow .pg-title { font-size: 21px; line-height: 1.25; }
+  [data-composition-id="s10-analise"] .fmt-v .ttlrow .btn, [data-composition-id="s10-analise"] .fmt-v .back { display: none; }
+  [data-composition-id="s10-analise"] .fmt-v .tabs { gap: 16px; }
+  [data-composition-id="s10-analise"] .fmt-v .tab { font-size: 14px; }
+  [data-composition-id="s10-analise"] .fmt-v .meta { gap: 8px 18px; }
+  [data-composition-id="s10-analise"] .fmt-v .meta .hv { display: none; }
+  [data-composition-id="s10-analise"] .fmt-v .chips { margin-left: 0; flex-wrap: wrap; }
+  [data-composition-id="s10-analise"] .fmt-v .sum .sec2 { display: none; }
+  [data-composition-id="s10-analise"] .fmt-v .sum p { font-size: 14.5px; }
+  [data-composition-id="s10-analise"] .fmt-v .cr { grid-template-columns: 1fr 46px 50px 84px; padding: 0 12px; }
+  [data-composition-id="s10-analise"] .fmt-v .cr .n { font-size: 12px; }
+  [data-composition-id="s10-analise"] .fmt-v .cr .n .ic { display: none; }
+  [data-composition-id="s10-analise"] .fmt-v .ckh .tot { display: none; }
+</style>
+<div class="lay {{FMT}}">
+<div class="paper"></div>
+<div class="paper-grid" data-layout-allow-overflow></div>
+<div class="cap">
+  <div class="kicker"><i class="dot"></i>Análise da reunião</div>
+  <div class="hstack">
+    <div class="headline h-a"><span>A</span> <span>IA</span> <span>avalia</span> <span>a</span> <span>call</span> <em>e</em> <em>mostra</em> <em>onde</em> <em>melhorar.</em></div>
+    <div class="headline h-b"><span>Nota</span> <span>por</span> <span>etapa</span> <span>do</span> <span>roteiro,</span> <em>comparada</em> <em>ao</em> <em>papel.</em></div>
+  </div>
+</div>
+<div class="win" data-layout-allow-overflow>
+  <div class="cam" data-layout-allow-overflow>
+    <div class="sbw">{{partial:sidebar:analise}}</div>
+    <div class="main">
+      <div class="col">
+        <div class="back">{{icon:arrow-left:14}}Voltar para a lista</div>
+        <div class="ttlrow"><div><div class="pg-title">Apresentação Nova Vertex | Marina Costa — Rafael Nunes</div><div class="pg-sub">Apresentação · 03 de setembro de 2026 às 11:00</div></div><span class="btn btn-outline">Ver dados da reunião</span></div>
+        <div class="tabs"><div class="tab on">{{icon:chart-column}}Análise</div><div class="tab">{{icon:file-text}}Transcrição</div><div class="tab">{{icon:bot}}Oráculo</div><div class="tab">{{icon:list-checks}}Plano de ação</div></div>
+        <div class="card meta">
+          <span><small>VENDEDOR</small>Marina Costa</span><span><small>LEAD</small>Rafael Nunes</span><span class="hv"><small>DATA</small><i class="num" style="font-style:normal">03/09/2026</i></span><span><small>DURAÇÃO</small>1h50</span><span class="hv"><small>FORMATO</small>Vídeo</span><span><small>DESFECHO</small><em class="badge b-gray" style="font-style:normal">Sem desfecho</em></span>
+        </div>
+        <div class="card score">
+          <span class="l">Nota da reunião</span>
+          <span class="nota num"><span class="nv">0,0</span><small>/10</small></span>
+          <span class="badge b-amber at">Atenção</span>
+          <span class="up"><b>▲3.2</b> vs. média dele (4,1, 2 calls)</span>
+          <span class="chips"><span class="ch a">Dores <b>2</b></span><span class="ch r">Objeções <b>2</b></span><span class="ch g">Próximos passos <b>2</b></span><span class="ch a">Fora da faixa <b>2</b></span></span>
+        </div>
+        <div class="card sum">
+          <h5>{{icon:sparkles:18}}Resumo da IA</h5>
+          <p class="sp">Marina Costa (Closer) conduziu uma reunião de apresentação com Rafael, profissional da área de saúde, para entender o cenário do seu consultório e apresentar uma solução de posicionamento digital focada em geração de demanda. A conversa terminou com o cliente pedindo tempo para avaliar a proposta.</p>
+          <div class="sec"><div class="lbl">Contexto do cliente</div>
+            <ul><li>Atua como cirurgião dentista desde 2012, com consultório próprio em uma grande cidade.</li><li>Faturamento atual entre <b>R$ 15 mil e R$ 20 mil</b> mensais, com potencial de chegar a <b>R$ 100 mil.</b></li><li>Relatou queda de demanda após a pandemia e menor investimento em marketing.</li></ul>
+          </div>
+          <div class="sec sec2"><div class="lbl">O que ele quer resolver</div>
+            <ul><li>Busca gerar demanda previsível para o consultório sem se expor como influenciador.</li><li>Quer retomar o fluxo de pacientes para manter o consultório.</li></ul>
+          </div>
+        </div>
+
+        <div class="ckh"><div><h5>Check-up do processo</h5><p>Script de Apresentação - Acelerador de Audiência · média do papel em 3 calls</p></div><div class="tot"><b class="num">7.2</b>/10 &nbsp;papel 7.5</div></div>
+        <div class="card ck">
+          <div class="cr hd"><span>ETAPA E CRITÉRIOS</span><span class="p">PESO</span><span class="s" style="font-size:11px">NOTA</span><span class="m">MÉDIA DO PAPEL</span></div>
+          <div class="cr"><span class="n">{{icon:chevron-down:15}}Acordo inicial e ambiente seguro</span><span class="p num">7%</span><span class="s num">6.3</span><span class="m num">—</span></div>
+          <div class="cr"><span class="n">{{icon:chevron-down:15}}Diagnóstico do problema</span><span class="p num">15%</span><span class="s num">7.7</span><span class="m num">7.3 <span class="u">▲0.4</span></span></div>
+          <div class="cr"><span class="n">{{icon:chevron-down:15}}Intensificação da dor</span><span class="p num">13%</span><span class="s num">8.0</span><span class="m num">7.0 <span class="u">▲1.0</span></span></div>
+          <div class="cr"><span class="n">{{icon:chevron-down:15}}Descoberta do desejo</span><span class="p num">10%</span><span class="s num">7.6</span><span class="m num">7.7</span></div>
+          <div class="cr"><span class="n">{{icon:chevron-down:15}}Recapitulação dos pontos-chave</span><span class="p num">10%</span><span class="s num">8.1</span><span class="m num">7.6 <span class="u">▲0.5</span></span></div>
+          <div class="cr weak"><i class="hl"></i><span class="n">{{icon:chevron-down:15}}Compromisso e reforço positivo</span><span class="p num">10%</span><span class="s w num">5.6</span><span class="m num">8.0 <span class="d">▼2.4</span></span></div>
+          <div class="cr"><span class="n">{{icon:chevron-down:15}}Prova de conceito e exemplificação</span><span class="p num">8%</span><span class="s num">7.5</span><span class="m num">8.2 <span class="d">▼0.7</span></span></div>
+          <div class="cr"><span class="n">{{icon:chevron-down:15}}Apresentação da arquitetura de conteúdo</span><span class="p num">10%</span><span class="s num">6.4</span><span class="m num">7.4 <span class="d">▼1.0</span></span></div>
+        </div>
+        <div class="note ckn">Etapa mais fraca: <b>Compromisso e Reforço Positivo (5.6)</b> — vale 10% da nota. 25 de 31 critérios avaliados.</div>
+
+        <div class="card tpe">
+          <div class="h"><b>Tempo por etapa</b><span class="cmp"><i></i>comparando com a média do papel</span></div>
+          <div class="bar-g"><div class="lb"><i style="background:#0c7a3a"></i>CONEXÃO</div><div class="bline"><div class="track"><i style="background:#0c7a3a" data-v="0.26"></i></div><span class="num">10 min</span></div><div class="bline avg"><div class="track"><i data-v="0.08"></i></div><span class="num">3 min</span></div></div>
+          <div class="bar-g"><div class="lb"><i style="background:#8a6410"></i>DIAGNÓSTICO</div><div class="bline"><div class="track"><i style="background:#8a6410" data-v="1"></i></div><span class="num">38 min</span></div><div class="bline avg"><div class="track"><i data-v="0.79"></i></div><span class="num">30 min</span></div></div>
+          <div class="bar-g"><div class="lb"><i style="background:#1f78b4"></i>APRESENTAÇÃO</div><div class="bline"><div class="track"><i style="background:#1f78b4" data-v="0.89"></i></div><span class="num">34 min</span></div><div class="bline avg"><div class="track"><i data-v="0.37"></i></div><span class="num">14 min</span></div></div>
+          <div class="bar-g"><div class="lb"><i style="background:#d6246e"></i>FECHAMENTO</div><div class="bline"><div class="track"><i style="background:#d6246e" data-v="0.71"></i></div><span class="num">27 min</span></div><div class="bline avg"><div class="track"><i data-v="0.24"></i></div><span class="num">9 min</span></div></div>
+          <div class="note"><b>Apresentação</b> é a maior diferença: 20 min a mais que a média de quem faz o mesmo papel.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+(() => {
+  const all = document.querySelectorAll('[data-composition-id="{{ID}}"]');
+  const root = all[all.length - 1];
+  const $ = gsap.utils.selector(root);
+  const V = {{V}};
+  const D = {{DUR}};
+  const build = () => {
+    const tl = gsap.timeline({ paused: true });
+  const __restore = window.__omnxShow(root);
+    root.querySelector('.sb-it[data-k="analise"]').classList.add('on');
+    const S = V ? 1.6 : 1.2;
+    gsap.set($('.cam'), { scale: S });
+    const col = root.querySelector('.col');
+    const topOf = (sel) => root.querySelector(sel).offsetTop;
+    const visible = V ? 1480 / S : (1080 - 236) / S;
+
+    // entrance
+    tl.fromTo($('.win'), { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'expo.out' }, 0);
+    tl.fromTo($('.cap .kicker'), { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }, 0.1);
+    tl.fromTo($('.h-a > *'), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, stagger: 0.05, ease: 'power3.out' }, 0.2);
+    gsap.set($('.h-b > *'), { opacity: 0 });
+    tl.fromTo($('.meta span'), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.35, stagger: 0.05 }, 0.45);
+    tl.fromTo($('.score'), { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 0.6);
+    const nv = { v: 0 }, nEl = root.querySelector('.nv');
+    tl.to(nv, { v: 7.3, duration: 1.0, ease: 'power2.out', onUpdate: () => { nEl.textContent = nv.v.toFixed(1).replace('.', ','); } }, 0.75);
+    tl.fromTo($('.nota'), { scale: 0.85 }, { scale: 1, duration: 0.6, ease: 'back.out(2)' }, 0.75);
+    tl.fromTo($('.at, .up'), { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.35, stagger: 0.12 }, 1.5);
+    tl.fromTo($('.ch'), { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, stagger: 0.08, ease: 'back.out(2.2)' }, 1.65);
+    // resumo reveal
+    tl.fromTo($('.sum'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 1.2);
+    tl.fromTo($('.sum .sp'), { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 1.0, ease: 'power1.inOut' }, 1.5);
+    tl.fromTo($('.sum li, .sum .lbl'), { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.35, stagger: 0.1, ease: 'power2.out' }, 2.3);
+    // gentle push toward the score card on the first beat
+    if (!V) tl.fromTo($('.cam'), { scale: S, x: 0 }, { scale: S * 1.06, x: -40, duration: 2.6, ease: 'power1.inOut' }, 0.6);
+
+    // scroll to check-up
+    // scroll the page column (sidebar stays fixed); in 16:9 also zoom past the sidebar for legibility
+    const S2 = V ? S : 1.46;
+    const vis2 = V ? visible : (1080 - 236) / S2;
+    gsap.set($('.ckh, .ck, .ckn, .tpe'), { opacity: 0 });
+    tl.to($('.ckh, .ck, .ckn, .tpe'), { opacity: 1, duration: 0.3 }, 3.6);
+    tl.to($('.col'), { y: -(topOf('.ckh') - 16), duration: 0.9, ease: 'power3.inOut' }, 3.6);
+    if (!V) tl.to($('.cam'), { scale: S2, x: -386, duration: 0.9, ease: 'power3.inOut' }, 3.6);
+    tl.to($('.h-a > *'), { y: -30, opacity: 0, duration: 0.3, stagger: 0.03, ease: 'power2.in' }, 3.6);
+    tl.fromTo($('.h-b > *'), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.05, ease: 'power3.out' }, 3.95);
+    tl.fromTo($('.ck .cr:not(.hd)'), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, stagger: 0.07, ease: 'power3.out' }, 3.9);
+    tl.fromTo($('.ckh .tot'), { opacity: 0 }, { opacity: 1, duration: 0.4 }, 4.1);
+    tl.fromTo($('.weak .hl'), { opacity: 0, scale: 0.98 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.out' }, 4.8);
+    tl.fromTo($('.ckn'), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, 5.0);
+    // scroll to time-per-stage
+    const tpeTop = topOf('.tpe');
+    const tpeH = root.querySelector('.tpe').offsetHeight;
+    const y2 = -Math.min(tpeTop - 16, tpeTop + tpeH - vis2 + 16);
+    tl.to($('.col'), { y: y2, duration: 0.9, ease: 'power3.inOut' }, 5.9);
+    $('.tpe .track i').forEach((b, i) => {
+      tl.fromTo(b, { scaleX: 0 }, { scaleX: +b.dataset.v, duration: 0.8, ease: 'power3.out' }, 6.4 + Math.floor(i / 2) * 0.15 + (i % 2) * 0.08);
+    });
+    tl.fromTo($('.tpe .bline span'), { opacity: 0 }, { opacity: 1, duration: 0.3, stagger: 0.05 }, 6.8);
+    tl.fromTo($('.tpe .note'), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, 7.4);
+
+    // exit
+    tl.to($('.win'), { scale: 0.97, opacity: 0, duration: 0.45, ease: 'power2.in' }, D - 0.5);
+    tl.to($('.cap'), { opacity: 0, y: -20, duration: 0.4, ease: 'power2.in' }, D - 0.5);
+    __restore();
+  window.__timelines["{{ID}}"] = tl;
+  };
+  document.fonts.ready.then(build);
+})();
+</script>

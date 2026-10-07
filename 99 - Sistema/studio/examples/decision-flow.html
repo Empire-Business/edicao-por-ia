@@ -1,0 +1,42 @@
+<!doctype html><html lang="pt-BR"><meta charset="UTF-8"><title>Fluxo de decisões — demonstração conceitual</title>
+<style>html,body{margin:0;background:transparent}canvas{display:block}</style><canvas id="stage"></canvas>
+<script>
+'use strict';
+const cfg=window.__STUDIO_SPEC__, M=CVFStudioMotion, c=document.querySelector('canvas');
+c.width=cfg.width;c.height=cfg.height;const g=c.getContext('2d');
+const W=c.width,H=c.height,D=cfg.duration_frames/cfg.fps, ink='#192623',accent='#276652',paper='#f2efe7';
+function line(x1,y1,x2,y2,alpha=1){g.globalAlpha=alpha;g.strokeStyle=accent;g.lineWidth=Math.max(2,W*.0035);g.beginPath();g.moveTo(x1,y1);g.lineTo(x2,y2);g.stroke();g.globalAlpha=1;}
+function card(x,y,w,h,text,fill=paper){g.fillStyle=fill;g.strokeStyle=accent;g.lineWidth=2;g.beginPath();g.roundRect(x-w/2,y-h/2,w,h,Math.min(14,h*.2));g.fill();g.stroke();g.fillStyle=fill===accent?paper:ink;g.font=`600 ${Math.max(14,Math.min(W,H)*.045)}px Arial, sans-serif`;g.textAlign='center';g.textBaseline='middle';g.fillText(text,x,y,w*.86);}
+window.seek=(t)=>{
+  if(!Number.isFinite(t))throw Error('Bad timeline time');
+  g.setTransform(1,0,0,1,0,0);g.globalAlpha=1;g.clearRect(0,0,W,H);
+  if(cfg.mode==='full_frame'){g.fillStyle=paper;g.fillRect(0,0,W,H);}
+  const L=M.layout(W,H),portrait=L.vertical, split=D*.52, u=M.clamp(M.spring(t-split,{stiffness:130,damping:24}));
+  g.fillStyle=ink;g.textAlign='left';g.textBaseline='top';g.font=`700 ${Math.min(W*.075,H*.075)}px Arial, sans-serif`;
+  g.fillText(t<split?'Uma fila para decidir.':'Decisões distribuídas.',L.margin,H*.07,W-2*L.margin);
+  const cx=W*.5,cy=H*.53,cw=portrait?W*.47:W*.27,ch=H*(portrait?.085:.17);
+  const left=portrait?[cx,H*.29]:[W*.15,cy];const right=portrait?[cx,H*.78]:[W*.84,cy];
+  line(left[0],left[1],cx,cy,1-u*.7);
+  card(left[0],left[1],portrait?W*.46:W*.22,ch,'Pedidos');
+  card(cx,cy,cw,ch,t<split?'Você':'Critérios',accent);
+  if(u<.99){line(cx,cy,right[0],right[1],1-u);g.globalAlpha=1-u;card(right[0],right[1],portrait?W*.46:W*.23,ch,'Espera');g.globalAlpha=1;}
+  for(let i=0;i<3;i++){
+    const x=portrait?W*(.21+i*.29):W*.83, y=portrait?H*.78:H*(.30+i*.23);
+    if(u>0){line(cx,cy,x,y,u);g.globalAlpha=u;card(x,y,portrait?W*.23:W*.22,ch*.88,['Equipe A','Equipe B','Equipe C'][i]);g.globalAlpha=1;}
+  }
+  // Queue tokens show accumulation before the transition, progress after it.
+  for(let i=0;i<5;i++){
+    const phase=((t*.38-i*.13)%1+1)%1;
+    let p=t<split?Math.min(phase,.44-i*.033):phase;
+    const x=left[0]+(cx-left[0])*p,y=left[1]+(cy-left[1])*p;
+    g.fillStyle=accent;g.beginPath();g.arc(x,y,Math.max(3,Math.min(W,H)*.013),0,Math.PI*2);g.fill();
+  }
+  // Repaint nodes after connectors/tokens so the line cannot cross the labels.
+  card(left[0],left[1],portrait?W*.46:W*.22,ch,'Pedidos');
+  card(cx,cy,cw,ch,t<split?'Você':'Critérios',accent);
+  g.font=`400 ${Math.min(W,H)*.04}px Arial, sans-serif`;g.textAlign='left';g.fillStyle=ink;
+  g.fillText('Demonstração conceitual — não é uma interface de produto.',L.margin,H*.91,W-2*L.margin);
+  return true;
+};
+// No clocks or preview timers here. The renderer is the only owner of time.
+</script></html>

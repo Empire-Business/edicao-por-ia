@@ -1,0 +1,5 @@
+{
+  "economico": {"max_review_rounds": 2, "preview_width": 360, "default_subframes": 1, "max_sampled_frames": 48, "default_render_sample_budget": 900},
+  "equilibrado": {"max_review_rounds": 3, "preview_width": 540, "default_subframes": 1, "max_sampled_frames": 90, "default_render_sample_budget": 1800},
+  "elaborado": {"max_review_rounds": 4, "preview_width": 720, "default_subframes": 1, "max_sampled_frames": 120, "default_render_sample_budget": 3600}
+}

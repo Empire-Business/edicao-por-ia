@@ -1,0 +1,35 @@
+id: f14-v1
+version: 1
+status: draft
+format_code: F14
+purpose: Apresentador com uma lista que se completa item por item junto da fala.
+engine: hybrid
+output: {width: 1080, height: 1920, fps: 30, fit: cover}
+editorial:
+  target_pace: conversational
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  min_jump_cut_interval_seconds: 0.9
+  silence_removal: {enabled: true, minimum_silence_seconds: 0.15, keep_pause_seconds: 0.12, word_handle_seconds: 0.1, minimum_cut_seconds: 0.1, trim_edges: true}
+  preserve_required_phrases: []
+visual:
+  composition: Pessoa em câmera com espaço para a lista; cada item entra no momento em que é explicado e continua visível.
+  list_count: Derivar da fala e do conteúdo enviado; não fixar quatro itens ou números do exemplo.
+  item_timing: A entrada segue o início da ideia correspondente; texto curto, sem repetir toda a legenda.
+  item_persistence: Manter itens anteriores para o público acompanhar o conjunto.
+  punch_ins: selective
+  max_punch_in_scale: 1.06
+  random_effects: false
+captions: {enabled: true, max_lines: 2, max_chars_per_line: 34, word_highlight: false}
+audio: {normalize: true, loudness_target_lufs: -16, true_peak_db: -1.5, edge_fade_ms: 5}
+insertion_assets: {policy: optional, density: low, default_preferred_duration_s: 2.0, default_max_duration_s: 5.0, allow_image_motion: false}
+export: {container: mp4, video_codec: libx264, crf: 18, audio_codec: aac, audio_bitrate: 192k}
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+  verify_item_order_and_count: true
+  verify_no_face_overlap: true
+  verify_mobile_readability: true
+forbidden: [gratuitous_zoom, random_transition, stretch_video, delete_source, fabricated_list_item, inherit_palette_from_format, inherit_font_from_format, automatic_logo, automatic_personal_identity]
+design: {source: explicit_visual_identity, palette_from_format: false, fonts_from_format: false, logos_enabled: false}
+reference_materials: {video: 'examples/reference-library/F14/reference.mp4'}

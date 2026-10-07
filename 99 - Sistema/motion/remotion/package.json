@@ -1,0 +1,9 @@
+{
+  "name": "cvf-motion-remotion-adapter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Optional adapter; install exact compatible dependencies explicitly before use",
+  "scripts": {
+    "dev": "remotion studio src/index.jsx"
+  }
+}

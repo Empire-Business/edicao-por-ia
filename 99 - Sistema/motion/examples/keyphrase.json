@@ -1,0 +1,27 @@
+{
+  "id": "keyphrase-demo-v1",
+  "child_id": "demo",
+  "template": "keyphrase",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_frames": 90,
+  "mode": "overlay",
+  "lines": [
+    "Conteúdo com direção.",
+    "Não apenas volume."
+  ],
+  "colors": {
+    "foreground": "#F5F4F0",
+    "background": "#14171C",
+    "accent": "#C5DB82"
+  },
+  "box": {
+    "x": 0.08,
+    "y": 0.55,
+    "w": 0.84,
+    "h": 0.22
+  },
+  "font_family": "Arial, sans-serif",
+  "status": "simulation_not_brand_approved"
+}

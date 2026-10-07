@@ -1,0 +1,7 @@
+# Install only the backend(s) you intend to use.
+PyYAML>=6.0
+faster-whisper>=1.2.0
+# Apple Silicon alternative:
+# mlx-whisper
+# Precision alignment / diarization option:
+# whisperx

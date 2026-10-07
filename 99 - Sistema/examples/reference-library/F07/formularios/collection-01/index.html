@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>OMNX Type — Mockups revisados</title>
+<style>
+:root{--bg:#f5f2ed;--paper:#fffdfa;--ink:#111820;--muted:#6f7782;--line:#e8e3dc;--orange:#f15a0a;--nav:#101a24;--soft:#f9f7f3}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+a{color:inherit} button{font:inherit}
+.app{min-height:100vh;display:grid;grid-template-columns:320px 1fr}
+.sidebar{position:sticky;top:0;height:100vh;background:linear-gradient(180deg,#0f1923,#111e29);color:#fff;padding:30px 22px;overflow:auto}
+.logo{font-family:Georgia,serif;font-size:46px;letter-spacing:-2px;margin:0 0 5px} .logo i{color:var(--orange);font-style:normal} .tag{font-size:10px;letter-spacing:.26em;color:#9eabb6;text-transform:uppercase;line-height:1.6;margin-bottom:30px}
+.side-intro{font-size:13px;line-height:1.55;color:#b5bec6;border-top:1px solid #26333d;padding-top:20px;margin-bottom:18px}
+.nav-list{display:grid;gap:7px} .nav-item{display:grid;grid-template-columns:34px 1fr;align-items:center;text-align:left;gap:8px;width:100%;border:0;background:transparent;color:#bdc5cc;border-radius:12px;padding:10px 9px;cursor:pointer;transition:.18s}
+.nav-item span{width:29px;height:29px;border-radius:9px;background:#1c2a36;display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800} .nav-item:hover,.nav-item.active{background:#1b2935;color:#fff} .nav-item.active span{background:var(--orange)}
+.keyboard{margin-top:22px;font-size:11px;color:#7f8a94;line-height:1.55}
+.main{min-width:0}
+.hero{padding:44px 5vw 34px;background:radial-gradient(circle at 88% 12%,#fff4eb 0,transparent 26%),linear-gradient(180deg,#fffdfa,#f6f3ee);border-bottom:1px solid var(--line)}
+.hero-top{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;max-width:1360px;margin:auto} .kicker{font-size:11px;letter-spacing:.28em;color:#6d7480;text-transform:uppercase} .hero h1{font-size:clamp(38px,5vw,72px);line-height:.96;letter-spacing:-.05em;margin:14px 0 16px;max-width:860px} .hero h1 em{color:var(--orange);font-style:normal} .hero p{font-size:18px;line-height:1.55;color:#5f6873;max-width:820px}
+.direction{background:#fff;border:1px solid var(--line);padding:9px;border-radius:20px;box-shadow:0 20px 55px rgba(18,24,32,.08)} .direction img{display:block;width:100%;border-radius:14px}
+.summary{max-width:1360px;margin:24px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px} .summary div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 17px} .summary b{font-size:23px;display:block} .summary span{font-size:12px;color:var(--muted)}
+.coverage{max-width:1360px;margin:14px auto 0;background:#111c26;color:#fff;border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;gap:18px;align-items:flex-start} .coverage p{margin:0;color:#c7cdd3;font-size:13px;line-height:1.55} .coverage a{text-decoration:none;background:#fff;color:#111c26;padding:10px 14px;border-radius:999px;font-weight:700;white-space:nowrap}
+.content{max-width:1360px;margin:0 auto;padding:48px 5vw 120px}
+.table-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:34px;overflow:auto} .table-card h2{margin:0 0 8px;font-size:22px;letter-spacing:-.03em} .table-card p{margin:0 0 14px;color:#67707a;font-size:14px;line-height:1.5}
+.route-map{padding:0;overflow:hidden}.route-map summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}.route-map summary::-webkit-details-marker{display:none}.route-map summary strong{display:block;font-size:20px;letter-spacing:-.025em}.route-map summary small{display:block;margin-top:5px;color:#737b85;font-size:12px;font-weight:400}.summary-chevron{font-size:24px;transition:.2s}.route-map[open] .summary-chevron{transform:rotate(180deg)}.route-map-body{padding:0 18px 18px}.module{scroll-margin-top:22px}.table-card table{width:100%;border-collapse:collapse;font-size:13px} .table-card th,.table-card td{padding:10px 8px;border-top:1px solid #eee7df;text-align:left;vertical-align:top} .table-card th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6e7580}
+.module{display:none;animation:fade .25s ease} .module.active{display:block} @keyframes fade{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
+.module-head{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:end;margin-bottom:24px} .eyebrow{font-size:11px;letter-spacing:.26em;color:var(--orange);font-weight:800} .module h1{font-size:42px;letter-spacing:-.04em;line-height:1.02;margin:7px 0 0}
+.module-meta{display:grid;grid-template-columns:1fr 1fr;gap:15px} .module-meta div{border-left:2px solid var(--line);padding-left:15px} .module-meta b{display:block;font-size:12px;margin-bottom:7px} .module-meta span{display:block;color:var(--muted);font-size:13px;line-height:1.45}
+.mockup-wrap{background:#e9e5df;padding:10px;border-radius:22px;box-shadow:0 22px 58px rgba(20,25,31,.11);overflow:hidden} .mockup-wrap img{display:block;width:100%;height:auto;border-radius:15px}
+.flow{display:flex;gap:18px;align-items:center;background:#111c26;color:#fff;padding:18px 22px;border-radius:14px;margin:20px 0 26px} .flow span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#aeb7c0;white-space:nowrap} .flow strong{font-size:14px;font-weight:600}
+.screen-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px} .screen-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;min-height:205px} .screen-id{font-size:10px;letter-spacing:.16em;color:var(--orange);font-weight:800}
+.screen-card h3{font-size:18px;margin:8px 0 10px} .screen-card p{color:#646d77;font-size:14px;line-height:1.5;margin:12px 0 0}
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px} .mini-grid .full{grid-column:1/-1} .mini-grid b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#7b838d;margin-bottom:4px} .mini-grid span{display:block;background:#f4f1ec;border-radius:10px;padding:8px 10px;color:#515a64;font-size:12px;line-height:1.45}
+.arrows{position:fixed;right:24px;bottom:24px;display:flex;gap:8px;z-index:20} .arrow{width:48px;height:48px;border-radius:50%;border:1px solid #ded7cf;background:#fff;box-shadow:0 9px 24px rgba(20,25,31,.12);cursor:pointer;font-size:22px} .arrow:hover{background:#111c26;color:white}
+.counter{position:fixed;left:calc(320px + 24px);bottom:28px;background:#fff;border:1px solid var(--line);padding:10px 13px;border-radius:999px;font-size:12px;box-shadow:0 8px 24px rgba(20,25,31,.08);z-index:15}
+@media(max-width:1100px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto;padding:20px}.nav-list{grid-template-columns:repeat(2,1fr)}.hero-top,.module-head{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.coverage{flex-direction:column}.counter{left:18px}}
+@media(max-width:720px){.nav-list{grid-template-columns:1fr}.hero{padding:32px 18px}.content{padding:34px 18px 100px}.hero h1{font-size:44px}.summary{grid-template-columns:1fr}.screen-grid,.module-meta,.mini-grid{grid-template-columns:1fr}.module h1{font-size:34px}.flow{align-items:flex-start;flex-direction:column;gap:7px}.arrows{right:14px;bottom:14px}.counter{bottom:17px}}
+
+.logo img{display:block;width:210px;height:auto;margin:6px 0 18px;background:transparent}
+.hero h1{font-size:clamp(36px,4vw,61px);line-height:1.04}.hero p{font-size:16px}
+.zoomable{cursor:zoom-in}.zoom-trigger{display:block;margin:0 0 12px auto;padding:10px 16px;border:1px solid #dcd6cd;border-radius:12px;background:#fff;color:#18212a;cursor:pointer}
+button:focus-visible,[role=button]:focus-visible,summary:focus-visible{outline:3px solid #f15a0a;outline-offset:4px}
+.module-meta span,.mini-grid span{overflow-wrap:anywhere}.route-map-body{overflow:auto}
+#image-viewer{padding:0;border:1px solid #d1cbc2;border-radius:16px;width:94vw;max-width:1800px;height:94vh;max-height:1100px;background:#eeeae4;color:#161d24;overflow:hidden}
+#image-viewer::backdrop{background:rgba(6,12,19,.86)}
+.viewer-toolbar{height:64px;background:#fffdfa;border-bottom:1px solid #ddd7d0;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;gap:12px}
+#viewer-title{font-size:14px;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.viewer-actions{display:flex;gap:6px;flex-shrink:0}.viewer-actions button{border:1px solid #ded9d1;border-radius:8px;background:#fff;padding:9px 12px;cursor:pointer;color:#16202a;white-space:nowrap}
+.viewer-stage{height:calc(100% - 64px);overflow:auto;padding:18px;overscroll-behavior:contain}
+#viewer-image{display:block;max-width:none;height:auto;margin:auto;background:#fff;box-shadow:0 8px 40px #0002}
+.viewer-stage.fit #viewer-image{width:100%!important;height:100%;object-fit:contain;background:none;box-shadow:none}
+@media(max-width:720px){#image-viewer{width:98vw;height:94vh}.viewer-toolbar{padding:8px;gap:6px}#viewer-title{max-width:30vw;font-size:12px}.viewer-actions{gap:4px}.viewer-actions button{padding:9px 7px;font-size:11px}.viewer-stage{padding:6px}.hero h1{font-size:39px}.logo img{width:196px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="logo"><img alt="OMNX Type" height="32" src="assets/omnx-type-clara.png" width="210"/></div><div class="tag">Formulários que conversam.</div>
+<div class="side-intro">11 módulos, com as telas desktop e mobile reunidas em pranchas. Navegue pelas imagens e consulte a explicação de cada tela.</div>
+<div class="nav-list"><button class="nav-item" data-i="0"><span>01</span>Experiência pública / Player conversacional</button><button class="nav-item" data-i="1"><span>02</span>Acesso e início</button><button class="nav-item" data-i="2"><span>03</span>Formulários e construtor</button><button class="nav-item" data-i="3"><span>04</span>Respostas e leads</button><button class="nav-item" data-i="4"><span>05</span>Integrações e IA</button><button class="nav-item" data-i="5"><span>06</span>Webhooks e API</button><button class="nav-item" data-i="6"><span>07</span>Organização, super-admin e tickets</button><button class="nav-item" data-i="7"><span>08</span>Dashboard, onboarding e fluxo inicial</button><button class="nav-item" data-i="8"><span>09</span>Marca, segurança, perfis e auditoria</button><button class="nav-item" data-i="9"><span>10</span>Closer / Minha Agenda</button><button class="nav-item" data-i="10"><span>11</span>Site público, institucional e legal</button></div>
+<div class="keyboard">Use ← → no teclado, clique no menu lateral ou use os botões flutuantes para avançar entre módulos.</div>
+</aside>
+<main class="main">
+<section class="hero">
+<div class="hero-top">
+<div>
+<div class="kicker">OMNX TYPE · APRESENTAÇÃO DO PRODUTO</div>
+<h1>As telas do produto, <em>em uma única apresentação.</em></h1>
+<p>Explore as pranchas por módulo e consulte onde cada tela fica, quem a utiliza e para que serve. As imagens são mockups estáticos; o index funciona como galeria de apresentação.</p>
+</div>
+<div class="direction"><img alt="Direção visual aprovada do omnx" aria-label="Ampliar: Direção visual aprovada do omnx" class="zoomable" decoding="async" role="button" src="mockups/00-direcao-visual.png" tabindex="0"/></div>
+</div>
+<div class="summary">
+<div><b>11</b><span>pranchas visuais organizadas por módulo</span></div>
+<div><b>12</b><span>imagens: 11 módulos + direção visual</span></div>
+<div><b>OMNX Type</b><span>identidade aplicada dentro dos mockups</span></div>
+<div><b>Desktop + mobile</b><span>linguagem premium consistente</span></div>
+</div>
+<div class="coverage">
+<p>Identidade revisada: OMNX Type nos cabeçalhos, nas interfaces desktop e mobile e nos rodapés das pranchas. Clique em uma imagem para ampliar e conferir os detalhes.</p>
+<a href="mapa-de-cobertura.csv">Abrir mapa de cobertura</a>
+</div>
+</section>
+<div class="content">
+<details class="table-card route-map">
+<summary><span><strong>Mapa rápido de rotas e cobertura</strong><small>Abra somente quando quiser consultar a rastreabilidade tela por tela.</small></span><span class="summary-chevron">⌄</span></summary>
+<div class="route-map-body">
+<p>Esta tabela resume onde cada rota principal do sistema foi representada neste pacote. Callback técnicos e estados menores foram agrupados em telas representativas quando isso fazia mais sentido para apresentação.</p>
+<table>
+<thead><tr><th>Rota</th><th>ID</th><th>Tela</th><th>Prancha</th></tr></thead>
+<tbody><tr><td>/p/:orgSlug/:formSlug</td><td>TEL-001</td><td>Player — conversa em andamento</td><td>01 — Experiência pública / Player conversacional</td></tr><tr><td>/p/:orgSlug/:formSlug</td><td>TEL-002</td><td>Player — bloco de agendamento</td><td>01 — Experiência pública / Player conversacional</td></tr><tr><td>/p/:orgSlug/:formSlug</td><td>TEL-003</td><td>Player — tela final</td><td>01 — Experiência pública / Player conversacional</td></tr><tr><td>/login</td><td>TEL-004</td><td>Login</td><td>02 — Acesso e início</td></tr><tr><td>/forms</td><td>TEL-005</td><td>Lista de formulários</td><td>02 — Acesso e início</td></tr><tr><td>/forms</td><td>Estado</td><td>Primeiro acesso / lista vazia</td><td>02 — Acesso e início</td></tr><tr><td>/forms</td><td>Estado</td><td>Novo formulário</td><td>02 — Acesso e início</td></tr><tr><td>/forms/:id/edit</td><td>TEL-006</td><td>Construtor — canvas de blocos</td><td>03 — Formulários e construtor</td></tr><tr><td>/forms/:id/dashboard</td><td>TEL-009</td><td>Dashboard do formulário / funil</td><td>03 — Formulários e construtor</td></tr><tr><td>/forms/:id/edit (abas internas)</td><td>TEL-016</td><td>Configurações do formulário</td><td>03 — Formulários e construtor</td></tr><tr><td>/forms/:id/edit</td><td>Estado</td><td>Preview do player</td><td>03 — Formulários e construtor</td></tr><tr><td>/forms/:id/responses</td><td>TEL-007</td><td>Respostas — lista</td><td>04 — Respostas e leads</td></tr><tr><td>/forms/:id/responses</td><td>TEL-008</td><td>Resposta — detalhe</td><td>04 — Respostas e leads</td></tr><tr><td>/forms/:id/responses</td><td>Estado</td><td>Lead parcial / abandono</td><td>04 — Respostas e leads</td></tr><tr><td>/settings/integrations</td><td>TEL-010</td><td>Integrações — visão geral</td><td>05 — Integrações e IA</td></tr><tr><td>/settings/integrations</td><td>TEL-011</td><td>OpenRouter — BYOK</td><td>05 — Integrações e IA</td></tr><tr><td>/settings/integrations</td><td>Estado</td><td>Teste de conexão</td><td>05 — Integrações e IA</td></tr><tr><td>/forms/:id/webhooks</td><td>TEL-012</td><td>Webhooks — endpoints</td><td>06 — Webhooks e API</td></tr><tr><td>/forms/:id/webhooks</td><td>TEL-013</td><td>Webhooks — entregas</td><td>06 — Webhooks e API</td></tr><tr><td>/settings/api-keys</td><td>TEL-014</td><td>API keys e documentação</td><td>06 — Webhooks e API</td></tr><tr><td>/settings/members</td><td>TEL-015</td><td>Organização e membros</td><td>07 — Organização, super-admin e tickets</td></tr><tr><td>/super-admin, /super-admin/tenants</td><td>TEL-017</td><td>Super-admin — overview/organizações</td><td>07 — Organização, super-admin e tickets</td></tr><tr><td>/tickets</td><td>TEL-018</td><td>Tickets de erro</td><td>07 — Organização, super-admin e tickets</td></tr><tr><td>/dashboard</td><td>Atual</td><td>Dashboard inicial</td><td>08 — Dashboard, onboarding e fluxo inicial</td></tr><tr><td>/onboarding/create-organization</td><td>Atual</td><td>Criar organização</td><td>08 — Dashboard, onboarding e fluxo inicial</td></tr><tr><td>/dashboard</td><td>Atual</td><td>Dashboard vazio</td><td>08 — Dashboard, onboarding e fluxo inicial</td></tr><tr><td>/forgot-password</td><td>Atual</td><td>Esqueci minha senha</td><td>08 — Dashboard, onboarding e fluxo inicial</td></tr><tr><td>/reset-password</td><td>Atual</td><td>Redefinir senha</td><td>08 — Dashboard, onboarding e fluxo inicial</td></tr><tr><td>/settings/branding</td><td>Atual</td><td>Marca e identidade</td><td>09 — Marca, segurança, perfis e auditoria</td></tr><tr><td>/settings/access-profiles</td><td>Atual</td><td>Perfis de acesso</td><td>09 — Marca, segurança, perfis e auditoria</td></tr><tr><td>/settings/security</td><td>Atual</td><td>Segurança</td><td>09 — Marca, segurança, perfis e auditoria</td></tr><tr><td>/settings/audit-logs</td><td>Atual</td><td>Logs de auditoria</td><td>09 — Marca, segurança, perfis e auditoria</td></tr><tr><td>/minha-agenda</td><td>Atual</td><td>Minha Agenda — visão geral</td><td>10 — Closer / Minha Agenda</td></tr><tr><td>/minha-agenda</td><td>Atual</td><td>Detalhe da reunião / lead</td><td>10 — Closer / Minha Agenda</td></tr><tr><td>/minha-agenda</td><td>Atual</td><td>Disponibilidade e calendários</td><td>10 — Closer / Minha Agenda</td></tr><tr><td>/minha-agenda/callback</td><td>Atual</td><td>Conexão realizada</td><td>10 — Closer / Minha Agenda</td></tr><tr><td>/</td><td>Atual</td><td>Landing page</td><td>11 — Site público, institucional e legal</td></tr><tr><td>/privacidade</td><td>Atual</td><td>Política de Privacidade</td><td>11 — Site público, institucional e legal</td></tr><tr><td>/termos</td><td>Atual</td><td>Termos de Uso</td><td>11 — Site público, institucional e legal</td></tr><tr><td>/:formSlug</td><td>Atual</td><td>Player em domínio personalizado</td><td>11 — Site público, institucional e legal</td></tr></tbody>
+</table>
+</div>
+</details>
+<section class="module" data-index="0" id="mod-01">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 01</div>
+<h1>Experiência pública / Player conversacional</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Representa a experiência do visitante final. O formulário se comporta como uma conversa contínua, coleta respostas progressivamente, agenda reuniões e encerra com confirmação clara.</span></div>
+<div><b>Quem usa</b><span>Visitantes, leads e prospects.</span></div>
+<div><b>Onde fica</b><span>Links públicos, embed e formulários publicados.</span></div>
+<div><b>Grupo de rotas</b><span>/p/:orgSlug/:formSlug</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 01 — Experiência pública / Player conversacional" aria-label="Ampliar: Prancha do módulo 01 — Experiência pública / Player conversacional" class="zoomable" decoding="async" role="button" src="mockups/01-experiencia-publica-player.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Entrada pública → conversa guiada → agendamento (quando houver) → confirmação final</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">TEL-001</div>
+<h3>Player — conversa em andamento</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/p/:orgSlug/:formSlug</span></div>
+<div><b>Quem usa</b><span>Visitante final.</span></div>
+<div class="full"><b>Onde fica</b><span>Tela pública principal do formulário.</span></div>
+</div>
+<p>Conduz a conversa, mantém o histórico acumulado e coleta respostas sem parecer um formulário frio.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-002</div>
+<h3>Player — bloco de agendamento</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/p/:orgSlug/:formSlug</span></div>
+<div><b>Quem usa</b><span>Visitante final.</span></div>
+<div class="full"><b>Onde fica</b><span>Etapa do player quando o fluxo possui agendamento.</span></div>
+</div>
+<p>Permite escolher data, horário, fuso e duração sem sair da conversa.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-003</div>
+<h3>Player — tela final</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/p/:orgSlug/:formSlug</span></div>
+<div><b>Quem usa</b><span>Visitante final.</span></div>
+<div class="full"><b>Onde fica</b><span>Última etapa do fluxo público.</span></div>
+</div>
+<p>Confirma o encerramento, resume o agendamento e mostra o próximo passo ou CTA.</p>
+</article></div>
+</section>
+<section class="module" data-index="1" id="mod-02">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 02</div>
+<h1>Acesso e início</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Prancha introdutória do acesso administrativo, mostrando login, erro amigável, primeiro acesso, lista de formulários e criação de um novo formulário.</span></div>
+<div><b>Quem usa</b><span>Usuários administrativos (owner/admin/member).</span></div>
+<div><b>Onde fica</b><span>Fluxo de entrada no Admin.</span></div>
+<div><b>Grupo de rotas</b><span>/login, /forms</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 02 — Acesso e início" aria-label="Ampliar: Prancha do módulo 02 — Acesso e início" class="zoomable" decoding="async" role="button" src="mockups/02-acesso-e-inicio.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Login → área autenticada → lista de formulários → novo formulário</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">TEL-004</div>
+<h3>Login</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/login</span></div>
+<div><b>Quem usa</b><span>Qualquer usuário com conta.</span></div>
+<div class="full"><b>Onde fica</b><span>Porta de entrada do painel administrativo.</span></div>
+</div>
+<p>Autentica com e-mail e senha e oferece criação de conta e recuperação de acesso.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-005</div>
+<h3>Lista de formulários</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms</span></div>
+<div><b>Quem usa</b><span>Usuários do time da organização.</span></div>
+<div class="full"><b>Onde fica</b><span>Menu do Admin → Formulários.</span></div>
+</div>
+<p>Exibe os formulários existentes e os atalhos para construir, analisar respostas e configurar.</p>
+</article><article class="screen-card">
+<div class="screen-id">Estado</div>
+<h3>Primeiro acesso / lista vazia</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms</span></div>
+<div><b>Quem usa</b><span>Usuários novos.</span></div>
+<div class="full"><b>Onde fica</b><span>Mesmo lugar da lista de formulários, quando a organização ainda não criou nada.</span></div>
+</div>
+<p>Orienta o usuário a criar seu primeiro formulário com CTA claro.</p>
+</article><article class="screen-card">
+<div class="screen-id">Estado</div>
+<h3>Novo formulário</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms</span></div>
+<div><b>Quem usa</b><span>Usuários que vão começar um formulário.</span></div>
+<div class="full"><b>Onde fica</b><span>Modal acionado pelo botão “Novo formulário”.</span></div>
+</div>
+<p>Permite começar do zero ou a partir de templates de perguntas.</p>
+</article></div>
+</section>
+<section class="module" data-index="2" id="mod-03">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 03</div>
+<h1>Formulários e construtor</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Mostra o núcleo de criação: canvas visual, lógica, IA, analytics do formulário, aparência, LGPD, embed e campos.</span></div>
+<div><b>Quem usa</b><span>Owners, admins e operadores que constroem formulários.</span></div>
+<div><b>Onde fica</b><span>Admin → Formulários → abrir um formulário.</span></div>
+<div><b>Grupo de rotas</b><span>/forms/:id/edit, /forms/:id/dashboard</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 03 — Formulários e construtor" aria-label="Ampliar: Prancha do módulo 03 — Formulários e construtor" class="zoomable" decoding="async" role="button" src="mockups/03-formularios-e-construtor.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Lista de formulários → construtor → testar/publicar → dashboard do formulário → configurações</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">TEL-006</div>
+<h3>Construtor — canvas de blocos</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/edit</span></div>
+<div><b>Quem usa</b><span>Quem monta o fluxo.</span></div>
+<div class="full"><b>Onde fica</b><span>Dentro de um formulário, ação “Editar/Abrir construtor”.</span></div>
+</div>
+<p>Monta a experiência com mensagens, perguntas, condições, IA, ações e agendamento.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-009</div>
+<h3>Dashboard do formulário / funil</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/dashboard</span></div>
+<div><b>Quem usa</b><span>Gestores e operadores.</span></div>
+<div class="full"><b>Onde fica</b><span>Dentro do formulário, aba de resultados.</span></div>
+</div>
+<p>Mostra visitas, inícios, conclusões, conversão e abandono por etapa.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-016</div>
+<h3>Configurações do formulário</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/edit (abas internas)</span></div>
+<div><b>Quem usa</b><span>Quem publica e personaliza a experiência.</span></div>
+<div class="full"><b>Onde fica</b><span>Dentro do formulário, área de configurações.</span></div>
+</div>
+<p>Centraliza aparência, LGPD, tela final, embed e mapeamento de campos.</p>
+</article><article class="screen-card">
+<div class="screen-id">Estado</div>
+<h3>Preview do player</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/edit</span></div>
+<div><b>Quem usa</b><span>Quem está validando o fluxo.</span></div>
+<div class="full"><b>Onde fica</b><span>Ação de testar dentro do construtor.</span></div>
+</div>
+<p>Mostra como o visitante verá o formulário antes da publicação.</p>
+</article></div>
+</section>
+<section class="module" data-index="3" id="mod-04">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 04</div>
+<h1>Respostas e leads</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Transforma conversas coletadas em operação de leads: listagem, filtros, detalhe da conversa, metadados, resumo de IA e retomada de abandonos.</span></div>
+<div><b>Quem usa</b><span>Operação comercial, atendimento e gestores.</span></div>
+<div><b>Onde fica</b><span>Admin → Respostas / leads.</span></div>
+<div><b>Grupo de rotas</b><span>/forms/:id/responses</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 04 — Respostas e leads" aria-label="Ampliar: Prancha do módulo 04 — Respostas e leads" class="zoomable" decoding="async" role="button" src="mockups/04-respostas-e-leads.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Lista de respostas → filtros → detalhe do lead → análise de contexto e ação</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">TEL-007</div>
+<h3>Respostas — lista</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/responses</span></div>
+<div><b>Quem usa</b><span>Operação comercial e atendimento.</span></div>
+<div class="full"><b>Onde fica</b><span>Dentro do formulário, aba de respostas.</span></div>
+</div>
+<p>Centraliza todas as respostas com status, tags, busca, filtros e exportação.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-008</div>
+<h3>Resposta — detalhe</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/responses</span></div>
+<div><b>Quem usa</b><span>Operadores e closers.</span></div>
+<div class="full"><b>Onde fica</b><span>Clique em um lead da lista.</span></div>
+</div>
+<p>Mostra a conversa completa, metadados, agendamento, tags e resumo de IA.</p>
+</article><article class="screen-card">
+<div class="screen-id">Estado</div>
+<h3>Lead parcial / abandono</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/responses</span></div>
+<div><b>Quem usa</b><span>Quem faz recuperação de oportunidade.</span></div>
+<div class="full"><b>Onde fica</b><span>Lista e detalhe dos leads que não concluíram.</span></div>
+</div>
+<p>Identifica onde houve abandono para facilitar retomada.</p>
+</article></div>
+</section>
+<section class="module" data-index="4" id="mod-05">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 05</div>
+<h1>Integrações e IA</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Explica como o produto conecta calendários, CRMs, canais e o provedor de IA, com foco em clareza de status, testes e configuração de modelos.</span></div>
+<div><b>Quem usa</b><span>Admins e usuários responsáveis por integrações.</span></div>
+<div><b>Onde fica</b><span>Admin → Configurações → Integrações.</span></div>
+<div><b>Grupo de rotas</b><span>/settings/integrations</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 05 — Integrações e IA" aria-label="Ampliar: Prancha do módulo 05 — Integrações e IA" class="zoomable" decoding="async" role="button" src="mockups/05-integracoes-e-ia.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Integrações → conectar/configurar → testar → acompanhar status e consumo</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">TEL-010</div>
+<h3>Integrações — visão geral</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/integrations</span></div>
+<div><b>Quem usa</b><span>Admins.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações → Integrações.</span></div>
+</div>
+<p>Mostra Google Agenda, Calendly, HighLevel, Zoom, OpenRouter e o estado de cada conexão.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-011</div>
+<h3>OpenRouter — BYOK</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/integrations</span></div>
+<div><b>Quem usa</b><span>Admins e gestores de IA.</span></div>
+<div class="full"><b>Onde fica</b><span>Detalhe da integração OpenRouter.</span></div>
+</div>
+<p>Permite inserir a chave própria, escolher modelos e acompanhar custo estimado.</p>
+</article><article class="screen-card">
+<div class="screen-id">Estado</div>
+<h3>Teste de conexão</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/integrations</span></div>
+<div><b>Quem usa</b><span>Admins.</span></div>
+<div class="full"><b>Onde fica</b><span>Ação dentro da integração.</span></div>
+</div>
+<p>Verifica se a integração está funcionando antes do uso em produção.</p>
+</article></div>
+</section>
+<section class="module" data-index="5" id="mod-06">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 06</div>
+<h1>Webhooks e API</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Mostra a camada técnica de integração programática: endpoints, segurança, logs de entrega, retries, chaves de API e documentação.</span></div>
+<div><b>Quem usa</b><span>Admins técnicos e desenvolvedores.</span></div>
+<div><b>Onde fica</b><span>Área técnica do produto e dentro do formulário.</span></div>
+<div><b>Grupo de rotas</b><span>/forms/:id/webhooks, /settings/api-keys</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 06 — Webhooks e API" aria-label="Ampliar: Prancha do módulo 06 — Webhooks e API" class="zoomable" decoding="async" role="button" src="mockups/06-webhooks-e-api.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Configurar endpoints → definir eventos → acompanhar entregas → gerar API keys → consumir documentação</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">TEL-012</div>
+<h3>Webhooks — endpoints</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/webhooks</span></div>
+<div><b>Quem usa</b><span>Admins técnicos.</span></div>
+<div class="full"><b>Onde fica</b><span>Dentro do formulário, aba de webhooks.</span></div>
+</div>
+<p>Cria e gerencia endpoints que recebem eventos do formulário com segurança HMAC.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-013</div>
+<h3>Webhooks — entregas</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forms/:id/webhooks</span></div>
+<div><b>Quem usa</b><span>Admins técnicos e suporte.</span></div>
+<div class="full"><b>Onde fica</b><span>Painel de monitoramento dos webhooks.</span></div>
+</div>
+<p>Mostra status de cada entrega, tentativas, códigos HTTP e ações de retry.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-014</div>
+<h3>API keys e documentação</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/api-keys</span></div>
+<div><b>Quem usa</b><span>Admins e desenvolvedores.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações → API Keys.</span></div>
+</div>
+<p>Gera chaves, controla escopos e oferece documentação com exemplos de integração.</p>
+</article></div>
+</section>
+<section class="module" data-index="6" id="mod-07">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 07</div>
+<h1>Organização, super-admin e tickets</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Agrupa governança da organização, visão global da plataforma e diagnóstico de erros, útil para defesa comercial e entendimento operacional.</span></div>
+<div><b>Quem usa</b><span>Admins da organização e time interno da plataforma.</span></div>
+<div><b>Onde fica</b><span>Configurações de organização e área de super-admin.</span></div>
+<div><b>Grupo de rotas</b><span>/settings/members, /super-admin, /tickets</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 07 — Organização, super-admin e tickets" aria-label="Ampliar: Prancha do módulo 07 — Organização, super-admin e tickets" class="zoomable" decoding="async" role="button" src="mockups/07-organizacao-superadmin-tickets.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Organização → convites/membros → super-admin → tickets e saúde operacional</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">TEL-015</div>
+<h3>Organização e membros</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/members</span></div>
+<div><b>Quem usa</b><span>Admins e owners.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações → Membros / Organização.</span></div>
+</div>
+<p>Gerencia dados da organização, membros, convites e limites do plano.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-017</div>
+<h3>Super-admin — overview/organizações</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/super-admin, /super-admin/tenants</span></div>
+<div><b>Quem usa</b><span>Equipe interna da omnx.</span></div>
+<div class="full"><b>Onde fica</b><span>Área restrita da plataforma, fora do tenant do cliente.</span></div>
+</div>
+<p>Acompanha visão global, tenants, crescimento e saúde operacional.</p>
+</article><article class="screen-card">
+<div class="screen-id">TEL-018</div>
+<h3>Tickets de erro</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/tickets</span></div>
+<div><b>Quem usa</b><span>Time interno e suporte técnico.</span></div>
+<div class="full"><b>Onde fica</b><span>Área interna de operação e suporte.</span></div>
+</div>
+<p>Centraliza falhas do player, admin e backend com contexto técnico e status de tratamento.</p>
+</article></div>
+</section>
+<section class="module" data-index="7" id="mod-08">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 08</div>
+<h1>Dashboard, onboarding e fluxo inicial</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Complementa a cobertura com as rotas atuais de início do app: dashboard real, criação de organização e fluxo de recuperação de acesso.</span></div>
+<div><b>Quem usa</b><span>Novos usuários e qualquer pessoa entrando na plataforma.</span></div>
+<div><b>Onde fica</b><span>Entrada atual do produto.</span></div>
+<div><b>Grupo de rotas</b><span>/dashboard, /onboarding/create-organization, /forgot-password, /reset-password</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 08 — Dashboard, onboarding e fluxo inicial" aria-label="Ampliar: Prancha do módulo 08 — Dashboard, onboarding e fluxo inicial" class="zoomable" decoding="async" role="button" src="mockups/08-dashboard-onboarding-fluxo-inicial.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Login → dashboard → onboarding da organização → primeiro formulário → recuperação de senha (quando necessário)</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Dashboard inicial</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/dashboard</span></div>
+<div><b>Quem usa</b><span>Usuários autenticados.</span></div>
+<div class="full"><b>Onde fica</b><span>Primeira tela operacional do app atual.</span></div>
+</div>
+<p>Resume desempenho, mostra próximos passos e direciona o trabalho do dia.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Criar organização</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/onboarding/create-organization</span></div>
+<div><b>Quem usa</b><span>Novos usuários.</span></div>
+<div class="full"><b>Onde fica</b><span>Fluxo de onboarding quando o usuário ainda não tem organização.</span></div>
+</div>
+<p>Configura a organização e habilita o restante do produto.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Dashboard vazio</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/dashboard</span></div>
+<div><b>Quem usa</b><span>Usuários em início de jornada.</span></div>
+<div class="full"><b>Onde fica</b><span>Mesmo dashboard, em cenário de primeiro uso.</span></div>
+</div>
+<p>Explica o próximo passo com CTA para criar o primeiro formulário.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Esqueci minha senha</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/forgot-password</span></div>
+<div><b>Quem usa</b><span>Usuários com problema de acesso.</span></div>
+<div class="full"><b>Onde fica</b><span>Fluxo de autenticação.</span></div>
+</div>
+<p>Solicita envio do link para redefinir a senha.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Redefinir senha</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/reset-password</span></div>
+<div><b>Quem usa</b><span>Usuários que receberam o link de recuperação.</span></div>
+<div class="full"><b>Onde fica</b><span>Fluxo de autenticação.</span></div>
+</div>
+<p>Permite criar uma nova senha de forma segura.</p>
+</article></div>
+</section>
+<section class="module" data-index="8" id="mod-09">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 09</div>
+<h1>Marca, segurança, perfis e auditoria</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Cobre governança mais fina da organização: branding global, perfis de acesso, segurança com MFA e logs de auditoria.</span></div>
+<div><b>Quem usa</b><span>Owners, admins e gestores de governança.</span></div>
+<div><b>Onde fica</b><span>Configurações administrativas da organização.</span></div>
+<div><b>Grupo de rotas</b><span>/settings/branding, /settings/security, /settings/access-profiles, /settings/audit-logs</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 09 — Marca, segurança, perfis e auditoria" aria-label="Ampliar: Prancha do módulo 09 — Marca, segurança, perfis e auditoria" class="zoomable" decoding="async" role="button" src="mockups/09-marca-seguranca-perfis-auditoria.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Branding → segurança → perfis → auditoria</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Marca e identidade</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/branding</span></div>
+<div><b>Quem usa</b><span>Owner/Admin.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações → Branding.</span></div>
+</div>
+<p>Define logo, paleta, tipografia e pré-visualização do player público.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Perfis de acesso</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/access-profiles</span></div>
+<div><b>Quem usa</b><span>Owner/Admin.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações → Perfis de acesso.</span></div>
+</div>
+<p>Controla permissões por papel e o que cada usuário pode acessar.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Segurança</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/security</span></div>
+<div><b>Quem usa</b><span>Owner/Admin.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações → Segurança.</span></div>
+</div>
+<p>Configura MFA, políticas para admins e mecanismos de recuperação.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Logs de auditoria</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/settings/audit-logs</span></div>
+<div><b>Quem usa</b><span>Owner/Admin/Gestor.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações → Logs de auditoria.</span></div>
+</div>
+<p>Rastreia ações feitas na plataforma para transparência e compliance.</p>
+</article></div>
+</section>
+<section class="module" data-index="9" id="mod-10">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 10</div>
+<h1>Closer / Minha Agenda</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Representa a experiência exclusiva do papel closer, fora do Admin tradicional, com foco na agenda, contexto dos leads e produtividade de reuniões.</span></div>
+<div><b>Quem usa</b><span>Usuários com papel closer.</span></div>
+<div><b>Onde fica</b><span>Fluxo separado do produto, sem menu administrativo tradicional.</span></div>
+<div><b>Grupo de rotas</b><span>/minha-agenda, /minha-agenda/callback, /minha-agenda/zoom/callback</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 10 — Closer / Minha Agenda" aria-label="Ampliar: Prancha do módulo 10 — Closer / Minha Agenda" class="zoomable" decoding="async" role="button" src="mockups/10-closer-minha-agenda.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Minha Agenda → detalhe da reunião → conexão de calendário → rotina mobile</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Minha Agenda — visão geral</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/minha-agenda</span></div>
+<div><b>Quem usa</b><span>Closer.</span></div>
+<div class="full"><b>Onde fica</b><span>Rota exclusiva do closer.</span></div>
+</div>
+<p>Mostra agenda do dia, próximos compromissos, lead em destaque e desempenho.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Detalhe da reunião / lead</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/minha-agenda</span></div>
+<div><b>Quem usa</b><span>Closer.</span></div>
+<div class="full"><b>Onde fica</b><span>Abertura de um item da agenda.</span></div>
+</div>
+<p>Exibe tudo que o closer precisa para conduzir a reunião e registrar andamento.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Disponibilidade e calendários</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/minha-agenda</span></div>
+<div><b>Quem usa</b><span>Closer.</span></div>
+<div class="full"><b>Onde fica</b><span>Configurações da própria agenda do closer.</span></div>
+</div>
+<p>Permite conectar Google Calendar, Zoom/Meet e definir a rotina de disponibilidade.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Conexão realizada</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/minha-agenda/callback</span></div>
+<div><b>Quem usa</b><span>Closer.</span></div>
+<div class="full"><b>Onde fica</b><span>Retorno após autenticação/conexão.</span></div>
+</div>
+<p>Confirma a integração de calendário de forma amigável.</p>
+</article></div>
+</section>
+<section class="module" data-index="10" id="mod-11">
+<div class="module-head">
+<div>
+<div class="eyebrow">MÓDULO 11</div>
+<h1>Site público, institucional e legal</h1>
+</div>
+<div class="module-meta">
+<div><b>Para que serve</b><span>Mostra a camada institucional do produto: landing pública, páginas legais e exemplo de player em domínio personalizado.</span></div>
+<div><b>Quem usa</b><span>Visitantes, prospects e usuários que acessam conteúdo institucional.</span></div>
+<div><b>Onde fica</b><span>Camada pública do site e ativos de confiança.</span></div>
+<div><b>Grupo de rotas</b><span>/, /privacidade, /termos, /:formSlug</span></div>
+</div>
+</div>
+<button class="zoom-trigger" type="button">Ampliar prancha ↗</button><div class="mockup-wrap"><img alt="Prancha do módulo 11 — Site público, institucional e legal" aria-label="Ampliar: Prancha do módulo 11 — Site público, institucional e legal" class="zoomable" decoding="async" role="button" src="mockups/11-site-publico-institucional-legal.png" tabindex="0"/></div>
+<div class="flow"><span>Fluxo principal</span><strong>Landing → páginas legais → domínio personalizado / player público</strong></div>
+<div class="screen-grid"><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Landing page</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/</span></div>
+<div><b>Quem usa</b><span>Prospects e visitantes.</span></div>
+<div class="full"><b>Onde fica</b><span>Página pública inicial.</span></div>
+</div>
+<p>Apresenta o produto, gera interesse e converte o visitante em conta ou lead.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Política de Privacidade</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/privacidade</span></div>
+<div><b>Quem usa</b><span>Qualquer visitante.</span></div>
+<div class="full"><b>Onde fica</b><span>Página pública legal.</span></div>
+</div>
+<p>Explica tratamento de dados e reforça confiança e conformidade.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Termos de Uso</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/termos</span></div>
+<div><b>Quem usa</b><span>Qualquer visitante.</span></div>
+<div class="full"><b>Onde fica</b><span>Página pública legal.</span></div>
+</div>
+<p>Detalha regras de uso da plataforma e responsabilidades.</p>
+</article><article class="screen-card">
+<div class="screen-id">Atual</div>
+<h3>Player em domínio personalizado</h3>
+<div class="mini-grid">
+<div><b>Rota</b><span>/:formSlug</span></div>
+<div><b>Quem usa</b><span>Visitante final.</span></div>
+<div class="full"><b>Onde fica</b><span>Formulário publicado em domínio customizado.</span></div>
+</div>
+<p>Mostra como a experiência pode ser entregue com a marca do cliente.</p>
+</article></div>
+</section>
+</div>
+</main>
+</div>
+<div class="counter" id="counter"></div>
+<div class="arrows"><button aria-label="Anterior" class="arrow" id="prev">←</button><button aria-label="Próximo" class="arrow" id="next">→</button></div>
+
+<dialog aria-labelledby="viewer-title" id="image-viewer"><div class="viewer-toolbar"><span id="viewer-title">Prancha</span><div class="viewer-actions"><button id="zoom-fit" type="button">Ajustar</button><button id="zoom-one" type="button">100%</button><button id="zoom-two" type="button">200%</button><button aria-label="Fechar visualização ampliada" id="zoom-close" type="button">Fechar ×</button></div></div><div class="viewer-stage fit"><img alt="" id="viewer-image"/></div></dialog><script>
+'use strict';
+const modules=[...document.querySelectorAll('.module')], nav=[...document.querySelectorAll('.nav-item')];
+const viewer=document.getElementById('image-viewer'), stage=document.querySelector('.viewer-stage'), vimg=document.getElementById('viewer-image');
+let current=0, lastZoomTrigger=null;
+function show(i,shouldScroll=true){
+ current=(i+modules.length)%modules.length;
+ modules.forEach((m,j)=>m.classList.toggle('active',j===current));
+ nav.forEach((n,j)=>{n.classList.toggle('active',j===current);n.setAttribute('aria-current',j===current?'page':'false')});
+ document.getElementById('counter').textContent=`${current+1} / ${modules.length}`;
+ try{history.replaceState(null,'',`#${modules[current].id}`)}catch(e){}
+ if(shouldScroll)requestAnimationFrame(()=>modules[current].scrollIntoView({behavior:'smooth',block:'start'}));
+}
+function openViewer(img){
+ lastZoomTrigger=document.activeElement;
+ vimg.src=img.src;vimg.alt=img.alt;
+ document.getElementById('viewer-title').textContent=img.alt;
+ stage.classList.add('fit');stage.scrollTo(0,0);
+ if(!viewer.open)viewer.showModal();
+}
+function setZoom(scale){
+ stage.classList.remove('fit');
+ vimg.style.width=Math.round((vimg.naturalWidth||1448)*scale)+'px';
+ stage.scrollTo(0,0);
+}
+nav.forEach((n,i)=>n.onclick=()=>show(i));
+document.getElementById('prev').onclick=()=>show(current-1);
+document.getElementById('next').onclick=()=>show(current+1);
+document.querySelectorAll('.zoomable').forEach(img=>{
+ img.addEventListener('click',()=>openViewer(img));
+ img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openViewer(img)}});
+});
+document.querySelectorAll('.zoom-trigger').forEach(btn=>btn.addEventListener('click',()=>openViewer(btn.nextElementSibling.querySelector('img'))));
+document.getElementById('zoom-fit').onclick=()=>{stage.classList.add('fit');stage.scrollTo(0,0)};
+document.getElementById('zoom-one').onclick=()=>setZoom(1);
+document.getElementById('zoom-two').onclick=()=>setZoom(2);
+document.getElementById('zoom-close').onclick=()=>viewer.close();
+viewer.addEventListener('close',()=>{if(lastZoomTrigger)lastZoomTrigger.focus({preventScroll:true})});
+viewer.addEventListener('click',e=>{if(e.target===viewer){const r=viewer.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)viewer.close()}});
+document.addEventListener('keydown',e=>{
+ if(e.target.matches('input,textarea,select'))return;
+ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+  e.preventDefault();show(current+(e.key==='ArrowLeft'?-1:1),!viewer.open);
+  if(viewer.open)openViewer(modules[current].querySelector('.mockup-wrap img'));
+ }
+});
+const initial=modules.findIndex(m=>'#'+m.id===location.hash);if(initial>=0)current=initial;
+show(current,false);
+</script></body>
+</html>

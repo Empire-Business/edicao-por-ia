@@ -1,0 +1,100 @@
+id: f13-v2
+version: 2
+status: draft
+purpose: 'Sem apresentador em câmera: a narração é explicada com mapas, pontos que
+  representam quantidades, contadores, rankings e comparações animadas.'
+engine: hyperframes
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: natural
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 0.8
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.8
+    keep_pause_seconds: 0.3
+    word_handle_seconds: 0.1
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  min_jump_cut_interval_seconds: 0.9
+  preserve_required_phrases: []
+visual:
+  punch_ins: geographic_or_data_focus
+  max_punch_in_scale: 1.06
+  random_effects: false
+  composition: Cenas gráficas em tela cheia; um eixo de comparação principal por cena,
+    sem apresentador.
+  presenter_on_camera: false
+captions:
+  enabled: true
+  max_lines: 2
+  max_chars_per_line: 34
+  word_highlight: false
+  mechanism: Títulos e números dão a estrutura visual; legendas curtas são apoio e
+    não repetem o título inteiro.
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_logo
+- automatic_personal_identity
+- invent_dataset
+- copy_reference_political_call
+- import_reference_person_identity
+- treat_transition_number_as_fact
+insertion_assets:
+  policy: encouraged
+  density: high
+  default_preferred_duration_s: 2.0
+  default_max_duration_s: 5.0
+  allow_image_motion: false
+format_code: F13
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+motion:
+  enabled: 'on'
+  timing: final_retained_narration
+  primitives:
+  - geographic_map_focus
+  - dot_grid_quantity
+  - particle_to_grid
+  - number_counter
+  - ranked_comparison
+  - evidence_card
+  - progressive_headline
+  data_rules:
+  - Usar somente dados e fontes fornecidos ou verificados.
+  - Preservar denominadores, unidades, rótulos e períodos.
+  - Transições podem reorganizar o conjunto; não podem alterar o significado dos dados.
+  - Pontos podem representar agregados apenas com escala explícita.
+  reading_time: Ajustar à narração e à quantidade de dados; conferir título, valor
+    e fonte antes de trocar a cena.
+reference_materials:
+  video: examples/reference-library/F13/reference.mp4
+  analysis: examples/reference-library/F13/ANÁLISE.md
+  drive_url: https://drive.google.com/file/d/1EMhlw8uRLyu3WB4mfctOQEocTXyNs9U_/view?usp=drivesdk

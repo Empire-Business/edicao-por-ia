@@ -1,0 +1,302 @@
+<style>
+  [data-composition-id="s05-room"] { --cp-w: 486px; }
+  [data-composition-id="s05-room"] .cam { width: 1600px; height: 984px; }
+  /* ----- stage (center) ----- */
+  [data-composition-id="s05-room"] .stage { position: absolute; left: 486px; top: 0; width: 634px; height: 984px; transform-origin: 317px 470px; }
+  [data-composition-id="s05-room"] .topbar { position: absolute; left: 18px; top: 22px; display: flex; gap: 10px; align-items: center; }
+  [data-composition-id="s05-room"] .pill { height: 44px; border-radius: 99px; background: #16130e; border: 1px solid #2b2619; color: #f6f3ec; font-size: 15px; font-weight: 500; display: flex; align-items: center; gap: 10px; padding: 0 20px; }
+  [data-composition-id="s05-room"] .faces { display: flex; }
+  [data-composition-id="s05-room"] .faces i { width: 30px; height: 30px; border-radius: 99px; border: 2px solid #16130e; background: #c9a45a; display: grid; place-items: center; font-style: normal; font-size: 11px; font-weight: 600; color: #241a03; margin-left: -8px; }
+  [data-composition-id="s05-room"] .faces i:first-child { margin-left: 0; background: #8a6410; color: #fdf6e4; }
+  [data-composition-id="s05-room"] .rec { background: #ff5c5b; border-color: #ff5c5b; color: #fff; font-weight: 600; font-size: 17px; }
+  [data-composition-id="s05-room"] .rec .ic { color: #fff; }
+  [data-composition-id="s05-room"] .tile { position: absolute; left: 20px; width: 588px; border-radius: 16px; overflow: hidden; background: #16130e; }
+  [data-composition-id="s05-room"] .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  [data-composition-id="s05-room"] .tile .nm { position: absolute; left: 10px; bottom: 10px; height: 44px; border-radius: 99px; padding: 0 18px 0 12px; display: flex; align-items: center; gap: 10px; background: rgba(15,13,10,.82); color: #f6f3ec; font-size: 17px; font-weight: 500; }
+  [data-composition-id="s05-room"] .tile .nm .ic { color: #ff5c5b; }
+  [data-composition-id="s05-room"] .tile .ring { position: absolute; inset: 0; border-radius: 16px; box-shadow: inset 0 0 0 3px #e8c46a; opacity: 0; }
+  [data-composition-id="s05-room"] .t1 { top: 92px; height: 336px; }
+  [data-composition-id="s05-room"] .t2 { top: 440px; height: 362px; }
+  [data-composition-id="s05-room"] .ctrl { position: absolute; left: 10px; top: 862px; height: 84px; width: 614px; border-radius: 99px; background: #16130e; display: flex; align-items: center; gap: 8px; padding: 0 10px; }
+  [data-composition-id="s05-room"] .cb { width: 58px; height: 58px; border-radius: 99px; background: #241f14; color: #f6f3ec; display: grid; place-items: center; flex: none; }
+  [data-composition-id="s05-room"] .cb.red { background: #ff5c5b; color: #fff; }
+  [data-composition-id="s05-room"] .cb.gold { background: #5a4513; color: #e8c46a; }
+  [data-composition-id="s05-room"] .cb.plain { background: transparent; width: 30px; }
+  [data-composition-id="s05-room"] .sair { margin-left: auto; height: 58px; border-radius: 99px; background: #ff5c5b; color: #fff; font-weight: 600; font-size: 18px; display: flex; align-items: center; gap: 10px; padding: 0 22px; }
+  /* ----- copiloto panels ----- */
+  [data-composition-id="s05-room"] .cp { position: absolute; z-index: 2; top: 0; width: 486px; height: 984px; background: #110f0b; border-right: 1px solid #2b2619; color: #f6f3ec; overflow: hidden; }
+  [data-composition-id="s05-room"] .cp.right { left: 1120px; width: 480px; z-index: 3; border-right: 0; border-left: 1px solid #2b2619; }
+  [data-composition-id="s05-room"] .cp-h { height: 68px; display: flex; align-items: center; gap: 10px; padding: 0 22px; font-size: 22px; font-weight: 600; }
+  [data-composition-id="s05-room"] .cp-h .ic { color: #e8c46a; }
+  [data-composition-id="s05-room"] .live { font-size: 14px; font-weight: 500; color: #e8c46a; background: #3a2c0c; border-radius: 99px; padding: 3px 12px; display: flex; gap: 6px; align-items: center; }
+  [data-composition-id="s05-room"] .cp-h .tools { margin-left: auto; display: flex; gap: 18px; color: #a8a294; }
+  [data-composition-id="s05-room"] .cp-h .tools .ic { color: #a8a294; }
+  [data-composition-id="s05-room"] .cp-bar { position: absolute; left: 0; top: 66px; height: 2px; width: 100%; background: #1c1913; }
+  [data-composition-id="s05-room"] .cp-bar i { display: block; height: 100%; width: 100%; background: #22c579; transform-origin: 0 0; }
+  [data-composition-id="s05-room"] .cp-tabs { position: relative; height: 60px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid #2b2619; }
+  [data-composition-id="s05-room"] .ct { position: relative; isolation: isolate; display: flex; align-items: center; gap: 7px; font-size: 15.5px; color: #f6f3ec; padding: 8px 10px; border-radius: 99px; z-index: 1; white-space: nowrap; }
+  [data-composition-id="s05-room"] .ct .ic { width: 17px; height: 17px; }
+  [data-composition-id="s05-room"] .ct.coach .ic { color: #f0a83a; }
+  [data-composition-id="s05-room"] .ct.rot .ic { color: #22c579; }
+  [data-composition-id="s05-room"] .ct.lead .ic { color: #7aa2ff; }
+  [data-composition-id="s05-room"] .ct.fala .ic { color: #e8c46a; }
+  [data-composition-id="s05-room"] .ct.sus .ic { color: #ff6b9a; }
+  [data-composition-id="s05-room"] .ct .pl { position: absolute; inset: 0; border-radius: 99px; border: 1px solid #e8c46a; background: rgba(232,196,106,.08); z-index: -1; opacity: 0; }
+  [data-composition-id="s05-room"] .ct.on .pl { opacity: 1; }
+  [data-composition-id="s05-room"] .pane { position: absolute; left: 0; right: 0; top: 130px; bottom: 0; padding: 18px 22px; }
+  /* roteiro */
+  [data-composition-id="s05-room"] .rt-meta { font-size: 15px; color: #a8a294; margin: 4px 0 14px; }
+  [data-composition-id="s05-room"] .stg { border-radius: 22px; background: #16130e; border: 1px solid #221e16; padding: 13px 18px; display: flex; align-items: center; gap: 16px; margin-bottom: 9px; font-size: 18px; }
+  [data-composition-id="s05-room"] .stg .ck { width: 30px; height: 30px; border-radius: 99px; border: 2px solid #6b665b; flex: none; display: grid; place-items: center; color: #241a03; position: relative; }
+  [data-composition-id="s05-room"] .stg .ck .fill { position: absolute; inset: -2px; border-radius: 99px; background: #e8c46a; display: grid; place-items: center; transform: scale(0); }
+  [data-composition-id="s05-room"] .stg .ck .fill .ic { color: #241a03; }
+  [data-composition-id="s05-room"] .stg.done .ck .fill { transform: scale(1); }
+  [data-composition-id="s05-room"] .stg b { font-weight: 500; }
+  [data-composition-id="s05-room"] .stg small { font-size: 15px; color: #a8a294; }
+  [data-composition-id="s05-room"] .stg.act { display: block; border: 1.5px solid #c79a33; background: linear-gradient(180deg, rgba(232,196,106,.13), rgba(232,196,106,.05)); }
+  [data-composition-id="s05-room"] .stg.act .row { display: flex; align-items: center; gap: 16px; }
+  [data-composition-id="s05-room"] .chips { display: flex; gap: 8px; margin: 10px 0 8px 46px; }
+  [data-composition-id="s05-room"] .chips span { font-size: 14px; color: #e8c46a; background: #3a2c0c; border-radius: 99px; padding: 3px 12px; display: flex; gap: 6px; align-items: center; }
+  [data-composition-id="s05-room"] .stg.act p { font-size: 15px; color: #d9d3c4; line-height: 1.55; margin-left: 46px; }
+  [data-composition-id="s05-room"] .stg.act ul { list-style: none; margin: 8px 0 0 46px; font-size: 15px; color: #f6f3ec; }
+  [data-composition-id="s05-room"] .stg.act li { padding: 3px 0 3px 18px; position: relative; }
+  [data-composition-id="s05-room"] .stg.act li::before { content: ""; position: absolute; left: 0; top: 11px; width: 7px; height: 7px; border-radius: 99px; border: 1.5px solid #a8a294; }
+  /* coach */
+  [data-composition-id="s05-room"] .listen { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #a8a294; margin-bottom: 14px; }
+  [data-composition-id="s05-room"] .bars { display: flex; gap: 3px; align-items: center; height: 18px; }
+  [data-composition-id="s05-room"] .bars i { display: block; width: 3px; height: 18px; border-radius: 3px; background: #f0a83a; transform-origin: 50% 50%; }
+  [data-composition-id="s05-room"] .say { border-radius: 18px; border: 1.5px solid #f0a83a; background: linear-gradient(180deg, rgba(240,168,58,.14), rgba(240,168,58,.04)); padding: 18px 20px; }
+  [data-composition-id="s05-room"] .say .lbl2 { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #f0a83a; }
+  [data-composition-id="s05-room"] .say .q { font-size: 20px; line-height: 1.45; font-weight: 500; margin: 10px 0 12px; color: #fff; }
+  [data-composition-id="s05-room"] .say .why { font-size: 14.5px; color: #cfc8b8; line-height: 1.5; }
+  [data-composition-id="s05-room"] .say .why b { color: #f0a83a; font-weight: 600; }
+  [data-composition-id="s05-room"] .copy { margin-top: 12px; display: inline-flex; gap: 8px; align-items: center; font-size: 14px; color: #f6f3ec; border: 1px solid #3a3326; border-radius: 10px; padding: 6px 12px; }
+  [data-composition-id="s05-room"] .obj { margin-top: 14px; border-radius: 18px; background: #16130e; border: 1px solid #3a2020; padding: 16px 20px; }
+  [data-composition-id="s05-room"] .obj .h { display: flex; gap: 10px; align-items: center; font-size: 15px; font-weight: 600; color: #ff8a8a; }
+  [data-composition-id="s05-room"] .obj .tag2 { font-size: 13px; font-weight: 600; color: #fff; background: #d01d1c; border-radius: 99px; padding: 2px 10px; }
+  [data-composition-id="s05-room"] .obj p { font-size: 15px; color: #d9d3c4; margin-top: 8px; line-height: 1.5; }
+  /* fala (transcript) */
+  [data-composition-id="s05-room"] .tr { font-size: 17px; line-height: 1.35; margin-bottom: 14px; }
+  [data-composition-id="s05-room"] .tr .who { font-size: 16px; }
+  [data-composition-id="s05-room"] .tr .who b { font-weight: 500; }
+  [data-composition-id="s05-room"] .tr .who span { color: #a8a294; margin-left: 10px; }
+  [data-composition-id="s05-room"] .tr.b .who b { color: #e8c46a; }
+  [data-composition-id="s05-room"] .tr.g .who b { color: #4fd1c5; }
+  [data-composition-id="s05-room"] .input { position: absolute; left: 22px; right: 22px; bottom: 26px; height: 50px; border-radius: 12px; background: #16130e; border: 1px solid #2b2619; color: #6b665b; font-size: 16px; display: flex; align-items: center; padding: 0 16px; }
+  [data-composition-id="s05-room"] .input .ic { margin-left: auto; color: #f6f3ec; }
+
+  /* ----- vertical layout ----- */
+  #root.fmt-v [data-composition-id="s05-room"] .cam { width: 1000px; height: 1500px; }
+  #root.fmt-v [data-composition-id="s05-room"] .stage { left: 0; top: 0; width: 1000px; height: 1500px; transform-origin: 500px 600px; }
+  #root.fmt-v [data-composition-id="s05-room"] .topbar { left: 30px; top: 30px; transform: scale(1.5); transform-origin: 0 0; }
+  #root.fmt-v [data-composition-id="s05-room"] .tile { left: 30px; width: 940px; }
+  #root.fmt-v [data-composition-id="s05-room"] .t1 { top: 130px; height: 540px; }
+  #root.fmt-v [data-composition-id="s05-room"] .t2 { top: 690px; height: 580px; }
+  #root.fmt-v [data-composition-id="s05-room"] .tile .nm { transform: scale(1.5); transform-origin: 0 100%; }
+  #root.fmt-v [data-composition-id="s05-room"] .ctrl { left: 30px; top: 1300px; width: 940px; height: 120px; gap: 14px; padding: 0 18px; }
+  #root.fmt-v [data-composition-id="s05-room"] .cb { width: 76px; height: 76px; }
+  #root.fmt-v [data-composition-id="s05-room"] .cb.plain { width: 30px; }
+  #root.fmt-v [data-composition-id="s05-room"] .ctrl .hide-v { display: none; }
+  #root.fmt-v [data-composition-id="s05-room"] .sair { height: 76px; font-size: 24px; }
+  #root.fmt-v [data-composition-id="s05-room"] .cp { left: 0; top: 0; width: 526px; height: 800px; transform-origin: 0 0; border: 0; border-radius: 14px 14px 0 0; box-shadow: 0 -20px 60px rgba(0,0,0,.6); }
+  #root.fmt-v [data-composition-id="s05-room"] .cp.right { left: 0; }
+</style>
+<div class="paper"></div>
+<div class="paper-grid" data-layout-allow-overflow></div>
+<div class="cap">
+  <div class="kicker"><i class="dot"></i>Sala de reunião nativa</div>
+  <div class="hstack">
+  <div class="headline h-a"><span>A</span> <span>call</span> <span>acontece</span> <em>dentro</em> <span>da</span> <span>plataforma.</span></div>
+  <div class="headline h-b"><span>Um</span> <em>copiloto</em> <em>de</em> <em>IA</em> <span>guia</span> <span>cada</span> <span>etapa.</span></div>
+  </div>
+</div>
+<div class="win dark fit" data-layout-allow-overflow>
+  <div class="cam" data-layout-allow-overflow>
+    <div class="stage">
+      <div class="topbar">
+        <div class="pill">Diagnóstico · Hubbi Parts</div>
+        <div class="pill"><span class="faces"><i>B</i><i>G</i></span>2 Participantes</div>
+        <div class="pill rec">{{icon:circle-dot:20}}<span class="num timer">06:12</span></div>
+      </div>
+      <div class="tile t1"><img src="assets/img/cam-bruno-clean.jpg" alt="" /><div class="ring"></div><div class="nm">{{icon:mic-off:20}}Bruno - você</div></div>
+      <div class="tile t2"><img src="assets/img/cam-lead-clean.jpg" alt="" /><div class="ring"></div><div class="nm">{{icon:mic-off:20}}Gildásio Junior</div></div>
+      <div class="ctrl">
+        <div class="cb red">{{icon:mic-off:24}}</div>
+        <div class="cb">{{icon:video:24}}</div>
+        <div class="cb">{{icon:screen-share:24}}</div>
+        <div class="cb hide-v">{{icon:captions:24}}</div>
+        <div class="cb">{{icon:message-square:24}}</div>
+        <div class="cb hide-v">{{icon:user-plus:24}}</div>
+        <div class="cb gold cp-btn">{{icon:headphones:24}}</div>
+        <div class="cb plain">{{icon:ellipsis:24}}</div>
+        <div class="sair">{{icon:phone-off:22}}Sair</div>
+      </div>
+    </div>
+
+    <!-- Copiloto 1 -->
+    <div class="cp left cp1">
+      <div class="cp-h">{{icon:headphones:24}}Copiloto <span class="live">{{icon:radio:15}}Ao vivo</span><span class="tools">{{icon:panel-left:20}}{{icon:x:20}}</span></div>
+      <div class="cp-bar"><i class="prog"></i></div>
+      <div class="cp-tabs">
+        <div class="ct coach"><i class="pl"></i>{{icon:zap}}Coach</div>
+        <div class="ct rot"><i class="pl"></i>{{icon:list-checks}}Roteiro</div>
+        <div class="ct lead"><i class="pl"></i>{{icon:user-round}}Lead</div>
+        <div class="ct fala"><i class="pl"></i>{{icon:audio-lines}}Fala</div>
+        <div class="ct sus"><i class="pl"></i>{{icon:eye-off}}Sussurro</div>
+      </div>
+      <div class="pane p-rot">
+        <div class="rt-meta">Template OMNX — Venda Consultiva • <span class="num stepc">1</span> de 6 etapas</div>
+        <div class="stg done s1"><span class="ck"><span class="fill">{{icon:check:18}}</span></span><b>1.&nbsp; Diagnóstico</b></div>
+        <div class="stg act s2">
+          <div class="row"><span class="ck"><span class="fill">{{icon:check:18}}</span></span><b>2.&nbsp; Intensificação do Problema</b><small>Intensificação</small></div>
+          <div class="chips"><span>{{icon:zap:14}}Agora</span><span>{{icon:lightbulb:14}}Dicas daqui</span></div>
+          <p>Ampliar a percepção de custo/impacto de não resolver o problema.</p>
+          <ul><li>O que acontece se isso continuar assim?</li><li>Qual o custo de não mudar agora?</li></ul>
+        </div>
+        <div class="stg s3"><span class="ck"><span class="fill">{{icon:check:18}}</span></span><b>3.&nbsp; Desejo</b><small>Desejo</small></div>
+        <div class="stg s4"><span class="ck"><span class="fill">{{icon:check:18}}</span></span><b>4.&nbsp; Compromisso</b><small>Compromisso</small></div>
+        <div class="stg s5"><span class="ck"><span class="fill">{{icon:check:18}}</span></span><b>5.&nbsp; Oferta</b><small>Oferta</small></div>
+        <div class="stg s6"><span class="ck"><span class="fill">{{icon:check:18}}</span></span><b>6.&nbsp; Negociação</b><small>Negociação</small></div>
+      </div>
+      <div class="pane p-coach">
+        <div class="listen"><span class="bars"><i></i><i></i><i></i><i></i><i></i></span>Ouvindo a conversa…</div>
+        <div class="say">
+          <div class="lbl2">{{icon:zap:16}}Fale agora</div>
+          <div class="q">“Se a demanda continuar caindo nos próximos 6 meses, o que acontece com a operação?”</div>
+          <div class="why"><b>Por quê:</b> ele citou dificuldade de atrair clientes. Aprofunde o impacto antes de apresentar a solução.</div>
+          <div class="copy">{{icon:file-text:15}}Copiar</div>
+        </div>
+        <div class="obj">
+          <div class="h">{{icon:circle-alert:18}}Objeção <span class="tag2">Preço</span></div>
+          <p>“Estou vendo outra mentoria mais acessível.” — valide o critério dele antes de falar em valor.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copiloto 2 (segunda janela, aba Fala) -->
+    <div class="cp right cp2">
+      <div class="cp-h">{{icon:headphones:24}}Copiloto 2 <span class="live">{{icon:radio:15}}Ao vivo</span><span class="tools">{{icon:panel-left:20}}{{icon:x:20}}</span></div>
+      <div class="cp-tabs">
+        <div class="ct coach"><i class="pl"></i>{{icon:zap}}Coach</div>
+        <div class="ct rot"><i class="pl"></i>{{icon:list-checks}}Roteiro</div>
+        <div class="ct lead"><i class="pl"></i>{{icon:user-round}}Lead</div>
+        <div class="ct fala on"><i class="pl"></i>{{icon:audio-lines}}Fala</div>
+        <div class="ct sus"><i class="pl"></i>{{icon:eye-off}}Sussurro</div>
+      </div>
+      <div class="pane p-fala">
+        <div class="tr b"><div class="who"><b>Bruno</b><span>16:19</span></div>Fala um pouco aí do que você vende.</div>
+        <div class="tr g"><div class="who"><b>Gildásio Junior</b><span>16:19</span></div>A empresa trabalha no ramo de consultoria e materiais para escola da rede particular.</div>
+        <div class="tr b"><div class="who"><b>Bruno</b><span>16:20</span></div>Como está a situação hoje? Está vendendo bem?</div>
+        <div class="tr g"><div class="who"><b>Gildásio Junior</b><span>16:20</span></div>Não, atualmente eu não estou conseguindo ter uma demanda alta.</div>
+        <div class="tr g"><div class="who"><b>Gildásio Junior</b><span>16:20</span></div>Estou com dificuldade de atrair clientes.</div>
+        <div class="tr b"><div class="who"><b>Bruno</b><span>16:21</span></div>E o que acontece se isso continuar assim?</div>
+        <div class="input">Digite uma mensagem...{{icon:send:22}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const all = document.querySelectorAll('[data-composition-id="{{ID}}"]');
+  const root = all[all.length - 1];
+  const $ = gsap.utils.selector(root);
+  const V = {{V}};
+  const D = {{DUR}};
+  const tl = gsap.timeline({ paused: true });
+
+  const tabs = $('.cp1 .ct');
+
+  // window scale per format
+  const S = V ? 1 : 1392 / 1600;
+  gsap.set($('.cam'), { scale: S });
+  if (V) {
+    gsap.set($('.cp'), { scale: 1.9, y: 1500 });
+  }
+
+  // entrance
+  tl.fromTo($('.win'), { y: 120, opacity: 0, rotationX: 8, transformPerspective: 1600 }, { y: 0, opacity: 1, rotationX: 0, duration: 0.9, ease: 'expo.out' }, 0);
+  tl.fromTo($('.cap .kicker'), { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }, 0.15);
+  tl.fromTo($('.h-a > *'), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, stagger: 0.06, ease: 'power3.out' }, 0.25);
+  gsap.set($('.h-b > *'), { opacity: 0 });
+
+  // stage: starts big and centered, makes room for copilot
+  if (!V) {
+    gsap.set($('.stage'), { scale: 1.22 });
+    tl.fromTo($('.cp1'), { x: -500 }, { x: 0, duration: 0.9, ease: 'expo.inOut' }, 1.6);
+    tl.to($('.stage'), { scale: 1, duration: 0.9, ease: 'expo.inOut' }, 1.6);
+    tl.fromTo($('.cp2'), { x: 500 }, { x: 0, duration: 0.9, ease: 'expo.inOut' }, 6.1);
+  } else {
+    tl.to($('.cp1'), { y: 520, duration: 0.9, ease: 'expo.inOut' }, 1.6);
+    tl.to($('.stage'), { scale: 0.94, opacity: 0.55, duration: 0.9, ease: 'expo.inOut' }, 1.6);
+    tl.to($('.cp1'), { y: 1500, duration: 0.7, ease: 'expo.in' }, 6.0);
+    tl.to($('.cp2'), { y: 520, duration: 0.9, ease: 'expo.out' }, 6.4);
+  }
+  // copilot button lights when opening
+  tl.fromTo($('.cp-btn'), { boxShadow: '0 0 0 0 rgba(232,196,106,0)' }, { boxShadow: '0 0 0 8px rgba(232,196,106,.35)', duration: 0.3, yoyo: true, repeat: 1 }, 1.35);
+
+  // live feel: timer, camera drift, speaking rings
+  const clock = { t: 6 * 60 + 12 };
+  const timerEl = $('.timer')[0];
+  tl.to(clock, { t: 6 * 60 + 12 + D, duration: D, ease: 'none', onUpdate: () => {
+    const s = Math.floor(clock.t); timerEl.textContent = String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0');
+  } }, 0);
+  tl.fromTo($('.t1 img'), { scale: 1.02 }, { scale: 1.08, duration: D, ease: 'none' }, 0);
+  tl.fromTo($('.t2 img'), { scale: 1.08, xPercent: 0 }, { scale: 1.02, xPercent: -1, duration: D, ease: 'none' }, 0);
+  [[0.4, 2.3, '.t2'], [2.4, 4.0, '.t1'], [4.1, 6.4, '.t2'], [6.5, 8.2, '.t1'], [8.3, D, '.t2']].forEach(([a, b, t]) => {
+    tl.to($(t + ' .ring'), { opacity: 1, duration: 0.2 }, a);
+    tl.to($(t + ' .ring'), { opacity: 0, duration: 0.2 }, b - 0.2);
+  });
+
+  // tab pill helper (crossfade between tab pills)
+  let cur = 1;
+  gsap.set(tabs[1].querySelector('.pl'), { opacity: 1 });
+  const pillTo = (i, at) => {
+    tl.to(tabs[cur].querySelector('.pl'), { opacity: 0, scale: 0.9, duration: 0.25 }, at);
+    tl.fromTo(tabs[i].querySelector('.pl'), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: 'back.out(2)' }, at + 0.1);
+    cur = i;
+  };
+
+  // ---- Roteiro pane
+  gsap.set($('.p-coach'), { opacity: 0 });
+  tl.fromTo($('.p-rot .stg, .p-rot .rt-meta'), { x: -24, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, stagger: 0.06, ease: 'power3.out' }, 2.0);
+  tl.fromTo($('.prog'), { scaleX: 0.17 }, { scaleX: 0.34, duration: 0.6, ease: 'power2.out' }, 3.3);
+  tl.to($('.s2 .ck .fill'), { scale: 1, duration: 0.35, ease: 'back.out(2.5)' }, 3.3);
+  const stepc = $('.stepc')[0];
+  tl.call(() => { stepc.textContent = '1'; }, null, 3.29);
+  tl.call(() => { stepc.textContent = '2'; }, null, 3.31);
+  tl.to($('.s2'), { borderColor: '#221e16', background: '#16130e', duration: 0.4 }, 3.5);
+  tl.to($('.s2 .chips, .s2 p, .s2 ul'), { opacity: 0.35, duration: 0.4 }, 3.5);
+  tl.to($('.s3'), { borderColor: '#c79a33', boxShadow: '0 0 0 1px #c79a33', background: 'rgba(232,196,106,.1)', duration: 0.4 }, 3.6);
+
+  // caption swap
+  tl.to($('.h-a > *'), { y: -30, opacity: 0, duration: 0.35, stagger: 0.03, ease: 'power2.in' }, 3.7);
+  tl.fromTo($('.h-b > *'), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.05, ease: 'power3.out' }, 4.15);
+
+  // ---- Coach pane
+  pillTo(0, 4.2);
+  tl.to($('.p-rot'), { opacity: 0, x: 30, duration: 0.3, ease: 'power2.in' }, 4.2);
+  tl.fromTo($('.p-coach'), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: 'power3.out' }, 4.45);
+  $('.bars i').forEach((b, i) => {
+    tl.fromTo(b, { scaleY: 0.3 }, { scaleY: 1, duration: 0.25 + i * 0.03, yoyo: true, repeat: Math.floor((D - 4.4) / (0.25 + i * 0.03)) - 1, ease: 'sine.inOut' }, 4.4);
+  });
+  tl.fromTo($('.say'), { y: 30, opacity: 0, scale: 0.96 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.6)' }, 4.8);
+  tl.fromTo($('.say .q'), { clipPath: 'inset(0 0 100% 0)' }, { clipPath: 'inset(0 0 0% 0)', duration: 0.6, ease: 'power2.out' }, 5.0);
+  tl.fromTo($('.obj'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }, 5.5);
+
+  // ---- Copiloto 2: live transcript
+  gsap.set($('.p-fala .tr'), { opacity: 0 });
+  $('.p-fala .tr').forEach((el, i) => {
+    tl.fromTo(el, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: 'power2.out' }, 6.6 + i * 0.38);
+  });
+  if (!V) {
+    // push in on the Coach suggestion, back out for the second window, then lean into the transcript
+    tl.to($('.cam'), { scale: 1.3, x: 0, y: -90, duration: 1.0, ease: 'power3.inOut' }, 4.5);
+    tl.to($('.cam'), { scale: S, x: 0, y: 0, duration: 0.9, ease: 'power3.inOut' }, 5.95);
+    tl.to($('.cam'), { scale: 1.12, x: -400, y: -40, duration: 1.4, ease: 'power2.inOut' }, 7.2);
+  }
+  // exit
+  tl.to($('.win'), { scale: 0.96, opacity: 0, duration: 0.45, ease: 'power2.in' }, D - 0.5);
+  tl.to($('.cap'), { opacity: 0, y: -20, duration: 0.4, ease: 'power2.in' }, D - 0.5);
+  window.__timelines["{{ID}}"] = tl;
+})();
+</script>

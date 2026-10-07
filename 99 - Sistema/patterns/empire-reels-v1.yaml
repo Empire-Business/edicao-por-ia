@@ -1,0 +1,153 @@
+id: empire-reels-v1
+version: 1
+status: approved
+client: empire1
+approved_from: "jobs/video-26afc23b9c24 (IKEA) prévia v13, 2026-10-02 — usuário: 'Beleza' + pediu salvar como template da Empire"
+purpose: "Reels Empire com o Bruno em câmera ALTERNANDO com mídia real (tela dividida com profundidade, cartão preto, gráfico verde), identidade verde/laranja/creme, filtro de cor natural e destaques editoriais discretos."
+engine: hybrid            # ffmpeg (corte/cor) + studio_render (overlay canvas seek(t)) + composite.py (camadas, máscara de pessoa)
+components_dir: patterns/empire-reels-v1/   # cópia congelada dos componentes aprovados (ver SHA256SUMS); copiar para o job e adaptar o plan
+
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+  source_note: "gravação horizontal/deitada reenquadrada para 9:16; multicam opcional (câmera 2 lateral sincronizada por áudio)"
+
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  repeated_takes: keep_best_take_only
+  max_unmotivated_silence_seconds: 0.5
+  min_jump_cut_interval_seconds: 0.6
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.15
+    keep_pause_seconds: 0.0
+    word_handle_seconds: 0.08
+    minimum_cut_seconds: 0.10
+    trim_edges: true
+  presenter_on_camera: alternate      # NÃO o vídeo todo e NÃO só o gancho: alterna Bruno em câmera com mídia
+  opening: "gancho forte: tela dividida desde o 1º segundo, cortes rápidos de mídia real; foto estática sozinha é proibida"
+  one_information_at_a_time: true
+  framing: fixed_per_camera           # enquadramento fixo (sem tracking que balança); punch-in só por plano
+
+layouts:
+  full:                               # Bruno em tela cheia
+    zoom: 1.3                         # 1.62 em momento de ênfase
+    face_y_fraction: 0.30
+    caption_y: 1230
+    bottom_gradient: {from_y: 1300, color: "rgba(20,42,24,.42)"}     # verde-escuro (nunca preto)
+  split:                              # mídia em cima, Bruno embaixo, com PROFUNDIDADE
+    top_media: video_only             # em cima só vídeo; exceção única: manchete PT real com marca-texto
+    presenter_area_from_y: 640
+    camA: {crop_width: 1180, face_y_fraction: 0.30}
+    camB: {crop_width: 1440, face_y_fraction: 0.32}
+    media_band: {to_y: 1150, fade_from_y: 700, fade_to_y: 1150}      # emenda difusa só sobre a parede
+    person_mask: rembg u2net_human_seg (local), cache por quadro      # Bruno sempre NA FRENTE da mídia
+    caption_y: 1690                   # embaixo; a pessoa nunca cobre a legenda (máscara só na faixa 640-1150)
+    caption_shadow: strong
+    bottom_gradient: {from_y: 1450, color: "rgba(20,42,24,.45)"}
+    media_focus: faces                # recortar centralizando rostos/personagens (fx por plano)
+  card:                               # BORDA PRETA da Empire: vídeo horizontal dentro de cartão
+    background: "#000000"
+    rect: {x: 60, y: 486, w: 960, h: 948, radius: 52}
+    inner_bottom_gradient: "rgba(0,0,0,.6)"
+    caption_y: 1352                   # dentro do cartão
+    forbidden: blurred_self_fill
+  gfx:                                # gráfico verde em tela cheia (pergunta/afirmação-chave)
+    background: radial verde #34412F -> #2B3527 -> #1A2418 + desenhos de arquitetura sutis nas laterais (10%)
+
+identity:
+  palette: {green_light: "#34412F", green: "#2B3527", green_dark: "#1A2418", orange: "#E38B1A", orange_light: "#F0A03A", cream: "#F4EFDE", red_x: "#D9261C"}
+  titles: "Georgia 400, centralizados, frase em caixa natural, palavra-chave em itálico laranja"
+  no_brand_chrome: true               # sem logo EMPIRE no topo, sem barra de progresso, sem créditos na tela, sem flash branco
+
+color:
+  presenter_look: patterns/empire-reels-v1/look-empire-v1.cube   # filtro natural/claro da referência do usuário (2026-10-02)
+  presenter_look_notes: "luma média ~115, sombras levemente fundas, brancos preservados (255->243), saturação +45%, pele quente R/G ~1.6, verdes naturais"
+  camera2_match_before_look: patterns/empire-reels-v1/cam2_match.reference.txt   # medir de novo por gravação
+  inserted_media: untouched
+  skin_never_orange: true
+  deprecated_looks: ["3F low-key (escurecia demais o rosto)"]
+
+captions:
+  enabled: true
+  font: '700 "Times New Roman" serif, branco, sombra'
+  size_px: 56
+  max_words: 3
+  max_chars: 19
+  max_lines: 1
+  word_highlight: false
+  hidden_while_emphasis: true         # quando um destaque aparece, a legenda some
+  hidden_on_gfx: true
+
+motion:
+  emphasis:                           # "Ponto importante", "Mais valor", "Comente “IA”", listas de ganhos
+    position: caption_height          # nunca no topo, nunca sobre o rosto
+    entrance: "blur 14px->0 + opacidade 0.45s + deriva 10px, ~0.7s (suave, delicado)"
+    forbidden_entrance: [scale_pop, bounce, spring_overshoot]
+    backing: "elipse radial verde-escuro rgba(16,36,20,.62) atrás do texto"
+    keyword_marker: "traço de marcador laranja desenhado sob a palavra (sem caixa)"
+  headline:
+    allowed_in: split_top
+    language: pt-BR_only
+    show: real_headline_screenshot_only   # nada escrito à parte
+    highlighter: "marca-texto laranja (multiply), UMA passada contínua sincronizada com a fala"
+    camera: "aproximação lenta até a linha marcada"
+  negation: "X vermelho forte (#D9261C, 18px, dois traços) sobre a frase"
+  forbidden:
+    - annotation_labels_over_media     # ex.: 'O MEDO DA IA', '8.500 ATENDENTES → …'
+    - ai_looking_graphics              # relógio desenhado, caixa laranja gigante com 'IA', ícones genéricos
+    - text_in_split_top
+    - english_headlines
+    - two_informations_at_once
+    - blurred_self_background_for_horizontal_video
+
+insertion_assets:
+  policy: proof-heavy
+  density: high                       # ilustrar quase todo o áudio fora dos trechos de Bruno em câmera
+  default_preferred_duration_s: 1.3
+  default_max_duration_s: 4.5
+  allow_image_motion: true
+  sources: "mídia real: vídeos oficiais da marca citada, reportagens, cenas de filmes, YouTube/TikTok via tools/scrapecreators.py + yt-dlp"
+  quality_min: 1080p_native           # rejeitar upscale de SD
+  prefer_people_in_frame: true
+  prefer_the_real_thing: true         # mostrar a coisa citada; banco de imagens genérico é último recurso
+  options_before_swap: "apresentar opções com quadros recortados no layout quando trocar uma cena importante"
+  crop_watermarks_letterbox: true
+
+audio:
+  voice: denoised, podcast quality
+  music: required                     # trilha elegante sempre, com ducking (~4 dB) e corte 1.5-4 kHz
+  music_reference: "VIOLIN – TONELOOM (job IKEA): leito ~-31 LUFS antes do mix; mix final -14 LUFS"
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+
+delivery:
+  cover: patterns/empire-reels-v1/cover.html   # 9:16, quadro do Bruno com o look, scrim verde, título Georgia com itálico laranja, EMPIRE pequeno
+  preview_before_final: true
+  short_test_before_color_changes: true
+
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 17
+  audio_codec: aac
+  audio_bitrate: 256k
+
+qa:
+  check_person_over_caption: true
+  check_caption_lingering_after_emphasis: true
+  check_media_fills_split_top: true
+  check_faces_framed_in_media: true
+  black_segment_seconds: 0.5
+  long_silence_seconds: 1.0
+
+forbidden:
+  - stretch_video
+  - delete_source
+  - invent_brand_assets
+  - paid_generators_without_authorization

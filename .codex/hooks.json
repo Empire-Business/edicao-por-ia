@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/bguzela/Downloads/edicao-por-ia/.venv/bin/python /Users/bguzela/Downloads/edicao-por-ia/tools/memory_hook.py --root /Users/bguzela/Downloads/edicao-por-ia",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/bguzela/Downloads/edicao-por-ia/.venv/bin/python /Users/bguzela/Downloads/edicao-por-ia/tools/memory_hook.py --root /Users/bguzela/Downloads/edicao-por-ia",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/bguzela/Downloads/edicao-por-ia/.venv/bin/python /Users/bguzela/Downloads/edicao-por-ia/tools/memory_hook.py --root /Users/bguzela/Downloads/edicao-por-ia",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

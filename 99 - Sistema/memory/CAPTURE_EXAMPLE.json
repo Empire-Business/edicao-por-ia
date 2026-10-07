@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "kind": "preference",
+      "key": "motion.intensity",
+      "value": "restrained",
+      "setting": "motion.intensity",
+      "scope": "format",
+      "scope_id": "formato-exemplo",
+      "basis": "simulated",
+      "source": "simulation",
+      "quote": "Nos próximos vídeos, quero animações mais discretas.",
+      "reason": "SIMULATION ONLY. Real capture uses the actual user quote and user_explicit/user_message."
+    }
+  ]
+}

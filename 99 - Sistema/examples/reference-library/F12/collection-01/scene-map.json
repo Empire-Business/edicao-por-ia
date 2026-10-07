@@ -1,0 +1,117 @@
+{
+  "timing_basis": "Faixas aproximadas por segmentos ASR e frames inspecionados; não são EDL nem cortes medidos exatos.",
+  "scenes": [
+    {
+      "start_s": 0,
+      "end_s": 4.64,
+      "purpose": "Gancho de contraste",
+      "mechanism": "Fotografia de sala inteira + headline progressiva + número 27 toneladas",
+      "evidence_frames_s": [
+        0.7,
+        2.6,
+        4.2
+      ]
+    },
+    {
+      "start_s": 4.64,
+      "end_s": 10.82,
+      "purpose": "Passado versus presente",
+      "mechanism": "Chip recortado em perspectiva, medida de 1 cm, pergunta e comparação com 1946",
+      "evidence_frames_s": [
+        6.2,
+        8.5,
+        9.8
+      ]
+    },
+    {
+      "start_s": 10.82,
+      "end_s": 21.74,
+      "purpose": "Problema explicado",
+      "mechanism": "Contador de válvulas, objeto isolado, callouts e pontos representando quantidade",
+      "evidence_frames_s": [
+        12,
+        16.5,
+        19.8
+      ]
+    },
+    {
+      "start_s": 21.74,
+      "end_s": 30.52,
+      "purpose": "Primeira solução",
+      "mechanism": "Ano vazado ao fundo, recorte do transistor e comparação lado a lado",
+      "evidence_frames_s": [
+        22.5,
+        25.5,
+        28
+      ]
+    },
+    {
+      "start_s": 30.52,
+      "end_s": 35.38,
+      "purpose": "Mecanismo integrado",
+      "mechanism": "Imagem macro do circuito, labels e linhas finas",
+      "evidence_frames_s": [
+        31,
+        34.5
+      ]
+    },
+    {
+      "start_s": 35.38,
+      "end_s": 42.9,
+      "purpose": "Objeto aberto em camadas",
+      "mechanism": "Microprocessador em perspectiva, estado fechado e vista explodida",
+      "evidence_frames_s": [
+        36.5,
+        39,
+        42
+      ]
+    },
+    {
+      "start_s": 42.9,
+      "end_s": 49.94,
+      "purpose": "Virada de contraste",
+      "mechanism": "Mudança para fundo claro, grade de pontos, revista e repetição de dobrar",
+      "evidence_frames_s": [
+        44,
+        46,
+        48
+      ]
+    },
+    {
+      "start_s": 49.94,
+      "end_s": 66.16,
+      "purpose": "Escalada de grandeza",
+      "mechanism": "Sucessão de chips e contadores em milhões/bilhões, preservando hierarquia",
+      "evidence_frames_s": [
+        51,
+        53,
+        56,
+        59,
+        62,
+        64
+      ]
+    },
+    {
+      "start_s": 66.16,
+      "end_s": 74.82,
+      "purpose": "Síntese e retorno",
+      "mechanism": "Sala e chip comparados verticalmente; volta à imagem inicial",
+      "evidence_frames_s": [
+        67,
+        70,
+        72.5,
+        74.5
+      ]
+    },
+    {
+      "start_s": 74.82,
+      "end_s": 79.621224,
+      "purpose": "CTA separado",
+      "mechanism": "Título central, botão azul e assinatura específica do criador",
+      "evidence_frames_s": [
+        77,
+        79
+      ]
+    }
+  ]
+}

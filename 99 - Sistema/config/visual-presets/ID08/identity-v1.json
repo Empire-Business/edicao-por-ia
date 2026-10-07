@@ -1,0 +1,71 @@
+{
+  "code": "ID08",
+  "name": "Azul e Papel",
+  "version": 1,
+  "palette": {
+    "background": "#141B25",
+    "text": "#F5F4F0",
+    "primary": "#67ACE0",
+    "surface": "#EDE9DF",
+    "muted": "#9AA8B8"
+  },
+  "typography": {
+    "headline": "Inter",
+    "body": "Inter",
+    "labels": "IBM Plex Mono"
+  },
+  "logos_enabled": false,
+  "notes": "Paleta e tipografia independentes do formato. Fontes locais; ID04 usa Libre Baskerville como equivalente portátil de serifa editorial. Nenhuma logo automática.",
+  "assets": [],
+  "font_faces": [
+    {
+      "family": "IBM Plex Mono",
+      "path": "assets/fonts/portable/ibm-plex-mono-400-latin.woff2",
+      "weight": "400",
+      "format": "woff2",
+      "sha256": "3c5a451f9ec27a354b0c2bcca636c6ec17a651281aabf29f8427e210a1d31e85"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "path": "assets/fonts/portable/ibm-plex-mono-500-latin.woff2",
+      "weight": "500",
+      "format": "woff2",
+      "sha256": "756026ff72eb76fd971ac4b7504cec55eef62109d2684c2cad8da32170b80b37"
+    },
+    {
+      "family": "Inter",
+      "path": "assets/fonts/portable/inter-400-latin.woff2",
+      "weight": "400",
+      "format": "woff2",
+      "sha256": "2301bb030a2bcaa9c763cc4771bd717aac16709c29eaba00673fcbe7cdf99a59"
+    },
+    {
+      "family": "Inter",
+      "path": "assets/fonts/portable/inter-500-latin.woff2",
+      "weight": "500",
+      "format": "woff2",
+      "sha256": "eebf14aba456b89b7e899584e076588a92e422a45b37fb5fa36ce17519a3e8c5"
+    },
+    {
+      "family": "Inter",
+      "path": "assets/fonts/portable/inter-600-latin.woff2",
+      "weight": "600",
+      "format": "woff2",
+      "sha256": "3022fadde78fd30c384797bcef8bebc18c96083527a850f62a58d8957a8b208f"
+    },
+    {
+      "family": "Inter",
+      "path": "assets/fonts/portable/inter-700-latin.woff2",
+      "weight": "700",
+      "format": "woff2",
+      "sha256": "7b43cb86a0e63bbb55376b4ea60d8cc9527a1421c367aa09962725e0c5140f5f"
+    },
+    {
+      "family": "Inter",
+      "path": "assets/fonts/portable/inter-800-latin.woff2",
+      "weight": "800",
+      "format": "woff2",
+      "sha256": "03db2737c800eb405b5bb0223890a116eda19c56bd7fbe20b709308c767ef5f6"
+    }
+  ]
+}

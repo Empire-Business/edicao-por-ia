@@ -1,0 +1,36 @@
+{
+  "code": "ID05",
+  "name": "Roxo",
+  "version": 1,
+  "palette": {
+    "background": "#F7F4FB",
+    "text": "#17092C",
+    "primary": "#820AD1",
+    "surface": "#FFFFFF",
+    "muted": "#5C0F8B"
+  },
+  "typography": {
+    "headline": "Manrope",
+    "body": "Manrope",
+    "labels": "JetBrains Mono"
+  },
+  "logos_enabled": false,
+  "notes": "Paleta e tipografia independentes do formato. Fontes locais; ID04 usa Libre Baskerville como equivalente portátil de serifa editorial. Nenhuma logo automática.",
+  "assets": [],
+  "font_faces": [
+    {
+      "family": "JetBrains Mono",
+      "path": "assets/fonts/portable/jetbrains-mono-variable.ttf",
+      "weight": "100 900",
+      "format": "truetype",
+      "sha256": "48715a42ec242c21e9f02692891e147d022299a52e48d5e413e1a942193ffeda"
+    },
+    {
+      "family": "Manrope",
+      "path": "assets/fonts/portable/manrope-variable.ttf",
+      "weight": "100 900",
+      "format": "truetype",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+    }
+  ]
+}

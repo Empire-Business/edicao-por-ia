@@ -1,0 +1,77 @@
+[
+  {
+    "id": "speech-explicit-restart",
+    "input": "'Hoje eu vou te mostrar... não, pera, vou repetir. Hoje eu vou te mostrar três formas...'",
+    "expected": "flag abandoned first take; keep complete second take; high confidence"
+  },
+  {
+    "id": "speech-semantic-conflict",
+    "input": "two fluent takes with different numbers/claims",
+    "expected": "do not auto-delete; escalate compact window"
+  },
+  {
+    "id": "multi-video-high-confidence",
+    "input": "long pause + 'próximo vídeo' + new hook",
+    "expected": "propose boundary with high confidence"
+  },
+  {
+    "id": "multi-video-low-confidence",
+    "input": "topic drifts gradually with no reset",
+    "expected": "do not auto-split solely from topic guess"
+  },
+  {
+    "id": "token-routing",
+    "input": "need ffprobe metadata",
+    "expected": "Tier 0 deterministic; no LLM"
+  },
+  {
+    "id": "token-routing-opus",
+    "input": "three references conflict about pacing; user asks to codify a reusable pattern",
+    "expected": "Opus 5.5 may be used for pattern arbitration, not rendering"
+  },
+  {
+    "id": "preservation",
+    "input": "fix one bad cut",
+    "expected": "change smallest EDL area; do not rewrite approved unrelated segments"
+  },
+  {
+    "id": "reference-flexible-paraphrase",
+    "input": "Reference: Não precisa publicar diariamente. Recording: Você não tem que postar todos os dias.",
+    "expected": "semantic equivalence; preserve fluent take; do not enforce literal words"
+  },
+  {
+    "id": "reference-critical-negation",
+    "input": "reference says não precisa; source says precisa",
+    "expected": "verify audio, flag semantic conflict; never manufacture agreement"
+  },
+  {
+    "id": "reference-missing-line",
+    "input": "required CTA exists only in script",
+    "expected": "report recording gap; do not invent audio/captions"
+  },
+  {
+    "id": "reference-two-child-jobs",
+    "input": "two scripts and one recording with two pieces",
+    "expected": "explicit scope/assignment, separate alignment and EDL per child"
+  },
+  {
+    "id": "silence-auto-not-detection-only",
+    "input": "speech cleanup enabled with unmotivated pauses",
+    "expected": "generate silence cut EDL and render shared A/V cuts; merely detecting gaps is insufficient"
+  },
+  {
+    "id": "silence-rhetorical-pause",
+    "input": "script direction pause before reveal",
+    "expected": "mark real source-time protected range; preserve it through silence cleanup"
+  },
+  {
+    "id": "silence-soft-voice",
+    "input": "quiet detector overlaps a timestamped word",
+    "expected": "protect word and handles; review uncertainty"
+  },
+  {
+    "id": "silence-music-bed",
+    "input": "background music prevents quiet detection",
+    "expected": "report detector limit; no false claim that all pauses were removed"
+  }
+]

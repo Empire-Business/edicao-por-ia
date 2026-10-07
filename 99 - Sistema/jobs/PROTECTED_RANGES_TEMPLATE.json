@@ -1,0 +1,6 @@
+{
+  "input": "/absolute/path/to/source.mp4",
+  "timebase": "original_source_seconds",
+  "ranges": [],
+  "instructions": "Copy per source/job; fill start, end and reason from actual timestamps. An empty array does not certify absence of intentional pauses."
+}

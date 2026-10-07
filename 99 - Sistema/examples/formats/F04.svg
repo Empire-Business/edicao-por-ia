@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="950" viewBox="0 0 1440 950" role="img">
+<title>F04 · Gancho e Animação</title>
+<rect width="1440" height="950" fill="#f5f4ef"/>
+<text x="65" y="95" font-family="sans-serif" font-size="48" fill="#222">F04 · Gancho e Animação</text>
+<text x="65" y="141" font-family="sans-serif" font-size="21" fill="#222">EXEMPLO ILUSTRATIVO · sequência de edição · cores e fontes vêm da ID escolhida</text>
+<rect x="65" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="90" y="257" font-family="sans-serif" font-size="29" fill="#222">01  Abertura</text>
+<rect x="100" y="310" width="340" height="215" rx="10" fill="#eee"/>
+<circle cx="270" cy="365" r="35" fill="none" stroke="#666" stroke-width="3"/>
+<rect x="195" y="410" width="150" height="105" rx="25" fill="none" stroke="#666" stroke-width="3"/>
+<text x="90" y="622" font-family="sans-serif" font-size="22" fill="#222">Pessoa apresenta o gancho</text>
+<text x="90" y="675" font-family="sans-serif" font-size="22" fill="#222">Frase forte e curta</text>
+<text x="90" y="728" font-family="sans-serif" font-size="22" fill="#222">Começa a história</text>
+<rect x="515" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="540" y="257" font-family="sans-serif" font-size="29" fill="#222">02  Animação</text>
+<rect x="550" y="310" width="340" height="215" rx="10" fill="#eee"/>
+<circle cx="720" cy="365" r="35" fill="none" stroke="#666" stroke-width="3"/>
+<rect x="645" y="410" width="150" height="105" rx="25" fill="none" stroke="#666" stroke-width="3"/>
+<text x="540" y="622" font-family="sans-serif" font-size="22" fill="#222">A voz continua</text>
+<text x="540" y="675" font-family="sans-serif" font-size="22" fill="#222">Elementos explicam a ideia</text>
+<text x="540" y="728" font-family="sans-serif" font-size="22" fill="#222">Uma relação por cena</text>
+<rect x="965" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="990" y="257" font-family="sans-serif" font-size="29" fill="#222">03  Conclusão</text>
+<rect x="1000" y="310" width="340" height="215" rx="10" fill="#eee"/>
+<circle cx="1170" cy="365" r="35" fill="none" stroke="#666" stroke-width="3"/>
+<rect x="1095" y="410" width="150" height="105" rx="25" fill="none" stroke="#666" stroke-width="3"/>
+<text x="990" y="622" font-family="sans-serif" font-size="22" fill="#222">Última ideia da narração</text>
+<text x="990" y="675" font-family="sans-serif" font-size="22" fill="#222">Resumo visual</text>
+<text x="990" y="728" font-family="sans-serif" font-size="22" fill="#222">Pedido final se informado</text>
+<text x="65" y="869" font-family="sans-serif" font-size="21" fill="#222">Material próprio de demonstração. Não é print de uma execução aprovada nem reprodução da referência original.</text>
+</svg>

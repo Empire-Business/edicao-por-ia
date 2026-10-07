@@ -1,0 +1,31 @@
+{
+  "id": "steps-demo-v1",
+  "child_id": "demo",
+  "template": "steps",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_frames": 150,
+  "mode": "overlay",
+  "lines": [
+    "Três etapas"
+  ],
+  "colors": {
+    "foreground": "#F5F4F0",
+    "background": "#14171C",
+    "accent": "#C5DB82"
+  },
+  "box": {
+    "x": 0.08,
+    "y": 0.4,
+    "w": 0.84,
+    "h": 0.38
+  },
+  "font_family": "Arial, sans-serif",
+  "status": "simulation_not_brand_approved",
+  "steps": [
+    "Escolher o assunto",
+    "Gravar a ideia",
+    "Revisar a entrega"
+  ]
+}

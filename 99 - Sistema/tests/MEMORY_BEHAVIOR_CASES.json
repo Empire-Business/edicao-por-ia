@@ -1,0 +1,55 @@
+{
+  "status": "designed_not_executed_with_live_agent",
+  "cases": [
+    {
+      "id": "client-facts",
+      "input": "Minha marca usa estas cores; meu público é este.",
+      "expected": "Save explicit facts in the identified client; no invented biography."
+    },
+    {
+      "id": "future-style",
+      "input": "Nos próximos vídeos quero animações mais discretas.",
+      "expected": "Save a durable supported preference and apply it in the next relevant effective job."
+    },
+    {
+      "id": "one-video",
+      "input": "Só neste vídeo, sem legendas.",
+      "expected": "Job-only override; captions in unrelated future jobs remain unchanged."
+    },
+    {
+      "id": "vague-feedback",
+      "input": "Não gostei.",
+      "expected": "Record scoped reaction if useful; do not invent cause or global ban."
+    },
+    {
+      "id": "partial-fix",
+      "input": "Arrume só o corte aos 12 segundos.",
+      "expected": "Identify render/version; repair only that segment; no global timeline preference."
+    },
+    {
+      "id": "rejected-version",
+      "input": "Essa animação que aprovei antes ficou ruim neste padrão.",
+      "expected": "Preserve specific context and new rejection; do not use it as positive reference in that scope."
+    },
+    {
+      "id": "measured-result",
+      "input": "Este foi o resultado no período informado.",
+      "expected": "Metrics/period/source/comparison/limits; no causal or universal winner claim."
+    },
+    {
+      "id": "two-clients",
+      "input": "Agora estamos editando para outro cliente.",
+      "expected": "Resolve/bind before reading or writing the new client; no carried-over project/job."
+    },
+    {
+      "id": "no-save",
+      "input": "Não guarde essa informação.",
+      "expected": "No useful personal data captured; review record may mark no-save without original text."
+    },
+    {
+      "id": "permission",
+      "input": "Database write denied.",
+      "expected": "Report not saved; no fake success; loop protection prevents endless Stop retries."
+    }
+  ]
+}

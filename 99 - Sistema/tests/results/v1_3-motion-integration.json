@@ -1,0 +1,33 @@
+{
+  "test_type": "synthetic real local JS/browser/FFmpeg integration",
+  "checks": {
+    "transparent_layer_outside_card": true,
+    "complete_frame_count": true,
+    "deterministic_repeat_frame": true,
+    "raster_asset_hash_tracked": true,
+    "output_96_frames": true,
+    "output_duration_unchanged": true,
+    "output_fps_unchanged": true,
+    "geometry_unchanged": true,
+    "audio_stream_unchanged": true,
+    "original_not_modified": true,
+    "no_layer_before_start": true,
+    "keyphrase_visible_when_scheduled": true,
+    "first_layer_not_held_past_end": true,
+    "proof_visible_when_scheduled": true,
+    "second_layer_not_held_past_end": true,
+    "no_audio_master_supported": true,
+    "steps_portrait_preview": true,
+    "lower-third_portrait_preview": true,
+    "no_network_render": true
+  },
+  "passed": 19,
+  "total": 19,
+  "browser": "144.0.7559.96",
+  "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "limitations": [
+    "No Claude API inference or actual customer video tested.",
+    "No Remotion installation/render tested.",
+    "Human playback/brand approval remains required; structural and sampled-frame checks are not that approval."
+  ]
+}

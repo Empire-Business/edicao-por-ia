@@ -1,0 +1,29 @@
+{
+  "economico": {
+    "max_calls": 12,
+    "max_attempts_per_task": 2,
+    "max_parallel": 1,
+    "max_prompt_chars": 24000,
+    "timeout_seconds": 240,
+    "max_turns": 3,
+    "premium_allowed": false
+  },
+  "equilibrado": {
+    "max_calls": 24,
+    "max_attempts_per_task": 2,
+    "max_parallel": 2,
+    "max_prompt_chars": 48000,
+    "timeout_seconds": 420,
+    "max_turns": 5,
+    "premium_allowed": false
+  },
+  "elaborado": {
+    "max_calls": 40,
+    "max_attempts_per_task": 3,
+    "max_parallel": 2,
+    "max_prompt_chars": 64000,
+    "timeout_seconds": 600,
+    "max_turns": 8,
+    "premium_allowed": true
+  }
+}

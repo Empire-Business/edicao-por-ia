@@ -1,0 +1,18 @@
+{
+  "duration_s": 6,
+  "sample_rate": 48000,
+  "cues": [
+    {
+      "id": "arrive",
+      "t": 0.25,
+      "type": "click",
+      "gain": 0.2
+    },
+    {
+      "id": "release",
+      "t": 3.15,
+      "type": "pop",
+      "gain": 0.18
+    }
+  ]
+}

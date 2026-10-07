@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claude Video Factory EDL",
+  "type": "object",
+  "required": [
+    "version",
+    "segments"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fps": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "fit": {
+          "enum": [
+            "cover",
+            "contain"
+          ]
+        },
+        "crf": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        },
+        "audio_bitrate": {
+          "type": "string"
+        }
+      }
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "in",
+          "out"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "in": {
+            "type": "number",
+            "minimum": 0
+          },
+          "out": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "label": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string"
+          },
+          "audio_stream": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

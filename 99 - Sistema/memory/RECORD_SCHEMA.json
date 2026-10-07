@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CVF format memory capture item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "key",
+    "value",
+    "scope",
+    "basis",
+    "source",
+    "quote",
+    "reason"
+  ],
+  "properties": {
+    "kind": {
+      "enum": [
+        "fact",
+        "preference",
+        "correction",
+        "approval",
+        "rejection",
+        "result",
+        "observation"
+      ]
+    },
+    "key": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_][a-z0-9_-]*){1,7}$"
+    },
+    "value": {},
+    "scope": {
+      "enum": [
+        "format",
+        "client",
+        "project",
+        "pattern",
+        "job"
+      ]
+    },
+    "scope_id": {
+      "type": "string"
+    },
+    "basis": {
+      "enum": [
+        "user_explicit",
+        "user_confirmed",
+        "inferred",
+        "observed",
+        "simulated"
+      ]
+    },
+    "source": {
+      "enum": [
+        "user_message",
+        "authorized_document",
+        "metric_file",
+        "simulation"
+      ]
+    },
+    "quote": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 800
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "setting": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "id",
+        "version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "metric",
+        "value",
+        "period",
+        "source_ref",
+        "comparison",
+        "limitations"
+      ]
+    }
+  },
+  "description": "Use format as the profile-wide scope. Legacy client scope remains accepted. The executable validator also verifies scope ownership, basis/source, allowlisted settings, finite values, privacy and size."
+}

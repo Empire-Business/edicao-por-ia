@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "replace-with-job",
+  "child_id": "replace-with-child",
+  "profile": "equilibrado",
+  "mode": "music_led",
+  "audio_mode": "none",
+  "visual_goal": "Descrever a transformação visual que sustenta a ideia.",
+  "fps": 24,
+  "duration_frames": 144,
+  "new_style": true,
+  "loop": false,
+  "dependencies": {},
+  "references": [],
+  "assets": [],
+  "proportions": [
+    {
+      "id": "horizontal",
+      "width": 640,
+      "height": 360,
+      "layout_note": "Fluxo da esquerda para a direita; reservar margem superior para uma frase."
+    }
+  ],
+  "shots": [
+    {
+      "id": "s01",
+      "start_frame": 0,
+      "end_frame": 72,
+      "treatment": "diagram",
+      "purpose": "Mostrar uma fila de decisões.",
+      "visual_action": "Pedidos convergem para um ponto que trava.",
+      "why_not_generic": "Mostrar a relação de dependência, não uma foto de pessoa cansada.",
+      "asset_ids": [],
+      "states": [
+        {
+          "frame": 0,
+          "visible_result": "Pedidos e um ponto de decisão."
+        },
+        {
+          "frame": 24,
+          "visible_result": "Pedidos chegam, mas o ponto central limita o avanço."
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "start_frame": 72,
+      "end_frame": 144,
+      "treatment": "diagram",
+      "purpose": "Comparar com decisões distribuídas.",
+      "visual_action": "A estrutura abre caminhos com critérios.",
+      "why_not_generic": "A mesma estrutura mostra o contraste, sem uma nova metáfora a cada frase.",
+      "asset_ids": [],
+      "states": [
+        {
+          "frame": 72,
+          "visible_result": "O ponto central passa a representar critérios."
+        },
+        {
+          "frame": 108,
+          "visible_result": "Caminhos distintos encaminham o trabalho."
+        }
+      ]
+    }
+  ]
+}

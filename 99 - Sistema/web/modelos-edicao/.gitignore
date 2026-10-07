@@ -1,0 +1,5 @@
+dist/
+qa/
+node_modules/
+.vercel/
+!public/assets/videos/*.mp4

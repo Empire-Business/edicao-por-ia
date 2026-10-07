@@ -1,0 +1,70 @@
+id: f07-v1
+version: 1
+status: draft
+purpose: Demonstração de interface recriada com menus, cliques e transições.
+engine: hyperframes
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: natural
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 0.8
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.8
+    keep_pause_seconds: 0.3
+    word_handle_seconds: 0.1
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  min_jump_cut_interval_seconds: 0.9
+  preserve_required_phrases: []
+visual:
+  punch_ins: selective
+  max_punch_in_scale: 1.06
+  random_effects: false
+  composition: Demonstração de interface recriada com menus, cliques e transições.
+  source_mode: recreated_interface
+captions:
+  enabled: true
+  max_lines: 2
+  max_chars_per_line: 34
+  word_highlight: false
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_logo
+- automatic_personal_identity
+insertion_assets:
+  policy: encouraged
+  density: medium
+  default_preferred_duration_s: 2.0
+  default_max_duration_s: 5.0
+  allow_image_motion: false
+format_code: F07
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false

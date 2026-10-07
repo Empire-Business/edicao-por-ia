@@ -1,0 +1,15 @@
+id: clean-explainer-v1
+version: 1
+status: candidate_not_client_approved
+purpose: Clarify a spoken idea with restrained JavaScript animations.
+engine: auto
+allowed_templates: [keyphrase, steps, lower-third, proof-frame]
+intensity: restrained
+use_only_when_semantically_relevant: true
+preserve_existing_brand_and_captions: true
+timing: clean_master_frames
+max_new_design_iterations: 2
+reusable_component_first: true
+create_new_design_with: opus
+apply_existing_design_with: local_or_sonnet
+render_with: local_tools

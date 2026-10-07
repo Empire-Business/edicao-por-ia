@@ -1,0 +1,50 @@
+{
+  "name": "{{BRAND_NAME}}",
+  "jobId": "{{JOB_ID}}",
+  "formatId": "{{FORMAT_ID}}",
+  "videoName": "{{VIDEO_NAME}}",
+  "font": {
+    "family": "Poppins",
+    "slug": "poppins",
+    "weights": [
+      300,
+      400,
+      500,
+      600,
+      700
+    ]
+  },
+  "colors": {
+    "bg": "#fbfaf7",
+    "fg": "#1a1710",
+    "card": "#ffffff",
+    "muted": "#f4f2ed",
+    "mutedFg": "#6b665b",
+    "border": "#ebe7de",
+    "input": "#e3ded3",
+    "accent": "#f7f1e3",
+    "brand10": "#fdf6e4",
+    "primary": "#8a6410",
+    "primaryFg": "#ffffff",
+    "gold": "#e8c46a",
+    "gold2": "#c79a33",
+    "success": "#0c7a3a",
+    "successBg": "#e8f5ec",
+    "warning": "#9b5a00",
+    "warningBg": "#fdf1e0",
+    "destructive": "#d01d1c",
+    "destructiveBg": "#fdecec",
+    "info": "#2f5fd0",
+    "infoBg": "#ebf0fc",
+    "room": "#0a0806",
+    "roomPanel": "#16130e",
+    "roomPanel2": "#1c1913",
+    "roomBorder": "#2b2619",
+    "roomFg": "#f6f3ec",
+    "roomMuted": "#a8a294",
+    "roomGold": "#e8c46a",
+    "roomRed": "#ff5c5b"
+  },
+  "_note": "Use the selected format/current job's verified colors and fonts. Logos are disabled by default; only an explicit current-job request enables them. All custom fonts/media/libraries ship locally with the job.",
+  "logoEnabled": false
+}

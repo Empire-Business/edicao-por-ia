@@ -1,0 +1,50 @@
+{
+  "plan_sha256": "REPLACE_WITH_CURRENT_PLAN_SHA256",
+  "child_id": "replace-with-child",
+  "reviewer": "REPLACE_WITH_REVIEWER",
+  "review_type": "agent_declared",
+  "artifacts": [],
+  "gates": {
+    "opening": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    },
+    "visual_semantics": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    },
+    "phone_readability": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    },
+    "composition": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    },
+    "motion_playback": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    },
+    "brand_assets": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    },
+    "audio_sync": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    },
+    "loop_seam": {
+      "status": "pending",
+      "observation": "Ainda não examinado nesta versão.",
+      "evidence_ids": []
+    }
+  },
+  "issues": []
+}

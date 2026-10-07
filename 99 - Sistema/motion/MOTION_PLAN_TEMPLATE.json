@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "child_id": "video-1",
+  "timebase": "clean_master_frames",
+  "base": {
+    "path": "../renders/clean-master-v1.mp4",
+    "sha256": "REPLACE_WITH_REAL_SHA256"
+  },
+  "edl": {
+    "path": "../edit/edl.json",
+    "sha256": "REPLACE_WITH_REAL_SHA256"
+  },
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "layers": [
+    {
+      "child_id": "video-1",
+      "start_frame": 120,
+      "frames": {
+        "path": "../motion/frames-v1/frames.json",
+        "sha256": "REPLACE_WITH_REAL_SHA256"
+      },
+      "speech_cue": "Exact retained phrase or timestamped transcript anchor",
+      "reason": "Explains this specific spoken idea"
+    }
+  ]
+}

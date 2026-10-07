@@ -1,0 +1,114 @@
+{
+  "F01": [
+    {
+      "path": "examples/formats/F01.png",
+      "caption": "F01 · Chat — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F02": [
+    {
+      "path": "examples/formats/F02.png",
+      "caption": "F02 · Dinâmico — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F03": [
+    {
+      "path": "examples/formats/F03.png",
+      "caption": "F03 · Foto Falante — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F04": [
+    {
+      "path": "examples/formats/F04.png",
+      "caption": "F04 · Gancho e Animação — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F05": [
+    {
+      "path": "examples/formats/F05.png",
+      "caption": "F05 · Editorial — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F06": [
+    {
+      "path": "examples/formats/F06.png",
+      "caption": "F06 · Diagramas — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F07": [
+    {
+      "path": "examples/formats/F07.png",
+      "caption": "F07 · Tela Animada — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F08": [
+    {
+      "path": "examples/formats/F08.png",
+      "caption": "F08 · Camadas — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F09": [
+    {
+      "path": "examples/formats/F09.png",
+      "caption": "F09 · Conversa e Tela — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F10": [
+    {
+      "path": "examples/formats/F10.png",
+      "caption": "F10 · Pessoa e Tela — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F11": [
+    {
+      "path": "examples/formats/F11.png",
+      "caption": "F11 · Formulários — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F12": [
+    {
+      "path": "examples/formats/F12.png",
+      "caption": "F12 · Documentário — três estados ilustrativos da edição.",
+      "status": "illustrative_storyboard"
+    }
+  ],
+  "F13": [
+    {
+      "path": "examples/reference-library/F13/preview-frame.jpg",
+      "caption": "F13 · Dados Dark — quadro real da referência.",
+      "status": "actual_reference_frame"
+    }
+  ],
+  "F14": [
+    {
+      "path": "examples/reference-library/F14/preview-frame.jpg",
+      "caption": "F14 · Lista em Tela — quadro real da referência.",
+      "status": "actual_reference_frame"
+    }
+  ],
+  "F15": [
+    {
+      "path": "examples/reference-library/F15/preview-frame.jpg",
+      "caption": "F15 · Dois Lados — quadro real da referência.",
+      "status": "actual_reference_frame"
+    }
+  ],
+  "F16": [
+    {
+      "path": "examples/reference-library/F16/preview-frame.jpg",
+      "caption": "F16 · Comentário com B-roll — quadro real da referência.",
+      "status": "actual_reference_frame"
+    }
+  ]
+}

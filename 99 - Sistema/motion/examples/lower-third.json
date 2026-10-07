@@ -1,0 +1,27 @@
+{
+  "id": "lower-third-demo-v1",
+  "child_id": "demo",
+  "template": "lower-third",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_frames": 90,
+  "mode": "overlay",
+  "lines": [
+    "Nome do apresentador",
+    "Especialidade ou contexto"
+  ],
+  "colors": {
+    "foreground": "#F5F4F0",
+    "background": "#14171C",
+    "accent": "#C5DB82"
+  },
+  "box": {
+    "x": 0.08,
+    "y": 0.64,
+    "w": 0.84,
+    "h": 0.14
+  },
+  "font_family": "Arial, sans-serif",
+  "status": "simulation_not_brand_approved"
+}

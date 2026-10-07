@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "byte_identical_to_v1_2": [
+    "patterns/longform-clean-v1.yaml",
+    "patterns/reels-dynamic-v1.yaml",
+    "patterns/longform-clean-v2.yaml",
+    "patterns/reels-dynamic-v2.yaml",
+    "patterns/talking-head-clean-v1.yaml",
+    "patterns/talking-head-clean-v2.yaml",
+    "patterns/_TEMPLATE.yaml"
+  ]
+}

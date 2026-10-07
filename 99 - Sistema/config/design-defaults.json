@@ -1,0 +1,431 @@
+{
+  "version": 2,
+  "formats": [
+    {
+      "code": "F01",
+      "name": "WhatsApp Narrado",
+      "memory_store": "format-f01",
+      "pattern": "f01-v1",
+      "description": "A voz conduz uma conversa em tela cheia; mensagens, áudios e apoios surgem dentro do chat.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "bruno-wpp"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F01",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F01/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f01",
+      "example_kind": "published_reference_collection"
+    },
+    {
+      "code": "F04",
+      "name": "Pessoa → Animação",
+      "memory_store": "format-f04",
+      "pattern": "f04-v1",
+      "description": "A pessoa aparece na abertura; depois a voz continua sobre animações e imagens.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "brunoguzela2"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F04",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F04/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f04",
+      "example_kind": "published_reference_collection"
+    },
+    {
+      "code": "F05",
+      "name": "Notícia Comentada",
+      "memory_store": "format-f05",
+      "pattern": "f05-v1",
+      "description": "A pessoa comenta notícias, documentos e dados mostrados como recortes de uma matéria.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "empire2"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F05",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F05/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f05",
+      "example_kind": "published_reference_collection",
+      "mechanism_details": {
+        "inputs": "Gancho gravado, narração e referências do assunto.",
+        "mechanism": "A apresentação parece uma matéria visual: títulos, informações e imagens se organizam para contar uma história. A fonte não é obrigatoriamente serifada; vem da ID visual.",
+        "steps": [
+          "Apresentar o assunto com um título curto e um gancho.",
+          "Construir uma sequência de problema, explicação e conclusão.",
+          "Organizar dados e relações em diagramas e composições legíveis.",
+          "Deixar cada estado tempo suficiente para ler e compreender.",
+          "Retomar a ideia principal antes de encerrar."
+        ],
+        "avoid": "Não escrever EMPIRE como cabeçalho, assinatura ou marca da edição. Não inserir logotipo, nome fixo de empresa ou marca da referência. Cores/fontes vêm da ID escolhida; preservar o assunto da notícia sem transformar a empresa citada em assinatura visual."
+      }
+    },
+    {
+      "code": "F06",
+      "name": "Diagramas",
+      "memory_store": "format-f06",
+      "pattern": "f06-v1",
+      "description": "A explicação vira fluxos, módulos, conexões e números animados.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "htai1"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F06",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F06/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f06",
+      "example_kind": "published_reference_collection"
+    },
+    {
+      "code": "F07",
+      "name": "Motion Institucional",
+      "memory_store": "format-f07",
+      "pattern": "f07-v2",
+      "description": "Apresentação de uma plataforma por telas recriadas e animadas: recursos, navegação, formulários e resultados, sem apresentador em câmera.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "omnxclients"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F07",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F07/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f07",
+      "example_kind": "published_reference_collection",
+      "mechanism_details": {
+        "inputs": "Roteiro ou narração, telas ou acesso de referência à plataforma e indicação dos recursos que devem aparecer. Escolha também a ID visual e o tamanho do vídeo.",
+        "mechanism": "Apresentação de uma plataforma por telas recriadas e animadas: recursos, navegação, formulários e resultados, sem apresentador em câmera.",
+        "steps": [
+          "Abrir com a proposta ou benefício central da plataforma.",
+          "Apresentar as telas e os recursos em uma sequência curta e compreensível.",
+          "Demonstrar ações: navegar, escolher, preencher, enviar e observar o resultado.",
+          "Usar movimentos de câmera e transições para orientar a atenção e ligar as etapas.",
+          "Fechar com uma síntese do produto; chamada final e logotipo somente quando pedidos."
+        ],
+        "avoid": "Não inventar recursos, usar dados pessoais reais, mostrar um mockup como função já implementada ou herdar a marca, paleta e fontes do exemplo. Tour e formulário são tipos de cena deste mesmo formato."
+      }
+    },
+    {
+      "code": "F08",
+      "name": "Pessoa + Tela",
+      "memory_store": "format-f08",
+      "pattern": "f08-v2",
+      "description": "A pessoa explica telas, cenas e conversas, recortada no cenário ou junto da demonstração.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "omnxgt3"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F08",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F08/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f08",
+      "example_kind": "published_reference_collection",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa e telas, conversas ou cenas relacionadas à fala. Materiais de atendimento devem usar dados fictícios quando houver informações privadas.",
+        "mechanism": "Uma pessoa explica telas, cenas e conversas. Pode aparecer recortada e integrada ao cenário ou junto de uma tela de demonstração; são variações do mesmo formato.",
+        "steps": [
+          "Montar a fala e identificar o conteúdo visual de cada ideia.",
+          "Escolher entre pessoa integrada ao cenário e pessoa junto da tela ou conversa.",
+          "Mostrar mensagens, ações e apoios no momento correspondente da explicação.",
+          "Alternar pessoa, tela e resultado para manter contexto e legibilidade.",
+          "Revisar recorte quando houver, leitura no celular e dados privados antes de entregar a prévia."
+        ],
+        "avoid": "Não cobrir o rosto, perder bordas importantes do recorte, exibir contatos reais, inventar depoimentos ou usar telas sem relação com a fala."
+      }
+    },
+    {
+      "code": "F10",
+      "name": "Produto Explicado",
+      "memory_store": "format-f10",
+      "pattern": "f10-v1",
+      "description": "Uma pessoa demonstra o produto, alternando sua fala com telas e cenas de uso.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "omnxsell"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F10",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F10/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f10",
+      "example_kind": "published_reference_collection"
+    },
+    {
+      "code": "F12",
+      "name": "Documentário",
+      "memory_store": "format-f12",
+      "pattern": "f12-v1",
+      "description": "A narração conta uma história com imagens, objetos, datas, números e comparações.",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "legacy_stores": [
+        "documentario-visual-animado"
+      ],
+      "memory_domain": "editing_only",
+      "registration_receipt": "design-split-20261006-F12",
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F12/README.md",
+      "example_link_status": "provided",
+      "uid": "factory.f12",
+      "example_kind": "published_reference_collection"
+    },
+    {
+      "code": "F13",
+      "name": "Dados Dark",
+      "description": "Sem apresentador em câmera: a narração é explicada com mapas, pontos que representam quantidades, contadores, rankings e comparações animadas.",
+      "pattern": "f13-v2",
+      "mechanism_details": {
+        "inputs": "Narração ou roteiro, dados com suas fontes e recortes geográficos quando houver. Não precisa de vídeo de apresentador.",
+        "mechanism": "Sem apresentador em câmera: a narração é explicada com mapas, pontos que representam quantidades, contadores, rankings e comparações animadas.",
+        "steps": [
+          "Abrir com uma pergunta ou comparação baseada em dados fornecidos.",
+          "Estabelecer o universo da comparação em um mapa ou conjunto de pontos.",
+          "Reorganizar os elementos em grade, ranking ou grupos, preservando suas quantidades.",
+          "Destacar o número principal e aproximar um caso concreto para explicar a escala.",
+          "Voltar ao conjunto e concluir com a síntese da narração; chamada final apenas quando fornecida pelo usuário."
+        ],
+        "avoid": "Não inventar dados, mudar denominadores entre comparações, exibir valores intermediários como fatos ou herdar tema, políticos, retratos, marca ou chamada eleitoral da referência."
+      },
+      "memory_store": "format-f13",
+      "uid": "factory.f13",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "memory_domain": "editing_only",
+      "legacy_stores": [
+        "dados-dark"
+      ],
+      "example_url": "https://drive.google.com/file/d/1EMhlw8uRLyu3WB4mfctOQEocTXyNs9U_/view?usp=drivesdk",
+      "example_link_status": "provided"
+    },
+    {
+      "code": "F14",
+      "name": "Lista em Tela",
+      "description": "A pessoa explica uma lista que se completa item por item, com os pontos anteriores visíveis.",
+      "pattern": "f14-v1",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa falando e os itens da lista, extraídos da fala ou fornecidos explicitamente. Escolher a ID visual e a proporção.",
+        "mechanism": "Os itens numerados entram junto da explicação e permanecem na tela, formando uma lista cumulativa ao lado da pessoa.",
+        "steps": [
+          "Montar a fala e conferir a ordem e a quantidade real dos itens.",
+          "Reservar espaço para a lista sem cobrir a pessoa.",
+          "Exibir o número ou marcador e completar o texto quando a ideia correspondente é falada.",
+          "Manter os itens anteriores visíveis para facilitar a comparação e a lembrança.",
+          "Revisar a lista final, sincronia e leitura no celular."
+        ],
+        "avoid": "Não inventar itens, fixar os quatro números do exemplo, usar texto longo ou herdar ator, tema, marca, cores e fonte da referência."
+      },
+      "memory_store": "format-f14",
+      "uid": "factory.f14",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "memory_domain": "editing_only",
+      "legacy_stores": [
+        "lista-em-tela"
+      ],
+      "example_url": "https://drive.google.com/file/d/1f_XnWiR5IQaR0iSZExqPABFUMExbx1sU/view?usp=drive_link",
+      "example_link_status": "provided"
+    },
+    {
+      "code": "F15",
+      "name": "Dois Lados",
+      "description": "A pessoa classifica opções em duas colunas, e cada item ocupa o lado indicado pela fala.",
+      "pattern": "f15-v1",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa, os dois critérios de classificação e itens ou imagens relacionados à fala. Escolher a ID visual e a proporção.",
+        "mechanism": "Duas áreas com rótulos organizam a comparação. Cada item aparece quando é citado e vai para o lado escolhido, permanecendo até o quadro final.",
+        "steps": [
+          "Conferir os dois critérios e a classificação de cada item na fala.",
+          "Criar duas áreas legíveis sem cobrir rosto, mãos ou legenda.",
+          "Apresentar cada item no momento correspondente e posicioná-lo no lado correto.",
+          "Manter os itens já classificados para formar a comparação final.",
+          "Revisar sentido, posição, leitura e sincronia antes da entrega."
+        ],
+        "avoid": "Não inverter o sentido da classificação, fabricar recomendações, fixar verde/vermelho como parte do formato ou transformar um exemplo de finanças em conselho para outro vídeo."
+      },
+      "memory_store": "format-f15",
+      "uid": "factory.f15",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "memory_domain": "editing_only",
+      "legacy_stores": [
+        "dois-lados"
+      ],
+      "example_url": "https://drive.google.com/file/d/1AkaUNdpP_jKZLTa6zE5ruGXmW5jMP1-l/view?usp=sharing",
+      "example_link_status": "provided"
+    },
+    {
+      "code": "F16",
+      "name": "Comentário com B-roll",
+      "description": "Comentário com apresentador, B-roll pesquisado para cada ideia e gráficos nos pontos-chave.",
+      "pattern": "f16-v1",
+      "mechanism_details": {
+        "inputs": "Gravação do apresentador, assunto e fontes ou materiais do tema. A pesquisa de B-roll faz parte do planejamento; música é opcional. Escolher também a ID visual.",
+        "mechanism": "O apresentador comenta o assunto enquanto cenas reais pesquisadas sustentam cada ideia. A edição alterna pessoa, mídia e gráficos importantes, com planejamento de pesquisa além da composição de tela.",
+        "steps": [
+          "Montar a fala, escolher as melhores tomadas e separar as ideias retidas; câmera lateral é opcional e precisa de sincronia.",
+          "Pesquisar B-roll da coisa citada, guardar fontes e arquivos locais e inspecionar quadros no layout. TikTok/YouTube usam ScrapeCreators.",
+          "Alternar câmera, split com profundidade, cartão de vídeo e gráfico em tela cheia; manter enquadramento estável e uma informação por estado.",
+          "Usar legendas curtas, esconder a legenda durante destaques e gráficos e aplicar entradas suaves na zona da legenda.",
+          "Ajustar a voz e a trilha autorizada pela narrativa; revisar recorte, leitura, qualidade da mídia, fatos e ausência de assinaturas de marca."
+        ],
+        "avoid": "Não simplificar este formato a pessoa mais tela, usar B-roll genérico por conveniência, trocar o provedor de TikTok/YouTube, inventar fatos ou herdar marca, logotipo, textos de assinatura, ator, paleta e fonte da referência."
+      },
+      "memory_store": "format-f16",
+      "uid": "factory.f16",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "memory_domain": "editing_only",
+      "legacy_stores": [
+        "comentario-com-b-roll"
+      ],
+      "example_url": "https://drive.google.com/file/d/1Dti9mgOUIqNpW9QGIHOAfP4D3srNTWId/view?usp=drive_link",
+      "example_link_status": "provided"
+    }
+  ],
+  "visual_identities": [
+    {
+      "code": "ID01",
+      "name": "Verde",
+      "path": "context/visual-identities/ID01/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id01"
+    },
+    {
+      "code": "ID02",
+      "name": "Lima",
+      "path": "context/visual-identities/ID02/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id02"
+    },
+    {
+      "code": "ID03",
+      "name": "Azul",
+      "path": "context/visual-identities/ID03/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id03"
+    },
+    {
+      "code": "ID04",
+      "name": "Dourado",
+      "path": "context/visual-identities/ID04/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id04"
+    },
+    {
+      "code": "ID05",
+      "name": "Roxo",
+      "path": "context/visual-identities/ID05/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id05"
+    },
+    {
+      "code": "ID06",
+      "name": "Azul Claro",
+      "path": "context/visual-identities/ID06/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id06"
+    },
+    {
+      "code": "ID07",
+      "name": "Laranja",
+      "path": "context/visual-identities/ID07/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id07"
+    },
+    {
+      "code": "ID08",
+      "name": "Azul e Papel",
+      "path": "context/visual-identities/ID08/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id08"
+    }
+  ],
+  "retired_formats": [
+    {
+      "code": "F02",
+      "name": "Dinâmico",
+      "memory_store": "format-f02",
+      "pattern": "f02-v1",
+      "description": "Gancho forte, cortes rápidos e animações ligadas à fala.",
+      "uid": "factory.f02",
+      "legacy_stores": [
+        "brunoguzela"
+      ],
+      "retirement_reason": "Retirado do catálogo do autor."
+    },
+    {
+      "code": "F11",
+      "name": "Formulário Guiado",
+      "memory_store": "format-f11",
+      "pattern": "f11-v1",
+      "description": "Uma tarefa é mostrada passo a passo: preencher campos, escolher opções, enviar e ver o resultado.",
+      "uid": "factory.f11",
+      "legacy_stores": [
+        "omnxtype"
+      ],
+      "retirement_reason": "Incorporado ao F07",
+      "replacement_code": "F07"
+    },
+    {
+      "code": "F09",
+      "name": "Chat Comentado",
+      "memory_store": "format-f09",
+      "pattern": "f09-v1",
+      "description": "Uma pessoa em vídeo explica conversas e ações de atendimento mostradas na tela.",
+      "uid": "factory.f09",
+      "legacy_stores": [
+        "omnxsdrai"
+      ],
+      "retirement_reason": "Incorporado ao F08",
+      "replacement_code": "F08"
+    },
+    {
+      "code": "F03",
+      "name": "Foto Falante",
+      "memory_store": "format-f03",
+      "pattern": "f03-v1",
+      "description": "Uma foto autorizada ganha movimento de boca e cabeça sincronizado à narração.",
+      "uid": "factory.f03",
+      "legacy_stores": [
+        "brunoguzela1"
+      ],
+      "retirement_reason": "Retirado do catálogo do autor."
+    },
+    {
+      "code": "F17",
+      "name": "Talking Head",
+      "memory_store": "format-f17",
+      "pattern": "f17-v1",
+      "description": "A pessoa fala direto à câmera, com cortes naturais e legendas legíveis. A fala e a presença conduzem o vídeo.",
+      "uid": "factory.f17",
+      "retirement_reason": "Retirado pelo autor: criado com material fora do ZIP autorizado.",
+      "legacy_stores": [
+        "talking-head"
+      ]
+    },
+    {
+      "code": "F18",
+      "name": "História com Apresentador",
+      "memory_store": "format-f18",
+      "pattern": "f18-v1",
+      "description": "A pessoa conta uma história; imagens de apoio mostram os acontecimentos, enquanto o narrador volta à câmera para conectar os momentos.",
+      "uid": "factory.f18",
+      "retirement_reason": "Retirado pelo autor: criado com material fora do ZIP autorizado.",
+      "legacy_stores": [
+        "historia-com-apresentador"
+      ]
+    }
+  ]
+}

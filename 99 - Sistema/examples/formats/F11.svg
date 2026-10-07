@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="950" viewBox="0 0 1440 950" role="img">
+<title>F11 · Formulários</title>
+<rect width="1440" height="950" fill="#f5f4ef"/>
+<text x="65" y="95" font-family="sans-serif" font-size="48" fill="#222">F11 · Formulários</text>
+<text x="65" y="141" font-family="sans-serif" font-size="21" fill="#222">EXEMPLO ILUSTRATIVO · sequência de edição · cores e fontes vêm da ID escolhida</text>
+<rect x="65" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="90" y="257" font-family="sans-serif" font-size="29" fill="#222">01  Campos</text>
+<rect x="100" y="305" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="100" y="370" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="100" y="435" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="305" y="503" width="135" height="37" fill="#333"/>
+<text x="90" y="622" font-family="sans-serif" font-size="22" fill="#222">Nome: exemplo fictício</text>
+<text x="90" y="675" font-family="sans-serif" font-size="22" fill="#222">Escolha de uma opção</text>
+<text x="90" y="728" font-family="sans-serif" font-size="22" fill="#222">Rótulos legíveis</text>
+<rect x="515" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="540" y="257" font-family="sans-serif" font-size="29" fill="#222">02  Validação</text>
+<rect x="550" y="305" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="550" y="370" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="550" y="435" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="755" y="503" width="135" height="37" fill="#333"/>
+<text x="540" y="622" font-family="sans-serif" font-size="22" fill="#222">Campo obrigatório</text>
+<text x="540" y="675" font-family="sans-serif" font-size="22" fill="#222">Correção demonstrada</text>
+<text x="540" y="728" font-family="sans-serif" font-size="22" fill="#222">Pronto para enviar</text>
+<rect x="965" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="990" y="257" font-family="sans-serif" font-size="29" fill="#222">03  Envio</text>
+<rect x="1000" y="305" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="1000" y="370" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="1000" y="435" width="340" height="47" rx="8" fill="none" stroke="#888"/>
+<rect x="1205" y="503" width="135" height="37" fill="#333"/>
+<text x="990" y="622" font-family="sans-serif" font-size="22" fill="#222">Botão: enviar</text>
+<text x="990" y="675" font-family="sans-serif" font-size="22" fill="#222">Confirmação da tarefa</text>
+<text x="990" y="728" font-family="sans-serif" font-size="22" fill="#222">Estado final da interface</text>
+<text x="65" y="869" font-family="sans-serif" font-size="21" fill="#222">Material próprio de demonstração. Não é print de uma execução aprovada nem reprodução da referência original.</text>
+</svg>

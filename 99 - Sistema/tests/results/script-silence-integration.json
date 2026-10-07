@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "fixture": "synthetic tones and image; hand-authored synthetic word times",
+  "not_tested": [
+    "real speech transcription",
+    "semantic LLM editing",
+    "subjective listening on user media"
+  ],
+  "checks": {
+    "selected_dialogue_track_rendered_not_empty_track": true,
+    "three_quiet_regions_detected": true,
+    "automatic_removal_executed": true,
+    "video_audio_streams_present": true,
+    "duration_matches_edl_within_100ms": true,
+    "av_duration_drift_within_80ms": true,
+    "no_unmotivated_gap_over_650ms": true,
+    "all_four_synthetic_words_retimed": true,
+    "captions_created": true,
+    "protected_pause_not_removed": true,
+    "reference_packet_requires_semantic_review": true,
+    "script_job_fields_recorded": true,
+    "source_sha256_unchanged": true,
+    "existing_render_not_overwritten": true,
+    "stale_evidence_blocked": true,
+    "no_audio_reported_not_applicable": true
+  },
+  "input_seconds": 6,
+  "planned_output_seconds": 3.3000000000000003,
+  "rendered_video_seconds": 3.3,
+  "rendered_audio_seconds": 3.316,
+  "removed_seconds": 2.6999999999999997
+}

@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "checks": {
+    "source_unchanged": true,
+    "render_decodable": true,
+    "resolution_ok": true,
+    "sar_ok": true,
+    "retime_ok": true,
+    "srt_created": true
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "scope": "Explicit author selection for the public gallery, from the active local catalogue",
+  "excluded_codes": [
+    "F02",
+    "F03",
+    "F09",
+    "F11",
+    "F17",
+    "F18"
+  ],
+  "formats": [
+    {
+      "code": "F01",
+      "name": "WhatsApp Narrado",
+      "description": "A voz conduz uma conversa em tela cheia; mensagens, áudios e apoios surgem dentro do chat.",
+      "pattern": "f01-v1"
+    },
+    {
+      "code": "F04",
+      "name": "Pessoa → Animação",
+      "description": "A pessoa aparece na abertura; depois a voz continua sobre animações e imagens.",
+      "pattern": "f04-v1"
+    },
+    {
+      "code": "F05",
+      "name": "Notícia Comentada",
+      "description": "A pessoa comenta notícias, documentos e dados mostrados como recortes de uma matéria.",
+      "pattern": "f05-v1",
+      "mechanism_details": {
+        "inputs": "Gancho gravado, narração e referências do assunto.",
+        "mechanism": "A apresentação parece uma matéria visual: títulos, informações e imagens se organizam para contar uma história. A fonte não é obrigatoriamente serifada; vem da ID visual.",
+        "steps": [
+          "Apresentar o assunto com um título curto e um gancho.",
+          "Construir uma sequência de problema, explicação e conclusão.",
+          "Organizar dados e relações em diagramas e composições legíveis.",
+          "Deixar cada estado tempo suficiente para ler e compreender.",
+          "Retomar a ideia principal antes de encerrar."
+        ],
+        "avoid": "Não escrever EMPIRE como cabeçalho, assinatura ou marca da edição. Não inserir logotipo, nome fixo de empresa ou marca da referência. Cores/fontes vêm da ID escolhida; preservar o assunto da notícia sem transformar a empresa citada em assinatura visual."
+      }
+    },
+    {
+      "code": "F06",
+      "name": "Diagramas",
+      "description": "A explicação vira fluxos, módulos, conexões e números animados.",
+      "pattern": "f06-v1"
+    },
+    {
+      "code": "F07",
+      "name": "Motion Institucional",
+      "description": "Apresentação de uma plataforma por telas recriadas e animadas: recursos, navegação, formulários e resultados, sem apresentador em câmera.",
+      "pattern": "f07-v2",
+      "mechanism_details": {
+        "inputs": "Roteiro ou narração, telas ou acesso de referência à plataforma e indicação dos recursos que devem aparecer. Escolha também a ID visual e o tamanho do vídeo.",
+        "mechanism": "Apresentação de uma plataforma por telas recriadas e animadas: recursos, navegação, formulários e resultados, sem apresentador em câmera.",
+        "steps": [
+          "Abrir com a proposta ou benefício central da plataforma.",
+          "Apresentar as telas e os recursos em uma sequência curta e compreensível.",
+          "Demonstrar ações: navegar, escolher, preencher, enviar e observar o resultado.",
+          "Usar movimentos de câmera e transições para orientar a atenção e ligar as etapas.",
+          "Fechar com uma síntese do produto; chamada final e logotipo somente quando pedidos."
+        ],
+        "avoid": "Não inventar recursos, usar dados pessoais reais, mostrar um mockup como função já implementada ou herdar a marca, paleta e fontes do exemplo. Tour e formulário são tipos de cena deste mesmo formato."
+      }
+    },
+    {
+      "code": "F08",
+      "name": "Pessoa + Tela",
+      "description": "A pessoa explica telas, cenas e conversas, recortada no cenário ou junto da demonstração.",
+      "pattern": "f08-v2",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa e telas, conversas ou cenas relacionadas à fala. Materiais de atendimento devem usar dados fictícios quando houver informações privadas.",
+        "mechanism": "Uma pessoa explica telas, cenas e conversas. Pode aparecer recortada e integrada ao cenário ou junto de uma tela de demonstração; são variações do mesmo formato.",
+        "steps": [
+          "Montar a fala e identificar o conteúdo visual de cada ideia.",
+          "Escolher entre pessoa integrada ao cenário e pessoa junto da tela ou conversa.",
+          "Mostrar mensagens, ações e apoios no momento correspondente da explicação.",
+          "Alternar pessoa, tela e resultado para manter contexto e legibilidade.",
+          "Revisar recorte quando houver, leitura no celular e dados privados antes de entregar a prévia."
+        ],
+        "avoid": "Não cobrir o rosto, perder bordas importantes do recorte, exibir contatos reais, inventar depoimentos ou usar telas sem relação com a fala."
+      }
+    },
+    {
+      "code": "F10",
+      "name": "Produto Explicado",
+      "description": "Uma pessoa demonstra o produto, alternando sua fala com telas e cenas de uso.",
+      "pattern": "f10-v1"
+    },
+    {
+      "code": "F12",
+      "name": "Documentário",
+      "description": "A narração conta uma história com imagens, objetos, datas, números e comparações.",
+      "pattern": "f12-v1"
+    },
+    {
+      "code": "F13",
+      "name": "Dados Dark",
+      "description": "Sem apresentador em câmera: a narração é explicada com mapas, pontos que representam quantidades, contadores, rankings e comparações animadas.",
+      "pattern": "f13-v2",
+      "mechanism_details": {
+        "inputs": "Narração ou roteiro, dados com suas fontes e recortes geográficos quando houver. Não precisa de vídeo de apresentador.",
+        "mechanism": "Sem apresentador em câmera: a narração é explicada com mapas, pontos que representam quantidades, contadores, rankings e comparações animadas.",
+        "steps": [
+          "Abrir com uma pergunta ou comparação baseada em dados fornecidos.",
+          "Estabelecer o universo da comparação em um mapa ou conjunto de pontos.",
+          "Reorganizar os elementos em grade, ranking ou grupos, preservando suas quantidades.",
+          "Destacar o número principal e aproximar um caso concreto para explicar a escala.",
+          "Voltar ao conjunto e concluir com a síntese da narração; chamada final apenas quando fornecida pelo usuário."
+        ],
+        "avoid": "Não inventar dados, mudar denominadores entre comparações, exibir valores intermediários como fatos ou herdar tema, políticos, retratos, marca ou chamada eleitoral da referência."
+      }
+    },
+    {
+      "code": "F14",
+      "name": "Lista em Tela",
+      "description": "A pessoa explica uma lista que se completa item por item, com os pontos anteriores visíveis.",
+      "pattern": "f14-v1",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa falando e os itens da lista, extraídos da fala ou fornecidos explicitamente. Escolher a ID visual e a proporção.",
+        "mechanism": "Os itens numerados entram junto da explicação e permanecem na tela, formando uma lista cumulativa ao lado da pessoa.",
+        "steps": [
+          "Montar a fala e conferir a ordem e a quantidade real dos itens.",
+          "Reservar espaço para a lista sem cobrir a pessoa.",
+          "Exibir o número ou marcador e completar o texto quando a ideia correspondente é falada.",
+          "Manter os itens anteriores visíveis para facilitar a comparação e a lembrança.",
+          "Revisar a lista final, sincronia e leitura no celular."
+        ],
+        "avoid": "Não inventar itens, fixar os quatro números do exemplo, usar texto longo ou herdar ator, tema, marca, cores e fonte da referência."
+      }
+    },
+    {
+      "code": "F15",
+      "name": "Dois Lados",
+      "description": "A pessoa classifica opções em duas colunas, e cada item ocupa o lado indicado pela fala.",
+      "pattern": "f15-v1",
+      "mechanism_details": {
+        "inputs": "Vídeo da pessoa, os dois critérios de classificação e itens ou imagens relacionados à fala. Escolher a ID visual e a proporção.",
+        "mechanism": "Duas áreas com rótulos organizam a comparação. Cada item aparece quando é citado e vai para o lado escolhido, permanecendo até o quadro final.",
+        "steps": [
+          "Conferir os dois critérios e a classificação de cada item na fala.",
+          "Criar duas áreas legíveis sem cobrir rosto, mãos ou legenda.",
+          "Apresentar cada item no momento correspondente e posicioná-lo no lado correto.",
+          "Manter os itens já classificados para formar a comparação final.",
+          "Revisar sentido, posição, leitura e sincronia antes da entrega."
+        ],
+        "avoid": "Não inverter o sentido da classificação, fabricar recomendações, fixar verde/vermelho como parte do formato ou transformar um exemplo de finanças em conselho para outro vídeo."
+      }
+    },
+    {
+      "code": "F16",
+      "name": "Comentário com B-roll",
+      "description": "Comentário com apresentador, B-roll pesquisado para cada ideia e gráficos nos pontos-chave.",
+      "pattern": "f16-v1",
+      "mechanism_details": {
+        "inputs": "Gravação do apresentador, assunto e fontes ou materiais do tema. A pesquisa de B-roll faz parte do planejamento; música é opcional. Escolher também a ID visual.",
+        "mechanism": "O apresentador comenta o assunto enquanto cenas reais pesquisadas sustentam cada ideia. A edição alterna pessoa, mídia e gráficos importantes, com planejamento de pesquisa além da composição de tela.",
+        "steps": [
+          "Montar a fala, escolher as melhores tomadas e separar as ideias retidas; câmera lateral é opcional e precisa de sincronia.",
+          "Pesquisar B-roll da coisa citada, guardar fontes e arquivos locais e inspecionar quadros no layout. TikTok/YouTube usam ScrapeCreators.",
+          "Alternar câmera, split com profundidade, cartão de vídeo e gráfico em tela cheia; manter enquadramento estável e uma informação por estado.",
+          "Usar legendas curtas, esconder a legenda durante destaques e gráficos e aplicar entradas suaves na zona da legenda.",
+          "Ajustar a voz e a trilha autorizada pela narrativa; revisar recorte, leitura, qualidade da mídia, fatos e ausência de assinaturas de marca."
+        ],
+        "avoid": "Não simplificar este formato a pessoa mais tela, usar B-roll genérico por conveniência, trocar o provedor de TikTok/YouTube, inventar fatos ou herdar marca, logotipo, textos de assinatura, ator, paleta e fonte da referência."
+      }
+    }
+  ],
+  "reference_media": {
+    "F13": [
+      {
+        "path": "examples/reference-library/F13/reference.mp4",
+        "kind": "external_reference_video",
+        "sha256": "71fde183d20faabac44bf1d43ed2961379eb3f796ab32d81488247b790df1f1c",
+        "source_sha256": "71fde183d20faabac44bf1d43ed2961379eb3f796ab32d81488247b790df1f1c",
+        "bytes": 20519198,
+        "reference_copy_transcoded": false
+      }
+    ],
+    "F04": [
+      {
+        "path": "examples/reference-library/F04/reviewed-preview.mp4",
+        "kind": "historical_preview",
+        "sha256": "1250cca6b666b91fdad526d2deeb80fe0a66074722f783b2be4ae04671661a6b",
+        "source_sha256": "1250cca6b666b91fdad526d2deeb80fe0a66074722f783b2be4ae04671661a6b",
+        "bytes": 52494851,
+        "reference_copy_transcoded": false,
+        "evidence_label": "Prévia histórica",
+        "evidence_note": "Prévia local: pessoa na abertura e narração sobre composições animadas no restante. Marca e aparência pertencem ao exemplo histórico."
+      }
+    ],
+    "F05": [
+      {
+        "path": "examples/reference-library/F05/reviewed-preview.mp4",
+        "kind": "historical_preview",
+        "sha256": "72092ec5aec4fcf8cedec953ca6f2b71d61102f4e6437ec151cab1099f261182",
+        "source_sha256": "0f4e6299cb9153fc8d1bed0a8cc01739c320b1ab8314ee34f8fb322de3d6d9ba",
+        "bytes": 16377673,
+        "reference_copy_transcoded": true,
+        "evidence_label": "Prévia histórica",
+        "evidence_note": "Prévia local de uma notícia comentada com apresentador, recortes e explicação visual. Não é uma nova entrega final."
+      }
+    ],
+    "F06": [
+      {
+        "path": "examples/reference-library/F06/reviewed-preview.mp4",
+        "kind": "historical_preview",
+        "sha256": "a2c1c38d7e78d8bcdb189dd8307ccb2b098692ad93a8010751608eba749e4fa4",
+        "source_sha256": "a2c1c38d7e78d8bcdb189dd8307ccb2b098692ad93a8010751608eba749e4fa4",
+        "bytes": 34542726,
+        "reference_copy_transcoded": false,
+        "evidence_label": "Prévia com gráficos",
+        "evidence_note": "Exemplo local de narração com módulos, números e gráficos animados. Demonstra recursos de explicação visual da receita, com a aparência do trabalho histórico."
+      }
+    ],
+    "F14": [
+      {
+        "path": "examples/reference-library/F14/reference.mp4",
+        "kind": "historical_preview",
+        "sha256": "b8c16a03cef105292f3544537042818bd677a12ec0abdcba70d00c8fc07876cf",
+        "bytes": 55502817,
+        "evidence_label": "Prévia de referência",
+        "evidence_note": "Prévia real fornecida na pasta recebida. Nome e mecânica foram conferidos pelo vídeo; pessoa, assunto e aparência não são escolhas para a sua edição."
+      }
+    ],
+    "F15": [
+      {
+        "path": "examples/reference-library/F15/reference.mp4",
+        "kind": "historical_preview",
+        "sha256": "107783bf87d4499c0a2b746205f7e00ac6e8414c8918df0b4d75f7e3d1964d53",
+        "bytes": 21368355,
+        "evidence_label": "Prévia de referência",
+        "evidence_note": "Prévia real fornecida na pasta recebida. Nome e mecânica foram conferidos pelo vídeo; pessoa, assunto e aparência não são escolhas para a sua edição."
+      }
+    ],
+    "F16": [
+      {
+        "path": "examples/reference-library/F16/reference.mp4",
+        "kind": "external_reference_video",
+        "sha256": "37b838822e92247f5ae5cf18ea682dd4070e18e00c5485a0db64c5ccdfc9cb5f",
+        "source_sha256": "c124f7c5139f84009d4183503823a48712cb93f182d87225816f8c5fc6bf5e69",
+        "bytes": 35267370,
+        "reference_copy_transcoded": true,
+        "evidence_label": "Referência externa",
+        "evidence_note": "Referência de comentário com mídia real e gráficos. O workflow também inclui pesquisa de B-roll; o vídeo de exemplo não é uma comprovação da pesquisa. Sua marca, pessoa e aparência não são herdadas."
+      }
+    ]
+  },
+  "extra_examples": {
+    "F08": [
+      {
+        "id": "conversas",
+        "label": "Conversas e telas",
+        "reference": {
+          "path": "examples/reference-library/F09/video-example-02.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "61b3c2729132be3d64b62a1d1e4445f437c1a0c12a20ef7014b9c0fb21f478fe",
+          "bytes": 52741312
+        }
+      },
+      {
+        "id": "tela-dividida",
+        "label": "Tela dividida",
+        "reference": {
+          "path": "examples/reference-library/F08/tela-dividida-reference.mp4",
+          "kind": "external_reference_video",
+          "sha256": "4851900d81729bd0a6d6683567fb4075b2c2bf70e3cd3f7ec244bce9663681f9",
+          "source_sha256": "2794e601ac9a565d1ccb4a564847ea5140f6e5caabc950214f1c8a11411dbc9c",
+          "bytes": 47260841,
+          "reference_copy_transcoded": true
+        }
+      },
+      {
+        "id": "comparacao",
+        "label": "Recorte e comparação",
+        "reference": {
+          "path": "examples/reference-library/F08/comparacao-reference.mp4",
+          "kind": "external_reference_video",
+          "sha256": "c10148ec73cb5ae69e68de5eaed1b5eaec6ea636baebbcffe38720294ccf089f",
+          "source_sha256": "c10148ec73cb5ae69e68de5eaed1b5eaec6ea636baebbcffe38720294ccf089f",
+          "bytes": 2686157,
+          "reference_copy_transcoded": false
+        }
+      }
+    ]
+  },
+  "reference_frames": {}
+}

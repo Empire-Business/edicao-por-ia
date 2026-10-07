@@ -1,0 +1,194 @@
+id: f16-v1
+version: 1
+status: draft
+format_code: F16
+purpose: Comentário com apresentador, pesquisa de mídia real, B-roll ligado à fala
+  e gráficos nos pontos-chave.
+engine: hybrid
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  min_jump_cut_interval_seconds: 0.6
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.15
+    keep_pause_seconds: 0.0
+    word_handle_seconds: 0.08
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  preserve_required_phrases: []
+  repeated_takes: keep_best_take_only
+  presenter_on_camera: alternate
+  one_information_at_a_time: true
+  framing: fixed_per_camera
+  multicam: Opcional; sincronizar câmeras por áudio e medir correspondência de exposição/cor
+    na gravação atual.
+research:
+  timing: Depois de montar a fala, antes de fechar as cenas.
+  unit: Cada ideia retida recebe uma decisão de mídia; câmera pode permanecer quando
+    tiver propósito.
+  queries: Pesquisar a pessoa, empresa, lugar, produto ou ação realmente citados;
+    não usar mídia genérica por conveniência.
+  tiktok_provider: ScrapeCreators
+  tiktok_and_youtube_exclusive_provider: ScrapeCreators
+  download_policy: Baixar apenas URLs explícitas retornadas pelo provedor; não usar
+    outro extrator como fallback.
+  budget_policy: Registrar uso autorizado, fontes e créditos; respeitar o orçamento
+    do trabalho e não presumir custo zero.
+  local_cache: Guardar mídia, origem e hashes dentro da fábrica; não depender de URLs
+    temporárias durante render.
+  selection: Inspecionar quadros reais, relação com a fala, definição, corte, legendas
+    embutidas e marcas antes de usar.
+visual:
+  composition: Alternar pessoa em câmera, pessoa com mídia pesquisada, cartão de vídeo
+    e gráficos em tela cheia conforme a ideia.
+  opening: Gancho com pessoa e mídia relevante, sem abertura longa de foto parada.
+  presenter_policy: A pessoa volta ao longo do corpo; não limitar automaticamente
+    ao gancho.
+  media_policy: Ilustrar as ideias fora da câmera com a coisa citada, preservando
+    relação semântica.
+  graphic_policy: Pergunta ou afirmação importante pode ocupar um gráfico em tela
+    cheia, uma informação por estado.
+  text_policy: Destaques curtos e discretos junto à zona da legenda; evitar duplicar
+    o mesmo texto em destaque e legenda.
+  punch_ins: selective
+  max_punch_in_scale: 1.25
+  random_effects: false
+captions:
+  enabled: true
+  max_lines: 1
+  max_chars_per_line: 19
+  word_highlight: false
+  max_words: 3
+  hidden_while_emphasis: true
+  hidden_on_graphic: true
+  font_source: explicit_visual_identity
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  music: required
+  music_policy: Trilha local/autorizada que acompanhe a narrativa; geração paga depende
+    de autorização separada. Voz à frente com ducking e revisão de inteligibilidade.
+insertion_assets:
+  policy: proof-heavy
+  density: high
+  default_preferred_duration_s: 1.3
+  default_max_duration_s: 4.5
+  allow_image_motion: true
+  quality_min: 1080p_native_for_production_when_available; nunca tratar upscale como
+    resolução nativa
+  prefer_people_in_frame: true
+  prefer_the_real_thing: true
+  options_before_important_swap: Apresentar opções com quadros no layout ao trocar
+    uma cena relevante.
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 1.0
+  verify_broll_against_retained_speech: true
+  verify_sources_and_local_files: true
+  verify_readability_and_voice: true
+  verify_no_inherited_brand_signatures: true
+  check_person_over_caption: true
+  check_caption_lingering_after_emphasis: true
+  check_media_fills_split_top: true
+  check_faces_framed_in_media: true
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- unrelated_broll
+- fabricated_fact
+- alternate_tiktok_extractor
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- automatic_personal_identity
+- inherit_palette_from_format
+- inherit_font_from_format
+- legacy_unadapted_brand_components
+- blurred_self_background_for_horizontal_video
+- automatic_brand_signature
+- fixed_brand_name
+- automatic_branded_end_card
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+reference_materials:
+  video: examples/reference-library/F16/reference.mp4
+components_reference:
+  path: patterns/empire-reels-v1/
+  policy: Referência histórica dos mecanismos aprovados; copiar/adaptar por trabalho,
+    aplicar a ID escolhida e remover assinaturas de marca. Não executar componentes
+    legados sem essa adaptação.
+layouts:
+  full:
+    mechanism: Apresentador em tela cheia, com enquadramento fixo por câmera e ênfase
+      seletiva.
+    face_y_fraction: 0.3
+    caption_y_fraction: 0.64
+  split:
+    mechanism: Mídia real na região superior e pessoa em primeiro plano, com profundidade
+      e emenda suave.
+    top_media: video_only; manchete real verificada é exceção
+    presenter_area_start_fraction: 0.33
+    depth_mask: Máscara real de pessoa, local, conferida por quadro; estimativa não
+      vale como recorte.
+    caption_y_fraction: 0.88
+    media_focus: Enquadrar as pessoas/ações citadas, com recorte estável por plano.
+  card:
+    mechanism: Vídeo horizontal dentro de cartão, com legenda dentro dele. Fundo e
+      cores vêm da ID.
+    rect_fraction:
+      x: 0.056
+      y: 0.253
+      w: 0.889
+      h: 0.494
+    forbidden: blurred_self_fill
+  graphic:
+    mechanism: Gráfico em tela cheia para a pergunta ou afirmação-chave, sem pessoa
+      e com uma informação por estado.
+    identity: Paleta e fontes exclusivamente da ID escolhida.
+motion:
+  emphasis:
+    position: caption_zone, sem cobrir rosto
+    entrance: Desfoque reduzido a zero, opacidade e pequena deriva; entrada suave
+      em cerca de 0.45-0.70s.
+    keyword_marker: Traço contínuo sob a palavra, com cor da ID; sem caixa obrigatória.
+    forbidden:
+    - scale_pop
+    - bounce
+    - spring_overshoot
+  headline:
+    source: Print real da manchete, no idioma do vídeo; não inventar uma matéria.
+    highlighter: Uma passada contínua sincronizada à fala, com cor da ID.
+    camera: Aproximação lenta até a linha relevante.
+  forbidden:
+  - annotation_labels_over_media
+  - generic_ai_looking_graphics
+  - two_informations_at_once
+color:
+  presenter: Ajustar exposição/cor pela gravação atual, preservando pele e leitura;
+    sem aplicar automaticamente o LUT histórico de uma marca.
+  inserted_media: Preservar a aparência da mídia de apoio, salvo pedido explícito.
+delivery:
+  cover: Capa com a pessoa/material do trabalho, fontes e cores da ID; sem logotipo,
+    marca ou texto de assinatura automático.
+  preview_before_final: true
+  short_test_before_color_changes: true

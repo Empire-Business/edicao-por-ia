@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: valid spec
+ok 1 - valid spec
+  ---
+  duration_ms: 2.610567
+  type: 'test'
+  ...
+# Subtest: frame determinism including out-of-order access
+ok 2 - frame determinism including out-of-order access
+  ---
+  duration_ms: 2.310043
+  type: 'test'
+  ...
+# Subtest: animation starts and ends transparent
+ok 3 - animation starts and ends transparent
+  ---
+  duration_ms: 0.305677
+  type: 'test'
+  ...
+# Subtest: middle frame is visible
+ok 4 - middle frame is visible
+  ---
+  duration_ms: 0.1518
+  type: 'test'
+  ...
+# Subtest: outside range is invisible
+ok 5 - outside range is invisible
+  ---
+  duration_ms: 0.202359
+  type: 'test'
+  ...
+# Subtest: different valid frames produce motion
+ok 6 - different valid frames produce motion
+  ---
+  duration_ms: 0.315497
+  type: 'test'
+  ...
+# Subtest: string injection is escaped
+ok 7 - string injection is escaped
+  ---
+  duration_ms: 0.498388
+  type: 'test'
+  ...
+# Subtest: reject non-finite fps
+ok 8 - reject non-finite fps
+  ---
+  duration_ms: 0.434749
+  type: 'test'
+  ...
+# Subtest: reject fractional frame count
+ok 9 - reject fractional frame count
+  ---
+  duration_ms: 0.345853
+  type: 'test'
+  ...
+# Subtest: reject fractional frame index
+ok 10 - reject fractional frame index
+  ---
+  duration_ms: 0.421707
+  type: 'test'
+  ...
+# Subtest: reject missing child scope
+ok 11 - reject missing child scope
+  ---
+  duration_ms: 0.265403
+  type: 'test'
+  ...
+# Subtest: reject unknown template
+ok 12 - reject unknown template
+  ---
+  duration_ms: 0.129478
+  type: 'test'
+  ...
+# Subtest: reject invalid style injection
+ok 13 - reject invalid style injection
+  ---
+  duration_ms: 0.100799
+  type: 'test'
+  ...
+# Subtest: reject off-canvas box
+ok 14 - reject off-canvas box
+  ---
+  duration_ms: 0.090809
+  type: 'test'
+  ...
+# Subtest: reject remote image
+ok 15 - reject remote image
+  ---
+  duration_ms: 0.332833
+  type: 'test'
+  ...
+# Subtest: reject SVG image payload
+ok 16 - reject SVG image payload
+  ---
+  duration_ms: 0.162265
+  type: 'test'
+  ...
+# Subtest: proof requires actual image
+ok 17 - proof requires actual image
+  ---
+  duration_ms: 0.116945
+  type: 'test'
+  ...
+# Subtest: steps are not generic text-only effect
+ok 18 - steps are not generic text-only effect
+  ---
+  duration_ms: 0.751471
+  type: 'test'
+  ...
+# Subtest: template does not mutate caller props
+ok 19 - template does not mutate caller props
+  ---
+  duration_ms: 0.40512
+  type: 'test'
+  ...
+# Subtest: long text fails instead of clipping silently
+ok 20 - long text fails instead of clipping silently
+  ---
+  duration_ms: 0.137069
+  type: 'test'
+  ...
+# Subtest: spring rest before event
+ok 21 - spring rest before event
+  ---
+  duration_ms: 1.360302
+  type: 'test'
+  ...
+# Subtest: spring finite parameters only
+ok 22 - spring finite parameters only
+  ---
+  duration_ms: 1.650943
+  type: 'test'
+  ...
+# Subtest: spring invalid physical parameters
+ok 23 - spring invalid physical parameters
+  ---
+  duration_ms: 0.267034
+  type: 'test'
+  ...
+# Subtest: critical analytic value
+ok 24 - critical analytic value
+  ---
+  duration_ms: 0.502507
+  type: 'test'
+  ...
+# Subtest: overdamping not silently critical
+ok 25 - overdamping not silently critical
+  ---
+  duration_ms: 0.180031
+  type: 'test'
+  ...
+# Subtest: under step satisfies differential equation
+ok 26 - under step satisfies differential equation
+  ---
+  duration_ms: 0.688518
+  type: 'test'
+  ...
+# Subtest: under converges
+ok 27 - under converges
+  ---
+  duration_ms: 0.204693
+  type: 'test'
+  ...
+# Subtest: critical step satisfies differential equation
+ok 28 - critical step satisfies differential equation
+  ---
+  duration_ms: 0.090527
+  type: 'test'
+  ...
+# Subtest: critical converges
+ok 29 - critical converges
+  ---
+  duration_ms: 0.412451
+  type: 'test'
+  ...
+# Subtest: over step satisfies differential equation
+ok 30 - over step satisfies differential equation
+  ---
+  duration_ms: 0.56688
+  type: 'test'
+  ...
+# Subtest: over converges
+ok 31 - over converges
+  ---
+  duration_ms: 0.136904
+  type: 'test'
+  ...
+# Subtest: mass equivalence
+ok 32 - mass equivalence
+  ---
+  duration_ms: 0.109855
+  type: 'test'
+  ...
+# Subtest: track superposition identity
+ok 33 - track superposition identity
+  ---
+  duration_ms: 0.174541
+  type: 'test'
+  ...
+# Subtest: track continuity across target change
+ok 34 - track continuity across target change
+  ---
+  duration_ms: 0.121167
+  type: 'test'
+  ...
+# Subtest: track out of order seeks identical
+ok 35 - track out of order seeks identical
+  ---
+  duration_ms: 0.140504
+  type: 'test'
+  ...
+# Subtest: track rejects repeated/invalid keys
+ok 36 - track rejects repeated/invalid keys
+  ---
+  duration_ms: 0.149498
+  type: 'test'
+  ...
+# Subtest: indicator width nonnegative and bounded
+ok 37 - indicator width nonnegative and bounded
+  ---
+  duration_ms: 0.165736
+  type: 'test'
+  ...
+# Subtest: seed reproducible after reset
+ok 38 - seed reproducible after reset
+  ---
+  duration_ms: 0.136978
+  type: 'test'
+  ...
+# Subtest: seeded sequence advances and must be reset
+ok 39 - seeded sequence advances and must be reset
+  ---
+  duration_ms: 0.078392
+  type: 'test'
+  ...
+# Subtest: loop modulo handles negative time, not seam proof
+ok 40 - loop modulo handles negative time, not seam proof
+  ---
+  duration_ms: 0.085166
+  type: 'test'
+  ...
+# Subtest: alpha only within window
+ok 41 - alpha only within window
+  ---
+  duration_ms: 0.406899
+  type: 'test'
+  ...
+# Subtest: layout reflows by aspect
+ok 42 - layout reflows by aspect
+  ---
+  duration_ms: 0.192688
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 97.862387

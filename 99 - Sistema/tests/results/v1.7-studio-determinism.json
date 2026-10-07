@@ -1,0 +1,27 @@
+{
+  "bundle_sha256": "cc18b2682d79702d7c442a210f6845ec1aba72f01abba13c962efc37ed59ac04",
+  "width": 640,
+  "height": 360,
+  "fps": 24,
+  "duration_frames": 144,
+  "assets": [],
+  "network_access": false,
+  "checks": {
+    "reverse_143": true,
+    "reverse_72": true,
+    "reverse_48": true,
+    "reverse_0": true,
+    "repeat_0": true,
+    "repeat_48": true,
+    "repeat_72": true,
+    "repeat_143": true,
+    "fresh_context_0": true,
+    "fresh_context_48": true,
+    "fresh_context_72": true,
+    "fresh_context_143": true
+  },
+  "ok": true,
+  "browser": "144.0.7559.96",
+  "hash_basis": "decoded RGBA pixels, not MP4 container",
+  "limits": "Sampled repeatability on this browser/OS. Not proof for every frame or across machines; not a loop-continuity test."
+}

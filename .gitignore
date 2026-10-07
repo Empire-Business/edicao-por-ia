@@ -1,0 +1,244 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+jobs/*/input/
+jobs/*/cache/
+jobs/*/proxies/
+jobs/*/frames/
+jobs/*/renders/
+jobs/*/tmp/
+!jobs/README.md
+!jobs/_template/
+context/ACTIVE.local.md
+
+# v1.3 motion runtime / generated frames (keep code + approved source specs)
+node_modules/
+__pycache__/
+*.pyc
+motion/remotion/out/
+
+
+# Private client/runtime state; do not publish learned client data with the reusable skill
+context/.runtime/
+context/clients/*/memory.sqlite3*
+context/clients/*/PROFILE*.md
+.claude/settings.before-memory-*.json
+jobs/*/job.effective*
+jobs/*/analysis/client-context*
+jobs/*/analysis/*memory*receipt*
+
+# v1.6 runtime / never commit per-client state or credentials
+.factory/
+.venv/
+**/__pycache__/
+*.pyc
+
+# Backup safety: local secrets and client-specific memory stay on this machine
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileprovision
+context/clients/
+
+# Original media and delivered exports are not part of the configuration backup
+/entrada/*
+!/entrada/README.md
+/saida/
+/sources/video bruto/
+**/renders/
+**/*.mp4
+**/*.MP4
+**/*.mov
+**/*.MOV
+**/*.m4v
+**/*.M4V
+**/*.avi
+**/*.AVI
+**/*.mkv
+**/*.MKV
+**/*.webm
+**/*.WEBM
+**/*.mp3
+**/*.MP3
+**/*.wav
+**/*.WAV
+**/*.m4a
+**/*.M4A
+**/*.aac
+**/*.AAC
+**/*.flac
+**/*.FLAC
+jobs/**/*.png
+jobs/**/*.PNG
+jobs/**/*.jpg
+jobs/**/*.JPG
+jobs/**/*.jpeg
+jobs/**/*.JPEG
+jobs/**/*.webp
+jobs/**/*.WEBP
+jobs/**/*.gif
+jobs/**/*.GIF
+jobs/**/*.tif
+jobs/**/*.TIF
+jobs/**/*.tiff
+jobs/**/*.TIFF
+
+# client memory backups (contain memory.sqlite3)
+context/clients.zip
+context/clients/*.zip
+
+# private reference screenshots (real data) stay local
+jobs/*/assets/refs/
+
+# product repos cloned for product-motion study
+/sources/repos/
+
+# Local API keys/config (e.g. config/scrapecreators.local.json) and extra local venvs
+config/*.local.json
+.venv-*/
+# Generated personal format catalogue and links to private profile stores
+/FÁBRICA DE VÍDEOS/04 - Formatos/MEUS FORMATOS.html
+/FÁBRICA DE VÍDEOS/04 - Formatos/Arquivos dos formatos/
+/FÁBRICA DE VÍDEOS/04 - Formatos/Detalhes/
+# Per-job render scratch (overlay frames, test stills, person masks, render logs, fitted arrays)
+jobs/**/visual/_overlay_*/
+jobs/**/visual/_t_*/
+jobs/**/visual/_s_*/
+jobs/**/visual/_pmask/
+jobs/**/visual/_render*.log
+jobs/**/*.npy
+jobs/**/*.ttf
+
+# Physical system relocation: keep private data and generated artifacts out of backups
+/99 - Sistema/jobs/*/input/
+/99 - Sistema/jobs/*/cache/
+/99 - Sistema/jobs/*/proxies/
+/99 - Sistema/jobs/*/frames/
+/99 - Sistema/jobs/*/renders/
+/99 - Sistema/jobs/*/tmp/
+!/99 - Sistema/jobs/README.md
+!/99 - Sistema/jobs/_template/
+/99 - Sistema/context/ACTIVE.local.md
+/99 - Sistema/motion/remotion/out/
+/99 - Sistema/context/.runtime/
+/99 - Sistema/context/clients/*/memory.sqlite3*
+/99 - Sistema/context/clients/*/PROFILE*.md
+/99 - Sistema/jobs/*/job.effective*
+/99 - Sistema/jobs/*/analysis/client-context*
+/99 - Sistema/jobs/*/analysis/*memory*receipt*
+/99 - Sistema/context/clients/
+/99 - Sistema/sources/video bruto/
+/99 - Sistema/jobs/**/*.png
+/99 - Sistema/jobs/**/*.PNG
+/99 - Sistema/jobs/**/*.jpg
+/99 - Sistema/jobs/**/*.JPG
+/99 - Sistema/jobs/**/*.jpeg
+/99 - Sistema/jobs/**/*.JPEG
+/99 - Sistema/jobs/**/*.webp
+/99 - Sistema/jobs/**/*.WEBP
+/99 - Sistema/jobs/**/*.gif
+/99 - Sistema/jobs/**/*.GIF
+/99 - Sistema/jobs/**/*.tif
+/99 - Sistema/jobs/**/*.TIF
+/99 - Sistema/jobs/**/*.tiff
+/99 - Sistema/jobs/**/*.TIFF
+/99 - Sistema/context/clients.zip
+/99 - Sistema/context/clients/*.zip
+/99 - Sistema/jobs/*/assets/refs/
+/99 - Sistema/sources/repos/
+/99 - Sistema/config/*.local.json
+/99 - Sistema/jobs/**/visual/_overlay_*/
+/99 - Sistema/jobs/**/visual/_t_*/
+/99 - Sistema/jobs/**/visual/_s_*/
+/99 - Sistema/jobs/**/visual/_pmask/
+/99 - Sistema/jobs/**/visual/_render*.log
+/99 - Sistema/jobs/**/*.npy
+/99 - Sistema/jobs/**/*.ttf
+/01 - Enviar vídeos/*
+!/01 - Enviar vídeos/README.md
+/02 - Ver vídeos/*
+!/02 - Ver vídeos/README.md
+/04 - Formatos/*
+!/04 - Formatos/00 - LEIA PRIMEIRO.html
+*.sqlite3*
+/99 - Sistema/arquivo/navegacao-anterior/
+/99 - Sistema/prototipos/interface-lab/qa/
+
+# Local-only aliases for paths from before the physical relocation
+/--help
+/.factory
+/BACKUP_AND_SYNC.md
+/BUILD_REPORT.md
+/COMECE-AQUI.md
+/DIRECAO-VISUAL-COMO-USAR.md
+/ENTREGA-PARA-COMPARTILHAR
+/FÁBRICA DE VÍDEOS
+/MEMORIA-COMO-USAR.md
+/MEMORY_REVISION_REPORT.md
+/MOTION_REVISION_REPORT.md
+/PACKAGE_MANIFEST.json
+/REVISAO_V1_6.md
+/REVISAO_V1_7.md
+/REVISION_REPORT.md
+/START-HERE.md
+/VERSION
+/VISUAL_REVISION_REPORT.md
+/adapters
+/config
+/context
+/entrada
+/examples
+/interface-lab
+/jobs
+/memory
+/method
+/motion
+/output
+/patterns
+/requirements-optional.txt
+/saida
+/sources
+/studio
+/tests
+/tools
+/tutorial-omnx-sell
+/visual
+/workflows
+
+# Visible private integration credentials (only an empty template is distributed)
+CHAVES DAS INTEGRAÇÕES.txt
+
+# Private reference material is portable with the local folder, not part of the generic code release
+/99 - Sistema/sources/repos/
+/99 - Sistema/sources/reference-material/
+
+# Mutable v2 catalogue, visual identities and generated local guides/examples
+/99 - Sistema/context/catalog/
+/99 - Sistema/context/visual-identities/
+/04 - Formatos/*/
+/04 - Formatos/01 - GUIA DOS FORMATOS.html
+/05 - IDs Visuais/
+
+# User jobs are local data, including manifests/scripts and historical intermediate files
+/99 - Sistema/jobs/*/
+!/99 - Sistema/jobs/_template/
+/99 - Sistema/arquivo/
+/99 - Sistema/prototipos/
+# Native host settings are generated/merged by setup and never shipped as personal defaults
+/.claude/settings.json
+/.codex/config.toml
+
+# Author-published stock references, intentionally distributed with the formats
+!/99 - Sistema/examples/reference-library/**/*.mp4
+!/99 - Sistema/examples/reference-library/**/*.mp3
+!/99 - Sistema/examples/reference-library/**/*.wav
+!/99 - Sistema/examples/reference-library/**/*.png
+!/99 - Sistema/examples/reference-library/**/*.jpg
+!/99 - Sistema/examples/reference-library/**/*.jpeg
+!/99 - Sistema/examples/reference-library/**/*.webp

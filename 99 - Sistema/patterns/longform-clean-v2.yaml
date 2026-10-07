@@ -1,0 +1,58 @@
+id: longform-clean-v2
+version: 2
+status: starter
+purpose: Long-form interview/lesson/podcast cleanup with semantic continuity prioritized over speed.
+engine: ffmpeg
+output:
+  width: 1920
+  height: 1080
+  fps: 30
+  fit: contain
+editorial:
+  target_pace: relaxed
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 1.5
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 1.5
+    keep_pause_seconds: 0.5
+    word_handle_seconds: 0.12
+    minimum_cut_seconds: 0.10
+    trim_edges: true
+  min_jump_cut_interval_seconds: 1.2
+  preserve_required_phrases: []
+visual:
+  punch_ins: rare
+  max_punch_in_scale: 1.05
+  random_effects: false
+captions:
+  enabled: false
+  max_lines: 2
+  max_chars_per_line: 42
+  word_highlight: false
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 19
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 4.0
+forbidden:
+  - hyperactive_jump_cuts
+  - random_transition
+  - stretch_video
+
+insertion_assets:
+  policy: optional
+  density: low
+  default_preferred_duration_s: 3.0
+  default_max_duration_s: 8.0
+  allow_image_motion: false

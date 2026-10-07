@@ -1,0 +1,113 @@
+{
+  "schema": 1,
+  "policy": "Prefer the actual example selected in the visual gallery for each stable UID; do not infer a new generation by numerical alias.",
+  "formats": {
+    "factory.f01": {
+      "code": "F01",
+      "primary_reference": {
+        "path": "examples/reference-library/F01/video-example-02.mp4",
+        "sha256": "145cf3e96e8b3a194965ada4455f3ba89e29c5939a25d2c6eadf207ddcb0d58a"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f04": {
+      "code": "F04",
+      "primary_reference": {
+        "path": "examples/reference-library/F04/reviewed-preview.mp4",
+        "sha256": "1250cca6b666b91fdad526d2deeb80fe0a66074722f783b2be4ae04671661a6b"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f05": {
+      "code": "F05",
+      "primary_reference": {
+        "path": "examples/reference-library/F05/reviewed-preview.mp4",
+        "sha256": "72092ec5aec4fcf8cedec953ca6f2b71d61102f4e6437ec151cab1099f261182"
+      },
+      "reference_conflicts": [
+        {
+          "field": "visual.presenter_on_camera",
+          "recipe_value": "opening_only",
+          "reference_observation": "The published example keeps the presenter in body scenes around 31.7s and 67.8s, not only in its opening.",
+          "observed_times_seconds": [
+            31.7,
+            67.8
+          ],
+          "resolution": "Require an explicit current-job exception or a current author order for a recipe revision. Never change the consolidated recipe silently."
+        }
+      ]
+    },
+    "factory.f06": {
+      "code": "F06",
+      "primary_reference": {
+        "path": "examples/reference-library/F06/reviewed-preview.mp4",
+        "sha256": "a2c1c38d7e78d8bcdb189dd8307ccb2b098692ad93a8010751608eba749e4fa4"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f07": {
+      "code": "F07",
+      "primary_reference": {
+        "path": "examples/reference-library/F07/formularios/interface-preview.mp4",
+        "sha256": "455e3b2b3a9ec31086e9a40d6ba8be24e24d8ee8492bf801518eb15b0b8ddeb9"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f08": {
+      "code": "F08",
+      "primary_reference": {
+        "path": "examples/reference-library/F08/video-example-01.mp4",
+        "sha256": "6bbb5dd2ae3da2463fcb523b650a820569fde717b642486c8b8c10f8eabc2ccf"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f10": {
+      "code": "F10",
+      "primary_reference": {
+        "path": "examples/reference-library/F10/video-example-01.mp4",
+        "sha256": "7c7e706b27f46b196b41c7dd515c8a40bff30cd749eadc427306de452a8f30d5"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f12": {
+      "code": "F12",
+      "primary_reference": {
+        "path": "examples/reference-library/F12/collection-01/reference.mp4",
+        "sha256": "5d2b9500eb85dbd67ae6334655adc53259feb7e170c9df0393d5793bc7d9a3f0"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f13": {
+      "code": "F13",
+      "primary_reference": {
+        "path": "examples/reference-library/F13/reference.mp4",
+        "sha256": "71fde183d20faabac44bf1d43ed2961379eb3f796ab32d81488247b790df1f1c"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f14": {
+      "code": "F14",
+      "primary_reference": {
+        "path": "examples/reference-library/F14/reference.mp4",
+        "sha256": "b8c16a03cef105292f3544537042818bd677a12ec0abdcba70d00c8fc07876cf"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f15": {
+      "code": "F15",
+      "primary_reference": {
+        "path": "examples/reference-library/F15/reference.mp4",
+        "sha256": "107783bf87d4499c0a2b746205f7e00ac6e8414c8918df0b4d75f7e3d1964d53"
+      },
+      "reference_conflicts": []
+    },
+    "factory.f16": {
+      "code": "F16",
+      "primary_reference": {
+        "path": "examples/reference-library/F16/reference.mp4",
+        "sha256": "37b838822e92247f5ae5cf18ea682dd4070e18e00c5485a0db64c5ccdfc9cb5f"
+      },
+      "reference_conflicts": []
+    }
+  }
+}

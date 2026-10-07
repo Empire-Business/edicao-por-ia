@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="950" viewBox="0 0 1440 950" role="img">
+<title>F12 · Documentário</title>
+<rect width="1440" height="950" fill="#f5f4ef"/>
+<text x="65" y="95" font-family="sans-serif" font-size="48" fill="#222">F12 · Documentário</text>
+<text x="65" y="141" font-family="sans-serif" font-size="21" fill="#222">EXEMPLO ILUSTRATIVO · sequência de edição · cores e fontes vêm da ID escolhida</text>
+<rect x="65" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="90" y="257" font-family="sans-serif" font-size="29" fill="#222">01  Contraste</text>
+<rect x="160" y="310" width="220" height="48" fill="none" stroke="#555"/>
+<path d="M270 360v28" stroke="#555"/>
+<rect x="160" y="390" width="220" height="48" fill="none" stroke="#555"/>
+<path d="M270 440v28" stroke="#555"/>
+<rect x="160" y="470" width="220" height="48" fill="none" stroke="#555"/>
+<text x="90" y="622" font-family="sans-serif" font-size="22" fill="#222">Objeto pequeno × grande</text>
+<text x="90" y="675" font-family="sans-serif" font-size="22" fill="#222">Pergunta da história</text>
+<text x="90" y="728" font-family="sans-serif" font-size="22" fill="#222">Gancho visual</text>
+<rect x="515" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="540" y="257" font-family="sans-serif" font-size="29" fill="#222">02  Evolução</text>
+<rect x="610" y="310" width="220" height="48" fill="none" stroke="#555"/>
+<path d="M720 360v28" stroke="#555"/>
+<rect x="610" y="390" width="220" height="48" fill="none" stroke="#555"/>
+<path d="M720 440v28" stroke="#555"/>
+<rect x="610" y="470" width="220" height="48" fill="none" stroke="#555"/>
+<text x="540" y="622" font-family="sans-serif" font-size="22" fill="#222">Imagem + informação</text>
+<text x="540" y="675" font-family="sans-serif" font-size="22" fill="#222">Comparação de escala</text>
+<text x="540" y="728" font-family="sans-serif" font-size="22" fill="#222">Números verificáveis</text>
+<rect x="965" y="190" width="410" height="605" rx="20" fill="white" stroke="#aaa"/>
+<text x="990" y="257" font-family="sans-serif" font-size="29" fill="#222">03  Retomada</text>
+<rect x="1060" y="310" width="220" height="48" fill="none" stroke="#555"/>
+<path d="M1170 360v28" stroke="#555"/>
+<rect x="1060" y="390" width="220" height="48" fill="none" stroke="#555"/>
+<path d="M1170 440v28" stroke="#555"/>
+<rect x="1060" y="470" width="220" height="48" fill="none" stroke="#555"/>
+<text x="990" y="622" font-family="sans-serif" font-size="22" fill="#222">Volta à imagem inicial</text>
+<text x="990" y="675" font-family="sans-serif" font-size="22" fill="#222">Responde à pergunta</text>
+<text x="990" y="728" font-family="sans-serif" font-size="22" fill="#222">Conclusão da história</text>
+<text x="65" y="869" font-family="sans-serif" font-size="21" fill="#222">Material próprio de demonstração. Não é print de uma execução aprovada nem reprodução da referência original.</text>
+</svg>

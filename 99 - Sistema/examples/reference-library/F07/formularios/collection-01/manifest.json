@@ -1,0 +1,101 @@
+{
+  "project": "OMNX Type",
+  "revision": "identidade-revisada",
+  "boards": 11,
+  "direction_boards": 1,
+  "brand_applications_reviewed": 86,
+  "reference": "Logo fornecida pelo usuário",
+  "method": "Reconstrução localizada das áreas da marca a partir das pranchas limpas; restante do conteúdo visual preservado",
+  "files": [
+    {
+      "path": "LEIA-ME.txt",
+      "bytes": 1563,
+      "sha256": "c42c9b13e5699b81b45c2a1d055094c652ba8eb1a08fecf399c4dbe175880444"
+    },
+    {
+      "path": "assets/omnx-type-clara.png",
+      "bytes": 1648,
+      "sha256": "134869d22b595579e27750f91a6d85022f8b216770ac99b99ac9a2cbd3aeaf6f"
+    },
+    {
+      "path": "assets/omnx-type-escura.png",
+      "bytes": 2242,
+      "sha256": "d17d93e38942431d54aa919f1dd159b3dea68f3f54ef15e047fb7185d21248bb"
+    },
+    {
+      "path": "index.html",
+      "bytes": 51738,
+      "sha256": "f73bca6004410c21f01caf197354944241bfb653ba65a84c6ad75ab4c647f951"
+    },
+    {
+      "path": "mapa-de-cobertura.csv",
+      "bytes": 8811,
+      "sha256": "b0a08fc3422cde0ccfe37c0f42a40c8b4046fa08011bc4871c84b02bd803ffe3"
+    },
+    {
+      "path": "mockups/00-direcao-visual.png",
+      "bytes": 1434669,
+      "sha256": "9f422831af738b8251a7b441ee72026c973909394fb6b3a4e97e868cdeef771b"
+    },
+    {
+      "path": "mockups/01-experiencia-publica-player.png",
+      "bytes": 1585671,
+      "sha256": "8a84b0c73e664a6b64f0ca9d8a17470c12054b4d90ef4d9c64c610166cc423b8"
+    },
+    {
+      "path": "mockups/02-acesso-e-inicio.png",
+      "bytes": 1524235,
+      "sha256": "f72dad6438b78c5ada0113ea7c3d6b826bd7d99cbf42078e2c8539cc45cbdf46"
+    },
+    {
+      "path": "mockups/03-formularios-e-construtor.png",
+      "bytes": 1622146,
+      "sha256": "69fbe7364210c5a18bfa9b0ac30a21ce298c306ede97620a2b0307908f8c973d"
+    },
+    {
+      "path": "mockups/04-respostas-e-leads.png",
+      "bytes": 1691570,
+      "sha256": "da029dde8f501d3995dbdf4071cc979b8ae042888c71b500aa5f50899daf827b"
+    },
+    {
+      "path": "mockups/05-integracoes-e-ia.png",
+      "bytes": 1633939,
+      "sha256": "9b5f6894b89d5a4698cb88e82c3a196b22d9a19d904b704051e67abdf4f23723"
+    },
+    {
+      "path": "mockups/06-webhooks-e-api.png",
+      "bytes": 1630083,
+      "sha256": "777c098ea68ae288d254d8159c563822a328008aee7205e56ce38ad24e6edfe6"
+    },
+    {
+      "path": "mockups/07-organizacao-superadmin-tickets.png",
+      "bytes": 1625303,
+      "sha256": "76324a4d10f8b018431618e440eccf76f2ac61dff5e103c0be1dc97b88607a54"
+    },
+    {
+      "path": "mockups/08-dashboard-onboarding-fluxo-inicial.png",
+      "bytes": 1624795,
+      "sha256": "acb089a0a7540a82bf0de0a6c0b124879f978805290ab4fc04a8c675db0aa63b"
+    },
+    {
+      "path": "mockups/09-marca-seguranca-perfis-auditoria.png",
+      "bytes": 1740149,
+      "sha256": "000f6fb7692553c5e233a7e6866f8113db70d031e5638e9ded6a1acf323da9bf"
+    },
+    {
+      "path": "mockups/10-closer-minha-agenda.png",
+      "bytes": 1650287,
+      "sha256": "72913fc8cdfc8d52a5598c4f59ea5c1ffb747471d99fcd84d428e72a904a4b85"
+    },
+    {
+      "path": "mockups/11-site-publico-institucional-legal.png",
+      "bytes": 1767563,
+      "sha256": "4320fdbf29cf3e6b47d5e3a688ec063e52b020fb4ed382287c3547788e8d17bc"
+    },
+    {
+      "path": "notas-de-cobertura.txt",
+      "bytes": 908,
+      "sha256": "e7717dd448cfd779e01ccaf74de1e545b2e0c6459532badd95e3a46ef7c71c5e"
+    }
+  ]
+}

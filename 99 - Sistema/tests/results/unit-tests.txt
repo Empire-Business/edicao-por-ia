@@ -1,0 +1,42 @@
+test_input_alias_is_blocked (test_script_and_silence.SafetyTests.test_input_alias_is_blocked) ... ok
+test_never_overwrite (test_script_and_silence.SafetyTests.test_never_overwrite) ... ok
+test_child_scope_isolation (test_script_and_silence.ScriptTests.test_child_scope_isolation) ... ok
+test_duplicate_ids_rejected (test_script_and_silence.ScriptTests.test_duplicate_ids_rejected) ... ok
+test_empty_script_rejected (test_script_and_silence.ScriptTests.test_empty_script_rejected) ... ok
+test_high_lexical_similarity_is_not_semantic_approval (test_script_and_silence.ScriptTests.test_high_lexical_similarity_is_not_semantic_approval) ... ok
+test_invalid_scope_fails (test_script_and_silence.ScriptTests.test_invalid_scope_fails) ... ok
+test_missing_retrieval_requires_search_not_missing_claim (test_script_and_silence.ScriptTests.test_missing_retrieval_requires_search_not_missing_claim) ... ok
+test_paraphrase_never_auto_declared_error (test_script_and_silence.ScriptTests.test_paraphrase_never_auto_declared_error) ... ok
+test_stage_direction_not_treated_as_missing_speech (test_script_and_silence.ScriptTests.test_stage_direction_not_treated_as_missing_speech) ... ok
+test_text_requires_block_type_review (test_script_and_silence.ScriptTests.test_text_requires_block_type_review) ... ok
+test_two_takes_returned_not_auto_selected (test_script_and_silence.ScriptTests.test_two_takes_returned_not_auto_selected) ... ok
+test_all_silent_is_blocked (test_script_and_silence.SilenceTests.test_all_silent_is_blocked) ... ok
+test_automatic_cuts_and_protects_words (test_script_and_silence.SilenceTests.test_automatic_cuts_and_protects_words) ... ok
+test_bad_settings_rejected (test_script_and_silence.SilenceTests.test_bad_settings_rejected) ... ok
+test_base_edl_never_reintroduces_discarded_takes (test_script_and_silence.SilenceTests.test_base_edl_never_reintroduces_discarded_takes) ... ok
+test_coarse_segment_protects_entire_phrase (test_script_and_silence.SilenceTests.test_coarse_segment_protects_entire_phrase) ... ok
+test_conflicting_audio_selection_rejected (test_script_and_silence.SilenceTests.test_conflicting_audio_selection_rejected) ... ok
+test_empty_base_fails (test_script_and_silence.SilenceTests.test_empty_base_fails) ... ok
+test_empty_transcript_is_blocked (test_script_and_silence.SilenceTests.test_empty_transcript_is_blocked) ... ok
+test_evidence_hash_mismatch_is_blocked (test_script_and_silence.SilenceTests.test_evidence_hash_mismatch_is_blocked) ... ok
+test_explicit_mode_overrides_pattern (test_script_and_silence.SilenceTests.test_explicit_mode_overrides_pattern) ... ok
+test_intentional_pause (test_script_and_silence.SilenceTests.test_intentional_pause) ... ok
+test_legacy_pattern_threshold_preserved (test_script_and_silence.SilenceTests.test_legacy_pattern_threshold_preserved) ... ok
+test_low_volume_word_inside_detected_silence (test_script_and_silence.SilenceTests.test_low_volume_word_inside_detected_silence) ... ok
+test_missing_transcript_is_blocked (test_script_and_silence.SilenceTests.test_missing_transcript_is_blocked) ... ok
+test_negative_and_reversed_ranges_rejected (test_script_and_silence.SilenceTests.test_negative_and_reversed_ranges_rejected) ... ok
+test_no_audio_is_not_applicable (test_script_and_silence.SilenceTests.test_no_audio_is_not_applicable) ... ok
+test_off_does_not_require_transcript (test_script_and_silence.SilenceTests.test_off_does_not_require_transcript) ... ok
+test_other_source_preserved (test_script_and_silence.SilenceTests.test_other_source_preserved) ... ok
+test_overlapping_maps_merged (test_script_and_silence.SilenceTests.test_overlapping_maps_merged) ... ok
+test_random_protected_ranges_never_cut (test_script_and_silence.SilenceTests.test_random_protected_ranges_never_cut) ... ok
+test_selected_audio_track_propagates_to_render_edl (test_script_and_silence.SilenceTests.test_selected_audio_track_propagates_to_render_edl) ... ok
+test_short_pauses_preserved (test_script_and_silence.SilenceTests.test_short_pauses_preserved) ... ok
+test_source_mismatch_is_blocked (test_script_and_silence.SilenceTests.test_source_mismatch_is_blocked) ... ok
+test_trailing_unclosed_silence_parsed (test_script_and_silence.SilenceTests.test_trailing_unclosed_silence_parsed) ... ok
+test_vad_can_protect_without_transcript (test_script_and_silence.SilenceTests.test_vad_can_protect_without_transcript) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.010s
+
+OK

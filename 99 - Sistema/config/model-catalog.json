@@ -1,0 +1,33 @@
+{
+  "reviewed_on": "2026-09-27",
+  "account_availability": "NOT_VERIFIED",
+  "no_automatic_api_fallback": true,
+  "claude": {
+    "triage": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "standard": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "premium": {
+      "model": "opus",
+      "effort": "high"
+    }
+  },
+  "codex": {
+    "triage": {
+      "model": "gpt-6-luna",
+      "effort": "high"
+    },
+    "standard": {
+      "model": "gpt-6-sol",
+      "effort": "medium"
+    },
+    "premium": {
+      "model": "gpt-6-sol",
+      "effort": "high"
+    }
+  }
+}

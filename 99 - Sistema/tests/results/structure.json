@@ -1,0 +1,8 @@
+{
+  "root": "claude-video-factory",
+  "version": "1.1.0",
+  "required_count": 52,
+  "errors": [],
+  "warnings": [],
+  "ok": true
+}

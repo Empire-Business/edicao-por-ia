@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="960" viewBox="0 0 540 960">
+<rect width="540" height="960" fill="#e6e9df"/><g fill="#25342e" font-family="sans-serif">
+<text x="38" y="62" font-size="17" letter-spacing="2">ESQUEMA DO FORMATO · F13</text>
+<text x="38" y="166" font-size="36" font-weight="700">Dados Dark</text>
+<rect x="38" y="230" width="464" height="202" rx="10" fill="#f5f5ef"/>
+<text x="65" y="280" font-size="17" letter-spacing="2">01. DADOS</text>
+<circle cx="270" cy="350" r="38" fill="#b0b9a7"/><path d="M220 406q0-45 50-45t50 45" fill="#b0b9a7"/>
+<path d="M270 455v70m-13-13 13 13 13-13" fill="none" stroke="#536851" stroke-width="3"/>
+<rect x="38" y="550" width="464" height="250" rx="10" fill="#25342e"/>
+<g fill="#edf0e5"><text x="65" y="600" font-size="17" letter-spacing="2">02. ESCALA</text>
+<rect x="80" y="645" width="105" height="50" rx="6" fill="#9cb890"/><rect x="355" y="645" width="105" height="50" rx="6" fill="#9cb890"/>
+<path d="M196 670h143m-12-10 12 10-12 10" fill="none" stroke="#edf0e5" stroke-width="3"/>
+<text x="65" y="757" font-size="19">Mapas. Quantidades. Comparações.</text></g>
+<text x="38" y="895" font-size="17">Guia ilustrativo. Não é uma execução em vídeo.</text></g></svg>

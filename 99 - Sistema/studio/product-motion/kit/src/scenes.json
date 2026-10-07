@@ -1,0 +1,8 @@
+{
+  "proportions": { "h": { "W": 1920, "H": 1080 }, "v": { "W": 1080, "H": 1920 } },
+  "overlap": 0.4,
+  "scenes": [
+    { "id": "s01-intro", "dur": 4.5 }
+  ],
+  "music": null
+}

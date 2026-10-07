@@ -1,0 +1,32 @@
+{
+  "test": "synthetic visual integration",
+  "checks": {
+    "two_edl_shots_prepared": true,
+    "six_actual_frames_extracted": true,
+    "three_timestamped_units": true,
+    "observed_extra_cut_splits_map_without_editing_speech": true,
+    "frame_budget_refuses_silent_scene_omission": true,
+    "no_perception_claim": true,
+    "initial_scene_unreviewed": true,
+    "storyboard_structurally_valid": true,
+    "no_false_render_approval": true,
+    "two_supported_specs_exported": true,
+    "brief_is_not_a_render": true,
+    "title_complete_pngs": true,
+    "title_protected_area_transparent": true,
+    "title_caption_area_transparent": true,
+    "title_visible_in_right_region": true,
+    "steps_complete_pngs": true,
+    "steps_protected_area_transparent": true,
+    "steps_caption_area_transparent": true,
+    "steps_visible_in_right_region": true,
+    "duration_frames_unchanged": true,
+    "audio_packets_preserved": true,
+    "master_immutable": true,
+    "collision_is_blocked": true,
+    "client_mix_blocked": true,
+    "changed_edit_invalidates_plan": true
+  },
+  "passed": true,
+  "scope": "Real extraction/JS rendering/composition with hand-authored synthetic scene and transcript. No semantic perception, ASR, external generation, segmentation, tracking, client footage or artistic evaluation."
+}

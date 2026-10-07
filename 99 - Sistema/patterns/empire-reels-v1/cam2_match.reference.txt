@@ -1,0 +1,1 @@
+eq=contrast=1.14:gamma=0.94,colorbalance=rs=-0.03:bs=0.03:rm=-0.02:bm=0.02,huesaturation=saturation=-0.12:colors=r+y:strength=1,eq=saturation=1.1

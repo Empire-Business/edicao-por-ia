@@ -1,0 +1,59 @@
+id: reels-dynamic-v2
+version: 2
+status: starter
+purpose: Vertical short-form speech edit with deliberate pace and restrained dynamic emphasis.
+engine: hybrid
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  filler_policy: moderate
+  max_unmotivated_silence_seconds: 0.5
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.5
+    keep_pause_seconds: 0.18
+    word_handle_seconds: 0.08
+    minimum_cut_seconds: 0.10
+    trim_edges: true
+  min_jump_cut_interval_seconds: 0.65
+  preserve_required_phrases: []
+visual:
+  punch_ins: motivated
+  max_punch_in_scale: 1.10
+  random_effects: false
+captions:
+  enabled: true
+  max_lines: 2
+  max_chars_per_line: 28
+  word_highlight: optional
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.35
+  long_silence_seconds: 1.5
+forbidden:
+  - effect_every_sentence
+  - random_transition
+  - fake_broll
+  - stretch_video
+
+insertion_assets:
+  policy: encouraged
+  density: medium
+  default_preferred_duration_s: 1.5
+  default_max_duration_s: 4.0
+  allow_image_motion: false

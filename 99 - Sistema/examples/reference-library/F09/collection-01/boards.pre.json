@@ -1,0 +1,147 @@
+[
+  {
+    "code": "M00",
+    "html": "boards/M00.html",
+    "png": "boards/M00.png"
+  },
+  {
+    "code": "M01",
+    "html": "boards/M01.html",
+    "png": "boards/M01.png"
+  },
+  {
+    "code": "M02",
+    "html": "boards/M02.html",
+    "png": "boards/M02.png"
+  },
+  {
+    "code": "M03",
+    "html": "boards/M03.html",
+    "png": "boards/M03.png"
+  },
+  {
+    "code": "M04",
+    "html": "boards/M04.html",
+    "png": "boards/M04.png"
+  },
+  {
+    "code": "M05",
+    "html": "boards/M05.html",
+    "png": "boards/M05.png"
+  },
+  {
+    "code": "M06",
+    "html": "boards/M06.html",
+    "png": "boards/M06.png"
+  },
+  {
+    "code": "M07",
+    "html": "boards/M07.html",
+    "png": "boards/M07.png"
+  },
+  {
+    "code": "M08",
+    "html": "boards/M08.html",
+    "png": "boards/M08.png"
+  },
+  {
+    "code": "M09",
+    "html": "boards/M09.html",
+    "png": "boards/M09.png"
+  },
+  {
+    "code": "M10",
+    "html": "boards/M10.html",
+    "png": "boards/M10.png"
+  },
+  {
+    "code": "M11",
+    "html": "boards/M11.html",
+    "png": "boards/M11.png"
+  },
+  {
+    "code": "M12",
+    "html": "boards/M12.html",
+    "png": "boards/M12.png"
+  },
+  {
+    "code": "M13",
+    "html": "boards/M13.html",
+    "png": "boards/M13.png"
+  },
+  {
+    "code": "M14",
+    "html": "boards/M14.html",
+    "png": "boards/M14.png"
+  },
+  {
+    "code": "M15",
+    "html": "boards/M15.html",
+    "png": "boards/M15.png"
+  },
+  {
+    "code": "M16",
+    "html": "boards/M16.html",
+    "png": "boards/M16.png"
+  },
+  {
+    "code": "M17",
+    "html": "boards/M17.html",
+    "png": "boards/M17.png"
+  },
+  {
+    "code": "M18",
+    "html": "boards/M18.html",
+    "png": "boards/M18.png"
+  },
+  {
+    "code": "M19",
+    "html": "boards/M19.html",
+    "png": "boards/M19.png"
+  },
+  {
+    "code": "M20",
+    "html": "boards/M20.html",
+    "png": "boards/M20.png"
+  },
+  {
+    "code": "M21",
+    "html": "boards/M21.html",
+    "png": "boards/M21.png"
+  },
+  {
+    "code": "M22",
+    "html": "boards/M22.html",
+    "png": "boards/M22.png"
+  },
+  {
+    "code": "M23",
+    "html": "boards/M23.html",
+    "png": "boards/M23.png"
+  },
+  {
+    "code": "M24",
+    "html": "boards/M24.html",
+    "png": "boards/M24.png"
+  },
+  {
+    "code": "M25",
+    "html": "boards/M25.html",
+    "png": "boards/M25.png"
+  },
+  {
+    "code": "M26",
+    "html": "boards/M26.html",
+    "png": "boards/M26.png"
+  },
+  {
+    "code": "M27",
+    "html": "boards/M27.html",
+    "png": "boards/M27.png"
+  },
+  {
+    "code": "M99",
+    "html": "boards/M99.html",
+    "png": "boards/M99.png"
+  }
+]

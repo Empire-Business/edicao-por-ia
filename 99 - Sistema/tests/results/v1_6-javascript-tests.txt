@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: valid spec
+ok 1 - valid spec
+  ---
+  duration_ms: 1.698214
+  type: 'test'
+  ...
+# Subtest: frame determinism including out-of-order access
+ok 2 - frame determinism including out-of-order access
+  ---
+  duration_ms: 1.77208
+  type: 'test'
+  ...
+# Subtest: animation starts and ends transparent
+ok 3 - animation starts and ends transparent
+  ---
+  duration_ms: 0.290072
+  type: 'test'
+  ...
+# Subtest: middle frame is visible
+ok 4 - middle frame is visible
+  ---
+  duration_ms: 0.147001
+  type: 'test'
+  ...
+# Subtest: outside range is invisible
+ok 5 - outside range is invisible
+  ---
+  duration_ms: 0.236699
+  type: 'test'
+  ...
+# Subtest: different valid frames produce motion
+ok 6 - different valid frames produce motion
+  ---
+  duration_ms: 0.268786
+  type: 'test'
+  ...
+# Subtest: string injection is escaped
+ok 7 - string injection is escaped
+  ---
+  duration_ms: 0.313811
+  type: 'test'
+  ...
+# Subtest: reject non-finite fps
+ok 8 - reject non-finite fps
+  ---
+  duration_ms: 0.462115
+  type: 'test'
+  ...
+# Subtest: reject fractional frame count
+ok 9 - reject fractional frame count
+  ---
+  duration_ms: 0.343331
+  type: 'test'
+  ...
+# Subtest: reject fractional frame index
+ok 10 - reject fractional frame index
+  ---
+  duration_ms: 0.413059
+  type: 'test'
+  ...
+# Subtest: reject missing child scope
+ok 11 - reject missing child scope
+  ---
+  duration_ms: 0.185019
+  type: 'test'
+  ...
+# Subtest: reject unknown template
+ok 12 - reject unknown template
+  ---
+  duration_ms: 0.105306
+  type: 'test'
+  ...
+# Subtest: reject invalid style injection
+ok 13 - reject invalid style injection
+  ---
+  duration_ms: 0.090299
+  type: 'test'
+  ...
+# Subtest: reject off-canvas box
+ok 14 - reject off-canvas box
+  ---
+  duration_ms: 0.081302
+  type: 'test'
+  ...
+# Subtest: reject remote image
+ok 15 - reject remote image
+  ---
+  duration_ms: 0.27353
+  type: 'test'
+  ...
+# Subtest: reject SVG image payload
+ok 16 - reject SVG image payload
+  ---
+  duration_ms: 0.205822
+  type: 'test'
+  ...
+# Subtest: proof requires actual image
+ok 17 - proof requires actual image
+  ---
+  duration_ms: 0.117756
+  type: 'test'
+  ...
+# Subtest: steps are not generic text-only effect
+ok 18 - steps are not generic text-only effect
+  ---
+  duration_ms: 0.525075
+  type: 'test'
+  ...
+# Subtest: template does not mutate caller props
+ok 19 - template does not mutate caller props
+  ---
+  duration_ms: 0.4524
+  type: 'test'
+  ...
+# Subtest: long text fails instead of clipping silently
+ok 20 - long text fails instead of clipping silently
+  ---
+  duration_ms: 1.05759
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 92.215485

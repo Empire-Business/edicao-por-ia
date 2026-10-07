@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "checks": {
+    "startup_hook_supplies_memory_route": true,
+    "prompt_hook_supplies_review_token": true,
+    "stop_blocks_missing_review": true,
+    "capture_returns_verified_receipt": true,
+    "stop_releases_after_review": true,
+    "new_process_retrieves_saved_preference": true,
+    "second_client_isolated": true,
+    "new_job_inherits_preference": true,
+    "feedback_changes_real_cut_plan": true,
+    "plan_delta_equals_saved_pause_change": true,
+    "old_context_snapshot_detected_stale": true,
+    "updated_snapshot_passes_memory_qa": true,
+    "real_video_rendered": true,
+    "output_has_video_and_audio": true,
+    "duration_matches_revised_edl": true,
+    "audio_video_duration_close": true,
+    "original_media_preserved": true,
+    "earlier_plan_not_overwritten": true
+  },
+  "fixture": "Synthetic user turns, tone media and hand-authored timing",
+  "first_planned_seconds": 6.42,
+  "revised_planned_seconds": 6.699999999999999,
+  "rendered_seconds": 6.7,
+  "not_tested": [
+    "Live Claude Code hooks",
+    "Natural-language feedback interpretation",
+    "Real speech transcription",
+    "User video quality"
+  ]
+}

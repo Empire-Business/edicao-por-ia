@@ -1,0 +1,371 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claude Video Factory Job",
+  "type": "object",
+  "required": [
+    "id",
+    "pattern",
+    "sources"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "description": "Short human-readable video name used in preview/final filenames."
+    },
+    "status": {
+      "type": "string"
+    },
+    "pattern": {
+      "type": "string",
+      "minLength": 1
+    },
+    "client": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "format": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Named format profile; separate from output proportion. Legacy client remains accepted."
+    },
+    "project": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "expected_outputs": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "requirements": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "reference_script": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mode": {
+          "enum": [
+            "flexible",
+            "strict",
+            "off"
+          ]
+        },
+        "reorder_policy": {
+          "enum": [
+            "preserve_unless_requested",
+            "match_reference_safe"
+          ]
+        },
+        "missing_content_policy": {
+          "const": "report_do_not_invent"
+        }
+      }
+    },
+    "silence_removal": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "mode": {
+          "enum": [
+            "pattern_default",
+            "natural",
+            "tight",
+            "relaxed",
+            "off"
+          ]
+        },
+        "protected_ranges_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "settings": {
+          "type": "object"
+        }
+      }
+    },
+    "reference_assignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "child_id",
+          "reference_path"
+        ],
+        "properties": {
+          "child_id": {
+            "type": "string"
+          },
+          "reference_path": {
+            "type": "string"
+          },
+          "block_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_range": {
+            "type": "object",
+            "required": [
+              "start",
+              "end"
+            ],
+            "properties": {
+              "start": {
+                "type": "number",
+                "minimum": 0
+              },
+              "end": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "supporting_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "image",
+              "video",
+              "screen_recording",
+              "logo",
+              "graphic"
+            ]
+          },
+          "role": {
+            "enum": [
+              "b_roll",
+              "proof",
+              "demo",
+              "cutaway",
+              "overlay",
+              "end_card"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          },
+          "cue_phrases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "script_block_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "child_id": {
+            "type": "string"
+          },
+          "priority": {
+            "enum": [
+              "must_use",
+              "optional",
+              "fallback",
+              "do_not_use"
+            ]
+          },
+          "preferred_duration_s": {
+            "type": "number",
+            "minimum": 0
+          },
+          "max_duration_s": {
+            "type": "number",
+            "minimum": 0
+          },
+          "placement_mode": {
+            "enum": [
+              "auto_semantic",
+              "manual_window",
+              "safe_generic"
+            ]
+          },
+          "manual_windows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "start",
+                "end"
+              ],
+              "properties": {
+                "start": {
+                  "type": "number"
+                },
+                "end": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "enum": [
+            "auto",
+            "on",
+            "off"
+          ]
+        },
+        "preset": {
+          "type": "string"
+        },
+        "engine": {
+          "enum": [
+            "auto",
+            "javascript-svg",
+            "remotion"
+          ]
+        },
+        "intensity": {
+          "enum": [
+            "restrained",
+            "balanced",
+            "energetic"
+          ]
+        },
+        "max_new_design_iterations": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        }
+      },
+      "additionalProperties": false
+    },
+    "explicit_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Dotted paths of current explicit overrides; absent on legacy jobs means present fields are pinned."
+    },
+    "_memory": {
+      "type": "object",
+      "description": "Generated resolver receipt, never user-invented"
+    },
+    "visual_direction": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "enum": [
+            "auto",
+            "off",
+            "storyboard"
+          ]
+        },
+        "allow_background_change": {
+          "type": "boolean"
+        },
+        "allow_external_generation": {
+          "type": "boolean"
+        },
+        "external_budget": {
+          "type": "number",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "branding": {
+      "type": "object",
+      "properties": {
+        "logos_enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "logo_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "policy": {
+          "type": "string"
+        }
+      }
+    },
+    "format_code": {
+      "type": "string",
+      "pattern": "^F[0-9]{2,}$"
+    },
+    "visual_identity": {
+      "type": "string",
+      "pattern": "^ID[0-9]{2,}$"
+    },
+    "edition_code": {
+      "type": "string",
+      "pattern": "^E[0-9]{2,}$"
+    },
+    "selection_version": {
+      "type": "integer"
+    }
+  }
+}

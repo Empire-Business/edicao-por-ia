@@ -1,0 +1,44 @@
+{
+  "job": "omnx-sell-motion",
+  "checks": {
+    "lint_16x9": "0 errors (warnings: callback measurement, duplicate img discovery — benign)",
+    "lint_9x16": "0 errors",
+    "layout": "only content_overlap during 0.4s crossfades and text clipped by window edge during camera push-ins (intentional)",
+    "contrast": "a few small muted UI labels ~3.4:1, faithful to product tokens",
+    "visual_review": "contact sheets every 3.2s in both formats (qa/full-h, qa/full-v) + frames extracted from rendered mp4 (qa/mp4/sheet.jpg)",
+    "fixes_applied": [
+      "headline trailing-space collapse -> flex gap",
+      "scenes measuring layout while clip inactive -> __omnxShow",
+      "doubled name labels on camera tiles -> clean crops",
+      "music bed length matched to 125.8s"
+    ],
+    "audio": "integrated -16.8 LUFS, peak -5.8 dBFS, fade-out reaches end (-31 dB in last 1.3s)"
+  },
+  "coverage": [
+    "Primeiros passos/sidebar",
+    "Salas de Reunião + Nova reunião",
+    "Preparação pré-call",
+    "Sala nativa + Copiloto (Roteiro, Coach, Fala, 2ª janela)",
+    "Modo Espião + Sussurro",
+    "Chat, moderação, fundo, convite, sala de espera, cancelamento de ruído",
+    "Gravações + Estúdio + apresentação gravada",
+    "Análise de Conversas lista + importar",
+    "Análise: nota, resumo, check-up, tempo por etapa",
+    "Dores/objeções/próximos passos, pontos fortes/melhoria, métricas, feedback do gestor",
+    "Oráculo",
+    "Plano de ação -> Meu PDI -> PDI do time (radar)",
+    "Dashboards",
+    "Biblioteca + Arquétipos",
+    "Agente + Template OMNX + Skills/Competências",
+    "Auto agendamento + Rodízio justo",
+    "App Store, Membros, Time e cargos, Integrações"
+  ],
+  "not_shown": [
+    "Leads (ficha do lead) as a dedicated beat",
+    "Minha agenda",
+    "Conexões de IA detail",
+    "Auditoria/Tickets (admin)",
+    "Transcrição tab of the analysis"
+  ],
+  "status": "draft rendered 16:9 + 9:16 (125.8s, 30fps); awaiting user review"
+}

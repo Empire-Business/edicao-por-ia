@@ -1,0 +1,28 @@
+{
+  "input_package": "claude-video-factory-v1.4.0.zip",
+  "input_sha256": "a80864fc3639a08bc3ed1313576114e06ae23a7048cb11cf1ff3e654620d7a67",
+  "input_files": 167,
+  "missing_input_files": [],
+  "unchanged_input_files": 152,
+  "modified_files": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "START-HERE.md",
+    "VERSION",
+    "jobs/JOB_SCHEMA.json",
+    "jobs/_template/job.yaml",
+    "method/INPUT_CONTRACT.md",
+    "method/MODEL_ROUTING.md",
+    "method/QUALITY_BAR.md",
+    "patterns/PATTERN_SPEC.md",
+    "tests/ACCEPTANCE.md",
+    "tools/verify_package.py",
+    "workflows/EDIT_VIDEO.md",
+    "workflows/PERSONALIZATION_QA.md"
+  ],
+  "all_versioned_pattern_yaml_preserved": true,
+  "preserved_pattern_yaml_count": 8,
+  "sources_preserved": true,
+  "previous_test_reports_are_historical": true
+}

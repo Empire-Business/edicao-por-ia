@@ -1,0 +1,1916 @@
+{
+  "backend": "mlx-whisper",
+  "model": "mlx-community/whisper-large-v3-turbo",
+  "language": "pt",
+  "text": "Essa sala inteira era um computador, 27 toneladas. E hoje, algo menor que a sua unha faz milhões de vezes mais. O que aconteceu no meio? O Eniac tinha quase 18 mil válvulas. Cada uma era um interruptor de vidro que esquentava e queimava. E pra achar qual queimou? Uma por uma no meio de 18 mil. Até que em 47 a Beolebs mostra isso aqui, o transistor. O mesmo liga e desliga, só que bem menor. Em 58 vem a sacada. E se colocasse tudo num pedaço, só, nasce o circuito integrado. Em 71 a Intel enfia um processador inteiro aqui dentro. Olha isso, 2300 transistores. Parece muito? Segura essa. Gordon Moore apostou que esse número ia dobrar. E dobrar, e dobrar. Pentium, milhões. M1 da Apple, 16 bilhões. Aí veio a inteligência artificial e a conta? Explodiu. H100, 80 bilhões. B200, 208 bilhões. De 27 toneladas pra um pedacinho de silício. Em menos de 80 anos. E tudo começou nessa sala. Quer aprender a gerar vídeos como esse? Comente e prompte. Tent6,00, 2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 4.4,
+      "text": "Essa sala inteira era um computador, 27 toneladas.",
+      "words": [
+        {
+          "word": "Essa",
+          "start": 0.0,
+          "end": 0.46,
+          "probability": 0.70947265625
+        },
+        {
+          "word": "sala",
+          "start": 0.46,
+          "end": 0.78,
+          "probability": 0.99853515625
+        },
+        {
+          "word": "inteira",
+          "start": 0.78,
+          "end": 1.26,
+          "probability": 0.998046875
+        },
+        {
+          "word": "era",
+          "start": 1.26,
+          "end": 1.62,
+          "probability": 0.91552734375
+        },
+        {
+          "word": "um",
+          "start": 1.62,
+          "end": 1.96,
+          "probability": 0.8876953125
+        },
+        {
+          "word": "computador,",
+          "start": 1.96,
+          "end": 2.66,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "27",
+          "start": 2.98,
+          "end": 3.48,
+          "probability": 0.98779296875
+        },
+        {
+          "word": "toneladas.",
+          "start": 3.48,
+          "end": 4.4,
+          "probability": 0.99462890625
+        }
+      ]
+    },
+    {
+      "start": 4.64,
+      "end": 8.3,
+      "text": "E hoje, algo menor que a sua unha faz milhões de vezes mais.",
+      "words": [
+        {
+          "word": "E",
+          "start": 4.64,
+          "end": 4.86,
+          "probability": 0.99755859375
+        },
+        {
+          "word": "hoje,",
+          "start": 4.86,
+          "end": 5.18,
+          "probability": 0.99609375
+        },
+        {
+          "word": "algo",
+          "start": 5.36,
+          "end": 5.74,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "menor",
+          "start": 5.74,
+          "end": 6.06,
+          "probability": 0.99853515625
+        },
+        {
+          "word": "que",
+          "start": 6.06,
+          "end": 6.18,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "a",
+          "start": 6.18,
+          "end": 6.28,
+          "probability": 0.9599609375
+        },
+        {
+          "word": "sua",
+          "start": 6.28,
+          "end": 6.4,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "unha",
+          "start": 6.4,
+          "end": 6.78,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "faz",
+          "start": 6.78,
+          "end": 7.06,
+          "probability": 0.62158203125
+        },
+        {
+          "word": "milhões",
+          "start": 7.06,
+          "end": 7.46,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "de",
+          "start": 7.46,
+          "end": 7.68,
+          "probability": 1.0
+        },
+        {
+          "word": "vezes",
+          "start": 7.68,
+          "end": 7.92,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "mais.",
+          "start": 7.92,
+          "end": 8.3,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "start": 8.56,
+      "end": 9.7,
+      "text": "O que aconteceu no meio?",
+      "words": [
+        {
+          "word": "O",
+          "start": 8.56,
+          "end": 8.76,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "que",
+          "start": 8.76,
+          "end": 8.84,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "aconteceu",
+          "start": 8.84,
+          "end": 9.28,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "no",
+          "start": 9.28,
+          "end": 9.42,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "meio?",
+          "start": 9.42,
+          "end": 9.7,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "start": 10.82,
+      "end": 13.54,
+      "text": "O Eniac tinha quase 18 mil válvulas.",
+      "words": [
+        {
+          "word": "O",
+          "start": 10.82,
+          "end": 11.28,
+          "probability": 0.99560546875
+        },
+        {
+          "word": "Eniac",
+          "start": 11.28,
+          "end": 11.6,
+          "probability": 0.41015625
+        },
+        {
+          "word": "tinha",
+          "start": 11.6,
+          "end": 11.86,
+          "probability": 0.99560546875
+        },
+        {
+          "word": "quase",
+          "start": 11.86,
+          "end": 12.14,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "18",
+          "start": 12.14,
+          "end": 12.68,
+          "probability": 0.99609375
+        },
+        {
+          "word": "mil",
+          "start": 12.68,
+          "end": 12.9,
+          "probability": 0.97900390625
+        },
+        {
+          "word": "válvulas.",
+          "start": 12.9,
+          "end": 13.54,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 13.78,
+      "end": 17.2,
+      "text": "Cada uma era um interruptor de vidro que esquentava e queimava.",
+      "words": [
+        {
+          "word": "Cada",
+          "start": 13.78,
+          "end": 14.16,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "uma",
+          "start": 14.16,
+          "end": 14.4,
+          "probability": 0.98828125
+        },
+        {
+          "word": "era",
+          "start": 14.4,
+          "end": 14.6,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "um",
+          "start": 14.6,
+          "end": 14.72,
+          "probability": 0.96923828125
+        },
+        {
+          "word": "interruptor",
+          "start": 14.72,
+          "end": 15.28,
+          "probability": 1.0
+        },
+        {
+          "word": "de",
+          "start": 15.28,
+          "end": 15.48,
+          "probability": 1.0
+        },
+        {
+          "word": "vidro",
+          "start": 15.48,
+          "end": 15.84,
+          "probability": 1.0
+        },
+        {
+          "word": "que",
+          "start": 15.84,
+          "end": 15.98,
+          "probability": 0.98583984375
+        },
+        {
+          "word": "esquentava",
+          "start": 15.98,
+          "end": 16.52,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "e",
+          "start": 16.52,
+          "end": 16.6,
+          "probability": 1.0
+        },
+        {
+          "word": "queimava.",
+          "start": 16.6,
+          "end": 17.2,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 17.4,
+      "end": 18.76,
+      "text": "E pra achar qual queimou?",
+      "words": [
+        {
+          "word": "E",
+          "start": 17.4,
+          "end": 17.62,
+          "probability": 1.0
+        },
+        {
+          "word": "pra",
+          "start": 17.62,
+          "end": 17.78,
+          "probability": 0.7890625
+        },
+        {
+          "word": "achar",
+          "start": 17.78,
+          "end": 18.1,
+          "probability": 1.0
+        },
+        {
+          "word": "qual",
+          "start": 18.1,
+          "end": 18.32,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "queimou?",
+          "start": 18.32,
+          "end": 18.76,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "start": 19.18,
+      "end": 21.48,
+      "text": "Uma por uma no meio de 18 mil.",
+      "words": [
+        {
+          "word": "Uma",
+          "start": 19.18,
+          "end": 19.6,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "por",
+          "start": 19.6,
+          "end": 19.82,
+          "probability": 1.0
+        },
+        {
+          "word": "uma",
+          "start": 19.82,
+          "end": 20.08,
+          "probability": 1.0
+        },
+        {
+          "word": "no",
+          "start": 20.08,
+          "end": 20.24,
+          "probability": 0.923828125
+        },
+        {
+          "word": "meio",
+          "start": 20.24,
+          "end": 20.48,
+          "probability": 1.0
+        },
+        {
+          "word": "de",
+          "start": 20.48,
+          "end": 20.62,
+          "probability": 1.0
+        },
+        {
+          "word": "18",
+          "start": 20.62,
+          "end": 21.16,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "mil.",
+          "start": 21.16,
+          "end": 21.48,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "start": 21.74,
+      "end": 25.62,
+      "text": "Até que em 47 a Beolebs mostra isso aqui, o transistor.",
+      "words": [
+        {
+          "word": "Até",
+          "start": 21.74,
+          "end": 22.16,
+          "probability": 0.99560546875
+        },
+        {
+          "word": "que",
+          "start": 22.16,
+          "end": 22.3,
+          "probability": 1.0
+        },
+        {
+          "word": "em",
+          "start": 22.3,
+          "end": 22.38,
+          "probability": 0.99755859375
+        },
+        {
+          "word": "47",
+          "start": 22.38,
+          "end": 22.94,
+          "probability": 0.47998046875
+        },
+        {
+          "word": "a",
+          "start": 22.94,
+          "end": 23.3,
+          "probability": 0.67578125
+        },
+        {
+          "word": "Beolebs",
+          "start": 23.3,
+          "end": 23.72,
+          "probability": 0.62841796875
+        },
+        {
+          "word": "mostra",
+          "start": 23.72,
+          "end": 24.14,
+          "probability": 1.0
+        },
+        {
+          "word": "isso",
+          "start": 24.14,
+          "end": 24.46,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "aqui,",
+          "start": 24.46,
+          "end": 24.74,
+          "probability": 1.0
+        },
+        {
+          "word": "o",
+          "start": 24.94,
+          "end": 25.14,
+          "probability": 1.0
+        },
+        {
+          "word": "transistor.",
+          "start": 25.14,
+          "end": 25.62,
+          "probability": 0.99560546875
+        }
+      ]
+    },
+    {
+      "start": 26.02,
+      "end": 28.38,
+      "text": "O mesmo liga e desliga, só que bem menor.",
+      "words": [
+        {
+          "word": "O",
+          "start": 26.02,
+          "end": 26.2,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "mesmo",
+          "start": 26.2,
+          "end": 26.5,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "liga",
+          "start": 26.5,
+          "end": 26.82,
+          "probability": 0.87890625
+        },
+        {
+          "word": "e",
+          "start": 26.82,
+          "end": 26.9,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "desliga,",
+          "start": 26.9,
+          "end": 27.38,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "só",
+          "start": 27.58,
+          "end": 27.64,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "que",
+          "start": 27.64,
+          "end": 27.8,
+          "probability": 1.0
+        },
+        {
+          "word": "bem",
+          "start": 27.8,
+          "end": 28.04,
+          "probability": 1.0
+        },
+        {
+          "word": "menor.",
+          "start": 28.04,
+          "end": 28.38,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 28.38,
+      "end": 30.38,
+      "text": "Em 58 vem a sacada.",
+      "words": [
+        {
+          "word": "Em",
+          "start": 28.38,
+          "end": 28.84,
+          "probability": 0.86962890625
+        },
+        {
+          "word": "58",
+          "start": 28.84,
+          "end": 29.38,
+          "probability": 0.82861328125
+        },
+        {
+          "word": "vem",
+          "start": 29.38,
+          "end": 29.7,
+          "probability": 0.89697265625
+        },
+        {
+          "word": "a",
+          "start": 29.7,
+          "end": 29.86,
+          "probability": 0.99853515625
+        },
+        {
+          "word": "sacada.",
+          "start": 29.86,
+          "end": 30.38,
+          "probability": 0.99853515625
+        }
+      ]
+    },
+    {
+      "start": 30.52,
+      "end": 35.02,
+      "text": "E se colocasse tudo num pedaço, só, nasce o circuito integrado.",
+      "words": [
+        {
+          "word": "E",
+          "start": 30.52,
+          "end": 30.84,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "se",
+          "start": 30.84,
+          "end": 30.96,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "colocasse",
+          "start": 30.96,
+          "end": 31.48,
+          "probability": 0.998046875
+        },
+        {
+          "word": "tudo",
+          "start": 31.48,
+          "end": 31.78,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "num",
+          "start": 31.78,
+          "end": 31.98,
+          "probability": 0.955078125
+        },
+        {
+          "word": "pedaço,",
+          "start": 31.98,
+          "end": 32.6,
+          "probability": 1.0
+        },
+        {
+          "word": "só,",
+          "start": 32.78,
+          "end": 33.16,
+          "probability": 0.98779296875
+        },
+        {
+          "word": "nasce",
+          "start": 33.34,
+          "end": 33.92,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "o",
+          "start": 33.92,
+          "end": 33.98,
+          "probability": 0.99560546875
+        },
+        {
+          "word": "circuito",
+          "start": 33.98,
+          "end": 34.46,
+          "probability": 0.998046875
+        },
+        {
+          "word": "integrado.",
+          "start": 34.46,
+          "end": 35.02,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 35.38,
+      "end": 39.3,
+      "text": "Em 71 a Intel enfia um processador inteiro aqui dentro.",
+      "words": [
+        {
+          "word": "Em",
+          "start": 35.38,
+          "end": 35.92,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "71",
+          "start": 35.92,
+          "end": 36.62,
+          "probability": 0.99609375
+        },
+        {
+          "word": "a",
+          "start": 36.62,
+          "end": 36.96,
+          "probability": 0.43994140625
+        },
+        {
+          "word": "Intel",
+          "start": 36.96,
+          "end": 37.12,
+          "probability": 0.99560546875
+        },
+        {
+          "word": "enfia",
+          "start": 37.12,
+          "end": 37.46,
+          "probability": 0.986328125
+        },
+        {
+          "word": "um",
+          "start": 37.46,
+          "end": 37.56,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "processador",
+          "start": 37.56,
+          "end": 38.14,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "inteiro",
+          "start": 38.14,
+          "end": 38.54,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "aqui",
+          "start": 38.54,
+          "end": 38.88,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "dentro.",
+          "start": 38.88,
+          "end": 39.3,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 39.68,
+      "end": 42.64,
+      "text": "Olha isso, 2300 transistores.",
+      "words": [
+        {
+          "word": "Olha",
+          "start": 39.68,
+          "end": 39.88,
+          "probability": 0.99755859375
+        },
+        {
+          "word": "isso,",
+          "start": 39.88,
+          "end": 40.24,
+          "probability": 1.0
+        },
+        {
+          "word": "2300",
+          "start": 40.66,
+          "end": 41.84,
+          "probability": 0.7705078125
+        },
+        {
+          "word": "transistores.",
+          "start": 41.84,
+          "end": 42.64,
+          "probability": 0.98974609375
+        }
+      ]
+    },
+    {
+      "start": 42.9,
+      "end": 43.84,
+      "text": "Parece muito?",
+      "words": [
+        {
+          "word": "Parece",
+          "start": 42.9,
+          "end": 43.4,
+          "probability": 0.998046875
+        },
+        {
+          "word": "muito?",
+          "start": 43.4,
+          "end": 43.84,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 44.22,
+      "end": 45.12,
+      "text": "Segura essa.",
+      "words": [
+        {
+          "word": "Segura",
+          "start": 44.22,
+          "end": 44.78,
+          "probability": 1.0
+        },
+        {
+          "word": "essa.",
+          "start": 44.78,
+          "end": 45.12,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "start": 45.48,
+      "end": 47.58,
+      "text": "Gordon Moore apostou que esse número ia dobrar.",
+      "words": [
+        {
+          "word": "Gordon",
+          "start": 45.48,
+          "end": 45.82,
+          "probability": 0.8740234375
+        },
+        {
+          "word": "Moore",
+          "start": 45.82,
+          "end": 46.06,
+          "probability": 0.87158203125
+        },
+        {
+          "word": "apostou",
+          "start": 46.06,
+          "end": 46.46,
+          "probability": 0.998046875
+        },
+        {
+          "word": "que",
+          "start": 46.46,
+          "end": 46.56,
+          "probability": 1.0
+        },
+        {
+          "word": "esse",
+          "start": 46.56,
+          "end": 46.7,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "número",
+          "start": 46.7,
+          "end": 46.94,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "ia",
+          "start": 46.94,
+          "end": 47.1,
+          "probability": 0.99755859375
+        },
+        {
+          "word": "dobrar.",
+          "start": 47.1,
+          "end": 47.58,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "start": 47.9,
+      "end": 49.48,
+      "text": "E dobrar, e dobrar.",
+      "words": [
+        {
+          "word": "E",
+          "start": 47.9,
+          "end": 48.0,
+          "probability": 0.9775390625
+        },
+        {
+          "word": "dobrar,",
+          "start": 48.0,
+          "end": 48.56,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "e",
+          "start": 48.7,
+          "end": 49.0,
+          "probability": 0.98876953125
+        },
+        {
+          "word": "dobrar.",
+          "start": 49.0,
+          "end": 49.48,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 49.94,
+      "end": 51.44,
+      "text": "Pentium, milhões.",
+      "words": [
+        {
+          "word": "Pentium,",
+          "start": 49.94,
+          "end": 50.64,
+          "probability": 0.9599609375
+        },
+        {
+          "word": "milhões.",
+          "start": 50.96,
+          "end": 51.44,
+          "probability": 0.99951171875
+        }
+      ]
+    },
+    {
+      "start": 52.08,
+      "end": 55.08,
+      "text": "M1 da Apple, 16 bilhões.",
+      "words": [
+        {
+          "word": "M1",
+          "start": 52.08,
+          "end": 52.66,
+          "probability": 0.9951171875
+        },
+        {
+          "word": "da",
+          "start": 52.66,
+          "end": 52.82,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "Apple,",
+          "start": 52.82,
+          "end": 53.26,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "16",
+          "start": 53.58,
+          "end": 54.24,
+          "probability": 0.99658203125
+        },
+        {
+          "word": "bilhões.",
+          "start": 54.24,
+          "end": 55.08,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "start": 55.08,
+      "end": 58.1,
+      "text": "Aí veio a inteligência artificial e a conta?",
+      "words": [
+        {
+          "word": "Aí",
+          "start": 55.08,
+          "end": 55.94,
+          "probability": 0.8515625
+        },
+        {
+          "word": "veio",
+          "start": 55.94,
+          "end": 56.2,
+          "probability": 0.98828125
+        },
+        {
+          "word": "a",
+          "start": 56.2,
+          "end": 56.32,
+          "probability": 0.99755859375
+        },
+        {
+          "word": "inteligência",
+          "start": 56.32,
+          "end": 56.84,
+          "probability": 0.92919921875
+        },
+        {
+          "word": "artificial",
+          "start": 56.84,
+          "end": 57.22,
+          "probability": 0.998046875
+        },
+        {
+          "word": "e",
+          "start": 57.22,
+          "end": 57.6,
+          "probability": 0.95361328125
+        },
+        {
+          "word": "a",
+          "start": 57.6,
+          "end": 57.76,
+          "probability": 0.99853515625
+        },
+        {
+          "word": "conta?",
+          "start": 57.76,
+          "end": 58.1,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "start": 58.48,
+      "end": 59.22,
+      "text": "Explodiu.",
+      "words": [
+        {
+          "word": "Explodiu.",
+          "start": 58.48,
+          "end": 59.22,
+          "probability": 0.99560546875
+        }
+      ]
+    },
+    {
+      "start": 59.68,
+      "end": 62.08,
+      "text": "H100, 80 bilhões.",
+      "words": [
+        {
+          "word": "H100,",
+          "start": 59.68,
+          "end": 60.42,
+          "probability": 0.9677734375
+        },
+        {
+          "word": "80",
+          "start": 60.62,
+          "end": 61.36,
+          "probability": 0.904296875
+        },
+        {
+          "word": "bilhões.",
+          "start": 61.36,
+          "end": 62.08,
+          "probability": 0.99853515625
+        }
+      ]
+    },
+    {
+      "start": 62.66,
+      "end": 65.8,
+      "text": "B200, 208 bilhões.",
+      "words": [
+        {
+          "word": "B200,",
+          "start": 62.66,
+          "end": 63.4,
+          "probability": 0.998046875
+        },
+        {
+          "word": "208",
+          "start": 64.08,
+          "end": 65.0,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "bilhões.",
+          "start": 65.0,
+          "end": 65.8,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 66.16,
+      "end": 69.66,
+      "text": "De 27 toneladas pra um pedacinho de silício.",
+      "words": [
+        {
+          "word": "De",
+          "start": 66.16,
+          "end": 66.78,
+          "probability": 0.99853515625
+        },
+        {
+          "word": "27",
+          "start": 66.78,
+          "end": 67.28,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "toneladas",
+          "start": 67.28,
+          "end": 68.04,
+          "probability": 1.0
+        },
+        {
+          "word": "pra",
+          "start": 68.04,
+          "end": 68.4,
+          "probability": 0.1966552734375
+        },
+        {
+          "word": "um",
+          "start": 68.4,
+          "end": 68.54,
+          "probability": 1.0
+        },
+        {
+          "word": "pedacinho",
+          "start": 68.54,
+          "end": 69.02,
+          "probability": 1.0
+        },
+        {
+          "word": "de",
+          "start": 69.02,
+          "end": 69.16,
+          "probability": 0.99853515625
+        },
+        {
+          "word": "silício.",
+          "start": 69.16,
+          "end": 69.66,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "start": 69.8,
+      "end": 71.5,
+      "text": "Em menos de 80 anos.",
+      "words": [
+        {
+          "word": "Em",
+          "start": 69.8,
+          "end": 70.12,
+          "probability": 0.9951171875
+        },
+        {
+          "word": "menos",
+          "start": 70.12,
+          "end": 70.44,
+          "probability": 1.0
+        },
+        {
+          "word": "de",
+          "start": 70.44,
+          "end": 70.6,
+          "probability": 1.0
+        },
+        {
+          "word": "80",
+          "start": 70.6,
+          "end": 70.92,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "anos.",
+          "start": 70.92,
+          "end": 71.5,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 71.78,
+      "end": 73.92,
+      "text": "E tudo começou nessa sala.",
+      "words": [
+        {
+          "word": "E",
+          "start": 71.78,
+          "end": 72.04,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "tudo",
+          "start": 72.04,
+          "end": 72.28,
+          "probability": 1.0
+        },
+        {
+          "word": "começou",
+          "start": 72.28,
+          "end": 72.8,
+          "probability": 1.0
+        },
+        {
+          "word": "nessa",
+          "start": 72.8,
+          "end": 73.46,
+          "probability": 0.9970703125
+        },
+        {
+          "word": "sala.",
+          "start": 73.46,
+          "end": 73.92,
+          "probability": 1.0
+        }
+      ]
+    },
+    {
+      "start": 74.82,
+      "end": 76.74,
+      "text": "Quer aprender a gerar vídeos como esse?",
+      "words": [
+        {
+          "word": "Quer",
+          "start": 74.82,
+          "end": 75.22,
+          "probability": 0.94091796875
+        },
+        {
+          "word": "aprender",
+          "start": 75.22,
+          "end": 75.54,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "a",
+          "start": 75.54,
+          "end": 75.68,
+          "probability": 1.0
+        },
+        {
+          "word": "gerar",
+          "start": 75.68,
+          "end": 75.9,
+          "probability": 0.9990234375
+        },
+        {
+          "word": "vídeos",
+          "start": 75.9,
+          "end": 76.14,
+          "probability": 0.99853515625
+        },
+        {
+          "word": "como",
+          "start": 76.14,
+          "end": 76.38,
+          "probability": 1.0
+        },
+        {
+          "word": "esse?",
+          "start": 76.38,
+          "end": 76.74,
+          "probability": 0.9990234375
+        }
+      ]
+    },
+    {
+      "start": 76.9,
+      "end": 78.04,
+      "text": "Comente e prompte.",
+      "words": [
+        {
+          "word": "Comente",
+          "start": 76.9,
+          "end": 77.38,
+          "probability": 0.99951171875
+        },
+        {
+          "word": "e",
+          "start": 77.38,
+          "end": 77.56,
+          "probability": 0.72314453125
+        },
+        {
+          "word": "prompte.",
+          "start": 77.56,
+          "end": 78.04,
+          "probability": 0.9580078125
+        }
+      ]
+    },
+    {
+      "start": 78.04,
+      "end": 79.6,
+      "text": "Tent6,00, 2,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+      "words": [
+        {
+          "word": "Tent6",
+          "start": 78.04,
+          "end": 78.1,
+          "probability": 0.00861358642578125
+        },
+        {
+          "word": ",00,",
+          "start": 78.1,
+          "end": 78.1,
+          "probability": 0.0183563232421875
+        },
+        {
+          "word": "2",
+          "start": 78.1,
+          "end": 78.1,
+          "probability": 0.007572174072265625
+        },
+        {
+          "word": ",0",
+          "start": 78.1,
+          "end": 78.3,
+          "probability": 0.314453125
+        },
+        {
+          "word": ",4",
+          "start": 78.3,
+          "end": 78.3,
+          "probability": 0.157470703125
+        },
+        {
+          "word": ",0",
+          "start": 78.3,
+          "end": 78.34,
+          "probability": 0.3056640625
+        },
+        {
+          "word": ",0",
+          "start": 78.34,
+          "end": 78.34,
+          "probability": 0.2357177734375
+        },
+        {
+          "word": ",0",
+          "start": 78.34,
+          "end": 78.34,
+          "probability": 0.333984375
+        },
+        {
+          "word": ",0",
+          "start": 78.34,
+          "end": 78.7,
+          "probability": 0.55908203125
+        },
+        {
+          "word": ",0",
+          "start": 78.7,
+          "end": 78.7,
+          "probability": 0.671875
+        },
+        {
+          "word": ",0",
+          "start": 78.7,
+          "end": 78.72,
+          "probability": 0.724609375
+        },
+        {
+          "word": ",0",
+          "start": 78.72,
+          "end": 78.72,
+          "probability": 0.75
+        },
+        {
+          "word": ",0",
+          "start": 78.72,
+          "end": 78.72,
+          "probability": 0.765625
+        },
+        {
+          "word": ",0",
+          "start": 78.72,
+          "end": 78.72,
+          "probability": 0.77978515625
+        },
+        {
+          "word": ",0",
+          "start": 78.72,
+          "end": 78.94,
+          "probability": 0.78369140625
+        },
+        {
+          "word": ",0",
+          "start": 78.94,
+          "end": 79.24,
+          "probability": 0.8046875
+        },
+        {
+          "word": ",0",
+          "start": 79.24,
+          "end": 79.24,
+          "probability": 0.8095703125
+        },
+        {
+          "word": ",0",
+          "start": 79.24,
+          "end": 79.24,
+          "probability": 0.81494140625
+        },
+        {
+          "word": ",0",
+          "start": 79.24,
+          "end": 79.24,
+          "probability": 0.8134765625
+        },
+        {
+          "word": ",0",
+          "start": 79.24,
+          "end": 79.24,
+          "probability": 0.826171875
+        },
+        {
+          "word": ",0",
+          "start": 79.24,
+          "end": 79.24,
+          "probability": 0.8271484375
+        },
+        {
+          "word": ",0",
+          "start": 79.24,
+          "end": 79.24,
+          "probability": 0.8349609375
+        },
+        {
+          "word": ",0",
+          "start": 79.24,
+          "end": 79.46,
+          "probability": 0.8388671875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.84423828125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.8486328125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.85595703125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.8515625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.8544921875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.86767578125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.86669921875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.87109375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.869140625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.8720703125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.87109375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.884765625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.880859375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.88818359375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.884765625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.88818359375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.8916015625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.89501953125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.90234375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.8974609375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.90478515625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.91015625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9072265625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9111328125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.91162109375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9130859375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.912109375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9130859375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.91357421875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.91650390625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.916015625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.916015625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9189453125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9208984375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9208984375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.92578125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.923828125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.931640625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9306640625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9296875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.93359375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.93310546875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.93505859375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9384765625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.93359375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.93994140625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.94189453125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.94091796875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.94482421875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.94384765625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9501953125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9453125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9482421875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9453125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9501953125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.95068359375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.953125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.95263671875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.955078125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.95703125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.95703125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.95849609375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.95751953125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9599609375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9609375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9619140625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9619140625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9619140625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9619140625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.966796875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.96484375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.96533203125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.96728515625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9677734375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.96875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.96875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9697265625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9697265625
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.97216796875
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.97314453125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9755859375
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.46,
+          "probability": 0.9736328125
+        },
+        {
+          "word": ",0",
+          "start": 79.46,
+          "end": 79.5,
+          "probability": 0.9755859375
+        },
+        {
+          "word": ",0",
+          "start": 79.5,
+          "end": 79.52,
+          "probability": 0.9775390625
+        },
+        {
+          "word": ",0",
+          "start": 79.52,
+          "end": 79.56,
+          "probability": 0.97607421875
+        },
+        {
+          "word": ",0",
+          "start": 79.56,
+          "end": 79.6,
+          "probability": 0.9765625
+        }
+      ]
+    },
+    {
+      "start": 79.58,
+      "end": 79.58,
+      "text": "",
+      "words": []
+    }
+  ],
+  "input": "examples/reference-library/F12/collection-01/reference.mp4"
+}

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Push completed commits on main to origin. Commits on other branches stay local.
+branch=$(git branch --show-current 2>/dev/null || true)
+[ "$branch" = "main" ] || exit 0
+
+remote=${AUTO_PUSH_REMOTE:-origin}
+if ! git remote get-url "$remote" >/dev/null 2>&1; then
+  printf "Auto-push: remote '%s' is not configured; this commit is local only.\n" "$remote" >&2
+  exit 0
+fi
+
+if git push --set-upstream "$remote" main; then
+  printf "Auto-push: main pushed to %s.\n" "$remote"
+else
+  printf "Auto-push failed. The commit is still local; run 'git push %s main' after fixing authentication or network access.\n" "$remote" >&2
+  exit 1
+fi

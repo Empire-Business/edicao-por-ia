@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "client_id": "REPLACE_CLIENT",
+  "child_id": "REPLACE_CHILD",
+  "context_sha256": "REPLACE_CONTEXT_SHA256",
+  "timebase": "clean_master_frames",
+  "caption_pipeline": "after_visuals",
+  "style": {
+    "direction": "PREENCHER com direção de arte concreta e contexto aprovado",
+    "colors": {
+      "foreground": "#FFFFFF",
+      "background": "#101820",
+      "accent": "#8BC5CF"
+    },
+    "font_family": "sans-serif",
+    "status": "unbranded_template_not_client_approval"
+  },
+  "beats": [
+    {
+      "id": "beat-001",
+      "utterance_ids": [
+        "u-0001"
+      ],
+      "start_frame": 0,
+      "end_frame": 60,
+      "meaning": "PREENCHER com sentido real da fala",
+      "purpose": "PREENCHER com motivo para manter o apresentador",
+      "mode": "keep",
+      "engine": "none"
+    }
+  ]
+}

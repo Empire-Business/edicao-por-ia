@@ -1,0 +1,34 @@
+version: 1
+transcription:
+  backend: auto
+  language: auto
+  apple_silicon_model: mlx-community/whisper-large-v3-turbo
+  faster_whisper_gpu_model: large-v3-turbo
+  faster_whisper_cpu_model: medium
+  word_timestamps: true
+  vad: true
+analysis:
+  transcript_chunk_seconds: 600
+  transcript_overlap_seconds: 8
+  contact_sheet_interval_seconds: 20
+  candidate_cut_frame_window_seconds: 1.0
+render:
+  draft_crf: 25
+  final_crf: 18
+  audio_bitrate: 192k
+  edge_audio_fade_ms: 5
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+  max_av_duration_drift_ms: 80
+
+reference_script:
+  mode: flexible
+  reorder_policy: preserve_unless_requested
+  missing_content_policy: report_do_not_invent
+silence_removal:
+  enabled: true
+  mode: pattern_default
+  detection_noise: "-40dB"
+  detection_minimum_duration_seconds: 0.15
+  require_speech_protection: true

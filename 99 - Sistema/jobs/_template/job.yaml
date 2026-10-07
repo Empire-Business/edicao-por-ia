@@ -1,0 +1,61 @@
+id: example-job
+status: created
+pattern: talking-head-clean-v1
+client: null
+project: null
+expected_outputs: 1
+sources:
+  - path: /absolute/path/to/source.mp4
+    role: primary
+requirements:
+  speech_cleanup: true
+  split_source: false
+  captions: pattern_default
+  preserve_phrases: []
+notes: ""
+
+reference_script:
+  enabled: false
+  paths: []
+  mode: flexible
+  reorder_policy: preserve_unless_requested
+  missing_content_policy: report_do_not_invent
+silence_removal:
+  enabled: true
+  mode: pattern_default
+  protected_ranges_path: null
+
+supporting_assets: []
+# Example item:
+# - path: /path/to/screenshot.png
+#   type: image
+#   role: proof
+#   notes: dashboard result screenshot
+#   cue_phrases: ["resultado", "número", "crescimento"]
+#   script_block_ids: []
+#   child_id: ""
+#   priority: optional
+#   preferred_duration_s: 2.0
+#   max_duration_s: 5.0
+#   placement_mode: auto_semantic
+#   manual_windows: []
+
+motion:
+  enabled: auto
+  engine: auto
+  preset: ""
+  intensity: restrained
+  max_new_design_iterations: 2
+
+
+# v1.4: list only the CURRENT explicit overrides, not inherited defaults.
+explicit_fields: []
+# Example: [requirements.captions, silence_removal.mode, motion.intensity]
+
+
+visual_direction:
+  mode: auto
+  allow_background_change: false
+  allow_external_generation: false
+  external_budget: 0
+  notes: ""

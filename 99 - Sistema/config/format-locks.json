@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "policy": "Consolidated formats require a current explicit author instruction before changing this lock. Codes/names/recipes preserved in this release.",
+  "formats": {
+    "factory.f01": {
+      "code": "F01",
+      "name": "WhatsApp Narrado",
+      "pattern": "f01-v1",
+      "definition_sha256": "59dd39c9718cc4d3beecd82e961055b959cde61fef7b36099fd301d8c3aeea06",
+      "pattern_sha256": "8a027c580c1322c12ad29f7add1456bbd4e91536e743bdab9020fdab99adc3b5"
+    },
+    "factory.f04": {
+      "code": "F04",
+      "name": "Pessoa → Animação",
+      "pattern": "f04-v1",
+      "definition_sha256": "157dde98748658def519eae609ec163400c03133dce3feeb1c1acfae4ddbd31d",
+      "pattern_sha256": "9ead614443fec395cee342055a568b7bafeea114bba73603fa6a71eb62ab12b2"
+    },
+    "factory.f05": {
+      "code": "F05",
+      "name": "Notícia Comentada",
+      "pattern": "f05-v1",
+      "definition_sha256": "578f24d58627acf7b4154506481703bfe45ae8b9d7e112b5830e9f19bf076838",
+      "pattern_sha256": "5a31e7ce932454345fbca991c867b1c879d10e2abbf055ca794e806205306ed8"
+    },
+    "factory.f06": {
+      "code": "F06",
+      "name": "Diagramas",
+      "pattern": "f06-v1",
+      "definition_sha256": "3593ae6739e915ecf66f1f7f6d258d0b9b361506c1cef98bee2a0c3eea1cbe80",
+      "pattern_sha256": "3accbf897c496bf1123897ef04f6072613a673dbf154817d5acaef8e40f8a0bd"
+    },
+    "factory.f07": {
+      "code": "F07",
+      "name": "Motion Institucional",
+      "pattern": "f07-v2",
+      "definition_sha256": "b76fb4410a761ffab03555c8fec117b30e2a3c3687540f0c068de2bc1b400359",
+      "pattern_sha256": "8786da1f685126a3cc461eda9b62de84ec90ba87cbb2694f6230e6c634d13d4a"
+    },
+    "factory.f08": {
+      "code": "F08",
+      "name": "Pessoa + Tela",
+      "pattern": "f08-v2",
+      "definition_sha256": "7d88b7a17f35a3ec357e98ffadc9cb899235869fed901b0e3db8ab31cefaf25c",
+      "pattern_sha256": "9505e84a2b085a59018bbe77197658e871711599a1a21c2dab0ef10784d2c6d3"
+    },
+    "factory.f10": {
+      "code": "F10",
+      "name": "Produto Explicado",
+      "pattern": "f10-v1",
+      "definition_sha256": "5d0d19c012afc18e8eab725d62b4f0d7a37744096a3bfd0f45f7b84ac5628982",
+      "pattern_sha256": "d894ba941d97e313982ac33cb8efaf159aa21f89f4dd7a0bbd3ae16770b7bf74"
+    },
+    "factory.f12": {
+      "code": "F12",
+      "name": "Documentário",
+      "pattern": "f12-v1",
+      "definition_sha256": "7aa03065becb6610fb2687b3f7637e2fd2adcd6dfb4589e026f5c072d83aa08f",
+      "pattern_sha256": "e610d2ed8fb543adc06fe26672998bd5c289e14ec3c4c9b0751e62ec081d5bff"
+    },
+    "factory.f13": {
+      "code": "F13",
+      "name": "Dados Dark",
+      "pattern": "f13-v2",
+      "definition_sha256": "31313d79b47a61336c5b0a78c3c6d669607b613ae2eb6384ceef44983cd9abf9",
+      "pattern_sha256": "8a99955ea7774c35c5302a731c3129741da5d37dd22dfce92058e99dfa63bec5"
+    },
+    "factory.f14": {
+      "code": "F14",
+      "name": "Lista em Tela",
+      "pattern": "f14-v1",
+      "definition_sha256": "fd75e3ebbb639c757eabcc0dadfdb84c5d4752bfe25a6620eba9de4fb2d5326b",
+      "pattern_sha256": "2188f82c193bc2693595d95487c3ec83193739f7704028068692e425868ec68d"
+    },
+    "factory.f15": {
+      "code": "F15",
+      "name": "Dois Lados",
+      "pattern": "f15-v1",
+      "definition_sha256": "6511d93cdac07a526c01d87756a128b24a8feb8a2cc6b5081d935a7764e7d190",
+      "pattern_sha256": "123c7f7554370b28db9be2f233adb8a9f0cc712c2302edf49100fcd7404f04fb"
+    },
+    "factory.f16": {
+      "code": "F16",
+      "name": "Comentário com B-roll",
+      "pattern": "f16-v1",
+      "definition_sha256": "cbcc75a09f25b4bd9c977431eb222805e4c27bc3119239b5ef6fc87d06a538fb",
+      "pattern_sha256": "b4c6c30c765209f49f5f477b5e67f2851c78396b81c9aa1699a64357a1bfe6e3"
+    }
+  }
+}

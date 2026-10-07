@@ -1,0 +1,23 @@
+{
+  "kind": "Real migration of a copy of input v1.5 ZIP, with synthetic client/job/custom settings",
+  "checks": {
+    "preview_preserves_old_version": true,
+    "modified_pattern_is_reported": true,
+    "custom_pattern_not_overwritten": true,
+    "private_client_database_preserved": true,
+    "approved_legacy_job_preserved": true,
+    "unmanaged_pattern_preserved": true,
+    "old_version_backed_up": true,
+    "new_pattern_available_for_manual_merge": true,
+    "native_setup_without_conflicts": true,
+    "existing_claude_denials_preserved": true,
+    "codex_main_model_preserved": true,
+    "explicit_disable_preserved": true,
+    "seven_codex_roles_written": true,
+    "installed_validation_accepts_customization": true
+  },
+  "passed": 14,
+  "total": 14,
+  "native_agents_launched": false,
+  "original_user_installation_changed": false
+}

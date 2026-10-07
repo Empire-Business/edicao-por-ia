@@ -1,0 +1,37 @@
+id: parent-recording
+status: created
+pattern: reels-dynamic-v1
+expected_outputs: 2
+sources:
+  - path: /absolute/path/to/recording.mp4
+    role: primary
+relationship: one-source-many-outputs
+requirements:
+  speech_cleanup: true
+  split_source: true
+  captions: pattern_default
+  preserve_phrases: []
+boundaries:
+  mode: auto_with_review
+  explicit: []
+notes: "Describe any known order or where one video starts/ends."
+
+reference_script:
+  enabled: false
+  paths: []
+  mode: flexible
+  reorder_policy: preserve_unless_requested
+  missing_content_policy: report_do_not_invent
+silence_removal:
+  enabled: true
+  mode: pattern_default
+  protected_ranges_path: null
+reference_assignments: []
+# Example association (fill only with the real source ranges):
+# - child_id: video-01
+#   reference_path: references/roteiro-a.md
+#   block_ids: [A01, A02]
+#   source_range: {start: 0, end: 100}
+# - child_id: video-02
+#   reference_path: references/roteiro-b.md
+#   source_range: {start: 105, end: 210}

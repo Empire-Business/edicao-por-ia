@@ -1,0 +1,11 @@
+{
+  "python_compileall": "PASS",
+  "job_templates_schema_validation": "PASS (3 templates)",
+  "legacy_patterns_byte_for_byte": "PASS (3 patterns)",
+  "unit_tests": 37,
+  "integration_checks": 16,
+  "original_smoke_checks": 6,
+  "real_speech_ASR": "NOT RUN",
+  "LLM_editorial_behavior": "NOT RUN",
+  "human_auditory_review": "NOT RUN"
+}

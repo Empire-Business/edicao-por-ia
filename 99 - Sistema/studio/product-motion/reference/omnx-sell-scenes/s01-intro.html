@@ -1,0 +1,52 @@
+<style>
+  [data-composition-id="s01-intro"] .stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px; }
+  [data-composition-id="s01-intro"] .lockup { display: flex; align-items: center; gap: 26px; }
+  [data-composition-id="s01-intro"] .omnx-logo { width: 760px; height: auto; display: block; overflow: visible; }
+  [data-composition-id="s01-intro"] .sell { font-size: 144px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--fg); display: block; }
+  [data-composition-id="s01-intro"] .line { display: flex; gap: 20px; font-size: 76px; font-weight: 600; letter-spacing: -0.02em; color: var(--fg); }
+  [data-composition-id="s01-intro"] .line span { display: block; }
+  [data-composition-id="s01-intro"] .line .g { color: var(--primary); }
+  [data-composition-id="s01-intro"] .tag { font-size: 30px; color: var(--muted-fg); text-align: center; max-width: 1100px; }
+  [data-composition-id="s01-intro"] .rule { width: 140px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--gold), var(--primary)); display: block; }
+  #root.fmt-v [data-composition-id="s01-intro"] .omnx-logo { width: 560px; }
+  #root.fmt-v [data-composition-id="s01-intro"] .sell { font-size: 106px; }
+  #root.fmt-v [data-composition-id="s01-intro"] .lockup { flex-direction: column; gap: 18px; }
+  #root.fmt-v [data-composition-id="s01-intro"] .line { flex-wrap: wrap; justify-content: center; font-size: 78px; max-width: 900px; row-gap: 0; }
+  #root.fmt-v [data-composition-id="s01-intro"] .tag { font-size: 34px; max-width: 860px; }
+  [data-composition-id="s01-intro"] .flash { position: absolute; inset: 0; background: radial-gradient(900px 600px at 50% 50%, rgba(232,196,106,.35), transparent 70%); opacity: 0; }
+</style>
+<div class="paper"></div>
+<div class="paper-grid" data-layout-allow-overflow></div>
+<div class="flash"></div>
+<div class="stage" data-layout-allow-overflow>
+  <div class="lockup">
+    {{partial:logo:intro}}
+    <b class="sell">Sell</b>
+  </div>
+  <div class="rule"></div>
+  <div class="line"><span>Reuniões</span><span>que</span><span>viram</span><span class="g">receita.</span></div>
+  <div class="tag">IA para preparar, conduzir e analisar cada reunião de vendas.</div>
+</div>
+<script>
+(() => {
+  const all = document.querySelectorAll('[data-composition-id="{{ID}}"]');
+  const root = all[all.length - 1];
+  const $ = gsap.utils.selector(root);
+  const tl = gsap.timeline({ paused: true });
+  tl.fromTo($('.paper-grid'), { scale: 1.15, opacity: 0 }, { scale: 1, opacity: 1, duration: 2.4, ease: 'power2.out' }, 0);
+  tl.fromTo($('.lg-o'), { scale: 0.2, opacity: 0, transformOrigin: '106px 100px', rotation: -90 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.8, ease: 'expo.out' }, 0.15);
+  tl.fromTo($('.lg-m'), { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }, 0.32);
+  tl.fromTo($('.lg-n'), { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' }, 0.42);
+  tl.fromTo($('.lg-x1'), { x: -80, y: -60, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.7, ease: 'expo.out' }, 0.55);
+  tl.fromTo($('.lg-x2'), { x: 80, y: -60, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.7, ease: 'expo.out' }, 0.62);
+  tl.fromTo($('.flash'), { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' }, 0.8);
+  tl.to($('.flash'), { opacity: 0, duration: 0.9, ease: 'power2.in' }, 1.05);
+  tl.fromTo($('.sell'), { x: -30, opacity: 0, clipPath: 'inset(0 100% 0 0)' }, { x: 0, opacity: 1, clipPath: 'inset(0 0% 0 0)', duration: 0.6, ease: 'power3.out' }, 0.9);
+  tl.fromTo($('.rule'), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: 'power3.inOut' }, 1.25);
+  tl.fromTo($('.line span'), { y: 50, opacity: 0, filter: 'blur(8px)' }, { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.6, stagger: 0.09, ease: 'power3.out' }, 1.45);
+  tl.fromTo($('.tag'), { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' }, 2.05);
+  // exit: push in and dissolve toward the product
+  tl.to($('.stage'), { scale: 1.12, opacity: 0, filter: 'blur(6px)', duration: 0.55, ease: 'power2.in' }, {{DUR}} - 0.6);
+  window.__timelines["{{ID}}"] = tl;
+})();
+</script>

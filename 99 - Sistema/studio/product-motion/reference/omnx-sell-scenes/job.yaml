@@ -1,0 +1,14 @@
+job_id: omnx-sell-motion
+format: omnxsell
+project: motion-plataforma
+type: product-motion (no source footage)
+engine: hyperframes@0.8.92 (HTML + GSAP, deterministic seek render), Node 24
+source_of_truth:
+  product_repo: /Volumes/bguzelassd/05-desenvolvimento/omnx-sell (Empire-Business/omnx-sell @ bdd5524)
+  design: docs/DESIGN.md v3.1 (Poppins, paper #fbfaf7, gold #8a6410, room #0a0806)
+  reference_screens: assets/refs/*.png (user-supplied screenshots)
+deliverables:
+  - renders/omnx-sell-motion-16x9.mp4 (1920x1080)
+  - renders/omnx-sell-motion-9x16.mp4 (1080x1920)
+build: node src/build.mjs && src/make_music.sh <total>
+explicit_fields: [delivery.aspect_ratios, content.coverage, motion.product_demo_style]
