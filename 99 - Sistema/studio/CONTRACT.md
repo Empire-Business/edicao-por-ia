@@ -34,6 +34,12 @@ Contato visual = páginas com IDs, tempos e hashes. A amostragem limitada cobre 
 
 No máximo 2/3/4 registros por ciclo (econômico/equilibrado/elaborado), não três rodadas obrigatórias nem 'até tudo ser 8'. O registro conta entre revisões do plano no mesmo diretório/child; não zere histórico para renovar orçamento. Não há aprovação após timeout. Gates atendidos encerram o ciclo; sem avanço concreto, parar antes do teto e propor decisão. Esgotamento nunca torna a peça aprovada.
 
+Para problemas ligados à fala, usar `method/EDITORIAL_REASONING.md`: manter os campos atuais
+de `issues[]` e, quando útil, acrescentar `editorial_context` com trecho/IDs, beat, problema e
+resultado esperado. É contexto opcional da correção, sem alterar schema_version, gates,
+status/resolução ou limites. Sem fala, marcar não aplicável. A anotação não comprova escuta,
+visualização ou correspondência semântica e não substitui evidência do render.
+
 Relatório é declaração do revisor + integridade dos arquivos. Não é leitura artística automática. Para identidade nova: stills/animatic precisam da aprovação do usuário; estilos já aprovados podem seguir a autonomia combinada. Publicar, enviar a terceiros, gerar com APIs e gastar fora do combinado continuam exigindo autorização própria.
 
 ## Som e proporções

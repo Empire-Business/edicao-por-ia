@@ -35,6 +35,37 @@ class VisualDirectionTests(unittest.TestCase):
     def bad(self):self.assertFalse(self.runcheck()['structural_ok'])
     def test_valid(self):self.assertTrue(self.runcheck()['structural_ok'])
     def test_no_render_approval(self):self.assertIs(self.runcheck()['render_approval'],False)
+    def annotate_editorial(self):
+        note=json.loads((ROOT/'visual/EDITORIAL_REASONING_TEMPLATE.json').read_text())['beat_annotation']
+        note.update(information_forms=['comparacao'],format_mechanism='existing keyphrase fixture',
+                    reason='Synthetic compatibility fixture, not a semantic or artistic approval.',evidence_role='concept')
+        self.p['beats'][0]['editorial_reasoning']=note
+    def test_editorial_annotation_preserves_render_spec(self):
+        self.files();export(self.cp,self.sp,self.pp,self.r/'before')
+        original=json.loads((self.r/'before/b1-spec.json').read_text())
+        self.annotate_editorial();self.files();export(self.cp,self.sp,self.pp,self.r/'after')
+        self.assertEqual(original,json.loads((self.r/'after/b1-spec.json').read_text()))
+        self.assertEqual(json.loads((self.r/'before/mechanical-check.json').read_text()),
+                         json.loads((self.r/'after/mechanical-check.json').read_text()))
+        # Documentation may enrich a brief, but the render parameters and mechanical gates do not change.
+        brief=json.loads((self.r/'after/b1-brief.json').read_text())
+        self.assertEqual(brief['direction']['editorial_reasoning'],self.p['beats'][0]['editorial_reasoning'])
+    def test_editorial_annotation_allows_all_keep_without_effect_quota(self):
+        self.annotate_editorial()
+        for beat in self.p['beats']:beat.update(mode='keep',engine='none')
+        self.assertTrue(self.runcheck()['structural_ok'])
+        self.files();result=export(self.cp,self.sp,self.pp,self.r/'out')
+        self.assertEqual(result['items'],[]);self.assertFalse(result['rendered'])
+    def test_editorial_annotation_cannot_approve_collision(self):
+        self.annotate_editorial();self.p['beats'][0]['box']=[.1,.2,.4,.5]
+        result=self.runcheck();self.assertFalse(result['structural_ok']);self.assertFalse(result['render_approval'])
+    def test_editorial_annotation_cannot_bypass_stale_master(self):
+        self.annotate_editorial();(self.r/'base.mp4').write_text('changed after annotation')
+        self.bad()
+    def test_editorial_annotation_cannot_turn_generated_material_into_proof(self):
+        self.annotate_editorial();self.p['beats'][0].update(engine='image_generator',evidence='provided_media')
+        self.p['beats'][0]['editorial_reasoning']['evidence_role']='real_proof'
+        self.bad()
     def test_collision_face(self):self.p['beats'][0]['box']=[.1,.2,.4,.5];self.bad()
     def test_collision_captions(self):self.p['beats'][0]['box']=[.5,.5,.4,.4];self.bad()
     def test_all_covered(self):self.p['beats'].pop();self.bad()

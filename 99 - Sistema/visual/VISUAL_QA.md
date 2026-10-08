@@ -21,5 +21,9 @@ estouro visual, flashes ou animação descontrolada? Um frame estático não res
 rascunho ou final corretamente? Revisão mecânica não foi chamada de teste com audiência?
 
 Registrar arquivo/hash visto, trechos revistos, responsável pela revisão e limitações.
+Para cada problema localizado, acrescentar tempo/frame na timebase do relatório, trecho/ID
+da fala, beat/shot, problema, correção e resultado esperado, conforme
+`method/EDITORIAL_REASONING.md`. Conferir a relação/negação real, não só a presença de um
+bloco ou a proximidade de uma palavra. O template editorial é opcional e não altera gates.
 Não há nota universal nem promessa de “melhor edição possível”. Há uma revisão verificável
 para elevar a execução do material disponível. Sem fonte de alta qualidade, informar o limite.

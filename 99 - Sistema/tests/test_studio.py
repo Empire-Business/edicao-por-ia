@@ -82,6 +82,31 @@ class Studio(unittest.TestCase):
  def failed_review(self):
   r=self.review();r['gates']['composition']['status']='fail';r['issues']=[{'gate':'composition','shot_id':'s01','start_frame':1,'end_frame':3,'fix':'Move the crossing line behind the node.','severity':'blocking'}];return r
  def test_failed_gate_requests_fix(self):r=self.failed_review();p=self.save_review(r);self.assertEqual(register_review(self.pp,p)['action'],'fix_top_issues_and_review_changed_shots')
+ def editorial_context(self):
+  context=json.loads((ROOT/'visual/EDITORIAL_REASONING_TEMPLATE.json').read_text())['issue_context']
+  context.update(beat_id='fixture-beat',problem='Synthetic crossing-line issue.',
+                 expected_result='Move the line without changing the existing gates or timeline.')
+  return context
+ def test_editorial_issue_context_preserves_legacy_blocker(self):
+  r=self.failed_review();before=validate_review(self.pp,self.save_review(r,'before.json'))[2]
+  r['issues'][0]['editorial_context']=self.editorial_context()
+  after=validate_review(self.pp,self.save_review(r,'after.json'))[2]
+  for field in ('all_required_gates_pass','failed_gates','pending_gates','evidence_scope'):
+   self.assertEqual(before[field],after[field])
+  self.assertEqual(after['top_fixes'][0]['fix'],before['top_fixes'][0]['fix'])
+  self.assertFalse(after['all_required_gates_pass'])
+ def test_editorial_context_cannot_resolve_open_issue_or_pending_gate(self):
+  r=self.failed_review();r['gates']['composition']['status']='pass'
+  r['issues'][0]['editorial_context']={**self.editorial_context(),'resolved':True}
+  result=validate_review(self.pp,self.save_review(r))[2]
+  self.assertFalse(result['all_required_gates_pass']);self.assertEqual(len(result['top_fixes']),1)
+  r['issues'][0]['resolved']=True;r['gates']['motion_playback']['status']='pending'
+  result=validate_review(self.pp,self.save_review(r,'pending.json'))[2]
+  self.assertFalse(result['all_required_gates_pass']);self.assertIn('motion_playback',result['pending_gates'])
+ def test_editorial_context_cannot_bypass_stale_review(self):
+  r=self.failed_review();r['issues'][0]['editorial_context']=self.editorial_context()
+  self.plan['visual_goal']='Changed after review';self.save_plan()
+  self.assertRaises(ValueError,validate_review,self.pp,self.save_review(r))
  def test_no_infinite_loop(self):
   for i in range(3):
    r=self.failed_review();r['reviewer']=f'fixture-{i}';result=register_review(self.pp,self.save_review(r,f'r{i}.json'))

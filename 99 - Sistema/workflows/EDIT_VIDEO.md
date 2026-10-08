@@ -50,6 +50,12 @@ Use `tools/retime_transcript.py` with the actual retained transcript and final E
 ## 7b. Final visual insertions and JavaScript motion
 With the clean master and retimed transcript available, finalize insertion timing. When the user asks for rich illustrations, speech-to-visual direction or scene-aware composition, run `DIRECT_VISUALS.md` first; inspect real frames, map space and plan semantic beats. Every retained idea receives a decision, not necessarily an effect. Consider a meaningful reusable animation unless disabled. Follow `CREATE_JS_ANIMATIONS.md` for code-based motion. Hash the clean master and EDL, then anchor every layer to integer clean-master frames. Use the motion compositor to keep narrator audio intact. Do not turn silent motion/B-roll into a spoken EDL segment. Caption-safe areas remain reserved; advanced overlapping captions/media need explicit composition order.
 
+For visual planning in step 7b, use `method/EDITORIAL_REASONING.md` within the existing plan:
+identify the information relationship, select a mechanism allowed by the pinned recipe, and
+tie it to retained speech and actual evidence. This does not change the recipe, add effect
+quotas, move speech, or require a new artifact for old/non-visual jobs. A justified `keep`
+remains complete coverage.
+
 ## 8. QA and delivery
 Run mechanical QA and `workflows/QA.md`. Verify script idea coverage when applicable, retained pauses/words, natural rhythm and A/V sync. Mechanical success alone is not auditory/editorial approval. Fix/version EDLs, not sources. Render final only after applicable required gates are actually satisfied.
 

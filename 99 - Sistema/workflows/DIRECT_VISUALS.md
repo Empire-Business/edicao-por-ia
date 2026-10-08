@@ -31,6 +31,9 @@ pendências reais e registro de aprendizado. Não exigir formulário longo.
    `keep` ou visual. Usar `visual/PLAN_TEMPLATE.json` como estrutura; todos os IDs precisam vir
    do contexto. O bloco pode ilustrar várias falas sem mudar a cena a cada frase. Uma inserção
    não cruza planos sem novo mapa de composição.
+   Aplicar `method/EDITORIAL_REASONING.md`: forma da informação → mecanismo permitido pela
+   receita → material correspondente → cue semântico no master final. Registrar no plano
+   existente; `editorial_reasoning` é anotação opcional, não um requisito para jobs antigos.
 6. Escolher arte e execução. Para estilo novo, criar um trecho piloto; para estilo aprovado,
    reutilizar. Escrever prompts concretos, não “faça uma ilustração incrível”. Materiais gerados
    e simulações não se tornam provas. Confirmar ferramenta existente antes de invocar.
@@ -53,6 +56,8 @@ pendências reais e registro de aprendizado. Não exigir formulário longo.
 10. Rever começo/meio/fim e momentos de movimento de CADA inserção no vídeo renderizado. Revisão
     em velocidade normal é obrigatória para qualidade de movimento; stills não comprovam ausência
     de tremulação. Verificar também sentido, dados, continuidade, áudio e legibilidade no celular.
+    Localizar problemas por tempo/frame, fala/ID e beat/shot; registrar correção e resultado
+    esperado no QA existente. Não usar cotas de movimento para substituir revisão semântica.
 11. Registrar feedback e versões aprovadas. Corrigir somente cenas afetadas. Mudança de EDL,
     crop ou master invalida o plano espacial/temporal, mesmo se a duração não mudar.
 

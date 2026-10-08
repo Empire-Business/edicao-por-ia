@@ -20,6 +20,10 @@ rejeitadas. A intenção é tornar perceptível o que a fala entrega, sem fabric
    orçamento e fallback. Proposta não é observação nem material já produzido.
 
 ## Do significado ao visual, não da palavra ao ícone
+Durante esta leitura, usar `method/EDITORIAL_REASONING.md` para nomear a forma da informação
+e ligá-la ao mecanismo permitido pela receita. A classificação organiza o plano existente;
+não impõe blocos, cadência, densidade, efeitos ou alteração de formato. `keep` continua válido.
+
 “Tudo depende da aprovação do dono” pode pedir uma sequência de tarefas convergindo para um
 único ponto e ficando em espera. Não pede automaticamente foto genérica de executivo nem
 três ícones de dinheiro. Construir visualmente a RELAÇÃO descrita: causa, dependência,

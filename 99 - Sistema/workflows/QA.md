@@ -19,6 +19,12 @@ Check the required gates in `method/QUALITY_BAR.md` against the pattern and deci
 
 For cut-heavy speech edits, review short windows around cuts rather than replaying the entire source by default.
 
+For visual issues, use `method/EDITORIAL_REASONING.md` to link each repair to its final
+timestamp/frame range, retained speech/ID, affected beat/shot, actual evidence and expected
+result. Add this to the existing QA record; studio issues may carry optional `editorial_context`.
+Preserve required fields/gates and review limits. Metadata never resolves an issue or certifies
+semantic correspondence; a nearby word is not necessarily the correct cue.
+
 ## Result
 - PASS: all required gates `ATENDIDO` or `NÃO SE APLICA`.
 - FIX: any required gate `PRECISA DE AJUSTE`.

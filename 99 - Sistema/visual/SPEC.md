@@ -43,6 +43,15 @@ para os quatro componentes JS existentes: keyphrase, steps, lower-third e proof-
 Demais rotas produzem brief, com dependência pendente. Para uma ilustração original em SVG,
 o agente ainda precisa escrever e testar o componente; não basta declarar js_svg.
 
+### Anotação editorial opcional (compatível com 1.0)
+`editorial_reasoning` pode documentar forma informacional, mecanismo da receita, motivo,
+cues semânticos e papel da evidência, conforme `method/EDITORIAL_REASONING.md` e
+`visual/EDITORIAL_REASONING_TEMPLATE.json`. Cues podem registrar `utterance_id`, `word_index`
+do transcript retimado, `word` e `frame` final após confirmação. Não substituir `meaning`,
+`purpose`, `utterance_ids`, `evidence` nem tempos/IDs obrigatórios. A ferramenta não valida
+o conteúdo da anotação nem o converte em parâmetros de render. Sua ausência não reprova
+planos antigos; sua presença não concede aprovação semântica, artística ou de publicação.
+
 ## Saídas e limites
 `check` verifica hashes, isolamento, cobertura, tempos, áreas declaradas, colisões e rótulos.
 `export` grava briefs e specs candidatos a rascunho. Nenhum desses comandos gera aprovação

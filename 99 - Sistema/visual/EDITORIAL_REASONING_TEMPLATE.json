@@ -1,0 +1,18 @@
+{
+  "status": "template_not_evidence",
+  "usage": "Opcional. Copiar beat_annotation para editorial_reasoning de um beat; copiar issue_context para editorial_context de um issue existente. Preencher com fala, receita e evidência atuais. Não é plano executável nem revisão aprovada.",
+  "beat_annotation": {
+    "information_forms": [],
+    "format_mechanism": "",
+    "reason": "",
+    "semantic_cues": [],
+    "evidence_role": "not_applicable"
+  },
+  "issue_context": {
+    "beat_id": null,
+    "utterance_ids": [],
+    "spoken_excerpt": null,
+    "problem": "",
+    "expected_result": ""
+  }
+}
