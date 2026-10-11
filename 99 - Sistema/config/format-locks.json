@@ -54,9 +54,9 @@
     "factory.f12": {
       "code": "F12",
       "name": "Documentário",
-      "pattern": "f12-v1",
-      "definition_sha256": "7aa03065becb6610fb2687b3f7637e2fd2adcd6dfb4589e026f5c072d83aa08f",
-      "pattern_sha256": "e610d2ed8fb543adc06fe26672998bd5c289e14ec3c4c9b0751e62ec081d5bff"
+      "pattern": "f12-v3",
+      "definition_sha256": "dc0dd87ef6a410e293b43ec2455905f4ca9baa6027320ff08692b18988450b19",
+      "pattern_sha256": "2ca62349159bfc1cd287af23b8137e29519772351a94090ed78afa530eebeb0d"
     },
     "factory.f13": {
       "code": "F13",
@@ -90,6 +90,26 @@
       "code": "F02",
       "definition_sha256": "1fc8ef19980ee290a3e2edafa048f524bd29300804e5ad4f8187adf47b3f73d4",
       "pattern_sha256": "db1a14878804cc0061b628aade6d50196a2e78c60886eeb7178f374ff2361dbe"
+    },
+    "official.d7a2bb0a7fc640f79f9a88538a1eec81": {
+      "code": "F03",
+      "definition_sha256": "e8c47470e568728cf48fea8f9b502df0f76207b6d5ff7fecdb6a7de88ffcbc22",
+      "pattern_sha256": "fb0a7a69f4f04611d43e88c69e756e62dd44375fb16a826c621fa02ba14820eb"
+    },
+    "official.057f1c25705842ddafb13387b7aeb0b4": {
+      "code": "F09",
+      "definition_sha256": "67b1231aa3aacf0de51c5d401347117b666d73c5c9280ba606fe8e5e04b058a0",
+      "pattern_sha256": "f502246b64a38c519f2741972af1b1022d2ea8e4afdb40397d035b2639a3e6fd"
+    },
+    "official.b625febf4f0c4953a8beb3d0c99a4e14": {
+      "code": "F11",
+      "definition_sha256": "4cea836b1f69878a050ce6c9e9e4a9ec5e531778c2af60231f47243b842b1bb0",
+      "pattern_sha256": "f5d6f4a1725e490ad048523fdec260dd1fc328366b516c12fc07772490396d27"
+    },
+    "official.96d753b750d544708fc6c8746d3ccf45": {
+      "code": "F17",
+      "definition_sha256": "403402f6958d1a8ad3f2e1fc2bcc15199e3decc084866c4092f5f00cfa18e755",
+      "pattern_sha256": "4780debf77ac8e663881365d7a734154871605cfc44179a965b9a9199c089167"
     }
   }
 }

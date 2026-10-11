@@ -18,17 +18,21 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | --- | --- |
 | F01 | WhatsApp Narrado |
 | F02 | Talking Head |
+| F03 | Dark com B-roll |
 | F04 | Pessoa → Animação |
 | F05 | Notícia Comentada |
 | F06 | Diagramas |
 | F07 | Motion Institucional |
 | F08 | Pessoa + Tela |
+| F09 | Personagem |
 | F10 | Produto Explicado |
+| F11 | Narração Ilustrada |
 | F12 | Documentário |
 | F13 | Dados Dark |
 | F14 | Lista em Tela |
 | F15 | Dois Lados |
 | F16 | Comentário com B-roll |
+| F17 | Colunas |
 
 Os códigos e nomes consolidados são preservados. Novos formatos oficiais ocupam o menor número ativo disponível com identidade interna própria; um código reaproveitado não herda a geração retirada. Todo oficial novo também precisa aparecer na galeria com exemplo real.
 

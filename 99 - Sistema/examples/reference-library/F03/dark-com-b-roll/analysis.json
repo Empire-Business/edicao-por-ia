@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "format_code": "F03",
+  "format_uid": "official.d7a2bb0a7fc640f79f9a88538a1eec81",
+  "example_url": "https://drive.google.com/file/d/1LqCxz49j_Y3Xq2wPuDIo-0SfPYDCUfii/view?usp=drivesdk",
+  "mechanism_details": {
+    "inputs": "Gravação do apresentador comentando um assunto e autorização para pesquisar B-roll (TikTok/YouTube só por ScrapeCreators). Trilha autorizada ou local. Escolher a ID visual separadamente; o fundo escuro vem da cor escura da ID.",
+    "mechanism": "Comentário em ambiente escuro do início ao fim. O apresentador aparece apenas falando dentro de um cartão; todo o resto é B-roll real pesquisado, em tela cheia ou em cartão, e estados animados: título montado palavra a palavra no tempo da fala, número que embaralha e bate, carimbos, objetos que entram girando, listas, chamadas técnicas e cartões empilhados. Legenda palavra a palavra sempre visível, fala quase sem respiros, trilha em dois atos abaixo da voz e sons curtos nos impactos.",
+    "steps": [
+      "Isolar a voz, cortar erros e apertar os respiros medindo as lacunas entre palavras (0,08–0,12 s); remapear os tempos das palavras.",
+      "Listar cada ideia da fala e pesquisar a imagem que a sustenta: a coisa citada e planos de objeto/ação sem texto. Conferir quadros, recortar legendas embutidas e registrar fontes.",
+      "Escolher só tomadas do apresentador falando para os cartões; nunca calado, de olhos fechados ou com o rosto cortado.",
+      "Dar a cada ideia um estado: tela cheia, cartão de mídia, objeto 3D, número, carimbo, lista, chamada ou duplicação. Nenhum estado só de texto; algo novo a cada 1,2–3 s.",
+      "Montar título e legenda palavra a palavra pelo tempo real das palavras; uma informação por estado.",
+      "Encaixar a trilha em dois atos pela fala e medir a distância para a voz; pôr sons curtos só nos impactos.",
+      "Tirar quadros de cada estado antes do render, depois revisar o vídeo inteiro por quadros, volume e sincronia."
+    ],
+    "avoid": "Não deixar tela só com palavras, usar objeto desenhado em código como plano principal quando a pesquisa está autorizada, mostrar o apresentador calado, manter legenda embutida em outro idioma, usar estética infantil em assunto sério, deixar a música cobrir a voz ou herdar roxo, fontes, rosto, logo e assunto do exemplo. Cores e fontes vêm da ID; o logo que aparece no exemplo é mídia do assunto comentado, não assinatura do formato."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/reference.mp4",
+      "sha256": "340292350dc8824e8ffd38ac584cbcf188beeca9e04eff323addc72f12d49fcf"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/card.jpg",
+      "sha256": "19133c289ca8a8be6e4c6d81c4b8b725db2a8c306521739383caa73bcc4ced54"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/fullscreen.jpg",
+      "sha256": "c48192da800f0bb86e3814dcc830c41549bd5aed93ce7ceccf8103832e613349"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/number.jpg",
+      "sha256": "284ca68437bb690da28774c7baa98455e64e36d8f5168ffe45a9aed125916bb6"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/stamp.jpg",
+      "sha256": "371b1c8dac1c8d9404e87d9533253b5fcf1e9f81054374193319aa3b398b27e9"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/duplication.jpg",
+      "sha256": "f11473f4b7f2cc490657335d30e639ffb086dc722b88c35da1ea08f791f47383"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/object.jpg",
+      "sha256": "82e1f7c4f89f63e0b8aaf27cc34cc418b55d9d63c0c807bc9924cb48ec9c32d2"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/list.jpg",
+      "sha256": "137a6aa33f3400d1d5a93fd599677b8598283f26fc75b32c1662bd0a17941093"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/slams.jpg",
+      "sha256": "5ca1ef718c515fd1241872edc7cd6833d4f3a8ec22c6faa99e7bf8576abb0f38"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/chat.jpg",
+      "sha256": "d8022f15a95c5122be45a3f090688cba02192152123656502f2c14fddda068ef"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/account.jpg",
+      "sha256": "58b7e7ec158131002dd5b93ed702b98fe5624b792f0c5a35a770a081ce2a72d0"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/researched-card.jpg",
+      "sha256": "b62ad5f36cf9727fd7d320f5283b2353019d5f797b8eadbea871e83f1c141b24"
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/ecosystem.jpg",
+      "sha256": "df83d767c4e8789e445f6944eff334a0be5732950563be1f6b54412bebed37c0"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/card.jpg",
+      "sha256": "19133c289ca8a8be6e4c6d81c4b8b725db2a8c306521739383caa73bcc4ced54",
+      "at_seconds": 0.6,
+      "caption": "Apresentador falando dentro de um cartão sobre o fundo escuro."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/fullscreen.jpg",
+      "sha256": "c48192da800f0bb86e3814dcc830c41549bd5aed93ce7ceccf8103832e613349",
+      "at_seconds": 2.4,
+      "caption": "B-roll pesquisado em tela cheia com legenda palavra a palavra."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/number.jpg",
+      "sha256": "284ca68437bb690da28774c7baa98455e64e36d8f5168ffe45a9aed125916bb6",
+      "at_seconds": 15.45,
+      "caption": "Número que embaralha e bate, com a unidade em bloco de destaque."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/stamp.jpg",
+      "sha256": "371b1c8dac1c8d9404e87d9533253b5fcf1e9f81054374193319aa3b398b27e9",
+      "at_seconds": 17.55,
+      "caption": "Objeto em cartão 3D com carimbo de veredito."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/duplication.jpg",
+      "sha256": "f11473f4b7f2cc490657335d30e639ffb086dc722b88c35da1ea08f791f47383",
+      "at_seconds": 21.15,
+      "caption": "Repetição mostrada por cartões empilhados e chamada técnica."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/object.jpg",
+      "sha256": "82e1f7c4f89f63e0b8aaf27cc34cc418b55d9d63c0c807bc9924cb48ec9c32d2",
+      "at_seconds": 22.6,
+      "caption": "Mídia em cartão com perspectiva, título palavra a palavra e etiqueta."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/list.jpg",
+      "sha256": "137a6aa33f3400d1d5a93fd599677b8598283f26fc75b32c1662bd0a17941093",
+      "at_seconds": 31.5,
+      "caption": "Lista que entra no tempo de cada palavra falada sobre imagem desfocada."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/slams.jpg",
+      "sha256": "5ca1ef718c515fd1241872edc7cd6833d4f3a8ec22c6faa99e7bf8576abb0f38",
+      "at_seconds": 37.2,
+      "caption": "Itens que batem um a um sobre imagem escurecida."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/chat.jpg",
+      "sha256": "d8022f15a95c5122be45a3f090688cba02192152123656502f2c14fddda068ef",
+      "at_seconds": 51.0,
+      "caption": "Interface recriada como objeto grande e rotulada como ilustração."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/account.jpg",
+      "sha256": "58b7e7ec158131002dd5b93ed702b98fe5624b792f0c5a35a770a081ce2a72d0",
+      "at_seconds": 57.1,
+      "caption": "Objeto ilustrativo com cadeado e carimbo."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/researched-card.jpg",
+      "sha256": "b62ad5f36cf9727fd7d320f5283b2353019d5f797b8eadbea871e83f1c141b24",
+      "at_seconds": 71.0,
+      "caption": "Vídeo pesquisado da pessoa citada dentro de cartão."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/ecosystem.jpg",
+      "sha256": "df83d767c4e8789e445f6944eff334a0be5732950563be1f6b54412bebed37c0",
+      "at_seconds": 116.6,
+      "caption": "Imagem real em tela cheia com título e destaque na palavra-chave."
+    }
+  ],
+  "source": {
+    "kind": "factory_edition_preview",
+    "edition": "E34 V7",
+    "job_render": "jobs/video-acabf31d362f/renders/br01-v7.mp4",
+    "source_sha256": "0ed0ef142d99efa9344297c53e8ce34570ff8efda81450639c5a6282eeb8b322",
+    "duration_s": 123.2,
+    "reference_copy_transcoded": true,
+    "drive_copy": {
+      "url": "https://drive.google.com/file/d/1LqCxz49j_Y3Xq2wPuDIo-0SfPYDCUfii/view?usp=drivesdk",
+      "bytes": 9628316,
+      "sha256": "031ce346acc203346d94a3b27a76d3de054b7c18ec80560d14216c1c365db507",
+      "note": "Cópia leve 720×1280 enviada pelo navegador (limite de 10 MB por envio)."
+    }
+  },
+  "review": {
+    "date": "2026-10-10",
+    "method": "Folhas de quadros a 1 qps do render inteiro e 12 quadros nomeados; medições de volume, sincronia e distância voz/música",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "O exemplo contém trechos pesquisados no TikTok e entrevistas de TV, além do rosto do autor; publicação decidida pelo autor."
+  }
+}

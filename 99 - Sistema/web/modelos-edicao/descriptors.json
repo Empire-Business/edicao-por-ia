@@ -472,5 +472,200 @@
       "reels"
     ],
     "hasPersonOnScreen": true
+  },
+  "F03": {
+    "category": "presenter",
+    "tags": [
+      "Dark",
+      "B-roll",
+      "Animação"
+    ],
+    "use": "Comentar notícias e ideias de negócio num vídeo escuro e muito animado, em que a pessoa aparece pouco e as imagens contam a história.",
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "B-roll",
+      "Trilha"
+    ],
+    "buildingBlocks": [
+      "Fundo escuro",
+      "Apresentador em cartão",
+      "B-roll real",
+      "Título palavra a palavra",
+      "Números com impacto",
+      "Carimbos",
+      "Legenda palavra a palavra",
+      "Trilha em dois atos"
+    ],
+    "searchTerms": [
+      "dark",
+      "video dark",
+      "escuro",
+      "fundo escuro",
+      "broll",
+      "b-roll",
+      "comentario",
+      "noticia",
+      "noticias",
+      "negocios",
+      "ia",
+      "inteligencia artificial",
+      "animacao",
+      "animado",
+      "motion",
+      "numeros",
+      "carimbo",
+      "palavra a palavra",
+      "legenda dinamica",
+      "apresentador em cartao",
+      "pessoa falando",
+      "pouco aparecendo",
+      "trilha",
+      "musica",
+      "sem respiro",
+      "ritmo rapido",
+      "reels",
+      "tiktok"
+    ],
+    "hasPersonOnScreen": true
+  },
+  "F09": {
+    "category": "presenter",
+    "tags": [
+      "Dois personagens",
+      "Diálogo",
+      "Legenda progressiva"
+    ],
+    "use": "Encenar uma conversa entre dois papéis para mostrar uma objeção e a resposta, sem tela dividida.",
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Dois vídeos",
+      "Roteiro"
+    ],
+    "buildingBlocks": [
+      "Dois personagens",
+      "Um por vez em tela cheia",
+      "Troca de turno colada",
+      "Cortes secos",
+      "Legenda palavra por palavra"
+    ],
+    "searchTerms": [
+      "personagem",
+      "personagens",
+      "dois personagens",
+      "dialogo",
+      "conversa",
+      "conversa encenada",
+      "encenacao",
+      "esquete",
+      "sketch",
+      "pergunta e resposta",
+      "objecao",
+      "mesma pessoa",
+      "dois papeis",
+      "dois videos",
+      "vendas",
+      "humor",
+      "legenda progressiva",
+      "cortes secos",
+      "ritmo rapido",
+      "reels"
+    ],
+    "hasPersonOnScreen": true
+  },
+  "F11": {
+    "category": "stories",
+    "tags": [
+      "Narração",
+      "Cenas ilustrativas",
+      "Metáforas"
+    ],
+    "use": "Contar regras, dicas ou ideias curtas com imagens que mostram ou simbolizam cada frase, aparecendo pouco ou nada.",
+    "cameraRequired": false,
+    "startingMaterials": [
+      "Áudio",
+      "Vídeo",
+      "Cenas"
+    ],
+    "buildingBlocks": [
+      "Narração",
+      "Cenas em tela cheia",
+      "Metáforas",
+      "Cortes por ideia",
+      "Legenda em blocos curtos"
+    ],
+    "searchTerms": [
+      "narracao",
+      "narracao ilustrada",
+      "voz",
+      "voice over",
+      "so audio",
+      "cenas",
+      "cenas de apoio",
+      "metafora",
+      "metaforas",
+      "ilustrado",
+      "imagens",
+      "dicas",
+      "regras",
+      "lista de dicas",
+      "etiqueta",
+      "comportamento",
+      "motivacional",
+      "legenda em bloco",
+      "caixa alta",
+      "tela cheia",
+      "cortes rapidos",
+      "tiktok",
+      "reels"
+    ],
+    "hasPersonOnScreen": false
+  },
+  "F17": {
+    "category": "presenter",
+    "tags": [
+      "Apresentador",
+      "Colunas",
+      "Etiquetas"
+    ],
+    "use": "Classificar itens em categorias enquanto a pessoa explica, com tudo ficando acumulado na tela.",
+    "cameraRequired": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Áudio",
+      "Lista de itens"
+    ],
+    "buildingBlocks": [
+      "Título fixo",
+      "Apresentador",
+      "Colunas de categorias",
+      "Etiquetas que descem",
+      "Pergunta e resposta",
+      "Legenda de uma linha"
+    ],
+    "searchTerms": [
+      "colunas",
+      "tres colunas",
+      "3 colunas",
+      "categorias",
+      "classificar",
+      "classificacao",
+      "etiquetas",
+      "lista",
+      "pilha",
+      "curto medio longo prazo",
+      "investimentos",
+      "financas",
+      "comparacao",
+      "organizar",
+      "titulo fixo",
+      "pergunta e resposta",
+      "entrevista",
+      "apresentador",
+      "pessoa falando",
+      "reels"
+    ],
+    "hasPersonOnScreen": true
   }
 }

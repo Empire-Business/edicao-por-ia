@@ -1,0 +1,184 @@
+id: f12-v3
+version: 3
+status: draft
+supersedes: f12-v2
+revision_note: >-
+  Melhoria pedida pelo autor em 10/10/2026 ("melhore o modelo f12 para que tenha resultados melhores ... daqui pra frente"),
+  depois da edição BR01 V6/V7 (E34). A v2 fixou as medidas da referência, mas a amostra ainda saiu fraca: objetos
+  desenhados em código e título simples. Esta versão acrescenta o que fez a diferença na prática: pesquisa de imagem
+  real como passo obrigatório quando autorizada, vocabulário fechado de estados animados com tempos medidos,
+  proibição de estado só de texto, revisão quadro a quadro da mídia pesquisada e som de impacto.
+  f12-v1.yaml e f12-v2.yaml permanecem intactas e recuperáveis.
+purpose: Narração com imagens, objetos, números e comparações de escala.
+engine: hyperframes
+output:
+  width: 1080
+  height: 1920
+  fps: 60
+  fit: cover
+editorial:
+  target_pace: natural
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 0.6
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.5
+    keep_pause_seconds: 0.4
+    word_handle_seconds: 0.1
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  min_jump_cut_interval_seconds: 0.9
+  preserve_required_phrases: []
+visual:
+  punch_ins: selective
+  max_punch_in_scale: 1.06
+  random_effects: false
+  composition: Narração com imagens, objetos, números e comparações de escala.
+  presenter_on_camera: false
+  base: >-
+    Fundo escuro em quase todo o vídeo: a cor mais escura da ID como base, com vinheta e grão leve (3–5%).
+    Uma única sequência clara (fundo claro da ID, texto escuro) é permitida na virada narrativa, no máximo 15%
+    da duração. Fundo claro como padrão do vídeo é desvio da referência.
+  image_dominance: >-
+    Todo estado tem uma imagem ou objeto dominante ocupando pelo menos 45% da área do quadro:
+    foto em tela cheia com vinheta, macro, ou objeto recortado grande em perspectiva com luz/sombra.
+    Ícones, chips e cartões de interface pequenos não contam como imagem dominante.
+  imagery_priority:
+  - imagem/vídeo real enviado ou autorizado pelo usuário, ligado à fala
+  - mídia real pesquisada com fonte registrada (somente provedores e orçamento autorizados)
+  - objeto construído em código em escala grande, com profundidade, luz, textura e perspectiva (registrar como substituto em analysis/format-plan.json)
+  imagery_research: >-
+    Antes de montar, listar cada ideia da fala e a imagem que a sustenta. Quando o trabalho autoriza pesquisa
+    (TikTok/YouTube somente por ScrapeCreators), buscar em duas camadas: (1) a coisa citada — pessoa, empresa,
+    produto, notícia; (2) planos cinematográficos de objeto ou ação sem texto para as ideias abstratas (teclado,
+    relógio, carimbo, dinheiro, reunião, aperto de mão, máquina). Se a pesquisa não está autorizada, perguntar antes
+    de editar; objeto em código é substituto declarado, não o plano principal do vídeo inteiro.
+  imagery_selection: >-
+    Abrir quadros de cada trecho escolhido do primeiro ao último (pelo menos 2 quadros por segundo): o primeiro quadro
+    não pode ser da cena anterior da fonte, e legenda embutida, marca d'água ou texto grande em idioma estrangeiro
+    desclassificam ou exigem recorte. Sem estética infantil em assunto sério. Aplicar a mesma gradação escura a todos
+    os trechos. Registrar fonte, trecho e hash.
+  state_vocabulary:
+    fill: Imagem real em tela cheia com entrada em aproximação desfocada (1,16→1,00 em ≈0,38 s), aproximação lenta até 1,07 e sombra no topo e na base para o título e a legenda.
+    object: Mídia ou objeto em cartão com perspectiva que entra de longe girando com desfoque de movimento (≈0,55 s) e depois deriva devagar em 3D.
+    number: Número enorme que embaralha os dígitos (≈0,5 s) e bate no valor falado com flash; unidade em bloco de destaque logo abaixo.
+    stamp: Veredito em carimbo (escala 2→1, rotação leve, ≈0,22 s) com flash curto, sobre a imagem.
+    callout: Ponto + linha fina que desenha + etiqueta mono em caixa alta, presa a um detalhe da imagem.
+    list: Itens que entram um a um no tempo da palavra falada, com marca de certo/errado e tremor de impacto.
+    duplication: Repetição ou quantidade mostrada por cópias empilhadas que caem uma a uma.
+    illustration: Interface ou documento recriado como objeto grande em perspectiva e rotulado "ILUSTRAÇÃO"; texto só parafraseando a fala.
+  state_selection: >-
+    Cada ideia recebe um estado do vocabulário acima. Um estado só com palavras na tela não existe neste formato:
+    se não há imagem para a ideia, usar objeto grande, número, carimbo ou duplicação. Não repetir o mesmo tipo de
+    estado mais de duas vezes seguidas.
+  layout_zones_fraction_of_height:
+    context_label: [0.030, 0.045]
+    headline: [0.050, 0.220]
+    dominant_object: [0.200, 0.680]
+    caption: [0.660, 0.720]
+    footnote_label: [0.820, 0.870]
+  typography:
+    context_label: Mono da ID, caixa alta, cerca de 0.022 da largura, ponto/quadrado de destaque à esquerda, tracking largo.
+    headline: Sans da ID, peso 800–900, cerca de 0.085 da largura (≈92 px em 1080), entrelinha 1.0, alinhada à esquerda, até 3 linhas.
+    keyword: Uma palavra-chave por título na cor de destaque da ID; em fundo escuro, se o contraste for menor que 4.5:1, usar texto claro sobre bloco da cor de destaque.
+    number: Números de escala dominam o quadro, 0.18–0.24 da largura de altura de caixa (≈200–260 px), unidade menor logo abaixo (≈0.045 da largura).
+    technical_label: Mono pequena (≈0.02 da largura) presa a uma linha fina de chamada.
+  max_dominant_elements_per_state: 1
+  forbidden_execution:
+  - light_background_as_default
+  - small_ui_cards_as_main_visual
+  - empty_frame_over_40_percent
+  - whole_sentence_title_at_once
+  - text_only_state
+  - code_drawn_objects_as_default_when_research_is_authorized
+  - foreign_burned_in_captions
+  - first_frame_from_previous_source_scene
+captions:
+  enabled: true
+  max_lines: 1
+  max_chars_per_line: 24
+  max_words: 4
+  word_highlight: true
+  build: palavra a palavra, cumulativa dentro da frase curta, sincronizada à fala retida; visível em todos os estados, inclusive os animados; um grupo nunca atravessa a troca de estado
+  style: Sans da ID peso 700–800, ≈0.042 da largura, branca com sombra/faixa escura suave; palavra-chave na cor de destaque da ID.
+  position: zona caption (0.66–0.72 da altura), centralizada; nunca disputar a zona do título.
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  music: optional
+  music_policy: >-
+    Trilha local/autorizada cortada pela fala (tensão até a virada, resolução depois), sempre abaixo da voz:
+    mediana de 15–16 dB abaixo, pior segundo pelo menos 5 dB abaixo, com ducking que reage a qualquer palavra.
+    Geração paga depende de autorização atual.
+  sfx_policy: >-
+    Sons curtos e locais só em impactos e sincronizados ao quadro: sopro na entrada de objeto ou imagem, batida em
+    número/carimbo/item de lista, tique em chamada. Sem repetição em rajada (mínimo ≈0,18 s entre sons iguais).
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+  side_by_side_with_reference: true
+  check_image_dominance: true
+  check_state_cadence: true
+  check_caption_word_build: true
+  check_no_text_only_state: true
+  check_researched_media_frames: true
+  pre_render_stills: Tirar um quadro de cada estado novo antes do render completo e corrigir leitura, recorte e contraste.
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_logo
+- automatic_personal_identity
+insertion_assets:
+  policy: encouraged
+  density: high
+  default_preferred_duration_s: 2.0
+  default_max_duration_s: 5.0
+  allow_image_motion: true
+format_code: F12
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+motion:
+  enabled: 'on'
+  primitives:
+  - progressive_headline
+  - number_counter
+  - object_layers
+  - technical_callout
+  - scale_comparison
+  - opening_callback
+  - tumbling_object_entry
+  - digit_scramble_slam
+  - verdict_stamp
+  - stacked_duplication
+  - timed_list
+  timing: final_retained_speech
+  cadence: >-
+    Um novo estado visual (palavra do título, número, chamada, troca de imagem) a cada 1,2–3,0 s,
+    mediana ≈2 s. Nenhum estado parado por mais de 4 s.
+  headline: Palavra a palavra no tempo da palavra falada; cada palavra entra em 0,18–0,25 s com subida de ≈12 px e opacidade. A frase nunca aparece inteira de uma vez.
+  number: Dígitos embaralham por ≈0,5 s e batem no valor falado (escala 1,6→1, desfoque de movimento, ≈0,25 s) com flash de luminância de 0,08–0,12 s; o valor fica estável por pelo menos 0,8 s. Dígitos intermediários não são fatos.
+  image: Entrada em aproximação desfocada (1,16→1,00, ≈0,38 s) e depois aproximação contínua lenta (1,00→1,07) em cada plano; camadas com paralaxe leve. Objeto em cartão entra girando com desfoque (≈0,55 s) e deriva em perspectiva.
+  callout: Linha fina desenha em ≈0,3 s e depois a etiqueta mono aparece; no máximo 3 chamadas por estado.
+  stamp: Palavra-veredito entra como carimbo (escala 2→1, rotação leve, ≈0,22 s) com flash curto.
+  list: Cada item entra no tempo da sua palavra falada (≈0,3 s, vindo da lateral com desfoque) e a marca estala logo depois.
+  duplication: Cópias caem empilhadas com ≈0,5 s entre elas, cada uma com batida.
+  transitions: Corte seco ou mergulho no escuro (≤0,2 s) entre ideias; flash apenas em marcos/números, no máximo um a cada ~8 s. Cartões subindo de baixo não são o movimento principal.
+reference_materials:
+  video: examples/reference-library/F12/collection-01/reference.mp4
+  analysis: examples/reference-library/F12/collection-01/ANALISE.md

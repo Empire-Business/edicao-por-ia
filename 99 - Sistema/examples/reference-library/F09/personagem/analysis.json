@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "format_code": "F09",
+  "format_uid": "official.057f1c25705842ddafb13387b7aeb0b4",
+  "example_url": "https://www.instagram.com/p/DdmFpq8teDf/",
+  "mechanism_details": {
+    "inputs": "Dois vídeos identificados como personagem 1 e personagem 2, cada um com as falas do seu papel (a mesma pessoa pode fazer os dois). Roteiro opcional. Roupa, postura ou cenário ajudam a diferenciar os papéis. Escolher a ID visual separadamente.",
+    "mechanism": "As falas dos dois arquivos são intercaladas em pergunta, resposta, contraponto e conclusão. Aparece um personagem por vez em tela cheia, com cortes secos; quando um termina, o outro já entra falando. A legenda se acumula palavra por palavra em blocos curtos de uma ou duas linhas, sobre o peito e abaixo do rosto de cada personagem.",
+    "steps": [
+      "Identificar qual arquivo é o personagem 1 e qual é o 2; transcrever e analisar as duas gravações juntas, sem inventar palavras.",
+      "Montar o diálogo intercalando os trechos (pergunta → resposta → contraponto → descoberta → conclusão), usando a última tomada completa de cada fala. Nunca um arquivo inteiro depois do outro.",
+      "Cortar na troca de interlocutor, com cerca de 0,05–0,1 s entre um e outro, e tirar esperas e respiros também no meio da frase, sem comer sílabas nem finais suaves.",
+      "Mostrar um personagem por vez em tela cheia, mantendo cenário, enquadramento, gestos e voz daquele papel; nivelar as duas vozes e silenciar o arquivo que não está em uso.",
+      "Sincronizar a legenda palavra por palavra em blocos de uma ou duas linhas que ficam até a troca do grupo, com o layout final reservado e entrada leve por opacidade.",
+      "Posicionar a legenda a partir de 62% da altura e conferir em quadros reais de cada personagem se ela fica abaixo do queixo; ajustar por personagem.",
+      "Fechar com a conclusão gravada e rever a prévia: ordem do diálogo, personagem certo em cada fala, ritmo colado, nenhuma palavra cortada, legenda fora do rosto e em sincronia."
+    ],
+    "avoid": "Não usar tela dividida automática, troca de personagem por cronômetro, zooms sem motivo, transições decorativas, cenas de apoio aleatórias ou duas falas sobrepostas. Não copiar a pessoa, o assunto, a marca, o perfil, a chamada comercial, a mochila ou o computador do exemplo. Cores e fontes vêm da ID."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F09/personagem/reference.mp4",
+      "sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/character-1.jpg",
+      "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad"
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/character-2.jpg",
+      "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7"
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/caption-build.jpg",
+      "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1"
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/turn.jpg",
+      "sha256": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4"
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/closing.jpg",
+      "sha256": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F09/personagem/character-1.jpg",
+      "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad",
+      "at_seconds": 2.0,
+      "caption": "Personagem 1 em tela cheia, com um bloco curto de legenda sobre o peito."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/character-2.jpg",
+      "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
+      "at_seconds": 13.4,
+      "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/caption-build.jpg",
+      "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1",
+      "at_seconds": 14.6,
+      "caption": "A segunda linha da legenda cresce palavra por palavra enquanto a primeira permanece."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/turn.jpg",
+      "sha256": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4",
+      "at_seconds": 23.0,
+      "caption": "Novo turno do personagem 2, com corte seco e legenda abaixo do rosto."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/closing.jpg",
+      "sha256": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
+      "at_seconds": 42.5,
+      "caption": "Fechamento falando com o público. A marca que aparece pertence ao exemplo."
+    }
+  ],
+  "source": {
+    "kind": "external_reference_video",
+    "zip": "F07 - Personagemz.zip",
+    "zip_sha256": "2582dce8de57b026fd3729a70afff9da1317276c7d7be6fa3ceb591c713a87b8",
+    "zip_folder_label": "F07 - Personagem",
+    "retrieved_with": "ScrapeCreators",
+    "original_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+    "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+    "duration_s": 45.35,
+    "width": 720,
+    "height": 1280,
+    "reference_copy_transcoded": false
+  },
+  "review": {
+    "date": "2026-10-10",
+    "method": "Folha de 24 quadros do vídeo inteiro e quadros nomeados; guia do ZIP lido por inteiro",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "missing_from_zip": "arquivo de receita, prints e vídeo; só guias em HTML e o link do exemplo"
+  }
+}

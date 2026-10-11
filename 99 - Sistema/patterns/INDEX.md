@@ -38,7 +38,7 @@ All remain starter proposals, not approved house styles. V1 files are preserved 
 - F09 — incorporado ao F08; código e receita histórica preservados.
 - F10 — Produto Explicado: `f10-v1.yaml` (draft). Paleta e fonte vêm da ID escolhida.
 - F11 — incorporado ao F07 — Motion Institucional. `f11-v1.yaml` preservado para o histórico; código reservado.
-- F12 — Documentário: `f12-v1.yaml` (draft). Paleta e fonte vêm da ID escolhida.
+- F12 — Documentário: `f12-v3.yaml` (draft). Imagem real pesquisada dominante e vocabulário de estados animados; `f12-v1.yaml` e `f12-v2.yaml` preservadas. Paleta e fonte vêm da ID escolhida.
 
 - F13 — Dados Dark: `f13-v2.yaml` (draft). Narração com mapas, pontos, contadores e comparações; sem apresentador. ID visual separada.
 
@@ -53,3 +53,11 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 - F17 e F18 — retirados pelo autor; códigos reservados. Receitas e exemplos rejeitados ficam fora da distribuição.
 
 - `f02-talking-head-v1`: F02 Talking Head, nova geração a partir do vídeo do ZIP de 07/10/2026. Draft; preserva as receitas anteriores.
+
+- `f03-dark-com-broll-v1`: F03 Dark com B-roll, nova geração criada em 10/10/2026 a partir da edição E34 V7 (F16 + animação do F12). Draft; F16 e F12 preservados.
+
+- `f09-personagem-v1`: F09 Personagem, nova geração importada do ZIP 'F07 - Personagemz.zip' em 10/10/2026. Draft; não restaura o antigo F09.
+
+- `f11-narracao-ilustrada-v1`: F11 Narração Ilustrada, nova geração importada do ZIP 'F08 - Narração Ilustradaz.zip' em 10/10/2026. Draft; não restaura o antigo F11.
+
+- `f17-colunas-v1`: F17 Colunas, nova geração importada do ZIP 'F09 - 3Colunasz.zip' em 10/10/2026. Draft; não restaura o antigo F17.

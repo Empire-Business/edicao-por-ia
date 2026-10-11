@@ -1,0 +1,101 @@
+id: f11-narracao-ilustrada-v1
+version: 1
+status: draft
+format_code: F11
+origin_note: Receita escrita a partir do guia do ZIP 'F08 - Narração Ilustradaz.zip' (pasta 'F08 - Narração Ilustrada') enviado
+  pelo autor em 10/10/2026 e dos quadros do vídeo de exemplo indicado nele. O ZIP não trazia arquivo de receita; a numeração
+  do ZIP não é o código deste cadastro. Ainda sem edição nova testada nesta instalação.
+purpose: Narração conduzindo cenas literais e metafóricas em tela cheia.
+engine: ffmpeg+hyperframes
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: fast_natural
+  remove_explicit_mistakes: true
+  artificial_speedup: false
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.25
+    keep_pause_seconds: 0.12
+    word_handle_seconds: 0.06
+    trim_edges: true
+  presenter_on_camera: optional_brief_returns_and_closing
+  opening: primeira ideia, sem vinheta
+visual:
+  composition: Cena de apoio em tela cheia por ideia; narrador volta brevemente.
+  scene_choice_order:
+  - ação literal citada
+  - situação reconhecível
+  - metáfora que acrescenta sentido
+  transitions: corte seco na mudança de ideia ou ação
+  scene_duration_seconds:
+    typical:
+    - 1.4
+    - 2.9
+    reference_mean: 2.18
+    reference_range:
+    - 1.0
+    - 4.13
+  scene_and_caption_rhythms_independent: true
+  fit: cover_without_stretch
+  keep_subject_visible_on_word: true
+  support_share_reference: cerca de 80% de cenas de apoio no exemplo; não é limite fixo
+research:
+  tiktok_and_youtube_exclusive_provider: ScrapeCreators
+  authorization: Pesquisa de cenas depende do pedido do trabalho; registrar fontes e hashes.
+captions:
+  enabled: true
+  build: bloco inteiro substituído conforme a fala; sem karaokê nem crescimento palavra por palavra
+  max_lines: 1
+  max_words: 5
+  uppercase: true
+  position: centralizada perto de 0,56 da altura
+  preserve_negations: true
+  font_source: explicit_visual_identity
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  support_clip_audio: muted_by_default
+  music: optional_under_voice
+insertion_assets:
+  policy: required_per_idea
+  density: high
+  allow_image_motion: true
+qa:
+  verify_broll_against_retained_speech: true
+  check_action_visible: true
+  check_caption_blocks: true
+  check_no_inherited_brand_signatures: true
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- fabricated_fact
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- automatic_personal_identity
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_brand_signature
+- fixed_brand_name
+- automatic_branded_end_card
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+reference_materials:
+  video: examples/reference-library/F11/narracao-ilustrada/reference.mp4
+  analysis: examples/reference-library/F11/narracao-ilustrada/analysis.json

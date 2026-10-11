@@ -45,9 +45,64 @@
   ],
   "F03": [
     {
-      "path": "examples/formats/F03.png",
-      "caption": "F03 · Foto Falante — três estados ilustrativos da edição.",
-      "status": "illustrative_storyboard"
+      "path": "examples/reference-library/F03/dark-com-b-roll/card.jpg",
+      "sha256": "19133c289ca8a8be6e4c6d81c4b8b725db2a8c306521739383caa73bcc4ced54",
+      "caption": "Apresentador falando dentro de um cartão sobre o fundo escuro."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/fullscreen.jpg",
+      "sha256": "c48192da800f0bb86e3814dcc830c41549bd5aed93ce7ceccf8103832e613349",
+      "caption": "B-roll pesquisado em tela cheia com legenda palavra a palavra."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/number.jpg",
+      "sha256": "284ca68437bb690da28774c7baa98455e64e36d8f5168ffe45a9aed125916bb6",
+      "caption": "Número que embaralha e bate, com a unidade em bloco de destaque."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/stamp.jpg",
+      "sha256": "371b1c8dac1c8d9404e87d9533253b5fcf1e9f81054374193319aa3b398b27e9",
+      "caption": "Objeto em cartão 3D com carimbo de veredito."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/duplication.jpg",
+      "sha256": "f11473f4b7f2cc490657335d30e639ffb086dc722b88c35da1ea08f791f47383",
+      "caption": "Repetição mostrada por cartões empilhados e chamada técnica."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/object.jpg",
+      "sha256": "82e1f7c4f89f63e0b8aaf27cc34cc418b55d9d63c0c807bc9924cb48ec9c32d2",
+      "caption": "Mídia em cartão com perspectiva, título palavra a palavra e etiqueta."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/list.jpg",
+      "sha256": "137a6aa33f3400d1d5a93fd599677b8598283f26fc75b32c1662bd0a17941093",
+      "caption": "Lista que entra no tempo de cada palavra falada sobre imagem desfocada."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/slams.jpg",
+      "sha256": "5ca1ef718c515fd1241872edc7cd6833d4f3a8ec22c6faa99e7bf8576abb0f38",
+      "caption": "Itens que batem um a um sobre imagem escurecida."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/chat.jpg",
+      "sha256": "d8022f15a95c5122be45a3f090688cba02192152123656502f2c14fddda068ef",
+      "caption": "Interface recriada como objeto grande e rotulada como ilustração."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/account.jpg",
+      "sha256": "58b7e7ec158131002dd5b93ed702b98fe5624b792f0c5a35a770a081ce2a72d0",
+      "caption": "Objeto ilustrativo com cadeado e carimbo."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/researched-card.jpg",
+      "sha256": "b62ad5f36cf9727fd7d320f5283b2353019d5f797b8eadbea871e83f1c141b24",
+      "caption": "Vídeo pesquisado da pessoa citada dentro de cartão."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/ecosystem.jpg",
+      "sha256": "df83d767c4e8789e445f6944eff334a0be5732950563be1f6b54412bebed37c0",
+      "caption": "Imagem real em tela cheia com título e destaque na palavra-chave."
     }
   ],
   "F04": [
@@ -87,9 +142,29 @@
   ],
   "F09": [
     {
-      "path": "examples/formats/F09.png",
-      "caption": "F09 · Conversa e Tela — três estados ilustrativos da edição.",
-      "status": "illustrative_storyboard"
+      "path": "examples/reference-library/F09/personagem/character-1.jpg",
+      "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad",
+      "caption": "Personagem 1 em tela cheia, com um bloco curto de legenda sobre o peito."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/character-2.jpg",
+      "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
+      "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/caption-build.jpg",
+      "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1",
+      "caption": "A segunda linha da legenda cresce palavra por palavra enquanto a primeira permanece."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/turn.jpg",
+      "sha256": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4",
+      "caption": "Novo turno do personagem 2, com corte seco e legenda abaixo do rosto."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/closing.jpg",
+      "sha256": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
+      "caption": "Fechamento falando com o público. A marca que aparece pertence ao exemplo."
     }
   ],
   "F10": [
@@ -101,9 +176,39 @@
   ],
   "F11": [
     {
-      "path": "examples/formats/F11.png",
-      "caption": "F11 · Formulários — três estados ilustrativos da edição.",
-      "status": "illustrative_storyboard"
+      "path": "examples/reference-library/F11/narracao-ilustrada/literal-scene.jpg",
+      "sha256": "1d47d5d499e029ed2a8d5b9dd4bee7a23bdb67838d37f55802d5f34300c09a33",
+      "caption": "Cena literal em tela cheia para a primeira instrução, com legenda de uma linha em caixa alta."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/situation.jpg",
+      "sha256": "af26716d133079e28962f66c78eea1054b5b7db9288e5c0110fab32093d9c810",
+      "caption": "Situação reconhecível que ilustra a frase; legenda no centro do quadro."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/acted-scene.jpg",
+      "sha256": "ac282181387ab00c8fe23e3fd19f0caa9f73909a6a32b4329484cb7a430ce362",
+      "caption": "Cena de filme usada como ilustração de atitude."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/narrator.jpg",
+      "sha256": "94e52dcf8b4537f9303cb54b4c481e54c81df69cc9b118074886c162ff9d562c",
+      "caption": "Retorno breve ao narrador em câmera."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-cage.jpg",
+      "sha256": "6b8fb8bcc09350ecb81f4a690361c206b6e56ca4721ec57e1b81f2efb8296afe",
+      "caption": "Metáfora: ave na gaiola para a ideia de conforto."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-free.jpg",
+      "sha256": "8985789a042e98a15b17cdf435ae0c87073f5addcf4e614d409d54026581e6d3",
+      "caption": "Metáfora complementar: ave livre para a ideia de liberdade."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/closing.jpg",
+      "sha256": "f286ca38b42f5e5a65ff26d19e3b525fafa2c90ba9ac6393bf18211155205a26",
+      "caption": "Fechamento com o narrador. Nome e pedido para seguir pertencem ao exemplo."
     }
   ],
   "F12": [
@@ -139,6 +244,28 @@
       "path": "examples/reference-library/F16/preview-frame.jpg",
       "caption": "F16 · Comentário com B-roll — quadro real da referência.",
       "status": "actual_reference_frame"
+    }
+  ],
+  "F17": [
+    {
+      "path": "examples/reference-library/F17/colunas/opening.jpg",
+      "sha256": "90fcfc37cb9aa3492a85a6af70fb7a748f1c131f0b83dde9275d93cb366c4be2",
+      "caption": "Título no alto, legenda e os três cabeçalhos desde o início."
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/label-in.jpg",
+      "sha256": "98d4054e191793c3982e87cde753fba563fefc0aed4378d9c081b09a827ca0cd",
+      "caption": "Item nomeado aparece como etiqueta antes de entrar na pilha da coluna."
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/stacks.jpg",
+      "sha256": "1c15387f125da0d51dc53d27f093fd09d30a95f47d40d95f89f85b9267685c9a",
+      "caption": "Itens já classificados continuam acumulados em pilhas."
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/complete.jpg",
+      "sha256": "40e79f59e10c310e602ab390a1057950e6786988601b10b15096dfef2e20f2db",
+      "caption": "Quadro completo no fim; título e legenda continuam."
     }
   ]
 }

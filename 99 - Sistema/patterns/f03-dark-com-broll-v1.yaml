@@ -1,0 +1,165 @@
+id: f03-dark-com-broll-v1
+version: 1
+status: draft
+format_code: F03
+origin_note: 'Formato oficial criado a pedido do autor em 10/10/2026: comentário no estilo F16 (cartões do apresentador falando
+  + B-roll pesquisado) com o nível de animação do F12 em ambiente escuro. Exemplo real: edição E34 V7 (BR01). F16 e F12 permanecem
+  inalterados por este cadastro.'
+purpose: Comentário narrado em ambiente escuro. O apresentador aparece só falando dentro de um cartão; o resto do vídeo é
+  B-roll real pesquisado e estados animados no nível do F12 (título palavra a palavra, números com impacto, objetos grandes
+  em perspectiva, carimbos, chamadas técnicas, flashes).
+engine: hyperframes
+derived_from:
+- f16-v1
+- f12-v3
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  min_jump_cut_interval_seconds: 0.6
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.12
+    keep_pause_seconds: 0.1
+    word_handle_seconds: 0.06
+    minimum_cut_seconds: 0.03
+    trim_edges: true
+  breath_policy: 'Fala quase contínua: depois dos cortes de erro, medir as lacunas entre palavras na voz já isolada e encurtar
+    toda lacuna abaixo de −36 dBFS com 0,12 s ou mais para 0,08–0,12 s (viradas expressivas ficam com 0,20 s). Cortar no meio
+    da lacuna com crossfade de 15 ms, nunca dentro de fala, e remapear legendas e animações pelo mesmo mapa de cortes.'
+  preserve_required_phrases: []
+  repeated_takes: keep_best_take_only
+  presenter_on_camera: card_only
+  one_information_at_a_time: true
+research:
+  timing: Depois de montar a fala, antes de fechar as cenas.
+  unit: Cada ideia fora do cartão do apresentador recebe mídia real ou objeto grande; nunca uma tela só com palavras.
+  queries: 'Duas camadas: (1) a coisa citada (pessoa, empresa, produto, notícia); (2) planos cinematográficos de objeto/ação
+    sem texto (teclado, relógio, carimbo, dinheiro, reunião, aperto de mão, robô) para as ideias abstratas.'
+  tiktok_provider: ScrapeCreators
+  tiktok_and_youtube_exclusive_provider: ScrapeCreators
+  download_policy: Baixar apenas URLs explícitas retornadas pelo provedor; não usar outro extrator como fallback.
+  budget_policy: Registrar uso autorizado, fontes e créditos; respeitar o orçamento do trabalho e não presumir custo zero.
+  local_cache: Guardar mídia, origem e hashes dentro da fábrica; não depender de URLs temporárias durante render.
+  selection: Inspecionar quadros; recortar legendas embutidas; sem texto grande em idioma estrangeiro; sem estética infantil;
+    registrar fonte, trecho e hashes. Conferir o primeiro e o último quadro de cada trecho.
+visual:
+  base: Fundo escuro da ID em todo o vídeo (radial + grade de pontos sutil + grão 7% + vinheta). Uma única sequência clara
+    curta é permitida numa virada.
+  presenter: Só tomadas FALANDO, em cartão 0,89 × 0,49 da tela com sombra e entrada desfocada; nunca calado, olhos fechados,
+    rindo, olhando para cima ou com o rosto cortado.
+  states:
+    fill: B-roll em tela cheia com punch-in desfocado (1,16→1,00 em 0,38 s) e aproximação lenta até 1,07; sombra no topo e
+      na base.
+    object: Mídia ou objeto em cartão 3D que entra de longe girando com desfoque de movimento (0,55 s) e deriva em perspectiva.
+    number: Número enorme (≈400 px) que embaralha os dígitos e bate com flash; unidade em bloco de destaque.
+    stamp: Veredito em carimbo (escala 2→1, rotação, 0,22 s) com flash curto.
+    callout: Ponto + linha fina que desenha + etiqueta mono em caixa alta.
+    list: Itens que entram no tempo da palavra falada, com ✓ ou ✕ e tremor de impacto.
+    duplication: Repetição mostrada por cópias empilhadas que caem uma a uma.
+    illustration: Interfaces (chat, conta, assinatura) recriadas como objetos grandes e rotuladas "ILUSTRAÇÃO".
+  headline: Rótulo de contexto mono no topo + título 94 px peso 850 alinhado à esquerda, palavra a palavra no tempo da fala,
+    palavra-chave em bloco da cor de destaque da ID.
+  cadence: Novo estado (imagem, número, carimbo, chamada ou troca) a cada 1,2–3 s; nada parado por mais de 4 s.
+  transitions: Corte seco, mergulho no escuro (≤0,2 s) ou flash só em marcos.
+  forbidden_execution:
+  - text_only_state
+  - small_ui_cards_as_main_visual
+  - light_background_as_default
+  - whole_sentence_title_at_once
+  - presenter_silent_take
+  - foreign_burned_in_captions
+  punch_ins: selective
+  max_punch_in_scale: 1.16
+  random_effects: false
+captions:
+  enabled: true
+  max_lines: 1
+  max_chars_per_line: 24
+  max_words: 4
+  word_highlight: true
+  build: palavra a palavra, até 4 palavras / 24 caracteres, sempre visível (inclusive nos estados animados)
+  keyword_highlight: bloco da cor de destaque da ID
+  position: 0,675 da altura em tela cheia e estados; base do cartão quando há cartão
+  font_source: explicit_visual_identity
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  music: required
+  music_policy: 'Trilha perceptível, cortada pela fala em dois atos (tensão até a virada em que a solução aparece, resolução
+    depois; entrada do grave no fim do gancho e final no último quadro). Sempre abaixo da voz: mediana de 15–16 dB abaixo,
+    pior segundo pelo menos 5 dB abaixo, ducking que reage a qualquer palavra. Trilha local/autorizada; geração paga depende
+    de autorização atual.'
+  sfx_policy: Curtos e locais só em impactos (whoosh na entrada de objeto, batida em carimbo/número, tique em lista/chamada).
+insertion_assets:
+  policy: proof-heavy
+  density: high
+  default_preferred_duration_s: 1.6
+  default_max_duration_s: 4.5
+  allow_image_motion: true
+  prefer_the_real_thing: true
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 0.8
+  verify_broll_against_retained_speech: true
+  verify_sources_and_local_files: true
+  verify_readability_and_voice: true
+  verify_no_inherited_brand_signatures: true
+  check_no_text_only_state: true
+  check_researched_media_frames: true
+  check_state_cadence: true
+  check_caption_word_build: true
+  check_music_under_voice: true
+  pre_render_stills: Tirar um quadro de cada estado novo antes do render completo.
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- unrelated_broll
+- fabricated_fact
+- alternate_tiktok_extractor
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- automatic_personal_identity
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_brand_signature
+- fixed_brand_name
+- automatic_branded_end_card
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+motion:
+  enabled: 'on'
+  timing: final_retained_speech
+  primitives:
+  - progressive_headline
+  - tumbling_object_entry
+  - digit_scramble_slam
+  - verdict_stamp
+  - technical_callout
+  - timed_list
+  - stacked_duplication
+  - presenter_card
+  cadence: Novo estado (imagem, número, carimbo, chamada ou troca) a cada 1,2–3 s; nada parado por mais de 4 s.
+  transitions: Corte seco, mergulho no escuro (≤0,2 s) ou flash só em marcos.
+reference_materials:
+  video: examples/reference-library/F03/dark-com-b-roll/reference.mp4
+  analysis: examples/reference-library/F03/dark-com-b-roll/analysis.json

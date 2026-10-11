@@ -17,19 +17,17 @@ from format_guides import DETAILS
 
 EDITORIAL = {
     'F01': ('stories', ['Narração', 'Conversas'], 'Transformar uma explicação em uma conversa fácil de acompanhar.'),
-    'F03': ('stories', ['Narração', 'Foto autorizada'], 'Conduzir uma história usando uma foto e uma voz.'),
     'F04': ('stories', ['Apresentador', 'Animação'], 'Abrir com a pessoa e explicar o restante com imagens.'),
     'F05': ('stories', ['Notícias', 'Recortes'], 'Explicar um assunto com a organização visual de uma matéria.'),
     'F06': ('explain', ['Diagramas', 'Processos'], 'Tornar uma ideia, relação ou processo mais fácil de entender.'),
     'F07': ('products', ['Interface', 'Sem apresentador'], 'Apresentar uma plataforma e demonstrar seus recursos.'),
     'F08': ('presenter', ['Apresentador', 'Telas e conversas'], 'Explicar conteúdos com a pessoa integrada ao cenário ou junto de uma tela ou conversa.'),
-    'F09': ('products', ['Conversas', 'Apresentador'], 'Mostrar e explicar um fluxo de conversa ou atendimento.'),
     'F10': ('products', ['Produto', 'Demonstração'], 'Apresentar um produto alternando pessoa, tela e uso real.'),
     'F12': ('stories', ['Narração', 'Histórias'], 'Contar uma história com imagens, dados e comparações.'),
     'F13': ('explain', ['Dados', 'Sem apresentador'], 'Explicar quantidades e comparações com mapas, pontos e rankings.'),
 }
 ORDER = ['F01', 'F12', 'F08', 'F09', 'F10', 'F07', 'F13', 'F03', 'F04', 'F05', 'F06']
-POSTER_TIME = {'F01': 11, 'F03': 3, 'F04': 23, 'F05': 20, 'F06': 30, 'F07': 20, 'F08': 8, 'F09': 18, 'F10': 12, 'F12': 15, 'F13': 7}
+POSTER_TIME = {'F01': 11, 'F04': 23, 'F05': 20, 'F06': 30, 'F07': 20, 'F08': 8, 'F10': 12, 'F12': 15, 'F13': 7}
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()

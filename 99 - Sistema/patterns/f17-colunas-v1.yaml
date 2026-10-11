@@ -1,0 +1,98 @@
+id: f17-colunas-v1
+version: 1
+status: draft
+format_code: F17
+origin_note: Receita escrita a partir do guia do ZIP 'F09 - 3Colunasz.zip' (pasta 'F09 - Colunas') enviado pelo autor em 10/10/2026
+  e dos quadros do vídeo de exemplo indicado nele. O ZIP não trazia arquivo de receita; a numeração do ZIP não é o código
+  deste cadastro. Ainda sem edição nova testada nesta instalação.
+purpose: Apresentador com título fixo e etiquetas acumuladas em colunas de categorias.
+engine: hyperframes
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: very_tight
+  remove_explicit_mistakes: true
+  artificial_speedup: false
+  two_voices: apresentador + voz atrás da câmera (no vídeo ou em áudio separado); associar pergunta e resposta e evitar duplicação
+  question_answer_gap: resposta imediatamente depois da pergunta
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.15
+    keep_pause_seconds: 0.06
+    word_handle_seconds: 0.05
+    mid_sentence: true
+    remove_isolated_breaths: true
+  presenter_on_camera: always
+  listening_shot: usar imagem real de escuta/reação durante a outra voz quando houver
+visual:
+  composition: Apresentador em tela cheia; título fixo no alto; cabeçalhos das colunas sobre a metade inferior; divisórias
+    verticais finas.
+  columns:
+    tested_count: 3
+    headers_visible_from_start: true
+    stack: uma etiqueta por linha, mantidas até o fim
+    item_in_multiple_columns: somente se estiver na fala
+  zones:
+  - título
+  - rosto
+  - legenda
+  - etiqueta em destaque
+  - colunas
+  colors: uma cor por categoria, definida pela ID
+  punch_ins: none
+motion:
+  enabled: 'on'
+  timing: final_retained_speech
+  label: Ao ser nomeado, o item aparece maior acima das colunas; depois reduz e desce para a próxima vaga da coluna correta.
+  dividers: revelação breve no início
+captions:
+  enabled: true
+  max_lines: 1
+  covers_both_voices: true
+  position: abaixo do rosto, acima da faixa da etiqueta
+  uppercase: true
+  font_source: explicit_visual_identity
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  level_both_voices: true
+  music: optional
+qa:
+  check_classification_matches_speech: true
+  check_zones_do_not_overlap: true
+  check_no_clipped_syllables: true
+  check_turn_gaps: true
+  check_labels_readable: true
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- fabricated_fact
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- automatic_personal_identity
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_brand_signature
+- fixed_brand_name
+- automatic_branded_end_card
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+reference_materials:
+  video: examples/reference-library/F17/colunas/reference.mp4
+  analysis: examples/reference-library/F17/colunas/analysis.json

@@ -116,6 +116,38 @@
         "sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de"
       },
       "reference_conflicts": []
+    },
+    "official.d7a2bb0a7fc640f79f9a88538a1eec81": {
+      "code": "F03",
+      "primary_reference": {
+        "path": "examples/reference-library/F03/dark-com-b-roll/reference.mp4",
+        "sha256": "340292350dc8824e8ffd38ac584cbcf188beeca9e04eff323addc72f12d49fcf"
+      },
+      "reference_conflicts": []
+    },
+    "official.057f1c25705842ddafb13387b7aeb0b4": {
+      "code": "F09",
+      "primary_reference": {
+        "path": "examples/reference-library/F09/personagem/reference.mp4",
+        "sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
+      },
+      "reference_conflicts": []
+    },
+    "official.b625febf4f0c4953a8beb3d0c99a4e14": {
+      "code": "F11",
+      "primary_reference": {
+        "path": "examples/reference-library/F11/narracao-ilustrada/reference.mp4",
+        "sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a"
+      },
+      "reference_conflicts": []
+    },
+    "official.96d753b750d544708fc6c8746d3ccf45": {
+      "code": "F17",
+      "primary_reference": {
+        "path": "examples/reference-library/F17/colunas/reference.mp4",
+        "sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c"
+      },
+      "reference_conflicts": []
     }
   }
 }

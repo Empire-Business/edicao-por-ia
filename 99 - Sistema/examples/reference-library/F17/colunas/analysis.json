@@ -1,0 +1,89 @@
+{
+  "schema": 1,
+  "format_code": "F17",
+  "format_uid": "official.96d753b750d544708fc6c8746d3ccf45",
+  "example_url": "https://www.instagram.com/reel/DeQBXIVg3-5/",
+  "mechanism_details": {
+    "inputs": "Vídeo do apresentador, título, categorias e os itens de cada uma. A voz de quem pergunta atrás da câmera pode estar no vídeo ou chegar em áudio separado (um ou vários arquivos); roteiro ou ordem das falas ajuda. Escolher a ID visual separadamente.",
+    "mechanism": "O apresentador fica visível com um título fixo no alto e cabeçalhos de colunas desde o início. Cada item citado aparece como etiqueta maior acima do quadro, depois reduz e desce para a próxima vaga da coluna certa, onde fica empilhado até o fim. Legenda de uma linha abaixo do rosto cobre as duas vozes, e a montagem é muito rápida, com a resposta colada na pergunta.",
+    "steps": [
+      "Conferir a fala, o título, a ordem das categorias e os nomes dos itens, sem inventar classificações.",
+      "Se houver voz separada, associar cada pergunta à resposta certa, evitar eco ou duplicação com o som da câmera e nivelar as duas vozes.",
+      "Montar as duas vozes com cortes bem justos, tirando pausas sem função e tomadas de ar, inclusive no meio da fala; a resposta entra logo depois da pergunta, preservando sílabas.",
+      "Durante a fala de quem está atrás da câmera, usar imagem real de escuta ou reação quando houver.",
+      "Manter título no alto e apresentador visível; mostrar os cabeçalhos desde o início e revelar as divisórias.",
+      "Sincronizar a legenda curta abaixo do rosto e reservar outra faixa para a etiqueta em destaque, sem sobreposição.",
+      "Ao nomear cada item, mostrar a etiqueta maior e depois movê-la para a pilha da coluna certa, uma por linha, mantendo as anteriores; um item pode entrar em mais de uma coluna se a fala disser.",
+      "Rever a prévia: leitura, rosto, gestos, classificação correta e ritmo sem espera entre turnos."
+    ],
+    "avoid": "Não transformar as categorias em bom/ruim, trocar etiquetas por imagens automaticamente, apagar itens anteriores, reduzir até perder leitura, deixar espera entre turnos, cortar sílabas ou acelerar a voz. Não copiar a pessoa, o tema ou a chamada da referência. As cores do exemplo (ciano, amarelo e rosa) são do exemplo; cores e fontes vêm da ID. Outro número de colunas ainda precisa de teste."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F17/colunas/reference.mp4",
+      "sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c"
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/opening.jpg",
+      "sha256": "90fcfc37cb9aa3492a85a6af70fb7a748f1c131f0b83dde9275d93cb366c4be2"
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/label-in.jpg",
+      "sha256": "98d4054e191793c3982e87cde753fba563fefc0aed4378d9c081b09a827ca0cd"
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/stacks.jpg",
+      "sha256": "1c15387f125da0d51dc53d27f093fd09d30a95f47d40d95f89f85b9267685c9a"
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/complete.jpg",
+      "sha256": "40e79f59e10c310e602ab390a1057950e6786988601b10b15096dfef2e20f2db"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F17/colunas/opening.jpg",
+      "sha256": "90fcfc37cb9aa3492a85a6af70fb7a748f1c131f0b83dde9275d93cb366c4be2",
+      "at_seconds": 0.5,
+      "caption": "Título no alto, legenda e os três cabeçalhos desde o início."
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/label-in.jpg",
+      "sha256": "98d4054e191793c3982e87cde753fba563fefc0aed4378d9c081b09a827ca0cd",
+      "at_seconds": 8.5,
+      "caption": "Item nomeado aparece como etiqueta antes de entrar na pilha da coluna."
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/stacks.jpg",
+      "sha256": "1c15387f125da0d51dc53d27f093fd09d30a95f47d40d95f89f85b9267685c9a",
+      "at_seconds": 25.0,
+      "caption": "Itens já classificados continuam acumulados em pilhas."
+    },
+    {
+      "path": "examples/reference-library/F17/colunas/complete.jpg",
+      "sha256": "40e79f59e10c310e602ab390a1057950e6786988601b10b15096dfef2e20f2db",
+      "at_seconds": 50.0,
+      "caption": "Quadro completo no fim; título e legenda continuam."
+    }
+  ],
+  "source": {
+    "kind": "external_reference_video",
+    "zip": "F09 - 3Colunasz.zip",
+    "zip_sha256": "adb5d91b134276451cb6f4289ee83f2f2f0bba01da079ebcbde07f91965981c7",
+    "zip_folder_label": "F09 - Colunas",
+    "retrieved_with": "ScrapeCreators",
+    "original_sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c",
+    "source_sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c",
+    "duration_s": 53.52,
+    "width": 720,
+    "height": 1280,
+    "reference_copy_transcoded": false
+  },
+  "review": {
+    "date": "2026-10-10",
+    "method": "Folha de 24 quadros do vídeo inteiro e quadros nomeados; guia do ZIP lido por inteiro",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "missing_from_zip": "arquivo de receita, prints e vídeo; só guias em HTML e o link do exemplo"
+  }
+}

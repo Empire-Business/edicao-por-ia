@@ -1,0 +1,92 @@
+id: f09-personagem-v1
+version: 1
+status: draft
+format_code: F09
+origin_note: Receita escrita a partir do guia do ZIP 'F07 - Personagemz.zip' (pasta 'F07 - Personagem') enviado pelo autor
+  em 10/10/2026 e dos quadros do vídeo de exemplo indicado nele. O ZIP não trazia arquivo de receita; a numeração do ZIP não
+  é o código deste cadastro. Ainda sem edição nova testada nesta instalação.
+purpose: Conversa encenada entre dois vídeos, um personagem por vez em tela cheia.
+engine: ffmpeg+hyperframes
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  repeated_takes: keep_last_complete_take
+  dialogue_assembly: Intercalar falas dos dois arquivos por sentido; nunca concatenar um arquivo inteiro depois do outro;
+    registrar arquivo e intervalo de cada trecho.
+  turn_gap_seconds:
+  - 0.05
+  - 0.1
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.15
+    keep_pause_seconds: 0.06
+    word_handle_seconds: 0.05
+    mid_sentence: true
+    protect: pausas muito curtas dentro da palavra e finais suaves como s e f
+  cut_audio_and_video_together: true
+  presenter_on_camera: always_one_character_fullscreen
+visual:
+  composition: Um personagem por vez em tela cheia; planos consistentes por papel.
+  transitions: corte seco
+  punch_ins: none
+  b_roll: none
+  split_screen: forbidden_as_default
+  reference_rhythm: 'Exemplo: 10 planos em 45,3 s, média 4,5 s (2,6–5,9 s); o corte segue a fala.'
+captions:
+  enabled: true
+  build: palavra por palavra, cumulativa dentro do bloco; o bloco fica até a troca do grupo
+  max_lines: 2
+  block_width_fraction:
+  - 0.35
+  - 0.45
+  position: sobre o peito, a partir de 0,62 da altura; medir o queixo de cada personagem e descer se encostar no rosto
+  entrance: opacidade, cerca de 100 ms
+  reserve_final_layout: true
+  font_source: explicit_visual_identity
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  level_both_voices: true
+  mute_unused_source: true
+  music: optional
+qa:
+  check_dialogue_order: true
+  check_character_voice_match: true
+  check_no_clipped_words: true
+  check_caption_below_face_per_character: true
+  check_turn_gaps: true
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- fabricated_fact
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- automatic_personal_identity
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_brand_signature
+- fixed_brand_name
+- automatic_branded_end_card
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+reference_materials:
+  video: examples/reference-library/F09/personagem/reference.mp4
+  analysis: examples/reference-library/F09/personagem/analysis.json
