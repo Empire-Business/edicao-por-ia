@@ -1221,6 +1221,100 @@
         }
       ],
       "examples": []
+    },
+    {
+      "code": "F18",
+      "name": "Longo + Cortes",
+      "description": "Um pedido entrega o pacote do YouTube: vídeo longo com gancho encenado, provas, gráficos e animações bem acabadas, cortes 9:16 dos melhores momentos e 3 opções de capa.",
+      "category": "stories",
+      "tags": [
+        "YouTube",
+        "Cortes",
+        "Capas"
+      ],
+      "use": "Transformar uma gravação em pacote completo para o YouTube: vídeo longo com animações e provas, cortes verticais e capas.",
+      "inputs": "Gravação bruta (arquivo ou link do YouTube, inclusive não listado), roteiro opcional, fontes/dados do tema e a ID visual escolhida. Patrocinador e referências de capa são opcionais.",
+      "mechanism": "Um único pedido entrega o pacote: o vídeo longo 16:9 editado como documentário de YouTube — gancho encenado com cenas ilustradas, prova com prints e marca-texto, dados em gráficos animados, modelo explicativo em linha do tempo, B-roll real e cartões de palavra-chave, com o apresentador costurando tudo —, os melhores momentos virais em cortes 9:16 no F16 e 3 opções de capa geradas pelo modelo de imagem mais recente.",
+      "steps": [
+        "Obter a gravação: arquivo local ou YouTube (ScrapeCreators; se não houver arquivo, Apify). Isolar a voz e transcrever.",
+        "Montar a fala do longo pelo roteiro: gancho encenado, virada com dado, pergunta central, corpo em capítulos e pergunta final.",
+        "Planejar uma inserção para cada ideia: cena ilustrada, print com marca-texto, gráfico, linha do tempo, comparação, B-roll real ou cartão de palavra-chave; o apresentador volta para conectar.",
+        "Produzir as animações no nível do exemplo: still e animatic de cada estado, entradas suaves, uma informação por vez, cores e fontes da ID.",
+        "Montar trilha por capítulo, revisar quadros reais, fatos e fontes e renderizar a prévia do longo.",
+        "Escolher os cortes virais que valem de verdade; montar cada um no F16 como trabalho próprio, podendo juntar trechos de partes diferentes sem mudar o sentido.",
+        "Gerar 3 capas com conceitos diferentes a partir de quadros reais do apresentador e das referências de capa; entregar com capítulos e fontes."
+      ],
+      "avoid": "Não entregar o longo como talking head com legenda, inserir B-roll genérico, inventar manchete, número ou cláusula, usar marca real em contexto falso, fazer animação de template sem acabamento, completar cota de cortes com trechos fracos, montar corte que mude o que a pessoa disse ou copiar pessoa, canal, verde/creme/serifa e assinatura do exemplo. Cores e fontes vêm da ID.",
+      "pattern": "f18-longo-cortes-v1",
+      "video": "assets/videos/F18-longo-cortes.mp4",
+      "vimeo": null,
+      "duration": 756,
+      "evidence": "video",
+      "evidenceLabel": "Referência externa",
+      "evidenceNote": "Vídeo do link de exemplo indicado pelo autor (cópia leve 540p). Mostra o vídeo longo; não é uma edição produzida pela fábrica. Pessoa, canal, cores e fontes não são padrões.",
+      "categories": [
+        "stories",
+        "explain"
+      ],
+      "cameraRequired": true,
+      "hasPersonOnScreen": true,
+      "startingMaterials": [
+        "Vídeo",
+        "Link do YouTube",
+        "Roteiro"
+      ],
+      "buildingBlocks": [
+        "Gancho encenado",
+        "Prints com marca-texto",
+        "Gráficos animados",
+        "Linha do tempo",
+        "Cortes 9:16 (F16)",
+        "3 capas"
+      ],
+      "searchTerms": [
+        "youtube",
+        "video longo",
+        "longo",
+        "cortes",
+        "corte",
+        "shorts",
+        "reels",
+        "viral",
+        "momentos virais",
+        "capa",
+        "capas",
+        "thumbnail",
+        "thumb",
+        "pacote",
+        "documentario",
+        "podcast",
+        "canal",
+        "animacao",
+        "graficos",
+        "dados",
+        "manchete",
+        "prova",
+        "historia",
+        "apresentador",
+        "16:9",
+        "9:16"
+      ],
+      "poster": "assets/posters/F18-longo-cortes.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F18-longo-cortes-frame-0.jpg",
+          "caption": "Gancho encenado: personagem ilustrado sem rosto, colagem com textura de papel, antes do apresentador aparecer."
+        },
+        {
+          "poster": "assets/posters/F18-longo-cortes-frame-1.jpg",
+          "caption": "Trecho de levantamento com marca-texto sincronizado à leitura."
+        },
+        {
+          "poster": "assets/posters/F18-longo-cortes-frame-2.jpg",
+          "caption": "Exemplo do modelo: cena ilustrada cinematográfica com a barra de etapas no rodapé."
+        }
+      ],
+      "examples": []
     }
   ],
   "identities": [

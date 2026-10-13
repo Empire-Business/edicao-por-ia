@@ -50,7 +50,7 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 
 
 
-- F17 e F18 — retirados pelo autor; códigos reservados. Receitas e exemplos rejeitados ficam fora da distribuição.
+- Antigos F17 e F18 — retirados pelo autor; receitas e exemplos rejeitados ficam fora da distribuição. Os números foram reutilizados por novas gerações com UID próprio (F17 Colunas, F18 Longo + Cortes).
 
 - `f02-talking-head-v1`: F02 Talking Head, nova geração a partir do vídeo do ZIP de 07/10/2026. Draft; preserva as receitas anteriores.
 
@@ -61,3 +61,5 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 - `f11-narracao-ilustrada-v1`: F11 Narração Ilustrada, nova geração importada do ZIP 'F08 - Narração Ilustradaz.zip' em 10/10/2026. Draft; não restaura o antigo F11.
 
 - `f17-colunas-v1`: F17 Colunas, nova geração importada do ZIP 'F09 - 3Colunasz.zip' em 10/10/2026. Draft; não restaura o antigo F17.
+
+- `f18-longo-cortes-v1`: F18 Longo + Cortes, criado pelo autor em 13/10/2026 a partir do exemplo https://youtu.be/zRIcmLPRWwc. Draft; novo UID, não restaura o antigo F18 retirado.

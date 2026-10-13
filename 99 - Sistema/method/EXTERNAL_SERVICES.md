@@ -2,7 +2,7 @@
 
 ## Simple local configuration
 The user opens **CHAVES DAS INTEGRAÇÕES.txt** in the visible project root, pastes each key
-following `SCRAPECREATORS_API_KEY=` / `ELEVENLABS_API_KEY=` / `OPENROUTER_API_KEY=` and saves. No terminal, hidden files
+following `SCRAPECREATORS_API_KEY=` / `ELEVENLABS_API_KEY=` / `OPENROUTER_API_KEY=` / `APIFY_API_TOKEN=` and saves. No terminal, hidden files
 or shell sourcing. Setup creates this empty file only if absent, never overwrites an existing
 file. It is private, ignored by Git and must not be included when sharing the factory.
 `tools/service_keys.py` loads credentials only when executing an authorized service operation:
@@ -110,3 +110,21 @@ ScrapeCreators research and retrieval for that job; accept it without asking for
   volume-priced models unless `--accept-unknown-cost` is passed after the user agrees.
 - Missing key → point to the visible keys file. 401 invalid key, 402 no credits, a failed/expired
   job or an invalid download are reported as concrete blockers; no other provider is tried.
+
+## Apify — YouTube download when ScrapeCreators has no file (author order, 2026-10-13)
+- ScrapeCreators `/v1/youtube/video` often returns metadata, chapters, captions and `most_replayed` but
+  `downloadOptions.formats: []`. Then, and only then, use `tools/apify_youtube.py URL OUT.mp4`
+  (actor `streamers/youtube-video-downloader`, `storeInKVStore: true`, `preferredQuality: 1080p`).
+- Long videos exceed the 300 s synchronous endpoint (HTTP 408). The tool starts the run, polls it and
+  reads the dataset; after an interruption resume with `--run-id` so the same download is not paid twice.
+- The file is the dataset's `downloadedFileUrl` (KV store, deleted after ~3 days); HLS manifest URLs are not files.
+  The result must match the requested video id and pass ffprobe with video before becoming a source.
+- Measured 2026-10-13: 12:36 video at 1920×1080 with audio, about 4 min, US$ 1.03. Record run id and cost.
+- Transcript without paying Apify: ScrapeCreators `/v1/youtube/video/transcript?url=…&language=pt`.
+
+## OpenRouter — cover/thumbnail options (F18, 2026-10-13)
+- `tools/gen_thumbnails.py models` lists the live `openai/gpt-image*` models; `run JOB --brief …` uses the
+  newest non-mini one by default ("sempre o mais recente"), 16:9, with job-local reference images
+  (real presenter frames + author cover references). Receipt in `thumbs/receipt.json` with model and cost.
+- Each option is one paid call; the F18 request authorizes the 3 covers of that job. The author may instead
+  generate them in his own Codex/ChatGPT; record which path was used. Not yet run in a real job.

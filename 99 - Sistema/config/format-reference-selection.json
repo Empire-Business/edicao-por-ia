@@ -148,6 +148,14 @@
         "sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c"
       },
       "reference_conflicts": []
+    },
+    "official.72999026f7e94523a3fcf05ebaae28c0": {
+      "code": "F18",
+      "primary_reference": {
+        "path": "examples/reference-library/F18/longo-cortes/reference.mp4",
+        "sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea"
+      },
+      "reference_conflicts": []
     }
   }
 }

@@ -1,8 +1,6 @@
 {
   "scope": "Explicit author selection for the public gallery, from the active local catalogue",
-  "excluded_codes": [
-    "F18"
-  ],
+  "excluded_codes": [],
   "formats": [
     {
       "code": "F01",
@@ -268,6 +266,28 @@
         "avoid": "Não transformar as categorias em bom/ruim, trocar etiquetas por imagens automaticamente, apagar itens anteriores, reduzir até perder leitura, deixar espera entre turnos, cortar sílabas ou acelerar a voz. Não copiar a pessoa, o tema ou a chamada da referência. As cores do exemplo (ciano, amarelo e rosa) são do exemplo; cores e fontes vêm da ID. Outro número de colunas ainda precisa de teste."
       },
       "asset_id": "F17-colunas"
+    },
+    {
+      "code": "F18",
+      "name": "Longo + Cortes",
+      "description": "Um pedido entrega o pacote do YouTube: vídeo longo com gancho encenado, provas, gráficos e animações bem acabadas, cortes 9:16 dos melhores momentos e 3 opções de capa.",
+      "pattern": "f18-longo-cortes-v1",
+      "uid": "official.72999026f7e94523a3fcf05ebaae28c0",
+      "mechanism_details": {
+        "inputs": "Gravação bruta (arquivo ou link do YouTube, inclusive não listado), roteiro opcional, fontes/dados do tema e a ID visual escolhida. Patrocinador e referências de capa são opcionais.",
+        "mechanism": "Um único pedido entrega o pacote: o vídeo longo 16:9 editado como documentário de YouTube — gancho encenado com cenas ilustradas, prova com prints e marca-texto, dados em gráficos animados, modelo explicativo em linha do tempo, B-roll real e cartões de palavra-chave, com o apresentador costurando tudo —, os melhores momentos virais em cortes 9:16 no F16 e 3 opções de capa geradas pelo modelo de imagem mais recente.",
+        "steps": [
+          "Obter a gravação: arquivo local ou YouTube (ScrapeCreators; se não houver arquivo, Apify). Isolar a voz e transcrever.",
+          "Montar a fala do longo pelo roteiro: gancho encenado, virada com dado, pergunta central, corpo em capítulos e pergunta final.",
+          "Planejar uma inserção para cada ideia: cena ilustrada, print com marca-texto, gráfico, linha do tempo, comparação, B-roll real ou cartão de palavra-chave; o apresentador volta para conectar.",
+          "Produzir as animações no nível do exemplo: still e animatic de cada estado, entradas suaves, uma informação por vez, cores e fontes da ID.",
+          "Montar trilha por capítulo, revisar quadros reais, fatos e fontes e renderizar a prévia do longo.",
+          "Escolher os cortes virais que valem de verdade; montar cada um no F16 como trabalho próprio, podendo juntar trechos de partes diferentes sem mudar o sentido.",
+          "Gerar 3 capas com conceitos diferentes a partir de quadros reais do apresentador e das referências de capa; entregar com capítulos e fontes."
+        ],
+        "avoid": "Não entregar o longo como talking head com legenda, inserir B-roll genérico, inventar manchete, número ou cláusula, usar marca real em contexto falso, fazer animação de template sem acabamento, completar cota de cortes com trechos fracos, montar corte que mude o que a pessoa disse ou copiar pessoa, canal, verde/creme/serifa e assinatura do exemplo. Cores e fontes vêm da ID."
+      },
+      "asset_id": "F18-longo-cortes"
     }
   ],
   "reference_media": {
@@ -387,6 +407,14 @@
         "sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c",
         "evidence_label": "Referência externa",
         "evidence_note": "Vídeo do link de exemplo indicado pelo autor no ZIP do formato. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são padrões."
+      }
+    ],
+    "F18": [
+      {
+        "path": "examples/reference-library/F18/longo-cortes/reference.mp4",
+        "sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea",
+        "evidence_label": "Referência externa",
+        "evidence_note": "Vídeo do link de exemplo indicado pelo autor (cópia leve 540p). Mostra o vídeo longo; não é uma edição produzida pela fábrica. Pessoa, canal, cores e fontes não são padrões."
       }
     ]
   },
@@ -550,6 +578,29 @@
         },
         "caption": "Itens já classificados continuam acumulados em pilhas."
       }
+    ],
+    "F18": [
+      {
+        "reference": {
+          "path": "examples/reference-library/F18/longo-cortes/cold-open-collage.jpg",
+          "sha256": "266b46c2919597af06b1e742a347a42400c604c06381fbfc47e974463a39e3a2"
+        },
+        "caption": "Gancho encenado: personagem ilustrado sem rosto, colagem com textura de papel, antes do apresentador aparecer."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F18/longo-cortes/document-highlight.jpg",
+          "sha256": "bbea6e70f1520074bca934cc165902d6ebb5c9bea9ae1898927447683e0275b9"
+        },
+        "caption": "Trecho de levantamento com marca-texto sincronizado à leitura."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F18/longo-cortes/framework-example-scene.jpg",
+          "sha256": "4ea87707aceecae1a21d5476b4541ca0234b8d5e5c1b4b13c416ce11ff068a24"
+        },
+        "caption": "Exemplo do modelo: cena ilustrada cinematográfica com a barra de etapas no rodapé."
+      }
     ]
   },
   "excluded_uids": [
@@ -557,6 +608,7 @@
     "factory.f03",
     "factory.f09",
     "factory.f11",
-    "factory.f17"
+    "factory.f17",
+    "factory.f18"
   ]
 }

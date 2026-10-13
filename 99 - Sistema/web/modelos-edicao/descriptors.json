@@ -667,5 +667,61 @@
       "reels"
     ],
     "hasPersonOnScreen": true
+  },
+  "F18": {
+    "category": "stories",
+    "categories": [
+      "stories",
+      "explain"
+    ],
+    "tags": [
+      "YouTube",
+      "Cortes",
+      "Capas"
+    ],
+    "use": "Transformar uma gravação em pacote completo para o YouTube: vídeo longo com animações e provas, cortes verticais e capas.",
+    "cameraRequired": true,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Vídeo",
+      "Link do YouTube",
+      "Roteiro"
+    ],
+    "buildingBlocks": [
+      "Gancho encenado",
+      "Prints com marca-texto",
+      "Gráficos animados",
+      "Linha do tempo",
+      "Cortes 9:16 (F16)",
+      "3 capas"
+    ],
+    "searchTerms": [
+      "youtube",
+      "video longo",
+      "longo",
+      "cortes",
+      "corte",
+      "shorts",
+      "reels",
+      "viral",
+      "momentos virais",
+      "capa",
+      "capas",
+      "thumbnail",
+      "thumb",
+      "pacote",
+      "documentario",
+      "podcast",
+      "canal",
+      "animacao",
+      "graficos",
+      "dados",
+      "manchete",
+      "prova",
+      "historia",
+      "apresentador",
+      "16:9",
+      "9:16"
+    ]
   }
 }

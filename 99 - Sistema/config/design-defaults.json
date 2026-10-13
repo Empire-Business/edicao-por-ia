@@ -621,6 +621,140 @@
         "path": "examples/reference-library/F17/colunas/analysis.json",
         "sha256": "72bc33a696102ccbfcd6ce786debf04ef1898a55e5e8fd67e65bdc38ee0ca93f"
       }
+    },
+    {
+      "code": "F18",
+      "name": "Longo + Cortes",
+      "memory_store": "longo-cortes",
+      "pattern": "f18-longo-cortes-v1",
+      "description": "Um pedido entrega o pacote do YouTube: vídeo longo com gancho encenado, provas, gráficos e animações bem acabadas, cortes 9:16 dos melhores momentos e 3 opções de capa.",
+      "uid": "official.72999026f7e94523a3fcf05ebaae28c0",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://youtu.be/zRIcmLPRWwc",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Gravação bruta (arquivo ou link do YouTube, inclusive não listado), roteiro opcional, fontes/dados do tema e a ID visual escolhida. Patrocinador e referências de capa são opcionais.",
+        "mechanism": "Um único pedido entrega o pacote: o vídeo longo 16:9 editado como documentário de YouTube — gancho encenado com cenas ilustradas, prova com prints e marca-texto, dados em gráficos animados, modelo explicativo em linha do tempo, B-roll real e cartões de palavra-chave, com o apresentador costurando tudo —, os melhores momentos virais em cortes 9:16 no F16 e 3 opções de capa geradas pelo modelo de imagem mais recente.",
+        "steps": [
+          "Obter a gravação: arquivo local ou YouTube (ScrapeCreators; se não houver arquivo, Apify). Isolar a voz e transcrever.",
+          "Montar a fala do longo pelo roteiro: gancho encenado, virada com dado, pergunta central, corpo em capítulos e pergunta final.",
+          "Planejar uma inserção para cada ideia: cena ilustrada, print com marca-texto, gráfico, linha do tempo, comparação, B-roll real ou cartão de palavra-chave; o apresentador volta para conectar.",
+          "Produzir as animações no nível do exemplo: still e animatic de cada estado, entradas suaves, uma informação por vez, cores e fontes da ID.",
+          "Montar trilha por capítulo, revisar quadros reais, fatos e fontes e renderizar a prévia do longo.",
+          "Escolher os cortes virais que valem de verdade; montar cada um no F16 como trabalho próprio, podendo juntar trechos de partes diferentes sem mudar o sentido.",
+          "Gerar 3 capas com conceitos diferentes a partir de quadros reais do apresentador e das referências de capa; entregar com capítulos e fontes."
+        ],
+        "avoid": "Não entregar o longo como talking head com legenda, inserir B-roll genérico, inventar manchete, número ou cláusula, usar marca real em contexto falso, fazer animação de template sem acabamento, completar cota de cortes com trechos fracos, montar corte que mude o que a pessoa disse ou copiar pessoa, canal, verde/creme/serifa e assinatura do exemplo. Cores e fontes vêm da ID."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F18/longo-cortes/reference.mp4",
+          "sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cold-open-collage.jpg",
+          "sha256": "266b46c2919597af06b1e742a347a42400c604c06381fbfc47e974463a39e3a2"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cold-open-phone-story.jpg",
+          "sha256": "d4233483c8aa5e45d4ce770c78cadca5d449f1c04ae49b63fa1fcdf7ad0f6e17"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cold-open-surreal-collage.jpg",
+          "sha256": "b4d755388ffc58cba2535cb6da88e0000968dc67aa9173a63e891196283cb30b"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/data-chart.jpg",
+          "sha256": "e1cbbe006490664d0b303eb6c13760da1db964341950844fe128b66e5e95ba23"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/question-title-typing.jpg",
+          "sha256": "aee08168014b098803cb22c8709914bb6d7617509bbf50030b4d007170893e86"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/name-tag.jpg",
+          "sha256": "f32a8eda47f15ace109d87f5ff1643ab5a67cbc4b4c819ac2fcc36328d69e8b2"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/sponsor-qr.jpg",
+          "sha256": "c0137022093a6b972c0b42e491b44d4db3c6da5ffd1781991f0b8a543dc207bd"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/data-pyramid.jpg",
+          "sha256": "9663cb4f20965106204249c0d68f0a2f8459c5d4bbdf7bdafa36003bbba1b997"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/headline-print.jpg",
+          "sha256": "1a8eec3d442411b3143ea92a6e4a744cad56a73bf7f6ff33188a778a551245bd"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/document-highlight.jpg",
+          "sha256": "bbea6e70f1520074bca934cc165902d6ebb5c9bea9ae1898927447683e0275b9"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/keyword-over-presenter.jpg",
+          "sha256": "3b0aea64a58b8bbe33444f45252bfd32a53c5ad8e8eaae52f5c23fc0e27bcf8b"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/framework-timeline.jpg",
+          "sha256": "85a82f51f0d30352e198ce318b724641fbf78cafc4cd25db0cabee174e17ec5b"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/framework-step.jpg",
+          "sha256": "0a4d3671de431b658adf3e5e520216c7750f90d80b44ae588400ec102da3e14e"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/framework-example-scene.jpg",
+          "sha256": "4ea87707aceecae1a21d5476b4541ca0234b8d5e5c1b4b13c416ce11ff068a24"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/keyword-card.jpg",
+          "sha256": "e140b97a5c2176f336c25c26bdf1dbcfed528d12cab50c25329a918f88a29787"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/social-clip-blurred.jpg",
+          "sha256": "69d061e64eb66fd23cd2dbb45a414a61fadc01431f4fa9d6310aa4ae5f9f307a"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/real-news-broll.jpg",
+          "sha256": "7fc4e0570da69d34f5431d9715b96d2206faac82c874316f5efa005e57a7cee6"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/contract-highlight.jpg",
+          "sha256": "1e2b2d2bb198ca64ded5d5ff6f02391fdb9ef3228a5e9975a3634269a4042e40"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/comparison-icons.jpg",
+          "sha256": "ceac89f3a0b59352ae99f99d6219bbe29b326d0de33edc129118bf1fa47b59b2"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/stat-over-broll.jpg",
+          "sha256": "481eb9889ac2fe19a3f49a237e3a74aedd9128de1ddcfd8d1fd632a8814ae4d0"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/closing-question.jpg",
+          "sha256": "59c70aafbf0ba43e7884e7234179a4a5de018990140ebb831885934471c027a2"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cover-example.jpg",
+          "sha256": "60da018994072d6dae68539241ec0d3a908befc47422198cb1684e440a54a9ad"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cover-refs-1.jpg",
+          "sha256": "c80a7fea70c464b69f25ef31a6450481884a52237afca7ef51c70a1d39a0da71"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cover-refs-2.jpg",
+          "sha256": "f45438900ac92d48acf67efdc45a764e526b84d71558c4d33b6debae3ec41e2b"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F18/longo-cortes/analysis.json",
+        "sha256": "b2b6bae0e1c69dd0ec9e22e05c7b8d0ff8a9fd0638031daa6d3b29dcc77d93e5"
+      }
     }
   ],
   "visual_identities": [

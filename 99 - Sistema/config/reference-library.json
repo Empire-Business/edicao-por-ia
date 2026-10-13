@@ -1359,6 +1359,248 @@
         }
       ],
       "missing_sources": []
+    },
+    "F18": {
+      "code": "F18",
+      "name": "Longo + Cortes",
+      "uid": "official.72999026f7e94523a3fcf05ebaae28c0",
+      "references": [
+        {
+          "path": "examples/reference-library/F18/longo-cortes/README.md",
+          "kind": "reference_analysis",
+          "sha256": "11e75c52bb8e4db842f76d1d9f8c709488928e510e8f595f6da3acd1b2c3c198",
+          "bytes": 687,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "b2b6bae0e1c69dd0ec9e22e05c7b8d0ff8a9fd0638031daa6d3b29dcc77d93e5",
+          "bytes": 15554,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/closing-question.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "59c70aafbf0ba43e7884e7234179a4a5de018990140ebb831885934471c027a2",
+          "bytes": 49732,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Fechamento: pergunta reflexiva digitada; a assinatura do canal que vem depois não é herdada.",
+          "at_seconds": 741
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cold-open-collage.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "266b46c2919597af06b1e742a347a42400c604c06381fbfc47e974463a39e3a2",
+          "bytes": 254795,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Gancho encenado: personagem ilustrado sem rosto, colagem com textura de papel, antes do apresentador aparecer.",
+          "at_seconds": 1
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cold-open-phone-story.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d4233483c8aa5e45d4ce770c78cadca5d449f1c04ae49b63fa1fcdf7ad0f6e17",
+          "bytes": 266883,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Ponto de vista do celular: os stories da história aparecem na mão do espectador.",
+          "at_seconds": 71
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cold-open-surreal-collage.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "b4d755388ffc58cba2535cb6da88e0000968dc67aa9173a63e891196283cb30b",
+          "bytes": 257516,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Cena exagerada de colagem para a fantasia de luxo; marcas inventadas como paródia.",
+          "at_seconds": 79
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/comparison-icons.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ceac89f3a0b59352ae99f99d6219bbe29b326d0de33edc129118bf1fa47b59b2",
+          "bytes": 96230,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Comparação de conceitos: personagem simples com ícones ao redor.",
+          "at_seconds": 661
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/contract-highlight.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "1e2b2d2bb198ca64ded5d5ff6f02391fdb9ef3228a5e9975a3634269a4042e40",
+          "bytes": 114560,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Cláusula de contrato real com marca-texto na parte citada.",
+          "at_seconds": 585
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cover-example.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "60da018994072d6dae68539241ec0d3a908befc47422198cb1684e440a54a9ad",
+          "bytes": 353979,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Capa publicada do vídeo de exemplo."
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cover-refs-1.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c80a7fea70c464b69f25ef31a6450481884a52237afca7ef51c70a1d39a0da71",
+          "bytes": 335345,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Referências de capa enviadas pelo autor (grade 1): rosto forte, palavra enorme, comparação dividida, objeto simbólico com texto."
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/cover-refs-2.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f45438900ac92d48acf67efdc45a764e526b84d71558c4d33b6debae3ec41e2b",
+          "bytes": 301644,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Referências de capa enviadas pelo autor (grade 2): blocos de cor, ano contra ano, valor contra valor."
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/data-chart.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "e1cbbe006490664d0b303eb6c13760da1db964341950844fe128b66e5e95ba23",
+          "bytes": 66566,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Dado real em gráfico de pizza animado, uma fatia destacada por vez.",
+          "at_seconds": 82
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/data-pyramid.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9663cb4f20965106204249c0d68f0a2f8459c5d4bbdf7bdafa36003bbba1b997",
+          "bytes": 157306,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Pirâmide de faixas de renda; o mesmo gráfico transiciona de um ano para o outro.",
+          "at_seconds": 178
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/document-highlight.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "bbea6e70f1520074bca934cc165902d6ebb5c9bea9ae1898927447683e0275b9",
+          "bytes": 58571,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Trecho de levantamento com marca-texto sincronizado à leitura.",
+          "at_seconds": 265
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/framework-example-scene.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4ea87707aceecae1a21d5476b4541ca0234b8d5e5c1b4b13c416ce11ff068a24",
+          "bytes": 94884,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Exemplo do modelo: cena ilustrada cinematográfica com a barra de etapas no rodapé.",
+          "at_seconds": 333
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/framework-step.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0a4d3671de431b658adf3e5e520216c7750f90d80b44ae588400ec102da3e14e",
+          "bytes": 267877,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Etapa 4 com ícone animado entrando na linha do tempo.",
+          "at_seconds": 308
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/framework-timeline.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "85a82f51f0d30352e198ce318b724641fbf78cafc4cd25db0cabee174e17ec5b",
+          "bytes": 260225,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Modelo explicativo: título e linha do tempo numerada.",
+          "at_seconds": 289
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/headline-print.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "1a8eec3d442411b3143ea92a6e4a744cad56a73bf7f6ff33188a778a551245bd",
+          "bytes": 124651,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Print real de reportagem com título traduzido e aproximação.",
+          "at_seconds": 193
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/keyword-card.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "e140b97a5c2176f336c25c26bdf1dbcfed528d12cab50c25329a918f88a29787",
+          "bytes": 29726,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Conceito-chave isolado em cartão sobre o apresentador escurecido.",
+          "at_seconds": 470
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/keyword-over-presenter.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "3b0aea64a58b8bbe33444f45252bfd32a53c5ad8e8eaae52f5c23fc0e27bcf8b",
+          "bytes": 50725,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Pergunta-chave em máquina de escrever sobre o apresentador escurecido.",
+          "at_seconds": 281
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/name-tag.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f32a8eda47f15ace109d87f5ff1643ab5a67cbc4b4c819ac2fcc36328d69e8b2",
+          "bytes": 66073,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Etiqueta de nome na primeira aparição do apresentador.",
+          "at_seconds": 94
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/question-title-typing.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "aee08168014b098803cb22c8709914bb6d7617509bbf50030b4d007170893e86",
+          "bytes": 42662,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Pergunta central digitada em cartão de texto.",
+          "at_seconds": 90
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/real-news-broll.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7fc4e0570da69d34f5431d9715b96d2206faac82c874316f5efa005e57a7cee6",
+          "bytes": 205769,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "B-roll real de telejornal com a faixa original preservada.",
+          "at_seconds": 564
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea",
+          "bytes": 46813607,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd"
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/social-clip-blurred.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "69d061e64eb66fd23cd2dbb45a414a61fadc01431f4fa9d6310aa4ae5f9f307a",
+          "bytes": 226858,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Clipe de rede social com rostos de terceiros desfocados.",
+          "at_seconds": 553
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/sponsor-qr.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c0137022093a6b972c0b42e491b44d4db3c6da5ffd1781991f0b8a543dc207bd",
+          "bytes": 74435,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Bloco do patrocinador: QR e data sobre o apresentador (só quando o trabalho tem patrocinador).",
+          "at_seconds": 145
+        },
+        {
+          "path": "examples/reference-library/F18/longo-cortes/stat-over-broll.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "481eb9889ac2fe19a3f49a237e3a74aedd9128de1ddcfd8d1fd632a8814ae4d0",
+          "bytes": 54540,
+          "source_sha256": "2d262eb0c33f9857782fd04f4f388416d71497c903eab5d90b269377fc916edd",
+          "caption": "Número grande sobre B-roll escurecido do evento citado.",
+          "at_seconds": 699
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -1896,7 +2138,34 @@
     "examples/reference-library/F17/colunas/label-in.jpg": "98d4054e191793c3982e87cde753fba563fefc0aed4378d9c081b09a827ca0cd",
     "examples/reference-library/F17/colunas/opening.jpg": "90fcfc37cb9aa3492a85a6af70fb7a748f1c131f0b83dde9275d93cb366c4be2",
     "examples/reference-library/F17/colunas/reference.mp4": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c",
-    "examples/reference-library/F17/colunas/stacks.jpg": "1c15387f125da0d51dc53d27f093fd09d30a95f47d40d95f89f85b9267685c9a"
+    "examples/reference-library/F17/colunas/stacks.jpg": "1c15387f125da0d51dc53d27f093fd09d30a95f47d40d95f89f85b9267685c9a",
+    "examples/reference-library/F18/longo-cortes/README.md": "11e75c52bb8e4db842f76d1d9f8c709488928e510e8f595f6da3acd1b2c3c198",
+    "examples/reference-library/F18/longo-cortes/analysis.json": "b2b6bae0e1c69dd0ec9e22e05c7b8d0ff8a9fd0638031daa6d3b29dcc77d93e5",
+    "examples/reference-library/F18/longo-cortes/closing-question.jpg": "59c70aafbf0ba43e7884e7234179a4a5de018990140ebb831885934471c027a2",
+    "examples/reference-library/F18/longo-cortes/cold-open-collage.jpg": "266b46c2919597af06b1e742a347a42400c604c06381fbfc47e974463a39e3a2",
+    "examples/reference-library/F18/longo-cortes/cold-open-phone-story.jpg": "d4233483c8aa5e45d4ce770c78cadca5d449f1c04ae49b63fa1fcdf7ad0f6e17",
+    "examples/reference-library/F18/longo-cortes/cold-open-surreal-collage.jpg": "b4d755388ffc58cba2535cb6da88e0000968dc67aa9173a63e891196283cb30b",
+    "examples/reference-library/F18/longo-cortes/comparison-icons.jpg": "ceac89f3a0b59352ae99f99d6219bbe29b326d0de33edc129118bf1fa47b59b2",
+    "examples/reference-library/F18/longo-cortes/contract-highlight.jpg": "1e2b2d2bb198ca64ded5d5ff6f02391fdb9ef3228a5e9975a3634269a4042e40",
+    "examples/reference-library/F18/longo-cortes/cover-example.jpg": "60da018994072d6dae68539241ec0d3a908befc47422198cb1684e440a54a9ad",
+    "examples/reference-library/F18/longo-cortes/cover-refs-1.jpg": "c80a7fea70c464b69f25ef31a6450481884a52237afca7ef51c70a1d39a0da71",
+    "examples/reference-library/F18/longo-cortes/cover-refs-2.jpg": "f45438900ac92d48acf67efdc45a764e526b84d71558c4d33b6debae3ec41e2b",
+    "examples/reference-library/F18/longo-cortes/data-chart.jpg": "e1cbbe006490664d0b303eb6c13760da1db964341950844fe128b66e5e95ba23",
+    "examples/reference-library/F18/longo-cortes/data-pyramid.jpg": "9663cb4f20965106204249c0d68f0a2f8459c5d4bbdf7bdafa36003bbba1b997",
+    "examples/reference-library/F18/longo-cortes/document-highlight.jpg": "bbea6e70f1520074bca934cc165902d6ebb5c9bea9ae1898927447683e0275b9",
+    "examples/reference-library/F18/longo-cortes/framework-example-scene.jpg": "4ea87707aceecae1a21d5476b4541ca0234b8d5e5c1b4b13c416ce11ff068a24",
+    "examples/reference-library/F18/longo-cortes/framework-step.jpg": "0a4d3671de431b658adf3e5e520216c7750f90d80b44ae588400ec102da3e14e",
+    "examples/reference-library/F18/longo-cortes/framework-timeline.jpg": "85a82f51f0d30352e198ce318b724641fbf78cafc4cd25db0cabee174e17ec5b",
+    "examples/reference-library/F18/longo-cortes/headline-print.jpg": "1a8eec3d442411b3143ea92a6e4a744cad56a73bf7f6ff33188a778a551245bd",
+    "examples/reference-library/F18/longo-cortes/keyword-card.jpg": "e140b97a5c2176f336c25c26bdf1dbcfed528d12cab50c25329a918f88a29787",
+    "examples/reference-library/F18/longo-cortes/keyword-over-presenter.jpg": "3b0aea64a58b8bbe33444f45252bfd32a53c5ad8e8eaae52f5c23fc0e27bcf8b",
+    "examples/reference-library/F18/longo-cortes/name-tag.jpg": "f32a8eda47f15ace109d87f5ff1643ab5a67cbc4b4c819ac2fcc36328d69e8b2",
+    "examples/reference-library/F18/longo-cortes/question-title-typing.jpg": "aee08168014b098803cb22c8709914bb6d7617509bbf50030b4d007170893e86",
+    "examples/reference-library/F18/longo-cortes/real-news-broll.jpg": "7fc4e0570da69d34f5431d9715b96d2206faac82c874316f5efa005e57a7cee6",
+    "examples/reference-library/F18/longo-cortes/reference.mp4": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea",
+    "examples/reference-library/F18/longo-cortes/social-clip-blurred.jpg": "69d061e64eb66fd23cd2dbb45a414a61fadc01431f4fa9d6310aa4ae5f9f307a",
+    "examples/reference-library/F18/longo-cortes/sponsor-qr.jpg": "c0137022093a6b972c0b42e491b44d4db3c6da5ffd1781991f0b8a543dc207bd",
+    "examples/reference-library/F18/longo-cortes/stat-over-broll.jpg": "481eb9889ac2fe19a3f49a237e3a74aedd9128de1ddcfd8d1fd632a8814ae4d0"
   },
   "retired_generations": {
     "factory.f02": {

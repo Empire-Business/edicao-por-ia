@@ -1,0 +1,219 @@
+id: f18-longo-cortes-v1
+version: 1
+status: draft
+format_code: F18
+origin_note: Receita escrita em 13/10/2026 a partir do pedido do autor e da análise do exemplo indicado por ele
+  (https://youtu.be/zRIcmLPRWwc — 12:36, dois apresentadores, 187 planos). Quadros, ritmo e transcrição foram medidos
+  no vídeo real (cópia baixada pelo Apify depois que o ScrapeCreators não expôs o arquivo). Ainda sem edição nova
+  testada nesta instalação.
+purpose: Pacote completo de YouTube a partir de uma gravação — vídeo longo 16:9 editado no nível do exemplo, cortes
+  9:16 no F16 com os melhores momentos e 3 opções de capa.
+engine: hybrid
+deliverables:
+  long_video:
+    geometry: 16:9
+    recipe: esta receita (seções editorial, visual, motion, captions e audio)
+  shorts:
+    geometry: '9:16'
+    recipe: f16-v1
+    rule: Cada corte é um trabalho filho separado (F16 + a mesma ID escolhida), ligado ao trabalho principal.
+  thumbnails:
+    count: 3
+    geometry: 1280x720
+    tool: tools/gen_thumbnails.py
+inputs:
+  required:
+  - Gravação bruta (arquivo local ou link do YouTube, inclusive não listado).
+  - ID visual escolhida pelo usuário.
+  optional:
+  - Roteiro (ajuda a montar o longo e a achar os cortes; é guia semântico, não texto obrigatório).
+  - Fontes, dados, prints e mídias do tema; patrocinador do episódio, se houver.
+  - Referências de capa aprovadas pelo autor.
+source_download:
+  order:
+  - ScrapeCreators /v1/youtube/video (usa downloadOptions.formats quando houver).
+  - Apify streamers/youtube-video-downloader (tools/apify_youtube.py) quando o ScrapeCreators não expõe arquivo.
+  authorization: Ordem do autor em 13/10/2026; o pedido de editar um vídeo do YouTube autoriza esse download. Registrar
+    provedor, execução e custo no decision log. Nunca yt-dlp ou raspagem pelo navegador.
+  verify: ffprobe com vídeo e áudio reais antes de virar fonte; copiar para dentro do trabalho e guardar o hash.
+output:
+  width: 1920
+  height: 1080
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: dense_documentary
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  repeated_takes: keep_best_take_only
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.25
+    keep_pause_seconds: 0.08
+    word_handle_seconds: 0.08
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  structure:
+  - 'Gancho encenado: a primeira história/situação do roteiro é contada só com cenas ilustradas em sequência rápida, antes
+    do apresentador aparecer.'
+  - 'Virada + dado: um número real que contradiz o gancho, depois a pergunta central em cartão de texto.'
+  - 'Apresentação: apresentador(es) em câmera com etiqueta de nome; patrocinador só se o trabalho tiver um.'
+  - 'Corpo em capítulos: prova (prints, dados) → contradição → modelo explicativo → exemplos → virada final.'
+  - 'Fechamento: pergunta reflexiva em cartão escuro; sem cartão de marca automático.'
+  chapters: Gerar capítulos a partir da montagem final para a descrição do YouTube.
+  presenters: Um ou mais; com dois apresentadores/cenários, alternar por frase e manter cada cenário consistente.
+rhythm_reference:
+  measured_on_example: 187 planos em 755.9 s; média 4.0 s, mediana 2.7 s.
+  by_section_mean_seconds:
+    cold_open: 3.2
+    presentation_and_sponsor: 5.9
+    data_and_proof: 4.8
+    framework_explanation: 7.6
+    story_and_scandal: 3.7
+    final_turn: 2.3
+  rule: Ritmo é referência medida, não cronômetro. A fala decide o corte; nunca ficar mais de ~8 s sem mudança visual
+    com propósito.
+visual:
+  composition: Tela cheia em todos os estados — apresentador, cena ilustrada, print/documento, gráfico, B-roll real.
+    Sem tela dividida automática.
+  presenter_share: Cerca de metade do tempo; o apresentador volta para conectar ideias e emocionar, nunca some por mais
+    de um bloco inteiro.
+  inserts:
+    illustrated_scene:
+      when: Gancho encenado, metáforas e exemplos históricos/hipotéticos que não têm filmagem real.
+      look: Ilustração/colagem com textura de papel e personagem sem rosto definido; produtos e marcas inventados como
+        paródia, nunca marca real em contexto falso. Gerar por imagem (OpenRouter, modelo mais recente autorizado) e animar
+        com câmera lenta, parallax e elementos que entram.
+      consistency: Um mesmo personagem e uma mesma linguagem de ilustração dentro do vídeo.
+    proof_print:
+      when: Pesquisa, reportagem, contrato, relatório citado na fala.
+      look: Print real no idioma do vídeo; câmera aproxima da linha; marca-texto passa sincronizado à frase lida.
+      rule: Nunca inventar matéria, número ou cláusula; guardar URL e captura.
+    data_graphic:
+      when: Todo número relevante.
+      look: Gráfico animado (pizza, pirâmide, barras, linha) construído em etapas, uma informação por estado; comparação
+        ano a ano por transição do mesmo gráfico.
+    framework:
+      when: A fala apresenta etapas/fases/modelo.
+      look: Linha do tempo numerada com ícones que entram etapa por etapa; nos exemplos seguintes, cena ilustrada em tela
+        cheia com a mesma barra de progresso no rodapé indicando a etapa atual.
+    concept_comparison:
+      when: Contraste entre dois conceitos.
+      look: Personagem simples ao centro com ícones que surgem ao redor; troca de rótulo/cor para o segundo conceito.
+    real_broll:
+      when: Pessoas, eventos e lugares reais citados.
+      source: Pesquisa de B-roll do F16 (ScrapeCreators para TikTok/YouTube), notícias de TV com a faixa original.
+      privacy: Desfocar rostos de terceiros que não são o assunto.
+    keyword_card:
+      when: Pergunta central, conceito-chave ou frase de efeito.
+      look: Texto grande com efeito de máquina de escrever sobre o apresentador escurecido ou fundo liso.
+    name_tag: Etiqueta de nome do apresentador na primeira aparição.
+    sponsor:
+      when: Somente se o trabalho informar patrocinador.
+      look: Cartão do patrocinador, QR/data sobre o apresentador; fecha com transição para o conteúdo.
+  punch_ins: selective
+  random_effects: false
+motion:
+  quality_bar: Pedido explícito do autor — animações e inserções bem acabadas no nível do exemplo. Easing suave, entradas
+    encadeadas, textura e sombra coerentes; nada de template genérico, animação travada ou caixas sem acabamento.
+  engine: HyperFrames/JS por estado, timing travado na fala final.
+  process: estado → still → animatic curto → render; revisar quadros reais de cada inserção antes do render final.
+  forbidden:
+  - generic_ai_looking_graphics
+  - two_informations_at_once
+  - scale_pop
+  - bounce
+captions:
+  long_video:
+    enabled: false
+    note: O exemplo não tem legenda contínua; o texto em tela são cartões de palavra-chave, etiquetas e dados. Legenda
+      contínua só se o trabalho pedir.
+  shorts: Segue F16 (legenda curta de uma linha).
+  font_source: explicit_visual_identity
+shorts:
+  recipe: f16-v1
+  how_many: A IA decide quantos valem de verdade; não há número fixo. Sem corte fraco para completar cota.
+  selection_signals:
+  - gancho forte nos 2 primeiros segundos
+  - sentido completo sem o vídeo longo
+  - surpresa, número chocante, contradição, polêmica ou história
+  - pico de retenção quando houver dado (most_replayed)
+  - o roteiro do usuário indica os pontos que ele considera centrais
+  assembly: Pode juntar trechos de partes diferentes do vídeo, inclusive um trecho posterior antes de um anterior, desde
+    que o resultado faça sentido sozinho e não mude o que a pessoa disse. Registrar cada intervalo de origem no EDL.
+  duration: Definida pela ideia; tipicamente 30–90 s.
+  insertions: Reaproveitar as cenas, gráficos e prints do longo adaptados a 9:16, além da pesquisa própria do F16.
+thumbnails:
+  count: 3
+  concepts: Três conceitos diferentes (ex.: rosto + palavra, comparação lado a lado, símbolo/objeto), não variações da
+    mesma ideia.
+  reference_language: Rosto real em close com expressão forte; 1–3 palavras enormes; contraste alto; comparação dividida
+    (antes/depois, ano/ano, valor/valor); objeto simbólico com texto; composição fotorrealista limpa.
+  likeness: Usar quadros reais do apresentador como referência; não deformar a pessoa nem colocar terceiros em situação
+    falsa ou difamatória.
+  provider: OpenRouter com o modelo openai/gpt-image* mais recente da lista ao vivo (tools/gen_thumbnails.py) ou o
+    Codex/ChatGPT do autor quando ele preferir; registrar o modelo usado.
+  text: Idioma do vídeo; sem logotipo ou marca automática; cores/fontes coerentes com a ID quando houver texto desenhado.
+audio:
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  voice_isolation: ElevenLabs obrigatório antes da primeira prévia (regra da fábrica).
+  music: required
+  music_policy: Trilha por capítulo que acompanhe a emoção (humor no gancho, tensão na prova, leveza na virada); voz à
+    frente com ducking; efeitos curtos nas entradas de gráfico.
+insertion_assets:
+  policy: proof-heavy
+  density: high
+  quality_min: 1080p para o longo quando disponível; nunca tratar upscale como nativo.
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  verify_every_insert_against_speech: true
+  verify_sources_and_local_files: true
+  verify_shorts_make_sense_alone: true
+  verify_shorts_do_not_change_meaning: true
+  verify_thumbnails_readable_at_small_size: true
+  verify_no_inherited_brand_signatures: true
+  check_long_stretch_without_visual_change_seconds: 8
+  compare_reference_frames: Comparar quadros reais do render com os quadros de referência em qa/format-fidelity.json.
+forbidden:
+- gratuitous_zoom
+- random_transition
+- stretch_video
+- delete_source
+- unrelated_broll
+- fabricated_fact
+- fabricated_headline
+- real_brand_in_false_context
+- alternate_youtube_extractor_beyond_apify
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- automatic_personal_identity
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_brand_signature
+- fixed_brand_name
+- automatic_branded_end_card
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+  example_look_note: O verde, o creme, o papel e a serifa do exemplo pertencem ao canal de origem; cores e fontes vêm
+    da ID escolhida.
+reference_materials:
+  video: examples/reference-library/F18/longo-cortes/reference.mp4
+  analysis: examples/reference-library/F18/longo-cortes/analysis.json
+delivery:
+  preview_before_final: true
+  package:
+  - Vídeo longo 16:9 final
+  - Cortes 9:16 finais (um arquivo por corte)
+  - 3 capas PNG 1280×720
+  - Capítulos com tempos e lista de fontes para a descrição

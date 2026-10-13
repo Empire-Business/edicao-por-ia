@@ -110,6 +110,11 @@
       "code": "F17",
       "definition_sha256": "403402f6958d1a8ad3f2e1fc2bcc15199e3decc084866c4092f5f00cfa18e755",
       "pattern_sha256": "4780debf77ac8e663881365d7a734154871605cfc44179a965b9a9199c089167"
+    },
+    "official.72999026f7e94523a3fcf05ebaae28c0": {
+      "code": "F18",
+      "definition_sha256": "4af4360cb1c17fcb8e13b4767972f619301ee19cb2f471cff466e461cb8ab96e",
+      "pattern_sha256": "f8742fe50ecf59e181d82f3058e5dd59445f0534cc5f82b2fbadafdc66a54569"
     }
   }
 }

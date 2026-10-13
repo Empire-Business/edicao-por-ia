@@ -267,5 +267,112 @@
       "sha256": "40e79f59e10c310e602ab390a1057950e6786988601b10b15096dfef2e20f2db",
       "caption": "Quadro completo no fim; título e legenda continuam."
     }
+  ],
+  "F18": [
+    {
+      "path": "examples/reference-library/F18/longo-cortes/cold-open-collage.jpg",
+      "sha256": "266b46c2919597af06b1e742a347a42400c604c06381fbfc47e974463a39e3a2",
+      "caption": "Gancho encenado: personagem ilustrado sem rosto, colagem com textura de papel, antes do apresentador aparecer."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/cold-open-phone-story.jpg",
+      "sha256": "d4233483c8aa5e45d4ce770c78cadca5d449f1c04ae49b63fa1fcdf7ad0f6e17",
+      "caption": "Ponto de vista do celular: os stories da história aparecem na mão do espectador."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/cold-open-surreal-collage.jpg",
+      "sha256": "b4d755388ffc58cba2535cb6da88e0000968dc67aa9173a63e891196283cb30b",
+      "caption": "Cena exagerada de colagem para a fantasia de luxo; marcas inventadas como paródia."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/data-chart.jpg",
+      "sha256": "e1cbbe006490664d0b303eb6c13760da1db964341950844fe128b66e5e95ba23",
+      "caption": "Dado real em gráfico de pizza animado, uma fatia destacada por vez."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/question-title-typing.jpg",
+      "sha256": "aee08168014b098803cb22c8709914bb6d7617509bbf50030b4d007170893e86",
+      "caption": "Pergunta central digitada em cartão de texto."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/name-tag.jpg",
+      "sha256": "f32a8eda47f15ace109d87f5ff1643ab5a67cbc4b4c819ac2fcc36328d69e8b2",
+      "caption": "Etiqueta de nome na primeira aparição do apresentador."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/sponsor-qr.jpg",
+      "sha256": "c0137022093a6b972c0b42e491b44d4db3c6da5ffd1781991f0b8a543dc207bd",
+      "caption": "Bloco do patrocinador: QR e data sobre o apresentador (só quando o trabalho tem patrocinador)."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/data-pyramid.jpg",
+      "sha256": "9663cb4f20965106204249c0d68f0a2f8459c5d4bbdf7bdafa36003bbba1b997",
+      "caption": "Pirâmide de faixas de renda; o mesmo gráfico transiciona de um ano para o outro."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/headline-print.jpg",
+      "sha256": "1a8eec3d442411b3143ea92a6e4a744cad56a73bf7f6ff33188a778a551245bd",
+      "caption": "Print real de reportagem com título traduzido e aproximação."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/document-highlight.jpg",
+      "sha256": "bbea6e70f1520074bca934cc165902d6ebb5c9bea9ae1898927447683e0275b9",
+      "caption": "Trecho de levantamento com marca-texto sincronizado à leitura."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/keyword-over-presenter.jpg",
+      "sha256": "3b0aea64a58b8bbe33444f45252bfd32a53c5ad8e8eaae52f5c23fc0e27bcf8b",
+      "caption": "Pergunta-chave em máquina de escrever sobre o apresentador escurecido."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/framework-timeline.jpg",
+      "sha256": "85a82f51f0d30352e198ce318b724641fbf78cafc4cd25db0cabee174e17ec5b",
+      "caption": "Modelo explicativo: título e linha do tempo numerada."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/framework-step.jpg",
+      "sha256": "0a4d3671de431b658adf3e5e520216c7750f90d80b44ae588400ec102da3e14e",
+      "caption": "Etapa 4 com ícone animado entrando na linha do tempo."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/framework-example-scene.jpg",
+      "sha256": "4ea87707aceecae1a21d5476b4541ca0234b8d5e5c1b4b13c416ce11ff068a24",
+      "caption": "Exemplo do modelo: cena ilustrada cinematográfica com a barra de etapas no rodapé."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/keyword-card.jpg",
+      "sha256": "e140b97a5c2176f336c25c26bdf1dbcfed528d12cab50c25329a918f88a29787",
+      "caption": "Conceito-chave isolado em cartão sobre o apresentador escurecido."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/social-clip-blurred.jpg",
+      "sha256": "69d061e64eb66fd23cd2dbb45a414a61fadc01431f4fa9d6310aa4ae5f9f307a",
+      "caption": "Clipe de rede social com rostos de terceiros desfocados."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/real-news-broll.jpg",
+      "sha256": "7fc4e0570da69d34f5431d9715b96d2206faac82c874316f5efa005e57a7cee6",
+      "caption": "B-roll real de telejornal com a faixa original preservada."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/contract-highlight.jpg",
+      "sha256": "1e2b2d2bb198ca64ded5d5ff6f02391fdb9ef3228a5e9975a3634269a4042e40",
+      "caption": "Cláusula de contrato real com marca-texto na parte citada."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/comparison-icons.jpg",
+      "sha256": "ceac89f3a0b59352ae99f99d6219bbe29b326d0de33edc129118bf1fa47b59b2",
+      "caption": "Comparação de conceitos: personagem simples com ícones ao redor."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/stat-over-broll.jpg",
+      "sha256": "481eb9889ac2fe19a3f49a237e3a74aedd9128de1ddcfd8d1fd632a8814ae4d0",
+      "caption": "Número grande sobre B-roll escurecido do evento citado."
+    },
+    {
+      "path": "examples/reference-library/F18/longo-cortes/closing-question.jpg",
+      "sha256": "59c70aafbf0ba43e7884e7234179a4a5de018990140ebb831885934471c027a2",
+      "caption": "Fechamento: pergunta reflexiva digitada; a assinatura do canal que vem depois não é herdada."
+    }
   ]
 }

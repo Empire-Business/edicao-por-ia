@@ -10,18 +10,20 @@ from pathlib import Path
 from project_layout import engine_root, surface_root
 
 KEY_FILE = 'CHAVES DAS INTEGRAÇÕES.txt'
-KEY_NAMES = ('SCRAPECREATORS_API_KEY', 'ELEVENLABS_API_KEY', 'OPENROUTER_API_KEY')
+KEY_NAMES = ('SCRAPECREATORS_API_KEY', 'ELEVENLABS_API_KEY', 'OPENROUTER_API_KEY', 'APIFY_API_TOKEN')
 TEMPLATE = '''# CHAVES DAS INTEGRAÇÕES
 # Cole cada chave depois do sinal =, sem apagar o nome à esquerda.
 # Salve este arquivo. Não é preciso usar terminal nem renomear o arquivo.
 # ScrapeCreators: https://app.scrapecreators.com/
 # ElevenLabs: https://elevenlabs.io/app/settings/api-keys
-# OpenRouter (troca de roupa/cenário): https://openrouter.ai/settings/keys
+# OpenRouter (troca de roupa/cenário e capas): https://openrouter.ai/settings/keys
+# Apify (baixar vídeo do YouTube quando o ScrapeCreators não entrega o arquivo): https://console.apify.com/settings/integrations
 # Este arquivo é privado: não o envie junto com a fábrica para outras pessoas.
 
 SCRAPECREATORS_API_KEY=
 ELEVENLABS_API_KEY=
 OPENROUTER_API_KEY=
+APIFY_API_TOKEN=
 '''
 
 
