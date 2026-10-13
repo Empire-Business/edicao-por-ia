@@ -2,7 +2,7 @@
 
 ## Simple local configuration
 The user opens **CHAVES DAS INTEGRAÇÕES.txt** in the visible project root, pastes each key
-following `SCRAPECREATORS_API_KEY=` / `ELEVENLABS_API_KEY=` and saves. No terminal, hidden files
+following `SCRAPECREATORS_API_KEY=` / `ELEVENLABS_API_KEY=` / `OPENROUTER_API_KEY=` and saves. No terminal, hidden files
 or shell sourcing. Setup creates this empty file only if absent, never overwrites an existing
 file. It is private, ignored by Git and must not be included when sharing the factory.
 `tools/service_keys.py` loads credentials only when executing an authorized service operation:
@@ -10,6 +10,8 @@ visible file first, then environment, legacy root/engine `.env`, then the old Sc
 JSON. It parses assignments as text, never executes them. Do not inspect real secret files during
 setup/review, print keys, copy them to chat/memory/jobs, or place them in subprocess arguments.
 Tests use fake credentials. The user need not migrate old keys for existing operations to work.
+A keys file created before a service existed lacks its line: the user adds `OPENROUTER_API_KEY=`
+at the end and saves; setup never rewrites an existing file.
 
 The factory is generic. Require a registered format identified by the user before editing;
 Bruno and historical test colors are never global defaults. These services consume credits;
@@ -78,3 +80,33 @@ ScrapeCreators research and retrieval for that job; accept it without asking for
   Preserve source/author; third-party rights are not transferred by the API.
 - Historical all-format B-roll research instructions do not make Bruno's assets, colors or identity
   defaults. Use only the selected format/job's actual requirements and authorized budget.
+
+## OpenRouter — outfit/scenery swap (generative video edit, validated 2026-10-12)
+- What it is: a video-edit model redraws a short range of ONE take with another outfit and/or
+  another scenery, keeping the person's motion. Available in any format. Flow, consent and QA:
+  `workflows/SWAP_OUTFIT_SCENERY.md`. Tool: `tools/gen_video_edit.py` (`models`, `run`, `patch`).
+- The assistant does not produce these pixels; the video model does. Report the model used.
+- NO standing authorization. Each clip needs the user's yes for (a) the spend and (b) how the range
+  reaches the provider. The API takes the input only as a public HTTPS link: a `data:` URL returns
+  400 “Only HTTPS URLs are allowed”, and OpenRouter's Files endpoint does not accept video. So either
+  the user hosts the range (`--source-url`) or agrees to a temporary public link (`--temp-public-link`,
+  Litterbox, 1 hour). Never pick the public link silently.
+- API: `POST https://openrouter.ai/api/v1/videos` with `{model, prompt, input_references:[{type:
+  "video_url", video_url:{url}}]}` → 202 with `id` and `polling_url`; poll until `completed`;
+  download from `unsigned_urls[0]` or `/videos/<id>/content?index=0`. `usage.cost` is the real charge.
+  Live models and prices need no key: `GET /api/v1/videos/models` (`pricing_skus`); which ones take a
+  video as input: `GET /api/v1/models?output_modalities=video` (`architecture.input_modalities`).
+- Default model `black-forest-labs/flux-video-edit`: US$ 0.03 per output second (5 s = US$ 0.15,
+  charged exactly that in three runs). Sent 720×1280 at 30 fps; it returned 704×1248 at 24 fps, about
+  40 ms longer. The tool conforms the result to the recording's size, frame rate and duration and
+  keeps the ORIGINAL audio; never use the model's audio track.
+- Observed quality on a vertical talking head with hands and a handheld microphone: outfit and
+  scenery stayed stable for 5 s, hands and ring preserved, no background bleeding into the gestures.
+  The face is slightly redrawn (smoother skin, small tone shift) and more so when outfit and scenery
+  change together. A night scenery kept the daylight on the person: ask for a scenery that matches
+  the recording's light.
+- Listed but NOT tested here: `runway/aleph-2` (US$ 0.28/s, minimum US$ 0.56 per generation) and the
+  ByteDance Seedance models (priced by volume, unknown before running; minimum 4 s). The tool blocks
+  volume-priced models unless `--accept-unknown-cost` is passed after the user agrees.
+- Missing key → point to the visible keys file. 401 invalid key, 402 no credits, a failed/expired
+  job or an invalid download are reported as concrete blockers; no other provider is tried.

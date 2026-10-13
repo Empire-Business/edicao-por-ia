@@ -56,4 +56,6 @@ Não usar pull, reset, clean, mescla de históricos ou ZIP extraído por cima co
 
 A preparação cria o arquivo de integrações local e fora do Git. Nunca compartilhar suas chaves. Pesquisas de TikTok/YouTube usam o provedor previsto nas regras; não há fallback por conta própria. Serviços pagos exigem consentimento.
 
+Em qualquer formato é possível pedir a troca da roupa e/ou do cenário de um trecho curto de uma gravação. A imagem é gerada por um modelo de vídeo pela OpenRouter (chave própria, custo por segundo) e cada trecho exige o seu consentimento para o gasto e para o envio. Detalhes em `99 - Sistema/workflows/SWAP_OUTFIT_SCENERY.md`.
+
 A distribuição contém receitas, ferramentas, fontes e as referências selecionadas do autor, verificadas por hash. Não inclui seus trabalhos nem bancos pessoais. Programas e ambiente precisam ser preparados na máquina nova; copiar a pasta não torna o ambiente executável portátil.

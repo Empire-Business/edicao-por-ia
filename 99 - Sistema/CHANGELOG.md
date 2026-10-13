@@ -1,5 +1,12 @@
 # Histórico de versões
 
+## 2.3.0 — 12 de outubro de 2026
+
+- Troca de roupa e de cenário em um trecho curto de uma única gravação, disponível em qualquer formato. Usa um modelo de edição de vídeo pela OpenRouter, com chave própria em OPENROUTER_API_KEY.
+- Ferramenta `tools/gen_video_edit.py`: lista modelos e preços atuais, gera o trecho no tamanho e na cadência da gravação com o áudio original, cria o antes e depois e monta uma cópia derivada da gravação sem alterar a original.
+- Cada trecho exige consentimento para o gasto e para o envio, com limite de custo por geração. Não há autorização permanente.
+- Validado em trechos verticais de 5 segundos com o modelo padrão. Outros modelos e trechos mais longos ainda não foram testados.
+
 ## 2.1.0 — 6 de outubro de 2026
 
 - Todos os formatos padrão acompanham uma biblioteca de referências reais disponíveis: vídeos completos, fotos, pranchas, áudios de referência e análises, organizados por F.
