@@ -152,44 +152,44 @@
     {
       "code": "F03",
       "name": "Dark com B-roll",
-      "description": "Comentário em ambiente escuro: a pessoa fala dentro de um cartão e o resto é B-roll pesquisado e cenas animadas, com legenda palavra a palavra e trilha.",
+      "description": "História narrada em ambiente preto: abre como o F02, com B-roll em cima, tarja no meio e a pessoa embaixo; depois a voz segue sobre muito B-roll real e cenas animadas, com legenda palavra a palavra e trilha.",
       "category": "presenter",
       "tags": [
         "Dark",
         "B-roll",
         "Animação"
       ],
-      "use": "Comentar notícias e ideias de negócio num vídeo escuro e muito animado, em que a pessoa aparece pouco e as imagens contam a história.",
-      "inputs": "Gravação do apresentador comentando um assunto e autorização para pesquisar B-roll (TikTok/YouTube só por ScrapeCreators). Trilha autorizada ou local. Escolher a ID visual separadamente; o fundo escuro vem da cor escura da ID.",
-      "mechanism": "Comentário em ambiente escuro do início ao fim. O apresentador aparece apenas falando dentro de um cartão; todo o resto é B-roll real pesquisado, em tela cheia ou em cartão, e estados animados: título montado palavra a palavra no tempo da fala, número que embaralha e bate, carimbos, objetos que entram girando, listas, chamadas técnicas e cartões empilhados. Legenda palavra a palavra sempre visível, fala quase sem respiros, trilha em dois atos abaixo da voz e sons curtos nos impactos.",
+      "use": "Contar uma história real ou comentar uma notícia num vídeo preto e muito animado: a pessoa aparece só na abertura e as imagens reais do caso contam o resto.",
+      "inputs": "Gravação curta da pessoa contando o gancho (o resto pode ser só áudio) e autorização para pesquisar B-roll (TikTok/YouTube só por ScrapeCreators). Texto da tarja, se a pessoa quiser escrever. Trilha autorizada ou local. Escolher a ID visual separadamente.",
+      "mechanism": "Abre como o F02: B-roll real do caso em cima trocando no tempo da fala, tarja com a promessa no meio e a pessoa falando embaixo, completa desde o primeiro quadro e com carimbo na revelação. Depois a voz continua sobre muito B-roll real (troca a cada ≈ 2,5 s), em tela cheia ou em cartões 3D, e estados animados: números que embaralham e batem, carimbos, chamadas, listas e objetos que entram girando. Fundo preto do início ao fim, cor de destaque só em detalhes, nada escrito no topo, legenda palavra a palavra em caixa alta com sublinhado, fala sem respiros e trilha abaixo da voz com o grave na revelação.",
       "steps": [
         "Isolar a voz, cortar erros e apertar os respiros medindo as lacunas entre palavras (0,08–0,12 s); remapear os tempos das palavras.",
-        "Listar cada ideia da fala e pesquisar a imagem que a sustenta: a coisa citada e planos de objeto/ação sem texto. Conferir quadros, recortar legendas embutidas e registrar fontes.",
-        "Escolher só tomadas do apresentador falando para os cartões; nunca calado, de olhos fechados ou com o rosto cortado.",
-        "Dar a cada ideia um estado: tela cheia, cartão de mídia, objeto 3D, número, carimbo, lista, chamada ou duplicação. Nenhum estado só de texto; algo novo a cada 1,2–3 s.",
-        "Montar título e legenda palavra a palavra pelo tempo real das palavras; uma informação por estado.",
-        "Encaixar a trilha em dois atos pela fala e medir a distância para a voz; pôr sons curtos só nos impactos.",
-        "Tirar quadros de cada estado antes do render, depois revisar o vídeo inteiro por quadros, volume e sincronia."
+        "Escrever a promessa da tarja (ou usar o texto que a pessoa enviar) e escolher três imagens reais para o topo da abertura, terminando na revelação.",
+        "Pesquisar o B-roll do que aconteceu de verdade: as pessoas e os fatos do caso, mais planos de objeto/ação para as ideias abstratas. Nunca usar rostos de quem só comentou o assunto. Conferir quadros, recortar legendas embutidas e registrar fontes.",
+        "Dar a cada ideia um estado: tela cheia, cartão 3D, número, carimbo, chamada, lista ou interface ilustrada. Nenhum estado só de texto; algo novo a cada 1,2–3 s.",
+        "Montar a legenda palavra a palavra pelo tempo real das palavras, sem legenda enquanto a tarja estiver na tela.",
+        "Encaixar a trilha em dois atos com o grave na revelação, medir a distância para a voz e pôr sons curtos só nos impactos.",
+        "Conferir que o primeiro quadro já está completo, tirar quadros de cada estado antes do render e revisar o vídeo inteiro por quadros, volume e sincronia."
       ],
-      "avoid": "Não deixar tela só com palavras, usar objeto desenhado em código como plano principal quando a pesquisa está autorizada, mostrar o apresentador calado, manter legenda embutida em outro idioma, usar estética infantil em assunto sério, deixar a música cobrir a voz ou herdar roxo, fontes, rosto, logo e assunto do exemplo. Cores e fontes vêm da ID; o logo que aparece no exemplo é mídia do assunto comentado, não assinatura do formato.",
-      "pattern": "f03-dark-com-broll-v1",
+      "avoid": "Não deixar tela só com palavras, fundo colorido, rótulo ou título no topo, legenda por cima da tarja, abertura nascendo do preto, rostos de comentaristas ou criadores que só falaram do assunto, pessoa calada ou com o rosto cortado, legenda embutida em outro idioma, nem música cobrindo a voz. Não herdar roxo, a cor da tarja, fontes, rosto, roupa ou assunto do exemplo: cores e fontes vêm da ID.",
+      "pattern": "f03-dark-com-broll-v2",
       "video": "assets/videos/F03-dark-com-b-roll.mp4",
       "vimeo": null,
-      "duration": 123,
+      "duration": 84,
       "evidence": "video",
       "evidenceLabel": "Prévia da fábrica",
-      "evidenceNote": "Edição real feita nesta fábrica como exemplo do formato, comprimida para publicação. Pessoa, assunto, cores, fontes, trilha e o logo do produto comentado pertencem ao exemplo e não são padrões.",
+      "evidenceNote": "Edição real feita nesta fábrica como exemplo do formato, comprimida para publicação. Pessoa, roupa, assunto, texto e cor da tarja, cores, fontes e trilha pertencem ao exemplo e não são padrões.",
       "cameraRequired": true,
       "startingMaterials": [
-        "Vídeo",
-        "B-roll",
+        "Vídeo curto",
+        "Áudio",
+        "B-roll pesquisado",
         "Trilha"
       ],
       "buildingBlocks": [
-        "Fundo escuro",
-        "Apresentador em cartão",
-        "B-roll real",
-        "Título palavra a palavra",
+        "Abertura com tarja",
+        "Fundo preto",
+        "B-roll real do caso",
         "Números com impacto",
         "Carimbos",
         "Legenda palavra a palavra",
@@ -223,26 +223,34 @@
         "sem respiro",
         "ritmo rapido",
         "reels",
-        "tiktok"
+        "tiktok",
+        "historia",
+        "historia real",
+        "caso real",
+        "tarja",
+        "gancho",
+        "abertura f02",
+        "so audio",
+        "audio"
       ],
       "hasPersonOnScreen": true,
       "poster": "assets/posters/F03-dark-com-b-roll.jpg",
       "referenceFrames": [
         {
           "poster": "assets/posters/F03-dark-com-b-roll-frame-0.jpg",
-          "caption": "Apresentador falando dentro de um cartão sobre o fundo escuro."
+          "caption": "Abertura do F02: B-roll real em cima, tarja com a promessa no meio e a pessoa embaixo."
         },
         {
           "poster": "assets/posters/F03-dark-com-b-roll-frame-1.jpg",
-          "caption": "Número que embaralha e bate, com a unidade em bloco de destaque."
+          "caption": "Pessoa real do caso em cartão 3D com chamada de nome e idade."
         },
         {
           "poster": "assets/posters/F03-dark-com-b-roll-frame-2.jpg",
-          "caption": "Objeto em cartão 3D com carimbo de veredito."
+          "caption": "Número que embaralha e bate sobre imagem escurecida."
         },
         {
           "poster": "assets/posters/F03-dark-com-b-roll-frame-3.jpg",
-          "caption": "Vídeo pesquisado da pessoa citada dentro de cartão."
+          "caption": "Carimbo de veredito sobre vídeo real em cartão."
         }
       ],
       "examples": []

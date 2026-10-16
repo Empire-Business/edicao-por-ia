@@ -63,3 +63,5 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 - `f17-colunas-v1`: F17 Colunas, nova geração importada do ZIP 'F09 - 3Colunasz.zip' em 10/10/2026. Draft; não restaura o antigo F17.
 
 - `f18-longo-cortes-v1`: F18 Longo + Cortes, criado pelo autor em 13/10/2026 a partir do exemplo https://youtu.be/zRIcmLPRWwc. Draft; novo UID, não restaura o antigo F18 retirado.
+
+- `f03-dark-com-broll-v2`: F03 Dark com B-roll revisado em 16/10/2026 a partir da edição BR04 Versão B (abertura do F02 com tarja, fundos pretos, B-roll real do caso). `f03-dark-com-broll-v1` preservada.

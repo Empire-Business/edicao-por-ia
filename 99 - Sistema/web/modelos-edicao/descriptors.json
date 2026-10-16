@@ -480,18 +480,18 @@
       "B-roll",
       "Animação"
     ],
-    "use": "Comentar notícias e ideias de negócio num vídeo escuro e muito animado, em que a pessoa aparece pouco e as imagens contam a história.",
+    "use": "Contar uma história real ou comentar uma notícia num vídeo preto e muito animado: a pessoa aparece só na abertura e as imagens reais do caso contam o resto.",
     "cameraRequired": true,
     "startingMaterials": [
-      "Vídeo",
-      "B-roll",
+      "Vídeo curto",
+      "Áudio",
+      "B-roll pesquisado",
       "Trilha"
     ],
     "buildingBlocks": [
-      "Fundo escuro",
-      "Apresentador em cartão",
-      "B-roll real",
-      "Título palavra a palavra",
+      "Abertura com tarja",
+      "Fundo preto",
+      "B-roll real do caso",
       "Números com impacto",
       "Carimbos",
       "Legenda palavra a palavra",
@@ -525,7 +525,15 @@
       "sem respiro",
       "ritmo rapido",
       "reels",
-      "tiktok"
+      "tiktok",
+      "historia",
+      "historia real",
+      "caso real",
+      "tarja",
+      "gancho",
+      "abertura f02",
+      "so audio",
+      "audio"
     ],
     "hasPersonOnScreen": true
   },

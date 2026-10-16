@@ -45,64 +45,64 @@
   ],
   "F03": [
     {
-      "path": "examples/reference-library/F03/dark-com-b-roll/card.jpg",
-      "sha256": "19133c289ca8a8be6e4c6d81c4b8b725db2a8c306521739383caa73bcc4ced54",
-      "caption": "Apresentador falando dentro de um cartão sobre o fundo escuro."
+      "path": "examples/reference-library/F03/dark-com-b-roll/opening.jpg",
+      "sha256": "f7c9ba97f35b99eec256482321f69bf0cb957159605b049f31fcc8989d29eecb",
+      "caption": "Abertura do F02: B-roll real em cima, tarja com a promessa no meio e a pessoa embaixo."
     },
     {
-      "path": "examples/reference-library/F03/dark-com-b-roll/fullscreen.jpg",
-      "sha256": "c48192da800f0bb86e3814dcc830c41549bd5aed93ce7ceccf8103832e613349",
-      "caption": "B-roll pesquisado em tela cheia com legenda palavra a palavra."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/number.jpg",
-      "sha256": "284ca68437bb690da28774c7baa98455e64e36d8f5168ffe45a9aed125916bb6",
-      "caption": "Número que embaralha e bate, com a unidade em bloco de destaque."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/stamp.jpg",
-      "sha256": "371b1c8dac1c8d9404e87d9533253b5fcf1e9f81054374193319aa3b398b27e9",
-      "caption": "Objeto em cartão 3D com carimbo de veredito."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/duplication.jpg",
-      "sha256": "f11473f4b7f2cc490657335d30e639ffb086dc722b88c35da1ea08f791f47383",
-      "caption": "Repetição mostrada por cartões empilhados e chamada técnica."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/object.jpg",
-      "sha256": "82e1f7c4f89f63e0b8aaf27cc34cc418b55d9d63c0c807bc9924cb48ec9c32d2",
-      "caption": "Mídia em cartão com perspectiva, título palavra a palavra e etiqueta."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/list.jpg",
-      "sha256": "137a6aa33f3400d1d5a93fd599677b8598283f26fc75b32c1662bd0a17941093",
-      "caption": "Lista que entra no tempo de cada palavra falada sobre imagem desfocada."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/slams.jpg",
-      "sha256": "5ca1ef718c515fd1241872edc7cd6833d4f3a8ec22c6faa99e7bf8576abb0f38",
-      "caption": "Itens que batem um a um sobre imagem escurecida."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/chat.jpg",
-      "sha256": "d8022f15a95c5122be45a3f090688cba02192152123656502f2c14fddda068ef",
-      "caption": "Interface recriada como objeto grande e rotulada como ilustração."
-    },
-    {
-      "path": "examples/reference-library/F03/dark-com-b-roll/account.jpg",
-      "sha256": "58b7e7ec158131002dd5b93ed702b98fe5624b792f0c5a35a770a081ce2a72d0",
-      "caption": "Objeto ilustrativo com cadeado e carimbo."
+      "path": "examples/reference-library/F03/dark-com-b-roll/opening-stamp.jpg",
+      "sha256": "3a9341948dc2dd2761d492377167da658122c20f18ee3398fae100e0152510bb",
+      "caption": "Revelação no topo da abertura com carimbo curto."
     },
     {
       "path": "examples/reference-library/F03/dark-com-b-roll/researched-card.jpg",
-      "sha256": "b62ad5f36cf9727fd7d320f5283b2353019d5f797b8eadbea871e83f1c141b24",
-      "caption": "Vídeo pesquisado da pessoa citada dentro de cartão."
+      "sha256": "a0f3b380286e32a51bbac9e6203c47312ab0adde99bc221cf708393d1b846938",
+      "caption": "Pessoa real do caso em cartão 3D com chamada de nome e idade."
     },
     {
-      "path": "examples/reference-library/F03/dark-com-b-roll/ecosystem.jpg",
-      "sha256": "df83d767c4e8789e445f6944eff334a0be5732950563be1f6b54412bebed37c0",
-      "caption": "Imagem real em tela cheia com título e destaque na palavra-chave."
+      "path": "examples/reference-library/F03/dark-com-b-roll/map.jpg",
+      "sha256": "625f1e6439cd847396db85b53923933a338b14fded55ead74db6c3fe83130ba4",
+      "caption": "Mapa do trajeto em cartão, com a rota desenhada e a chamada do lugar."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/fullscreen.jpg",
+      "sha256": "419762c3aaf10c232a9e3e4f4811a5e19d02dcb7de9f2bc925d38793ecadc8bb",
+      "caption": "B-roll real em tela cheia com legenda em caixa alta e sublinhado."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/interface.jpg",
+      "sha256": "eff5f9b0d4226434b69df145fcf545f1faf38c56c870a2d1b4cddc7b515b3b45",
+      "caption": "Perfil citado mostrado como objeto grande em perspectiva."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/number.jpg",
+      "sha256": "e68405df459c04d581a563e9dbfa99428d94ec31e7095e7981a4bb3c83795e39",
+      "caption": "Número que embaralha e bate sobre imagem escurecida."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/followers.jpg",
+      "sha256": "43595626d307f3c554acee8f6332e98b1f32b0e6d441c5c2f0bc88389d6fb313",
+      "caption": "Contagem de seguidores que sobe e bate sobre o perfil desfocado."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/stamp.jpg",
+      "sha256": "fbd002e4b634d811f65ea0a1bdc1b23f7348756d29109756cbb9472a60faae4a",
+      "caption": "Carimbo de veredito sobre vídeo real em cartão."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/illustration.jpg",
+      "sha256": "717b68cd5ec72e4d0998bfa5470b34490b716173beeaf3527ebc109d66ef32d3",
+      "caption": "Ideia abstrata mostrada por ilustração grande em cartão."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/list.jpg",
+      "sha256": "5599faa15ded93d124dbeb068592c2158bd500f5b4416832dee82b2c2dc7bb38",
+      "caption": "Lista que entra no tempo de cada palavra, com marca na cor de destaque."
+    },
+    {
+      "path": "examples/reference-library/F03/dark-com-b-roll/closing.jpg",
+      "sha256": "8d34525a3dfe603b6476b3ada11234f766bb606bf4d945c9e11a3ecf83fe6d00",
+      "caption": "Fechamento com imagem real do caso em cartão."
     }
   ],
   "F04": [
