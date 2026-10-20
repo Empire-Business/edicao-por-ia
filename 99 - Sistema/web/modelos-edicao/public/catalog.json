@@ -333,12 +333,12 @@
       ],
       "avoid": "Não escrever EMPIRE como cabeçalho, assinatura ou marca da edição. Não inserir logotipo, nome fixo de empresa ou marca da referência. Cores/fontes vêm da ID escolhida; preservar o assunto da notícia sem transformar a empresa citada em assinatura visual.",
       "pattern": "f05-v1",
-      "video": "assets/videos/F05-cortez-2026-10.mp4",
+      "video": "assets/videos/F05.mp4",
       "vimeo": null,
-      "duration": 45,
+      "duration": 90,
       "evidence": "video",
-      "evidenceLabel": "Exemplo produzido pelo Cortez",
-      "evidenceNote": "Exemplo original produzido pelo Cortez: apresentadora fictícia gerada por IA só na abertura, depois a narração explica a notícia com recortes ilustrativos, números e diagramas. Pessoa, assunto, cores e fontes não são padrões.",
+      "evidenceLabel": "Prévia histórica",
+      "evidenceNote": "Prévia local de uma notícia comentada com apresentador, recortes e explicação visual. Não é uma nova entrega final.",
       "cameraRequired": true,
       "startingMaterials": [
         "Vídeo",
@@ -367,21 +367,8 @@
         "fatos"
       ],
       "hasPersonOnScreen": true,
-      "poster": "assets/posters/F05-cortez-2026-10.jpg",
-      "referenceFrames": [
-        {
-          "poster": "assets/posters/F05-cortez-2026-10-frame-0.jpg",
-          "caption": "Abertura com a apresentadora em tela cheia; legenda curta sobre o peito."
-        },
-        {
-          "poster": "assets/posters/F05-cortez-2026-10-frame-1.jpg",
-          "caption": "Comparação animada: 40 h riscado e o novo valor em destaque."
-        },
-        {
-          "poster": "assets/posters/F05-cortez-2026-10-frame-2.jpg",
-          "caption": "Documento recriado como ilustração, com o trecho citado marcado no tempo da fala."
-        }
-      ],
+      "poster": "assets/posters/F05.jpg",
+      "referenceFrames": [],
       "examples": []
     },
     {
@@ -778,12 +765,12 @@
       ],
       "avoid": "Não usar cenas sem relação com a fala, troca por cronômetro rígido, zooms ou efeitos gratuitos, tela dividida automática, legenda longa cobrindo a ação ou karaokê palavra por palavra. Não herdar nome, pessoa, marca, logotipo ou pedido para seguir o autor da referência. Cores e fontes vêm da ID.",
       "pattern": "f11-narracao-ilustrada-v1",
-      "video": "assets/videos/F11-cortez-2026-10.mp4",
+      "video": "assets/videos/F11-narracao-ilustrada.mp4",
       "vimeo": null,
-      "duration": 20,
+      "duration": 35,
       "evidence": "video",
-      "evidenceLabel": "Exemplo produzido pelo Cortez",
-      "evidenceNote": "Exemplo original produzido pelo Cortez: a narração conduz 12 cenas geradas por IA em tela cheia, cortes secos por ideia e legenda em blocos curtos em caixa alta. Pessoas, assunto, cores e fontes não são padrões.",
+      "evidenceLabel": "Referência externa",
+      "evidenceNote": "Vídeo do link de exemplo indicado pelo autor no ZIP do formato. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são padrões.",
       "cameraRequired": false,
       "startingMaterials": [
         "Áudio",
@@ -823,19 +810,19 @@
         "reels"
       ],
       "hasPersonOnScreen": false,
-      "poster": "assets/posters/F11-cortez-2026-10.jpg",
+      "poster": "assets/posters/F11-narracao-ilustrada.jpg",
       "referenceFrames": [
         {
-          "poster": "assets/posters/F11-cortez-2026-10-frame-0.jpg",
-          "caption": "Cena literal em tela cheia para a primeira ideia, legenda de uma linha em caixa alta."
+          "poster": "assets/posters/F11-narracao-ilustrada-frame-0.jpg",
+          "caption": "Cena literal em tela cheia para a primeira instrução, com legenda de uma linha em caixa alta."
         },
         {
-          "poster": "assets/posters/F11-cortez-2026-10-frame-1.jpg",
-          "caption": "A ação citada aparece no momento da palavra."
+          "poster": "assets/posters/F11-narracao-ilustrada-frame-1.jpg",
+          "caption": "Situação reconhecível que ilustra a frase; legenda no centro do quadro."
         },
         {
-          "poster": "assets/posters/F11-cortez-2026-10-frame-2.jpg",
-          "caption": "Metáfora no fechamento: a cena acrescenta sentido à frase."
+          "poster": "assets/posters/F11-narracao-ilustrada-frame-2.jpg",
+          "caption": "Cena de filme usada como ilustração de atitude."
         }
       ],
       "examples": []

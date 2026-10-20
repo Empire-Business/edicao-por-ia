@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "format_code": "F11",
+  "format_uid": "official.b625febf4f0c4953a8beb3d0c99a4e14",
+  "example_url": "https://www.tiktok.com/@thiago.reis.gm/video/7407107661537332486?is_from_webapp=1",
+  "mechanism_details": {
+    "inputs": "Narração ou vídeo com fala clara em ideias curtas; pode ser só áudio, e o narrador em câmera é opcional. Cenas pertinentes quando houver, roteiro opcional e a chamada final deste vídeo. Escolher a ID visual separadamente.",
+    "mechanism": "A voz conduz uma montagem vertical de cenas em tela cheia. Cada imagem mostra a ação citada, uma situação reconhecível ou uma metáfora. Cortes secos acompanham as ideias; a legenda troca por blocos inteiros de 1–5 palavras em uma linha, em caixa alta. O narrador pode voltar brevemente e no fechamento.",
+    "steps": [
+      "Montar a fala antes das imagens, cortando só erros claros, repetições e esperas sem intenção; não acelerar a voz artificialmente.",
+      "Abrir direto na primeira ideia interessante, sem vinheta nem saudação.",
+      "Dividir o conteúdo em ideias e escolher para cada uma primeiro a ação literal, depois uma situação ou metáfora que acrescente sentido.",
+      "Preencher a tela vertical sem esticar, mantendo rosto, mãos, gesto ou objeto visível no momento da palavra; cortar seco na mudança de ideia ou ação.",
+      "Mostrar a legenda em blocos inteiros de 1–5 palavras, uma linha, centralizados perto de 56% da altura, trocando conforme a fala e preservando negações.",
+      "Voltar ao narrador quando sua presença ajudar e no fechamento; voz em primeiro plano, som dos clipes desligado e trilha opcional abaixo da voz.",
+      "Rever a prévia: imagem e fala correspondem, ação visível, legenda legível e sincronizada, palavras intactas."
+    ],
+    "avoid": "Não usar cenas sem relação com a fala, troca por cronômetro rígido, zooms ou efeitos gratuitos, tela dividida automática, legenda longa cobrindo a ação ou karaokê palavra por palavra. Não herdar nome, pessoa, marca, logotipo ou pedido para seguir o autor da referência. Cores e fontes vêm da ID."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/reference.mp4",
+      "sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a"
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/literal-scene.jpg",
+      "sha256": "1d47d5d499e029ed2a8d5b9dd4bee7a23bdb67838d37f55802d5f34300c09a33"
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/situation.jpg",
+      "sha256": "af26716d133079e28962f66c78eea1054b5b7db9288e5c0110fab32093d9c810"
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/acted-scene.jpg",
+      "sha256": "ac282181387ab00c8fe23e3fd19f0caa9f73909a6a32b4329484cb7a430ce362"
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/narrator.jpg",
+      "sha256": "94e52dcf8b4537f9303cb54b4c481e54c81df69cc9b118074886c162ff9d562c"
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-cage.jpg",
+      "sha256": "6b8fb8bcc09350ecb81f4a690361c206b6e56ca4721ec57e1b81f2efb8296afe"
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-free.jpg",
+      "sha256": "8985789a042e98a15b17cdf435ae0c87073f5addcf4e614d409d54026581e6d3"
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/closing.jpg",
+      "sha256": "f286ca38b42f5e5a65ff26d19e3b525fafa2c90ba9ac6393bf18211155205a26"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/literal-scene.jpg",
+      "sha256": "1d47d5d499e029ed2a8d5b9dd4bee7a23bdb67838d37f55802d5f34300c09a33",
+      "at_seconds": 1.0,
+      "caption": "Cena literal em tela cheia para a primeira instrução, com legenda de uma linha em caixa alta."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/situation.jpg",
+      "sha256": "af26716d133079e28962f66c78eea1054b5b7db9288e5c0110fab32093d9c810",
+      "at_seconds": 4.0,
+      "caption": "Situação reconhecível que ilustra a frase; legenda no centro do quadro."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/acted-scene.jpg",
+      "sha256": "ac282181387ab00c8fe23e3fd19f0caa9f73909a6a32b4329484cb7a430ce362",
+      "at_seconds": 9.5,
+      "caption": "Cena de filme usada como ilustração de atitude."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/narrator.jpg",
+      "sha256": "94e52dcf8b4537f9303cb54b4c481e54c81df69cc9b118074886c162ff9d562c",
+      "at_seconds": 16.5,
+      "caption": "Retorno breve ao narrador em câmera."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-cage.jpg",
+      "sha256": "6b8fb8bcc09350ecb81f4a690361c206b6e56ca4721ec57e1b81f2efb8296afe",
+      "at_seconds": 22.3,
+      "caption": "Metáfora: ave na gaiola para a ideia de conforto."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-free.jpg",
+      "sha256": "8985789a042e98a15b17cdf435ae0c87073f5addcf4e614d409d54026581e6d3",
+      "at_seconds": 25.0,
+      "caption": "Metáfora complementar: ave livre para a ideia de liberdade."
+    },
+    {
+      "path": "examples/reference-library/F11/narracao-ilustrada/closing.jpg",
+      "sha256": "f286ca38b42f5e5a65ff26d19e3b525fafa2c90ba9ac6393bf18211155205a26",
+      "at_seconds": 33.6,
+      "caption": "Fechamento com o narrador. Nome e pedido para seguir pertencem ao exemplo."
+    }
+  ],
+  "source": {
+    "kind": "external_reference_video",
+    "zip": "F08 - Narração Ilustradaz.zip",
+    "zip_sha256": "19e4f03f10ce750b842ef6f39ac4425d7348a3b13ffbd384021667643fc1789d",
+    "zip_folder_label": "F08 - Narração Ilustrada",
+    "retrieved_with": "ScrapeCreators",
+    "original_sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a",
+    "source_sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a",
+    "duration_s": 34.92,
+    "width": 1080,
+    "height": 1920,
+    "reference_copy_transcoded": false
+  },
+  "review": {
+    "date": "2026-10-10",
+    "method": "Folha de 24 quadros do vídeo inteiro e quadros nomeados; guia do ZIP lido por inteiro",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "missing_from_zip": "arquivo de receita, prints e vídeo; só guias em HTML e o link do exemplo"
+  }
+}

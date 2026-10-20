@@ -2,23 +2,23 @@
 
 A pessoa comenta notícias, documentos e dados mostrados como recortes de uma matéria.
 
-Receita atual: `patterns/f05-v1.yaml`. Cores e fontes vêm da ID escolhida. Nenhum logotipo, nome fixo de empresa ou assinatura de marca entra automaticamente. O exemplo mostra uma aplicação; pessoa, assunto, cores e fontes não são escolhas para outra edição.
+Receita atual: `patterns/f05-v1.yaml`. Cores e fontes vêm da ID escolhida. Nenhum logotipo, nome fixo de empresa ou assinatura de marca entra automaticamente. As referências preservam sua aparência histórica; pessoa e assunto não são escolhas para outra edição.
 
-## Exemplo original do Cortez
+## Registro anterior da biblioteca (preservado)
 
-Exemplo original produzido pelo sistema em 20/10/2026, sem mídia de terceiros: [`cortez-2026-10/exemplo.mp4`](cortez-2026-10/exemplo.mp4) (44,6 s, ID04 Dourado). Assunto: Islândia e a jornada de trabalho reduzida (testes de 2015 a 2019). Detalhes, roteiro e fontes em [`cortez-2026-10/ANALISE.md`](cortez-2026-10/ANALISE.md).
+
+Referências históricas para entender a edição. Pessoas, marcas, cores, fontes e música destes exemplos não são escolhas automáticas para um novo vídeo. Escolha F e ID; logotipos só entram quando pedidos.
+
+Os arquivos são cópias de referências selecionadas para distribuição pelo autor. Trabalhos, bancos de memória e chaves não fazem parte desta biblioteca.
 
 ## Materiais disponíveis
 
-- [cortez-2026-10/exemplo.mp4](cortez-2026-10/exemplo.mp4) · actual_reference_video
-- [cortez-2026-10/apresentadora.jpg](cortez-2026-10/apresentadora.jpg) · actual_reference_image
-- [cortez-2026-10/comparacao.jpg](cortez-2026-10/comparacao.jpg) · actual_reference_image
-- [cortez-2026-10/documento.jpg](cortez-2026-10/documento.jpg) · actual_reference_image
-- [cortez-2026-10/README.md](cortez-2026-10/README.md) · reference_analysis
-- [cortez-2026-10/ANALISE.md](cortez-2026-10/ANALISE.md) · reference_analysis
-- [cortez-2026-10/analysis.json](cortez-2026-10/analysis.json) · reference_analysis
-- [collection-01/empire-identity-board.png](collection-01/empire-identity-board.png) · visual_reference
-- [collection-02/brand-direction.md](collection-02/brand-direction.md) · reference_analysis
+- [collection-01/editorial-headline-reference.png](collection-01/editorial-headline-reference.png) — visual_reference
+- [collection-01/empire-identity-board.png](collection-01/empire-identity-board.png) — visual_reference
+- [collection-02/brand-direction.md](collection-02/brand-direction.md) — reference_analysis
+- [example-01.jpg](example-01.jpg) — actual_reference_image
+
+Não há um vídeo completo de referência cadastrado neste conjunto. Fotos, pranchas e prévias são identificadas pelo tipo.
 
 ## Guia atual do mecanismo
 
@@ -42,4 +42,4 @@ Não escrever EMPIRE como cabeçalho, assinatura ou marca da edição. Não inse
 
 ## Referências disponíveis
 
-- `cortez-2026-10/exemplo.mp4` (exemplo original produzido pelo sistema).
+- `reviewed-preview.mp4` (historical_preview).

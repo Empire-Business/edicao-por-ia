@@ -1,10 +1,4 @@
-# F11 · Narração Ilustrada (formato ativo)
-
-O exemplo do formato ativo é original, produzido pelo sistema: [`cortez-2026-10/exemplo.mp4`](cortez-2026-10/exemplo.mp4) (20,4 s). Guia e roteiro em [`cortez-2026-10/ANALISE.md`](cortez-2026-10/ANALISE.md).
-
-O restante desta pasta pertence à geração retirada “Formulários”, preservada só como histórico; não é exemplo do formato ativo.
-
-## Geração retirada: Formulários
+# F11 — Formulários
 
 Referências históricas para entender a edição. Pessoas, marcas, cores, fontes e música destes exemplos não são escolhas automáticas para um novo vídeo. Escolha F e ID; logotipos só entram quando pedidos.
 

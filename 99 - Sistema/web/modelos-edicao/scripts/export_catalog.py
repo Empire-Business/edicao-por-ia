@@ -27,7 +27,7 @@ EDITORIAL = {
     'F13': ('explain', ['Dados', 'Sem apresentador'], 'Explicar quantidades e comparações com mapas, pontos e rankings.'),
 }
 ORDER = ['F01', 'F12', 'F08', 'F09', 'F10', 'F07', 'F13', 'F03', 'F04', 'F05', 'F06']
-POSTER_TIME = {'F01': 11, 'F04': 23, 'F05': 1, 'F06': 30, 'F07': 20, 'F08': 8, 'F09': 0.9, 'F10': 12, 'F11': 2, 'F12': 5.5, 'F13': 19, 'F18': 333}
+POSTER_TIME = {'F01': 11, 'F04': 23, 'F05': 20, 'F06': 30, 'F07': 20, 'F08': 8, 'F09': 0.9, 'F10': 12, 'F12': 5.5, 'F13': 19, 'F18': 333}
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()

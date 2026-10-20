@@ -21,10 +21,21 @@
     "factory.f05": {
       "code": "F05",
       "primary_reference": {
-        "path": "examples/reference-library/F05/cortez-2026-10/exemplo.mp4",
-        "sha256": "2f48d26297ba88e345f0ddb7b96679dfcb06ded41612cd07f2814c3c4e632367"
+        "path": "examples/reference-library/F05/reviewed-preview.mp4",
+        "sha256": "72092ec5aec4fcf8cedec953ca6f2b71d61102f4e6437ec151cab1099f261182"
       },
-      "reference_conflicts": []
+      "reference_conflicts": [
+        {
+          "field": "visual.presenter_on_camera",
+          "recipe_value": "opening_only",
+          "reference_observation": "The published example keeps the presenter in body scenes around 31.7s and 67.8s, not only in its opening.",
+          "observed_times_seconds": [
+            31.7,
+            67.8
+          ],
+          "resolution": "Require an explicit current-job exception or a current author order for a recipe revision. Never change the consolidated recipe silently."
+        }
+      ]
     },
     "factory.f06": {
       "code": "F06",
@@ -125,8 +136,8 @@
     "official.b625febf4f0c4953a8beb3d0c99a4e14": {
       "code": "F11",
       "primary_reference": {
-        "path": "examples/reference-library/F11/cortez-2026-10/exemplo.mp4",
-        "sha256": "a040afbaaa34c7ae33458b4e7cd7ad89dbcdbc24b443581211ef8999f499c035"
+        "path": "examples/reference-library/F11/narracao-ilustrada/reference.mp4",
+        "sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a"
       },
       "reference_conflicts": []
     },

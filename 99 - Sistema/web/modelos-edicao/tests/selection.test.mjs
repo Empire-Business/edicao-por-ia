@@ -67,7 +67,7 @@ test('public catalogue contains no private factory records or machine paths', ()
 test('retired media is absent and references without video have honest evidence labels', async () => {
   const files = await readdir(new URL('../public/assets/videos/', import.meta.url));
   assert.equal(files.some(name => /^F0?2\./.test(name)), false);
-  for (const code of ['F05', 'F09', 'F11', 'F12', 'F13']) {
+  for (const code of ['F09', 'F12', 'F13']) {
     const data = catalog.formats.find(format => format.code === code);
     assert.equal(data.evidenceLabel, 'Exemplo produzido pelo Cortez', code);
     assert.match(data.evidenceNote, /Exemplo original produzido pelo Cortez/, code);

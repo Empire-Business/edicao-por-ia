@@ -12,5 +12,5 @@ Todos os formatos distribuídos têm seu próprio índice F. A biblioteca acompa
 - [F08 — Camadas](F08/README.md)
 - [F09 · Personagem](F09/README.md) (exemplo original em `F09/cortez-2026-10/`; o resto da pasta é da geração retirada “Conversa e Tela”)
 - [F10 — Pessoa e Tela](F10/README.md)
-- [F11 · Narração Ilustrada](F11/README.md) (exemplo original em `F11/cortez-2026-10/`; o resto da pasta é da geração retirada “Formulários”)
+- [F11 — Formulários](F11/README.md)
 - [F12 — Documentário](F12/README.md)

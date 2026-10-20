@@ -106,9 +106,8 @@
     },
     "official.b625febf4f0c4953a8beb3d0c99a4e14": {
       "code": "F11",
-      "definition_sha256": "fa54fd685eaa1410b03a693c87856d0fe086426aba370aabc167bb1119f58456",
-      "pattern_sha256": "168776c8b0db4d6b8dd925e135415bad628978a6d737c123ebe2406eac5ac56a",
-      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração."
+      "definition_sha256": "4cea836b1f69878a050ce6c9e9e4a9ec5e531778c2af60231f47243b842b1bb0",
+      "pattern_sha256": "f5d6f4a1725e490ad048523fdec260dd1fc328366b516c12fc07772490396d27"
     },
     "official.96d753b750d544708fc6c8746d3ccf45": {
       "code": "F17",
