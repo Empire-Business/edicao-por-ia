@@ -1,0 +1,178 @@
+id: f02-talking-head-v2
+version: 2
+status: draft
+format_code: F02
+purpose: Comentário com apresentador, B-roll real do TikTok/YouTube, manchetes verificáveis,
+  legenda de uma linha e trilha ligada ao tema e à emoção.
+engine: hybrid
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  min_jump_cut_interval_seconds: 0.6
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.2
+    keep_pause_seconds: 0.08
+    word_handle_seconds: 0.08
+    minimum_cut_seconds: 0.15
+    trim_edges: true
+  breath_policy: >
+    Revisar a gravação para apertar respirações isoladas sem função editorial.
+    Preservar pausas e respirações que sustentam o sentido ou a cadência natural.
+  slow_speech_adjustment:
+    when: A fala estiver claramente lenta depois da montagem.
+    speed_increase_percent: [10, 15]
+    safeguards: Preservar timbre, sentido, sincronia e pausas intencionais; conferir a voz na prévia.
+  presenter_on_camera: throughout_body_with_broll_intervals
+  one_information_at_a_time: true
+  timing_policy: >
+    Montar a fala primeiro. Cortes e inserções acompanham frases ou ideias completas;
+    não fazer apoio visual entrar ou desaparecer no meio da frase. Preservar gestos,
+    sentido e pausas intencionais.
+visual:
+  opening: >
+    Mídia pertinente acima da pessoa e faixa com pergunta/gancho curto. A faixa é da
+    abertura e sai ao fim do gancho.
+  presenter_policy: A pessoa volta durante o corpo e no fechamento; não limitar a presença ao gancho.
+  composition: Alternar tela cheia, split e cartões conforme a frase. A voz mantém a continuidade.
+  media_policy: Usar mídia real e pertinente ao trecho; não preencher com imagens genéricas ou repetidas.
+  safe_area_policy: >
+    Manter legendas, textos, motion e pontos de interesse dentro das áreas seguras da plataforma.
+    Não deixar rosto, ação ou dado importante atrás dos controles da interface.
+  headline_policy: Print real de uma fonte verificável; destacar somente a linha relevante, sem inventar notícia ou dado.
+  punch_ins: selective
+  max_punch_in_scale: 1.2
+  random_effects: false
+layouts:
+  opening_split:
+    mechanism: Mídia pertinente no topo, pessoa no bloco inferior e faixa curta na emenda. Cor, fonte e contraste vêm da ID.
+    top_media_fraction: aproximadamente metade da altura, ajustada à pessoa e à mídia atuais
+    hook_banner: uma ou duas linhas curtas; retirar ao encerrar o gancho
+  full:
+    mechanism: Pessoa em tela cheia com variações discretas de enquadramento ou B-roll em tela cheia; legenda sem cobrir rosto/ação.
+    preserve_face_and_gestures: true
+  split:
+    mechanism: B-roll ou documento na faixa superior e câmera do apresentador na inferior, com emenda suave por degradê.
+    upper_band_framing: Reenquadrar a mídia para manter o ponto de interesse visível dentro da faixa superior.
+    avoid: Não usar a gravação do apresentador como substituto do B-roll, nem esticar mídia, cobrir rosto ou cortar informação essencial.
+    caption_policy: Reposicionar a legenda em área livre, conforme rosto, emenda e ação.
+  card:
+    mechanism: Mídia dentro de cartão com cantos arredondados sobre fundo liso da ID; preservar o enquadramento.
+    forbidden: blurred_self_fill
+captions:
+  enabled: true
+  max_lines: 1
+  max_words: 4
+  word_highlight: false
+  font_source: explicit_visual_identity
+  language: from_job
+  readability: Trechos curtos em alto contraste; não duplicar a faixa de gancho ou a manchete.
+  safe_area: true
+motion:
+  hook: Entrada simples da faixa e retirada no fim do gancho, sincronizadas à fala atual.
+  headline: Destacar a linha correspondente ao argumento com marcador da ID; preservar autoria e contexto da fonte.
+  transitions: Cortes diretos motivados pela ideia. Sem transições decorativas, salvo aprovação explícita para o trabalho.
+  parameters_note: A inspeção amostrou frames; duração/easing exatos devem ser comparados na prévia real, não alegados como medidos.
+research:
+  when: Após montar a fala, pesquisar as inserções necessárias.
+  platforms:
+    - TikTok
+    - YouTube
+  source_policy: Pesquisar nesses dois serviços; fontes fornecidas e autorizadas podem complementar a pesquisa.
+  tiktok_and_youtube_exclusive_provider: ScrapeCreators
+  youtube_fallback_provider: Apify actor streamers/youtube-video-downloader, somente quando ScrapeCreators não fornecer arquivo baixável
+  download_policy: >
+    ScrapeCreators é a rota principal para TikTok e YouTube. Para YouTube, usar Apify apenas
+    se a resposta de ScrapeCreators não tiver arquivo baixável; registrar execução e custo.
+    Não usar yt-dlp, scraping pelo navegador ou outro provedor. Se não houver mídia disponível,
+    registrar a pendência sem substituir por stock ou conteúdo genérico.
+  factuality: Não inventar manchetes, números, datas ou cenas de prova.
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  voice_policy: Limpar ou restaurar a voz pelo fluxo da fábrica; preservar timbre natural e inteligibilidade.
+  stereo_policy: Voz equilibrada e centrada; conferir os canais esquerdo/direito sem alargamento artificial ou artefatos.
+  music: required
+  music_policy: >
+    Incluir trilha autorizada ou licenciada que combine com o assunto e a emoção do vídeo.
+    Mudar a deixa quando a narrativa mudar de emoção; não usar uma batida genérica e invariável.
+    A música fica abaixo da voz e não pode prejudicar a inteligibilidade. Se não houver trilha
+    autorizada disponível, registrar a pendência e pedir autorização antes de qualquer geração paga.
+insertion_assets:
+  policy: proof-heavy
+  density: adaptive_by_retained_ideas
+  default_preferred_duration_s: 2.0
+  default_max_duration_s: 6.0
+  prefer_the_real_thing: true
+  quality_policy: Priorizar B-roll em alta definição; não usar material visivelmente pixelado ou sem detalhe.
+  repeat_policy: Não repetir a mesma imagem ou trecho como preenchimento dentro do vídeo.
+  timing_policy: Trocar em pausa, pontuação ou limite completo de ideia; evitar entradas e saídas no meio de uma frase.
+  split_framing: O ponto de interesse do B-roll precisa permanecer visível na faixa superior do split.
+  allow_image_motion: true
+  note: Duração e densidade dependem da fala e da evidência; não preencher uma cota de B-roll.
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 1.0
+  verify_reference_plan_and_render: true
+  verify_presenter_returns_in_body: true
+  verify_banner_only_during_hook: true
+  verify_broll_against_speech: true
+  verify_split_upper_band_focal_point: true
+  verify_insertions_do_not_break_phrases: true
+  verify_high_resolution_and_no_repeated_insertions: true
+  verify_no_generic_or_free_stock_imagery: true
+  verify_breath_cleanup_after_speech_assembly: true
+  verify_single_line_captions_and_safe_areas: true
+  verify_actual_headline_and_highlight: true
+  verify_split_seam_and_caption_position: true
+  verify_cards_preserve_media_framing: true
+  verify_no_inherited_brand_signatures: true
+  verify_clean_centered_voice: true
+  verify_emotion_matched_music_below_voice: true
+  verify_readability_and_audio: true
+forbidden:
+- unrelated_broll
+- generic_broll
+- free_stock_images
+- low_resolution_insertions
+- repeated_insertions_as_filler
+- insertion_changes_mid_phrase
+- fabricated_fact
+- random_transition
+- decorative_transition
+- stretch_video
+- blurred_self_background
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_personal_identity
+- delete_source
+- unlicensed_music
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+delivery:
+  preview_before_final: true
+  artistic_approval: Requires a real pilot on the chosen job; reference analysis is not artistic execution approval.
+reference_materials:
+  video: examples/reference-library/F02/talking-head-20261007/reference.mp4
+  source_url: https://drive.google.com/file/d/1fZ6nLA9MgV0GTf63uPiRoi-yMiP8IS0h/view?usp=drive_link
+  original_sha256: 973425e3cdd01bd72cee598aa73c812c3600c63545c912312e18dab7bf660cad

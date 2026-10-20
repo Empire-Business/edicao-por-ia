@@ -11,20 +11,24 @@
     {
       "code": "F02",
       "name": "Talking Head",
-      "description": "A pessoa comenta um assunto com B-roll real, manchetes e legendas curtas; alterna tela cheia, split e cartões, com faixa de gancho na abertura.",
-      "pattern": "f02-talking-head-v1",
+      "description": "Comentário com apresentador, B-roll real pesquisado no TikTok e no YouTube, manchetes verificáveis, legendas em uma linha e trilha ligada ao tema e à emoção do assunto.",
+      "pattern": "f02-talking-head-v2",
       "uid": "official.d28a1fefc46c478abbd1c9d9b0620a2d",
       "mechanism_details": {
-        "inputs": "Vídeo da pessoa comentando um assunto, B-roll e documentos/manchetes pertinentes, com fontes verificáveis. Escolher uma ID visual separadamente.",
-        "mechanism": "O apresentador conduz um comentário por casos reais. A abertura combina mídia, pessoa e faixa de gancho; o corpo alterna câmera inteira, B-roll, split com emenda suave e cartões, com legendas curtas e manchetes destacadas.",
+        "inputs": "Vídeo da pessoa comentando um assunto, documentos e mídias reais relacionados ao tema. A pesquisa de inserções é feita no TikTok e no YouTube. Escolher uma ID visual separadamente.",
+        "mechanism": "A fala conduz o vídeo, com voz limpa e equilibrada. A pessoa retorna entre apoios reais e manchetes verificáveis. As legendas curtas ocupam uma linha. No split, o B-roll fica na faixa superior, reenquadrado para mostrar seu ponto de interesse; o apresentador fica na faixa inferior. A trilha acompanha o tema e a emoção, mudando quando a narrativa pede.",
         "steps": [
-          "Montar a fala, preservando sentido, gestos e pausas intencionais.",
-          "Abrir com mídia pertinente acima da pessoa e uma faixa com pergunta/gancho; retirar a faixa após a abertura.",
-          "Alternar pessoa em tela cheia, B-roll, tela dividida e cartões conforme cada ideia.",
-          "Usar manchetes/documentos reais nos argumentos de prova, destacar a linha relevante e reposicionar as legendas sem cobrir rosto ou ação.",
-          "Voltar à pessoa ao longo do corpo e fechar pela fala atual; revisar leitura, emendas, sincronia e áudio na prévia."
+          "Montar a fala, retirar erros claros e repetições abandonadas, e apertar respirações sem intenção sem cortar palavras nem deixar a fala robótica.",
+          "Se a fala estiver claramente lenta, ajustar a velocidade em 10–15% somente depois da montagem, preservando timbre, sincronização, sentido e pausas intencionais.",
+          "Limpar e equilibrar a voz em estéreo; ouvir os canais e conferir clareza e naturalidade antes de fechar a mixagem.",
+          "Pesquisar inserções no TikTok e no YouTube. Escolher cenas reais, nítidas e ligadas ao trecho; não usar banco de imagens gratuito, imagens genéricas, material de baixa resolução ou a mesma inserção repetida como preenchimento.",
+          "Abrir com mídia pertinente, apresentador e uma faixa curta de gancho. No split, colocar o B-roll ou documento acima e a câmera do apresentador abaixo, reenquadrando o apoio para manter o ponto de interesse visível.",
+          "Fazer as inserções entrarem e saírem em pausas, pontuação ou limites completos de ideia; não interromper a frase no meio. Manter legenda e informação visual importante nas áreas seguras.",
+          "Manter as legendas curtas em uma única linha, sem cobrir rosto, ação ou informação essencial.",
+          "Incluir uma trilha autorizada ou licenciada que combine com o tema e a emoção do vídeo. Mudar a música quando houver uma virada emocional, mantê-la abaixo da voz e conferir a mixagem. Não omitir a trilha silenciosamente; geração paga exige autorização atual.",
+          "Usar cortes diretos; transições decorativas só entram se forem aprovadas para aquele trabalho. Rever a prévia inteira, com atenção às respirações, enquadramentos, continuidade, nitidez, áudio e legendas."
         ],
-        "avoid": "Não copiar o guia errado de Diagramas do ZIP, inventar notícia/dado, usar B-roll genérico, esticar mídia ou impor cor vermelha, fonte, pessoa, logo ou marca do exemplo. Aparência vem da ID; não reduzir automaticamente o vídeo a apresentador com legenda ou apenas a split screen."
+        "avoid": "Não inventar manchetes, dados ou cenas de prova. É proibido usar imagens de bancos gratuitos, imagens genéricas, B-roll sem relação, material pixelado ou a mesma inserção repetida como preenchimento. Não deixar a gravação do apresentador ocupar a faixa reservada ao B-roll no split; não esconder o ponto de interesse; não fazer uma inserção entrar ou sumir no meio de uma frase. Não esticar a mídia, usar transições decorativas ou herdar pessoa, marca, cor ou fonte do exemplo. Cores e fontes vêm da ID escolhida."
       },
       "asset_id": "F02-talking-head-20261007"
     },
