@@ -652,55 +652,55 @@
         {
           "path": "examples/reference-library/F09/cortez-2026-10/exemplo.mp4",
           "kind": "actual_reference_video",
-          "sha256": "679178742d3e2c832bd04722a35b11e306dfb4fdf2af34337a4efc475946cfde",
+          "sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772",
           "bytes": 22057130,
           "caption": "Exemplo original produzido pelo Cortez, sem mídia de terceiros.",
-          "source_sha256": "679178742d3e2c832bd04722a35b11e306dfb4fdf2af34337a4efc475946cfde"
+          "source_sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772"
         },
         {
           "path": "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg",
           "kind": "actual_reference_image",
-          "sha256": "6057ddfd10fa1e53358d5629aa03bb070b69979ad5283fa8fc92798c6ebc4ad1",
+          "sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0",
           "bytes": 52731,
           "caption": "Personagem 1 em tela cheia; a legenda começa a crescer sobre o peito.",
-          "source_sha256": "6057ddfd10fa1e53358d5629aa03bb070b69979ad5283fa8fc92798c6ebc4ad1"
+          "source_sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0"
         },
         {
           "path": "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg",
           "kind": "actual_reference_image",
-          "sha256": "cce216731d9741cd1d1b353060a9a346a4a9746923380ae259860e775fff44fa",
+          "sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc",
           "bytes": 54211,
           "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa.",
-          "source_sha256": "cce216731d9741cd1d1b353060a9a346a4a9746923380ae259860e775fff44fa"
+          "source_sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc"
         },
         {
           "path": "examples/reference-library/F09/cortez-2026-10/legenda.jpg",
           "kind": "actual_reference_image",
-          "sha256": "1a0925b4aea5b1f774535a825f83e30534f8f5623be96a5883b90bed89a44c04",
+          "sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a",
           "bytes": 53024,
           "caption": "Bloco curto de legenda abaixo do rosto, palavra por palavra.",
-          "source_sha256": "1a0925b4aea5b1f774535a825f83e30534f8f5623be96a5883b90bed89a44c04"
+          "source_sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a"
         },
         {
           "path": "examples/reference-library/F09/cortez-2026-10/README.md",
           "kind": "reference_analysis",
-          "sha256": "9255e433d77dc946b20f7b6f0c701d931e4a55e602a877c6749faab6d50ded70",
+          "sha256": "a8a26657c7866e141188c6b5a91d8f8b9a1f169db48609dc6ed991076f120377",
           "bytes": 1527,
-          "source_sha256": "9255e433d77dc946b20f7b6f0c701d931e4a55e602a877c6749faab6d50ded70"
+          "source_sha256": "a8a26657c7866e141188c6b5a91d8f8b9a1f169db48609dc6ed991076f120377"
         },
         {
           "path": "examples/reference-library/F09/cortez-2026-10/ANALISE.md",
           "kind": "reference_analysis",
-          "sha256": "074bd5d5e4aa1648445155e4dd35c68d2289e37bc9231341e55181b2a7901c09",
+          "sha256": "261fa908cf3d02dca77c420ce19e1247e3df8f6c2543f0c75b889992fdf36010",
           "bytes": 1682,
-          "source_sha256": "074bd5d5e4aa1648445155e4dd35c68d2289e37bc9231341e55181b2a7901c09"
+          "source_sha256": "261fa908cf3d02dca77c420ce19e1247e3df8f6c2543f0c75b889992fdf36010"
         },
         {
           "path": "examples/reference-library/F09/cortez-2026-10/analysis.json",
           "kind": "reference_analysis",
-          "sha256": "545f02c79b7773752b78999bcbc8cf8ed3f8c6ad560a5418e470fb9b0c9795f8",
+          "sha256": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c",
           "bytes": 2303,
-          "source_sha256": "545f02c79b7773752b78999bcbc8cf8ed3f8c6ad560a5418e470fb9b0c9795f8"
+          "source_sha256": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c"
         }
       ],
       "missing_sources": []
@@ -1438,7 +1438,7 @@
     "examples/reference-library/F08/example-01.jpg": "976e480c0cc8489175c7f98eec29d273807236013891bdee8fb1b9969abe8ed8",
     "examples/reference-library/F08/tela-dividida-reference.mp4": "4851900d81729bd0a6d6683567fb4075b2c2bf70e3cd3f7ec244bce9663681f9",
     "examples/reference-library/F08/video-example-01.mp4": "6bbb5dd2ae3da2463fcb523b650a820569fde717b642486c8b8c10f8eabc2ccf",
-    "examples/reference-library/F09/README.md": "2fffa0db7706900bb365e12412e897431dc91a38ac72fc76eb4776039d733fa7",
+    "examples/reference-library/F09/README.md": "c73346e00e386984f6d4dc535d4477c886e7b8b264ff0158e97add66a761d143",
     "examples/reference-library/F09/collection-01/ALTERACOES-v5.4-ANONIMIZACAO.md": "ab9640286038bf17293ac20f3c29153e864532253b4e8688d5cd12828d2bfde4",
     "examples/reference-library/F09/collection-01/README.md": "86cdb3134c45253b51f1188ec168e39a784c07fb921b5b83d8221de5ff96cf28",
     "examples/reference-library/F09/collection-01/assets/ana.webp": "33a69b42df074a88dec0b9a655780be57b13770efe38acf5bc8470ecbbbe39fc",
@@ -1855,13 +1855,13 @@
     "examples/reference-library/F18/longo-cortes/sponsor-qr.jpg": "c0137022093a6b972c0b42e491b44d4db3c6da5ffd1781991f0b8a543dc207bd",
     "examples/reference-library/F18/longo-cortes/stat-over-broll.jpg": "481eb9889ac2fe19a3f49a237e3a74aedd9128de1ddcfd8d1fd632a8814ae4d0",
     "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1",
-    "examples/reference-library/F09/cortez-2026-10/ANALISE.md": "074bd5d5e4aa1648445155e4dd35c68d2289e37bc9231341e55181b2a7901c09",
-    "examples/reference-library/F09/cortez-2026-10/README.md": "9255e433d77dc946b20f7b6f0c701d931e4a55e602a877c6749faab6d50ded70",
-    "examples/reference-library/F09/cortez-2026-10/analysis.json": "545f02c79b7773752b78999bcbc8cf8ed3f8c6ad560a5418e470fb9b0c9795f8",
-    "examples/reference-library/F09/cortez-2026-10/exemplo.mp4": "679178742d3e2c832bd04722a35b11e306dfb4fdf2af34337a4efc475946cfde",
-    "examples/reference-library/F09/cortez-2026-10/legenda.jpg": "1a0925b4aea5b1f774535a825f83e30534f8f5623be96a5883b90bed89a44c04",
-    "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg": "6057ddfd10fa1e53358d5629aa03bb070b69979ad5283fa8fc92798c6ebc4ad1",
-    "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg": "cce216731d9741cd1d1b353060a9a346a4a9746923380ae259860e775fff44fa",
+    "examples/reference-library/F09/cortez-2026-10/ANALISE.md": "261fa908cf3d02dca77c420ce19e1247e3df8f6c2543f0c75b889992fdf36010",
+    "examples/reference-library/F09/cortez-2026-10/README.md": "a8a26657c7866e141188c6b5a91d8f8b9a1f169db48609dc6ed991076f120377",
+    "examples/reference-library/F09/cortez-2026-10/analysis.json": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c",
+    "examples/reference-library/F09/cortez-2026-10/exemplo.mp4": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772",
+    "examples/reference-library/F09/cortez-2026-10/legenda.jpg": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a",
+    "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0",
+    "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc",
     "examples/reference-library/F12/cortez-2026-10/ANALISE.md": "99014802c5c1f7b29590ad2aca56004264a71fb550ba4304024470d6799626bb",
     "examples/reference-library/F12/cortez-2026-10/README.md": "9cebc8e12e96849292d4a12ef44520f706e4b2c0a8c361e9f6b38a450bb62301",
     "examples/reference-library/F12/cortez-2026-10/analysis.json": "e1a67187966b1d2d6010e57a8c47f2059485a18f69567a2573767009fba03c58",
@@ -2676,7 +2676,7 @@
           "kind": "reference_analysis",
           "sha256": "2491806775797ab7d821d99d1e50ad75ad0b4f5ac1fccf87442a1c32726ddc04",
           "bytes": 2526,
-          "source_sha256": "b8158e002c5d41ca2dd9c4f42126523855dd4ab08cc5cd3b7558b74b2c6a4b68"
+          "source_sha256": "2491806775797ab7d821d99d1e50ad75ad0b4f5ac1fccf87442a1c32726ddc04"
         },
         {
           "path": "examples/reference-library/F09/collection-01/docs/ABAS-DRAWERS-AREAS-E-ESTADOS.md",
@@ -2711,14 +2711,14 @@
           "kind": "reference_analysis",
           "sha256": "c931a644aaa9817b964bb59de460bd4da6967541772ccf7944a8982038923431",
           "bytes": 136,
-          "source_sha256": "6fb9df50e9a72cc31762689e0c01c49fdd06092bae425b86abd45538c45a70af"
+          "source_sha256": "c931a644aaa9817b964bb59de460bd4da6967541772ccf7944a8982038923431"
         },
         {
           "path": "examples/reference-library/F09/collection-01/docs/VALIDACAO-V5.json",
           "kind": "reference_analysis",
           "sha256": "f998b67538af4ace49018e64ef4741a42712caec515393d9e8dfb90a143aa8aa",
           "bytes": 99,
-          "source_sha256": "b84a4aa87a225c6aca917e8e1139e6d1def10b0b53cc9f8251220d0c6ddde8b3"
+          "source_sha256": "f998b67538af4ace49018e64ef4741a42712caec515393d9e8dfb90a143aa8aa"
         },
         {
           "path": "examples/reference-library/F09/collection-01/hero/M00.png",
@@ -3383,14 +3383,14 @@
           "kind": "reference_analysis",
           "sha256": "7080795a08d44626e58f214ae88629925f65c6df4a5ba6b23fa259df785a6362",
           "bytes": 203134,
-          "source_sha256": "29d6df2bf51937198cb6a205ddc343fe7c5d1af0785e72c5d618811aa97c0b77"
+          "source_sha256": "7080795a08d44626e58f214ae88629925f65c6df4a5ba6b23fa259df785a6362"
         },
         {
           "path": "examples/reference-library/F09/collection-01/manifest.pre.json",
           "kind": "reference_analysis",
           "sha256": "161b65551f26c3c6c8e9aee56d5612952c375100f7eba0f8b355a77fba813a95",
           "bytes": 122318,
-          "source_sha256": "0ed5350144f8cd1812f074dbbae6ca6b0cabd6b83c048ec2cc1650708ee010ec"
+          "source_sha256": "161b65551f26c3c6c8e9aee56d5612952c375100f7eba0f8b355a77fba813a95"
         },
         {
           "path": "examples/reference-library/F09/collection-01/screens/desktop/M00/M00-01-catalogo-do-produto.png",

@@ -390,7 +390,7 @@
       {
         "path": "examples/reference-library/F09/cortez-2026-10/exemplo.mp4",
         "kind": "original_system_example",
-        "sha256": "679178742d3e2c832bd04722a35b11e306dfb4fdf2af34337a4efc475946cfde",
+        "sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772",
         "evidence_label": "Exemplo produzido pelo Cortez",
         "evidence_note": "Exemplo original produzido pelo Cortez: dois personagens fictícios gerados por IA conversam, um por vez em tela cheia, com cortes secos e legenda que cresce palavra por palavra. Pessoas, assunto, cores e fontes não são padrões."
       }
@@ -515,21 +515,21 @@
       {
         "reference": {
           "path": "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg",
-          "sha256": "6057ddfd10fa1e53358d5629aa03bb070b69979ad5283fa8fc92798c6ebc4ad1"
+          "sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0"
         },
         "caption": "Personagem 1 em tela cheia; a legenda começa a crescer sobre o peito."
       },
       {
         "reference": {
           "path": "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg",
-          "sha256": "cce216731d9741cd1d1b353060a9a346a4a9746923380ae259860e775fff44fa"
+          "sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc"
         },
         "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa."
       },
       {
         "reference": {
           "path": "examples/reference-library/F09/cortez-2026-10/legenda.jpg",
-          "sha256": "1a0925b4aea5b1f774535a825f83e30534f8f5623be96a5883b90bed89a44c04"
+          "sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a"
         },
         "caption": "Bloco curto de legenda abaixo do rosto, palavra por palavra."
       }

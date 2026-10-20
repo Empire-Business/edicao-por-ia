@@ -100,9 +100,9 @@
     },
     "official.057f1c25705842ddafb13387b7aeb0b4": {
       "code": "F09",
-      "definition_sha256": "f8f5fff35f4529ae4d1ce87b0054ce33e3bfea269e9a3c6fdd9994f3af1effc2",
+      "definition_sha256": "2258cab79406b6f0113f0a5b91c3f3292673b1cad6b4579a2f51f2a6e8a16116",
       "pattern_sha256": "105f24952ff4bc86ddd62876cb2c7196678144a767f20249aff865344625395d",
-      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração."
+      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração. Mesmo dia: exemplo refeito como demo curta (4 falas, Veo 3.1, câmera de lado, mesma sala), revisado e aprovado pelo autor."
     },
     "official.b625febf4f0c4953a8beb3d0c99a4e14": {
       "code": "F11",
