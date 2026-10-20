@@ -1,0 +1,48 @@
+{
+ "format": "F12",
+ "kind": "original_system_example",
+ "produced_by": "Cortez (fábrica de edição)",
+ "date": "2026-10-20",
+ "video": {
+  "path": "examples/reference-library/F12/cortez-2026-10/exemplo.mp4",
+  "sha256": "a3057366d9c449501f24113d9924f326d2ffa8d94c99ed87b0a0192cad2e78a2",
+  "duration_seconds": 61.6,
+  "size": "1080x1920"
+ },
+ "pattern": "f12-v3",
+ "visual_identity": "ID08 Azul e Papel",
+ "topic": "a história da fita cassete",
+ "mechanism": [
+  "15 estados em 61,6 s, um por ideia, com imagem ou objeto dominante: número 1963, feira (imagem em tela cheia com entrada desfocada e aproximação lenta), cassete em cartão girando, macro da fita com chamada “FITA MAGNÉTICA”, números 3,8 mm e 4,76 cm/s, carimbo MUDOU TUDO, lista (barata, cabia no bolso, qualquer um grava), 60 minutos que se divide em 30 | 30, botões PLAY + REC com chamada, sequência em papel da fita mixada, 1979, toca-fitas na rua, cópias empilhadas (mais que o vinil) e caneta + PACIÊNCIA.",
+  "Base escura com vinheta e grão leve; uma única sequência clara (cerca de 9% da duração).",
+  "Zonas da receita: rótulo mono no topo, título pesado alinhado à esquerda construído palavra por palavra com palavra-chave em bloco azul, objeto entre 0,20 e 0,68 da altura, legenda de até 4 palavras na zona 0,66–0,72, palavra a palavra.",
+  "Trilha original abaixo da voz com ducking, sons curtos sintetizados localmente nos impactos (sopro, batida, tique), normalização em -14 LUFS. Renderizado a 30 fps (a receita prevê 60 fps; a galeria publica em 24 fps)."
+ ],
+ "frames": [
+  {
+   "file": "objeto.jpg",
+   "caption": "Objeto dominante em cartão, entrando de longe e girando, com título construído palavra por palavra."
+  },
+  {
+   "file": "lista.jpg",
+   "caption": "Lista que entra item a item no tempo da fala, sobre imagem escurecida."
+  },
+  {
+   "file": "sequencia-clara.jpg",
+   "caption": "Única sequência clara (papel) na virada da história."
+  }
+ ],
+ "sources": [
+  "Fita cassete compacta apresentada em 1963 na feira de rádio de Berlim (Funkausstellung); fita de 3,81 mm de largura a 4,76 cm/s (padrão do formato compacto).",
+  "C60 = 30 minutos por lado; gravação pelo rádio com PLAY + REC (uso doméstico comum).",
+  "Primeiro toca-fitas portátil de grande difusão com fone de ouvido lançado em 1979 (o vídeo não cita a marca).",
+  "Nos Estados Unidos, as fitas passaram a vender mais que os LPs em 1983 (dados de vendas da RIAA).",
+  "As imagens são ilustrações geradas por IA, sem marcas ou rótulos; nenhuma mostra produto real identificável."
+ ],
+ "generation": [
+  "8 imagens (7 usadas): `bytedance-seed/seedream-5-0-pro` via OpenRouter, com instrução de não exibir textos, marcas ou logotipos.",
+  "Narração: ElevenLabs `eleven_multilingual_v2`, voz “KATIUSCIA” da biblioteca. Trilha: ElevenLabs Music (`music_v1`, instrumental). Efeitos: sintetizados localmente.",
+  "Composição: cena HTML/Canvas por `tools/studio_render.py` (quadro inteiro) e áudio com FFmpeg."
+ ],
+ "third_party_media": false
+}

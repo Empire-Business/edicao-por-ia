@@ -56,14 +56,16 @@
       "name": "Documentário",
       "pattern": "f12-v3",
       "definition_sha256": "dc0dd87ef6a410e293b43ec2455905f4ca9baa6027320ff08692b18988450b19",
-      "pattern_sha256": "2ca62349159bfc1cd287af23b8137e29519772351a94090ed78afa530eebeb0d"
+      "pattern_sha256": "6df1dd3690f4ae3bb5dbbd273d43fe03281c4a0af6894b406d09153efaa7a776",
+      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração."
     },
     "factory.f13": {
       "code": "F13",
       "name": "Dados Dark",
       "pattern": "f13-v2",
-      "definition_sha256": "31313d79b47a61336c5b0a78c3c6d669607b613ae2eb6384ceef44983cd9abf9",
-      "pattern_sha256": "8a99955ea7774c35c5302a731c3129741da5d37dd22dfce92058e99dfa63bec5"
+      "definition_sha256": "f00b117d3037c3d355411becc94f3f3f1faa1a2fa52793072740cca8ca3d9f4b",
+      "pattern_sha256": "a26e83769ef64723dbcbbc77444cd157e260ac1d8b10aef3899d175925c38f2d",
+      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração."
     },
     "factory.f14": {
       "code": "F14",
@@ -98,13 +100,15 @@
     },
     "official.057f1c25705842ddafb13387b7aeb0b4": {
       "code": "F09",
-      "definition_sha256": "67b1231aa3aacf0de51c5d401347117b666d73c5c9280ba606fe8e5e04b058a0",
-      "pattern_sha256": "f502246b64a38c519f2741972af1b1022d2ea8e4afdb40397d035b2639a3e6fd"
+      "definition_sha256": "f8f5fff35f4529ae4d1ce87b0054ce33e3bfea269e9a3c6fdd9994f3af1effc2",
+      "pattern_sha256": "105f24952ff4bc86ddd62876cb2c7196678144a767f20249aff865344625395d",
+      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração."
     },
     "official.b625febf4f0c4953a8beb3d0c99a4e14": {
       "code": "F11",
-      "definition_sha256": "4cea836b1f69878a050ce6c9e9e4a9ec5e531778c2af60231f47243b842b1bb0",
-      "pattern_sha256": "f5d6f4a1725e490ad048523fdec260dd1fc328366b516c12fc07772490396d27"
+      "definition_sha256": "fa54fd685eaa1410b03a693c87856d0fe086426aba370aabc167bb1119f58456",
+      "pattern_sha256": "168776c8b0db4d6b8dd925e135415bad628978a6d737c123ebe2406eac5ac56a",
+      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração."
     },
     "official.96d753b750d544708fc6c8746d3ccf45": {
       "code": "F17",

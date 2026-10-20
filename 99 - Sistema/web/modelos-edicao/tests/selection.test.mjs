@@ -67,9 +67,12 @@ test('public catalogue contains no private factory records or machine paths', ()
 test('retired media is absent and references without video have honest evidence labels', async () => {
   const files = await readdir(new URL('../public/assets/videos/', import.meta.url));
   assert.equal(files.some(name => /^F0?2\./.test(name)), false);
-  const data = catalog.formats.find(format => format.code === 'F13');
-  assert.equal(data.evidenceLabel, 'Referência externa');
-  assert.match(data.evidenceNote, /Não é um novo vídeo produzido pela fábrica/);
+  for (const code of ['F05', 'F09', 'F11', 'F12', 'F13']) {
+    const data = catalog.formats.find(format => format.code === code);
+    assert.equal(data.evidenceLabel, 'Exemplo produzido pelo Cortez', code);
+    assert.match(data.evidenceNote, /Exemplo original produzido pelo Cortez/, code);
+    assert.match(data.video, new RegExp(`^assets/videos/${code}-cortez-2026-10\\.mp4$`), code);
+  }
   for (const format of catalog.formats.filter(item => !item.video)) assert.notEqual(format.evidence, 'video');
 });
 
@@ -98,7 +101,7 @@ test('the rich research model remains independent and the combined format keeps 
   const combined=catalog.formats.find(format=>format.code==='F08');
   assert.equal(combined.name,'Pessoa + Tela');
   assert.equal(combined.examples.some(example=>example.id==='pessoa-midia'),false);
-  assert.equal(combined.examples.some(example=>example.id==='conversas'),true);
+  assert.equal(combined.examples.some(example=>example.id==='conversas'),false);
 });
 
 

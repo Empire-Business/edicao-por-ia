@@ -305,7 +305,7 @@
       "origin": "official",
       "design_independent": true,
       "default_visual_identity": null,
-      "example_url": "https://www.instagram.com/p/DdmFpq8teDf/",
+      "example_url": "https://modelos-edicao.empirebusiness.com.br/#modelo=F09",
       "example_link_status": "provided",
       "validation_status": "reference_analyzed",
       "mechanism_details": {
@@ -324,33 +324,25 @@
       },
       "reference_materials": [
         {
-          "path": "examples/reference-library/F09/personagem/reference.mp4",
-          "sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
+          "path": "examples/reference-library/F09/cortez-2026-10/exemplo.mp4",
+          "sha256": "679178742d3e2c832bd04722a35b11e306dfb4fdf2af34337a4efc475946cfde"
         },
         {
-          "path": "examples/reference-library/F09/personagem/character-1.jpg",
-          "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad"
+          "path": "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg",
+          "sha256": "6057ddfd10fa1e53358d5629aa03bb070b69979ad5283fa8fc92798c6ebc4ad1"
         },
         {
-          "path": "examples/reference-library/F09/personagem/character-2.jpg",
-          "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7"
+          "path": "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg",
+          "sha256": "cce216731d9741cd1d1b353060a9a346a4a9746923380ae259860e775fff44fa"
         },
         {
-          "path": "examples/reference-library/F09/personagem/caption-build.jpg",
-          "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1"
-        },
-        {
-          "path": "examples/reference-library/F09/personagem/turn.jpg",
-          "sha256": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4"
-        },
-        {
-          "path": "examples/reference-library/F09/personagem/closing.jpg",
-          "sha256": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b"
+          "path": "examples/reference-library/F09/cortez-2026-10/legenda.jpg",
+          "sha256": "1a0925b4aea5b1f774535a825f83e30534f8f5623be96a5883b90bed89a44c04"
         }
       ],
       "analysis_receipt": {
-        "path": "examples/reference-library/F09/personagem/analysis.json",
-        "sha256": "4db5bb71330717c3e0d0f5ed81d48ea5f6fe50e4e75a89d3d65011d93328c794"
+        "path": "examples/reference-library/F09/cortez-2026-10/analysis.json",
+        "sha256": "545f02c79b7773752b78999bcbc8cf8ed3f8c6ad560a5418e470fb9b0c9795f8"
       }
     },
     {
@@ -381,7 +373,7 @@
       "origin": "official",
       "design_independent": true,
       "default_visual_identity": null,
-      "example_url": "https://www.tiktok.com/@thiago.reis.gm/video/7407107661537332486?is_from_webapp=1",
+      "example_url": "https://modelos-edicao.empirebusiness.com.br/#modelo=F11",
       "example_link_status": "provided",
       "validation_status": "reference_analyzed",
       "mechanism_details": {
@@ -400,41 +392,25 @@
       },
       "reference_materials": [
         {
-          "path": "examples/reference-library/F11/narracao-ilustrada/reference.mp4",
-          "sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a"
+          "path": "examples/reference-library/F11/cortez-2026-10/exemplo.mp4",
+          "sha256": "a040afbaaa34c7ae33458b4e7cd7ad89dbcdbc24b443581211ef8999f499c035"
         },
         {
-          "path": "examples/reference-library/F11/narracao-ilustrada/literal-scene.jpg",
-          "sha256": "1d47d5d499e029ed2a8d5b9dd4bee7a23bdb67838d37f55802d5f34300c09a33"
+          "path": "examples/reference-library/F11/cortez-2026-10/cena-literal.jpg",
+          "sha256": "c84c5a9c3f1d65eb7475b33dfd9c86fb72548004680e152c1c862658197ca37f"
         },
         {
-          "path": "examples/reference-library/F11/narracao-ilustrada/situation.jpg",
-          "sha256": "af26716d133079e28962f66c78eea1054b5b7db9288e5c0110fab32093d9c810"
+          "path": "examples/reference-library/F11/cortez-2026-10/acao-citada.jpg",
+          "sha256": "80a3087fa14fd948428727fb086d36331e586b79110990ece16e74ae971910f0"
         },
         {
-          "path": "examples/reference-library/F11/narracao-ilustrada/acted-scene.jpg",
-          "sha256": "ac282181387ab00c8fe23e3fd19f0caa9f73909a6a32b4329484cb7a430ce362"
-        },
-        {
-          "path": "examples/reference-library/F11/narracao-ilustrada/narrator.jpg",
-          "sha256": "94e52dcf8b4537f9303cb54b4c481e54c81df69cc9b118074886c162ff9d562c"
-        },
-        {
-          "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-cage.jpg",
-          "sha256": "6b8fb8bcc09350ecb81f4a690361c206b6e56ca4721ec57e1b81f2efb8296afe"
-        },
-        {
-          "path": "examples/reference-library/F11/narracao-ilustrada/metaphor-free.jpg",
-          "sha256": "8985789a042e98a15b17cdf435ae0c87073f5addcf4e614d409d54026581e6d3"
-        },
-        {
-          "path": "examples/reference-library/F11/narracao-ilustrada/closing.jpg",
-          "sha256": "f286ca38b42f5e5a65ff26d19e3b525fafa2c90ba9ac6393bf18211155205a26"
+          "path": "examples/reference-library/F11/cortez-2026-10/metafora.jpg",
+          "sha256": "d49947c2b95e3f225eb7b841da85ae53d56b325f98f9f52fdb4f3259c4cd7776"
         }
       ],
       "analysis_receipt": {
-        "path": "examples/reference-library/F11/narracao-ilustrada/analysis.json",
-        "sha256": "24fe5cdabb29277e18b8e68eff2e76a2ffab8f8e9695a1bb4b20f416bde79f1e"
+        "path": "examples/reference-library/F11/cortez-2026-10/analysis.json",
+        "sha256": "fe7e4d026f928e741939bcdf843bc2391e0ee651b2cf723a59ea97ec894c8977"
       }
     },
     {
@@ -480,7 +456,7 @@
       "legacy_stores": [
         "dados-dark"
       ],
-      "example_url": "https://drive.google.com/file/d/1EMhlw8uRLyu3WB4mfctOQEocTXyNs9U_/view?usp=drivesdk",
+      "example_url": "https://modelos-edicao.empirebusiness.com.br/#modelo=F13",
       "example_link_status": "provided"
     },
     {

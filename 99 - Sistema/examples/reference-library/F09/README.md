@@ -1,4 +1,10 @@
-# F09 — Conversa e Tela
+# F09 · Personagem (formato ativo)
+
+O exemplo do formato ativo é original, produzido pelo sistema: [`cortez-2026-10/exemplo.mp4`](cortez-2026-10/exemplo.mp4) (28,5 s). Guia e roteiro em [`cortez-2026-10/ANALISE.md`](cortez-2026-10/ANALISE.md).
+
+O restante desta pasta pertence à geração retirada “Conversa e Tela”, preservada só como histórico; não é exemplo do formato ativo.
+
+## Geração retirada: Conversa e Tela
 
 Referências históricas para entender a edição. Pessoas, marcas, cores, fontes e música destes exemplos não são escolhas automáticas para um novo vídeo. Escolha F e ID; logotipos só entram quando pedidos.
 

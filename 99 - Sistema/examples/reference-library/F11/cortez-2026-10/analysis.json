@@ -1,0 +1,44 @@
+{
+ "format": "F11",
+ "kind": "original_system_example",
+ "produced_by": "Cortez (fábrica de edição)",
+ "date": "2026-10-20",
+ "video": {
+  "path": "examples/reference-library/F11/cortez-2026-10/exemplo.mp4",
+  "sha256": "a040afbaaa34c7ae33458b4e7cd7ad89dbcdbc24b443581211ef8999f499c035",
+  "duration_seconds": 20.4,
+  "size": "1080x1920"
+ },
+ "pattern": "f11-narracao-ilustrada-v1",
+ "visual_identity": "ID02 Lima",
+ "topic": "hábitos para render mais de manhã",
+ "mechanism": [
+  "12 cenas em 20 s (média de 1,7 s), uma por ideia: ação literal citada (despertador, pés saindo da cama, cortina, copo de água, lista no caderno), situação reconhecível (casa dormindo) e metáfora (escalada ao amanhecer, braços erguidos no fim).",
+  "Cortes secos na troca de ideia; abertura direto na primeira ideia, sem vinheta; áudio das cenas mudo.",
+  "Legenda: blocos inteiros de 1–5 palavras, uma linha, Inter 800 em caixa alta, centralizada perto de 0,56 da altura, palavra-chave em lima (ID02); sem karaokê.",
+  "Trilha original curta por baixo da voz, com ducking; normalização em -14 LUFS."
+ ],
+ "frames": [
+  {
+   "file": "cena-literal.jpg",
+   "caption": "Cena literal em tela cheia para a primeira ideia, legenda de uma linha em caixa alta."
+  },
+  {
+   "file": "acao-citada.jpg",
+   "caption": "A ação citada aparece no momento da palavra."
+  },
+  {
+   "file": "metafora.jpg",
+   "caption": "Metáfora no fechamento: a cena acrescenta sentido à frase."
+  }
+ ],
+ "sources": [
+  "Conselhos gerais de rotina; não há dado numérico."
+ ],
+ "generation": [
+  "12 cenas: `bytedance/seedance-2.0-fast` (texto → vídeo, sem áudio, 4 s, 720×1280).",
+  "Narração: ElevenLabs `eleven_multilingual_v2`, voz “N. Ayres” da biblioteca. Trilha: ElevenLabs Music (`music_v1`, instrumental).",
+  "Composição: legenda em HTML/Canvas por `tools/studio_render.py` (camada sobreposta) e montagem/áudio com FFmpeg."
+ ],
+ "third_party_media": false
+}

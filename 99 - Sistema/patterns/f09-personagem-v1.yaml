@@ -88,5 +88,6 @@ design:
   fonts_from_format: false
   logos_enabled: false
 reference_materials:
-  video: examples/reference-library/F09/personagem/reference.mp4
-  analysis: examples/reference-library/F09/personagem/analysis.json
+  video: examples/reference-library/F09/cortez-2026-10/exemplo.mp4
+  analysis: examples/reference-library/F09/cortez-2026-10/ANALISE.md
+  note: Exemplo original produzido pelo Cortez em 20/10/2026; o vídeo de terceiro que orientou a receita foi retirado da biblioteca.

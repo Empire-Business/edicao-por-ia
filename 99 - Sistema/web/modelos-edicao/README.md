@@ -18,6 +18,8 @@ A implantação deste site é independente do pacote de atualização da fábric
 
 Os vídeos publicados são cópias otimizadas das referências autorizadas, com áudio e sem alterar os originais. Referência externa, prévia histórica, referência em imagem e esquema ilustrativo têm rótulos próprios. A aparência do exemplo não é a identidade da nova edição.
 
+Desde 20/10/2026, F05, F09, F11, F12 e F13 mostram exemplos originais produzidos pelo próprio sistema (rótulo “Exemplo produzido pelo Cortez”), com roteiro novo, personagens, imagens e vozes gerados por IA e nenhuma mídia de terceiros. Os vídeos de terceiros que orientaram essas receitas saíram da biblioteca e da galeria; os novos ficam em `examples/reference-library/Fxx/cortez-2026-10/`, com README, análise e fontes. O antigo exemplo extra “Conversas e telas” do F08 (material da geração retirada do F09) também saiu da galeria.
+
 ## Vimeo
 
 `vimeo.json` aceita um código de formato como chave e um objeto com `id` e, se necessário, `hash` de um vídeo não listado. A galeria prioriza o Vimeo quando a entrada existe e mantém uma cópia local como alternativa se o player não carregar. O player começa sem som, com loop e `autopause=0`; o controle de áudio silencia as outras prévias. Somente vídeos visíveis reproduzem, e o visitante pode pausar todos.

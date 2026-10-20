@@ -333,12 +333,12 @@
       ],
       "avoid": "Não escrever EMPIRE como cabeçalho, assinatura ou marca da edição. Não inserir logotipo, nome fixo de empresa ou marca da referência. Cores/fontes vêm da ID escolhida; preservar o assunto da notícia sem transformar a empresa citada em assinatura visual.",
       "pattern": "f05-v1",
-      "video": "assets/videos/F05.mp4",
+      "video": "assets/videos/F05-cortez-2026-10.mp4",
       "vimeo": null,
-      "duration": 90,
+      "duration": 45,
       "evidence": "video",
-      "evidenceLabel": "Prévia histórica",
-      "evidenceNote": "Prévia local de uma notícia comentada com apresentador, recortes e explicação visual. Não é uma nova entrega final.",
+      "evidenceLabel": "Exemplo produzido pelo Cortez",
+      "evidenceNote": "Exemplo original produzido pelo Cortez: apresentadora fictícia gerada por IA só na abertura, depois a narração explica a notícia com recortes ilustrativos, números e diagramas. Pessoa, assunto, cores e fontes não são padrões.",
       "cameraRequired": true,
       "startingMaterials": [
         "Vídeo",
@@ -367,8 +367,21 @@
         "fatos"
       ],
       "hasPersonOnScreen": true,
-      "poster": "assets/posters/F05.jpg",
-      "referenceFrames": [],
+      "poster": "assets/posters/F05-cortez-2026-10.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F05-cortez-2026-10-frame-0.jpg",
+          "caption": "Abertura com a apresentadora em tela cheia; legenda curta sobre o peito."
+        },
+        {
+          "poster": "assets/posters/F05-cortez-2026-10-frame-1.jpg",
+          "caption": "Comparação animada: 40 h riscado e o novo valor em destaque."
+        },
+        {
+          "poster": "assets/posters/F05-cortez-2026-10-frame-2.jpg",
+          "caption": "Documento recriado como ilustração, com o trecho citado marcado no tempo da fala."
+        }
+      ],
       "examples": []
     },
     {
@@ -580,15 +593,6 @@
       "referenceFrames": [],
       "examples": [
         {
-          "id": "conversas",
-          "label": "Conversas e telas",
-          "video": "assets/videos/F08-conversas.mp4",
-          "poster": "assets/posters/F08-conversas.jpg",
-          "duration": 49,
-          "evidenceLabel": "Exemplo histórico",
-          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática."
-        },
-        {
           "id": "tela-dividida",
           "label": "Tela dividida",
           "video": "assets/videos/F08-tela-dividida.mp4",
@@ -632,12 +636,12 @@
       ],
       "avoid": "Não usar tela dividida automática, troca de personagem por cronômetro, zooms sem motivo, transições decorativas, cenas de apoio aleatórias ou duas falas sobrepostas. Não copiar a pessoa, o assunto, a marca, o perfil, a chamada comercial, a mochila ou o computador do exemplo. Cores e fontes vêm da ID.",
       "pattern": "f09-personagem-v1",
-      "video": "assets/videos/F09-personagem.mp4",
+      "video": "assets/videos/F09-cortez-2026-10.mp4",
       "vimeo": null,
-      "duration": 45,
+      "duration": 28,
       "evidence": "video",
-      "evidenceLabel": "Referência externa",
-      "evidenceNote": "Vídeo do link de exemplo indicado pelo autor no ZIP do formato. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são padrões.",
+      "evidenceLabel": "Exemplo produzido pelo Cortez",
+      "evidenceNote": "Exemplo original produzido pelo Cortez: dois personagens fictícios gerados por IA conversam, um por vez em tela cheia, com cortes secos e legenda que cresce palavra por palavra. Pessoas, assunto, cores e fontes não são padrões.",
       "cameraRequired": true,
       "startingMaterials": [
         "Vídeo",
@@ -674,19 +678,19 @@
         "reels"
       ],
       "hasPersonOnScreen": true,
-      "poster": "assets/posters/F09-personagem.jpg",
+      "poster": "assets/posters/F09-cortez-2026-10.jpg",
       "referenceFrames": [
         {
-          "poster": "assets/posters/F09-personagem-frame-0.jpg",
-          "caption": "Personagem 1 em tela cheia, com um bloco curto de legenda sobre o peito."
+          "poster": "assets/posters/F09-cortez-2026-10-frame-0.jpg",
+          "caption": "Personagem 1 em tela cheia; a legenda começa a crescer sobre o peito."
         },
         {
-          "poster": "assets/posters/F09-personagem-frame-1.jpg",
+          "poster": "assets/posters/F09-cortez-2026-10-frame-1.jpg",
           "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa."
         },
         {
-          "poster": "assets/posters/F09-personagem-frame-2.jpg",
-          "caption": "A segunda linha da legenda cresce palavra por palavra enquanto a primeira permanece."
+          "poster": "assets/posters/F09-cortez-2026-10-frame-2.jpg",
+          "caption": "Bloco curto de legenda abaixo do rosto, palavra por palavra."
         }
       ],
       "examples": []
@@ -774,12 +778,12 @@
       ],
       "avoid": "Não usar cenas sem relação com a fala, troca por cronômetro rígido, zooms ou efeitos gratuitos, tela dividida automática, legenda longa cobrindo a ação ou karaokê palavra por palavra. Não herdar nome, pessoa, marca, logotipo ou pedido para seguir o autor da referência. Cores e fontes vêm da ID.",
       "pattern": "f11-narracao-ilustrada-v1",
-      "video": "assets/videos/F11-narracao-ilustrada.mp4",
+      "video": "assets/videos/F11-cortez-2026-10.mp4",
       "vimeo": null,
-      "duration": 35,
+      "duration": 20,
       "evidence": "video",
-      "evidenceLabel": "Referência externa",
-      "evidenceNote": "Vídeo do link de exemplo indicado pelo autor no ZIP do formato. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são padrões.",
+      "evidenceLabel": "Exemplo produzido pelo Cortez",
+      "evidenceNote": "Exemplo original produzido pelo Cortez: a narração conduz 12 cenas geradas por IA em tela cheia, cortes secos por ideia e legenda em blocos curtos em caixa alta. Pessoas, assunto, cores e fontes não são padrões.",
       "cameraRequired": false,
       "startingMaterials": [
         "Áudio",
@@ -819,19 +823,19 @@
         "reels"
       ],
       "hasPersonOnScreen": false,
-      "poster": "assets/posters/F11-narracao-ilustrada.jpg",
+      "poster": "assets/posters/F11-cortez-2026-10.jpg",
       "referenceFrames": [
         {
-          "poster": "assets/posters/F11-narracao-ilustrada-frame-0.jpg",
-          "caption": "Cena literal em tela cheia para a primeira instrução, com legenda de uma linha em caixa alta."
+          "poster": "assets/posters/F11-cortez-2026-10-frame-0.jpg",
+          "caption": "Cena literal em tela cheia para a primeira ideia, legenda de uma linha em caixa alta."
         },
         {
-          "poster": "assets/posters/F11-narracao-ilustrada-frame-1.jpg",
-          "caption": "Situação reconhecível que ilustra a frase; legenda no centro do quadro."
+          "poster": "assets/posters/F11-cortez-2026-10-frame-1.jpg",
+          "caption": "A ação citada aparece no momento da palavra."
         },
         {
-          "poster": "assets/posters/F11-narracao-ilustrada-frame-2.jpg",
-          "caption": "Cena de filme usada como ilustração de atitude."
+          "poster": "assets/posters/F11-cortez-2026-10-frame-2.jpg",
+          "caption": "Metáfora no fechamento: a cena acrescenta sentido à frase."
         }
       ],
       "examples": []
@@ -857,12 +861,12 @@
       ],
       "avoid": "Não copiar a marca ou o pedido comercial da referência, tomar dígitos intermediários de um contador como fatos ou inventar dados históricos.",
       "pattern": "f12-v3",
-      "video": "assets/videos/F12.mp4",
+      "video": "assets/videos/F12-cortez-2026-10.mp4",
       "vimeo": null,
-      "duration": 80,
+      "duration": 62,
       "evidence": "video",
-      "evidenceLabel": "Referência externa",
-      "evidenceNote": "Referência externa que orienta a receita. Não é um novo vídeo produzido pela fábrica.",
+      "evidenceLabel": "Exemplo produzido pelo Cortez",
+      "evidenceNote": "Exemplo original produzido pelo Cortez: minidocumentário narrado sem apresentador, com imagens geradas por IA, objetos, datas, números, carimbos e uma sequência em papel. Assunto, cores e fontes não são padrões.",
       "cameraRequired": false,
       "startingMaterials": [
         "Áudio",
@@ -893,8 +897,21 @@
         "explicacao"
       ],
       "hasPersonOnScreen": false,
-      "poster": "assets/posters/F12.jpg",
-      "referenceFrames": [],
+      "poster": "assets/posters/F12-cortez-2026-10.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F12-cortez-2026-10-frame-0.jpg",
+          "caption": "Objeto dominante em cartão, entrando de longe e girando, com título construído palavra por palavra."
+        },
+        {
+          "poster": "assets/posters/F12-cortez-2026-10-frame-1.jpg",
+          "caption": "Lista que entra item a item no tempo da fala, sobre imagem escurecida."
+        },
+        {
+          "poster": "assets/posters/F12-cortez-2026-10-frame-2.jpg",
+          "caption": "Única sequência clara (papel) na virada da história."
+        }
+      ],
       "examples": []
     },
     {
@@ -918,12 +935,12 @@
       ],
       "avoid": "Não inventar dados, mudar denominadores entre comparações, exibir valores intermediários como fatos ou herdar tema, políticos, retratos, marca ou chamada eleitoral da referência.",
       "pattern": "f13-v2",
-      "video": "assets/videos/F13.mp4",
+      "video": "assets/videos/F13-cortez-2026-10.mp4",
       "vimeo": null,
       "duration": 30,
       "evidence": "video",
-      "evidenceLabel": "Referência externa",
-      "evidenceNote": "Referência externa que orienta a receita. Não é um novo vídeo produzido pela fábrica.",
+      "evidenceLabel": "Exemplo produzido pelo Cortez",
+      "evidenceNote": "Exemplo original produzido pelo Cortez: sem apresentador, a narração é explicada com mapa de pontos, contador, grade de 100 pontos, ranking e destaque regional, com dados públicos do IBGE. Assunto, cores e fontes não são padrões.",
       "cameraRequired": false,
       "startingMaterials": [
         "Áudio",
@@ -956,8 +973,21 @@
         "explicacao"
       ],
       "hasPersonOnScreen": false,
-      "poster": "assets/posters/F13.jpg",
-      "referenceFrames": [],
+      "poster": "assets/posters/F13-cortez-2026-10.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F13-cortez-2026-10-frame-0.jpg",
+          "caption": "Partículas formam o mapa do Brasil em pontos; título progressivo com a pergunta."
+        },
+        {
+          "poster": "assets/posters/F13-cortez-2026-10-frame-1.jpg",
+          "caption": "Os pontos do mapa viram 100 pontos (1 ponto = 1%) e o ranking se monta no tempo da fala."
+        },
+        {
+          "poster": "assets/posters/F13-cortez-2026-10-frame-2.jpg",
+          "caption": "Volta ao mapa com foco na região e cartão com o número principal."
+        }
+      ],
       "examples": []
     },
     {

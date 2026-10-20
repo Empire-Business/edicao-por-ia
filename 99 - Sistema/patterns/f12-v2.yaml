@@ -135,5 +135,6 @@ motion:
   stamp: Palavra-veredito pode entrar como carimbo (escala 1,9→1, rotação leve, 0,24 s).
   transitions: Corte seco ou mergulho no escuro (≤0,2 s) entre ideias; flash apenas em marcos/números, no máximo um a cada ~8 s. Cartões subindo de baixo não são o movimento principal.
 reference_materials:
-  video: examples/reference-library/F12/collection-01/reference.mp4
-  analysis: examples/reference-library/F12/collection-01/ANALISE.md
+  video: examples/reference-library/F12/cortez-2026-10/exemplo.mp4
+  analysis: examples/reference-library/F12/cortez-2026-10/ANALISE.md
+  note: Exemplo original produzido pelo Cortez em 20/10/2026; o vídeo de terceiro que orientou a receita foi retirado da biblioteca.

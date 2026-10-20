@@ -4,7 +4,6 @@ Status: direção solicitada pelo usuário; validar em um piloto com a primeira 
 
 ## Referências preservadas
 
-- `references/editorial-headline-reference.png`: títulos editoriais de alto contraste, serifas expressivas, fundo escuro e acentos dourados.
 - `references/empire-identity-board.png`: identidade Empire em composições editoriais e diagramas técnicos, com retratos, arquitetura, linhas finas e tons de pedra.
 
 ## Regras para os vídeos
