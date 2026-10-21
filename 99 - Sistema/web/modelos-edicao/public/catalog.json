@@ -1378,8 +1378,13 @@
       ],
       "avoid": "Não entregar o longo como talking head com legenda, inserir B-roll genérico, inventar manchete, número ou cláusula, usar marca real em contexto falso, fazer animação de template sem acabamento, completar cota de cortes com trechos fracos, montar corte que mude o que a pessoa disse ou copiar pessoa, canal, verde/creme/serifa e assinatura do exemplo. Cores e fontes vêm da ID.",
       "pattern": "f18-longo-cortes-v1",
-      "video": "assets/videos/F18-longo-cortes.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070447",
+        "source_sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea",
+        "status": "complete",
+        "hash": "e901b727a1"
+      },
       "duration": 756,
       "evidence": "video",
       "evidenceLabel": "Referência externa",

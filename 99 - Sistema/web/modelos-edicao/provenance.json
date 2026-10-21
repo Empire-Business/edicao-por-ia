@@ -1,13 +1,13 @@
 {
   "scope": "author_distributed_stock_only",
-  "catalog_sha256": "466b6f90ec71f25095eb241614cf88ef36248385b3bf48aecc513a4f0bccefba",
+  "catalog_sha256": "35df4010273e0cdf769c2988e7ba64a0e690ea1f0bfb579cb29f53fd05496553",
   "publication_sha256": "495058c16abb8f87127ac6bf377ecc4b113c14ba207abb95e6e6e571361f5d32",
   "excluded_codes": [],
   "sources": {
     "config/design-defaults.json": "cde1983474e2eb529debddacbc5d54071aa5628b37cfa1d2e38ba5e5b73defb4",
     "config/reference-library.json": "59a64cf684a1fd49c8c90a109786906193ce16646281f52a4a992e432b1cbe4c",
     "tools/format_guides.py": "3bb287fec8d308d9c73f1cd20be5ffd163bd97a86e77ab53066a6feb70805a15",
-    "web/modelos-edicao/vimeo.json": "3cbd13e35d6ae73c84a00cc99217be6a0f4f472db49266d18a92d7899492ecf1"
+    "web/modelos-edicao/vimeo.json": "d47d7e0eb5e3fd61c1d0a421f5e1e84983caa47ba490af75c448b5e93a83a60f"
   },
   "media_policy": "Author-indexed originals and archives preserved. Completed Vimeo uploads selected by exact source SHA-256; pending transcodes retain the existing local preview. No account credentials or upload capabilities published."
 }
