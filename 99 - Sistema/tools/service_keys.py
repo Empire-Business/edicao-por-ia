@@ -10,7 +10,7 @@ from pathlib import Path
 from project_layout import engine_root, surface_root
 
 KEY_FILE = 'CHAVES DAS INTEGRAÇÕES.txt'
-KEY_NAMES = ('SCRAPECREATORS_API_KEY', 'ELEVENLABS_API_KEY', 'OPENROUTER_API_KEY', 'APIFY_API_TOKEN')
+KEY_NAMES = ('SCRAPECREATORS_API_KEY', 'ELEVENLABS_API_KEY', 'OPENROUTER_API_KEY', 'APIFY_API_TOKEN', 'VIMEO_ACCESS_TOKEN')
 TEMPLATE = '''# CHAVES DAS INTEGRAÇÕES
 # Cole cada chave depois do sinal =, sem apagar o nome à esquerda.
 # Salve este arquivo. Não é preciso usar terminal nem renomear o arquivo.
@@ -24,6 +24,7 @@ SCRAPECREATORS_API_KEY=
 ELEVENLABS_API_KEY=
 OPENROUTER_API_KEY=
 APIFY_API_TOKEN=
+VIMEO_ACCESS_TOKEN=
 '''
 
 
@@ -73,6 +74,15 @@ def api_key(name, root=None):
         raise ValueError('Integração desconhecida.')
     engine = engine_root(root or Path(__file__).resolve().parents[1])
     surface = surface_root(engine)
+    if name == 'VIMEO_ACCESS_TOKEN':
+        private = engine / '.factory/secrets/vimeo-access-token'
+        if any(p.is_symlink() for p in (private,*private.parents) if p!=engine and p.is_relative_to(engine)):
+            raise ValueError('Credencial Vimeo não pode ser um atalho.')
+        if private.is_file():
+            value = private.read_text().strip()
+            if value and not any(c.isspace() for c in value):
+                return value
+            raise ValueError('Credencial Vimeo inválida.')
     # A populated visible file wins, so a novice can replace a stale exported key.
     value = read_assignments(surface / KEY_FILE).get(name) or os.environ.get(name)
     if not value:

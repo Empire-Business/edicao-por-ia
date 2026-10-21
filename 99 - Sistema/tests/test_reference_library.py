@@ -38,14 +38,14 @@ class BootstrapTests(unittest.TestCase):
   self.assertFalse(list(outside.iterdir()))
 
 class StockLibraryTests(unittest.TestCase):
- def test_all_stock_formats_have_real_reference_files_in_the_package(self):
+ def test_all_stock_formats_have_verified_references_in_code_or_on_demand_index(self):
   library=json.loads((ROOT/'config/reference-library.json').read_text());defaults=json.loads((ROOT/'config/design-defaults.json').read_text())
   manifest=json.loads((ROOT/'PACKAGE_MANIFEST.json').read_text())
   for item in defaults['formats']:
    self.assertTrue(library['formats'][item['code']]['references']);self.assertFalse(library['formats'][item['code']]['missing_sources'])
   for name,digest in library['files'].items():
    self.assertTrue(name.startswith('examples/reference-library/'));self.assertTrue(allowed(name))
-   self.assertEqual(manifest['files'][name],digest)
+   self.assertEqual({**manifest['files'],**manifest.get('optional_references',{})}[name],digest)
    self.assertEqual(hashlib.sha256((ROOT/name).read_bytes()).hexdigest(),digest)
  def test_private_stores_and_work_manifests_remain_forbidden(self):
   for name in ('context/clients/a/memory.sqlite3','jobs/a/job.yaml','config/api.local.json','@surface/CHAVES DAS INTEGRAÇÕES.txt'):

@@ -66,7 +66,7 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 
 - `f18-longo-cortes-v1`: F18 Longo + Cortes, criado pelo autor em 13/10/2026 a partir do exemplo https://youtu.be/zRIcmLPRWwc. Draft; novo UID, não restaura o antigo F18 retirado.
 
-- `f03-dark-com-broll-v2`: F03 Dark com B-roll revisado em 16/10/2026 a partir da edição BR04 Versão B (abertura do F02 com tarja, fundos pretos, B-roll real do caso). `f03-dark-com-broll-v1` preservada.
+- `f03-dark-com-broll-v2`: F03 Headline + Narração revisado em 16/10/2026 a partir da edição BR04 Versão B (abertura do F02 com tarja, fundos pretos, B-roll real do caso). `f03-dark-com-broll-v1` preservada.
 
 - `f19-print-repost-v1`: F19 Print Repost, criado pelo autor em 20/10/2026 a partir do vídeo de exemplo enviado por ele. Draft.
 

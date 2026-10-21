@@ -48,14 +48,17 @@ def check(root,tests=False):
  for item in defaults['formats']:
   if not item.get('example_url') or not examples.get(item['code']):raise ValueError('Missing stock example: '+item['code'])
   for entry in examples[item['code']]:
-   if entry['path'] not in files:raise ValueError('Missing bundled image: '+entry['path'])
+   if entry['path'] not in files and entry['path'] not in manifest.get('optional_references',{}):raise ValueError('Missing bundled image: '+entry['path'])
  library=json.loads(files['config/reference-library.json']) if 'config/reference-library.json' in files else None
  if library:
   for item in defaults['formats']:
    group=library['formats'].get(item['code'])
    if not group or not group.get('references'):raise ValueError('Missing real references for stock format: '+item['code'])
   for name,digest in library['files'].items():
-   if name not in files or hashlib.sha256(files[name]).hexdigest()!=digest:raise ValueError('Stock reference missing/corrupt: '+name)
+   if name in manifest.get('optional_references',{}):
+    path=engine/name
+    if manifest['optional_references'][name]!=digest or not path.is_file() or path.is_symlink() or hashlib.sha256(path.read_bytes()).hexdigest()!=digest:raise ValueError('Stock reference missing/corrupt: '+name)
+   elif name not in files or hashlib.sha256(files[name]).hexdigest()!=digest:raise ValueError('Stock reference missing/corrupt: '+name)
  if tests:
   with tempfile.TemporaryDirectory(prefix='factory-release-') as directory:
    package=Path(directory)/'package';package_engine=package/'99 - Sistema';package_engine.mkdir(parents=True)
@@ -66,6 +69,10 @@ def check(root,tests=False):
    installed=install(clean,package,True)
    exercise_old_layout(Path(directory),package,package_engine)
    if installed['status']!='installed':raise ValueError('Clean installation failed.')
+   # Full regression explicitly requested with --tests: hydrate public fixtures from
+   # this verified source, without turning them back into mandatory update files.
+   for name in manifest.get('optional_references',{}):
+    atomic(target_path(clean_engine,clean,name),(engine/name).read_bytes())
    command=[sys.executable,'-m','unittest','discover','-s','tests','-p','test_*.py','-q']
    if subprocess.run(command,cwd=clean_engine).returncode:raise ValueError('Manifest-only regression failed.')
    for filename in ('test_motion.cjs','test_studio.cjs'):

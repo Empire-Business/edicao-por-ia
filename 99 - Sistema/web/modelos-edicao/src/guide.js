@@ -14,7 +14,7 @@ export const groups = [
 
 // Workflows técnicos que não são pedidos diretos do usuário. Toda outra receita em
 // workflows/ precisa aparecer em alguma função abaixo (o teste confere).
-export const internalWorkflows = ['CLIENT_MEMORY.md', 'INGEST.md', 'PERSONALIZATION_QA.md', 'PUBLISH_FORMAT_GALLERY.md'];
+export const internalWorkflows = ['CLIENT_MEMORY.md', 'INGEST.md', 'PERSONALIZATION_QA.md', 'PUBLISH_FORMAT_GALLERY.md', 'CACHE_FORMAT_REFERENCES.md'];
 
 export const functions = [
   {
@@ -268,7 +268,7 @@ export const functions = [
   },
   {
     id: 'atualizar', group: 'cuidar', title: 'Atualizar a fábrica',
-    what: 'Baixa a versão mais nova com backup, mantendo trabalhos, memória, IDs, chaves e configurações. Se você personalizou código, nada é sobrescrito.',
+    what: 'Atualiza só o código, com backup, mantendo trabalhos, memória, referências já baixadas, IDs, chaves e configurações. Novas referências são baixadas quando o formato for usado. Se você personalizou código, nada é sobrescrito.',
     say: 'Atualize esta fábrica.',
     prompt: 'Atualize esta fábrica para a versão mais recente, preservando meus trabalhos, memórias, identidades, chaves e configurações. Me diga o que mudou.',
     tips: ['Não precisa baixar a pasta de novo nem rodar nada manualmente.'],
@@ -309,3 +309,5 @@ export const codes = [
   { code: 'V1 · VP1', text: 'Versões de uma edição. Cada ajuste gera a próxima.' },
   { code: 'VAR01, VAR02…', text: 'Variações de teste do mesmo vídeo, com ganchos diferentes.' }
 ];
+
+// Biblioteca carregada pela edição/atualização; operação interna sem comando para leigos.

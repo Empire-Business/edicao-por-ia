@@ -142,19 +142,29 @@
   ],
   "F09": [
     {
-      "path": "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg",
-      "sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0",
-      "caption": "Personagem 1 em tela cheia; a legenda começa a crescer sobre o peito."
+      "path": "examples/reference-library/F09/personagem/character-1.jpg",
+      "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad",
+      "caption": "Personagem 1 em tela cheia, com um bloco curto de legenda sobre o peito."
     },
     {
-      "path": "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg",
-      "sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc",
+      "path": "examples/reference-library/F09/personagem/character-2.jpg",
+      "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
       "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa."
     },
     {
-      "path": "examples/reference-library/F09/cortez-2026-10/legenda.jpg",
-      "sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a",
-      "caption": "Bloco curto de legenda abaixo do rosto, palavra por palavra."
+      "path": "examples/reference-library/F09/personagem/caption-build.jpg",
+      "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1",
+      "caption": "A segunda linha da legenda cresce palavra por palavra enquanto a primeira permanece."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/turn.jpg",
+      "sha256": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4",
+      "caption": "Novo turno do personagem 2, com corte seco e legenda abaixo do rosto."
+    },
+    {
+      "path": "examples/reference-library/F09/personagem/closing.jpg",
+      "sha256": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
+      "caption": "Fechamento falando com o público. A marca que aparece pertence ao exemplo."
     }
   ],
   "F10": [

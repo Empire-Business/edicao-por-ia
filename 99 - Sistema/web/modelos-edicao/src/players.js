@@ -87,6 +87,13 @@ export class PreviewManager {
     record.player?.destroy?.().catch(() => {});
     record.container.querySelector('iframe')?.remove();
     record.type = 'local';
+    if (!record.format.video) {
+      record.blocked = true; this.updateControls(record);
+      const message = document.createElement('p'); message.className = 'media-error';
+      message.textContent = 'Não foi possível carregar o Vimeo. O guia e a imagem de referência continuam disponíveis.';
+      record.container.querySelector('.media-error')?.remove(); record.container.append(message);
+      return;
+    }
     const video = document.createElement('video');
     video.src = record.format.video; video.poster = record.format.poster;
     video.muted = true; video.defaultMuted = true; video.playsInline = true; video.loop = true;

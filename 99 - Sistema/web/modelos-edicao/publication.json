@@ -34,12 +34,12 @@
     },
     {
       "code": "F03",
-      "name": "Dark com B-roll",
-      "description": "História narrada em ambiente preto: abre como o F02, com B-roll em cima, tarja no meio e a pessoa embaixo; depois a voz segue sobre muito B-roll real e cenas animadas, com legenda palavra a palavra e trilha.",
+      "name": "Headline + Narração",
+      "description": "Você aparece só na headline de abertura; depois, a história continua narrada com B-roll real e cenas animadas, com legenda palavra a palavra e trilha.",
       "pattern": "f03-dark-com-broll-v2",
       "uid": "official.d7a2bb0a7fc640f79f9a88538a1eec81",
       "mechanism_details": {
-        "inputs": "Gravação curta da pessoa contando o gancho (o resto pode ser só áudio) e autorização para pesquisar B-roll (TikTok/YouTube só por ScrapeCreators). Texto da tarja, se a pessoa quiser escrever. Trilha autorizada ou local. Escolher a ID visual separadamente.",
+        "inputs": "Vídeo da pessoa gravando somente a headline (o gancho de abertura). Para o corpo, combinar roteiro e narração: não é necessário gravar a pessoa em câmera no restante. B-roll real, texto da tarja e trilha autorizada. Escolher a ID visual separadamente. Não autoriza geração paga de voz automaticamente.",
         "mechanism": "Abre como o F02: B-roll real do caso em cima trocando no tempo da fala, tarja com a promessa no meio e a pessoa falando embaixo, completa desde o primeiro quadro e com carimbo na revelação. Depois a voz continua sobre muito B-roll real (troca a cada ≈ 2,5 s), em tela cheia ou em cartões 3D, e estados animados: números que embaralham e batem, carimbos, chamadas, listas e objetos que entram girando. Fundo preto do início ao fim, cor de destaque só em detalhes, nada escrito no topo, legenda palavra a palavra em caixa alta com sublinhado, fala sem respiros e trilha abaixo da voz com o grave na revelação.",
         "steps": [
           "Isolar a voz, cortar erros e apertar os respiros medindo as lacunas entre palavras (0,08–0,12 s); remapear os tempos das palavras.",
@@ -140,7 +140,7 @@
         ],
         "avoid": "Não usar tela dividida automática, troca de personagem por cronômetro, zooms sem motivo, transições decorativas, cenas de apoio aleatórias ou duas falas sobrepostas. Não copiar a pessoa, o assunto, a marca, o perfil, a chamada comercial, a mochila ou o computador do exemplo. Cores e fontes vêm da ID."
       },
-      "asset_id": "F09-cortez-2026-10"
+      "asset_id": "F09-personagem"
     },
     {
       "code": "F10",
@@ -439,11 +439,10 @@
     ],
     "F09": [
       {
-        "path": "examples/reference-library/F09/cortez-2026-10/exemplo.mp4",
-        "kind": "original_system_example",
-        "sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772",
-        "evidence_label": "Exemplo produzido pelo Cortez",
-        "evidence_note": "Exemplo original produzido pelo Cortez: dois personagens fictícios gerados por IA conversam, um por vez em tela cheia, com cortes secos e legenda que cresce palavra por palavra. Pessoas, assunto, cores e fontes não são padrões."
+        "path": "examples/reference-library/F09/personagem/reference.mp4",
+        "sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+        "evidence_label": "Referência externa",
+        "evidence_note": "Vídeo do link de exemplo indicado pelo autor no ZIP do formato. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são padrões."
       }
     ],
     "F11": [
@@ -581,24 +580,24 @@
     "F09": [
       {
         "reference": {
-          "path": "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg",
-          "sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0"
+          "path": "examples/reference-library/F09/personagem/character-1.jpg",
+          "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad"
         },
-        "caption": "Personagem 1 em tela cheia; a legenda começa a crescer sobre o peito."
+        "caption": "Personagem 1 em tela cheia, com um bloco curto de legenda sobre o peito."
       },
       {
         "reference": {
-          "path": "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg",
-          "sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc"
+          "path": "examples/reference-library/F09/personagem/character-2.jpg",
+          "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7"
         },
         "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa."
       },
       {
         "reference": {
-          "path": "examples/reference-library/F09/cortez-2026-10/legenda.jpg",
-          "sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a"
+          "path": "examples/reference-library/F09/personagem/caption-build.jpg",
+          "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1"
         },
-        "caption": "Bloco curto de legenda abaixo do rosto, palavra por palavra."
+        "caption": "A segunda linha da legenda cresce palavra por palavra enquanto a primeira permanece."
       }
     ],
     "F11": [

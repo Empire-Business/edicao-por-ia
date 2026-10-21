@@ -57,7 +57,7 @@ A IA prepara o acesso à conta própria da pessoa e obtém a versão autorizada.
 
 “Sincronizar com main” significa consultar essa branch, fixar seu commit, conferir o manifesto e aplicar somente código gerenciado, com backup, conflito/mescla e rollback. Não executar `git pull`, `reset` ou `clean` por cima de cadastros, trabalhos e personalizações para forçar atualização. O recibo informa a revisão recebida. Catálogos oficiais ficam nos defaults; particulares ficam no contexto local e são preservados. Uma instalação antiga sem manifesto/layout confiável é recuperada em pasta nova, mantendo a origem.
 
-A biblioteca completa continua incluída por enquanto. Um clone comum ainda carrega mídia e histórico; este plano não promete uma instalação leve. Na medição inicial, as referências indexadas tinham aproximadamente 851 MiB, sem ambientes/modelos e trabalhos. Download seletivo, limpeza de cache de referências e segundo repositório estão adiados. O protocolo atual de limpeza remove apenas segmentos técnicos elegíveis de trabalhos entregues, com prévia e recibo; não passa a apagar referências, originais, prévias ou finais.
+Por ordem do autor em 21/10/2026, a atualização passa a baixar somente o código e o índice completo de referências. As mídias públicas ficam no repositório e são armazenadas localmente sob demanda antes do uso do formato, com SHA-256/tamanho conferidos. O painel usa o Vimeo para exibir os exemplos. Um clone Git comum ainda carrega mídia e histórico; não confundir a atualização pequena com o tamanho do ZIP/clone do repositório. Um segundo repositório e limpeza de cache continuam adiados; nenhum original é apagado por essa mudança.
 
 ## Testes e publicação
 

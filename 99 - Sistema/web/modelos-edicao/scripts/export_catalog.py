@@ -70,7 +70,7 @@ def export(media=False):
     publication = json.loads((SITE / 'publication.json').read_text())
     descriptors = json.loads((SITE / 'descriptors.json').read_text())
     library = json.loads((ENGINE / 'config/reference-library.json').read_text())
-    vimeo = json.loads((SITE / 'vimeo.json').read_text())
+    vimeo = {key:value for key,value in json.loads((SITE / 'vimeo.json').read_text()).items() if value.get('status')=='complete'}
     output = SITE / 'public'
     for name in ['assets/posters', 'assets/videos', 'assets/fonts']:
         (output / name).mkdir(parents=True, exist_ok=True)
@@ -148,7 +148,10 @@ def export(media=False):
                 subprocess.run(['ffmpeg', '-v', 'error', '-nostdin', '-i', str(source), '-map', '0:v:0', '-map', '0:a?', '-vf', 'scale=480:854:force_original_aspect_ratio=decrease,pad=480:854:(ow-iw)/2:(oh-ih)/2', '-r', '24', '-c:v', 'libx264', '-preset', 'fast', '-crf', '29', '-maxrate', '850k', '-bufsize', '1700k', '-c:a', 'aac', '-b:a', '64k', '-movflags', '+faststart', '-y', str(video_out)], check=True)
             if media and not poster_out.exists():
                 subprocess.run(['ffmpeg', '-v', 'error', '-nostdin', '-ss', '15', '-i', str(source), '-frames:v', '1', '-vf', 'scale=540:-2', '-q:v', '3', '-y', str(poster_out)], check=True)
+            example['vimeo']=vimeo.get(code+':'+variant['id'])
+            if example['vimeo'] and example['vimeo'].get('status')=='complete':example['video']=None
             data['examples'].append(example)
+        if data.get('vimeo') and data['vimeo'].get('status')=='complete':data['video']=None
         formats.append(data)
     formats.sort(key=lambda f: int(f['code'][1:]))
     identities = []

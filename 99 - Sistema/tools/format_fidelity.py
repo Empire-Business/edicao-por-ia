@@ -29,6 +29,7 @@ def validate_locks(root):
 def snapshot(root,entry):
     root=engine_root(root);index=inside(root,'config/reference-library.json')
     library=json.loads(index.read_text()) if index.is_file() else {'formats':{},'files':{}}
+    stock_files=dict(library.get('files',{}))
     group=library['formats'].get(entry['code'])
     if (not group or not entry.get('uid') or group.get('uid')!=entry['uid']) and entry.get('reference_materials'):
         group={'uid':entry['uid'],'references':entry['reference_materials']}
@@ -47,6 +48,9 @@ def snapshot(root,entry):
     if preferred:references=[preferred]+[r for r in references if r['path']!=preferred['path']]
     references+= [r for r in group['references'] if r['path'].endswith(('.jpg','.jpeg','.png'))][:4]
     if not references:raise ValueError('Referência real indisponível para '+entry['code'])
+    from reference_cache import ensure
+    public_paths=[item['path'] for item in group['references']+references if stock_files.get(item['path'])==item['sha256'] and item['path'].startswith('examples/reference-library/')]
+    if public_paths:ensure(root,public_paths)
     for item in references:
         path=inside(root,item['path'])
         if not path.is_file() or sha(path)!=library['files'].get(item['path']) or sha(path)!=item['sha256']:

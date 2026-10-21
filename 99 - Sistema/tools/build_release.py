@@ -2,7 +2,7 @@
 """Build an engine + reviewed stock-reference release; exclude mutable/user material and credentials."""
 import argparse,hashlib,json,subprocess
 from pathlib import Path
-from update_local import allowed,PACKAGE,sha
+from update_local import allowed,PACKAGE,sha,MAX_CODE_BYTES,MAX_CODE_FILE,MAX_CODE_FILES,target_path
 from project_layout import engine_root,surface_root
 
 
@@ -45,17 +45,21 @@ def build(root):
      if allowed(name):files[name]=hashlib.sha256(p.read_bytes()).hexdigest()
 
  # Only the author-reviewed immutable reference index may enter a release.
+ optional={}
  reference_index=root/'config/reference-library.json'
  if reference_index.exists():
-  library=json.loads(reference_index.read_text())
+  library=json.loads(reference_index.read_text());optional={}
   for name,digest in library['files'].items():
    if not name.startswith('examples/reference-library/') or not allowed(name):raise ValueError('Invalid reference index path.')
    file=root/name
    if file.is_symlink() or not file.resolve().is_relative_to(root) or not file.is_file() or sha(file)!=digest:raise ValueError('Reference index mismatch: '+name)
-   files[name]=digest
- manifest={'package':PACKAGE,'version':(root/'VERSION').read_text().strip(),'release_schema':2,'minimum_python':'3.11','files':dict(sorted(files.items())),
+   if file.suffix.lower() in ('.md','.json'):files[name]=digest
+   else:optional[name]=digest
+ sizes={name:target_path(root,surface,name).stat().st_size for name in files}
+ if len(files)>MAX_CODE_FILES or sum(sizes.values())>MAX_CODE_BYTES or any(size>MAX_CODE_FILE for size in sizes.values()):raise ValueError('Pacote de código excede o limite; não publicar. Mídias devem permanecer sob demanda.')
+ manifest={'package':PACKAGE,'version':(root/'VERSION').read_text().strip(),'release_schema':3,'file_sizes':dict(sorted(sizes.items())),'optional_references':dict(sorted(optional.items())),'minimum_python':'3.11','files':dict(sorted(files.items())),
            'migrations':['initialize-design-v2','refresh-guides-v2'],'user_data_policy':'preserve','update_source':'Empire-Business/edicao-por-ia@main'}
  (root/'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
- return {'ok':True,'version':manifest['version'],'files':len(files),'user_data_included':False}
+ return {'ok':True,'version':manifest['version'],'files':len(files),'code_bytes':sum(sizes.values()),'on_demand_references':len(optional),'user_data_included':False}
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);a=p.parse_args();print(json.dumps(build(a.root),ensure_ascii=False,indent=2))

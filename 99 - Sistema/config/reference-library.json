@@ -142,7 +142,7 @@
     },
     "F03": {
       "code": "F03",
-      "name": "Dark com B-roll",
+      "name": "Headline + Narração",
       "uid": "official.d7a2bb0a7fc640f79f9a88538a1eec81",
       "references": [
         {
@@ -650,57 +650,70 @@
       "uid": "official.057f1c25705842ddafb13387b7aeb0b4",
       "references": [
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/exemplo.mp4",
-          "kind": "actual_reference_video",
-          "sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772",
-          "bytes": 22057130,
-          "caption": "Exemplo original produzido pelo Cortez, sem mídia de terceiros.",
-          "source_sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772"
+          "path": "examples/reference-library/F09/personagem/README.md",
+          "kind": "reference_analysis",
+          "sha256": "2e185be8a36ace9c336397ad8d2ac9ca3755216ef48eb00968365c6dc6c617d5",
+          "bytes": 819,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg",
-          "kind": "actual_reference_image",
-          "sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0",
-          "bytes": 52731,
-          "caption": "Personagem 1 em tela cheia; a legenda começa a crescer sobre o peito.",
-          "source_sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0"
+          "path": "examples/reference-library/F09/personagem/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "4db5bb71330717c3e0d0f5ed81d48ea5f6fe50e4e75a89d3d65011d93328c794",
+          "bytes": 5775,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg",
+          "path": "examples/reference-library/F09/personagem/caption-build.jpg",
           "kind": "actual_reference_image",
-          "sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc",
-          "bytes": 54211,
+          "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1",
+          "bytes": 78336,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+          "caption": "A segunda linha da legenda cresce palavra por palavra enquanto a primeira permanece.",
+          "at_seconds": 14.6
+        },
+        {
+          "path": "examples/reference-library/F09/personagem/character-1.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad",
+          "bytes": 63275,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+          "caption": "Personagem 1 em tela cheia, com um bloco curto de legenda sobre o peito.",
+          "at_seconds": 2.0
+        },
+        {
+          "path": "examples/reference-library/F09/personagem/character-2.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
+          "bytes": 75472,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
           "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa.",
-          "source_sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc"
+          "at_seconds": 13.4
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/legenda.jpg",
+          "path": "examples/reference-library/F09/personagem/closing.jpg",
           "kind": "actual_reference_image",
-          "sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a",
-          "bytes": 53024,
-          "caption": "Bloco curto de legenda abaixo do rosto, palavra por palavra.",
-          "source_sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a"
+          "sha256": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
+          "bytes": 80911,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+          "caption": "Fechamento falando com o público. A marca que aparece pertence ao exemplo.",
+          "at_seconds": 42.5
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/README.md",
-          "kind": "reference_analysis",
-          "sha256": "a8a26657c7866e141188c6b5a91d8f8b9a1f169db48609dc6ed991076f120377",
-          "bytes": 1527,
-          "source_sha256": "a8a26657c7866e141188c6b5a91d8f8b9a1f169db48609dc6ed991076f120377"
+          "path": "examples/reference-library/F09/personagem/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+          "bytes": 5909014,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/ANALISE.md",
-          "kind": "reference_analysis",
-          "sha256": "261fa908cf3d02dca77c420ce19e1247e3df8f6c2543f0c75b889992fdf36010",
-          "bytes": 1682,
-          "source_sha256": "261fa908cf3d02dca77c420ce19e1247e3df8f6c2543f0c75b889992fdf36010"
-        },
-        {
-          "path": "examples/reference-library/F09/cortez-2026-10/analysis.json",
-          "kind": "reference_analysis",
-          "sha256": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c",
-          "bytes": 2303,
-          "source_sha256": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c"
+          "path": "examples/reference-library/F09/personagem/turn.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4",
+          "bytes": 77918,
+          "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+          "caption": "Novo turno do personagem 2, com corte seco e legenda abaixo do rosto.",
+          "at_seconds": 23.0
         }
       ],
       "missing_sources": []
@@ -2069,7 +2082,15 @@
     "examples/reference-library/F20/react/punch-in.jpg": "ad6f4bb1228618ccc1f85a1d08bc499ca44542aebee36355871d6613c52a26ab",
     "examples/reference-library/F20/react/react-split.jpg": "7626ee4bc6bd0784fd13ece35a0d45334e5930b7d5ed71c22956f0e2fbe619cb",
     "examples/reference-library/F20/react/reference.mp4": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73",
-    "examples/reference-library/F20/react/source-callback-split.jpg": "b0e36b0821b30d1a955eccac98d98fb5c408ddff52d43971a8615f2117b5a5d2"
+    "examples/reference-library/F20/react/source-callback-split.jpg": "b0e36b0821b30d1a955eccac98d98fb5c408ddff52d43971a8615f2117b5a5d2",
+    "examples/reference-library/F09/personagem/README.md": "2e185be8a36ace9c336397ad8d2ac9ca3755216ef48eb00968365c6dc6c617d5",
+    "examples/reference-library/F09/personagem/analysis.json": "4db5bb71330717c3e0d0f5ed81d48ea5f6fe50e4e75a89d3d65011d93328c794",
+    "examples/reference-library/F09/personagem/caption-build.jpg": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1",
+    "examples/reference-library/F09/personagem/character-1.jpg": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad",
+    "examples/reference-library/F09/personagem/character-2.jpg": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
+    "examples/reference-library/F09/personagem/closing.jpg": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
+    "examples/reference-library/F09/personagem/reference.mp4": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+    "examples/reference-library/F09/personagem/turn.jpg": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4"
   },
   "retired_generations": {
     "factory.f02": {

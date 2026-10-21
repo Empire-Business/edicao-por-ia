@@ -20,7 +20,7 @@ test('search accepts accents and code; categories and favorites intersect', () =
   assert.equal(filterFormats(catalog.formats, { query: 'documentario' })[0].code, 'F12');
   assert.equal(filterFormats(catalog.formats, { query: 'F13' })[0].name, 'Dados Dark');
   assert.equal(filterFormats(catalog.formats, { query: 'F02' })[0].name, 'Talking Head');
-  assert.equal(filterFormats(catalog.formats, { query: 'F03' })[0].name, 'Dark com B-roll');
+  assert.equal(filterFormats(catalog.formats, { query: 'F03' })[0].name, 'Headline + Narração');
   assert.deepEqual(filterFormats(catalog.formats, { category: 'products', favoritesOnly: true, favorites: ['F01', 'F10'] }).map(format => format.code), ['F10']);
 });
 
@@ -71,13 +71,14 @@ test('public catalogue contains no private factory records or machine paths', ()
 test('retired media is absent and references without video have honest evidence labels', async () => {
   const files = await readdir(new URL('../public/assets/videos/', import.meta.url));
   assert.equal(files.some(name => /^F0?2\./.test(name)), false);
-  for (const code of ['F09', 'F12', 'F13']) {
+  for (const code of ['F12', 'F13']) {
     const data = catalog.formats.find(format => format.code === code);
     assert.equal(data.evidenceLabel, 'Exemplo produzido pelo Cortez', code);
     assert.match(data.evidenceNote, /Exemplo original produzido pelo Cortez/, code);
-    assert.match(data.video, new RegExp(`^assets/videos/${code}-cortez-2026-10\\.mp4$`), code);
+    if (data.vimeo) assert.equal(data.vimeo.source_sha256,publication.reference_media[code][0].sha256,code);
+    else assert.match(data.video,new RegExp(`^assets/videos/${code}-cortez-2026-10\\.mp4$`),code);
   }
-  for (const format of catalog.formats.filter(item => !item.video)) assert.notEqual(format.evidence, 'video');
+  for (const format of catalog.formats.filter(item => !item.video && !item.vimeo)) assert.notEqual(format.evidence, 'video');
 });
 
 
@@ -141,8 +142,39 @@ test('the authorized new F02 uses its actual full example and a fresh media gene
  assert.equal(item.name,'Talking Head');
  assert.equal(item.duration,185);
  assert.equal(item.evidenceLabel,'Referência externa');
- assert.match(item.video,/F02-talking-head-20261007\.mp4$/);
+ assert.equal(item.vimeo.source_sha256,publication.reference_media.F02[0].sha256);
  assert.equal(item.referenceFrames.length,3);
  assert.notEqual(publication.formats.find(f=>f.code==='F02').uid,'factory.f02');
  assert.equal(filterFormats(catalog.formats,{query:'talking head'})[0].code,'F02');
+});
+
+
+test('F03 asks only for the headline recording and F09 restores the pre-AI Personagem', () => {
+  const f03=catalog.formats.find(f=>f.code==='F03');
+  assert.equal(f03.name,'Headline + Narração');
+  assert.match(f03.inputs,/somente a headline/);
+  assert.equal(f03.pattern,'f03-dark-com-broll-v2');
+  const f09=catalog.formats.find(f=>f.code==='F09');
+  assert.equal(f09.pattern,'f09-personagem-v1');
+  assert.equal(f09.duration,45);
+  assert.equal(f09.evidenceLabel,'Referência externa');
+  const reference=publication.reference_media.F09[0];
+  assert.equal(reference.path,'examples/reference-library/F09/personagem/reference.mp4');
+  assert.equal(reference.sha256,'36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e');
+});
+
+
+test('Vimeo previews use only completed uploads of the exact approved sources', () => {
+ const ids=new Set();
+ for (const format of catalog.formats) {
+  for (const sample of [format,...(format.examples||[])]) {
+   if (!sample.vimeo) continue;
+   assert.match(sample.vimeo.id,/^\d{1,15}$/);
+   assert.equal(sample.vimeo.status,'complete');
+   assert.match(sample.vimeo.source_sha256,/^[a-f0-9]{64}$/);
+   assert.equal(sample.video,null);
+   assert.ok(!ids.has(sample.vimeo.id));ids.add(sample.vimeo.id);
+  }
+ }
+ assert.ok(ids.size>=19);
 });
