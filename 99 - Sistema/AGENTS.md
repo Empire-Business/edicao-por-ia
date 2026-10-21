@@ -53,7 +53,7 @@ Never claim a save without its tool receipt. Only the coordinator writes format 
 - Reference-driven motion studio / state lists / seek(t) / critique loop → `workflows/MOTION_STUDIO.md` + `studio/CONTRACT.md`
 - JavaScript animation / motion graphics → `workflows/CREATE_JS_ANIMATIONS.md` + `method/MOTION_POLICY.md`
 - Speech cleanup → `workflows/CLEAN_SPEECH.md` + `method/SPEECH_ERROR_POLICY.md` (always run `tools/find_hidden_retakes.py` on the source and on the final voice)
-- Hook variations for testing (“5 variações”, “ganchos diferentes”) → `workflows/HOOK_VARIATIONS.md`
+- Reel variations for A/B testing, any format and any quantity (“5 variações”, “ganchos diferentes”, “versões para testar”, “F19 com outra foto”) → `workflows/REEL_VARIATIONS.md` (tool: `tools/reel_variations.py` plan/check/post)
 - Multiple videos / one recording containing several pieces → `workflows/SPLIT_MULTI_VIDEO.md` + `method/MULTI_VIDEO_POLICY.md`
 - New style/preset → `workflows/DEFINE_PATTERN.md` + `patterns/PATTERN_SPEC.md`
 - Batch/factory → `workflows/BATCH_FACTORY.md` + `method/TOKEN_ECONOMY.md`

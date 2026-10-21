@@ -1,5 +1,18 @@
 # Histórico de versões
 
+## 2.5.0 — 20 de outubro de 2026
+
+- Variações de reel para teste, em qualquer formato e na quantidade que a pessoa quiser (pedido do autor: "qualquer
+  pessoa pode querer fazer algo semelhante na quantidade que quiser"). Novo fluxo `workflows/REEL_VARIATIONS.md`
+  (substitui `HOOK_VARIATIONS.md`), com dois jeitos que podem ser misturados: gancho re-editado (começo diferente e
+  legenda, transições, cor e trilha variando no resto) e post com foto chamativa (mecânica do F19, nova foto e frase
+  por versão).
+- Nova ferramenta `tools/reel_variations.py`: `plan` cria o plano de N variações já diferentes entre si, `check`
+  bloqueia repetições (mesma foto e frase, mesma combinação de gancho) e campos vazios, e `post` gera o post com as
+  cores e a fonte da ID escolhida.
+- Painel de formatos e cada "Como usar" explicam como pedir variações; a ajuda ganhou a seção "Variações para testar
+  reels" e passou a explicar que a troca de roupa devolve o rosto original.
+
 ## 2.4.0 — 20 de outubro de 2026
 
 Correções pedidas pelo autor durante a edição de reels (br05, br06 e br08), para não se repetirem:
