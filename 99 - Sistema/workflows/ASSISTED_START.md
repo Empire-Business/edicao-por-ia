@@ -14,10 +14,10 @@ Na instalação guiada pelo usuário, confirmar sua conta do GitHub antes de obt
 7. Configurações locais alteradas exigem reabrir a sessão. Se o ambiente bloquear uma integração, explicar o bloqueio, não desabilitar a segurança para contornar.
 
 ## Atualização de uma instalação anterior
-Leia `workflows/UPDATE_FACTORY.md`. O usuário pode pedir “Atualize esta fábrica”. Use o atualizador de código com backup, revisão main fixada por SHA e migrações declaradas. Não substituir jobs, catálogo, IDs, memória, chaves, configurações ou gastos. Conflitos deixam a versão ativa intacta para revisão. Nunca usar git reset/clean como atualização.
+Leia `workflows/UPDATE_FACTORY.md`. O usuário pode pedir “Atualize o Cortez”. Use o atualizador de código com backup, revisão main fixada por SHA e migrações declaradas. Não substituir jobs, catálogo, IDs, memória, chaves, configurações ou gastos. Conflitos deixam a versão ativa intacta para revisão. Nunca usar git reset/clean como atualização.
 
 ## Pasta portátil
-Todos os materiais precisam estar dentro da pasta copiada da fábrica. Quando o usuário enviar
+Todos os materiais precisam estar dentro da pasta copiada do Cortez. Quando o usuário enviar
 um arquivo externo, importe uma cópia verificada com `tools/workspace_files.py import` antes de
 criar o trabalho. Não guarde caminhos absolutos de outro computador ou atalhos para fora.
 Use referências internas relativas/`workspace://`; vídeos, roteiros, imagens, fontes e bibliotecas

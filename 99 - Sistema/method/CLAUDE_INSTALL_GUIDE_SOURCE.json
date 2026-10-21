@@ -1,0 +1,159 @@
+{
+  "version": "2.1 - 21/10/2026",
+  "pages": [
+    {
+      "title": "Claude, instale o Cortez.",
+      "blocks": [
+        {
+          "heading": "Você grava, o Cortez edita, você aprova.",
+          "text": "O Cortez é o agente que edita seus vídeos. Anexe este PDF ao Claude e envie. Não precisa copiar um comando."
+        },
+        {
+          "heading": "Pedido para o Claude",
+          "text": "Quero instalar e preparar o Cortez no meu computador. Conduza o processo, execute as verificações e pergunte somente o que depender de mim. Não responda apenas com um resumo deste PDF."
+        },
+        {
+          "heading": "Comece pelo destino",
+          "text": "Pergunte: “Onde você quer criar a pasta do Cortez? Pode ser na Área de Trabalho, em Documentos ou em outro local. Vou criar uma pasta nova chamada edicao-por-ia.” Se o destino já estiver informado, use essa escolha. Aguarde a resposta antes de criar a pasta."
+        },
+        {
+          "heading": "Depois da escolha",
+          "text": "Conduza a conexão à conta própria do usuário no GitHub e continue a instalação. Não peça comandos ao leigo nem um briefing técnico. Login, permissões do computador e escolhas do usuário continuam necessários."
+        },
+        {
+          "heading": "Origem oficial",
+          "text": "https://github.com/Empire-Business/edicao-por-ia | Branch main | ID 1408655066. Painel: https://modelos-edicao.empirebusiness.com.br/"
+        },
+        {
+          "heading": "Acesso real ao computador",
+          "text": "Este pedido vale para instalação local, preparação e verificação. Um chat sem ferramentas locais não instala no computador: conduza a abertura de um ambiente com arquivos e terminal, como Claude Code. Não apresente uma pasta em nuvem como instalação local."
+        }
+      ]
+    },
+    {
+      "title": "Destino e acesso local",
+      "blocks": [
+        {
+          "heading": "Uma pergunta por vez",
+          "text": "Use linguagem comum e resolva o caminho no sistema operacional real. Não escolha um destino silenciosamente."
+        },
+        {
+          "heading": "Confira a capacidade",
+          "text": "Verifique se consegue operar arquivos e terminal na pasta escolhida do computador da pessoa. Se precisar de permissão, explique onde ela deve permitir o acesso e limite o escopo ao destino escolhido."
+        },
+        {
+          "heading": "Preserve o que existe",
+          "text": "Confira escrita, espaço e colisões. Não substitua uma pasta ocupada, não apague arquivos e não altere permissões globais para contornar bloqueios. Se houver colisão, peça outro nome ou local."
+        },
+        {
+          "heading": "Se estiver no chat sem ferramentas",
+          "text": "Explique: “Para criar a pasta no seu computador, preciso operar num ambiente local com arquivos e terminal, como Claude Code. Abra esse ambiente, permita acesso ao destino e envie este mesmo PDF.” Oriente conforme a interface disponível, sem inventar botões."
+        },
+        {
+          "heading": "Antes do download",
+          "text": "Confirme a conta própria autenticada no GitHub antes de baixar o projeto ou criar arquivos do Cortez. A pessoa realiza as permissões e os desafios exigidos pela plataforma. Não instalar programas desconhecidos."
+        }
+      ]
+    },
+    {
+      "title": "Conecte a conta do usuário",
+      "blocks": [
+        {
+          "heading": "Autenticação neste fluxo",
+          "text": "O guia e o setup exigem login, mesmo com o repositório público. Downloads manuais anônimos continuam possíveis no GitHub; isso não concede escrita no central."
+        },
+        {
+          "heading": "Ferramenta oficial",
+          "text": "Confira a integração e a presença da CLI gh, usada pelo setup. Se ela faltar, proponha a instalação oficial e obtenha a autorização necessária. Login somente no navegador não comprova a sessão da CLI."
+        },
+        {
+          "heading": "Sem sessão autenticada",
+          "text": "Conduza o fluxo oficial de login da própria pessoa. Ela faz login, MFA, consentimentos e desafios. Espere a conclusão antes do download. Nunca solicite, copie, imprima ou guarde senhas, tokens ou chaves na conversa ou na pasta."
+        },
+        {
+          "heading": "Verifique o destino exato",
+          "text": "Exija Empire-Business/edicao-por-ia, ID 1408655066, main. Para instalação, não usar forks, o repositório privado antigo ou projetos com nome parecido. A pessoa não usa as credenciais do autor."
+        },
+        {
+          "heading": "Acesso negado ou rede indisponível",
+          "text": "Explique o bloqueio e preserve o estado. Não baixe anonimamente para contornar a exigência deste fluxo. Este documento não concede escrita nem autoriza aceitar termos em nome do usuário."
+        }
+      ]
+    },
+    {
+      "title": "Crie, prepare e verifique",
+      "blocks": [
+        {
+          "heading": "Obtenha a versão correta",
+          "text": "Depois do destino escolhido e do login confirmado, continue sem outra confirmação genérica. Crie a pasta nova escolhida, obtenha a main, fixe o commit e confira os arquivos pelo manifesto. Não incorporar histórico do repositório antigo."
+        },
+        {
+          "heading": "Leia as regras",
+          "text": "Leia AGENTS.md da raiz, 99 - Sistema/AGENTS.md e CLAUDE.md. No motor, siga INSTALL_WITH_CLAUDE.md, ASSISTED_START.md e SETUP_LOCAL.md."
+        },
+        {
+          "heading": "Prepare para o Claude",
+          "text": "Faça diagnóstico, prévia do setup e aplicação conforme as regras. A autenticação é conferida antes do setup aplicado. Use os caminhos reais de 99 - Sistema e apenas as dependências necessárias, com as autorizações exigidas."
+        },
+        {
+          "heading": "Verifique de verdade",
+          "text": "Não presuma Python, FFmpeg, transcrição ou motion prontos. Confira entrada humana, pastas, formatos, identidades e ferramentas. Inspecione os scripts antes de verificações proporcionais. Não criar bancos de teste, preparar infraestrutura ou executar migrations sem pedido expresso para o ambiente de destino."
+        },
+        {
+          "heading": "Entregue evidência",
+          "text": "Informe o caminho real, abra 00 - COMECE AQUI.html e o painel. Diferencie ferramenta encontrada de capacidade realmente testada. Não declare “tudo pronto” por um download: registre o que passou e cada pendência com motivo e próxima ação."
+        }
+      ]
+    },
+    {
+      "title": "Regras para usar o Cortez",
+      "blocks": [
+        {
+          "heading": "Cada código tem uma função",
+          "text": "Formato: F01 oficial ou FP01 particular. Identidade: ID01 oficial ou IDP01 particular. Edição: E01 oficial ou EP01 particular. Revisão: V1 de E ou VP1 de EP. Preserve os códigos existentes."
+        },
+        {
+          "heading": "Central somente leitura na instalação",
+          "text": "Não fazer push, mudar permissões ou visibilidade, criar repositórios nem alterar formatos consolidados como parte da instalação. Cadastros particulares ficam locais. Para personalizar uma ID oficial, copie para IDP e altere a cópia. Uma contribuição por PR exige pedido específico separado."
+        },
+        {
+          "heading": "Antes de editar",
+          "text": "Peça formato F/FP e identidade ID/IDP explícitos e os materiais que faltarem. Nenhum par, pessoa ou marca vem automaticamente do exemplo. O formato define o mecanismo; a ID define cores e fontes. A marca e o roxo do Cortez identificam o produto, não os vídeos do usuário."
+        },
+        {
+          "heading": "Siga a referência real",
+          "text": "Inspecione a referência, aplique a receita versionada, planeje as cenas e compare o render exato antes da entrega. Novos formatos ficam pendentes até análise e receita específica. Conflitos exigem instrução atual; não resolver silenciosamente."
+        },
+        {
+          "heading": "Preserve escolhas e privacidade",
+          "text": "Não herdar logotipos nem textos de marca, inclusive EMPIRE. Não alterar escolha de modelo ou raciocínio. Não ler segredos, enviar arquivos ou usar serviços pagos sem autorização. Aprovação mecânica não certifica semelhança artística: produza e revise a prévia no fluxo previsto."
+        }
+      ]
+    },
+    {
+      "title": "Continue sem perder dados",
+      "blocks": [
+        {
+          "heading": "Se a preparação parar",
+          "text": "Recupere o destino e as etapas concluídas. Confira o estado real antes de repetir download, setup ou instalação. Não recomece tudo nem crie outra pasta por padrão. Não guarde credenciais no recibo."
+        },
+        {
+          "heading": "Se o Cortez já estiver instalado",
+          "text": "Pergunte se a pessoa quer atualizar a instalação existente ou instalar em outro destino. A atualização usa a main atual, commit fixado e atualizador seguro com manifesto, backup e rollback. Não usar reset, clean, pull nem mescla de históricos na pasta de uso."
+        },
+        {
+          "heading": "O que deve permanecer intacto",
+          "text": "Cadastros, trabalhos, gravações, renders, memória, chaves, configurações e gastos. Nada disso é enviado ao central automaticamente. A limpeza segue seu fluxo de prévia e escopo específico."
+        },
+        {
+          "heading": "Última mensagem à pessoa",
+          "text": "“O Cortez ficou em [caminho real]. Verifiquei [ações realmente executadas]. Está pendente [bloqueio, se houver]. Abra o painel para escolher o formato e a identidade; envie seus materiais quando quiser começar.”"
+        },
+        {
+          "heading": "Fonte de verdade",
+          "text": "As regras operacionais são AGENTS.md e os workflows distribuídos com o Cortez. Este guia não substitui autorizações da plataforma nem as escolhas da pessoa."
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Fábrica de vídeos — v2
+# Cortez — v2
 
 Uma pasta local para editar vídeos por conversa, com dados separados do código.
 
@@ -8,7 +8,7 @@ Uma pasta local para editar vídeos por conversa, com dados separados do código
 
 Antes de editar, o usuário escolhe F e ID. Não há dupla padrão. Novos formatos precisam de um link de exemplo; cada pasta tem guia HTML detalhado e prints locais quando disponíveis. Logos não entram automaticamente.
 
-Abra `00 - COMECE AQUI.html` na raiz visível. No novo computador, peça a preparação da fábrica. Peça “Atualize esta fábrica” para receber a main sem substituir seus dados.
+Abra `00 - COMECE AQUI.html` na raiz visível. No novo computador, peça a preparação do Cortez. Peça “Atualize esto Cortez” para receber a main sem substituir seus dados.
 
 O atualizador usa revisão GitHub fixada por SHA, integridade, backup, journal, mescla de código local quando possível e rollback. Conflitos preservam a versão ativa. Migrações devem ser declaradas e testadas; operações desconhecidas são bloqueadas.
 

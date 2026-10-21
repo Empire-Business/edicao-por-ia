@@ -1,6 +1,6 @@
-# Fábrica de vídeos
+# Cortez
 
-Edite vídeos conversando com a IA. Escolha um formato de edição e uma identidade visual; gravações, trabalhos e memória ficam na sua pasta local.
+Edite vídeos conversando com o Cortez. Escolha um formato de edição e uma identidade visual; gravações, trabalhos e memória ficam na sua pasta local.
 
 ## Instalação guiada pelo Claude
 
@@ -51,9 +51,13 @@ Oficiais usam F/ID; particulares novos usam FP/IDP. Nas cópias de uso, ediçõe
 
 ## Atualizar sem perder trabalhos
 
-Peça à IA: “Atualize esta fábrica pela main preservando meus dados.” O atualizador seguro fixa um commit, verifica o manifesto e usa backup/rollback. Trabalhos, originais, memória, cadastros particulares, chaves, configurações e gastos permanecem.
+Peça ao Cortez: “Atualize esto Cortez pela main preservando meus dados.” O atualizador seguro fixa um commit, verifica o manifesto e usa backup/rollback. Trabalhos, originais, memória, cadastros particulares, chaves, configurações e gastos permanecem.
 
 Não usar pull, reset, clean, mescla de históricos ou ZIP extraído por cima como instalação/atualização. Para cópias antigas ou misturadas, [leia o guia de recuperação](03%20-%20Ajuda/ATUALIZAR%20SEM%20PERDER%20TRABALHOS.html).
+
+## Sugerir formatos e melhorias
+
+Peça: “Cortez, prepare um PR com esta sugestão: [sua ideia]”. Um PR é uma proposta para revisão; ele não muda a versão oficial sozinho. O Cortez prepara uma cópia separada e confere os arquivos antes de enviar. [Veja o processo](99%20-%20Sistema/workflows/CONTRIBUTE_PULL_REQUEST.md).
 
 ## Integrações e referências
 

@@ -28,6 +28,7 @@ if (catalog.identities.some(identity => !/^ID\d{2,}$/.test(identity.code))) thro
 await rm(destination, { recursive: true, force: true });
 await mkdir(destination, { recursive: true });
 await cp(path.join(root, 'public/catalog.json'), path.join(destination, 'catalog.json'));
+await cp(path.join(root, 'public/assets/brand/cortez'), path.join(destination, 'assets/brand/cortez'), { recursive: true });
 await cp(path.join(root, 'public/assets/fonts'), path.join(destination, 'assets/fonts'), { recursive: true });
 for (const format of catalog.formats) {
  for (const sample of [format,...(format.examples || []),...(format.referenceFrames || [])]) {

@@ -1,9 +1,15 @@
-// Painel de instruções da fábrica. Mantido pela IA: ao criar, mudar ou retirar uma função
+// Painel de instruções do Cortez. Mantido pelo Cortez: ao criar, mudar ou retirar uma função
 // (workflow em 99 - Sistema/workflows), atualizar esta lista e guideUpdated na mesma mudança.
 export const guideUpdated = '2026-10-21';
 
+export const installerPdf = 'https://drive.google.com/file/d/1q1_mqtFYcouUHKKZImZFXDMAaolqHnkH/view?usp=sharing';
+
+export const tutorials = [
+  { id: 'como-usar', title: 'Como usar o Cortez', description: 'Acompanhe o uso do agente, da gravação até a edição. Dê o play para assistir com som.', source: 'vimeo', videoId: '1238030963', hash: '1c867e709c' }
+];
+
 export const groups = [
-  { id: 'comecar', label: 'Começar', lead: 'Instalar, conferir e deixar a fábrica pronta.' },
+  { id: 'comecar', label: 'Começar', lead: 'Instalar, conferir e deixar o Cortez pronto.' },
   { id: 'editar', label: 'Editar', lead: 'Do material bruto até a prévia revisada.' },
   { id: 'testar', label: 'Testar e publicar', lead: 'Versões para testar ganchos, capas e entregas.' },
   { id: 'som', label: 'Voz e som', lead: 'Voz limpa, silêncios, erros de fala e trilha.' },
@@ -18,18 +24,26 @@ export const internalWorkflows = ['CLIENT_MEMORY.md', 'INGEST.md', 'PERSONALIZAT
 
 export const functions = [
   {
-    id: 'instalar', group: 'comecar', title: 'Instalar a fábrica',
-    what: 'A IA cria a pasta no seu computador, confere sua conta do GitHub e prepara o que falta, sempre mostrando antes o que vai instalar.',
-    say: 'Instale a fábrica de vídeos neste computador.',
-    prompt: 'Instale a fábrica de vídeos neste computador seguindo o guia de instalação que anexei.\n\nPergunte primeiro onde devo criar a pasta. Confira minha conta do GitHub, não sobrescreva nenhuma pasta existente e me mostre o que vai instalar antes de instalar. No fim, diga o que foi testado de verdade e o que ficou pendente.',
+    id: 'contribuir', group: 'cuidar', title: 'Sugerir um formato ou uma melhoria',
+    what: 'Um PR é uma proposta de mudança. O Cortez prepara uma cópia separada e envia para revisão. A versão de todos só muda depois da aprovação.',
+    say: 'Cortez, prepare um PR com esta sugestão: [descreva sua ideia].',
+    prompt: 'Cortez, quero propor [um formato novo / uma melhoria] para o projeto.\n\nMinha ideia: [descreva].\nExemplo público autorizado, se for um formato: [link].\n\nPrepare a alteração em uma cópia separada da versão atual e abra um PR em rascunho para revisão. Confira comigo quais materiais podem ser publicados; envie apenas código, documentação e referências autorizadas. Não envie meus vídeos de trabalho, memória, chaves ou configurações. Não altere a versão oficial nem aprove ou publique a proposta por conta própria. Ao terminar, entregue o link do PR e explique o que foi verificado e o que falta.',
+    tips: ['PR significa proposta de alteração: você não precisa saber programar para descrever sua ideia.', 'Um formato novo precisa de exemplo que você tenha autorização para compartilhar.', 'Sem permissão de escrita, o Cortez usa uma cópia na sua conta do GitHub e pede revisão ao projeto.'],
+    workflows: ['CONTRIBUTE_PULL_REQUEST.md']
+  },
+  {
+    id: 'instalar', group: 'comecar', title: 'Instalar o Cortez',
+    what: 'O Cortez cria a pasta no seu computador, confere sua conta do GitHub e prepara o que falta, sempre mostrando antes o que vai instalar.',
+    say: 'Instale o Cortez neste computador.',
+    prompt: 'Instale o Cortez neste computador seguindo o guia de instalação que anexei.\n\nPergunte primeiro onde devo criar a pasta. Confira minha conta do GitHub, não sobrescreva nenhuma pasta existente e me mostre o que vai instalar antes de instalar. No fim, diga o que foi testado de verdade e o que ficou pendente.',
     tips: ['Anexe o PDF de instalação na conversa com o Claude.', 'Nada é instalado sem a sua autorização.'],
     workflows: ['INSTALL_WITH_CLAUDE.md']
   },
   {
     id: 'preparar', group: 'comecar', title: 'Conferir se está tudo pronto',
     what: 'Diagnóstico da pasta: transcrição de fala, FFmpeg, navegador para animações e o que ainda falta para editar.',
-    say: 'Confira se a fábrica está pronta para editar.',
-    prompt: 'Confira se esta fábrica está pronta para editar vídeos com fala e animações.\n\nFaça o diagnóstico, me diga em linguagem simples o que está funcionando e o que falta. Antes de instalar qualquer coisa, me mostre o que será instalado e peça minha autorização.',
+    say: 'Confira se o Cortez está pronto para editar.',
+    prompt: 'Confira se esto Cortez está pronto para editar vídeos com fala e animações.\n\nFaça o diagnóstico, me diga em linguagem simples o que está funcionando e o que falta. Antes de instalar qualquer coisa, me mostre o que será instalado e peça minha autorização.',
     tips: ['Use depois de instalar ou quando algo parar de funcionar.'],
     workflows: ['ASSISTED_START.md', 'SETUP_LOCAL.md']
   },
@@ -37,17 +51,17 @@ export const functions = [
     id: 'chaves', group: 'comecar', title: 'Ligar as integrações',
     what: 'Voz limpa, música, busca de cenas e capas usam serviços externos. Cada um precisa da sua chave no arquivo de chaves.',
     say: 'Quais chaves faltam no arquivo de integrações?',
-    prompt: 'Quais integrações da fábrica estão sem chave? Não leia nem mostre os valores das chaves; diga apenas quais estão faltando e para que cada uma serve.',
+    prompt: 'Quais integrações do Cortez estão sem chave? Não leia nem mostre os valores das chaves; diga apenas quais estão faltando e para que cada uma serve.',
     tips: ['Abra “CHAVES DAS INTEGRAÇÕES.txt” na pasta, cole cada chave depois do sinal = e salve.', 'O arquivo é privado e nunca é publicado.'],
     keys: ['ElevenLabs', 'ScrapeCreators', 'OpenRouter', 'Apify'],
     workflows: []
   },
   {
     id: 'editar', group: 'editar', title: 'Editar um vídeo', featured: true,
-    what: 'Você escolhe um formato (F) e uma identidade visual (ID). A IA corta, limpa a fala, monta cenas e entrega uma prévia em “02 - Ver vídeos”.',
+    what: 'Você escolhe um formato (F) e uma identidade visual (ID). O Cortez corta, limpa a fala, monta cenas e entrega uma prévia em “02 - Ver vídeos”.',
     say: 'Edite este vídeo com F02 e ID03, vertical.',
-    prompt: 'Quero editar o material que coloquei em “01 - Enviar vídeos”: [nome do arquivo].\n\nFormato de edição: [F02].\nIdentidade visual: [ID03].\nTamanho: [9:16 vertical].\n\nPreserve os originais, use as regras atuais da fábrica e me entregue uma prévia para revisar. Cores e fontes vêm da identidade escolhida. Sem logotipo, a não ser que eu peça.',
-    tips: ['Sem F ou sem ID a IA pergunta antes de começar: nenhuma dupla é escolhida sozinha.', 'Cada vídeo recebe um código E01, E02… e cada revisão V1, V2…'],
+    prompt: 'Quero editar o material que coloquei em “01 - Enviar vídeos”: [nome do arquivo].\n\nFormato de edição: [F02].\nIdentidade visual: [ID03].\nTamanho: [9:16 vertical].\n\nPreserve os originais, use as regras atuais do Cortez e me entregue uma prévia para revisar. Cores e fontes vêm da identidade escolhida. Sem logotipo, a não ser que eu peça.',
+    tips: ['Sem F ou sem ID o Cortez pergunta antes de começar: nenhuma dupla é escolhida sozinha.', 'Cada vídeo recebe um código E01, E02… e cada revisão V1, V2…'],
     link: { href: '#modelos', label: 'Escolher o formato nos modelos' },
     workflows: ['EDIT_VIDEO.md']
   },
@@ -69,7 +83,7 @@ export const functions = [
   },
   {
     id: 'roteiro', group: 'editar', title: 'Editar seguindo um roteiro',
-    what: 'Com o roteiro, a IA reconhece as ideias, escolhe as melhores tomadas e descarta as repetidas. Paráfrases equivalentes são mantidas.',
+    what: 'Com o roteiro, o Cortez reconhece as ideias, escolhe as melhores tomadas e descarta as repetidas. Paráfrases equivalentes são mantidas.',
     say: 'Use este roteiro para escolher as melhores tomadas.',
     prompt: 'Edite [o vídeo] com [F] e [ID] usando este roteiro como referência para escolher as melhores tomadas:\n\n[cole o roteiro aqui]\n\nO roteiro é flexível: mantenha frases ditas de outro jeito com o mesmo sentido. Não invente falas que não foram gravadas e me diga se faltou alguma ideia.',
     tips: ['O roteiro também pode ir como arquivo em “01 - Enviar vídeos”.'],
@@ -77,10 +91,10 @@ export const functions = [
   },
   {
     id: 'dividir', group: 'editar', title: 'Uma gravação com vários vídeos',
-    what: 'A IA encontra onde cada vídeo começa e termina numa gravação longa e cria um trabalho separado para cada um.',
+    what: 'O Cortez encontra onde cada vídeo começa e termina numa gravação longa e cria um trabalho separado para cada um.',
     say: 'Nesta gravação tem 4 vídeos. Separe e edite cada um.',
     prompt: 'A gravação [nome do arquivo] tem [4] vídeos diferentes. Encontre onde cada um começa e termina, me mostre a divisão proposta e edite cada vídeo separadamente com [F] e [ID].',
-    tips: ['Se a divisão não estiver clara, a IA mostra os tempos e pergunta antes.'],
+    tips: ['Se a divisão não estiver clara, o Cortez mostra os tempos e pergunta antes.'],
     workflows: ['SPLIT_MULTI_VIDEO.md']
   },
   {
@@ -104,7 +118,7 @@ export const functions = [
     what: 'Conferência técnica e visual: áudio, legendas, cortes, cenas e se as suas preferências foram aplicadas.',
     say: 'Revise a E03 antes de eu postar.',
     prompt: 'Revise a [E03] antes de eu postar: confira áudio, cortes no meio de palavras, legendas, cenas vazias e se minhas preferências do formato foram seguidas. Liste o que está bom e o que precisa de ajuste.',
-    tips: ['A IA não declara “aprovado” sem abrir os quadros e ouvir os cortes.'],
+    tips: ['O Cortez não declara “aprovado” sem abrir os quadros e ouvir os cortes.'],
     workflows: ['QA.md']
   },
   {
@@ -220,7 +234,7 @@ export const functions = [
     id: 'escolher-formato', group: 'formatos', title: 'Escolher um formato', featured: true,
     what: 'O formato define cortes, ritmo, composição e animações. Assista aos exemplos e copie o pedido pronto.',
     say: 'Qual formato combina com um vídeo sem eu aparecer?',
-    prompt: 'Quero fazer um vídeo sobre [assunto], [aparecendo / sem aparecer], com [gravação / só narração / prints]. Quais formatos da fábrica combinam e por quê?',
+    prompt: 'Quero fazer um vídeo sobre [assunto], [aparecendo / sem aparecer], com [gravação / só narração / prints]. Quais formatos do Cortez combinam e por quê?',
     tips: [],
     link: { href: '#modelos', label: 'Abrir os modelos' },
     workflows: []
@@ -236,7 +250,7 @@ export const functions = [
   },
   {
     id: 'novo-formato', group: 'formatos', title: 'Criar um formato novo',
-    what: 'Envie um nome simples e um link de exemplo. A fábrica cria o próximo código FP, analisa o exemplo real e escreve a receita.',
+    what: 'Envie um nome simples e um link de exemplo. O Cortez cria o próximo código FP, analisa o exemplo real e escreve a receita.',
     say: 'Crie um formato novo a partir deste exemplo.',
     prompt: 'Crie um formato novo chamado “[nome simples]” a partir deste exemplo: [link do Instagram, Drive, X ou site].\n\nAnalise o vídeo real, me explique o mecanismo da edição e só depois salve a receita. Não fixe cores ou fontes no formato.',
     tips: ['O nome descreve a edição (ex.: “Lista em Tela”), não uma pessoa ou marca.', 'Sem link de exemplo o formato não é criado.'],
@@ -267,10 +281,10 @@ export const functions = [
     workflows: ['FORMAT_MEMORY.md', 'LEARN_FROM_RESULT.md']
   },
   {
-    id: 'atualizar', group: 'cuidar', title: 'Atualizar a fábrica',
-    what: 'Atualiza só o código, com backup, mantendo trabalhos, memória, referências já baixadas, IDs, chaves e configurações. Novas referências são baixadas quando o formato for usado. Se você personalizou código, nada é sobrescrito.',
-    say: 'Atualize esta fábrica.',
-    prompt: 'Atualize esta fábrica para a versão mais recente, preservando meus trabalhos, memórias, identidades, chaves e configurações. Me diga o que mudou.',
+    id: 'atualizar', group: 'cuidar', title: 'Atualizar o Cortez',
+    what: 'Atualiza só o código, com backup, mantendo trabalhos, memória, referências já baixadas, IDs, chaves e configurações. Novas referências são baixadas quando o formato for usado. Se houver alterações locais de código, o Cortez confere a mescla e avisa se houver conflito.',
+    say: 'Atualize o Cortez.',
+    prompt: 'Atualize o Cortez para a versão mais recente, preservando meus trabalhos, memórias, identidades, chaves e configurações. Me diga o que mudou.',
     tips: ['Não precisa baixar a pasta de novo nem rodar nada manualmente.'],
     workflows: ['UPDATE_FACTORY.md']
   },
@@ -286,7 +300,7 @@ export const functions = [
     id: 'recuperar', group: 'cuidar', title: 'Recuperar uma pasta antiga ou misturada',
     what: 'Para instalações antigas: cria uma pasta nova e organizada, preservando a original e todos os trabalhos.',
     say: 'Minha pasta é de uma versão antiga. Recupere sem perder nada.',
-    prompt: 'Minha pasta da fábrica é de uma versão antiga (ou ficou misturada). Monte uma pasta nova organizada a partir dela, sem apagar ou alterar a original, e me mostre o recibo do que foi levado.',
+    prompt: 'Minha pasta do Cortez é de uma versão antiga (ou ficou misturada). Monte uma pasta nova organizada a partir dela, sem apagar ou alterar a original, e me mostre o recibo do que foi levado.',
     tips: ['Veja também “03 - Ajuda/ATUALIZAR SEM PERDER TRABALHOS”.'],
     workflows: []
   }
