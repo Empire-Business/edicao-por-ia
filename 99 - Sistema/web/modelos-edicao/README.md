@@ -1,6 +1,6 @@
 # Modelos de edição
 
-Painel público da fábrica: a tela inicial explica o uso e lista todas as funções com a frase para dizer e o prompt completo (`src/guide.js`); em destaque, a biblioteca para escolher um formato, assistir às referências, escolher uma ID visual e copiar um pedido para a fábrica local. Rotas: `#inicio`, `#modelos`, `#funcoes` (ou `#funcoes=grupo`, `#funcao=id`), `#identidades`, `#como-usar`. Toda função nova ou alterada da fábrica atualiza `src/guide.js` na mesma mudança; `tests/guide.test.mjs` cobra a cobertura dos workflows. O site não acessa o disco do visitante nem recebe gravações de clientes.
+Painel público do Cortez: a tela inicial explica o uso e lista todas as funções com a frase para dizer e o prompt completo (`src/guide.js`); em destaque, a biblioteca para escolher um formato, assistir às referências, escolher uma ID visual e copiar um pedido para o Cortez local. Rotas: `#inicio`, `#modelos`, `#funcoes` (ou `#funcoes=grupo`, `#funcao=id`), `#identidades`, `#como-usar`. Toda função nova ou alterada do Cortez atualiza `src/guide.js` na mesma mudança; `tests/guide.test.mjs` cobra a cobertura dos workflows. O site não acessa o disco do visitante nem recebe gravações de clientes.
 
 Destino: **modelos-edicao.empirebusiness.com.br**.
 
@@ -8,7 +8,7 @@ Destino: **modelos-edicao.empirebusiness.com.br**.
 
 Importar o repositório `Empire-Business/edicao-por-ia`. Usar o diretório raiz **`99 - Sistema/web/modelos-edicao`**. O framework é **Other**, o build é `npm run build`, e a saída é `dist`. Não há variáveis de ambiente, banco de dados ou dependências npm. Em Domains, adicionar `modelos-edicao.empirebusiness.com.br` e aplicar no provedor DNS o registro indicado pelo próprio Vercel.
 
-A implantação deste site é independente do pacote de atualização da fábrica. Não publicar a raiz da fábrica como diretório estático. O build copia somente o código da interface, o catálogo público, as fontes e a mídia referenciada. Trabalhos, memória, credenciais e catálogos privados não entram no resultado.
+A implantação deste site é independente do pacote de atualização do Cortez. Não publicar a raiz do Cortez como diretório estático. O build copia somente o código da interface, o catálogo público, as fontes e a mídia referenciada. Trabalhos, memória, credenciais e catálogos privados não entram no resultado.
 
 ## Conteúdo publicado
 
@@ -28,13 +28,13 @@ Nesta versão o envio ao Vimeo ficou bloqueado pela permissão de acesso a URLs 
 
 Documentação do player: https://help.vimeo.com/hc/en-us/articles/12426260232977-About-Player-Parameters e https://github.com/vimeo/player.js.
 
-## Manutenção técnica pela IA
+## Manutenção técnica pelo Cortez
 
-Não regenerar a publicação a partir dos defaults: o catálogo local pode ter códigos descartados ou consolidar formatos. Revisar os códigos ativos, selecionar explicitamente os que o autor autorizou distribuir e atualizar `publication.json` com somente campos públicos. Usar o fluxo normal de cadastro/memória da fábrica para criar, renomear ou descartar formatos; este site não altera registros.
+Não regenerar a publicação a partir dos defaults: o catálogo local pode ter códigos descartados ou consolidar formatos. Revisar os códigos ativos, selecionar explicitamente os que o autor autorizou distribuir e atualizar `publication.json` com somente campos públicos. Usar o fluxo normal de cadastro/memória do Cortez para criar, renomear ou descartar formatos; este site não altera registros.
 
 O exportador `scripts/export_catalog.py` deve ser executado a partir do motor `99 - Sistema`, numa instalação que tenha as referências. Ele confere SHA-256, lê apenas os presets de IDs e a seleção de publicação, e usa os guias de edição. O parâmetro `--media` prepara cópias de distribuição. Fontes ficam locais, com licenças OFL. O Vercel usa os arquivos já exportados e não roda Python/FFmpeg.
 
-Verificar `npm test`, `npm run build` e as rotas, busca, favoritos, controles de mídia, seleção sem ID automática, compartilhamento e layout móvel. O servidor de desenvolvimento está em `scripts/serve.mjs`. Os comandos são documentação para manutenção pela IA, não etapas de uso do visitante.
+Verificar `npm test`, `npm run build` e as rotas, busca, favoritos, controles de mídia, seleção sem ID automática, compartilhamento e layout móvel. O servidor de desenvolvimento está em `scripts/serve.mjs`. Os comandos são documentação para manutenção pelo Cortez, não etapas de uso do visitante.
 
 ## Busca e seleção rápida
 

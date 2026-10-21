@@ -11,7 +11,13 @@ HUB=''
 STYLE='''body{margin:0;background:#f7f6f3;color:#2f3437;font:18px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}main{max-width:940px;margin:auto;padding:40px 24px 64px}h1{font:normal 42px/1.15 Georgia,serif}h2{font-size:23px}section{border-bottom:1px solid #ddd;padding:20px 0}a{color:#315636}table{border-collapse:collapse;width:100%;background:#fff}th,td{text-align:left;padding:14px;border-bottom:1px solid #ddd}.note{font-size:16px;color:#5d5a54}a:focus-visible{outline:3px solid #956400;outline-offset:4px}@media(max-width:600px){table,tbody,tr,td{display:block}thead{display:none}tr{border-bottom:1px solid #ddd}td{border:0;padding:8px 14px}}'''
 
 
-def page(title,body):return '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(title)+'</title><style>'+STYLE+'</style><main>'+body+'</main></html>\n'
+def page(title,body):
+ # Public documentation only: a visual theme never changes a format or video ID.
+ prefix='../' if 'href="../00 - COMECE AQUI.html"' in body else '../../'
+ assets=prefix+'99%20-%20Sistema/assets/branding/cortez/'
+ brand='<a class="cortez-local-brand" href="'+prefix+'00%20-%20COMECE%20AQUI.html"><img src="'+assets+'logo-lockup.svg" alt="Cortez" width="150" height="40"></a>'
+ return '<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(title)+' | Cortez</title><style>'+STYLE+'</style><link rel="stylesheet" href="'+assets+'local.css"><main>'+brand+body+'</main></html>\n'
+
 
 
 def read_name(memory,id):

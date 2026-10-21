@@ -1,3 +1,12 @@
+# 2.8.0 — painel e identidade Cortez
+
+- Painel com a marca, a personagem e a aparência da página Cortez; logo, tipografia e cores preservam a independência das IDs dos vídeos.
+- Tutorial de uso enviado pelo autor incorporado ao painel e acesso ao PDF de instalação no Drive.
+- Orientação simples e prompt para propor formatos ou melhorias por PR, com workflow de contribuição em rascunho.
+- Instruções locais e guia de instalação passam a chamar o agente de Cortez.
+- Preservados os 20 formatos, F03 Headline + Narração, o exemplo original de Personagem e os 22 exemplos no Vimeo.
+- Mantida a atualização pequena com referências sob demanda e a conferência do domínio oficial antes da publicação.
+
 # 2.7.1 — atualização leve e referências no Vimeo
 
 - Atualização por arquivos do código fixados em commit, sem ZIP da biblioteca. Limites de tamanho e hashes verificados antes da ativação.

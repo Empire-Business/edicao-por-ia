@@ -1,4 +1,4 @@
-# Claude Video Factory
+# Cortez — agente editor
 
 @AGENTS.md
 

@@ -1,4 +1,4 @@
-# Fábrica de vídeos — entrada do projeto
+# Cortez — entrada do projeto
 
 A parte técnica foi movida fisicamente para `99 - Sistema/`.
 Leia `99 - Sistema/AGENTS.md` como regras permanentes. Os caminhos dos workflows,
@@ -19,6 +19,6 @@ A camada de caminhos legados não edita a evidência armazenada nem reinicia or�
 Configuração nativa `.agents/`, `.claude/` e `.codex/`, Git, segredos e ambiente
 Python permanecem na raiz do projeto. Nunca leia segredos sem pedido explícito.
 
-Mantenha a raiz simples. Atualizações são pedidas à IA; ela opera o atualizador seguro.
+Mantenha a raiz simples. Atualizações são pedidas ao Cortez; ele opera o atualizador seguro.
 Não crie atalhos visíveis de atualização, instaladores ou arquivos técnicos extras na raiz.
 Documentação técnica fica em `99 - Sistema/` ou `03 - Ajuda/`.

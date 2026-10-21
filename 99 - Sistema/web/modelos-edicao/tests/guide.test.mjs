@@ -24,3 +24,28 @@ test('functions are complete, unique and grouped', () => {
   }
   assert.ok(functions.find(fn => fn.id === 'variacoes')?.prompt.includes('variações para teste'));
 });
+
+test('the Cortez panel publishes the exact user tutorial and installer, with a safe contribution prompt', async () => {
+  const { tutorials, installerPdf } = await import('../src/guide.js');
+  assert.equal(installerPdf, 'https://drive.google.com/file/d/1q1_mqtFYcouUHKKZImZFXDMAaolqHnkH/view?usp=sharing');
+  const usage = tutorials.find(item => item.id === 'como-usar');
+  assert.equal(usage.videoId, '1238030963');
+  assert.equal(usage.hash, '1c867e709c');
+  const contribution = functions.find(item => item.id === 'contribuir');
+  assert.match(contribution.what, /proposta de mudança/);
+  assert.match(contribution.prompt, /PR em rascunho/);
+  assert.match(contribution.prompt, /Não envie meus vídeos de trabalho, memória, chaves ou configurações/);
+  assert.match(contribution.prompt, /Não altere a versão oficial/);
+  assert.deepEqual(contribution.workflows, ['CONTRIBUTE_PULL_REQUEST.md']);
+  const { readFile, stat } = await import('node:fs/promises');
+  const html = await readFile(new URL('../src/index.html', import.meta.url),'utf8');
+  const app = await readFile(new URL('../src/app.js', import.meta.url),'utf8');
+  assert.match(html, /Painel do Cortez/);
+  assert.match(app, /id="tutoriais"/);
+  assert.match(app, /contribute-title/);
+  assert.match(app, /href="#funcao=contribuir"/);
+  assert.doesNotMatch(app, /autoplay=1/);
+  for (const asset of ['logo-lockup.svg','favicon.svg','apresentacao.webp']) {
+    assert.ok((await stat(new URL(`../public/assets/brand/cortez/${asset}`,import.meta.url))).size > 0);
+  }
+});
