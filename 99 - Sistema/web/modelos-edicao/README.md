@@ -1,6 +1,6 @@
 # Modelos de edição
 
-Biblioteca pública para escolher um formato, assistir às referências, escolher uma ID visual e copiar um pedido para a fábrica local. O site não acessa o disco do visitante nem recebe gravações de clientes.
+Painel público da fábrica: a tela inicial explica o uso e lista todas as funções com a frase para dizer e o prompt completo (`src/guide.js`); em destaque, a biblioteca para escolher um formato, assistir às referências, escolher uma ID visual e copiar um pedido para a fábrica local. Rotas: `#inicio`, `#modelos`, `#funcoes` (ou `#funcoes=grupo`, `#funcao=id`), `#identidades`, `#como-usar`. Toda função nova ou alterada da fábrica atualiza `src/guide.js` na mesma mudança; `tests/guide.test.mjs` cobra a cobertura dos workflows. O site não acessa o disco do visitante nem recebe gravações de clientes.
 
 Destino: **modelos-edicao.empirebusiness.com.br**.
 

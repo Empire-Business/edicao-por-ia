@@ -1,6 +1,7 @@
 import { icon } from './icons.js';
 import { PreviewManager } from './players.js';
-import { filterFormats, buildPrompt, buildStarterPrompt, readStorage, writeStorage, selectionFromHash } from './selection.js';
+import { filterFormats, buildPrompt, buildStarterPrompt, readStorage, writeStorage, selectionFromHash, normalize } from './selection.js';
+import { functions, groups, folders, codes, guideUpdated } from './guide.js';
 
 const main = document.querySelector('main');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
@@ -12,7 +13,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const state = { query: '', category: 'all', material: 'all', presence: 'all', favoritesOnly: false,
   favorites: readStorage(storage, favoriteKey, [], value => Array.isArray(value) && value.every(item => /^F\d{2,}$/.test(item))),
   autoplay: readStorage(storage, 'modelos-edicao:autoplay:v1', !reducedMotion.matches, value => typeof value === 'boolean'),
-  selectedFormat: null, selectedIdentity: null, selectedExampleId: null, aspect: '9:16', choosing: false, galleryScroll: 0 };
+  selectedFormat: null, selectedIdentity: null, selectedExampleId: null, aspect: '9:16', choosing: false, galleryScroll: 0, fnQuery: '', fnGroup: 'all' };
 
 function notify(message) {
   const toast = document.querySelector('#toast'); toast.textContent = message; toast.hidden = false;
@@ -86,6 +87,59 @@ function gallery() {
   renderGrid();
 }
 
+const updatedLabel = guideUpdated.split('-').reverse().join('/');
+const groupLabel = id => groups.find(group => group.id === id)?.label || '';
+
+function functionCard(fn) {
+  return `<article class="fn-card ${fn.isNew ? 'is-new' : ''}" id="funcao-${fn.id}">
+    <div class="fn-head"><span class="eyebrow">${escape(groupLabel(fn.group).toUpperCase())}</span>${fn.isNew ? '<span class="fn-badge fn-badge-new">Novo</span>' : ''}${fn.paid ? '<span class="fn-badge" title="Usa um serviço externo pago, com a sua chave">Serviço pago</span>' : ''}</div>
+    <h3>${escape(fn.title)}</h3><p class="fn-what">${escape(fn.what)}</p>
+    <div class="fn-say"><span class="fn-say-label">Diga</span><p>“${escape(fn.say)}”</p><button class="icon-button fn-copy" data-copy-say="${fn.id}" aria-label="Copiar comando: ${escape(fn.title)}" title="Copiar comando">${icon('copy')}</button></div>
+    <details class="fn-prompt"><summary>Prompt completo <span aria-hidden="true">+</span></summary><div><label class="sr-only" for="prompt-${fn.id}">Prompt completo para ${escape(fn.title)}</label><textarea id="prompt-${fn.id}" readonly rows="${Math.min(9, fn.prompt.split('\n').length + 2)}">${escape(fn.prompt)}</textarea>${button('Copiar prompt', 'copy', 'button-primary', `data-copy-fn-prompt="${fn.id}"`)}<p class="fine-print">Troque o que está entre [colchetes] pelo seu caso.</p></div></details>
+    ${fn.tips?.length ? `<ul class="fn-tips">${fn.tips.map(tip => `<li>${escape(tip)}</li>`).join('')}</ul>` : ''}
+    ${fn.keys?.length ? `<p class="fn-keys">${icon('link')} Chave: ${fn.keys.map(escape).join(' · ')}</p>` : ''}
+    ${fn.link ? `<a class="card-action" href="${fn.link.href}">${escape(fn.link.label)} ${icon('arrow')}</a>` : ''}
+  </article>`;
+}
+
+const searchableFunction = fn => normalize([fn.title, fn.what, fn.say, fn.prompt, groupLabel(fn.group), ...(fn.tips || []), ...(fn.keys || [])].join(' '));
+function filteredFunctions() {
+  const terms = normalize(state.fnQuery).split(/[^a-z0-9]+/).filter(term => term.length > 1);
+  return functions.filter(fn => (state.fnGroup === 'all' || fn.group === state.fnGroup) && terms.every(term => searchableFunction(fn).includes(term)));
+}
+
+function renderFunctions() {
+  const list = filteredFunctions();
+  document.querySelector('#fn-list').innerHTML = list.length ? groups.filter(group => list.some(fn => fn.group === group.id)).map(group => `<section class="fn-group" aria-labelledby="grupo-${group.id}"><div class="fn-group-title"><h2 id="grupo-${group.id}">${escape(group.label)}</h2><p>${escape(group.lead)}</p></div><div class="fn-grid">${list.filter(fn => fn.group === group.id).map(functionCard).join('')}</div></section>`).join('')
+    : `<div class="empty-state">${icon('search')}<h2>Nenhuma função com esse termo.</h2><p>Tente “legenda”, “voz”, “variações” ou “atualizar”.</p>${button('Ver todas as funções', 'arrow', '', 'data-fn-reset')}</div>`;
+  document.querySelector('#fn-count').textContent = `${list.length} ${list.length === 1 ? 'função' : 'funções'}`;
+  document.querySelectorAll('[data-fn-group]').forEach(element => element.setAttribute('aria-pressed', String(state.fnGroup === element.dataset.fnGroup)));
+}
+
+function functionsPage() {
+  main.innerHTML = `<section class="page-intro"><p class="eyebrow">TUDO O QUE A FÁBRICA FAZ</p><h1>Peça com as<br>suas <em>palavras.</em></h1><p>Cada função tem uma frase curta para dizer na conversa com a IA e um prompt completo para copiar. Não há comandos técnicos: a IA executa tudo na sua pasta.</p></section>
+    <div class="library-toolbar"><div class="search-field">${icon('search')}<label for="fn-search" class="sr-only">Buscar funções</label><input id="fn-search" type="search" placeholder="variações, legenda, voz, atualizar…" value="${escape(state.fnQuery)}" autocomplete="off"><kbd aria-hidden="true">/</kbd></div><span id="fn-count" role="status" aria-live="polite"></span></div>
+    <div class="filter-row"><div class="categories" role="group" aria-label="Filtrar funções por grupo"><button data-fn-group="all" aria-pressed="${state.fnGroup === 'all'}">Todas<span>${functions.length}</span></button>${groups.map(group => `<button data-fn-group="${group.id}" aria-pressed="${state.fnGroup === group.id}">${escape(group.label)}<span>${functions.filter(fn => fn.group === group.id).length}</span></button>`).join('')}</div></div>
+    <div id="fn-list" class="fn-list"></div>`;
+  renderFunctions();
+}
+
+function home() {
+  newPlayers();
+  const showcase = catalog.formats.filter(format => format.evidence === 'video').slice(0, 6);
+  const novelty = functions.filter(fn => fn.isNew);
+  main.innerHTML = `<section class="intro home-intro" aria-labelledby="home-title"><div><p class="eyebrow intro-eyebrow">PAINEL DA FÁBRICA DE VÍDEOS</p><h1 id="home-title">Tudo o que a sua<br>fábrica <em>faz.</em></h1></div><div class="intro-aside"><p>Escolha um modelo, peça na conversa com a IA e revise o vídeo na sua pasta. Aqui estão todas as funções, com o que dizer e o prompt pronto para copiar.</p><span class="intro-note"><span class="status-dot" aria-hidden="true"></span> Atualizado em ${updatedLabel} · ${functions.length} funções · ${catalog.formats.length} modelos</span></div></section>
+    <a class="spotlight" href="#modelos" aria-labelledby="spotlight-title"><div class="spotlight-copy"><p class="eyebrow">EM DESTAQUE · BIBLIOTECA DE MODELOS</p><h2 id="spotlight-title">Veja os ${catalog.formats.length} modelos de edição.</h2><p>Assista aos exemplos, filtre por “sem aparecer”, “WhatsApp” ou “tutorial” e copie o pedido com o formato e a identidade visual que você escolher.</p><span class="button button-light">Abrir os modelos ${icon('arrow')}</span></div><div class="spotlight-reel" aria-hidden="true">${showcase.map(format => `<figure><img src="${escape(format.poster)}" alt="" loading="lazy" width="270" height="480"><figcaption>${format.code} · ${escape(format.name)}</figcaption></figure>`).join('')}</div></a>
+    <section class="home-block" aria-labelledby="steps-title"><div class="home-block-title"><p class="eyebrow">PRIMEIRO VÍDEO</p><h2 id="steps-title">Do material à prévia em quatro passos.</h2></div><ol class="home-steps">
+      <li><span class="how-number">01</span><h3>Prepare a pasta</h3><p>Peça “Instale a fábrica de vídeos” e depois “Confira se está pronta”. Cole suas chaves em CHAVES DAS INTEGRAÇÕES.</p><a class="text-link" href="#funcoes=comecar">Funções de início ${icon('arrow')}</a></li>
+      <li><span class="how-number">02</span><h3>Escolha F + ID</h3><p>O formato (F) define a edição; a identidade (ID) define cores e fontes. Nada é escolhido automaticamente.</p><a class="text-link" href="#modelos">Abrir os modelos ${icon('arrow')}</a></li>
+      <li><span class="how-number">03</span><h3>Envie e peça</h3><p>Coloque gravações, roteiro e apoios em “01 - Enviar vídeos” e cole o pedido na conversa com a IA.</p><a class="text-link" href="#funcao=editar">Prompt de edição ${icon('arrow')}</a></li>
+      <li><span class="how-number">04</span><h3>Revise e ajuste</h3><p>A prévia aparece em “02 - Ver vídeos”. Ajuste pelo código: “Na E01, aos 12 segundos, tire o texto”.</p><a class="text-link" href="#funcao=ajustar">Como pedir ajustes ${icon('arrow')}</a></li></ol></section>
+    ${novelty.length ? `<section class="home-block" aria-labelledby="new-title"><div class="home-block-title"><p class="eyebrow">NOVIDADE</p><h2 id="new-title">Teste qual gancho prende mais.</h2></div><div class="fn-grid fn-grid-wide">${novelty.map(functionCard).join('')}</div></section>` : ''}
+    <section class="home-block" aria-labelledby="all-title"><div class="home-block-title"><p class="eyebrow">TODAS AS FUNÇÕES</p><h2 id="all-title">O que você pode pedir.</h2><a class="text-link" href="#funcoes">Ver com prompts ${icon('arrow')}</a></div><div class="group-grid">${groups.map(group => `<a class="group-tile" href="#funcoes=${group.id}"><span class="eyebrow">${functions.filter(fn => fn.group === group.id).length} FUNÇÕES</span><h3>${escape(group.label)}</h3><p>${escape(group.lead)}</p><ul>${functions.filter(fn => fn.group === group.id).map(fn => `<li>${escape(fn.title)}${fn.isNew ? ' <b>novo</b>' : ''}</li>`).join('')}</ul></a>`).join('')}</div></section>
+    <section class="home-block home-two" aria-label="Pastas e códigos"><div><div class="home-block-title"><p class="eyebrow">SUA PASTA</p><h2>Onde fica cada coisa.</h2></div><dl class="ref-list">${folders.map(folder => `<div><dt>${icon('folder')}${escape(folder.name)}</dt><dd>${escape(folder.text)}</dd></div>`).join('')}</dl></div><div><div class="home-block-title"><p class="eyebrow">CÓDIGOS</p><h2>O que cada código quer dizer.</h2></div><dl class="ref-list">${codes.map(item => `<div><dt><code>${escape(item.code)}</code></dt><dd>${escape(item.text)}</dd></div>`).join('')}</dl></div></section>`;
+}
+
 function sample(identity, compact = false) {
   const p = identity.palette;
   const family = escape(identity.typography.headline);
@@ -130,8 +184,10 @@ function renderRoute({ focus = false } = {}) {
   players?.destroy();
   const hash = location.hash.slice(1);
   const detailRoute = hash.startsWith('modelo=');
+  const functionRoute = hash.split('=')[0] === 'funcoes' || hash.startsWith('funcao=');
+  const section = detailRoute ? 'modelos' : functionRoute ? 'funcoes' : !hash ? 'inicio' : hash;
   document.querySelectorAll('[data-nav]').forEach(link => {
-    const active = link.dataset.nav === (detailRoute || !hash ? 'modelos' : hash);
+    const active = link.dataset.nav === section;
     if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
   });
   if (detailRoute) {
@@ -145,8 +201,19 @@ function renderRoute({ focus = false } = {}) {
     detail(selection.format);
     document.title = `${selection.format.code} · ${selection.format.name} | Modelos de edição`;
   } else {
-    if (hash === 'identidades') identities(); else if (hash === 'como-usar') howTo(); else gallery();
-    document.title = 'Modelos de edição | Escolha seu próximo vídeo';
+    let target = null;
+    if (functionRoute) {
+      // #funcoes=grupo filtra um grupo; #funcao=id abre a lista e rola até o cartão.
+      const [kind, value = ''] = hash.split('=');
+      const fn = kind === 'funcao' ? functions.find(item => item.id === value) : null;
+      state.fnGroup = fn ? 'all' : groups.some(group => group.id === value) ? value : 'all';
+      if (fn) state.fnQuery = '';
+      functionsPage();
+      target = fn && document.querySelector(`#funcao-${fn.id}`);
+      if (target) { target.querySelector('details')?.setAttribute('open', ''); target.classList.add('is-target'); }
+    } else if (hash === 'modelos') gallery(); else if (hash === 'identidades') identities(); else if (hash === 'como-usar') howTo(); else home();
+    document.title = hash === 'modelos' ? 'Modelos de edição | Painel da fábrica' : functionRoute ? 'Funções e prompts | Painel da fábrica' : 'Painel da fábrica | Modelos de edição';
+    if (target) { target.scrollIntoView({ block: 'start' }); main.focus({ preventScroll: true }); return; }
   }
   if (focus) { window.scrollTo(0, hash === 'modelos' ? state.galleryScroll : 0); main.focus({ preventScroll: true }); }
 }
@@ -174,7 +241,10 @@ async function copyText(text, fallback) {
   }
 }
 
-main.addEventListener('input', event => { if (event.target.id === 'search') { state.query = event.target.value; renderGrid(); } });
+main.addEventListener('input', event => {
+  if (event.target.id === 'search') { state.query = event.target.value; renderGrid(); }
+  if (event.target.id === 'fn-search') { state.fnQuery = event.target.value; renderFunctions(); }
+});
 main.addEventListener('change', event => {
   if (event.target.id === 'aspect') { state.aspect = event.target.value; const area = document.querySelector('#prompt'); if (state.selectedIdentity) area.value = buildPrompt(state.selectedFormat, state.selectedIdentity, state.aspect); }
   if (event.target.id === 'material' || event.target.id === 'presence') { state[event.target.id] = event.target.value; renderGrid(); }
@@ -194,6 +264,15 @@ document.addEventListener('click', async event => {
     nextFocus?.focus({ preventScroll: true });
     const count = document.querySelector('#favorite-count'); if (count) count.textContent = state.favorites.length;
     notify(saved ? active ? 'Modelo removido dos favoritos.' : 'Modelo salvo nos favoritos deste navegador.' : 'Favorito marcado para esta visita. O navegador não permitiu salvar.');
+  } else if (target.dataset.copySay) {
+    await copyText(functions.find(fn => fn.id === target.dataset.copySay).say);
+  } else if (target.dataset.copyFnPrompt) {
+    const fn = functions.find(item => item.id === target.dataset.copyFnPrompt);
+    await copyText(fn.prompt, document.querySelector(`#prompt-${fn.id}`));
+  } else if (target.dataset.fnGroup) {
+    state.fnGroup = target.dataset.fnGroup; renderFunctions();
+  } else if (target.hasAttribute('data-fn-reset')) {
+    state.fnQuery = ''; state.fnGroup = 'all'; document.querySelector('#fn-search').value = ''; renderFunctions();
   } else if (target.dataset.category) {
     state.category = target.dataset.category; renderGrid();
   } else if (target.dataset.copyCode) {
@@ -239,7 +318,7 @@ document.addEventListener('click', async event => {
 });
 
 document.addEventListener('keydown', event => {
-  if (event.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName) && document.querySelector('#search')) { event.preventDefault(); document.querySelector('#search').focus(); }
+  if (event.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName) && (document.querySelector('#search') || document.querySelector('#fn-search'))) { event.preventDefault(); (document.querySelector('#search') || document.querySelector('#fn-search')).focus(); }
 });
 window.addEventListener('hashchange', () => renderRoute({ focus: true }));
 window.addEventListener('pagehide', () => players?.destroy());

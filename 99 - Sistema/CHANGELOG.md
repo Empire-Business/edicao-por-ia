@@ -1,5 +1,16 @@
 # Histórico de versões
 
+## 2.6.0 — 21 de outubro de 2026
+
+- O site de modelos virou o painel geral da fábrica (pedido do autor: "transforme ele em um painel de instruções geral
+  de como usar seu sistema e mantenha tudo atualizado sempre"). A tela inicial explica o primeiro vídeo em quatro
+  passos e traz, em destaque, a biblioteca de modelos.
+- Nova página Funções: 33 funções em 7 grupos, cada uma com a frase curta para dizer à IA e o prompt completo para
+  copiar, incluindo as variações de reel para teste. Busca e filtro por grupo; links diretos `#funcoes=grupo` e
+  `#funcao=id`. Nenhum comando de terminal é mostrado ao usuário.
+- Manutenção: `web/modelos-edicao/src/guide.js` é a fonte do painel; o teste `guide.test.mjs` falha quando um workflow
+  novo não está documentado. Regra registrada no AGENTS e em `PUBLISH_FORMAT_GALLERY.md`.
+
 ## 2.5.0 — 20 de outubro de 2026
 
 - Variações de reel para teste, em qualquer formato e na quantidade que a pessoa quiser (pedido do autor: "qualquer

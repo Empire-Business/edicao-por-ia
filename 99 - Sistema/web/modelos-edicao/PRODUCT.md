@@ -10,7 +10,7 @@ Pessoas que usam a fábrica de vídeos em uma pasta local, assistidas por uma IA
 
 ## Product Purpose
 
-Encontrar um formato de edição, assistir a uma referência, escolher uma identidade visual separadamente e copiar um pedido completo para a IA na pasta local. O catálogo público mostra apenas os formatos distribuídos pelo autor. A instalação local valida seus próprios códigos antes de começar.
+Servir de painel geral de instruções: o que a fábrica faz, o que pedir à IA (frase curta e prompt completo, nunca comandos de terminal) e, em destaque, a biblioteca de modelos. Nela: encontrar um formato de edição, assistir a uma referência, escolher uma identidade visual separadamente e copiar um pedido completo para a IA na pasta local. O catálogo público mostra apenas os formatos distribuídos pelo autor. A instalação local valida seus próprios códigos antes de começar.
 
 ## Brand Personality
 
