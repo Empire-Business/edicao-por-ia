@@ -36,3 +36,9 @@ A lista de formatos do README público deve refletir apenas os cadastros ativos 
 ## Painel de instruções (sempre atualizado)
 A galeria é também o painel geral da fábrica: a tela inicial (`#inicio`) explica o uso, destaca a biblioteca de modelos (`#modelos`) e lista todas as funções em `#funcoes`, com a frase curta para dizer e o prompt completo para copiar. A fonte é `web/modelos-edicao/src/guide.js`.
 Ao criar, renomear, mudar ou retirar um workflow ou uma capacidade que o usuário pede (inclusive pedidos novos que viraram rotina, como as variações de teste), atualizar no mesmo trabalho a função correspondente e `guideUpdated`. `tests/guide.test.mjs` falha se um arquivo de `workflows/` não estiver documentado nem listado em `internalWorkflows`, e se um prompt trouxer comando de terminal. O painel nunca entrega comandos técnicos ao usuário: só frases para a IA. Publicar pelo mesmo fluxo da galeria e conferir a página no domínio.
+
+## Conferir o destino de hospedagem
+
+`web/modelos-edicao/publication-target.json` registra o projeto que atende ao domínio oficial. Antes de publicar, conferir o alias exato pelo serviço: em 21/10/2026 `modelos-edicao.empirebusiness.com.br` e `cortez.highticketai.com.br` pertencem ao projeto Vercel `prj_UqbYeafa2wgEhdt1nj6jeuxbgGsy`, equipe `team_FujSZEiwGJtiMygV3DlMCYyY`. O projeto `prj_4Zt3yYpNuCQaOFFC1E4ETJGRgs4p` atende outro endereço; um READY nele não comprova publicação no painel oficial.
+
+O nome legado do projeto de hospedagem, `edicao-por-ia-dist1`, não é uma fonte GitHub. Usar exclusivamente `gitSource` do repositório público ativo, ID 1408655066, com SHA da main verificada. Não recorrer ao repositório arquivado nem a um segundo repositório de distribuição. Conferir SHA, projeto, estado READY e atribuição do domínio no recibo. Se o projeto do alias mudar, revisar o destino antes de publicar, sem mover domínios ou alterar DNS por suposição.
