@@ -102,16 +102,29 @@ class SilenceTests(unittest.TestCase):
     def test_empty_base_fails(self):
         with self.assertRaises(ValueError):
             build_plan(SRC, silence(), tr(), base_edl={'segments': []})
-    def test_short_pauses_preserved(self):
-        s = silence(); s['silences'] = [{'start': 2.3, 'end': 2.5}]
+    def test_very_short_pauses_preserved(self):
+        s = silence(); s['silences'] = [{'start': 2.3, 'end': 2.42}]
         _, r = build_plan(SRC, s, tr())
         self.assertEqual(r['removed_seconds'], 0)
-    def test_legacy_pattern_threshold_preserved(self):
+    def test_default_pause_tightened_to_global_cap(self):
+        # 0,2 s pause: only ~0,10 s is kept by default (author order 20/10/2026).
+        s = silence(); s['silences'] = [{'start': 2.3, 'end': 2.5}]
+        _, r = build_plan(SRC, s, tr())
+        self.assertAlmostEqual(r['removed_seconds'], 0.10, places=2)
+    def test_inherited_pattern_pace_gets_global_tight_cap(self):
+        # Author order 20/10/2026: leftover silence happens in almost every format.
         p = {'editorial': {'target_pace': 'natural', 'max_unmotivated_silence_seconds': 1.5}}
-        self.assertEqual(settings_for(p)['minimum_silence_seconds'], 1.5)
-    def test_explicit_mode_overrides_pattern(self):
-        p = {'editorial': {'target_pace': 'natural', 'max_unmotivated_silence_seconds': 1.5}}
-        self.assertEqual(settings_for(p, 'tight')['minimum_silence_seconds'], 0.5)
+        s = settings_for(p)
+        self.assertEqual(s['minimum_silence_seconds'], 0.15)
+        self.assertEqual(s['keep_pause_seconds'], 0.10)
+        self.assertTrue(s['trim_edges'])
+        self.assertEqual(settings_for(p, 'tight')['minimum_silence_seconds'], 0.15)
+    def test_explicit_loose_job_choice_is_respected(self):
+        p = {'editorial': {'target_pace': 'tight', 'max_unmotivated_silence_seconds': 1.5}}
+        self.assertEqual(settings_for(p, 'natural')['minimum_silence_seconds'], 0.8)
+        self.assertEqual(settings_for(p, 'relaxed')['keep_pause_seconds'], 0.50)
+        self.assertFalse(settings_for(p, 'off')['enabled'])
+        self.assertEqual(settings_for(p, None, {'minimum_silence_seconds': 0.4})['minimum_silence_seconds'], 0.4)
     def test_bad_settings_rejected(self):
         for value in (-1, float('nan'), float('inf')):
             with self.assertRaises(ValueError):

@@ -52,7 +52,8 @@ Never claim a save without its tool receipt. Only the coordinator writes format 
 - Visual direction from speech / illustrations / scene-aware composition → `workflows/DIRECT_VISUALS.md` + `method/VISUAL_DIRECTION.md`
 - Reference-driven motion studio / state lists / seek(t) / critique loop → `workflows/MOTION_STUDIO.md` + `studio/CONTRACT.md`
 - JavaScript animation / motion graphics → `workflows/CREATE_JS_ANIMATIONS.md` + `method/MOTION_POLICY.md`
-- Speech cleanup → `workflows/CLEAN_SPEECH.md` + `method/SPEECH_ERROR_POLICY.md`
+- Speech cleanup → `workflows/CLEAN_SPEECH.md` + `method/SPEECH_ERROR_POLICY.md` (always run `tools/find_hidden_retakes.py` on the source and on the final voice)
+- Hook variations for testing (“5 variações”, “ganchos diferentes”) → `workflows/HOOK_VARIATIONS.md`
 - Multiple videos / one recording containing several pieces → `workflows/SPLIT_MULTI_VIDEO.md` + `method/MULTI_VIDEO_POLICY.md`
 - New style/preset → `workflows/DEFINE_PATTERN.md` + `patterns/PATTERN_SPEC.md`
 - Batch/factory → `workflows/BATCH_FACTORY.md` + `method/TOKEN_ECONOMY.md`
@@ -89,7 +90,8 @@ Do not load the whole repository by default.
 - If a decision is reversible, prefer a best-effort default and record it. If a destructive or meaning-changing decision is genuinely ambiguous, ask one essential question.
 - A reference script is optional and semantic/flexible by default. Preserve equivalent paraphrases; never fabricate missing recorded words.
 - User-provided insertion assets may be used only when they are relevant, licensed/authorized by the user, and placed at semantically appropriate moments. Do not force an asset into the timeline just because it exists.
-- Automatically tighten unmotivated silence unless disabled, but protect speech/intentional pauses and cut audio + video together through the EDL.
+- Automatically tighten unmotivated silence unless disabled, but protect speech/intentional pauses and cut audio + video together through the EDL. Author order 20/10/2026 (“acontece em quase todos os formatos”): every format gets the global tight cap (gaps > 0.15 s cut, ~0.05 s kept each side, take edges trimmed) unless the job explicitly asks for a looser pace; see method/SILENCE_POLICY.md.
+- Outfit swap quality: send only the on-screen crop and composite the original head back (tools/composite_original_head.py); never deliver an upscaled, model-redrawn face.
 - Speech mistakes may be auto-cut only when confidence is high. Ambiguous intent goes to review.
 - Review every retained idea for visual purpose; `keep` is valid. Never claim to have seen a background without opening real frames. Scene estimates are not tracking/masks.
 - Consider reusable JavaScript animation when it clarifies the idea, but do not force motion into clean/off patterns. Lock timing only after speech/silence edits.

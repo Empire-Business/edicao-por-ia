@@ -24,6 +24,30 @@ Use `ATENDIDO`, `PRECISA DE AJUSTE`, or `NÃO SE APLICA` for each gate.
 - Multi-video jobs do not leak content from neighboring child videos.
 - Captions, if used, preserve wording and timing closely enough for the chosen style.
 
+## Lessons gates (author corrections, 20/10/2026)
+Each item below was a real defect in a delivered or near-delivered preview. Check them on the rendered file.
+- **Hook frame 0**: the first frame already shows the hook media and text — no fade-in from opacity 0, no empty ID
+  background ("é pra começar direto mostrando o Felca"). Inspect frames 0 / 0.1 / 0.25 / 0.5 s of the final MP4.
+  In GSAP, `fromTo` renders its FROM state at creation: a `fromTo` on a shared overlay (flash, vignette) left a 55 %
+  white veil over everything before its start time — use `immediateRender: false` for shared overlays.
+- **Presenter quality**: compare a face close-up of the render with the original; an outfit swap must follow
+  `workflows/SWAP_OUTFIT_SCENERY.md` → "Quality" (crop sent, original head composited). Never upscale the face.
+- **Silence and retakes**: final voice passes `tools/find_hidden_retakes.py` (no long words, repeats or stray
+  syllables) and has no retained pause > 0.18 s without a documented reason (`method/SILENCE_POLICY.md`).
+- **Third-party media**: no commentator faces/insets from reaction videos (crop to the media area), no burned
+  captions in another language, no sensitive segments of the source video. A full-screen crop must be re-checked:
+  an inset hidden behind the presenter in one layout shows up in another.
+- **B-roll in-points**: open the first 1 s of every clip at its in-point — transitions in the source (grey/black
+  frames, "content warning" cards) must not appear; move the in-point instead.
+- **Comparisons (COM IA × ORIGINAL, before/after)**: verify frame by frame that each half shows what its label says
+  from its first frame (a source that alternates versions can start on the wrong one).
+- **Timing anchors**: when the same word repeats in the narration ("essa loira **aqui**… **Aqui** ela aparece…"),
+  anchor to the intended occurrence (search after a time), and re-check every label/tag that hides on that anchor.
+- **Generic B-roll**: when the speech describes the author's own product/solution and no product motion exists,
+  build one in the ID instead of a generic third-party clip ("você botou um B-roll muito genérico").
+- **Render environment**: point `TMPDIR` to the job's `tmp/` folder on the work disk; HyperFrames temp files can fill
+  the system disk and abort a render ("Low disk space").
+
 ## Optional gates
 Only assess if the pattern/job uses them:
 - B-roll quality.
