@@ -935,8 +935,13 @@
       ],
       "avoid": "Não copiar a marca ou o pedido comercial da referência, tomar dígitos intermediários de um contador como fatos ou inventar dados históricos.",
       "pattern": "f12-v3",
-      "video": "assets/videos/F12-cortez-2026-10.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238069978",
+        "source_sha256": "a3057366d9c449501f24113d9924f326d2ffa8d94c99ed87b0a0192cad2e78a2",
+        "status": "complete",
+        "hash": "636d30cf3b"
+      },
       "duration": 62,
       "evidence": "video",
       "evidenceLabel": "Exemplo produzido pelo Cortez",
@@ -1154,8 +1159,13 @@
       ],
       "avoid": "Não inverter o sentido da classificação, fabricar recomendações, fixar verde/vermelho como parte do formato ou transformar um exemplo de finanças em conselho para outro vídeo.",
       "pattern": "f15-v1",
-      "video": "assets/videos/F15.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070255",
+        "source_sha256": "107783bf87d4499c0a2b746205f7e00ac6e8414c8918df0b4d75f7e3d1964d53",
+        "status": "complete",
+        "hash": "62c39b3db9"
+      },
       "duration": 32,
       "evidence": "video",
       "evidenceLabel": "Prévia de referência",

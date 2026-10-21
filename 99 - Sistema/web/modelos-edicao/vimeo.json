@@ -80,7 +80,7 @@
   "F12": {
     "id": "1238069978",
     "source_sha256": "a3057366d9c449501f24113d9924f326d2ffa8d94c99ed87b0a0192cad2e78a2",
-    "status": "in_progress",
+    "status": "complete",
     "hash": "636d30cf3b"
   },
   "F13": {
@@ -98,7 +98,7 @@
   "F15": {
     "id": "1238070255",
     "source_sha256": "107783bf87d4499c0a2b746205f7e00ac6e8414c8918df0b4d75f7e3d1964d53",
-    "status": "in_progress",
+    "status": "complete",
     "hash": "62c39b3db9"
   },
   "F16": {
