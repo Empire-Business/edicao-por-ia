@@ -43,7 +43,7 @@ export const functions = [
     id: 'preparar', group: 'comecar', title: 'Conferir se está tudo pronto',
     what: 'Diagnóstico da pasta: transcrição de fala, FFmpeg, navegador para animações e o que ainda falta para editar.',
     say: 'Confira se o Cortez está pronto para editar.',
-    prompt: 'Confira se esto Cortez está pronto para editar vídeos com fala e animações.\n\nFaça o diagnóstico, me diga em linguagem simples o que está funcionando e o que falta. Antes de instalar qualquer coisa, me mostre o que será instalado e peça minha autorização.',
+    prompt: 'Confira se o Cortez está pronto para editar vídeos com fala e animações.\n\nFaça o diagnóstico, me diga em linguagem simples o que está funcionando e o que falta. Antes de instalar qualquer coisa, me mostre o que será instalado e peça minha autorização.',
     tips: ['Use depois de instalar ou quando algo parar de funcionar.'],
     workflows: ['ASSISTED_START.md', 'SETUP_LOCAL.md']
   },
