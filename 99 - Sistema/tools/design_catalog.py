@@ -294,6 +294,93 @@ def import_legacy_formats(root):
     return {'ok':True,'imported':added,'original_stores_unchanged':True}
 
 
+
+def _normalize_known_legacy_mojibake(value):
+    """Normalize only recognizable UTF-8-as-Latin-1 corruption for signature matching."""
+    if isinstance(value, dict):
+        return {key: _normalize_known_legacy_mojibake(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_normalize_known_legacy_mojibake(item) for item in value]
+    if isinstance(value, str) and ("Ã" in value or "Â" in value):
+        try:
+            return value.encode("latin-1").decode("utf-8")
+        except (UnicodeEncodeError, UnicodeDecodeError):
+            return value
+    return value
+
+
+def migrate_f02_talking_head_v2(root):
+    """Update only the exact author-published F02 v1 definition; keep its memory and references."""
+    root = engine_root(root)
+    uid = "official.d28a1fefc46c478abbd1c9d9b0620a2d"
+    fields = ("pattern", "description", "mechanism_details")
+    old_signature = "e0c32dd87c8c19b5b04588e0a1674502e7e47abc764e4e273bd528b7e4d9e5fc"
+    defaults = json.loads(inside(root, "config/design-defaults.json").read_text(encoding="utf-8"))
+    target = next((item for item in defaults.get("formats", []) if item.get("uid") == uid), None)
+    if not target or target.get("pattern") != "f02-talking-head-v2":
+        raise ValueError("A definição distribuída de F02 v2 está ausente ou inconsistente.")
+    receipt_path = inside(root, ".factory/migrations/f02-talking-head-v2.json")
+    status = "no_matching_official_entry"
+    before_signature = None
+    after_signature = fingerprint({key: target.get(key) for key in fields})
+    normalized_for_match = False
+    changed = False
+
+    with workspace_lock(root, "design-catalog"):
+        data = catalogue(root)
+        matches = [
+            item for item in data.get("formats", [])
+            if item.get("uid") == uid and item.get("code") == "F02" and item.get("origin") == "official"
+        ]
+        if len(matches) > 1:
+            status = "ambiguous_official_entries_preserved"
+        elif not matches:
+            status = "no_matching_official_entry"
+        else:
+            current = matches[0]
+            current_signature = fingerprint({key: current.get(key) for key in fields})
+            if current.get("pattern") == target["pattern"]:
+                status = "already_current" if current_signature == after_signature else "current_pattern_with_local_details_preserved"
+                before_signature = current_signature
+            elif current.get("pattern") != "f02-talking-head-v1":
+                status = "other_recipe_version_preserved"
+                before_signature = current_signature
+            else:
+                before_signature = current_signature
+                old_fields = {key: current.get(key) for key in fields}
+                normalized = _normalize_known_legacy_mojibake(old_fields)
+                normalized_for_match = normalized != old_fields
+                if fingerprint(normalized) != old_signature:
+                    status = "local_definition_differs_preserved"
+                else:
+                    current.update({key: target.get(key) for key in fields})
+                    save(root, data)
+                    status = "updated"
+                    changed = True
+
+    receipt = {
+        "ok": True,
+        "migration": "f02-talking-head-v2",
+        "status": status,
+        "format_code": "F02",
+        "format_uid": uid,
+        "from_pattern": "f02-talking-head-v1",
+        "to_pattern": "f02-talking-head-v2",
+        "updated_fields": list(fields) if changed else [],
+        "before_signature": before_signature,
+        "after_signature": after_signature if changed or status == "already_current" else None,
+        "known_mojibake_normalized_for_match": normalized_for_match,
+        "format_memory_and_reference_records_preserved": True,
+        "receipt": ".factory/migrations/f02-talking-head-v2.json",
+    }
+    if status == "already_current" and receipt_path.is_file():
+        previous = json.loads(receipt_path.read_text(encoding="utf-8"))
+        if previous.get("to_pattern") == "f02-talking-head-v2" and previous.get("status") == "updated":
+            return {**previous, "status": "already_current", "receipt_preserved": True}
+    atomic_json(receipt_path, receipt)
+    return receipt
+
+
 def complete_stock_examples(root):
     """Add missing stock illustrative links only; preserve every supplied/custom link."""
     root=engine_root(root);defaults=json.loads(inside(root,'config/design-defaults.json').read_text())

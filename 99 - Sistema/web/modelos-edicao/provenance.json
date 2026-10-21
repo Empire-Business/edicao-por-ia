@@ -1,12 +1,12 @@
 {
   "scope": "author_distributed_stock_only",
-  "catalog_sha256": "7d27a2b75dd767f02f688f3273b0a91f791c2407d0c5e2b3462d0f5bd7c62523",
-  "publication_sha256": "c595564205d851ffd102f2eec0cddcaf24ed1688dd71f4e060621ffc00a85f1a",
+  "catalog_sha256": "7e5ac07f96845e2ad184622dba2826441f689294714497f97fc6fb479e6bdc4d",
+  "publication_sha256": "53e55158d32aeaf9162787b8a1403868f7a9c08991625979e35f356094ebb779",
   "excluded_codes": [],
   "sources": {
-    "config/design-defaults.json": "5a4be044f487007b94a126603035d322a1a6aff9ce0d87c868800305627ebeac",
+    "config/design-defaults.json": "ccb88272523501b50c533a67253e42f081432d82644650cbdac2a032d62a5295",
     "config/reference-library.json": "9ddd12332cce6d00c036789194d2408a28569f4f9db3ebed8f3c2ca48f9ffa25",
-    "tools/format_guides.py": "f30aa58625e0d7f84bd998d908fc185a85d1474465a9d1f4aac740fe851ecbab"
+    "tools/format_guides.py": "35eed907d70ff210880254df2b8a0f1f77234dd3d3fb39a8189c3cec7623cfbe"
   },
   "media_policy": "Verified author-indexed originals preserved. Web derivatives only; no jobs, user catalogues or memory included."
 }

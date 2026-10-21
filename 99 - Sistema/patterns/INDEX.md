@@ -52,6 +52,8 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 
 - Antigos F17 e F18 — retirados pelo autor; receitas e exemplos rejeitados ficam fora da distribuição. Os números foram reutilizados por novas gerações com UID próprio (F17 Colunas, F18 Longo + Cortes).
 
+- `f02-talking-head-v2`: F02 Talking Head, revisão autorizada em 20/10/2026 a partir do feedback da equipe: fala e respirações, split, inserções, legenda de uma linha, música emocional e proibição de stock genérico. Draft até um piloto representativo; v1 permanece para reprodutibilidade.
+
 - `f02-talking-head-v1`: F02 Talking Head, nova geração a partir do vídeo do ZIP de 07/10/2026. Draft; preserva as receitas anteriores.
 
 - `f03-dark-com-broll-v1`: F03 Dark com B-roll, nova geração criada em 10/10/2026 a partir da edição E34 V7 (F16 + animação do F12). Draft; F16 e F12 preservados.

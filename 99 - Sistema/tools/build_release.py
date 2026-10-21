@@ -22,7 +22,7 @@ def build(root):
    if not p.is_file() or p.is_symlink() or any(x in excluded for x in p.relative_to(root).parts):continue
    name=p.relative_to(root).as_posix()
    if name.startswith('examples/reference-library/'):continue
-   if name.startswith('patterns/') and name not in stock_patterns and str(p.relative_to(surface)) not in tracked:continue
+   if name.startswith('patterns/') and name not in stock_patterns and p.relative_to(surface).as_posix() not in tracked:continue
    if not allowed(name) or p.suffix in ('.pyc','.mp4','.wav','.mp3','.mov','.zip'):continue
    files[name]=hashlib.sha256(p.read_bytes()).hexdigest()
  for p in root.iterdir():

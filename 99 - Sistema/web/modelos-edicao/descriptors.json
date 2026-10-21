@@ -427,13 +427,17 @@
     "tags": [
       "Apresentador",
       "B-roll",
-      "Manchetes"
+      "Manchetes",
+      "TikTok",
+      "YouTube",
+      "Legenda em uma linha",
+      "Trilha emocional"
     ],
     "use": "Comentar notícias, casos e ideias mostrando evidências reais sem perder a presença da pessoa.",
     "cameraRequired": true,
     "startingMaterials": [
       "Vídeo",
-      "B-roll",
+      "B-roll do TikTok/YouTube",
       "Documentos"
     ],
     "buildingBlocks": [
@@ -442,7 +446,9 @@
       "B-roll real",
       "Manchetes",
       "Tela dividida",
-      "Cartões"
+      "Cartões",
+      "Legenda em uma linha",
+      "Trilha emocional"
     ],
     "searchTerms": [
       "talking head",
@@ -469,7 +475,13 @@
       "split screen",
       "cartao",
       "legendas curtas",
-      "reels"
+      "reels",
+      "tiktok",
+      "youtube",
+      "pesquisa no TikTok",
+      "pesquisa no YouTube",
+      "legenda em uma linha",
+      "música ligada à emoção"
     ],
     "hasPersonOnScreen": true
   },

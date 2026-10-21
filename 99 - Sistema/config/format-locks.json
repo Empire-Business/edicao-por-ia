@@ -90,8 +90,9 @@
     },
     "official.d28a1fefc46c478abbd1c9d9b0620a2d": {
       "code": "F02",
-      "definition_sha256": "1fc8ef19980ee290a3e2edafa048f524bd29300804e5ad4f8187adf47b3f73d4",
-      "pattern_sha256": "db1a14878804cc0061b628aade6d50196a2e78c60886eeb7178f374ff2361dbe"
+      "definition_sha256": "809bef9bef8a101495ca034e44bb637a24be751566cd38b95edbc1c142fdf6b1",
+      "pattern_sha256": "4e5a256f36b7002b2a09a4ed7557625d46d1d835c757e135ab823b8ecbe8799f",
+      "revision_note": "2026-10-20: revisão F02 v2 autorizada pelo autor a partir do manual e do feedback da equipe; v1 preservada para trabalhos anteriores."
     },
     "official.d7a2bb0a7fc640f79f9a88538a1eec81": {
       "code": "F03",
