@@ -47,7 +47,7 @@ def reference_section(item):
 
 def guide(root,item):
  from format_catalog import page
- key=item.get('uid','').removeprefix('factory.').upper() or item['code'];spec=DETAILS.get(key,{'inputs':'Gravação e materiais relacionados ao assunto.','mechanism':item.get('description','Receita de edição cadastrada.'),'steps':['Conferir a referência e o material enviado.','Montar a fala e preservar o sentido.','Planejar as cenas conforme a receita.','Aplicar a ID visual escolhida.','Revisar a prévia antes do final.'],'avoid':'Não aplicar cores, fontes ou logos por conta própria.'})
+ uid=item.get('uid','');key=item['code'] if uid.startswith('official.') else uid.removeprefix('factory.').upper() or item['code'];spec=DETAILS.get(key,{'inputs':'Gravação e materiais relacionados ao assunto.','mechanism':item.get('description','Receita de edição cadastrada.'),'steps':['Conferir a referência e o material enviado.','Montar a fala e preservar o sentido.','Planejar as cenas conforme a receita.','Aplicar a ID visual escolhida.','Revisar a prévia antes do final.'],'avoid':'Não aplicar cores, fontes ou logos por conta própria.'})
  custom=item.get('mechanism_details')
  if isinstance(custom,dict) and all(k in custom for k in ('inputs','mechanism','steps','avoid')) and isinstance(custom['steps'],list) and all(isinstance(v,str) for v in custom['steps']):
   spec={k:custom[k] for k in ('inputs','mechanism','steps','avoid')}
@@ -63,9 +63,9 @@ def guide(root,item):
  library=json.loads(library_path.read_text()).get('formats',{}).get(key) if library_path.exists() else None
  stock_images=[x for x in (library or {}).get('references',[]) if x['kind']=='actual_reference_image' or x['kind']=='visual_reference']
  stock_images=[{**x,'caption':x.get('caption','Imagem histórica da referência. Sua identidade visual e pessoa não são escolhas automáticas.')} for x in stock_images[:4]]
- examples=illustrations+stock_images+examples
+ examples=list({x['path']:x for x in illustrations+stock_images+examples}.values())
  body+='<section><h2>Exemplos visuais</h2>'
- if illustrations:body+='<p class="note">As ilustrações distribuídas mostram a sequência da edição. São material próprio de demonstração, não prints de vídeos aprovados. A aparência da sua edição vem da ID escolhida.</p>'
+ if any(not x['path'].startswith('examples/reference-library/') for x in illustrations):body+='<p class="note">As ilustrações distribuídas mostram a sequência da edição. São material próprio de demonstração, não prints de vídeos aprovados. A aparência da sua edição vem da ID escolhida.</p>'
  if examples:
   for example in examples:
    image=inside(root,example['path'])

@@ -751,6 +751,64 @@
         "path": "examples/reference-library/F18/longo-cortes/analysis.json",
         "sha256": "b2b6bae0e1c69dd0ec9e22e05c7b8d0ff8a9fd0638031daa6d3b29dcc77d93e5"
       }
+    },
+    {
+      "code": "F19",
+      "name": "Print Repost",
+      "memory_store": "print-repost",
+      "pattern": "f19-print-repost-v1",
+      "description": "Um vídeo pronto repostado como print de post: foto, nome e @ no alto, frase de gancho e uma foto chamativa ao lado do vídeo. Trocar a foto gera uma variação nova para testar reels.",
+      "uid": "official.1aa7dc24a246423daf02270990c88667",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F19/print-repost/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Um vídeo pronto que já existe, uma foto muito chamativa, uma frase de gancho com a palavra a destacar e a foto de perfil, o nome e o @ de quem vai postar. Para testes, uma lista de fotos e frases. A ID visual é escolhida separadamente.",
+        "mechanism": "O vídeo é repostado como um print de post: fundo liso, cabeçalho com foto redonda, nome em negrito, selo de verificado e @, uma frase de duas linhas com a palavra-gancho destacada e um emoji, e embaixo um painel dividido — a foto chamativa parada à esquerda e o vídeo pronto, com o áudio dele, à direita. Nada mais se move. Trocar a foto ou a frase gera uma variação nova do mesmo vídeo para testar reels.",
+        "steps": [
+          "Assistir ao vídeo pronto e anotar o momento mais surpreendente, a promessa e quem aparece.",
+          "Escolher a foto chamativa: uma imagem parada que gere curiosidade em 1 segundo e que o vídeo sustente; marcar o detalhe com círculo ou seta quando ajudar.",
+          "Escrever a frase de gancho em uma ou duas linhas e escolher a palavra a destacar; um emoji no fim é opcional.",
+          "Montar a tela: cabeçalho com foto, nome e @ do trabalho, frase, e o painel dividido com a foto à esquerda e o vídeo recortado em cover à direita.",
+          "Manter o vídeo inteiro com o áudio original, sem legenda por cima, sem marca d'água e sem cartão final.",
+          "Para variações, repetir a montagem trocando a foto e/ou a frase; nunca repetir a mesma dupla e registrar cada uma no decision log.",
+          "Conferir quadros reais: nome e @ certos, frase sem erro, rostos do vídeo dentro do recorte, áudio sincronizado."
+        ],
+        "avoid": "Não usar foto enganosa que o vídeo não sustenta, nem frase que prometa o que ele não entrega. Não herdar a pessoa, o nome, o @, a foto, o assunto, o vermelho ou a fonte do exemplo: cabeçalho vem do trabalho e cores/fontes vêm da ID. Não reproduzir o logotipo do Instagram que passeia pelo vídeo nem o cartão final — são a marca d'água do download. Não distorcer o vídeo nem cortar rostos no recorte."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F19/print-repost/reference.mp4",
+          "sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/opening.jpg",
+          "sha256": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/inset.jpg",
+          "sha256": "05ab49eb60bc60207c4be6822addaec7bdea29b82b2440f056ff79b3e6f4cf30"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/clean.jpg",
+          "sha256": "cb1b0927485184814982d02d5150c35f9b9e3de9d75b93a1b241d9041e5bee40"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/watermark.jpg",
+          "sha256": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/endcard.jpg",
+          "sha256": "d4c8e4820829c7f4a90ec5939d0b5e3a01a8146c8540db2ad7dd9a64d95bb981"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F19/print-repost/analysis.json",
+        "sha256": "51eaa9dfe8ee3c8fbb47a5d7868f11d50a4d5c1605472ab8d7dea215416b25aa"
+      }
     }
   ],
   "visual_identities": [

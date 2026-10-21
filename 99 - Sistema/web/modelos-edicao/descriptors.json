@@ -743,5 +743,57 @@
       "16:9",
       "9:16"
     ]
+  },
+  "F19": {
+    "category": "stories",
+    "categories": [
+      "stories"
+    ],
+    "tags": [
+      "Repost",
+      "Variações",
+      "Teste de reels"
+    ],
+    "use": "Repostar um vídeo que já existe como print de post, com foto chamativa e frase de gancho, e gerar várias variações para testar no reels.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Vídeo pronto",
+      "Foto chamativa",
+      "Frase de gancho",
+      "Foto, nome e @ do perfil"
+    ],
+    "buildingBlocks": [
+      "Cabeçalho de post",
+      "Frase com destaque",
+      "Foto ao lado do vídeo",
+      "Variações por foto e frase"
+    ],
+    "searchTerms": [
+      "print",
+      "repost",
+      "repostar",
+      "post",
+      "tweet",
+      "twitter",
+      "print de post",
+      "reels",
+      "teste",
+      "teste de reels",
+      "variacao",
+      "variacoes",
+      "teste ab",
+      "gancho",
+      "frase",
+      "foto",
+      "foto chamativa",
+      "thumbnail",
+      "video pronto",
+      "reaproveitar",
+      "sem gravar",
+      "sem aparecer",
+      "instagram",
+      "viral"
+    ]
   }
 }

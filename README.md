@@ -33,6 +33,8 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | F15 | Dois Lados |
 | F16 | Comentário com B-roll |
 | F17 | Colunas |
+| F18 | Longo + Cortes |
+| F19 | Print Repost |
 
 Os códigos e nomes consolidados são preservados. Novos formatos oficiais ocupam o menor número ativo disponível com identidade interna própria; um código reaproveitado não herda a geração retirada. Todo oficial novo também precisa aparecer na galeria com exemplo real.
 

@@ -374,5 +374,32 @@
       "sha256": "59c70aafbf0ba43e7884e7234179a4a5de018990140ebb831885934471c027a2",
       "caption": "Fechamento: pergunta reflexiva digitada; a assinatura do canal que vem depois não é herdada."
     }
+  ],
+  "F19": [
+    {
+      "path": "examples/reference-library/F19/print-repost/opening.jpg",
+      "sha256": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29",
+      "caption": "Montagem completa desde o primeiro quadro: foto, nome e @ no alto, frase com destaque e, embaixo, a foto chamativa ao lado do vídeo."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/inset.jpg",
+      "sha256": "05ab49eb60bc60207c4be6822addaec7bdea29b82b2440f056ff79b3e6f4cf30",
+      "caption": "A foto da esquerda fica parada; só o vídeo pronto da direita se move (aqui com as inserções que já existiam nele)."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/clean.jpg",
+      "sha256": "cb1b0927485184814982d02d5150c35f9b9e3de9d75b93a1b241d9041e5bee40",
+      "caption": "Painel dividido ao meio: foto com marcação em círculo à esquerda, vídeo recortado à direita."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/watermark.jpg",
+      "sha256": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59",
+      "caption": "O logotipo + @ que passeia pelo vídeo é a marca d'água do download do Instagram; não faz parte do formato."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/endcard.jpg",
+      "sha256": "d4c8e4820829c7f4a90ec5939d0b5e3a01a8146c8540db2ad7dd9a64d95bb981",
+      "caption": "Cartão final escuro com logotipo + @: também vem do download do Instagram e não é reproduzido."
+    }
   ]
 }

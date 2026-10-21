@@ -1356,6 +1356,92 @@
         }
       ],
       "examples": []
+    },
+    {
+      "code": "F19",
+      "name": "Print Repost",
+      "description": "Um vídeo pronto repostado como print de post: foto, nome e @ no alto, frase de gancho e uma foto chamativa ao lado do vídeo. Trocar a foto gera uma variação nova para testar reels.",
+      "category": "stories",
+      "tags": [
+        "Repost",
+        "Variações",
+        "Teste de reels"
+      ],
+      "use": "Repostar um vídeo que já existe como print de post, com foto chamativa e frase de gancho, e gerar várias variações para testar no reels.",
+      "inputs": "Um vídeo pronto que já existe, uma foto muito chamativa, uma frase de gancho com a palavra a destacar e a foto de perfil, o nome e o @ de quem vai postar. Para testes, uma lista de fotos e frases. A ID visual é escolhida separadamente.",
+      "mechanism": "O vídeo é repostado como um print de post: fundo liso, cabeçalho com foto redonda, nome em negrito, selo de verificado e @, uma frase de duas linhas com a palavra-gancho destacada e um emoji, e embaixo um painel dividido — a foto chamativa parada à esquerda e o vídeo pronto, com o áudio dele, à direita. Nada mais se move. Trocar a foto ou a frase gera uma variação nova do mesmo vídeo para testar reels.",
+      "steps": [
+        "Assistir ao vídeo pronto e anotar o momento mais surpreendente, a promessa e quem aparece.",
+        "Escolher a foto chamativa: uma imagem parada que gere curiosidade em 1 segundo e que o vídeo sustente; marcar o detalhe com círculo ou seta quando ajudar.",
+        "Escrever a frase de gancho em uma ou duas linhas e escolher a palavra a destacar; um emoji no fim é opcional.",
+        "Montar a tela: cabeçalho com foto, nome e @ do trabalho, frase, e o painel dividido com a foto à esquerda e o vídeo recortado em cover à direita.",
+        "Manter o vídeo inteiro com o áudio original, sem legenda por cima, sem marca d'água e sem cartão final.",
+        "Para variações, repetir a montagem trocando a foto e/ou a frase; nunca repetir a mesma dupla e registrar cada uma no decision log.",
+        "Conferir quadros reais: nome e @ certos, frase sem erro, rostos do vídeo dentro do recorte, áudio sincronizado."
+      ],
+      "avoid": "Não usar foto enganosa que o vídeo não sustenta, nem frase que prometa o que ele não entrega. Não herdar a pessoa, o nome, o @, a foto, o assunto, o vermelho ou a fonte do exemplo: cabeçalho vem do trabalho e cores/fontes vêm da ID. Não reproduzir o logotipo do Instagram que passeia pelo vídeo nem o cartão final — são a marca d'água do download. Não distorcer o vídeo nem cortar rostos no recorte.",
+      "pattern": "f19-print-repost-v1",
+      "video": "assets/videos/F19-print-repost.mp4",
+      "vimeo": null,
+      "duration": 58,
+      "evidence": "video",
+      "evidenceLabel": "Exemplo do autor",
+      "evidenceNote": "Vídeo enviado pelo autor como modelo do formato. O logotipo do Instagram que passeia pela tela e o cartão final vêm do download do Instagram e não fazem parte do formato. Pessoa, nome, @, foto, cores e fontes não são padrões.",
+      "categories": [
+        "stories"
+      ],
+      "cameraRequired": false,
+      "hasPersonOnScreen": false,
+      "startingMaterials": [
+        "Vídeo pronto",
+        "Foto chamativa",
+        "Frase de gancho",
+        "Foto, nome e @ do perfil"
+      ],
+      "buildingBlocks": [
+        "Cabeçalho de post",
+        "Frase com destaque",
+        "Foto ao lado do vídeo",
+        "Variações por foto e frase"
+      ],
+      "searchTerms": [
+        "print",
+        "repost",
+        "repostar",
+        "post",
+        "tweet",
+        "twitter",
+        "print de post",
+        "reels",
+        "teste",
+        "teste de reels",
+        "variacao",
+        "variacoes",
+        "teste ab",
+        "gancho",
+        "frase",
+        "foto",
+        "foto chamativa",
+        "thumbnail",
+        "video pronto",
+        "reaproveitar",
+        "sem gravar",
+        "sem aparecer",
+        "instagram",
+        "viral"
+      ],
+      "poster": "assets/posters/F19-print-repost.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F19-print-repost-frame-0.jpg",
+          "caption": "Montagem completa desde o primeiro quadro: foto, nome e @ no alto, frase com destaque e, embaixo, a foto chamativa ao lado do vídeo."
+        },
+        {
+          "poster": "assets/posters/F19-print-repost-frame-1.jpg",
+          "caption": "Painel dividido ao meio: foto com marcação em círculo à esquerda, vídeo recortado à direita."
+        }
+      ],
+      "examples": []
     }
   ],
   "identities": [

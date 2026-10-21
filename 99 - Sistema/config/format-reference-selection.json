@@ -156,6 +156,14 @@
         "sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea"
       },
       "reference_conflicts": []
+    },
+    "official.1aa7dc24a246423daf02270990c88667": {
+      "code": "F19",
+      "primary_reference": {
+        "path": "examples/reference-library/F19/print-repost/reference.mp4",
+        "sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e"
+      },
+      "reference_conflicts": []
     }
   }
 }

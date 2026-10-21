@@ -1348,6 +1348,80 @@
         }
       ],
       "missing_sources": []
+    },
+    "F19": {
+      "code": "F19",
+      "name": "Print Repost",
+      "uid": "official.1aa7dc24a246423daf02270990c88667",
+      "references": [
+        {
+          "path": "examples/reference-library/F19/print-repost/README.md",
+          "kind": "reference_analysis",
+          "sha256": "090a645ee142b8f480f5465b8eb5125b49f15c28f1255717de0608186752b15f",
+          "bytes": 796,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "51eaa9dfe8ee3c8fbb47a5d7868f11d50a4d5c1605472ab8d7dea215416b25aa",
+          "bytes": 6645,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/clean.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "cb1b0927485184814982d02d5150c35f9b9e3de9d75b93a1b241d9041e5bee40",
+          "bytes": 88452,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685",
+          "caption": "Painel dividido ao meio: foto com marcação em círculo à esquerda, vídeo recortado à direita.",
+          "at_seconds": 30
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/endcard.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d4c8e4820829c7f4a90ec5939d0b5e3a01a8146c8540db2ad7dd9a64d95bb981",
+          "bytes": 47830,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685",
+          "caption": "Cartão final escuro com logotipo + @: também vem do download do Instagram e não é reproduzido.",
+          "at_seconds": 54.5
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/inset.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "05ab49eb60bc60207c4be6822addaec7bdea29b82b2440f056ff79b3e6f4cf30",
+          "bytes": 98180,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685",
+          "caption": "A foto da esquerda fica parada; só o vídeo pronto da direita se move (aqui com as inserções que já existiam nele).",
+          "at_seconds": 8
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/opening.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29",
+          "bytes": 93405,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685",
+          "caption": "Montagem completa desde o primeiro quadro: foto, nome e @ no alto, frase com destaque e, embaixo, a foto chamativa ao lado do vídeo.",
+          "at_seconds": 1
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e",
+          "bytes": 3682630,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685"
+        },
+        {
+          "path": "examples/reference-library/F19/print-repost/watermark.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59",
+          "bytes": 100187,
+          "source_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685",
+          "caption": "O logotipo + @ que passeia pelo vídeo é a marca d'água do download do Instagram; não faz parte do formato.",
+          "at_seconds": 14
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -1770,6 +1844,13 @@
     "examples/reference-library/F09/collection-01/screens/mobile/M99/M99-61-mapa-de-integracao.png": "ad59488e06e53bec13fcd7e55d2b3702944ce05d923162303af466677d42f255",
     "examples/reference-library/F09/collection-02/sdria-act1-tension-v1.mp3": "6b0ed9202394e5c879ba026c14434a4169d23a25f533155579b0b54619d72e4b",
     "examples/reference-library/F09/collection-02/sdria-act2-resolve-v1.mp3": "15a5c046728dc805c0e3e7e9fce70922bfce6d9dd83d284f518329c1246a550b",
+    "examples/reference-library/F09/cortez-2026-10/ANALISE.md": "261fa908cf3d02dca77c420ce19e1247e3df8f6c2543f0c75b889992fdf36010",
+    "examples/reference-library/F09/cortez-2026-10/README.md": "a8a26657c7866e141188c6b5a91d8f8b9a1f169db48609dc6ed991076f120377",
+    "examples/reference-library/F09/cortez-2026-10/analysis.json": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c",
+    "examples/reference-library/F09/cortez-2026-10/exemplo.mp4": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772",
+    "examples/reference-library/F09/cortez-2026-10/legenda.jpg": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a",
+    "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0",
+    "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc",
     "examples/reference-library/F09/example-01.jpg": "c1ba1f208c4f01c383d05d606c886ccf24a02460d838aa5dcaaa7db6c98eb110",
     "examples/reference-library/F09/example-02.jpg": "1d7d2679084ee070dd3c3e8bbd6439e3391f3b97f6a6db56e74ad97c076577ec",
     "examples/reference-library/F09/video-example-02.mp4": "61b3c2729132be3d64b62a1d1e4445f437c1a0c12a20ef7014b9c0fb21f478fe",
@@ -1810,7 +1891,21 @@
     "examples/reference-library/F11/narracao-ilustrada/situation.jpg": "af26716d133079e28962f66c78eea1054b5b7db9288e5c0110fab32093d9c810",
     "examples/reference-library/F12/README.md": "8d747a448f76600e02a9d0b1ca8004da58b127828b6e01418902fe2db3847fb8",
     "examples/reference-library/F12/collection-02/DIRECTION-v1.md": "f66e8be73605ef72afa8d188bb715df8a7fc5e0fd72ae56b3df6771d193b1e54",
+    "examples/reference-library/F12/cortez-2026-10/ANALISE.md": "99014802c5c1f7b29590ad2aca56004264a71fb550ba4304024470d6799626bb",
+    "examples/reference-library/F12/cortez-2026-10/README.md": "9cebc8e12e96849292d4a12ef44520f706e4b2c0a8c361e9f6b38a450bb62301",
+    "examples/reference-library/F12/cortez-2026-10/analysis.json": "e1a67187966b1d2d6010e57a8c47f2059485a18f69567a2573767009fba03c58",
+    "examples/reference-library/F12/cortez-2026-10/exemplo.mp4": "a3057366d9c449501f24113d9924f326d2ffa8d94c99ed87b0a0192cad2e78a2",
+    "examples/reference-library/F12/cortez-2026-10/lista.jpg": "28e26f150b248f05e6463d3fb237984428e6d39b2e1d30f2af0bec4ddafef488",
+    "examples/reference-library/F12/cortez-2026-10/objeto.jpg": "a75e83c6827a99a6935630bdaeebb7c3b7a4f99602737ad79f27c9ab8dc8c42c",
+    "examples/reference-library/F12/cortez-2026-10/sequencia-clara.jpg": "b85ebe179c590993b975761eb4994b55dec7025508998003429293df7ba268c5",
     "examples/reference-library/F13/README.md": "f826118ff714adec4105ee75ff81792f2e87cc25baa6016648f2bc3f727271ad",
+    "examples/reference-library/F13/cortez-2026-10/ANALISE.md": "4b08c41e7596ae5201b39f7893bc7e638381f2cb1ee1461dbd1dcc0791a166b0",
+    "examples/reference-library/F13/cortez-2026-10/README.md": "dc4d9fe4b35553fc2c68edc3724fd42dcfe46c464fa710d91d4d3fc32a6a702f",
+    "examples/reference-library/F13/cortez-2026-10/analysis.json": "254eecef47c4d12cbe0f4c00fc4b63c7496e78d72b41096c4689fe9bc65fc5b7",
+    "examples/reference-library/F13/cortez-2026-10/destaque.jpg": "ae6859fcadb1adf2b705ff0d654edbf8dd951bcbeb1b5ceaf90a8d712331a089",
+    "examples/reference-library/F13/cortez-2026-10/exemplo.mp4": "d5a54036050bb7fd7b9b4767db8845ba174d0c8a9abceee8416a2bb573743717",
+    "examples/reference-library/F13/cortez-2026-10/grade-ranking.jpg": "faca9263ba5001157817bd07ac05337b2e9daf760723201cb9ab96b41b68130c",
+    "examples/reference-library/F13/cortez-2026-10/mapa.jpg": "a7a4cafe4453a0e5ccaf8c9085c291ea77ed8b289257f7540943ca6b7448916e",
     "examples/reference-library/F14/README.md": "234213c349cffef47d482e81dec3c67558d97a9b2b18b7ae4178f7c7436e9fc6",
     "examples/reference-library/F14/preview-frame.jpg": "6fdf29b6e6f69a27d20787c5b2af35c5999ed4f65ba14c0ef380c3188557bbf7",
     "examples/reference-library/F14/reference.mp4": "b8c16a03cef105292f3544537042818bd677a12ec0abdcba70d00c8fc07876cf",
@@ -1854,28 +1949,15 @@
     "examples/reference-library/F18/longo-cortes/social-clip-blurred.jpg": "69d061e64eb66fd23cd2dbb45a414a61fadc01431f4fa9d6310aa4ae5f9f307a",
     "examples/reference-library/F18/longo-cortes/sponsor-qr.jpg": "c0137022093a6b972c0b42e491b44d4db3c6da5ffd1781991f0b8a543dc207bd",
     "examples/reference-library/F18/longo-cortes/stat-over-broll.jpg": "481eb9889ac2fe19a3f49a237e3a74aedd9128de1ddcfd8d1fd632a8814ae4d0",
-    "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1",
-    "examples/reference-library/F09/cortez-2026-10/ANALISE.md": "261fa908cf3d02dca77c420ce19e1247e3df8f6c2543f0c75b889992fdf36010",
-    "examples/reference-library/F09/cortez-2026-10/README.md": "a8a26657c7866e141188c6b5a91d8f8b9a1f169db48609dc6ed991076f120377",
-    "examples/reference-library/F09/cortez-2026-10/analysis.json": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c",
-    "examples/reference-library/F09/cortez-2026-10/exemplo.mp4": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772",
-    "examples/reference-library/F09/cortez-2026-10/legenda.jpg": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a",
-    "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0",
-    "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc",
-    "examples/reference-library/F12/cortez-2026-10/ANALISE.md": "99014802c5c1f7b29590ad2aca56004264a71fb550ba4304024470d6799626bb",
-    "examples/reference-library/F12/cortez-2026-10/README.md": "9cebc8e12e96849292d4a12ef44520f706e4b2c0a8c361e9f6b38a450bb62301",
-    "examples/reference-library/F12/cortez-2026-10/analysis.json": "e1a67187966b1d2d6010e57a8c47f2059485a18f69567a2573767009fba03c58",
-    "examples/reference-library/F12/cortez-2026-10/exemplo.mp4": "a3057366d9c449501f24113d9924f326d2ffa8d94c99ed87b0a0192cad2e78a2",
-    "examples/reference-library/F12/cortez-2026-10/lista.jpg": "28e26f150b248f05e6463d3fb237984428e6d39b2e1d30f2af0bec4ddafef488",
-    "examples/reference-library/F12/cortez-2026-10/objeto.jpg": "a75e83c6827a99a6935630bdaeebb7c3b7a4f99602737ad79f27c9ab8dc8c42c",
-    "examples/reference-library/F12/cortez-2026-10/sequencia-clara.jpg": "b85ebe179c590993b975761eb4994b55dec7025508998003429293df7ba268c5",
-    "examples/reference-library/F13/cortez-2026-10/ANALISE.md": "4b08c41e7596ae5201b39f7893bc7e638381f2cb1ee1461dbd1dcc0791a166b0",
-    "examples/reference-library/F13/cortez-2026-10/README.md": "dc4d9fe4b35553fc2c68edc3724fd42dcfe46c464fa710d91d4d3fc32a6a702f",
-    "examples/reference-library/F13/cortez-2026-10/analysis.json": "254eecef47c4d12cbe0f4c00fc4b63c7496e78d72b41096c4689fe9bc65fc5b7",
-    "examples/reference-library/F13/cortez-2026-10/destaque.jpg": "ae6859fcadb1adf2b705ff0d654edbf8dd951bcbeb1b5ceaf90a8d712331a089",
-    "examples/reference-library/F13/cortez-2026-10/exemplo.mp4": "d5a54036050bb7fd7b9b4767db8845ba174d0c8a9abceee8416a2bb573743717",
-    "examples/reference-library/F13/cortez-2026-10/grade-ranking.jpg": "faca9263ba5001157817bd07ac05337b2e9daf760723201cb9ab96b41b68130c",
-    "examples/reference-library/F13/cortez-2026-10/mapa.jpg": "a7a4cafe4453a0e5ccaf8c9085c291ea77ed8b289257f7540943ca6b7448916e"
+    "examples/reference-library/F19/print-repost/README.md": "090a645ee142b8f480f5465b8eb5125b49f15c28f1255717de0608186752b15f",
+    "examples/reference-library/F19/print-repost/analysis.json": "51eaa9dfe8ee3c8fbb47a5d7868f11d50a4d5c1605472ab8d7dea215416b25aa",
+    "examples/reference-library/F19/print-repost/clean.jpg": "cb1b0927485184814982d02d5150c35f9b9e3de9d75b93a1b241d9041e5bee40",
+    "examples/reference-library/F19/print-repost/endcard.jpg": "d4c8e4820829c7f4a90ec5939d0b5e3a01a8146c8540db2ad7dd9a64d95bb981",
+    "examples/reference-library/F19/print-repost/inset.jpg": "05ab49eb60bc60207c4be6822addaec7bdea29b82b2440f056ff79b3e6f4cf30",
+    "examples/reference-library/F19/print-repost/opening.jpg": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29",
+    "examples/reference-library/F19/print-repost/reference.mp4": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e",
+    "examples/reference-library/F19/print-repost/watermark.jpg": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59",
+    "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1"
   },
   "retired_generations": {
     "factory.f02": {

@@ -294,6 +294,28 @@
         "avoid": "Não entregar o longo como talking head com legenda, inserir B-roll genérico, inventar manchete, número ou cláusula, usar marca real em contexto falso, fazer animação de template sem acabamento, completar cota de cortes com trechos fracos, montar corte que mude o que a pessoa disse ou copiar pessoa, canal, verde/creme/serifa e assinatura do exemplo. Cores e fontes vêm da ID."
       },
       "asset_id": "F18-longo-cortes"
+    },
+    {
+      "code": "F19",
+      "name": "Print Repost",
+      "description": "Um vídeo pronto repostado como print de post: foto, nome e @ no alto, frase de gancho e uma foto chamativa ao lado do vídeo. Trocar a foto gera uma variação nova para testar reels.",
+      "pattern": "f19-print-repost-v1",
+      "uid": "official.1aa7dc24a246423daf02270990c88667",
+      "mechanism_details": {
+        "inputs": "Um vídeo pronto que já existe, uma foto muito chamativa, uma frase de gancho com a palavra a destacar e a foto de perfil, o nome e o @ de quem vai postar. Para testes, uma lista de fotos e frases. A ID visual é escolhida separadamente.",
+        "mechanism": "O vídeo é repostado como um print de post: fundo liso, cabeçalho com foto redonda, nome em negrito, selo de verificado e @, uma frase de duas linhas com a palavra-gancho destacada e um emoji, e embaixo um painel dividido — a foto chamativa parada à esquerda e o vídeo pronto, com o áudio dele, à direita. Nada mais se move. Trocar a foto ou a frase gera uma variação nova do mesmo vídeo para testar reels.",
+        "steps": [
+          "Assistir ao vídeo pronto e anotar o momento mais surpreendente, a promessa e quem aparece.",
+          "Escolher a foto chamativa: uma imagem parada que gere curiosidade em 1 segundo e que o vídeo sustente; marcar o detalhe com círculo ou seta quando ajudar.",
+          "Escrever a frase de gancho em uma ou duas linhas e escolher a palavra a destacar; um emoji no fim é opcional.",
+          "Montar a tela: cabeçalho com foto, nome e @ do trabalho, frase, e o painel dividido com a foto à esquerda e o vídeo recortado em cover à direita.",
+          "Manter o vídeo inteiro com o áudio original, sem legenda por cima, sem marca d'água e sem cartão final.",
+          "Para variações, repetir a montagem trocando a foto e/ou a frase; nunca repetir a mesma dupla e registrar cada uma no decision log.",
+          "Conferir quadros reais: nome e @ certos, frase sem erro, rostos do vídeo dentro do recorte, áudio sincronizado."
+        ],
+        "avoid": "Não usar foto enganosa que o vídeo não sustenta, nem frase que prometa o que ele não entrega. Não herdar a pessoa, o nome, o @, a foto, o assunto, o vermelho ou a fonte do exemplo: cabeçalho vem do trabalho e cores/fontes vêm da ID. Não reproduzir o logotipo do Instagram que passeia pelo vídeo nem o cartão final — são a marca d'água do download. Não distorcer o vídeo nem cortar rostos no recorte."
+      },
+      "asset_id": "F19-print-repost"
     }
   ],
   "reference_media": {
@@ -430,6 +452,14 @@
         "sha256": "a3057366d9c449501f24113d9924f326d2ffa8d94c99ed87b0a0192cad2e78a2",
         "evidence_label": "Exemplo produzido pelo Cortez",
         "evidence_note": "Exemplo original produzido pelo Cortez: minidocumentário narrado sem apresentador, com imagens geradas por IA, objetos, datas, números, carimbos e uma sequência em papel. Assunto, cores e fontes não são padrões."
+      }
+    ],
+    "F19": [
+      {
+        "path": "examples/reference-library/F19/print-repost/reference.mp4",
+        "sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e",
+        "evidence_label": "Exemplo do autor",
+        "evidence_note": "Vídeo enviado pelo autor como modelo do formato. O logotipo do Instagram que passeia pela tela e o cartão final vêm do download do Instagram e não fazem parte do formato. Pessoa, nome, @, foto, cores e fontes não são padrões."
       }
     ]
   },
@@ -651,6 +681,22 @@
           "sha256": "ae6859fcadb1adf2b705ff0d654edbf8dd951bcbeb1b5ceaf90a8d712331a089"
         },
         "caption": "Volta ao mapa com foco na região e cartão com o número principal."
+      }
+    ],
+    "F19": [
+      {
+        "reference": {
+          "path": "examples/reference-library/F19/print-repost/opening.jpg",
+          "sha256": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29"
+        },
+        "caption": "Montagem completa desde o primeiro quadro: foto, nome e @ no alto, frase com destaque e, embaixo, a foto chamativa ao lado do vídeo."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F19/print-repost/clean.jpg",
+          "sha256": "cb1b0927485184814982d02d5150c35f9b9e3de9d75b93a1b241d9041e5bee40"
+        },
+        "caption": "Painel dividido ao meio: foto com marcação em círculo à esquerda, vídeo recortado à direita."
       }
     ]
   },

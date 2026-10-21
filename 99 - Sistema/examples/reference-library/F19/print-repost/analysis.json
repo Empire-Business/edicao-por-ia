@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "format_code": "F19",
+  "format_uid": "official.1aa7dc24a246423daf02270990c88667",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F19/print-repost/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um vídeo pronto que já existe, uma foto muito chamativa, uma frase de gancho com a palavra a destacar e a foto de perfil, o nome e o @ de quem vai postar. Para testes, uma lista de fotos e frases. A ID visual é escolhida separadamente.",
+    "mechanism": "O vídeo é repostado como um print de post: fundo liso, cabeçalho com foto redonda, nome em negrito, selo de verificado e @, uma frase de duas linhas com a palavra-gancho destacada e um emoji, e embaixo um painel dividido — a foto chamativa parada à esquerda e o vídeo pronto, com o áudio dele, à direita. Nada mais se move. Trocar a foto ou a frase gera uma variação nova do mesmo vídeo para testar reels.",
+    "steps": [
+      "Assistir ao vídeo pronto e anotar o momento mais surpreendente, a promessa e quem aparece.",
+      "Escolher a foto chamativa: uma imagem parada que gere curiosidade em 1 segundo e que o vídeo sustente; marcar o detalhe com círculo ou seta quando ajudar.",
+      "Escrever a frase de gancho em uma ou duas linhas e escolher a palavra a destacar; um emoji no fim é opcional.",
+      "Montar a tela: cabeçalho com foto, nome e @ do trabalho, frase, e o painel dividido com a foto à esquerda e o vídeo recortado em cover à direita.",
+      "Manter o vídeo inteiro com o áudio original, sem legenda por cima, sem marca d'água e sem cartão final.",
+      "Para variações, repetir a montagem trocando a foto e/ou a frase; nunca repetir a mesma dupla e registrar cada uma no decision log.",
+      "Conferir quadros reais: nome e @ certos, frase sem erro, rostos do vídeo dentro do recorte, áudio sincronizado."
+    ],
+    "avoid": "Não usar foto enganosa que o vídeo não sustenta, nem frase que prometa o que ele não entrega. Não herdar a pessoa, o nome, o @, a foto, o assunto, o vermelho ou a fonte do exemplo: cabeçalho vem do trabalho e cores/fontes vêm da ID. Não reproduzir o logotipo do Instagram que passeia pelo vídeo nem o cartão final — são a marca d'água do download. Não distorcer o vídeo nem cortar rostos no recorte."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F19/print-repost/reference.mp4",
+      "sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e"
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/opening.jpg",
+      "sha256": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29"
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/inset.jpg",
+      "sha256": "05ab49eb60bc60207c4be6822addaec7bdea29b82b2440f056ff79b3e6f4cf30"
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/clean.jpg",
+      "sha256": "cb1b0927485184814982d02d5150c35f9b9e3de9d75b93a1b241d9041e5bee40"
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/watermark.jpg",
+      "sha256": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59"
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/endcard.jpg",
+      "sha256": "d4c8e4820829c7f4a90ec5939d0b5e3a01a8146c8540db2ad7dd9a64d95bb981"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F19/print-repost/opening.jpg",
+      "sha256": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29",
+      "at_seconds": 1,
+      "caption": "Montagem completa desde o primeiro quadro: foto, nome e @ no alto, frase com destaque e, embaixo, a foto chamativa ao lado do vídeo."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/inset.jpg",
+      "sha256": "05ab49eb60bc60207c4be6822addaec7bdea29b82b2440f056ff79b3e6f4cf30",
+      "at_seconds": 8,
+      "caption": "A foto da esquerda fica parada; só o vídeo pronto da direita se move (aqui com as inserções que já existiam nele)."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/clean.jpg",
+      "sha256": "cb1b0927485184814982d02d5150c35f9b9e3de9d75b93a1b241d9041e5bee40",
+      "at_seconds": 30,
+      "caption": "Painel dividido ao meio: foto com marcação em círculo à esquerda, vídeo recortado à direita."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/watermark.jpg",
+      "sha256": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59",
+      "at_seconds": 14,
+      "caption": "O logotipo + @ que passeia pelo vídeo é a marca d'água do download do Instagram; não faz parte do formato."
+    },
+    {
+      "path": "examples/reference-library/F19/print-repost/endcard.jpg",
+      "sha256": "d4c8e4820829c7f4a90ec5939d0b5e3a01a8146c8540db2ad7dd9a64d95bb981",
+      "at_seconds": 54.5,
+      "caption": "Cartão final escuro com logotipo + @: também vem do download do Instagram e não é reproduzido."
+    }
+  ],
+  "layout": {
+    "measured_on": "720x1280",
+    "header_px": [
+      234,
+      304
+    ],
+    "phrase_px": [
+      354,
+      427
+    ],
+    "media_panel_px": {
+      "y": [
+        473,
+        1065
+      ],
+      "x": [
+        21,
+        697
+      ]
+    },
+    "split_x_px": [
+      363,
+      366
+    ],
+    "left_panel": "foto parada (diferença média entre 1 s e 30 s ≈ 3/255, só compressão e marca d'água)",
+    "right_panel": "vídeo pronto em movimento",
+    "instagram_watermark_end_card_from_s": 53.4
+  },
+  "source": {
+    "kind": "author_supplied_example",
+    "supplied": "2026-10-20",
+    "original_filename": "77006c171c6c4d21960045de58770ab6.MP4",
+    "original_local": ".factory/imports/f19-print-repost-20261020/originals/77006c171c6c4d21960045de58770ab6.MP4",
+    "original_sha256": "460a33b7bd4cc7712827915f2d186c561065774bc23c56db1952f26175f14685",
+    "duration_s": 57.5,
+    "width": 720,
+    "height": 1280,
+    "codec": "hevc",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 do mesmo tamanho para tocar em qualquer navegador; o original HEVC fica só nesta instalação."
+  },
+  "review": {
+    "date": "2026-10-20",
+    "method": "Folha com 1 quadro a cada 2 s, 5 quadros nomeados em resolução cheia, medição de geometria e de movimento por painel, brilho do topo para o cartão final",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "O exemplo é um repost do próprio autor com imagens de terceiros sobre o caso; distribuído como referência por decisão do autor."
+  }
+}

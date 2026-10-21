@@ -42,6 +42,8 @@ test('shared links do not assign a default identity or restore a retired format'
   assert.equal(formatOnly.identity, null);
   assert.equal(selectionFromHash('#modelo=F18&id=ID03', catalog).format.pattern, 'f18-longo-cortes-v1');
   assert.equal(selectionFromHash('#modelo=F18', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F19&id=ID03', catalog).format.pattern, 'f19-print-repost-v1');
+  assert.equal(selectionFromHash('#modelo=F19', catalog).identity, null);
   assert.equal(selectionFromHash('#modelo=F09', catalog).format.pattern, 'f09-personagem-v1');
   assert.equal(selectionFromHash('#modelo=F11', catalog).format.pattern, 'f11-narracao-ilustrada-v1');
   assert.equal(selectionFromHash('#modelo=F17', catalog).format.pattern, 'f17-colunas-v1');
@@ -129,7 +131,7 @@ test("numeric code order is stable for library, favorites and searches", () => {
  const shuffled=[catalog.formats.find(x=>x.code==="F16"),catalog.formats.find(x=>x.code==="F04"),catalog.formats.find(x=>x.code==="F01")];
  assert.deepEqual(filterFormats(shuffled).map(x=>x.code),["F01","F04","F16"]);
  assert.deepEqual(filterFormats(shuffled,{favoritesOnly:true,favorites:["F16","F01"]}).map(x=>x.code),["F01","F16"]);
- assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18"]);
+ assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19"]);
 });
 
 test('the authorized new F02 uses its actual full example and a fresh media generation', () => {

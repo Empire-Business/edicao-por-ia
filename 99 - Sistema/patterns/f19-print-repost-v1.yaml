@@ -1,0 +1,138 @@
+id: f19-print-repost-v1
+version: 1
+status: draft
+format_code: F19
+origin_note: Receita escrita em 20/10/2026 a partir da explicação do autor e do vídeo de exemplo enviado por ele (57,5 s,
+  720×1280). Geometria, tempos e camadas foram medidos em quadros reais. O logotipo do Instagram que passeia pelo vídeo
+  e o cartão final com logotipo + @ são a marca d'água que o próprio Instagram põe no download, não fazem parte do formato.
+  Ainda sem edição nova testada nesta instalação.
+purpose: Repostar um vídeo pronto como se fosse um print de post — cabeçalho com foto, nome e @, frase que chama atenção
+  e, embaixo, uma foto muito chamativa ao lado do vídeo. Cada troca de foto/frase gera uma variação nova do mesmo vídeo
+  para testar reels.
+engine: ffmpeg
+inputs:
+  required:
+  - Vídeo pronto que já existe (o conteúdo, o áudio e a duração vêm dele).
+  - Foto chamativa para o painel ao lado (uma por variação).
+  - Frase de gancho com a palavra ou trecho a destacar (uma por variação).
+  - Foto de perfil, nome e @ que aparecem no cabeçalho — da pessoa/conta que vai postar, informados no trabalho.
+  - ID visual escolhida pelo usuário.
+  optional:
+  - Emoji no fim da frase.
+  - Marcação na foto (círculo, seta) apontando o detalhe que gera curiosidade.
+  - Lista de fotos e frases para gerar várias variações de uma vez.
+variations:
+  purpose: Teste de reels — o mesmo vídeo com outra foto e/ou outra frase vira uma publicação nova.
+  rule: Cada variação é um trabalho próprio (ou um render nomeado do mesmo trabalho) com a mesma base de vídeo; muda a
+    foto, a frase ou as duas. Nunca entregar duas variações com a mesma foto e a mesma frase.
+  what_matters: O segredo é acertar a foto e a frase. A montagem é fixa; o tempo vai para escolher a imagem e escrever o gancho.
+  photo:
+  - Uma imagem só, parada, que provoque curiosidade em 1 segundo — rosto com expressão forte, objeto estranho, número, cena
+    inesperada ou o detalhe mais surpreendente do próprio vídeo.
+  - Relacionada de verdade ao que o vídeo mostra; nada de foto enganosa que o vídeo não sustenta.
+  - Pode ser um quadro do próprio vídeo, uma foto enviada pelo usuário ou uma imagem pesquisada com fonte registrada.
+  - Recortar para preencher o painel sem distorcer; o ponto de interesse fica no centro do painel.
+  phrase:
+  - Uma ou duas linhas, curiosidade + promessa ("Esse cara fez X sem Y e enganou todo mundo").
+  - Destacar só a palavra ou trecho que vira o gancho (cor de destaque da ID).
+  - Português natural, sem caixa alta inteira; um emoji no fim é opcional.
+  - Fiel ao vídeo; não prometer o que o vídeo não entrega.
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: contain
+  duration: igual à do vídeo pronto
+editorial:
+  target_pace: source
+  cut_source_video: false
+  silence_removal:
+    enabled: false
+  speech_cleanup: false
+  note: O vídeo pronto entra inteiro, com o áudio dele. Só cortar se o pedido disser.
+visual:
+  canvas: Fundo liso do início ao fim, como a tela de um post (claro ou escuro conforme a ID).
+  layout_from_reference:
+    unit: frações da tela 9:16 medidas no exemplo 720×1280
+    content_block: centralizado na vertical; margens laterais de ≈ 3 % (21 px em 720)
+    header:
+      top: 0.183
+      height: 0.055
+      avatar: foto de perfil redonda, ≈ 70 px em 720
+      name: nome em negrito + selo azul de verificado ao lado (só se a conta for verificada)
+      handle: '@ em cinza abaixo do nome'
+    phrase:
+      top: 0.277
+      bottom: 0.334
+      lines: 2
+      weight: negrito
+      highlight: palavra/trecho do gancho na cor de destaque da ID
+    media_panel:
+      top: 0.370
+      bottom: 0.832
+      width: 0.94
+      aspect: ≈ 676×592 (pouco mais largo que alto)
+      split: duas metades lado a lado, separadas por um fio de ≈ 3 px
+      left: foto chamativa parada, cobrindo a metade
+      right: vídeo pronto recortado em cover, rosto/ação centralizado
+      corners: retos
+  header_identity: Foto, nome e @ vêm do trabalho; nunca herdar a pessoa do exemplo nem inventar uma conta.
+  colors: fundo, texto e destaque vêm da ID; o cabeçalho imita um post neutro de rede social, sem logotipo de plataforma.
+motion:
+  enabled: 'off'
+  static_layers:
+  - cabeçalho
+  - frase
+  - foto
+  note: Só o vídeo da direita se move. Um emoji animado no fim da frase é permitido.
+captions:
+  enabled: false
+  note: A frase fixa faz o papel de texto; não legendar por cima, salvo pedido.
+audio:
+  source: áudio do vídeo pronto, sem alterar
+  normalize: true
+  loudness_target_lufs: -14
+  true_peak_db: -1.5
+  music: none
+end_card:
+  enabled: false
+  note: O exemplo termina com o cartão de logotipo + @ do Instagram porque foi baixado do Instagram; a receita não cria
+    cartão final nem marca d'água.
+qa:
+  check_header_identity_from_job: true
+  check_phrase_spelling_and_highlight: true
+  check_photo_relevant_and_not_misleading: true
+  check_video_crop_keeps_faces: true
+  check_no_platform_watermark_or_logo: true
+  check_variations_unique: true
+  check_audio_sync: true
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+  naming: <base>_var01.mp4, <base>_var02.mp4… com a foto e a frase de cada variação no decision log
+forbidden:
+- stretch_video
+- delete_source
+- fabricated_fact
+- misleading_thumbnail_photo
+- platform_watermark
+- automatic_logo
+- automatic_wordmark
+- inherited_brand_text
+- automatic_personal_identity
+- inherit_palette_from_format
+- inherit_font_from_format
+- automatic_brand_signature
+- fixed_brand_name
+- automatic_branded_end_card
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+reference_materials:
+  video: examples/reference-library/F19/print-repost/reference.mp4
+  analysis: examples/reference-library/F19/print-repost/analysis.json
