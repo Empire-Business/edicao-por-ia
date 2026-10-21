@@ -1,0 +1,128 @@
+{
+  "schema": 1,
+  "format_code": "F20",
+  "format_uid": "official.a1bc78c0c4f846d198d5ffb9400c4e8e",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F20/react/reference.mp4",
+  "mechanism_details": {
+    "inputs": "O vídeo do apresentador reagindo (gravado assistindo ao vídeo-fonte no celular, com o som do celular captado pelo microfone) e o vídeo-fonte, com os tempos de entrada e saída do trecho reagido. Para o comentário, cenas de B-roll e de filmes famosos pesquisadas pelo fluxo aprovado. A ID visual é escolhida separadamente.",
+    "mechanism": "Formato vertical 9:16. Gancho de ~5 s em tela dividida: momento mais chamativo do vídeo-fonte em cima (sem áudio) e o apresentador embaixo dizendo a headline desde a primeira sílaba. Flare de luz (vermelho subindo antes do corte, estouro laranja-amarelado com faixa magenta no corte, ~0,55 s) leva ao react: fonte em cima, apresentador embaixo assistindo no celular, sincronizados pelo áudio que o microfone capta do celular; o react usa só os blocos fortes do trecho (pula as partes mornas) e as falas da fonte aparecem em legenda AMARELA na emenda. Outro flare com whoosh leve leva ao comentário: apresentador em tela cheia, fala acelerada ~1,18x e sem pausas, zoom alternado aberto/fechado nos cortes secos e splits curtos com cenas específicas da frase (B-roll real de alta qualidade, cenas de filmes famosos que façam sentido, ou o próprio vídeo-fonte quando citado). Legendas de 1–3 palavras com pontuação, valores inteiros, na emenda no split e no lower-middle em tela cheia, cor principal da ID fora do react. Música só depois do react, escolhida com o usuário.",
+    "steps": [
+      "Transcrever o apresentador e o trecho-fonte; medir a sincronia por correlação do áudio do celular captado no microfone com o áudio da fonte, trecho a trecho (ele pode pausar/pular o vídeo).",
+      "Gancho: primeira versão da headline, cortada pela energia da voz (~5 s), com o momento mais chamativo da fonte em cima, sem áudio da fonte.",
+      "Flare de entrada no corte gancho→react (4–5 quadros vermelhos antes, estouro claro ~7 quadros, saída ~5 quadros).",
+      "React: escolher os blocos fortes do trecho pedido (na referência, 7 blocos ≈ 87–91 s), bordas em silêncio da fonte; áudio da fonte limpo + microfone dele ~30%; legenda das falas da fonte em amarelo na emenda.",
+      "Flare de saída + whoosh leve com pico no corte react→comentário.",
+      "Comentário: cortes pela energia real (pausa ≤0,10 s na frase, ≤0,28 s entre frases), sem respiros, falsos começos e direções; acelerar ~1,18x com tom preservado.",
+      "Alternar zoom aberto/fechado nos cortes secos em tela cheia; splits curtos com cenas específicas e de alta qualidade ligadas à frase, incluindo cenas de filmes famosos que façam sentido.",
+      "Legendas a partir da transcrição do áudio montado, revisadas, ancoradas no início real da voz; nenhuma atravessa as trocas de bloco.",
+      "Voz: Audio Isolation antes da 1ª prévia; música escolhida com o usuário, só depois do react, ~17 dB abaixo da voz com ducking.",
+      "QA: zero quadro preto, pausas medidas, flare comparado com a referência, folha 1 quadro/s, linha do tempo comparada (≈5 / 87–91 / 84 s no material de teste)."
+    ],
+    "avoid": "Não cortar pausas pelos tempos da transcrição; não deixar espaço vazio nem mostrar o apresentador lendo o roteiro; não usar o trecho-fonte inteiro sem tirar as partes mornas; não usar véu de cor chapado nem transição longa; não usar B-roll genérico, de baixa qualidade ou com texto/marca d'água; não reaproveitar trilha de outro formato sem escolha do usuário (duas trilhas de outros formatos foram rejeitadas no teste); não deixar legenda sem pontuação, quebrada no meio de valores ou atravessando trocas; nenhum quadro preto nas emendas. Cores/fontes da ID, exceto o amarelo das falas da fonte no react."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F20/react/reference.mp4",
+      "sha256": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73"
+    },
+    {
+      "path": "examples/reference-library/F20/react/hook.jpg",
+      "sha256": "edf5773997c7e745ce9d42d8b6034c90bfebb429e4d702d45c3be6199f707ff6"
+    },
+    {
+      "path": "examples/reference-library/F20/react/flare-entry.jpg",
+      "sha256": "c6f51f02521aa4b027a664f9af7fc9670c53dd6435fb77a280b34ab4289d06f2"
+    },
+    {
+      "path": "examples/reference-library/F20/react/react-split.jpg",
+      "sha256": "7626ee4bc6bd0784fd13ece35a0d45334e5930b7d5ed71c22956f0e2fbe619cb"
+    },
+    {
+      "path": "examples/reference-library/F20/react/flare-exit.jpg",
+      "sha256": "cce3d384d34f911a7912e89e72eb94c15c7a962f7087c73d0e41628f6290329b"
+    },
+    {
+      "path": "examples/reference-library/F20/react/commentary-full.jpg",
+      "sha256": "96932946e95b4c93c7fd823a44e2aabf7ec11e73e463b950087fad5831da0c4d"
+    },
+    {
+      "path": "examples/reference-library/F20/react/broll-movie-split.jpg",
+      "sha256": "877f3a1ac3cd0c53fcbde0d1ed0d802d1ad2f098b8ae12db8d74d1748a236d9e"
+    },
+    {
+      "path": "examples/reference-library/F20/react/source-callback-split.jpg",
+      "sha256": "b0e36b0821b30d1a955eccac98d98fb5c408ddff52d43971a8615f2117b5a5d2"
+    },
+    {
+      "path": "examples/reference-library/F20/react/punch-in.jpg",
+      "sha256": "ad6f4bb1228618ccc1f85a1d08bc499ca44542aebee36355871d6613c52a26ab"
+    }
+  ],
+  "observations": [
+    {
+      "time": "00:00–00:04.8",
+      "evidence": "Amostra visual do início: vídeo-fonte ocupa o bloco superior e apresentador o inferior; ela segura/olha um celular. A composição é vertical e os blocos ficam próximos de metade da tela cada. Há texto curto junto à emenda no gancho.",
+      "confidence": "observed_approximate"
+    },
+    {
+      "time": "00:05.0–00:05.5",
+      "evidence": "Quadros amostrados mostram flash claro com acento branco/laranja-avermelhado; a composição dividida volta até cerca de 00:05.5. A duração e o easing exatos não foram medidos.",
+      "confidence": "observed_approximate"
+    },
+    {
+      "time": "00:05.5–01:56.6",
+      "evidence": "Amostras mostram reação em tela dividida, vídeo-fonte acima e apresentador abaixo. Emenda suave, sem borda espessa. Legendas do vídeo-fonte podem chegar perto da divisão; legenda da reação deve evitar sobreposição.",
+      "confidence": "observed_sampled"
+    },
+    {
+      "time": "01:56.6–01:56.9",
+      "evidence": "Ainda há split por volta de 01:56.6; por volta de 01:56.9 o apresentador ocupa a tela inteira. A mudança é rápida, mas quadros amostrados não identificam com certeza o tipo de animação. O usuário informou que a transição tem um efeito sonoro leve; esta informação não foi confirmada por escuta independente.",
+      "confidence": "observed_approximate"
+    },
+    {
+      "time": "02:00–02:49",
+      "evidence": "Amostras alternam apresentação em tela cheia e split, por exemplo tela cheia perto de 02:00, split perto de 02:10, tela cheia perto de 02:20, split perto de 02:30 e tela cheia perto de 02:40 e 02:49. Legendas curtas aparecem centralizadas no lower-middle em quadros de tela cheia.",
+      "confidence": "observed_sampled"
+    },
+    {
+      "time": "02:50–02:51",
+      "evidence": "Amostras mostram outro flash branco/quente perto de 02:50 e o apresentador em tela cheia novamente perto de 02:51. Nenhum cartão final de marca foi visto nos quadros amostrados; o vídeo termina com pergunta curta.",
+      "confidence": "observed_approximate"
+    },
+    {
+      "time": "00:00–03:00",
+      "evidence": "Não foi possível confirmar música, efeitos sonoros de transição, ducking, níveis de voz/fonte, ou presença de SFX a partir da inspeção visual. Zooms sutis, fps e easing também não foram medidos.",
+      "confidence": "unverified"
+    },
+    {
+      "time": "00:04.9–00:05.6 e 01:36.4–01:37.5",
+      "evidence": "Flare medido quadro a quadro: 4–5 quadros de luz vermelha subindo de baixo antes do corte, estouro laranja-amarelado (luminância ~190) com faixa magenta no alto à esquerda por ~7 quadros, decaimento vermelho ~5 quadros; total ~0,55 s.",
+      "confidence": "measured_frames"
+    },
+    {
+      "time": "00:05–01:36.4",
+      "evidence": "Áudio da referência correlacionado com a fonte: 7 blocos (14:08–14:19, 14:31–14:40, 14:46–15:17, 15:23–15:29, 15:45–15:48, 15:52–16:11, 16:20–16:31); partes mornas puladas.",
+      "confidence": "measured_audio"
+    },
+    {
+      "time": "01:36.9–03:00",
+      "evidence": "Comentário ~84 s; razão entre a fala gravada e a da referência de 1,13–1,33x (cortes de pausa + aceleração). Legendas do react em amarelo na emenda; tela cheia com legenda no lower-middle.",
+      "confidence": "measured_audio"
+    }
+  ],
+  "audio": {
+    "music": "entra só depois do react; a faixa é escolhida com o usuário (duas trilhas de biblioteca de outros formatos foram rejeitadas no teste do autor)",
+    "transition_sfx": "whoosh leve com pico no corte da saída do react"
+  },
+  "provenance": {
+    "created": "2026-10-21",
+    "by": "autor",
+    "source": "vídeo de exemplo enviado pelo autor (cópia H.264 720x1280; original HEVC/1080 fica na instalação dele) e teste real de edição com 3 prévias comparadas quadro a quadro",
+    "publication_authorized": "O autor autorizou em 21/10/2026 publicar o vídeo de referência no repositório e na galeria."
+  },
+  "limitations": [
+    "A trilha ainda depende da escolha do usuário a cada vídeo.",
+    "Tempos de bloco e velocidade (1,18x) foram medidos neste exemplo; outros vídeos podem pedir valores um pouco diferentes.",
+    "A receita é rascunho até uma segunda edição aprovada."
+  ]
+}

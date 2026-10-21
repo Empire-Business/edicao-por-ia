@@ -69,3 +69,5 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 - `f03-dark-com-broll-v2`: F03 Dark com B-roll revisado em 16/10/2026 a partir da edição BR04 Versão B (abertura do F02 com tarja, fundos pretos, B-roll real do caso). `f03-dark-com-broll-v1` preservada.
 
 - `f19-print-repost-v1`: F19 Print Repost, criado pelo autor em 20/10/2026 a partir do vídeo de exemplo enviado por ele. Draft.
+
+- `f20-react-v1`: F20 React, criado pelo autor em 21/10/2026 a partir do vídeo de exemplo enviado por ele e de um teste real de edição (3 prévias comparadas quadro a quadro). Draft; a trilha é escolhida com o usuário. Flare de transição em `tools/flare_transition.py`.

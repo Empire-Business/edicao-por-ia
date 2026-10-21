@@ -1442,6 +1442,97 @@
         }
       ],
       "examples": []
+    },
+    {
+      "code": "F20",
+      "name": "React",
+      "description": "O apresentador reage a um vídeo: gancho em tela dividida, o vídeo em cima e ele embaixo assistindo no celular com legenda amarela das falas; depois comenta em tela cheia, rápido, com zoom nos cortes e cenas de filmes e B-roll ligadas à fala.",
+      "category": "presenter",
+      "tags": [
+        "Apresentador",
+        "React",
+        "Tela dividida",
+        "Cenas de filmes"
+      ],
+      "use": "Reagir a um vídeo de outra pessoa: o vídeo em cima e você embaixo assistindo, com legenda das falas, e depois comentar com cenas que ilustram cada ponto.",
+      "inputs": "O vídeo do apresentador reagindo (gravado assistindo ao vídeo-fonte no celular, com o som do celular captado pelo microfone) e o vídeo-fonte, com os tempos de entrada e saída do trecho reagido. Para o comentário, cenas de B-roll e de filmes famosos pesquisadas pelo fluxo aprovado. A ID visual é escolhida separadamente.",
+      "mechanism": "Formato vertical 9:16. Gancho de ~5 s em tela dividida: momento mais chamativo do vídeo-fonte em cima (sem áudio) e o apresentador embaixo dizendo a headline desde a primeira sílaba. Flare de luz (vermelho subindo antes do corte, estouro laranja-amarelado com faixa magenta no corte, ~0,55 s) leva ao react: fonte em cima, apresentador embaixo assistindo no celular, sincronizados pelo áudio que o microfone capta do celular; o react usa só os blocos fortes do trecho (pula as partes mornas) e as falas da fonte aparecem em legenda AMARELA na emenda. Outro flare com whoosh leve leva ao comentário: apresentador em tela cheia, fala acelerada ~1,18x e sem pausas, zoom alternado aberto/fechado nos cortes secos e splits curtos com cenas específicas da frase (B-roll real de alta qualidade, cenas de filmes famosos que façam sentido, ou o próprio vídeo-fonte quando citado). Legendas de 1–3 palavras com pontuação, valores inteiros, na emenda no split e no lower-middle em tela cheia, cor principal da ID fora do react. Música só depois do react, escolhida com o usuário.",
+      "steps": [
+        "Transcrever o apresentador e o trecho-fonte; medir a sincronia por correlação do áudio do celular captado no microfone com o áudio da fonte, trecho a trecho (ele pode pausar/pular o vídeo).",
+        "Gancho: primeira versão da headline, cortada pela energia da voz (~5 s), com o momento mais chamativo da fonte em cima, sem áudio da fonte.",
+        "Flare de entrada no corte gancho→react (4–5 quadros vermelhos antes, estouro claro ~7 quadros, saída ~5 quadros).",
+        "React: escolher os blocos fortes do trecho pedido (na referência, 7 blocos ≈ 87–91 s), bordas em silêncio da fonte; áudio da fonte limpo + microfone dele ~30%; legenda das falas da fonte em amarelo na emenda.",
+        "Flare de saída + whoosh leve com pico no corte react→comentário.",
+        "Comentário: cortes pela energia real (pausa ≤0,10 s na frase, ≤0,28 s entre frases), sem respiros, falsos começos e direções; acelerar ~1,18x com tom preservado.",
+        "Alternar zoom aberto/fechado nos cortes secos em tela cheia; splits curtos com cenas específicas e de alta qualidade ligadas à frase, incluindo cenas de filmes famosos que façam sentido.",
+        "Legendas a partir da transcrição do áudio montado, revisadas, ancoradas no início real da voz; nenhuma atravessa as trocas de bloco.",
+        "Voz: Audio Isolation antes da 1ª prévia; música escolhida com o usuário, só depois do react, ~17 dB abaixo da voz com ducking.",
+        "QA: zero quadro preto, pausas medidas, flare comparado com a referência, folha 1 quadro/s, linha do tempo comparada (≈5 / 87–91 / 84 s no material de teste)."
+      ],
+      "avoid": "Não cortar pausas pelos tempos da transcrição; não deixar espaço vazio nem mostrar o apresentador lendo o roteiro; não usar o trecho-fonte inteiro sem tirar as partes mornas; não usar véu de cor chapado nem transição longa; não usar B-roll genérico, de baixa qualidade ou com texto/marca d'água; não reaproveitar trilha de outro formato sem escolha do usuário (duas trilhas de outros formatos foram rejeitadas no teste); não deixar legenda sem pontuação, quebrada no meio de valores ou atravessando trocas; nenhum quadro preto nas emendas. Cores/fontes da ID, exceto o amarelo das falas da fonte no react.",
+      "pattern": "f20-react-v1",
+      "video": "assets/videos/F20-react.mp4",
+      "vimeo": null,
+      "duration": 180,
+      "evidence": "video",
+      "evidenceLabel": "Exemplo do autor",
+      "evidenceNote": "Vídeo enviado pelo autor como modelo do formato e publicado com autorização dele. A pessoa, o vídeo reagido e o assunto são do exemplo, não padrões; cores e fonte vêm da ID escolhida, exceto o amarelo das falas do vídeo-fonte no react.",
+      "categories": [
+        "presenter"
+      ],
+      "cameraRequired": true,
+      "hasPersonOnScreen": true,
+      "startingMaterials": [
+        "Vídeo seu reagindo, gravado assistindo no celular",
+        "Vídeo que você está reagindo",
+        "Tempo de início e fim do trecho"
+      ],
+      "buildingBlocks": [
+        "Gancho em tela dividida",
+        "Flare de transição",
+        "React sincronizado com legenda amarela",
+        "Comentário rápido com zoom",
+        "Cenas de filmes e B-roll ligados à fala"
+      ],
+      "searchTerms": [
+        "react",
+        "reagir",
+        "reacao",
+        "reação",
+        "reagindo",
+        "reaction",
+        "comentar video",
+        "comentario",
+        "tela dividida",
+        "split",
+        "assistindo",
+        "celular",
+        "legenda amarela",
+        "flare",
+        "filmes",
+        "cenas de filme",
+        "b-roll",
+        "podcast",
+        "negociacao",
+        "opiniao",
+        "analise"
+      ],
+      "poster": "assets/posters/F20-react.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F20-react-frame-0.jpg",
+          "caption": "React: vídeo-fonte em cima, apresentador embaixo assistindo no celular, sincronizados; falas do vídeo em legenda amarela na emenda."
+        },
+        {
+          "poster": "assets/posters/F20-react-frame-1.jpg",
+          "caption": "Flare de entrada no react: estouro de luz laranja-amarelado logo depois do corte (antes dele, 5 quadros de luz vermelha subindo de baixo)."
+        },
+        {
+          "poster": "assets/posters/F20-react-frame-2.jpg",
+          "caption": "Split curto no comentário com cena de série/filme famoso ligada à frase (negociação), em alta qualidade."
+        }
+      ],
+      "examples": []
     }
   ],
   "identities": [

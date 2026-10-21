@@ -1,0 +1,149 @@
+id: f20-react-v1
+version: 1
+status: draft
+format_code: F20
+created: 2026-10-21
+origin: >-
+  Formato oficial criado pelo autor em 21/10/2026 a partir do vídeo de exemplo enviado por ele e de um
+  teste real de edição (3 prévias) comparado quadro a quadro com esse exemplo, que é a edição pronta do mesmo
+  material. A receita consolida o feedback do autor: pausas, legenda, piscadas, flare, zoom, B-roll, filmes,
+  qualidade de imagem, música e cor da legenda do react.
+purpose: Reação vertical com gancho em tela dividida, trecho-fonte acima e apresentador abaixo, seguida de comentário rápido em tela cheia alternando com splits de cenas ligadas à fala.
+engine: hybrid
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  silence_removal:            # piso para o planejador; o corte real é medido pela energia do áudio (ver pause_policy)
+    enabled: true
+    minimum_silence_seconds: 0.2
+    keep_pause_seconds: 0.1
+    word_handle_seconds: 0.06
+    minimum_cut_seconds: 0.08
+    trim_edges: true
+  pause_policy: >-
+    Cortar pelo ÁUDIO REAL (energia da voz), nunca pelos tempos da transcrição: ela inventa palavras sobre
+    silêncio e deixa pausas longas. Pausa mantida até 0,10 s dentro da frase e até 0,28 s entre frases.
+    Descartar respiros/estalos isolados (<0,16 s). Nenhum espaço vazio antes de começar a falar e nunca mostrar
+    o apresentador baixando a cabeça para ler o roteiro.
+  commentary_speed: 1.18      # medido na referência (1,13–1,33x); tom preservado (atempo); gancho e react a 1x
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  presenter_on_camera: alternate
+  one_information_at_a_time: true
+  takes: Quando houver duas versões da headline, usar a primeira e registrar a troca como reversível; remover direções faladas ("segunda headline", "vamos lá") e falsos começos refeitos.
+structure:
+  hook: >-
+    ~5 s. Começa na primeira sílaba da headline. Em cima, o momento mais chamativo do vídeo-fonte (ex.: fechamento
+    do negócio), sem áudio da fonte; embaixo, o apresentador falando.
+  react: >-
+    Vídeo-fonte em cima, apresentador embaixo assistindo no celular, sincronizados. Não usar o trecho inteiro:
+    manter os blocos fortes e pular as partes mornas (na referência, 7 blocos ≈ 87–91 s de 2:22 de trecho).
+    Bordas de cada bloco em silêncio da fonte; pausas DENTRO de um bloco são da conversa e ficam.
+  react_sync: >-
+    O microfone do apresentador capta o celular. Medir a sincronia por correlação desse áudio com o da fonte,
+    trecho a trecho, porque ele pode pausar ou pular o vídeo ao assistir; a parte de cima acompanha esses pulos.
+    Áudio do react: fonte limpa + microfone dele baixo (~30%) para manter as reações; conferir desvio (≤5 ms).
+  commentary: >-
+    Tela cheia com zoom alternado nos cortes secos e splits curtos com cena ligada à frase. Duração próxima à da
+    fala útil acelerada (na referência ≈ 84 s).
+visual:
+  split_seam: Painel de cima ~940 px, degradê de ~90 px sobre o painel do apresentador, sem borda; rostos fora da emenda.
+  punch_ins: >-
+    Aprovado: alternar enquadramento aberto (~1,12x) e fechado (~1,38x, rosto mais alto) nos cortes secos do
+    comentário em tela cheia. Sem zoom aleatório nem em todo corte de frase longa.
+  random_effects: false
+captions:
+  words_per_block: 1-3
+  max_letters: 16
+  punctuation: required
+  money_values: Manter valor inteiro no mesmo bloco ("R$ 80 mil"); nunca quebrar entre "R$", número e "mil".
+  timing: >-
+    Tempos da transcrição do áudio JÁ MONTADO (não do bruto) e início ancorado no começo real da voz (energia);
+    quebrar na pontuação, em pausas >0,25 s e nas trocas gancho/react/comentário; nenhuma legenda atravessa a troca.
+  text_review: Revisar o texto com uma segunda transcrição independente e com o contexto; corrigir erros de escuta antes de queimar.
+  position: Na emenda durante o split (gancho, react e splits do comentário); lower-middle (~62% da altura) em tela cheia.
+  react_source_color: yellow   # pedido do usuário 21/10: falas do vídeo-fonte em amarelo durante o react
+  presenter_color: id_primary  # quando volta ao apresentador, a cor principal da ID escolhida
+  style: Fonte e cor principal vêm da ID escolhida; o amarelo do react é regra deste formato para diferenciar quem fala.
+motion:
+  transitions:
+    reaction_entry_exit: flare
+    flare: >-
+      Vazamento de luz somado em modo screen (camada de luz, preto = nada), ~0,55 s a 30 fps, medido na referência:
+      4–5 quadros ANTES do corte com luz vermelha subindo de baixo (metade de baixo toda vermelha); no corte,
+      estouro laranja-amarelado bem claro por ~7 quadros com faixa magenta diagonal no alto à esquerda; depois cai
+      por laranja/vermelho e some em ~5 quadros. Pico de brilho ≈ referência. Aplicar quadro a quadro (o filtro
+      blend do ffmpeg perdeu a sincronia no corte). Implementação: tools/flare_transition.py.
+    rule: Flare só na entrada (gancho→react) e na saída (react→comentário). Demais trocas por corte seco.
+  sound_effects: Whoosh leve (~0,45 s) com pico no corte da saída do react.
+audio:
+  voice_cleanup: ElevenLabs Audio Isolation do áudio COMPLETO antes da 1ª prévia (regra da fábrica); se a conta recusar, registrar o bloqueio e usar redutor local (DeepFilterNet), informando o usuário.
+  levels: Voz ≈ -16 LUFS; react no mesmo patamar; master -14 LUFS.
+  music: begins_after_reaction
+  music_choice: user_selected_required
+  music_policy: >-
+    A música precisa combinar com o tema do vídeo. Rejeitadas no teste do autor: duas trilhas de biblioteca de outros
+    formatos (tensão com sax e tensão→resolução). Não reaproveitar trilha de biblioteca de outro formato sem a escolha do usuário;
+    perguntar a trilha ou o estilo antes da prévia. Ducking sob a fala, ~17 dB abaixo da voz.
+insertion_assets:
+  policy: relevant_only
+  specificity: >-
+    Cenas específicas e literais da frase, não genéricas — aprovado no 1º teste: máquina contando até o valor
+    citado, calendário virando para "prazo", notas sendo contadas para "fluxo de caixa", dinheiro queimando para
+    "dinheiro jogado fora". Também vale um trecho do próprio vídeo-fonte quando a fala cita aquela cena.
+  famous_movie_scenes: >-
+    Acrescentar cenas de filmes famosos que façam sentido com a fala (negociação, dinheiro, ego, desconto, prazo…),
+    misturadas ao B-roll real. Trecho curto, sem legenda/texto embutido.
+  image_quality: Alta qualidade obrigatória (preferir 1080p ou mais; nada borrado, pixelado ou com marca d'água/texto).
+  no_generic_stock: true
+  do_not_repeat_supplemental_scene: true
+research:
+  source_policy: TikTok/YouTube pelo fluxo aprovado (ScrapeCreators primeiro; Apify para YouTube sem arquivo); registrar origem, custo e hash local.
+  movie_clips: Buscar cenas de filmes em clipes oficiais/curtos no YouTube/TikTok pelo mesmo fluxo e conferir os quadros reais antes de usar.
+  factuality: Preservar contexto e significado do trecho reagido.
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+qa:
+  no_black_frames: Checar 1º, 2º e último quadro de cada trecho e o vídeo final (blackdetect) antes de entregar.
+  pauses: Medir pausas no áudio montado; após o react nenhuma acima de ~0,3 s.
+  flare_vs_reference: Comparar faixa de quadros da entrada e da saída com a referência.
+  captions: Ler a lista inteira de legendas; sem pedaço com menos de ~0,25 s, valores inteiros, pontuação.
+  timeline_vs_reference: Comparar gancho/react/comentário com a referência (≈5 / 87–91 / 84 s no material de teste).
+  frame_sheet: Folha de 1 quadro por segundo do vídeo inteiro (cabeça baixa, enquadramento, B-roll certo).
+  verify_no_inherited_brand_signatures: true
+forbidden:
+  - unrelated_broll
+  - generic_stock_substitute
+  - low_quality_broll
+  - repeated_supplemental_scene
+  - random_transition
+  - unmotivated_zoom
+  - stretch_video
+  - guessed_music_or_sfx
+  - transcript_timed_pause_cuts
+  - automatic_logo
+  - automatic_wordmark
+  - inherited_brand_text
+  - inherit_font_from_format
+  - automatic_personal_identity
+  - delete_source
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  format_color_exception: Legenda das falas do vídeo-fonte no react em amarelo (pedido explícito do usuário para este formato).
+  logos_enabled: false
+delivery:
+  preview_before_final: true
+  artistic_approval: Requer prévia e escuta do usuário; a trilha depende da escolha dele.
+reference_materials:
+  video: examples/reference-library/F20/react/reference.mp4
+  note: Cópia H.264 720x1280 do exemplo enviado pelo autor; o original fica na instalação dele.
