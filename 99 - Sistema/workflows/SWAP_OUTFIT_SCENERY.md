@@ -30,6 +30,24 @@ An earlier yes does not cover another recording or another person. Never send a 
 who is not the requester without their stated authorization. This is not ScrapeCreators or voice
 isolation: there is no standing authorization.
 
+## Quality: send the crop, keep the original face (author, 20/10/2026)
+"Achei que a minha imagem de roupa social ficou com baixa qualidade" / "o MEU VÍDEO está com baixíssima qualidade".
+The model returns ~704×1248 whatever it receives. Sending the full 2160×3840 frame meant a ~3× upscale, and the split
+layout then zoomed in again (~6–7×); the model also redraws the face (smoother skin, slightly different expression).
+Mandatory for presenter shots:
+1. Send only what will be on screen: cut each range as an upright 9:16 crop from head to just below the waist at
+   native resolution (e.g. 1440×2560 out of a 2160×3840 frame) and pass that clip as `--input` (start 0). The same
+   704×1248 then covers the crop, not the whole frame. One generation per range that stays in the cut (≤ 10 s each).
+2. Put the ORIGINAL head back: `tools/composite_original_head.py --original <crop> --generated <generation>
+   --out <crop>-camisa.mov --head X,Y --head-size W,H --report …` (X,Y = head centre in the first frame; read it on a
+   coordinate grid of that frame). It keeps the generated clothes/hands/background and pastes the original head at
+   full resolution, tracked frame by frame, scale-matched and feathered, with an edge colour fix. Check the report:
+   `ncc_median` ≥ 0.95; a low `ncc_min` usually means a hand crossed the face — inspect that frame.
+3. Frame the presenter from these crops (e.g. split panel ≈ 1240×1102 of the 1440×2560 crop, full screen ≈ 1260×2240)
+   so the face is downscaled, never upscaled. Compare a face close-up of the result with the original before delivery.
+4. If an older job used the full frame, re-use its generations: cut the matching original ranges at the same size and
+   run step 2 (no new spend).
+
 ## Process
 1. Pick the range in SOURCE time, inside a part of the recording that stays in the cut. Keep it short:
    1–10 s per generation (validated at 5 s). A snap, clap or cut is a good start point; the swap

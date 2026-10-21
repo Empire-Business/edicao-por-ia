@@ -1,5 +1,21 @@
 # Histórico de versões
 
+## 2.4.0 — 20 de outubro de 2026
+
+Correções pedidas pelo autor durante a edição de reels (br05, br06 e br08), para não se repetirem:
+- Silêncio: todos os formatos passam a cortar pausas acima de 0,15 s, mantendo cerca de 0,05 s de cada lado e aparando
+  o começo e o fim de cada tomada. Um ritmo mais solto continua possível quando o trabalho pede explicitamente.
+- Erros de gravação escondidos: nova ferramenta `tools/find_hidden_retakes.py` encontra falsos começos e repetições que
+  a transcrição engole (palavra "longa", fala não transcrita, frase repetida) e retranscreve cada trecho sozinho.
+  Passa a ser obrigatória na voz original e na voz final.
+- Troca de roupa sem perda de qualidade: enviar só o recorte que aparece na tela e devolver o rosto original em
+  resolução cheia com `tools/composite_original_head.py` (rastreado quadro a quadro, sem emenda).
+- Novas checagens de qualidade: gancho visível no 1º quadro, rosto de comentaristas e legendas estrangeiras fora,
+  trechos de B-roll sem transição cinza/preta, comparações conferidas quadro a quadro, temporário de render no disco
+  de trabalho.
+- Motion próprio no lugar de B-roll genérico quando a fala apresenta um produto do autor.
+- Novo fluxo `workflows/HOOK_VARIATIONS.md` para entregar 5 variações de gancho para teste.
+
 ## 2.3.0 — 12 de outubro de 2026
 
 - Troca de roupa e de cenário em um trecho curto de uma única gravação, disponível em qualquer formato. Usa um modelo de edição de vídeo pela OpenRouter, com chave própria em OPENROUTER_API_KEY.

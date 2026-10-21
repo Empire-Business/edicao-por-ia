@@ -12,6 +12,21 @@ Do NOT shorten only the audio with `silenceremove` while leaving the video timel
 Three modes: `natural` (0.8 s trigger; ~0.30 s retained pause), `tight` (0.5 s; ~0.18 s), `relaxed` (1.5 s; ~0.50 s). Word handles add protection and may make retained gaps longer. These are configurable starting values, not claims of an optimal pace.
 Version-1 patterns keep their existing `max_unmotivated_silence_seconds` thresholds. Version-2 starters explicitly opt into these new settings. Never silently mutate an approved pattern. Job overrides take precedence.
 
+## Global tight cap — every format (author order, 20/10/2026)
+Leftover silence was the most repeated correction ("você tirou pouco os silêncios… tem vários momentos que você tirou
+muito pouco o silêncio"; "essa questão do silêncio é um problema que acontece em quase todos os formatos"). The
+pattern/preset pace alone (`natural` cuts only gaps > 0.8 s, `tight` > 0.5 s) left visible dead air.
+`settings_for` now caps every inherited pace at `GLOBAL_TIGHT_CAP`: gaps longer than **0.15 s** are cut, **0.10 s**
+of quiet is kept (≈ 0.05 s on each side), word handles 0.06 s, minimum cut 0.06 s, and each take's leading/trailing
+silence is trimmed. This is what was approved in br06/br08 (isolated voice, quiet below −45 dBFS, gaps > 0.12 s cut
+with 0.05 s margins), with no "glued speech" complaint.
+- The cap is applied to the pattern default and to `tight`; an explicit job choice wins: `--mode natural|relaxed|off`
+  or explicit numeric job settings (e.g. a slow documentary, a demonstration, a joke beat the user asked to keep).
+- Long-form phrase pacing (`workflows/LONG_FORM.md`, when present) keeps its own per-context caps.
+- Measure on the ISOLATED voice (ElevenLabs Audio Isolation) — room tone and music hide gaps.
+- Before delivery, list every retained pause > 0.18 s of the final voice; each one needs a reason (intentional beat).
+- Protect intentional pauses in `edit/protected_ranges.json`; the cap never deletes words (speech protection stays).
+
 ## Required sequence
 1. Analyze the original, before removing pauses: they help identify restarts and independent videos.
 2. Select the actual dialogue track(s); do not rely on an empty channel, soundtrack, or a muted microphone. In multi-track dialogue, protect speech across **all relevant speakers**, or compute the intersection of per-track quiet regions. The single-track detector alone is insufficient for unexamined multi-track material.

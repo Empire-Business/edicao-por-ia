@@ -88,6 +88,12 @@ Usar uma linguagem visual consistente; alternar técnica só com função editor
    A skill produz o brief; Claude com saída textual não se torna gerador de imagem por instrução.
 5. Clipe generativo ou VFX: avaliar custo, continuidade, artefatos e necessidade. Não usar por prestígio.
 
+Produto/solução do próprio autor sem motion pronto (pedido do autor, 20/10/2026: "você pode criar um motion de uma
+IA que edita e entrega vídeos prontos… você botou um B-roll muito genérico"): criar um motion próprio na ID em vez de
+B-roll genérico de terceiros — uma interface simples mostrando a solução funcionando, sincronizada com a fala, com
+números reais do caso (ex.: duração real da gravação bruta → do vídeo final, silêncios reais da forma de onda) e
+quadros reais das entregas. Nada de marca de terceiros nem número inventado.
+
 O prompt de imagem especifica assunto, RELAÇÃO, composição, áreas vazias, estilo de referência,
 iluminação, perspectiva, fundo/alpha, resolução de entrega e o que evitar. O prompt de animação
 acrescenta estados inicial/final, eventos por frame, easing, entrada, saída e loop (se necessário).

@@ -17,6 +17,12 @@ PRESETS = {
     'off': {'enabled': False, 'minimum_silence_seconds': 0.8, 'keep_pause_seconds': 0.30,
             'word_handle_seconds': 0.10, 'minimum_cut_seconds': 0.10, 'trim_edges': True},
 }
+# Author order 20/10/2026: "essa questão do silêncio é um problema que acontece em quase todos os formatos".
+# Approved in br06/br08: pauses > ~0.12 s cut, ~0.05 s kept on each side, take edges trimmed. This cap applies to
+# every format's inherited pace; an explicit job choice (mode natural/relaxed/off or explicit numbers) still wins.
+GLOBAL_TIGHT_CAP = {'minimum_silence_seconds': 0.15, 'keep_pause_seconds': 0.10, 'word_handle_seconds': 0.06,
+                    'minimum_cut_seconds': 0.06}
+EXPLICIT_LOOSE_MODES = {'natural', 'relaxed', 'off'}
 
 
 def settings_for(pattern: dict | None = None, mode: str | None = None, overrides: dict | None = None) -> dict:
@@ -32,6 +38,10 @@ def settings_for(pattern: dict | None = None, mode: str | None = None, overrides
     settings.update(editorial.get('silence_removal', {}))
     if mode:
         settings.update(PRESETS[mode])
+    if mode not in EXPLICIT_LOOSE_MODES:
+        for key, cap in GLOBAL_TIGHT_CAP.items():
+            settings[key] = min(settings[key], cap)
+        settings['trim_edges'] = True
     if overrides:
         unknown = set(overrides) - set(PRESETS['natural'])
         if unknown:
