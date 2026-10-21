@@ -50,7 +50,7 @@ test('shared links do not assign a default identity or restore a retired format'
   assert.equal(selectionFromHash('#modelo=F11', catalog).format.pattern, 'f11-narracao-ilustrada-v1');
   assert.equal(selectionFromHash('#modelo=F17', catalog).format.pattern, 'f17-colunas-v1');
   assert.equal(selectionFromHash('#modelo=F03', catalog).format.pattern, 'f03-dark-com-broll-v2');
-  assert.equal(selectionFromHash('#modelo=F02', catalog).format.pattern, 'f02-talking-head-v1');
+  assert.equal(selectionFromHash('#modelo=F02', catalog).format.pattern, 'f02-talking-head-v2');
   assert.equal(selectionFromHash('#modelo=F13&id=ID99', catalog).identity, null);
   const pair = selectionFromHash('#modelo=F13&id=ID06&tamanho=16%3A9', catalog);
   assert.equal(pair.format.code, 'F13'); assert.equal(pair.identity.code, 'ID06'); assert.equal(pair.aspect, '16:9');
@@ -87,7 +87,7 @@ test('descriptive search understands common words and camera constraints', () =>
   assert.equal(filterFormats(catalog.formats,{query:'whastapp'})[0].code,'F01');
   const voiceOnly=filterFormats(catalog.formats,{query:'eu nao quero aparecer'});
   assert.ok(voiceOnly.length>0 && voiceOnly.every(format=>!format.hasPersonOnScreen));
-  assert.deepEqual(filterFormats(catalog.formats,{query:'pesquisa broll'}).map(format=>format.code),['F03','F16']);
+  assert.deepEqual(filterFormats(catalog.formats,{query:'pesquisa broll'}).map(format=>format.code),['F02','F03','F16']);
   assert.equal(filterFormats(catalog.formats,{material:'telas',presence:'person'}).some(format=>format.code==='F08'),true);
   assert.ok(filterFormats(catalog.formats,{category:'presenter'}).every(format=>format.hasPersonOnScreen));
 });
