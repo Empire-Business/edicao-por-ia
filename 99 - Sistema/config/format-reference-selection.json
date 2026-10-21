@@ -164,6 +164,14 @@
         "sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e"
       },
       "reference_conflicts": []
+    },
+    "official.a1bc78c0c4f846d198d5ffb9400c4e8e": {
+      "code": "F20",
+      "primary_reference": {
+        "path": "examples/reference-library/F20/react/reference.mp4",
+        "sha256": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73"
+      },
+      "reference_conflicts": []
     }
   }
 }

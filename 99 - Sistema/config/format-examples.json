@@ -401,5 +401,47 @@
       "sha256": "d4c8e4820829c7f4a90ec5939d0b5e3a01a8146c8540db2ad7dd9a64d95bb981",
       "caption": "Cartão final escuro com logotipo + @: também vem do download do Instagram e não é reproduzido."
     }
+  ],
+  "F20": [
+    {
+      "path": "examples/reference-library/F20/react/hook.jpg",
+      "sha256": "edf5773997c7e745ce9d42d8b6034c90bfebb429e4d702d45c3be6199f707ff6",
+      "caption": "Gancho (~5 s): o momento mais chamativo do vídeo-fonte em cima, sem som, e o apresentador embaixo dizendo a headline desde a primeira sílaba."
+    },
+    {
+      "path": "examples/reference-library/F20/react/flare-entry.jpg",
+      "sha256": "c6f51f02521aa4b027a664f9af7fc9670c53dd6435fb77a280b34ab4289d06f2",
+      "caption": "Flare de entrada no react: estouro de luz laranja-amarelado logo depois do corte (antes dele, 5 quadros de luz vermelha subindo de baixo)."
+    },
+    {
+      "path": "examples/reference-library/F20/react/react-split.jpg",
+      "sha256": "7626ee4bc6bd0784fd13ece35a0d45334e5930b7d5ed71c22956f0e2fbe619cb",
+      "caption": "React: vídeo-fonte em cima, apresentador embaixo assistindo no celular, sincronizados; falas do vídeo em legenda amarela na emenda."
+    },
+    {
+      "path": "examples/reference-library/F20/react/flare-exit.jpg",
+      "sha256": "cce3d384d34f911a7912e89e72eb94c15c7a962f7087c73d0e41628f6290329b",
+      "caption": "Saída do react: a luz vermelha sobe nos últimos quadros antes do corte para o comentário (com whoosh leve)."
+    },
+    {
+      "path": "examples/reference-library/F20/react/commentary-full.jpg",
+      "sha256": "96932946e95b4c93c7fd823a44e2aabf7ec11e73e463b950087fad5831da0c4d",
+      "caption": "Comentário em tela cheia, fala rápida e sem pausas, legenda curta com pontuação no lower-middle."
+    },
+    {
+      "path": "examples/reference-library/F20/react/broll-movie-split.jpg",
+      "sha256": "877f3a1ac3cd0c53fcbde0d1ed0d802d1ad2f098b8ae12db8d74d1748a236d9e",
+      "caption": "Split curto no comentário com cena de série/filme famoso ligada à frase (negociação), em alta qualidade."
+    },
+    {
+      "path": "examples/reference-library/F20/react/source-callback-split.jpg",
+      "sha256": "b0e36b0821b30d1a955eccac98d98fb5c408ddff52d43971a8615f2117b5a5d2",
+      "caption": "Split com o próprio vídeo-fonte quando a fala cita aquela cena (o desconto de R$ 10 mil)."
+    },
+    {
+      "path": "examples/reference-library/F20/react/punch-in.jpg",
+      "sha256": "ad6f4bb1228618ccc1f85a1d08bc499ca44542aebee36355871d6613c52a26ab",
+      "caption": "Zoom alternado nos cortes secos: enquadramento fechado, rosto mais alto."
+    }
   ]
 }

@@ -795,5 +795,55 @@
       "instagram",
       "viral"
     ]
+  },
+  "F20": {
+    "category": "presenter",
+    "categories": [
+      "presenter"
+    ],
+    "tags": [
+      "Apresentador",
+      "React",
+      "Tela dividida",
+      "Cenas de filmes"
+    ],
+    "use": "Reagir a um vídeo de outra pessoa: o vídeo em cima e você embaixo assistindo, com legenda das falas, e depois comentar com cenas que ilustram cada ponto.",
+    "cameraRequired": true,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Vídeo seu reagindo, gravado assistindo no celular",
+      "Vídeo que você está reagindo",
+      "Tempo de início e fim do trecho"
+    ],
+    "buildingBlocks": [
+      "Gancho em tela dividida",
+      "Flare de transição",
+      "React sincronizado com legenda amarela",
+      "Comentário rápido com zoom",
+      "Cenas de filmes e B-roll ligados à fala"
+    ],
+    "searchTerms": [
+      "react",
+      "reagir",
+      "reacao",
+      "reação",
+      "reagindo",
+      "reaction",
+      "comentar video",
+      "comentario",
+      "tela dividida",
+      "split",
+      "assistindo",
+      "celular",
+      "legenda amarela",
+      "flare",
+      "filmes",
+      "cenas de filme",
+      "b-roll",
+      "podcast",
+      "negociacao",
+      "opiniao",
+      "analise"
+    ]
   }
 }

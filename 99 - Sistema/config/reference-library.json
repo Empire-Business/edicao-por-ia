@@ -1422,6 +1422,107 @@
         }
       ],
       "missing_sources": []
+    },
+    "F20": {
+      "code": "F20",
+      "name": "React",
+      "uid": "official.a1bc78c0c4f846d198d5ffb9400c4e8e",
+      "references": [
+        {
+          "path": "examples/reference-library/F20/react/README.md",
+          "kind": "reference_analysis",
+          "sha256": "e617b3d8d15788b293da1c3ad9cb2333fa9bb4f3b00b03371408b2d8e20eded1",
+          "bytes": 1074,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e"
+        },
+        {
+          "path": "examples/reference-library/F20/react/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "7c5328cf4179967159b69204c7c726e7f6fd42629d2597dfc1efeba41bbe7296",
+          "bytes": 9996,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e"
+        },
+        {
+          "path": "examples/reference-library/F20/react/broll-movie-split.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "877f3a1ac3cd0c53fcbde0d1ed0d802d1ad2f098b8ae12db8d74d1748a236d9e",
+          "bytes": 127315,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "Split curto no comentário com cena de série/filme famoso ligada à frase (negociação), em alta qualidade.",
+          "at_seconds": 108.0
+        },
+        {
+          "path": "examples/reference-library/F20/react/commentary-full.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "96932946e95b4c93c7fd823a44e2aabf7ec11e73e463b950087fad5831da0c4d",
+          "bytes": 126721,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "Comentário em tela cheia, fala rápida e sem pausas, legenda curta com pontuação no lower-middle.",
+          "at_seconds": 100.0
+        },
+        {
+          "path": "examples/reference-library/F20/react/flare-entry.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c6f51f02521aa4b027a664f9af7fc9670c53dd6435fb77a280b34ab4289d06f2",
+          "bytes": 67442,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "Flare de entrada no react: estouro de luz laranja-amarelado logo depois do corte (antes dele, 5 quadros de luz vermelha subindo de baixo).",
+          "at_seconds": 5.25
+        },
+        {
+          "path": "examples/reference-library/F20/react/flare-exit.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "cce3d384d34f911a7912e89e72eb94c15c7a962f7087c73d0e41628f6290329b",
+          "bytes": 104791,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "Saída do react: a luz vermelha sobe nos últimos quadros antes do corte para o comentário (com whoosh leve).",
+          "at_seconds": 97.05
+        },
+        {
+          "path": "examples/reference-library/F20/react/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "edf5773997c7e745ce9d42d8b6034c90bfebb429e4d702d45c3be6199f707ff6",
+          "bytes": 140406,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "Gancho (~5 s): o momento mais chamativo do vídeo-fonte em cima, sem som, e o apresentador embaixo dizendo a headline desde a primeira sílaba.",
+          "at_seconds": 2.0
+        },
+        {
+          "path": "examples/reference-library/F20/react/punch-in.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ad6f4bb1228618ccc1f85a1d08bc499ca44542aebee36355871d6613c52a26ab",
+          "bytes": 137112,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "Zoom alternado nos cortes secos: enquadramento fechado, rosto mais alto.",
+          "at_seconds": 160.0
+        },
+        {
+          "path": "examples/reference-library/F20/react/react-split.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7626ee4bc6bd0784fd13ece35a0d45334e5930b7d5ed71c22956f0e2fbe619cb",
+          "bytes": 123729,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "React: vídeo-fonte em cima, apresentador embaixo assistindo no celular, sincronizados; falas do vídeo em legenda amarela na emenda.",
+          "at_seconds": 60.0
+        },
+        {
+          "path": "examples/reference-library/F20/react/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73",
+          "bytes": 34150363,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e"
+        },
+        {
+          "path": "examples/reference-library/F20/react/source-callback-split.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "b0e36b0821b30d1a955eccac98d98fb5c408ddff52d43971a8615f2117b5a5d2",
+          "bytes": 113934,
+          "source_sha256": "de79833ec7cdde73342f1cdbc27503a4b6f3aa480d1731e8dfd95b72f3e33f2e",
+          "caption": "Split com o próprio vídeo-fonte quando a fala cita aquela cena (o desconto de R$ 10 mil).",
+          "at_seconds": 150.0
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -1957,7 +2058,18 @@
     "examples/reference-library/F19/print-repost/opening.jpg": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29",
     "examples/reference-library/F19/print-repost/reference.mp4": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e",
     "examples/reference-library/F19/print-repost/watermark.jpg": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59",
-    "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1"
+    "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1",
+    "examples/reference-library/F20/react/README.md": "e617b3d8d15788b293da1c3ad9cb2333fa9bb4f3b00b03371408b2d8e20eded1",
+    "examples/reference-library/F20/react/analysis.json": "7c5328cf4179967159b69204c7c726e7f6fd42629d2597dfc1efeba41bbe7296",
+    "examples/reference-library/F20/react/broll-movie-split.jpg": "877f3a1ac3cd0c53fcbde0d1ed0d802d1ad2f098b8ae12db8d74d1748a236d9e",
+    "examples/reference-library/F20/react/commentary-full.jpg": "96932946e95b4c93c7fd823a44e2aabf7ec11e73e463b950087fad5831da0c4d",
+    "examples/reference-library/F20/react/flare-entry.jpg": "c6f51f02521aa4b027a664f9af7fc9670c53dd6435fb77a280b34ab4289d06f2",
+    "examples/reference-library/F20/react/flare-exit.jpg": "cce3d384d34f911a7912e89e72eb94c15c7a962f7087c73d0e41628f6290329b",
+    "examples/reference-library/F20/react/hook.jpg": "edf5773997c7e745ce9d42d8b6034c90bfebb429e4d702d45c3be6199f707ff6",
+    "examples/reference-library/F20/react/punch-in.jpg": "ad6f4bb1228618ccc1f85a1d08bc499ca44542aebee36355871d6613c52a26ab",
+    "examples/reference-library/F20/react/react-split.jpg": "7626ee4bc6bd0784fd13ece35a0d45334e5930b7d5ed71c22956f0e2fbe619cb",
+    "examples/reference-library/F20/react/reference.mp4": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73",
+    "examples/reference-library/F20/react/source-callback-split.jpg": "b0e36b0821b30d1a955eccac98d98fb5c408ddff52d43971a8615f2117b5a5d2"
   },
   "retired_generations": {
     "factory.f02": {
