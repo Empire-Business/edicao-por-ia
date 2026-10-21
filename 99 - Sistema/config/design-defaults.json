@@ -89,10 +89,10 @@
     },
     {
       "code": "F03",
-      "name": "Dark com B-roll",
+      "name": "Headline + Narração",
       "memory_store": "dark-com-b-roll",
       "pattern": "f03-dark-com-broll-v2",
-      "description": "História narrada em ambiente preto: abre como o F02, com B-roll em cima, tarja no meio e a pessoa embaixo; depois a voz segue sobre muito B-roll real e cenas animadas, com legenda palavra a palavra e trilha.",
+      "description": "Você aparece só na headline de abertura; depois, a história continua narrada com B-roll real e cenas animadas, com legenda palavra a palavra e trilha.",
       "uid": "official.d7a2bb0a7fc640f79f9a88538a1eec81",
       "origin": "official",
       "design_independent": true,
@@ -101,7 +101,7 @@
       "example_link_status": "provided",
       "validation_status": "reference_analyzed",
       "mechanism_details": {
-        "inputs": "Gravação curta da pessoa contando o gancho (o resto pode ser só áudio) e autorização para pesquisar B-roll (TikTok/YouTube só por ScrapeCreators). Texto da tarja, se a pessoa quiser escrever. Trilha autorizada ou local. Escolher a ID visual separadamente.",
+        "inputs": "Vídeo da pessoa gravando somente a headline (o gancho de abertura). Para o corpo, combinar roteiro e narração: não é necessário gravar a pessoa em câmera no restante. B-roll real, texto da tarja e trilha autorizada. Escolher a ID visual separadamente. Não autoriza geração paga de voz automaticamente.",
         "mechanism": "Abre como o F02: B-roll real do caso em cima trocando no tempo da fala, tarja com a promessa no meio e a pessoa falando embaixo, completa desde o primeiro quadro e com carimbo na revelação. Depois a voz continua sobre muito B-roll real (troca a cada ≈ 2,5 s), em tela cheia ou em cartões 3D, e estados animados: números que embaralham e batem, carimbos, chamadas, listas e objetos que entram girando. Fundo preto do início ao fim, cor de destaque só em detalhes, nada escrito no topo, legenda palavra a palavra em caixa alta com sublinhado, fala sem respiros e trilha abaixo da voz com o grave na revelação.",
         "steps": [
           "Isolar a voz, cortar erros e apertar os respiros medindo as lacunas entre palavras (0,08–0,12 s); remapear os tempos das palavras.",
@@ -309,7 +309,7 @@
       "origin": "official",
       "design_independent": true,
       "default_visual_identity": null,
-      "example_url": "https://modelos-edicao.empirebusiness.com.br/#modelo=F09",
+      "example_url": "https://www.instagram.com/p/DdmFpq8teDf/",
       "example_link_status": "provided",
       "validation_status": "reference_analyzed",
       "mechanism_details": {
@@ -328,25 +328,33 @@
       },
       "reference_materials": [
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/exemplo.mp4",
-          "sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772"
+          "path": "examples/reference-library/F09/personagem/reference.mp4",
+          "sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/personagem-1.jpg",
-          "sha256": "4b96a7785abdb89627ccaf91716c1658eb7e4fa851089fe93ca27d3c5afb5dd0"
+          "path": "examples/reference-library/F09/personagem/character-1.jpg",
+          "sha256": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad"
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg",
-          "sha256": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc"
+          "path": "examples/reference-library/F09/personagem/character-2.jpg",
+          "sha256": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7"
         },
         {
-          "path": "examples/reference-library/F09/cortez-2026-10/legenda.jpg",
-          "sha256": "d2227236f5e18a73632b8195d3de1b36f2cab0754116c4d617dc77d50d823e5a"
+          "path": "examples/reference-library/F09/personagem/caption-build.jpg",
+          "sha256": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1"
+        },
+        {
+          "path": "examples/reference-library/F09/personagem/turn.jpg",
+          "sha256": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4"
+        },
+        {
+          "path": "examples/reference-library/F09/personagem/closing.jpg",
+          "sha256": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b"
         }
       ],
       "analysis_receipt": {
-        "path": "examples/reference-library/F09/cortez-2026-10/analysis.json",
-        "sha256": "78c8f4da0384fc747d39d2875e03305e8933631418214a1f84c04dc43580637c"
+        "path": "examples/reference-library/F09/personagem/analysis.json",
+        "sha256": "4db5bb71330717c3e0d0f5ed81d48ea5f6fe50e4e75a89d3d65011d93328c794"
       }
     },
     {

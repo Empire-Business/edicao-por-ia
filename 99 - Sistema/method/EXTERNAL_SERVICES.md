@@ -128,3 +128,9 @@ ScrapeCreators research and retrieval for that job; accept it without asking for
   (real presenter frames + author cover references). Receipt in `thumbs/receipt.json` with model and cost.
 - Each option is one paid call; the F18 request authorizes the 3 covers of that job. The author may instead
   generate them in his own Codex/ChatGPT; record which path was used. Not yet run in a real job.
+
+## Vimeo — referências públicas do Cortez
+
+Por solicitação atual do autor, `tools/vimeo_publish.py` envia somente as referências públicas selecionadas em `web/modelos-edicao/publication.json` para a pasta **Cortez** da conta autenticada. `VIMEO_ACCESS_TOKEN` é privado; também é aceito em `.factory/secrets/vimeo-access-token`, com acesso local restrito. Nunca incluir chave, client secret, link TUS ou recibo privado em Git, logs, painel ou prompts. Não se precisa do client secret para usar o token autenticado.
+
+Prévia não lê credenciais nem envia arquivos. Upload exige pedido explícito do autor e checagem da cota disponível; não contratar plano. O recibo permite retomar blocos e conciliar um upload antes de repetir. O painel recebe somente o ID e o hash de exibição de vídeos já processados. As instalações dos usuários não recebem a chave do autor: a edição usa o cache local verificado do GitHub, conforme `workflows/CACHE_FORMAT_REFERENCES.md`. Não carregar mídia privada de trabalhos nem reorganizar vídeos alheios à seleção Cortez.

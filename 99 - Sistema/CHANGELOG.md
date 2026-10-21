@@ -1,3 +1,10 @@
+# 2.7.1 — atualização leve e referências no Vimeo
+
+- Atualização por arquivos do código fixados em commit, sem ZIP da biblioteca. Limites de tamanho e hashes verificados antes da ativação.
+- Referências binárias sob demanda, mantendo cache local e originais anteriormente instalados; nenhum banco, trabalho ou chave entra no pacote.
+- Exemplos públicos organizados na pasta Cortez do Vimeo, com upload retomável e credenciais privadas.
+- F03: Headline + Narração; gravação em câmera exigida só na abertura. F09: referência Personagem anterior aos exemplos de IA restaurada, sem apagar os arquivos anteriores. Receitas preservadas.
+
 # Histórico de versões
 
 ## 2.6.0 — 21 de outubro de 2026

@@ -128,8 +128,8 @@
     "official.057f1c25705842ddafb13387b7aeb0b4": {
       "code": "F09",
       "primary_reference": {
-        "path": "examples/reference-library/F09/cortez-2026-10/exemplo.mp4",
-        "sha256": "165097a241205cd67b227f4ecff2699b7e1cb287ef844cc34e9a7a46f55eb772"
+        "path": "examples/reference-library/F09/personagem/reference.mp4",
+        "sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e"
       },
       "reference_conflicts": []
     },

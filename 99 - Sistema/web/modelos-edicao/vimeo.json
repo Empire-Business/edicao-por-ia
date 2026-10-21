@@ -1,1 +1,134 @@
-{}
+{
+  "F01": {
+    "id": "1238068648",
+    "source_sha256": "145cf3e96e8b3a194965ada4455f3ba89e29c5939a25d2c6eadf207ddcb0d58a",
+    "status": "complete",
+    "hash": "b42ec19646"
+  },
+  "F02": {
+    "id": "1238068714",
+    "source_sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de",
+    "status": "complete",
+    "hash": "2fac6dc370"
+  },
+  "F03": {
+    "id": "1238068893",
+    "source_sha256": "94d4bb5289ae0a9d6c213a371ed44a873d24cdb8f53d90d6145bf2164ecdc430",
+    "status": "complete",
+    "hash": "de8975d7dd"
+  },
+  "F04": {
+    "id": "1238068974",
+    "source_sha256": "1250cca6b666b91fdad526d2deeb80fe0a66074722f783b2be4ae04671661a6b",
+    "status": "complete",
+    "hash": "a7354945a0"
+  },
+  "F05": {
+    "id": "1238069104",
+    "source_sha256": "72092ec5aec4fcf8cedec953ca6f2b71d61102f4e6437ec151cab1099f261182",
+    "status": "complete",
+    "hash": "bf35f9bc89"
+  },
+  "F06": {
+    "id": "1238069165",
+    "source_sha256": "a2c1c38d7e78d8bcdb189dd8307ccb2b098692ad93a8010751608eba749e4fa4",
+    "status": "complete",
+    "hash": "36c08aaf5b"
+  },
+  "F07": {
+    "id": "1238069242",
+    "source_sha256": "455e3b2b3a9ec31086e9a40d6ba8be24e24d8ee8492bf801518eb15b0b8ddeb9",
+    "status": "complete",
+    "hash": "1f6228ad83"
+  },
+  "F08": {
+    "id": "1238069346",
+    "source_sha256": "6bbb5dd2ae3da2463fcb523b650a820569fde717b642486c8b8c10f8eabc2ccf",
+    "status": "complete",
+    "hash": "9fa0b4be4e"
+  },
+  "F08:tela-dividida": {
+    "id": "1238069626",
+    "source_sha256": "4851900d81729bd0a6d6683567fb4075b2c2bf70e3cd3f7ec244bce9663681f9",
+    "status": "complete",
+    "hash": "e8875f589e"
+  },
+  "F08:comparacao": {
+    "id": "1238069736",
+    "source_sha256": "c10148ec73cb5ae69e68de5eaed1b5eaec6ea636baebbcffe38720294ccf089f",
+    "status": "complete",
+    "hash": "7fc90285ac"
+  },
+  "F09": {
+    "id": "1238069761",
+    "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+    "status": "complete",
+    "hash": "06e40cdd6c"
+  },
+  "F10": {
+    "id": "1238069812",
+    "source_sha256": "7c7e706b27f46b196b41c7dd515c8a40bff30cd749eadc427306de452a8f30d5",
+    "status": "complete",
+    "hash": "8eea0e9bec"
+  },
+  "F11": {
+    "id": "1238069945",
+    "source_sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a",
+    "status": "complete",
+    "hash": "1d83996f78"
+  },
+  "F12": {
+    "id": "1238069978",
+    "source_sha256": "a3057366d9c449501f24113d9924f326d2ffa8d94c99ed87b0a0192cad2e78a2",
+    "status": "in_progress",
+    "hash": "636d30cf3b"
+  },
+  "F13": {
+    "id": "1238070053",
+    "source_sha256": "d5a54036050bb7fd7b9b4767db8845ba174d0c8a9abceee8416a2bb573743717",
+    "status": "complete",
+    "hash": "8a6c98da39"
+  },
+  "F14": {
+    "id": "1238070085",
+    "source_sha256": "b8c16a03cef105292f3544537042818bd677a12ec0abdcba70d00c8fc07876cf",
+    "status": "complete",
+    "hash": "eae7c38d30"
+  },
+  "F15": {
+    "id": "1238070255",
+    "source_sha256": "107783bf87d4499c0a2b746205f7e00ac6e8414c8918df0b4d75f7e3d1964d53",
+    "status": "in_progress",
+    "hash": "62c39b3db9"
+  },
+  "F16": {
+    "id": "1238070332",
+    "source_sha256": "37b838822e92247f5ae5cf18ea682dd4070e18e00c5485a0db64c5ccdfc9cb5f",
+    "status": "complete",
+    "hash": "9228d9ee65"
+  },
+  "F17": {
+    "id": "1238070411",
+    "source_sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c",
+    "status": "complete",
+    "hash": "03d25e08de"
+  },
+  "F18": {
+    "id": "1238070447",
+    "source_sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea",
+    "status": "complete",
+    "hash": "e901b727a1"
+  },
+  "F19": {
+    "id": "1238070540",
+    "source_sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e",
+    "status": "complete",
+    "hash": "0dccdb1590"
+  },
+  "F20": {
+    "id": "1238070579",
+    "source_sha256": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73",
+    "status": "complete",
+    "hash": "e80507ae1c"
+  }
+}

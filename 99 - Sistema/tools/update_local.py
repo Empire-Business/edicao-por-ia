@@ -16,7 +16,10 @@ JOB_FILES={'jobs/JOB_SCHEMA.json','jobs/EDL_SCHEMA.json','jobs/INTAKE_TEMPLATE.j
 SURFACE_FILES={'.factory-root.json','00 - COMECE AQUI.html','03 - Ajuda/AJUDA.html','factory.py','README.md','03 - Ajuda/ATUALIZAR SEM PERDER TRABALHOS.html','AGENTS.md','CLAUDE.md','.gitignore'}
 # Accepted only when retiring/rolling back an older manifest, never in a new release.
 RETIRED_SURFACE_FILES={'@surface/Atualizar Fábrica.command','@surface/Atualizar Fábrica.cmd','@surface/Atualizar Fábrica.sh','@surface/ATUALIZACAO.md','@surface/CHANGELOG.md'}
-MAX_ARCHIVE=1024*1024*1024
+MAX_ARCHIVE=1024*1024*1024  # Legacy archive policy; GitHub updates no longer download a zipball.
+MAX_CODE_BYTES=64*1024*1024
+MAX_CODE_FILE=16*1024*1024
+MAX_CODE_FILES=10000
 
 
 def sha(path):
@@ -75,9 +78,16 @@ def validate_manifest(manifest):
  if manifest.get('package')!=PACKAGE or not isinstance(manifest.get('files'),dict):raise ValueError('Pacote de atualização inválido.')
  minimum=tuple(int(v) for v in manifest.get('minimum_python','3.9').split('.')[:2])
  if sys.version_info[:2]<minimum:raise ValueError('Prepare Python '+manifest['minimum_python']+' ou mais recente antes de atualizar; a pasta não foi alterada.')
- if int(manifest.get('release_schema',1))>2:raise ValueError('Este pacote exige um atualizador mais recente; a instalação não foi alterada.')
+ if int(manifest.get('release_schema',1))>3:raise ValueError('Este pacote exige um atualizador mais recente; a instalação não foi alterada.')
  for name,digest in manifest['files'].items():
   if name in RETIRED_SURFACE_FILES or not allowed(name) or not re.fullmatch(r'[0-9a-f]{64}',digest):raise ValueError('O pacote tenta substituir dados pessoais ou contém um caminho inválido: '+name)
+ if int(manifest.get('release_schema',1))>=3:
+  sizes=manifest.get('file_sizes',{})
+  if set(sizes)!=set(manifest['files']) or len(sizes)>MAX_CODE_FILES:raise ValueError('Índice de tamanhos do código inválido.')
+  if any(type(size) is not int or not 0<=size<=MAX_CODE_FILE for size in sizes.values()) or sum(sizes.values())>MAX_CODE_BYTES:raise ValueError('Código acima do limite seguro; mídias devem ficar nas referências sob demanda.')
+  if any(Path(name).suffix.lower() in ('.mp4','.mov','.m4v','.webm','.mp3','.wav','.zip') for name in sizes):raise ValueError('Mídia/arquivo compactado não pertence ao pacote de código.')
+  for name,digest in manifest.get('optional_references',{}).items():
+   if not name.startswith('examples/reference-library/') or not allowed(name) or name in manifest['files'] or not re.fullmatch('[a-f0-9]{64}',digest):raise ValueError('Referência opcional inválida.')
  migrations=manifest.get('migrations',[])
  if any(step not in ('initialize-design-v2','refresh-guides-v2') for step in migrations):raise ValueError('Migração desconhecida: a atualização foi bloqueada antes de alterar arquivos.')
  return manifest
@@ -88,6 +98,7 @@ def package_files(source,manifest):
  for name,digest in manifest['files'].items():
   file=target_path(source_engine,source_surface,name)
   if not file.is_file() or sha(file)!=digest:raise ValueError('Arquivo do pacote não confere: '+name)
+  if int(manifest.get('release_schema',1))>=3 and file.stat().st_size!=manifest['file_sizes'][name]:raise ValueError('Tamanho declarado não confere: '+name)
   files[name]=file.read_bytes()
  return files
 
@@ -128,6 +139,8 @@ def plan(engine,surface,manifest,files):
    else:files[name]=merged;after=hashlib.sha256(merged).hexdigest()
   changes.append({'path':name,'before':before,'after':after,'action':'write'})
  for name,digest in old.get('files',{}).items():
+  if name not in files and name.startswith('examples/reference-library/'):
+   preserved.append(name);continue
   if name in files or not allowed(name) or name in ('.claude/settings.json','.codex/config.toml'):continue
   path=target_path(engine,surface,name)
   if path.is_file() and sha(path)==digest:changes.append({'path':name,'before':digest,'after':None,'action':'retire'})
@@ -270,6 +283,35 @@ def remote_json(repo,path):
  with urllib.request.urlopen(request,timeout=30) as response:return json.load(response)
 
 
+def repository_path(name):
+ safe_relative(name)
+ if name.startswith('@surface/'):return name[len('@surface/'):]
+ if name=='.gitignore' or name.startswith(('.agents/','.claude/','.codex/')):return name
+ return '99 - Sistema/'+name
+
+
+def download_verified(repo,revision,path,digest,limit,expected_size=None):
+ """Bounded immutable public content; credentials are never sent to this host."""
+ from urllib.parse import quote
+ if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',repo) or not re.fullmatch('[a-f0-9]{40}',revision):raise ValueError('Origem/revisão inválida.')
+ safe_relative(path)
+ class NoRedirect(urllib.request.HTTPRedirectHandler):
+  def redirect_request(self,*args,**kwargs):raise ValueError('Redirecionamento inesperado no download verificado.')
+ url='https://raw.githubusercontent.com/'+repo+'/'+revision+'/'+quote(path,safe='/')
+ request=urllib.request.Request(url,headers={'User-Agent':'Cortez-Updater','Accept-Encoding':'identity'})
+ content=bytearray()
+ with urllib.request.build_opener(NoRedirect).open(request,timeout=40) as response:
+  if response.status!=200:raise ValueError('Download incompleto.')
+  declared=response.headers.get('Content-Length')
+  if declared and int(declared)>limit:raise ValueError('Arquivo acima do tamanho permitido.')
+  for block in iter(lambda:response.read(256*1024),b''):
+   if len(content)+len(block)>limit:raise ValueError('Arquivo acima do tamanho permitido.')
+   content.extend(block)
+ if expected_size is not None and len(content)!=expected_size:raise ValueError('Tamanho do arquivo não confere.')
+ if hashlib.sha256(content).hexdigest()!=digest:raise ValueError('Integridade do download não confere: '+path)
+ return bytes(content)
+
+
 def github_package(root,check_only=False):
  engine,_=locate(root);configuration=engine/'config/update-source.json'
  config=json.loads(configuration.read_text());repo=config['repository'];branch=config.get('branch','main')
@@ -288,34 +330,18 @@ def github_package(root,check_only=False):
   _,surface=locate(root)
   local_changes=[name for name,digest in installed.get('files',{}).items() if allowed(name) and (not target_path(engine,surface,name).is_file() or sha(target_path(engine,surface,name))!=digest)]
   return {'ok':True,'status':'up_to_date' if installed.get('files')==manifest['files'] else 'update_available','version':manifest['version'],'revision':commit,'repository':repo,'local_changes':local_changes}
- stage=engine/'.factory/updates'/('download-'+uuid.uuid4().hex[:12]);stage.mkdir(parents=True)
- archive=stage/'source.zip'
- if shutil.which('gh'):
-  with archive.open('wb') as stream:result=subprocess.run(['gh','api',f'repos/{repo}/zipball/{commit}'],stdout=stream,stderr=subprocess.PIPE,timeout=300)
-  if result.returncode:raise ValueError('Não foi possível baixar a atualização do GitHub.')
- else:
-  request=urllib.request.Request(f'https://api.github.com/repos/{repo}/zipball/{commit}',headers={'User-Agent':'VideoFactory-Updater'})
-  with urllib.request.urlopen(request,timeout=30) as response,archive.open('wb') as output:
-   total=0
-   for block in iter(lambda:response.read(1024*1024),b''):
-    total+=len(block)
-    if total>MAX_ARCHIVE:raise ValueError('Pacote grande demais; atualização interrompida sem alterar dados.')
-    output.write(block)
- if archive.stat().st_size>MAX_ARCHIVE:raise ValueError('Pacote grande demais.')
+ stage=target_path(engine,engine,'.factory/updates/download-'+uuid.uuid4().hex[:12]);stage.mkdir(parents=True)
+ # Fetch only the pinned code manifest, never the repository ZIP/history or reference media.
+ if int(manifest.get('release_schema',1))<3:raise ValueError('A origem ainda publica o pacote antigo. Aguarde a versão com referências sob demanda.')
  package=stage/'package';package_engine=package/'99 - Sistema';package_engine.mkdir(parents=True)
- # Extract only declared code, never extractall. Private/unlisted ZIP contents stay unread.
- with zipfile.ZipFile(archive) as zip:
-  members={m.filename:m for m in zip.infolist()};prefix=next(iter(members)).split('/')[0]+'/'
-  for name,digest in manifest['files'].items():
-   if name.startswith('@surface/'):relative=name[len('@surface/'):]
-   elif name=='.gitignore' or name.startswith(('.agents/','.claude/','.codex/')):relative=name
-   else:relative='99 - Sistema/'+name
-   info=members.get(prefix+relative)
-   if not info or stat.S_ISLNK(info.external_attr>>16) or info.file_size>100*1024*1024:raise ValueError('Arquivo ausente, grande ou atalho inválido no pacote.')
-   content=zip.read(info)
-   if hashlib.sha256(content).hexdigest()!=digest:raise ValueError('Integridade da atualização não confere.')
-   atomic(target_path(package_engine,package,name),content)
- json_write(package_engine/'PACKAGE_MANIFEST.json',manifest);archive.unlink()
+ from concurrent.futures import ThreadPoolExecutor
+ def fetch(item):
+  name,digest=item
+  content=download_verified(repo,commit,repository_path(name),digest,manifest['file_sizes'][name],manifest['file_sizes'][name])
+  atomic(target_path(package_engine,package,name),content)
+ with ThreadPoolExecutor(max_workers=8) as pool:list(pool.map(fetch,manifest['files'].items()))
+ manifest={**manifest,'source_revision':commit}
+ json_write(package_engine/'PACKAGE_MANIFEST.json',manifest)
  return package
 
 

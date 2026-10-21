@@ -18,7 +18,7 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | --- | --- |
 | F01 | WhatsApp Narrado |
 | F02 | Talking Head |
-| F03 | Dark com B-roll |
+| F03 | Headline + Narração |
 | F04 | Pessoa → Animação |
 | F05 | Notícia Comentada |
 | F06 | Diagramas |

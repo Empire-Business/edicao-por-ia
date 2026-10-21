@@ -23,8 +23,13 @@
       ],
       "avoid": "Não simular depoimentos reais, inventar mensagens atribuídas a pessoas ou usar uma tela de celular tão pequena que ninguém consiga ler.",
       "pattern": "f01-v1",
-      "video": "assets/videos/F01.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238068648",
+        "source_sha256": "145cf3e96e8b3a194965ada4455f3ba89e29c5939a25d2c6eadf207ddcb0d58a",
+        "status": "complete",
+        "hash": "b42ec19646"
+      },
       "duration": 47,
       "evidence": "video",
       "evidenceLabel": "Exemplo em vídeo",
@@ -92,8 +97,13 @@
       ],
       "avoid": "Não inventar manchetes, dados ou cenas de prova. É proibido usar imagens de bancos gratuitos, imagens genéricas, B-roll sem relação, material pixelado ou a mesma inserção repetida como preenchimento. Não deixar a gravação do apresentador ocupar a faixa reservada ao B-roll no split; não esconder o ponto de interesse; não fazer uma inserção entrar ou sumir no meio de uma frase. Não esticar a mídia, usar transições decorativas ou herdar pessoa, marca, cor ou fonte do exemplo. Cores e fontes vêm da ID escolhida.",
       "pattern": "f02-talking-head-v2",
-      "video": "assets/videos/F02-talking-head-20261007.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238068714",
+        "source_sha256": "c76cf3970a4de8a531726af2cfb4b9fe5b1e53084775b8c5b170225c7d5374de",
+        "status": "complete",
+        "hash": "2fac6dc370"
+      },
       "duration": 185,
       "evidence": "video",
       "evidenceLabel": "Referência externa",
@@ -167,8 +177,8 @@
     },
     {
       "code": "F03",
-      "name": "Dark com B-roll",
-      "description": "História narrada em ambiente preto: abre como o F02, com B-roll em cima, tarja no meio e a pessoa embaixo; depois a voz segue sobre muito B-roll real e cenas animadas, com legenda palavra a palavra e trilha.",
+      "name": "Headline + Narração",
+      "description": "Você aparece só na headline de abertura; depois, a história continua narrada com B-roll real e cenas animadas, com legenda palavra a palavra e trilha.",
       "category": "presenter",
       "tags": [
         "Dark",
@@ -176,7 +186,7 @@
         "Animação"
       ],
       "use": "Contar uma história real ou comentar uma notícia num vídeo preto e muito animado: a pessoa aparece só na abertura e as imagens reais do caso contam o resto.",
-      "inputs": "Gravação curta da pessoa contando o gancho (o resto pode ser só áudio) e autorização para pesquisar B-roll (TikTok/YouTube só por ScrapeCreators). Texto da tarja, se a pessoa quiser escrever. Trilha autorizada ou local. Escolher a ID visual separadamente.",
+      "inputs": "Vídeo da pessoa gravando somente a headline (o gancho de abertura). Para o corpo, combinar roteiro e narração: não é necessário gravar a pessoa em câmera no restante. B-roll real, texto da tarja e trilha autorizada. Escolher a ID visual separadamente. Não autoriza geração paga de voz automaticamente.",
       "mechanism": "Abre como o F02: B-roll real do caso em cima trocando no tempo da fala, tarja com a promessa no meio e a pessoa falando embaixo, completa desde o primeiro quadro e com carimbo na revelação. Depois a voz continua sobre muito B-roll real (troca a cada ≈ 2,5 s), em tela cheia ou em cartões 3D, e estados animados: números que embaralham e batem, carimbos, chamadas, listas e objetos que entram girando. Fundo preto do início ao fim, cor de destaque só em detalhes, nada escrito no topo, legenda palavra a palavra em caixa alta com sublinhado, fala sem respiros e trilha abaixo da voz com o grave na revelação.",
       "steps": [
         "Isolar a voz, cortar erros e apertar os respiros medindo as lacunas entre palavras (0,08–0,12 s); remapear os tempos das palavras.",
@@ -189,18 +199,22 @@
       ],
       "avoid": "Não deixar tela só com palavras, fundo colorido, rótulo ou título no topo, legenda por cima da tarja, abertura nascendo do preto, rostos de comentaristas ou criadores que só falaram do assunto, pessoa calada ou com o rosto cortado, legenda embutida em outro idioma, nem música cobrindo a voz. Não herdar roxo, a cor da tarja, fontes, rosto, roupa ou assunto do exemplo: cores e fontes vêm da ID.",
       "pattern": "f03-dark-com-broll-v2",
-      "video": "assets/videos/F03-dark-com-b-roll.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238068893",
+        "source_sha256": "94d4bb5289ae0a9d6c213a371ed44a873d24cdb8f53d90d6145bf2164ecdc430",
+        "status": "complete",
+        "hash": "de8975d7dd"
+      },
       "duration": 84,
       "evidence": "video",
       "evidenceLabel": "Prévia da fábrica",
       "evidenceNote": "Edição real feita nesta fábrica como exemplo do formato, comprimida para publicação. Pessoa, roupa, assunto, texto e cor da tarja, cores, fontes e trilha pertencem ao exemplo e não são padrões.",
       "cameraRequired": true,
       "startingMaterials": [
-        "Vídeo curto",
-        "Áudio",
-        "B-roll pesquisado",
-        "Trilha"
+        "Vídeo da headline",
+        "Narração",
+        "Roteiro"
       ],
       "buildingBlocks": [
         "Abertura com tarja",
@@ -247,7 +261,12 @@
         "gancho",
         "abertura f02",
         "so audio",
-        "audio"
+        "audio",
+        "headline",
+        "headline narracao",
+        "dark com b-roll",
+        "pesquisa broll",
+        "pesquisa de cenas reais"
       ],
       "hasPersonOnScreen": true,
       "poster": "assets/posters/F03-dark-com-b-roll.jpg",
@@ -292,8 +311,13 @@
       ],
       "avoid": "Não manter a pessoa em tela por hábito e não repetir integralmente a legenda em outra animação.",
       "pattern": "f04-v1",
-      "video": "assets/videos/F04.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238068974",
+        "source_sha256": "1250cca6b666b91fdad526d2deeb80fe0a66074722f783b2be4ae04671661a6b",
+        "status": "complete",
+        "hash": "a7354945a0"
+      },
       "duration": 104,
       "evidence": "video",
       "evidenceLabel": "Prévia histórica",
@@ -349,8 +373,13 @@
       ],
       "avoid": "Não escrever EMPIRE como cabeçalho, assinatura ou marca da edição. Não inserir logotipo, nome fixo de empresa ou marca da referência. Cores/fontes vêm da ID escolhida; preservar o assunto da notícia sem transformar a empresa citada em assinatura visual.",
       "pattern": "f05-v1",
-      "video": "assets/videos/F05.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238069104",
+        "source_sha256": "72092ec5aec4fcf8cedec953ca6f2b71d61102f4e6437ec151cab1099f261182",
+        "status": "complete",
+        "hash": "bf35f9bc89"
+      },
       "duration": 90,
       "evidence": "video",
       "evidenceLabel": "Prévia histórica",
@@ -408,8 +437,13 @@
       ],
       "avoid": "Não criar dados falsos, animar tudo ao mesmo tempo ou depender só da cor para explicar uma relação.",
       "pattern": "f06-v1",
-      "video": "assets/videos/F06.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238069165",
+        "source_sha256": "a2c1c38d7e78d8bcdb189dd8307ccb2b098692ad93a8010751608eba749e4fa4",
+        "status": "complete",
+        "hash": "36c08aaf5b"
+      },
       "duration": 69,
       "evidence": "video",
       "evidenceLabel": "Prévia com gráficos",
@@ -470,8 +504,13 @@
       ],
       "avoid": "Não inventar recursos, usar dados pessoais reais, mostrar um mockup como função já implementada ou herdar a marca, paleta e fontes do exemplo. Tour e formulário são tipos de cena deste mesmo formato.",
       "pattern": "f07-v2",
-      "video": "assets/videos/F07.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238069242",
+        "source_sha256": "455e3b2b3a9ec31086e9a40d6ba8be24e24d8ee8492bf801518eb15b0b8ddeb9",
+        "status": "complete",
+        "hash": "1f6228ad83"
+      },
       "duration": 102,
       "evidence": "video",
       "evidenceLabel": "Prévia histórica",
@@ -535,8 +574,13 @@
       ],
       "avoid": "Não cobrir o rosto, perder bordas importantes do recorte, exibir contatos reais, inventar depoimentos ou usar telas sem relação com a fala.",
       "pattern": "f08-v2",
-      "video": "assets/videos/F08.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238069346",
+        "source_sha256": "6bbb5dd2ae3da2463fcb523b650a820569fde717b642486c8b8c10f8eabc2ccf",
+        "status": "complete",
+        "hash": "9fa0b4be4e"
+      },
       "duration": 51,
       "evidence": "video",
       "evidenceLabel": "Exemplo em vídeo",
@@ -598,20 +642,32 @@
         {
           "id": "tela-dividida",
           "label": "Tela dividida",
-          "video": "assets/videos/F08-tela-dividida.mp4",
+          "video": null,
           "poster": "assets/posters/F08-tela-dividida.jpg",
           "duration": 212,
           "evidenceLabel": "Exemplo histórico",
-          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática."
+          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática.",
+          "vimeo": {
+            "id": "1238069626",
+            "source_sha256": "4851900d81729bd0a6d6683567fb4075b2c2bf70e3cd3f7ec244bce9663681f9",
+            "status": "complete",
+            "hash": "e8875f589e"
+          }
         },
         {
           "id": "comparacao",
           "label": "Recorte e comparação",
-          "video": "assets/videos/F08-comparacao.mp4",
+          "video": null,
           "poster": "assets/posters/F08-comparacao.jpg",
           "duration": 54,
           "evidenceLabel": "Exemplo histórico",
-          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática."
+          "evidenceNote": "Outra variação do mesmo formato: pessoa explicando telas e conversas. A identidade do exemplo não é uma escolha automática.",
+          "vimeo": {
+            "id": "1238069736",
+            "source_sha256": "c10148ec73cb5ae69e68de5eaed1b5eaec6ea636baebbcffe38720294ccf089f",
+            "status": "complete",
+            "hash": "7fc90285ac"
+          }
         }
       ]
     },
@@ -639,12 +695,17 @@
       ],
       "avoid": "Não usar tela dividida automática, troca de personagem por cronômetro, zooms sem motivo, transições decorativas, cenas de apoio aleatórias ou duas falas sobrepostas. Não copiar a pessoa, o assunto, a marca, o perfil, a chamada comercial, a mochila ou o computador do exemplo. Cores e fontes vêm da ID.",
       "pattern": "f09-personagem-v1",
-      "video": "assets/videos/F09-cortez-2026-10.mp4",
-      "vimeo": null,
-      "duration": 12,
+      "video": null,
+      "vimeo": {
+        "id": "1238069761",
+        "source_sha256": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+        "status": "complete",
+        "hash": "06e40cdd6c"
+      },
+      "duration": 45,
       "evidence": "video",
-      "evidenceLabel": "Exemplo produzido pelo Cortez",
-      "evidenceNote": "Exemplo original produzido pelo Cortez: dois personagens fictícios gerados por IA conversam, um por vez em tela cheia, com cortes secos e legenda que cresce palavra por palavra. Pessoas, assunto, cores e fontes não são padrões.",
+      "evidenceLabel": "Referência externa",
+      "evidenceNote": "Vídeo do link de exemplo indicado pelo autor no ZIP do formato. Não é uma edição produzida pela fábrica; pessoa, marcas, cores e fontes não são padrões.",
       "cameraRequired": true,
       "startingMaterials": [
         "Vídeo",
@@ -681,19 +742,19 @@
         "reels"
       ],
       "hasPersonOnScreen": true,
-      "poster": "assets/posters/F09-cortez-2026-10.jpg",
+      "poster": "assets/posters/F09-personagem.jpg",
       "referenceFrames": [
         {
-          "poster": "assets/posters/F09-cortez-2026-10-frame-0.jpg",
-          "caption": "Personagem 1 em tela cheia; a legenda começa a crescer sobre o peito."
+          "poster": "assets/posters/F09-personagem-frame-0.jpg",
+          "caption": "Personagem 1 em tela cheia, com um bloco curto de legenda sobre o peito."
         },
         {
-          "poster": "assets/posters/F09-cortez-2026-10-frame-1.jpg",
+          "poster": "assets/posters/F09-personagem-frame-1.jpg",
           "caption": "Personagem 2 responde em outro plano; a alternância constrói a conversa."
         },
         {
-          "poster": "assets/posters/F09-cortez-2026-10-frame-2.jpg",
-          "caption": "Bloco curto de legenda abaixo do rosto, palavra por palavra."
+          "poster": "assets/posters/F09-personagem-frame-2.jpg",
+          "caption": "A segunda linha da legenda cresce palavra por palavra enquanto a primeira permanece."
         }
       ],
       "examples": []
@@ -719,8 +780,13 @@
       ],
       "avoid": "Não usar cenas genéricas sem relação com o áudio ou prometer resultados que a gravação não comprova.",
       "pattern": "f10-v1",
-      "video": "assets/videos/F10.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238069812",
+        "source_sha256": "7c7e706b27f46b196b41c7dd515c8a40bff30cd749eadc427306de452a8f30d5",
+        "status": "complete",
+        "hash": "8eea0e9bec"
+      },
       "duration": 69,
       "evidence": "video",
       "evidenceLabel": "Exemplo em vídeo",
@@ -781,8 +847,13 @@
       ],
       "avoid": "Não usar cenas sem relação com a fala, troca por cronômetro rígido, zooms ou efeitos gratuitos, tela dividida automática, legenda longa cobrindo a ação ou karaokê palavra por palavra. Não herdar nome, pessoa, marca, logotipo ou pedido para seguir o autor da referência. Cores e fontes vêm da ID.",
       "pattern": "f11-narracao-ilustrada-v1",
-      "video": "assets/videos/F11-narracao-ilustrada.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238069945",
+        "source_sha256": "f741f8bf55ab1e8c0e3b6a6d38ff372dad3f89a82266f47a3107db41438f5f2a",
+        "status": "complete",
+        "hash": "1d83996f78"
+      },
       "duration": 35,
       "evidence": "video",
       "evidenceLabel": "Referência externa",
@@ -938,8 +1009,13 @@
       ],
       "avoid": "Não inventar dados, mudar denominadores entre comparações, exibir valores intermediários como fatos ou herdar tema, políticos, retratos, marca ou chamada eleitoral da referência.",
       "pattern": "f13-v2",
-      "video": "assets/videos/F13-cortez-2026-10.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070053",
+        "source_sha256": "d5a54036050bb7fd7b9b4767db8845ba174d0c8a9abceee8416a2bb573743717",
+        "status": "complete",
+        "hash": "8a6c98da39"
+      },
       "duration": 30,
       "evidence": "video",
       "evidenceLabel": "Exemplo produzido pelo Cortez",
@@ -1014,8 +1090,13 @@
       ],
       "avoid": "Não inventar itens, fixar os quatro números do exemplo, usar texto longo ou herdar ator, tema, marca, cores e fonte da referência.",
       "pattern": "f14-v1",
-      "video": "assets/videos/F14.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070085",
+        "source_sha256": "b8c16a03cef105292f3544537042818bd677a12ec0abdcba70d00c8fc07876cf",
+        "status": "complete",
+        "hash": "eae7c38d30"
+      },
       "duration": 41,
       "evidence": "video",
       "evidenceLabel": "Prévia de referência",
@@ -1136,8 +1217,13 @@
       ],
       "avoid": "Não simplificar este formato a pessoa mais tela, usar B-roll genérico por conveniência, trocar o provedor de TikTok/YouTube, inventar fatos ou herdar marca, logotipo, textos de assinatura, ator, paleta e fonte da referência.",
       "pattern": "f16-v1",
-      "video": "assets/videos/F16.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070332",
+        "source_sha256": "37b838822e92247f5ae5cf18ea682dd4070e18e00c5485a0db64c5ccdfc9cb5f",
+        "status": "complete",
+        "hash": "9228d9ee65"
+      },
       "duration": 144,
       "evidence": "video",
       "evidenceLabel": "Referência externa",
@@ -1203,8 +1289,13 @@
       ],
       "avoid": "Não transformar as categorias em bom/ruim, trocar etiquetas por imagens automaticamente, apagar itens anteriores, reduzir até perder leitura, deixar espera entre turnos, cortar sílabas ou acelerar a voz. Não copiar a pessoa, o tema ou a chamada da referência. As cores do exemplo (ciano, amarelo e rosa) são do exemplo; cores e fontes vêm da ID. Outro número de colunas ainda precisa de teste.",
       "pattern": "f17-colunas-v1",
-      "video": "assets/videos/F17-colunas.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070411",
+        "source_sha256": "069dddf2cd32b61684d5ca79f1a9fb6a54e5e197e08d8928b6e72604072ba51c",
+        "status": "complete",
+        "hash": "03d25e08de"
+      },
       "duration": 54,
       "evidence": "video",
       "evidenceLabel": "Referência externa",
@@ -1287,8 +1378,13 @@
       ],
       "avoid": "Não entregar o longo como talking head com legenda, inserir B-roll genérico, inventar manchete, número ou cláusula, usar marca real em contexto falso, fazer animação de template sem acabamento, completar cota de cortes com trechos fracos, montar corte que mude o que a pessoa disse ou copiar pessoa, canal, verde/creme/serifa e assinatura do exemplo. Cores e fontes vêm da ID.",
       "pattern": "f18-longo-cortes-v1",
-      "video": "assets/videos/F18-longo-cortes.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070447",
+        "source_sha256": "b076188f48fee23114c2ef302ec69478e22c1b3640753c18b4159d9608e851ea",
+        "status": "complete",
+        "hash": "e901b727a1"
+      },
       "duration": 756,
       "evidence": "video",
       "evidenceLabel": "Referência externa",
@@ -1381,8 +1477,13 @@
       ],
       "avoid": "Não usar foto enganosa que o vídeo não sustenta, nem frase que prometa o que ele não entrega. Não herdar a pessoa, o nome, o @, a foto, o assunto, o vermelho ou a fonte do exemplo: cabeçalho vem do trabalho e cores/fontes vêm da ID. Não reproduzir o logotipo do Instagram que passeia pelo vídeo nem o cartão final — são a marca d'água do download. Não distorcer o vídeo nem cortar rostos no recorte.",
       "pattern": "f19-print-repost-v1",
-      "video": "assets/videos/F19-print-repost.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070540",
+        "source_sha256": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e",
+        "status": "complete",
+        "hash": "0dccdb1590"
+      },
       "duration": 58,
       "evidence": "video",
       "evidenceLabel": "Exemplo do autor",
@@ -1471,8 +1572,13 @@
       ],
       "avoid": "Não cortar pausas pelos tempos da transcrição; não deixar espaço vazio nem mostrar o apresentador lendo o roteiro; não usar o trecho-fonte inteiro sem tirar as partes mornas; não usar véu de cor chapado nem transição longa; não usar B-roll genérico, de baixa qualidade ou com texto/marca d'água; não reaproveitar trilha de outro formato sem escolha do usuário (duas trilhas de outros formatos foram rejeitadas no teste); não deixar legenda sem pontuação, quebrada no meio de valores ou atravessando trocas; nenhum quadro preto nas emendas. Cores/fontes da ID, exceto o amarelo das falas da fonte no react.",
       "pattern": "f20-react-v1",
-      "video": "assets/videos/F20-react.mp4",
-      "vimeo": null,
+      "video": null,
+      "vimeo": {
+        "id": "1238070579",
+        "source_sha256": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73",
+        "status": "complete",
+        "hash": "e80507ae1c"
+      },
       "duration": 180,
       "evidence": "video",
       "evidenceLabel": "Exemplo do autor",

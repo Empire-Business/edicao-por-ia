@@ -13,7 +13,7 @@ Você não precisa executar comandos. Abra a pasta no Codex ou Claude Code, copi
 
 A atualização é feita pela IA. Se faltar Python 3.11+ ou acesso ao repositório, ela explica a pendência e prepara o que for autorizado. O usuário não precisa abrir scripts nem executar comandos.
 
-Se o atualizador antigo disser que o pacote é grande demais, peça à IA: **“Prepare o atualizador atual de forma verificada e temporária, sem alterar o código ativo, e depois aplique a atualização com todas as referências.”** A IA resolve essa etapa técnica; nada precisa ser executado manualmente.
+Se o atualizador antigo disser que o pacote é grande demais, peça à IA: **“Prepare o atualizador atual de forma verificada e temporária, sem alterar o código ativo, e depois atualize somente o código, preservando minhas referências já baixadas.”** Desde a versão 2.7.1, vídeos e demais mídias de referência são buscados somente quando o formato for usado, com verificação de integridade. A IA resolve essa etapa técnica; nada precisa ser executado manualmente.
 
 **“Conflito” ou “precisa revisar” não significa atualização concluída.** A versão ativa permanece intacta e a recebida fica guardada para revisão. Peça: **“Revise o recibo da atualização e preserve minhas personalizações. Se não houver uma base confiável, use a recuperação em uma pasta nova.”**
 

@@ -96,14 +96,17 @@
     },
     "official.d7a2bb0a7fc640f79f9a88538a1eec81": {
       "code": "F03",
-      "definition_sha256": "de23559bc709962780e721cf3dca5e457ee7d17f7c6d4fed276e36170ce23ade",
-      "pattern_sha256": "d6979735b3b4413cf63dae12e6e362edc322e34c195204f3042b40b2725b1153"
+      "definition_sha256": "5450f3765adb6ef62fb562e74cd552d0acd88b97276552422d4adcd54c719237",
+      "pattern_sha256": "d6979735b3b4413cf63dae12e6e362edc322e34c195204f3042b40b2725b1153",
+      "name": "Headline + Narração",
+      "revision_note": "Correção expressa do autor em 21/10/2026: nome e gravação só da headline; receita preservada."
     },
     "official.057f1c25705842ddafb13387b7aeb0b4": {
       "code": "F09",
-      "definition_sha256": "2258cab79406b6f0113f0a5b91c3f3292673b1cad6b4579a2f51f2a6e8a16116",
+      "definition_sha256": "67b1231aa3aacf0de51c5d401347117b666d73c5c9280ba606fe8e5e04b058a0",
       "pattern_sha256": "105f24952ff4bc86ddd62876cb2c7196678144a767f20249aff865344625395d",
-      "revision_note": "2026-10-20: exemplo de terceiros trocado por exemplo original do Cortez a pedido do autor; mecanismo e regras da receita sem alteração. Mesmo dia: exemplo refeito como demo curta (4 falas, Veo 3.1, câmera de lado, mesma sala), revisado e aprovado pelo autor."
+      "revision_note": "Correção expressa do autor em 21/10/2026: restaurar a referência Personagem anterior aos personagens de IA; receita preservada.",
+      "name": "Personagem"
     },
     "official.b625febf4f0c4953a8beb3d0c99a4e14": {
       "code": "F11",
