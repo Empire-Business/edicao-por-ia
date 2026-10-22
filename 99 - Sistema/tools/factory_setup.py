@@ -137,6 +137,10 @@ def setup(root=ROOT,host='both',profile='equilibrado',apply=False):
         from github_access import verify
         try:verify(root)
         except (ValueError,OSError,subprocess.SubprocessError) as exc:fail('GITHUB_AUTH_REQUIRED',str(exc))
+    voice = None
+    if (Path(root)/'config/cortez-voice.json').is_file():
+        from prepare_cortez_voice import prepare as prepare_voice
+        voice = prepare_voice(root, False)
     files=desired_setup(root,host,profile)
     # Configuration merge is explicit; edited agent files must be preserved, not silently replaced.
     manifest=read_json(Path(root)/'PACKAGE_MANIFEST.json').get('files',{}) if (Path(root)/'PACKAGE_MANIFEST.json').exists() else {}
@@ -147,6 +151,8 @@ def setup(root=ROOT,host='both',profile='equilibrado',apply=False):
         path=managed_path(root,rel)
         if path.exists():known[rel]=sha(path) # these two were structurally merged above
     result=apply_files(root,files,'setup',apply,known)
+    if voice is not None:
+        result['cortez_voice'] = prepare_voice(root, True) if apply and not result['conflicts'] else voice
     if apply:
         from service_keys import prepare
         prepare(root)
@@ -229,10 +235,16 @@ def upgrade(source,target,apply=False):
 
 def dependency_plan(root,capability='speech',system=None,machine=None):
     system=system or platform.system();machine=machine or platform.machine();root=Path(root).resolve()
-    if capability not in ('base','speech','motion','studio-audio','ffmpeg'):fail('CAPABILITY','Capacidade de instalação desconhecida.')
+    if capability not in ('base','speech','motion','studio-audio','audio-cleanup','voice','ffmpeg'):fail('CAPABILITY','Capacidade de instalação desconhecida.')
     py=root/'.venv'/('Scripts/python.exe' if system=='Windows' else 'bin/python')
     commands=[];notes=[]
-    if capability=='ffmpeg':
+    if capability=='voice':
+        commands=[[sys.executable, str(root/'tools/prepare_cortez_voice.py'), '--apply']]
+        notes.append('Instala Cortez Voz da revisão fixa da Empire; não inicia aplicativo, banco nem modelos.')
+    elif capability=='audio-cleanup':
+        commands=[[sys.executable, str(root/'tools/prepare_local_audio.py'), '--apply']]
+        notes.append('Prepara somente o runtime DeepFilterNet revisado para esta plataforma; sem chaves, banco ou mudanças no Python. FFmpeg continua necessário.')
+    elif capability=='ffmpeg':
         if shutil.which('ffmpeg') and shutil.which('ffprobe'):notes.append('FFmpeg/FFprobe já encontrados no PATH.')
         elif system=='Darwin' and shutil.which('brew'):commands=[['brew','install','ffmpeg']]
         elif system=='Windows' and shutil.which('winget'):commands=[['winget','install','--id','Gyan.FFmpeg','--exact','--source','winget']]
@@ -254,6 +266,9 @@ def dependency_plan(root,capability='speech',system=None,machine=None):
     return {'ok':True,'status':'preview','capability':capability,'commands':commands,'notes':notes,'downloads':bool(commands),'no_llm_calls':True}
 
 def dependencies(root,capability='speech',apply=False):
+    if capability=='voice':
+        from prepare_cortez_voice import prepare as prepare_voice
+        return prepare_voice(root,apply)
     plan=dependency_plan(root,capability)
     if not apply:return plan
     with workspace_lock(root,'dependencies'):

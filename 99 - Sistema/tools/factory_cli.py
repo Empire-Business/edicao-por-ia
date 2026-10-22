@@ -19,7 +19,7 @@ def main(argv=None):
     c=sp.add_parser('doctor');c.add_argument('--smoke',action='store_true')
     c=sp.add_parser('cleanup',help='Prévia ou remoção de segmentos de render de trabalhos entregues');c.add_argument('--job');c.add_argument('--apply',action='store_true');c.add_argument('--confirm')
     c=sp.add_parser('setup');c.add_argument('--host',choices=['both','claude','codex'],default='both');c.add_argument('--profile',choices=['economico','equilibrado','elaborado'],default='equilibrado');c.add_argument('--apply',action='store_true')
-    c=sp.add_parser('dependencies');c.add_argument('--capability',choices=['base','speech','motion','studio-audio','ffmpeg'],default='speech');c.add_argument('--apply',action='store_true')
+    c=sp.add_parser('dependencies');c.add_argument('--capability',choices=['base','speech','motion','studio-audio','audio-cleanup','voice','ffmpeg'],default='speech');c.add_argument('--apply',action='store_true')
     c=sp.add_parser('update');c.add_argument('--from',dest='source');c.add_argument('--check',action='store_true');c.add_argument('--apply',action='store_true');c.add_argument('--rollback')
     c=sp.add_parser('upgrade');c.add_argument('--from',dest='source',required=True);c.add_argument('--apply',action='store_true')
     c=sp.add_parser('rollback');c.add_argument('--receipt-id',required=True);c.add_argument('--apply',action='store_true')

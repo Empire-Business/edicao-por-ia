@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "repository": "Empire-Business/cortez-voz",
+  "commit": "88b3b8943f07e81089c94aa57f669fa72b9beffd",
+  "edition": "0.1.0",
+  "archive": {
+    "url": "https://codeload.github.com/Empire-Business/cortez-voz/zip/88b3b8943f07e81089c94aa57f669fa72b9beffd",
+    "sha256": "e266a1f1aee0120bff80a2b392e79393ff395754dff333e128fa8c27e005b3d3",
+    "size": 46878242
+  },
+  "installer_sha256": "66ff995d99903f8b1520e1f16139aee5f5cb73cf3449defa9530940915880573",
+  "platforms": {
+    "Darwin-arm64": "dependencies_installed_and_web_built; backend_not_started",
+    "Windows-x86_64": "installer_plan_tested; machine_execution_pending",
+    "Linux-x86_64": "installer_plan_tested; machine_execution_pending"
+  },
+  "upstream_commit": "6c46e2a890bcca0c5f14694ac197857174945d09",
+  "automatic_updates": false,
+  "models_included": false
+}

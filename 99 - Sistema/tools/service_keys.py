@@ -15,9 +15,14 @@ TEMPLATE = '''# CHAVES DAS INTEGRAÇÕES
 # Cole cada chave depois do sinal =, sem apagar o nome à esquerda.
 # Salve este arquivo. Não é preciso usar terminal nem renomear o arquivo.
 # ScrapeCreators: https://app.scrapecreators.com/
-# ElevenLabs: https://elevenlabs.io/app/settings/api-keys
+# ElevenLabs — OPCIONAL: limpeza, narração e música pagas, somente quando solicitadas.
+# A limpeza local e a biblioteca de trilhas não precisam desta chave.
+# https://elevenlabs.io/app/settings/api-keys
 # OpenRouter (troca de roupa/cenário e capas): https://openrouter.ai/settings/keys
-# Apify (baixar vídeo do YouTube quando o ScrapeCreators não entrega o arquivo): https://console.apify.com/settings/integrations
+# Apify — OPCIONAL: baixar YouTube quando ScrapeCreators não fornece o arquivo.
+# Sem Apify, envie o arquivo de vídeo ou escolha outra cena disponível.
+# https://console.apify.com/settings/integrations
+# Pode deixar ELEVENLABS_API_KEY e APIFY_API_TOKEN vazios. Ter uma chave não autoriza cobranças.
 # Este arquivo é privado: não o envie junto com a fábrica para outras pessoas.
 
 SCRAPECREATORS_API_KEY=
@@ -40,6 +45,44 @@ def prepare(root):
     elif not path.is_file():
         raise ValueError('O destino das chaves não é um arquivo regular.')
     return path
+
+
+def annotate_optional(root):
+    """Explicit user-requested comment update; preserve all credential bytes privately.
+
+    Not called by setup: setup must never read existing credentials. No values,
+    hashes of keys, or credential contents are returned to the caller.
+    """
+    from factory_common import workspace_lock
+    path = prepare(root)
+    marker = b'# CORTEZ: INTEGRACOES OPCIONAIS v1'
+    comment = (marker + b'\n' +
+        '# ElevenLabs é OPCIONAL: limpeza e narração locais e trilhas da biblioteca não precisam desta chave.\n'
+        '# Apify é OPCIONAL: usado apenas para baixar YouTube quando ScrapeCreators não entrega o arquivo.\n'
+        '# Você pode deixar ELEVENLABS_API_KEY e APIFY_API_TOKEN vazios.\n'
+        '# Uma chave preenchida não autoriza gastos; ElevenLabs exige escolha e autorização para cada chamada.\n\n'.encode('utf-8'))
+    with workspace_lock(engine_root(root), 'optional-key-comments'):
+        if path.is_symlink(): raise ValueError('Arquivo de chaves não pode ser um atalho.')
+        original = path.read_bytes()
+        if marker in original: return {'ok': True, 'status': 'already_documented', 'values_exposed': False}
+        # Append comments in one O_APPEND write: never replace the credential
+        # file, so a human edit between check and write cannot be overwritten.
+        before = path.stat()
+        flags = os.O_WRONLY | os.O_APPEND | getattr(os, 'O_NOFOLLOW', 0)
+        fd = os.open(path, flags)
+        try:
+            opened = os.fstat(fd)
+            if (before.st_dev, before.st_ino) != (opened.st_dev, opened.st_ino) or path.read_bytes() != original:
+                raise ValueError('As chaves mudaram durante a atualização; tente novamente sem substituir o arquivo.')
+            block = b'\n' + comment
+            if os.write(fd, block) != len(block): raise ValueError('Comentário incompleto; confira apenas as instruções do arquivo.')
+            os.fsync(fd)
+            after = path.stat()
+            if (after.st_dev, after.st_ino) != (opened.st_dev, opened.st_ino):
+                raise ValueError('O arquivo foi salvo por outro programa; comentários podem precisar ser reaplicados.')
+        finally:
+            os.close(fd)
+        return {'ok': True, 'status': 'optional_comments_added', 'credential_bytes_preserved': True, 'values_exposed': False}
 
 
 def read_assignments(path):
@@ -100,6 +143,9 @@ def api_key(name, root=None):
             except (ValueError, OSError):
                 raise ValueError('Configuração antiga do ScrapeCreators inválida.') from None
     if not isinstance(value, str) or not value.strip():
+        if name in ('ELEVENLABS_API_KEY', 'APIFY_API_TOKEN'):
+            alternative = 'use o áudio local' if name == 'ELEVENLABS_API_KEY' else 'envie o vídeo ou escolha outra cena disponível'
+            raise ValueError(f'Integração opcional sem chave: {alternative}, ou preencha {name} em “{KEY_FILE}” para usar este serviço.')
         raise ValueError(f'Preencha {name} no arquivo visível “{KEY_FILE}” e salve para continuar.')
     value = value.strip()
     if any(c.isspace() for c in value):

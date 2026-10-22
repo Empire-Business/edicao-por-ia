@@ -16,6 +16,12 @@
 
 # Histórico de versões
 
+## 2.9.0 — Cortez Voz e áudio local
+
+- Instalador do aplicativo controlado pela Empire, fixado por commit/hash, integrado ao setup.
+- Limpeza/narração/trilhas locais e chaves pagas opcionais. Sem fallback pago automático.
+- Mac Apple Silicon: dependências e interface preparados; backend/banco/modelos não iniciados. Windows/Linux aguardam execução real.
+
 ## 2.6.0 — 21 de outubro de 2026
 
 - O site de modelos virou o painel geral da fábrica (pedido do autor: "transforme ele em um painel de instruções geral

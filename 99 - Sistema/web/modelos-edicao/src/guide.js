@@ -140,12 +140,20 @@ export const functions = [
   },
   {
     id: 'voz', group: 'som', title: 'Limpar a voz',
-    what: 'Remove ruído e eco da gravação inteira antes dos cortes. É o que deixa a fala limpa entre as palavras.',
+    what: 'Reduz ruído no computador, antes dos cortes, com DeepFilterNet ou limpeza básica FFmpeg. A voz é conferida antes da prévia.',
     say: 'Limpe a voz deste vídeo antes da prévia.',
     prompt: 'Limpe a voz do vídeo [nome] antes de montar a prévia: isole a voz do arquivo inteiro e só depois aplique os cortes. Me diga quanto ruído saiu nas pausas.',
-    tips: ['Usa a chave ElevenLabs. Só o áudio é enviado ao serviço.'],
-    keys: ['ElevenLabs'], paid: true,
+    tips: ['Funciona sem chave ElevenLabs e sem envio de áudio à nuvem.', 'O Cortez informa qual ferramenta usou; a limpeza básica não promete remover eco.', 'ElevenLabs só é usado quando você escolher e autorizar o gasto.'],
+    paid: false,
     workflows: []
+  },
+  {
+    id: 'narracao', group: 'som', title: 'Gerar narração local',
+    what: 'Transforma seu roteiro em voz pelo Cortez Voz, instalado junto do Cortez a partir da cópia controlada pela Empire. No Mac, as vozes instaladas do sistema também são uma opção.',
+    say: 'Gere uma narração local para este roteiro.',
+    prompt: 'Gere uma narração local para [roteiro]. Mostre as vozes e os modelos locais disponíveis para eu escolher. Confira pronúncia e obtenha os tempos das palavras antes de sincronizar legendas. Se faltar algum componente, me diga o que precisa ser preparado. Não use serviço pago automaticamente.',
+    tips: ['Cortez Voz precisa estar preparado e aberto. A instalação não baixa modelos nem inicia o banco local; o primeiro início é separado e autorizado.', 'Clonar a voz de alguém exige autorização.', 'A qualidade da voz precisa ser ouvida e aprovada.'],
+    paid: false, workflows: []
   },
   {
     id: 'silencio', group: 'som', title: 'Cortar silêncios',
@@ -164,12 +172,12 @@ export const functions = [
     workflows: ['CLEAN_SPEECH.md']
   },
   {
-    id: 'musica', group: 'som', title: 'Trilha original',
-    what: 'Música gerada sob medida, sem direitos autorais, com a virada no momento certo e abaixando sozinha quando você fala.',
+    id: 'musica', group: 'som', title: 'Trilha e biblioteca de músicas',
+    what: 'Reutiliza faixas locais com licença ou autorização registrada, ajusta a duração e abaixa a música quando você fala. Geração paga é opcional.',
     say: 'Coloque uma trilha tensa que vira no final.',
-    prompt: 'Coloque na [E04] uma trilha original [tensa / animada / calma], que mude no momento [da virada, aos 0:45]. A música precisa ficar bem abaixo da voz o tempo todo.',
-    tips: ['Usa a chave ElevenLabs.'],
-    keys: ['ElevenLabs'], paid: true,
+    prompt: 'Use na [E04] uma trilha licenciada da minha biblioteca, [tensa / animada / calma], com mudança na virada aos [0:45]. Mantenha a música abaixo da voz. Se não houver uma faixa adequada, me avise antes de usar qualquer serviço pago.',
+    tips: ['Envie uma faixa que você tenha direito de reutilizar e informe sua origem ou licença.', 'A biblioteca é privada e não é enviada com o código do Cortez.', 'ElevenLabs Music é opcional e exige sua autorização para cada geração.'],
+    paid: false,
     workflows: []
   },
   {
