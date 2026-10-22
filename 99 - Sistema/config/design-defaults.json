@@ -890,6 +890,74 @@
         "path": "examples\\reference-library\\F20\\react\\analysis.json",
         "sha256": "7c5328cf4179967159b69204c7c726e7f6fd42629d2597dfc1efeba41bbe7296"
       }
+    },
+    {
+      "code": "F21",
+      "name": "Mural de investigação",
+      "memory_store": "mural-investigacao",
+      "pattern": "f21-mural-de-investigacao-v1",
+      "description": "Uma investigação contada num mural de cortiça: fotos reais, fichas, post-its e fios vermelhos entram uma evidência por vez, com atos, contagem de acusações, status jurídico legível e legenda palavra a palavra.",
+      "uid": "official.cd218ae1b254402bad39209848e4b93f",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F21/mural-de-investigacao/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A narração do caso (gravada ou locução) com fatos verificáveis, e as fotos reais citadas na fala (pessoas públicas, lugares, documentos, jornais, viaturas), com licença e crédito. Trechos de áudio original (debate, entrevista) dentro da narração são aproveitados. Não precisa de apresentador em câmera. A ID visual é escolhida separadamente.",
+        "mechanism": "Formato vertical 9:16 sem apresentador: um mural de cortiça escura, gerado, ocupa a tela inteira. A etiqueta do caso (caso · lugar · ano) abre com a primeira evidência. Cada ato (etiqueta ATO N) limpa o quadro e as evidências entram uma por vez, no início da palavra que as justifica: polaroides P&B de fotos reais com crédito, fichas com faixa vermelha (fato/data) ou azul (contexto), post-its com a alegação entre aspas, carimbos (FALSO, NEGADO) só quando a fala diz. Fios vermelhos ligam só o que a narração liga. Listas viram contador \"ACUSAÇÃO N DE M\". Áudio original vira polaroide com forma de onda real e rótulo da fonte. Status jurídico (acusado · não julgado) e opinião × fato ficam em cartões separados, com tempo de leitura. Final em panorama das polaroides ligadas. Legenda karaokê de até 3 palavras no terço inferior escuro: dita em branco, próxima em cinza, nomes/datas em serifa itálica na cor principal da ID. Barra fina de progresso no topo.",
+        "steps": [
+          "Transcrever a narração com tempo por palavra; corrigir a grafia dos nomes pelo roteiro quando a voz o lê.",
+          "Mapear a fala em atos, itens numerados, citações, áudio original e status jurídico; cada cartão ancorado no início da palavra que o justifica.",
+          "Buscar fotos reais com licença verificável (domínio público, CC BY, foto oficial) e registrar fonte, autor, licença e hash.",
+          "Recortar cada foto e conferir em tamanho real: rosto inteiro com folga, assunto reconhecível, texto legível; horizontal para prédios e paisagens.",
+          "Vítima criança ou pessoa que não deve ser exposta vira símbolo; identidade não informada vira silhueta com \"?\". Nunca gerar rosto de pessoa real.",
+          "Escrever o roteiro de cenas (spec.json) e renderizar quadros-chave com tools/mural_board.py usando a paleta da ID escolhida.",
+          "Revisar os quadros-chave: legibilidade, sobreposição, fios só onde a fala liga, carimbos só quando ditos, nada sobre a legenda.",
+          "Renderizar o vídeo inteiro (−16 LUFS, −1,5 dBTP), cortando repetição de loop no fim da narração.",
+          "QA: zero quadro preto, folha de quadros ao longo do vídeo, recortes das fotos em tamanho real, legenda separando quem fala."
+        ],
+        "avoid": "Não inventar ou rotular errado provas, falas, fontes, datas ou resultados judiciais; não apresentar alegação como fato julgado; não ligar com fio o que a fala não liga; não usar foto sem licença nem gerar rosto de pessoa real; não mostrar criança vítima; não deixar foto com rosto cortado, escura ou ilegível; não usar cartões rápidos demais para ler; não copiar caso, pessoa, frases, selo, @ ou chamada do exemplo; nenhuma logo. Cores e fontes vêm da ID escolhida."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/reference.mp4",
+          "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/opening.jpg",
+          "sha256": "3722a7d97ae814e9c90c94cffa526a17751657e47c5ca8c8239613c386e5b8a7"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/act-board.jpg",
+          "sha256": "2a9c448f3dbdc7cad6ded662823f9aca99aa52b0b24050fae4f509240c359d36"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/suspects.jpg",
+          "sha256": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/count-two-years.jpg",
+          "sha256": "146027f40064cad1e75a940ae06b3db550ea614fdec229de0c986cbc6fa4cd00"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/archive-headline.jpg",
+          "sha256": "047b2e34aa70c6d12187a28169d46c8eace98dc866e385d1bc9c0205b602d6ac"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/status-cards.jpg",
+          "sha256": "4b05820686a81fbd50418ce0ef49f1e34215ebb10f899d706233a63238cace1b"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/panorama.jpg",
+          "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples\\reference-library\\F21\\mural-de-investigacao\\analysis.json",
+        "sha256": "9fce6b6ee0435b91a60806add1198cc74511d57621d976d3fdf2315700cc94af"
+      }
     }
   ],
   "visual_identities": [
@@ -948,6 +1016,13 @@
       "path": "context/visual-identities/ID08/identity-v1.json",
       "version": 1,
       "uid": "factory.id08"
+    },
+    {
+      "code": "ID09",
+      "name": "Mural escuro",
+      "path": "context/visual-identities/ID09/identity-v1.json",
+      "version": 1,
+      "uid": "factory.id09"
     }
   ],
   "retired_formats": [

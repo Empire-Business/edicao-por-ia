@@ -172,6 +172,14 @@
         "sha256": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73"
       },
       "reference_conflicts": []
+    },
+    "official.cd218ae1b254402bad39209848e4b93f": {
+      "code": "F21",
+      "primary_reference": {
+        "path": "examples/reference-library/F21/mural-de-investigacao/reference.mp4",
+        "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
+      },
+      "reference_conflicts": []
     }
   }
 }
