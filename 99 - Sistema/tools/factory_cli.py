@@ -18,7 +18,7 @@ def main(argv=None):
     c=sp.add_parser('studio',help='Estúdio local de motion com referência e crítica');c.add_argument('arguments',nargs=argparse.REMAINDER)
     c=sp.add_parser('doctor');c.add_argument('--smoke',action='store_true')
     c=sp.add_parser('cleanup',help='Prévia ou remoção de segmentos de render de trabalhos entregues');c.add_argument('--job');c.add_argument('--apply',action='store_true');c.add_argument('--confirm')
-    c=sp.add_parser('setup');c.add_argument('--host',choices=['both','claude','codex'],default='both');c.add_argument('--profile',choices=['economico','equilibrado','elaborado'],default='equilibrado');c.add_argument('--apply',action='store_true')
+    c=sp.add_parser('setup');c.add_argument('--host',choices=['both','claude','codex'],default='both');c.add_argument('--profile',choices=['economico','equilibrado','elaborado'],default='equilibrado');c.add_argument('--apply',action='store_true');c.add_argument('--preserve-agent-config',action='store_true',help='Preserva agentes e escolhas existentes; novos agentes herdam o modelo da sessão.')
     c=sp.add_parser('dependencies');c.add_argument('--capability',choices=['base','speech','motion','studio-audio','audio-cleanup','voice','ffmpeg'],default='speech');c.add_argument('--apply',action='store_true')
     c=sp.add_parser('update');c.add_argument('--from',dest='source');c.add_argument('--check',action='store_true');c.add_argument('--apply',action='store_true');c.add_argument('--rollback')
     c=sp.add_parser('upgrade');c.add_argument('--from',dest='source',required=True);c.add_argument('--apply',action='store_true')
@@ -55,7 +55,7 @@ def main(argv=None):
         elif a.cmd=='cleanup':
             from factory_cleanup import cleanup
             out=cleanup(root,a.job,a.apply,a.confirm)
-        elif a.cmd=='setup':out=setup(root,a.host,a.profile,a.apply)
+        elif a.cmd=='setup':out=setup(root,a.host,a.profile,a.apply,a.preserve_agent_config)
         elif a.cmd=='dependencies':out=dependencies(root,a.capability,a.apply)
         elif a.cmd=='update':
             from update_local import install,github_package,rollback as update_rollback

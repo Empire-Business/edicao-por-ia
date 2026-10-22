@@ -1,0 +1,129 @@
+id: f21-mural-de-investigacao-v1
+version: 1
+status: draft
+format_code: F21
+created: 2026-10-21
+origin: >-
+  Formato oficial criado pelo autor em 21/10/2026 a partir de um Reel de investigação (mural de cortiça) usado
+  só como referência de mecanismo, e de duas edições reais: uma narração de caso jornalístico aprovada pelo autor
+  e o demo público "O roubo da Mona Lisa (1911)", com narração própria e fotos de época em domínio público.
+  O Reel de referência não é distribuído; o exemplo publicado é o demo.
+purpose: >-
+  Narrativa de investigação organizada em um mural visual contínuo: evidências reais entram uma por vez, fios
+  ligam só o que a fala sustenta e ressalvas jurídicas ficam legíveis.
+engine: python_seek            # tools/mural_board.py: quadro a quadro a partir do tempo t, sem relógio simulado
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: natural
+  pacing_rule: >-
+    A fala conduz o tempo. Contexto e mural primeiro; cada ato limpa o quadro e reconstrói a evidência principal.
+    Sequências numeradas (acusação 1 de 4…) podem acelerar; ressalvas, situação processual e resumo final têm
+    tempo de leitura (≥2,5 s). Cada cartão entra no início da palavra que o justifica.
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 0.8
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.8
+    keep_pause_seconds: 0.3
+    word_handle_seconds: 0.1
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  loop_tail: Narração tirada de um Reel pode repetir o começo no fim (loop); cortar a repetição.
+  min_jump_cut_interval_seconds: 0.9
+  preserve_required_phrases: []
+structure:
+  opening: Etiqueta curta do caso (caso · lugar · ano) e a primeira evidência no mural, já no primeiro segundo.
+  acts: Etiquetas "ATO N · TÍTULO" quando a história tiver fases; cada ato limpa o quadro e mantém a mesma superfície.
+  numbered_sequence: Contador "ITEM N DE M" seguindo a própria narração; um post-it com a frase de cada item.
+  archival_audio: >-
+    Trecho de áudio original dentro da narração (debate, entrevista) vira uma polaroide da pessoa com forma de onda
+    real do arquivo e rótulo "áudio original · fonte"; a legenda separa quem fala.
+  status: Separar alegação, negação, decisão judicial e opinião em cartões diferentes, com o rótulo usado na fala.
+  panorama: >-
+    Final com as polaroides principais em panorama, ligadas por fio, e a frase de fecho. Chamada para ação só
+    quando a narração pede (sem @, selo ou logo).
+visual:
+  primary_composition: persistent_evidence_board
+  board: Cortiça escura gerada por código, com vinheta forte e terço inferior escuro reservado para a legenda.
+  layout_rule: >-
+    Uma evidência principal por vez; preservar itens anteriores só quando continuarem legíveis. Conteúdo no terço
+    superior e no meio (y 250–1300 em 1080x1920); legenda em y≈1420.
+  components:
+    - polaroide P&B com legenda manuscrita, crédito "Foto: …" e tachinha
+    - ficha com faixa vermelha (fato/data) ou azul (contexto) e texto mono
+    - post-it com a frase da alegação, sempre entre aspas
+    - etiqueta de ato, contador numerado, carimbo (FALSO, NEGADO, VERDADEIRA) só quando a fala diz
+    - faixa de status (ACUSADO · NÃO JULGADO), cartão de citação com fonte, forma de onda do áudio original
+  evidence_linking: semantic_only   # fio vermelho atrás das evidências, só onde a fala liga os itens
+  photos: >-
+    Fotos reais do caso, com licença verificável (domínio público, CC BY, foto oficial) e crédito na polaroide.
+    Conferir em tamanho real: rosto inteiro com folga, assunto reconhecível, texto legível; horizontal para
+    prédios e paisagens. Vítima criança ou pessoa que não deve ser exposta: símbolo (flor), nunca foto.
+    Identidade não informada: silhueta com "?". Nunca gerar rosto de pessoa real.
+  archival_insert: framed_with_verified_source_and_date
+  exhibit_motion: restrained_and_explanatory   # queda curta com leve escala, carimbo, deslize; saída 0,22 s
+  punch_ins: selective
+  max_punch_in_scale: 1.04
+  random_effects: false
+captions:
+  enabled: true
+  style: karaoke
+  max_words: 3
+  max_chars: 20
+  rule: >-
+    Só palavras realmente ditas, com a grafia correta dos nomes (corrigir o reconhecimento pelo roteiro quando a
+    narração o lê). Palavra dita em branco, próxima em cinza, palavra-chave (nomes, datas, status) em serifa
+    itálica na cor principal da ID. Bloco não atravessa troca de quem fala.
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  music_policy: opcional_e_subordinada_a_fala
+  sound_effects_policy: discretos_e_apenas_explicativos
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+tooling:
+  renderer: tools/mural_board.py
+  usage: >-
+    Escrever o roteiro de cenas do trabalho (spec.json: duração, áudio, fotos com recorte e crédito, elementos com
+    tipo/posição/tempos, fios, círculos, onda e legenda) e renderizar com
+    `tools/mural_board.py spec.json --identity <identity-v1.json da ID> --keyframes …` e depois `--render`.
+  palette_roles: background, surface, text, muted, primary, alert, pin_blue, card, card_ink, sticky, string
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+  source_and_date_labels: required_for_archival_or_quoted_material
+  claim_status_and_qualifications: preserve_exactly
+  evidence_to_claim_match: required
+  board_text_readability: required
+  photo_crop_review: required_full_size
+  final_recap_reconnects_evidence: required
+forbidden:
+  - fabricated_or_misrepresented_evidence
+  - generated_face_of_real_person
+  - photo_of_child_victim
+  - unattributed_archival_quote
+  - unlicensed_photo
+  - allegation_presented_as_adjudicated_fact
+  - unsupported_causal_connection
+  - fixed_case_or_person
+  - copied_branding_or_logo
+  - arbitrary_transition_or_zoom
+  - unreadable_rapid_cards
+  - forced_call_to_action
+insertion_assets:
+  policy: encouraged_when_relevant_and_verified
+  density: medium
+  default_preferred_duration_s: 4
+  default_max_duration_s: 8
+  allow_image_motion: true

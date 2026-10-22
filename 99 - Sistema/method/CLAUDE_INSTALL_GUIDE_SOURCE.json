@@ -1,16 +1,16 @@
 {
-  "version": "2.1 - 21/10/2026",
+  "version": "2.2 - 22/10/2026",
   "pages": [
     {
-      "title": "Claude, instale o Cortez.",
+      "title": "IA, instale o Cortez.",
       "blocks": [
         {
           "heading": "Você grava, o Cortez edita, você aprova.",
-          "text": "O Cortez é o agente que edita seus vídeos. Anexe este PDF ao Claude e envie. Não precisa copiar um comando."
+          "text": "O Cortez é o agente que edita seus vídeos. Anexe este PDF ao Claude Code ou Codex e envie: “Instale o Cortez neste computador”. A IA conduz a instalação."
         },
         {
-          "heading": "Pedido para o Claude",
-          "text": "Quero instalar e preparar o Cortez no meu computador. Conduza o processo, execute as verificações e pergunte somente o que depender de mim. Não responda apenas com um resumo deste PDF."
+          "heading": "Pedido para a IA",
+          "text": "Instale o Cortez completo. Identifique macOS, Windows ou Linux e adapte você mesmo a instalação. Faça a parte técnica até concluir; pergunte apenas o destino e o que depender de mim, como login e permissões do sistema. Não me entregue comandos nem peça outro computador para testar."
         },
         {
           "heading": "Comece pelo destino",
@@ -64,7 +64,7 @@
         },
         {
           "heading": "Ferramenta oficial",
-          "text": "Confira a integração e a presença da CLI gh, usada pelo setup. Se ela faltar, proponha a instalação oficial e obtenha a autorização necessária. Login somente no navegador não comprova a sessão da CLI."
+          "text": "Confira a integração e a presença da CLI gh, usada pelo setup. Se ela faltar, prepare pelo canal oficial adequado ao computador, dentro da autorização deste pedido. Login somente no navegador não comprova a sessão da CLI."
         },
         {
           "heading": "Sem sessão autenticada",
@@ -89,11 +89,11 @@
         },
         {
           "heading": "Leia as regras",
-          "text": "Leia AGENTS.md da raiz, 99 - Sistema/AGENTS.md e CLAUDE.md. No motor, siga INSTALL_WITH_CLAUDE.md, ASSISTED_START.md e SETUP_LOCAL.md."
+          "text": "Leia AGENTS.md da raiz, 99 - Sistema/AGENTS.md e as instruções do host. No motor, siga o roteiro adaptativo completo de workflows/INSTALL_WITH_CLAUDE.md. Use tools/install_environment.py para descobrir o ambiente e planejar as etapas."
         },
         {
-          "heading": "Prepare para o Claude",
-          "text": "Faça diagnóstico, prévia do setup e aplicação conforme as regras. A autenticação é conferida antes do setup aplicado. Use os caminhos reais de 99 - Sistema e apenas as dependências necessárias, com as autorizações exigidas."
+          "heading": "Prepare para o agente local",
+          "text": "Use Python 3.12 ou 3.11 compatível, ambiente isolado e setup com --preserve-agent-config. Prepare vídeo, transcrição, animações, limpeza e Cortez Voz. Preserve modelos, esforço, velocidade, autenticação, integrações e permissões. Não pergunte de novo por cada pacote já autorizado."
         },
         {
           "heading": "Verifique de verdade",
@@ -102,6 +102,31 @@
         {
           "heading": "Entregue evidência",
           "text": "Informe o caminho real, abra 00 - COMECE AQUI.html e o painel. Diferencie ferramenta encontrada de capacidade realmente testada. Não declare “tudo pronto” por um download: registre o que passou e cada pendência com motivo e próxima ação."
+        }
+      ]
+    },
+    {
+      "title": "Autorização para instalar",
+      "blocks": [
+        {
+          "heading": "Dependências gratuitas",
+          "text": "Autorizo instalar as dependências necessárias do Cortez no destino escolhido, incluindo Python compatível, ferramentas de vídeo, transcrição, animações, limpeza de áudio e Cortez Voz. Mostre o resumo e prossiga. Permissões do sistema e login são realizados por mim quando exigidos."
+        },
+        {
+          "heading": "Dados no meu computador",
+          "text": "Dentro da nova pasta escolhida, autorizo inicializar os dados locais em 99 - Sistema/context/clients e criar/inicializar o banco do Cortez Voz em 99 - Sistema/.factory/cortez-voz-data. Isso não autoriza bancos de teste, containers, reset, perda de dados ou mudanças em outros projetos."
+        },
+        {
+          "heading": "Voz controlada pela Empire",
+          "text": "Obtenha Cortez Voz somente da revisão e dos hashes de config/cortez-voice.json, no repositório Empire-Business/cortez-voz. Não substituir a origem pela branch de terceiros. Inicie apenas localmente e verifique a identidade do serviço antes de usar."
+        },
+        {
+          "heading": "Modelos de áudio e custos",
+          "text": "Confira licença, idioma, tamanho e compatibilidade antes de baixar pesos. Não aceite termos por mim. Serviços pagos não estão autorizados; ElevenLabs e Apify são opcionais e nunca são usados automaticamente."
+        },
+        {
+          "heading": "Corrija no ambiente real",
+          "text": "Resolva dependências com fontes oficiais, preserve etapas concluídas e repita somente o necessário após corrigir a causa. Não desative proteções ou ignore hashes. Verifique cortes, fala, animações e voz neste computador; não exija que eu teste em outro sistema."
         }
       ]
     },

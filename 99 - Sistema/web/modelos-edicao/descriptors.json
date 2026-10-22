@@ -845,5 +845,67 @@
       "opiniao",
       "analise"
     ]
+  },
+  "F21": {
+    "category": "stories",
+    "categories": [
+      "stories"
+    ],
+    "tags": [
+      "Investigação",
+      "Mural",
+      "Sem apresentador",
+      "Fotos reais"
+    ],
+    "use": "Contar um caso, crime, escândalo ou mistério como investigação: evidências reais num mural, ligadas por fios, com o status de cada acusação claro.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Narração do caso (gravada ou locução)",
+      "Fotos reais das pessoas, lugares e documentos citados",
+      "Fontes e datas do que for citado"
+    ],
+    "buildingBlocks": [
+      "Mural de cortiça",
+      "Polaroides com fotos reais",
+      "Fichas, post-its e carimbos",
+      "Fios ligando evidências",
+      "Contador de acusações",
+      "Legenda palavra a palavra"
+    ],
+    "searchTerms": [
+      "investigacao",
+      "investigação",
+      "mural",
+      "quadro de investigacao",
+      "cortiça",
+      "cortica",
+      "evidencias",
+      "evidências",
+      "caso",
+      "crime",
+      "true crime",
+      "policial",
+      "mistério",
+      "misterio",
+      "escandalo",
+      "escândalo",
+      "acusacao",
+      "acusação",
+      "julgamento",
+      "detetive",
+      "fios vermelhos",
+      "polaroid",
+      "fotos",
+      "documentos",
+      "jornal",
+      "sem aparecer",
+      "sem apresentador",
+      "narração",
+      "narracao",
+      "historia",
+      "história",
+      "dark"
+    ]
   }
 }

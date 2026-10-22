@@ -80,4 +80,26 @@ class DistributionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'initialize-data'):installer.start(self.root)
             run.assert_not_called()
 
+    def test_reuse_checks_all_source_files_against_pinned_archive(self):
+        archive=self.archive([('source/cortez/install.py','installer'),('source/uv.lock','locked'),('source/backend/main.py','original')])
+        spec={'archive':{'size':archive.stat().st_size,'sha256':distribution.digest(archive)}}
+        distribution.extract(archive,self.root/'unpack');source=self.root/'unpack/source'
+        installer.verify_source(source,archive,spec)
+        for name in ('sitecustomize.py', 'cortez/sitecustomize.py', 'backend/injected.py'):
+            path=source/name;path.write_text('injected')
+            with self.assertRaisesRegex(ValueError,'Arquivo extra'):installer.verify_source(source,archive,spec)
+            path.unlink()
+        generated=source/'.cortez';generated.mkdir();(generated/'installed.json').write_text('{}')
+        cache=source/'backend/__pycache__';cache.mkdir()
+        bytecode=cache/'main.cpython-312.pyc';bytecode.write_bytes(b'untrusted cached code')
+        installer.verify_source(source,archive,spec)
+        self.assertFalse(bytecode.exists())
+        for name in ('uv.lock','backend/main.py'):
+            with self.subTest(name=name):
+                path=source/name;old=path.read_bytes();path.write_text('changed')
+                with self.assertRaisesRegex(ValueError,'Código de voz alterado'):installer.verify_source(source,archive,spec)
+                path.write_bytes(old)
+        archive.write_bytes(b'changed')
+        with self.assertRaisesRegex(ValueError,'origem ausente ou divergente'):installer.verify_source(source,archive,spec)
+
 if __name__=='__main__':unittest.main()

@@ -4,7 +4,7 @@ Edite vídeos conversando com o Cortez. Escolha um formato de edição e uma ide
 
 ## Instalação guiada pelo Claude
 
-[Abra e baixe o guia em PDF](99%20-%20Sistema/method/CLAUDE_INSTALL_GUIDE.pdf), anexe-o ao Claude e envie. O documento já contém o pedido de instalação: o Claude pergunta onde criar a pasta, conduz sua autenticação no GitHub e prepara/verifica o sistema. Use um ambiente com acesso real aos seus arquivos e terminal, como Claude Code; um chat sem essas ferramentas não instala no computador.
+[Abra e baixe o guia em PDF](99%20-%20Sistema/method/CLAUDE_INSTALL_GUIDE.pdf), anexe-o ao Claude Code ou Codex e diga: **“Instale o Cortez neste computador.”** O documento contém o pedido completo: a IA identifica macOS, Windows ou Linux, pergunta onde criar a pasta, conduz o login no GitHub e prepara vídeo, fala, animações e Cortez Voz, adaptando a instalação ao computador. Use um ambiente com acesso real aos seus arquivos e terminal, como Claude Code; um chat sem essas ferramentas não instala no computador.
 
 A conta é a sua própria. Não envie senha, token ou chave na conversa. O fluxo guiado exige login antes do download/preparação, mesmo com o repositório público. Downloads manuais anônimos continuam possíveis no GitHub. A escrita no central é restrita às permissões de mantenedor; suas criações particulares ficam locais.
 
@@ -36,6 +36,7 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | F18 | Longo + Cortes |
 | F19 | Print Repost |
 | F20 | React |
+| F21 | Mural de investigação |
 
 Os códigos e nomes consolidados são preservados. Novos formatos oficiais ocupam o menor número ativo disponível com identidade interna própria; um código reaproveitado não herda a geração retirada. Todo oficial novo também precisa aparecer na galeria com exemplo real.
 

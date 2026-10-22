@@ -1,3 +1,5 @@
+**Instalação completa:** `INSTALL_WITH_CLAUDE.md` é o roteiro canônico para a IA adaptar macOS, Windows e Linux; `tools/install_environment.py` produz o inventário sem instalar nada. O usuário usa um pedido em português, não esta referência de comandos.
+
 **v1.6:** A entrada principal agora é `workflows/ASSISTED_START.md`; use o instalador com prévia/backup, não apenas recomendações. O conteúdo abaixo continua como referência técnica de ambiente.
 
 # Workflow — Setup Local

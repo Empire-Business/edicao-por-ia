@@ -32,7 +32,7 @@ def build(root=ROOT):
     data = json.loads((root / 'method/CLAUDE_INSTALL_GUIDE_SOURCE.json').read_text())
     out = root / 'method/CLAUDE_INSTALL_GUIDE.pdf'
     c = canvas.Canvas(str(out), pagesize=A4, invariant=1)
-    c.setTitle('Cortez - Instalação guiada pelo Claude')
+    c.setTitle('Cortez - Instalação conduzida pela IA')
     c.setAuthor('Cortez, por Bruno Guzela')
     width, height = A4
     style = ParagraphStyle('body', fontName='CortezManrope', fontSize=10.2, leading=16, textColor=HexColor('#D6C9E5'))
@@ -41,7 +41,7 @@ def build(root=ROOT):
         c.setFillColor(HexColor('#07030D')); c.rect(0, 0, width, height, fill=1, stroke=0)
         c.setFillColor(HexColor('#C88BF7')); c.setFont('CortezBold', 23); c.drawString(48, height - 52, 'Cortez')
         c.setFillColor(HexColor('#B9A8CF')); c.setFont('CortezManrope', 8)
-        c.drawRightString(width - 48, height - 48, 'ANEXE O PDF. O CLAUDE CONDUZ.')
+        c.drawRightString(width - 48, height - 48, 'ANEXE O PDF. A IA CONDUZ.')
         c.setStrokeColor(HexColor('#38204F')); c.line(48, height - 68, width - 48, height - 68)
         c.setFillColor(HexColor('#F4EEFB')); c.setFont('CortezBold', 21)
         c.drawString(48, height - 110, page['title'])

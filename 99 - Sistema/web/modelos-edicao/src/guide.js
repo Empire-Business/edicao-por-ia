@@ -2,7 +2,7 @@
 // (workflow em 99 - Sistema/workflows), atualizar esta lista e guideUpdated na mesma mudança.
 export const guideUpdated = '2026-10-21';
 
-export const installerPdf = 'https://drive.google.com/file/d/1q1_mqtFYcouUHKKZImZFXDMAaolqHnkH/view?usp=sharing';
+export const installerPdf = 'https://github.com/Empire-Business/edicao-por-ia/raw/refs/heads/main/99%20-%20Sistema/method/CLAUDE_INSTALL_GUIDE.pdf';
 
 export const tutorials = [
   { id: 'como-usar', title: 'Como usar o Cortez', description: 'Acompanhe o uso do agente, da gravação até a edição. Dê o play para assistir com som.', source: 'vimeo', videoId: '1238030963', hash: '1c867e709c' }
@@ -33,10 +33,10 @@ export const functions = [
   },
   {
     id: 'instalar', group: 'comecar', title: 'Instalar o Cortez',
-    what: 'O Cortez cria a pasta no seu computador, confere sua conta do GitHub e prepara o que falta, sempre mostrando antes o que vai instalar.',
+    what: 'Um pedido para a IA instalar o Cortez completo: ela identifica macOS, Windows ou Linux, prepara vídeo, fala, animações e Cortez Voz e resolve os ajustes no seu computador.',
     say: 'Instale o Cortez neste computador.',
-    prompt: 'Instale o Cortez neste computador seguindo o guia de instalação que anexei.\n\nPergunte primeiro onde devo criar a pasta. Confira minha conta do GitHub, não sobrescreva nenhuma pasta existente e me mostre o que vai instalar antes de instalar. No fim, diga o que foi testado de verdade e o que ficou pendente.',
-    tips: ['Anexe o PDF de instalação na conversa com o Claude.', 'Nada é instalado sem a sua autorização.'],
+    prompt: "Instale o Cortez completo neste computador a partir de https://github.com/Empire-Business/edicao-por-ia (main, ID 1408655066). Identifique se estou no macOS, Windows ou Linux e adapte você mesmo a instalação. Eu não sei executar comandos: faça a parte técnica até concluir, pergunte somente o destino da pasta e o que realmente depender de mim, como login ou uma permissão do sistema. Se eu já informei o destino, use essa escolha.\n\nAutorizo instalar as dependências gratuitas necessárias no destino escolhido, incluindo Python compatível, ferramentas de vídeo, transcrição, animações, limpeza de áudio e Cortez Voz. Autorizo inicializar os dados locais do Cortez em 99 - Sistema/context/clients e criar/inicializar o banco do Cortez Voz em 99 - Sistema/.factory/cortez-voz-data, dentro dessa nova pasta no meu computador. Isso não autoriza bancos de teste, containers, reset de dados, serviços pagos nem alterações em outros projetos. Mostre um resumo e prossiga com o que já autorizei, sem pedir confirmação de cada pacote.\n\nConfirme minha própria conta no GitHub pela ferramenta oficial; nunca peça senha, token ou chave na conversa. Preserve qualquer pasta existente. Obtenha a main do repositório exato, fixe o commit e confira o manifesto. Leia AGENTS.md, 99 - Sistema/AGENTS.md e 99 - Sistema/workflows/INSTALL_WITH_CLAUDE.md. Use o diagnóstico e o modo de preparação que preserva as configurações do agente, conforme esse roteiro. Preserve meus modelos, esforço, velocidade, autenticação, integrações e permissões. Cortez Voz deve vir exclusivamente da revisão e do hash controlados pela Empire-Business, nunca da branch de terceiros.\n\nResolva dependências e falhas conforme o sistema encontrado, usando fontes oficiais, sem me entregar comandos técnicos. Não desative proteções nem substitua versões fixadas para fazer uma instalação passar. Reaproveite etapas concluídas. Verifique cortes, transcrição, animações e voz no meu próprio computador; não exija que eu tenha outros sistemas para testar. Downloads de modelos de áudio exigem tamanho e licença conhecidos; não aceite termos por mim. ElevenLabs e Apify continuam opcionais e nunca são alternativas pagas automáticas.\n\nSe não tiver acesso real aos meus arquivos e terminal, me conduza a um agente local, como Claude Code ou Codex, sem fingir que instalou. Ao terminar, abra 00 - COMECE AQUI.html, informe a pasta e o que foi realmente testado. Se um componente tiver incompatibilidade concreta, resolva o que for possível, registre o motivo e não declare esse componente funcionando. Não publique meus arquivos, faça push ou edite vídeos durante a instalação.",
+    tips: ['Envie o pedido completo ou anexe o PDF ao Claude Code ou Codex com acesso ao seu computador.', 'A IA faz a parte técnica. Você escolhe a pasta, entra no GitHub e permite os acessos necessários.', 'Não é necessário ter outro sistema operacional para testar.'],
     workflows: ['INSTALL_WITH_CLAUDE.md']
   },
   {

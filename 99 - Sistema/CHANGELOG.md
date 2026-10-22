@@ -20,7 +20,9 @@
 
 - Instalador do aplicativo controlado pela Empire, fixado por commit/hash, integrado ao setup.
 - Limpeza/narração/trilhas locais e chaves pagas opcionais. Sem fallback pago automático.
-- Mac Apple Silicon: dependências e interface preparados; backend/banco/modelos não iniciados. Windows/Linux aguardam execução real.
+- Instalação conduzida pela IA com um pedido: identifica macOS/Windows/Linux, prepara dependências, adapta caminhos e retoma falhas no computador de destino. PDF e prompt completos no repositório Empire.
+- Modo de setup preserva configurações/modelos; planejamento por plataforma testado sem banco. Verificação da árvore de origem antes de retomar/iniciar voz rejeita alterações e arquivos extras.
+- Evidência: dependências/interface no Mac Apple Silicon; planejamento e testes de integridade portáveis. Execução nativa em Windows/Linux e síntese no backend não foram realizadas neste ambiente; a IA valida cada instalação no próprio destino.
 
 ## 2.6.0 — 21 de outubro de 2026
 
