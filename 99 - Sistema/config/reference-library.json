@@ -1536,6 +1536,98 @@
         }
       ],
       "missing_sources": []
+    },
+    "F21": {
+      "code": "F21",
+      "name": "Mural de investigação",
+      "uid": "official.cd218ae1b254402bad39209848e4b93f",
+      "references": [
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/README.md",
+          "kind": "reference_analysis",
+          "sha256": "fb06839793490a3df165f804d1c634ed8ae62a9a1ccdaa89b160fd2e868fed6a",
+          "bytes": 850,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/act-board.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "2a9c448f3dbdc7cad6ded662823f9aca99aa52b0b24050fae4f509240c359d36",
+          "bytes": 118823,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "caption": "Ato 1: data, a parede vazia (foto de 1911 com crédito), post-it e carimbo; círculo vermelho destaca a evidência citada.",
+          "at_seconds": 27.0
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "9fce6b6ee0435b91a60806add1198cc74511d57621d976d3fdf2315700cc94af",
+          "bytes": 8061,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/archive-headline.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "047b2e34aa70c6d12187a28169d46c8eace98dc866e385d1bc9c0205b602d6ac",
+          "bytes": 117882,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "caption": "Documento de época emoldurado com fonte e data (Excelsior, 14/12/1913) e a manchete traduzida.",
+          "at_seconds": 67.0
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/count-two-years.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "146027f40064cad1e75a940ae06b3db550ea614fdec229de0c986cbc6fa4cd00",
+          "bytes": 88693,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "caption": "Passagem de tempo em destaque, com o mural limpo antes do próximo ato.",
+          "at_seconds": 43.0
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/opening.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "3722a7d97ae814e9c90c94cffa526a17751657e47c5ca8c8239613c386e5b8a7",
+          "bytes": 87360,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "caption": "Abertura: etiqueta do caso (caso · lugar · ano) e a primeira evidência fixada no mural.",
+          "at_seconds": 2.0
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/panorama.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
+          "bytes": 114686,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "caption": "Panorama final: as evidências do caso reunidas e ligadas por fio, com a frase de fecho.",
+          "at_seconds": 84.0
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "bytes": 4896552,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/status-cards.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4b05820686a81fbd50418ce0ef49f1e34215ebb10f899d706233a63238cace1b",
+          "bytes": 101320,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "caption": "Desfecho em fichas separadas: prisão e condenação, depois a devolução do quadro.",
+          "at_seconds": 77.0
+        },
+        {
+          "path": "examples/reference-library/F21/mural-de-investigacao/suspects.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb",
+          "bytes": 103563,
+          "source_sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+          "caption": "Suspeitos em polaroides com o status dito na fala e uma faixa que separa suspeita de culpa.",
+          "at_seconds": 39.0
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -2090,7 +2182,17 @@
     "examples/reference-library/F09/personagem/character-2.jpg": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
     "examples/reference-library/F09/personagem/closing.jpg": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
     "examples/reference-library/F09/personagem/reference.mp4": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
-    "examples/reference-library/F09/personagem/turn.jpg": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4"
+    "examples/reference-library/F09/personagem/turn.jpg": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4",
+    "examples/reference-library/F21/mural-de-investigacao/README.md": "fb06839793490a3df165f804d1c634ed8ae62a9a1ccdaa89b160fd2e868fed6a",
+    "examples/reference-library/F21/mural-de-investigacao/act-board.jpg": "2a9c448f3dbdc7cad6ded662823f9aca99aa52b0b24050fae4f509240c359d36",
+    "examples/reference-library/F21/mural-de-investigacao/analysis.json": "9fce6b6ee0435b91a60806add1198cc74511d57621d976d3fdf2315700cc94af",
+    "examples/reference-library/F21/mural-de-investigacao/archive-headline.jpg": "047b2e34aa70c6d12187a28169d46c8eace98dc866e385d1bc9c0205b602d6ac",
+    "examples/reference-library/F21/mural-de-investigacao/count-two-years.jpg": "146027f40064cad1e75a940ae06b3db550ea614fdec229de0c986cbc6fa4cd00",
+    "examples/reference-library/F21/mural-de-investigacao/opening.jpg": "3722a7d97ae814e9c90c94cffa526a17751657e47c5ca8c8239613c386e5b8a7",
+    "examples/reference-library/F21/mural-de-investigacao/panorama.jpg": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
+    "examples/reference-library/F21/mural-de-investigacao/reference.mp4": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
+    "examples/reference-library/F21/mural-de-investigacao/status-cards.jpg": "4b05820686a81fbd50418ce0ef49f1e34215ebb10f899d706233a63238cace1b",
+    "examples/reference-library/F21/mural-de-investigacao/suspects.jpg": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb"
   },
   "retired_generations": {
     "factory.f02": {

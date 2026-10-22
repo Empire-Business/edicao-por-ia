@@ -46,6 +46,8 @@ test('shared links do not assign a default identity or restore a retired format'
   assert.equal(selectionFromHash('#modelo=F19', catalog).identity, null);
   assert.equal(selectionFromHash('#modelo=F20&id=ID03', catalog).format.pattern, 'f20-react-v1');
   assert.equal(selectionFromHash('#modelo=F20', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F21&id=ID09', catalog).format.pattern, 'f21-mural-de-investigacao-v1');
+  assert.equal(selectionFromHash('#modelo=F21', catalog).identity, null);
   assert.equal(selectionFromHash('#modelo=F09', catalog).format.pattern, 'f09-personagem-v1');
   assert.equal(selectionFromHash('#modelo=F11', catalog).format.pattern, 'f11-narracao-ilustrada-v1');
   assert.equal(selectionFromHash('#modelo=F17', catalog).format.pattern, 'f17-colunas-v1');
@@ -65,7 +67,7 @@ test('storage failures and invalid values cannot break the library', () => {
 test('public catalogue contains no private factory records or machine paths', () => {
   const text = JSON.stringify(catalog);
   for (const privateMarker of ['memory_store', 'legacy_stores', 'example_videos', 'jobs/', 'context/clients', '/Users/', '/Volumes/', 'drive_id', 'registration_receipt']) assert.equal(text.includes(privateMarker), false, privateMarker);
-  assert.equal(catalog.identities.length, 8);
+  assert.equal(catalog.identities.length, 9);
 });
 
 test('retired media is absent and references without video have honest evidence labels', async () => {
@@ -134,7 +136,7 @@ test("numeric code order is stable for library, favorites and searches", () => {
  const shuffled=[catalog.formats.find(x=>x.code==="F16"),catalog.formats.find(x=>x.code==="F04"),catalog.formats.find(x=>x.code==="F01")];
  assert.deepEqual(filterFormats(shuffled).map(x=>x.code),["F01","F04","F16"]);
  assert.deepEqual(filterFormats(shuffled,{favoritesOnly:true,favorites:["F16","F01"]}).map(x=>x.code),["F01","F16"]);
- assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20"]);
+ assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20","F21"]);
 });
 
 test('the authorized new F02 uses its actual full example and a fresh media generation', () => {

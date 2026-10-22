@@ -453,5 +453,42 @@
       "sha256": "ad6f4bb1228618ccc1f85a1d08bc499ca44542aebee36355871d6613c52a26ab",
       "caption": "Zoom alternado nos cortes secos: enquadramento fechado, rosto mais alto."
     }
+  ],
+  "F21": [
+    {
+      "path": "examples/reference-library/F21/mural-de-investigacao/opening.jpg",
+      "sha256": "3722a7d97ae814e9c90c94cffa526a17751657e47c5ca8c8239613c386e5b8a7",
+      "caption": "Abertura: etiqueta do caso (caso · lugar · ano) e a primeira evidência fixada no mural."
+    },
+    {
+      "path": "examples/reference-library/F21/mural-de-investigacao/act-board.jpg",
+      "sha256": "2a9c448f3dbdc7cad6ded662823f9aca99aa52b0b24050fae4f509240c359d36",
+      "caption": "Ato 1: data, a parede vazia (foto de 1911 com crédito), post-it e carimbo; círculo vermelho destaca a evidência citada."
+    },
+    {
+      "path": "examples/reference-library/F21/mural-de-investigacao/suspects.jpg",
+      "sha256": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb",
+      "caption": "Suspeitos em polaroides com o status dito na fala e uma faixa que separa suspeita de culpa."
+    },
+    {
+      "path": "examples/reference-library/F21/mural-de-investigacao/count-two-years.jpg",
+      "sha256": "146027f40064cad1e75a940ae06b3db550ea614fdec229de0c986cbc6fa4cd00",
+      "caption": "Passagem de tempo em destaque, com o mural limpo antes do próximo ato."
+    },
+    {
+      "path": "examples/reference-library/F21/mural-de-investigacao/archive-headline.jpg",
+      "sha256": "047b2e34aa70c6d12187a28169d46c8eace98dc866e385d1bc9c0205b602d6ac",
+      "caption": "Documento de época emoldurado com fonte e data (Excelsior, 14/12/1913) e a manchete traduzida."
+    },
+    {
+      "path": "examples/reference-library/F21/mural-de-investigacao/status-cards.jpg",
+      "sha256": "4b05820686a81fbd50418ce0ef49f1e34215ebb10f899d706233a63238cace1b",
+      "caption": "Desfecho em fichas separadas: prisão e condenação, depois a devolução do quadro."
+    },
+    {
+      "path": "examples/reference-library/F21/mural-de-investigacao/panorama.jpg",
+      "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
+      "caption": "Panorama final: as evidências do caso reunidas e ligadas por fio, com a frase de fecho."
+    }
   ]
 }
