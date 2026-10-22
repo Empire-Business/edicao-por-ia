@@ -1,6 +1,6 @@
 # Publicar e manter o catálogo visual
 
-Todo novo formato criado no catálogo deste autor deve aparecer em **https://modelos-edicao.empirebusiness.com.br**. A criação só está concluída depois da publicação e conferência da página. Isso também vale para renomes e descartes. Não transferir esta autorização a catálogos privados de outras pessoas que usam cópias da fábrica.
+Todo novo formato criado no catálogo deste autor deve aparecer em **https://cortez.highticketai.com.br**. A criação só está concluída depois da publicação e conferência da página. Isso também vale para renomes e descartes. Não transferir esta autorização a catálogos privados de outras pessoas que usam cópias da fábrica.
 
 ## Fonte e seleção
 
@@ -39,7 +39,7 @@ Ao criar, renomear, mudar ou retirar um workflow ou uma capacidade que o usuári
 
 ## Conferir o destino de hospedagem
 
-`web/modelos-edicao/publication-target.json` registra o projeto que atende ao domínio oficial. Antes de publicar, conferir o alias exato pelo serviço: em 21/10/2026 `modelos-edicao.empirebusiness.com.br` e `cortez.highticketai.com.br` pertencem ao projeto Vercel `prj_UqbYeafa2wgEhdt1nj6jeuxbgGsy`, equipe `team_FujSZEiwGJtiMygV3DlMCYyY`. O projeto `prj_4Zt3yYpNuCQaOFFC1E4ETJGRgs4p` atende outro endereço; um READY nele não comprova publicação no painel oficial.
+`web/modelos-edicao/publication-target.json` registra o projeto que atende ao domínio oficial. Antes de publicar, conferir o alias exato pelo serviço: em 21/10/2026 `cortez.highticketai.com.br` (domínio principal por ordem de 22/10/2026) e o alias anterior `modelos-edicao.empirebusiness.com.br` pertencem ao projeto Vercel `prj_UqbYeafa2wgEhdt1nj6jeuxbgGsy`, equipe `team_FujSZEiwGJtiMygV3DlMCYyY`. O projeto `prj_4Zt3yYpNuCQaOFFC1E4ETJGRgs4p` atende outro endereço; um READY nele não comprova publicação no painel oficial.
 
 O nome legado do projeto de hospedagem, `edicao-por-ia-dist1`, não é uma fonte GitHub. Usar exclusivamente `gitSource` do repositório público ativo, ID 1408655066, com SHA da main verificada. Não recorrer ao repositório arquivado nem a um segundo repositório de distribuição. Conferir SHA, projeto, estado READY e atribuição do domínio no recibo. Se o projeto do alias mudar, revisar o destino antes de publicar, sem mover domínios ou alterar DNS por suposição.
 

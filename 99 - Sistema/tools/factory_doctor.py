@@ -33,6 +33,12 @@ def collect(root=ROOT, smoke=False):
       'javascript_motion':{'available':cuts and bool(tools['node']) and modules['playwright'],'end_to_end_tested':False,'browser':'NOT_CHECKED'},
       'format_memory':{'available':writable,'end_to_end_tested':False},
       'client_memory':{'available':writable,'end_to_end_tested':False}}
+    from audio_local import deepfilter_binary
+    df = deepfilter_binary(root)
+    caps['local_audio_cleanup'] = {'available': cuts, 'preferred_provider': 'deepfilter' if df else 'ffmpeg',
+        'deepfilter_found': bool(df), 'end_to_end_tested': False, 'credentials_required': False}
+    caps['local_narration'] = {'available': bool(shutil.which('say')), 'macos_voice_runtime_found': bool(shutil.which('say')),
+        'cortez_voz': 'INSTALLED_NOT_STARTED' if (root/'.factory/runtimes/cortez-voz/active.json').is_file() else 'NOT_INSTALLED', 'models': 'NOT_CHECKED', 'end_to_end_tested': False}
     checks=[]
     if smoke and cuts:
         with tempfile.TemporaryDirectory(prefix='vf-check-') as d:

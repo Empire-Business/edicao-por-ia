@@ -1,8 +1,8 @@
 // Painel de instruções do Cortez. Mantido pelo Cortez: ao criar, mudar ou retirar uma função
 // (workflow em 99 - Sistema/workflows), atualizar esta lista e guideUpdated na mesma mudança.
-export const guideUpdated = '2026-10-21';
+export const guideUpdated = '2026-10-22';
 
-export const installerPdf = 'https://drive.google.com/file/d/1q1_mqtFYcouUHKKZImZFXDMAaolqHnkH/view?usp=sharing';
+export const installerPdf = 'instalar.pdf';
 
 export const tutorials = [
   { id: 'como-usar', title: 'Como usar o Cortez', description: 'Acompanhe o uso do agente, da gravação até a edição. Dê o play para assistir com som.', source: 'vimeo', videoId: '1238030963', hash: '1c867e709c' }
@@ -33,10 +33,10 @@ export const functions = [
   },
   {
     id: 'instalar', group: 'comecar', title: 'Instalar o Cortez',
-    what: 'O Cortez cria a pasta no seu computador, confere sua conta do GitHub e prepara o que falta, sempre mostrando antes o que vai instalar.',
+    what: 'Um pedido para a IA instalar o Cortez completo: ela identifica macOS, Windows ou Linux, prepara vídeo, fala, animações e Cortez Voz e resolve os ajustes no seu computador.',
     say: 'Instale o Cortez neste computador.',
-    prompt: 'Instale o Cortez neste computador seguindo o guia de instalação que anexei.\n\nPergunte primeiro onde devo criar a pasta. Confira minha conta do GitHub, não sobrescreva nenhuma pasta existente e me mostre o que vai instalar antes de instalar. No fim, diga o que foi testado de verdade e o que ficou pendente.',
-    tips: ['Anexe o PDF de instalação na conversa com o Claude.', 'Nada é instalado sem a sua autorização.'],
+    prompt: "Instale o Cortez completo neste computador a partir de https://github.com/Empire-Business/edicao-por-ia (main, ID 1408655066). Identifique se estou no macOS, Windows ou Linux e adapte você mesmo a instalação. Eu não sei executar comandos: faça a parte técnica até concluir, pergunte somente o destino da pasta e o que realmente depender de mim, como acesso local ou uma permissão do sistema. Se eu já informei o destino, use essa escolha.\n\nAutorizo instalar as dependências gratuitas necessárias no destino escolhido, incluindo Python compatível, ferramentas de vídeo, transcrição, animações, limpeza de áudio e Cortez Voz. Autorizo inicializar os dados locais do Cortez em 99 - Sistema/context/clients e criar/inicializar o banco do Cortez Voz em 99 - Sistema/.factory/cortez-voz-data, dentro dessa nova pasta no meu computador. Isso não autoriza bancos de teste, containers, reset de dados, serviços pagos nem alterações em outros projetos. Mostre um resumo e prossiga com o que já autorizei, sem pedir confirmação de cada pacote.\n\nNão preciso criar conta no GitHub para instalar. Recomende criar uma conta gratuita em https://github.com/signup para enviar sugestões e colaborar com o Cortez. Explique que é opcional e posso deixar para depois. Se eu quiser, oriente uma etapa por vez no site oficial; eu mesmo preencho e-mail, senha e verificações, nunca na conversa. Não bloqueie a instalação por esse cadastro. Faça o download público sem login; não instale GitHub CLI como requisito. Nunca peça senha, token ou chave na conversa. Preserve qualquer pasta existente. Obtenha a main do repositório exato, fixe o commit e confira o manifesto. Leia AGENTS.md, 99 - Sistema/AGENTS.md e 99 - Sistema/workflows/INSTALL_WITH_CLAUDE.md. Use o diagnóstico e o modo de preparação que preserva as configurações do agente, conforme esse roteiro. Preserve meus modelos, esforço, velocidade, autenticação, integrações e permissões. Cortez Voz deve vir exclusivamente da revisão e do hash controlados pela Empire-Business, nunca da branch de terceiros.\n\nResolva dependências e falhas conforme o sistema encontrado, usando fontes oficiais, sem me entregar comandos técnicos. Não desative proteções nem substitua versões fixadas para fazer uma instalação passar. Reaproveite etapas concluídas. Verifique cortes, transcrição, animações e voz no meu próprio computador; não exija que eu tenha outros sistemas para testar. Downloads de modelos de áudio exigem tamanho e licença conhecidos; não aceite termos por mim. ElevenLabs e Apify continuam opcionais e nunca são alternativas pagas automáticas.\n\nComece verificando se consegue executar ferramentas no meu computador, não apenas numa nuvem ou VM. Se já consegue, prossiga. Caso contrário, explique em linguagem simples como abrir o aplicativo oficial Claude, a aba Code e o ambiente Local, escolhendo uma pasta. A disponibilidade depende do plano e do aplicativo: confira a documentação oficial atual, não invente botões e não compre assinatura. Oriente a enviar este mesmo PDF nessa sessão. Não me peça comandos nem exija conta GitHub, e não finja que instalou num chat sem ferramentas locais. Ao terminar, abra 00 - COMECE AQUI.html e o painel https://cortez.highticketai.com.br, informe a pasta e o que foi realmente testado. Se um componente tiver incompatibilidade concreta, resolva o que for possível, registre o motivo e não declare esse componente funcionando. Não publique meus arquivos, faça push ou edite vídeos durante a instalação.",
+    tips: ['Anexe o PDF ao Claude e envie. O pedido já está dentro dele.', 'Não precisa de conta GitHub. Se faltar acesso local, o PDF orienta a abertura do modo adequado do Claude.', 'Criar uma conta gratuita no GitHub é recomendado para colaborar, mas pode ficar para depois.', 'Não é necessário ter outro sistema operacional para testar.'],
     workflows: ['INSTALL_WITH_CLAUDE.md']
   },
   {
@@ -140,12 +140,20 @@ export const functions = [
   },
   {
     id: 'voz', group: 'som', title: 'Limpar a voz',
-    what: 'Remove ruído e eco da gravação inteira antes dos cortes. É o que deixa a fala limpa entre as palavras.',
+    what: 'Reduz ruído no computador, antes dos cortes, com DeepFilterNet ou limpeza básica FFmpeg. A voz é conferida antes da prévia.',
     say: 'Limpe a voz deste vídeo antes da prévia.',
     prompt: 'Limpe a voz do vídeo [nome] antes de montar a prévia: isole a voz do arquivo inteiro e só depois aplique os cortes. Me diga quanto ruído saiu nas pausas.',
-    tips: ['Usa a chave ElevenLabs. Só o áudio é enviado ao serviço.'],
-    keys: ['ElevenLabs'], paid: true,
+    tips: ['Funciona sem chave ElevenLabs e sem envio de áudio à nuvem.', 'O Cortez informa qual ferramenta usou; a limpeza básica não promete remover eco.', 'ElevenLabs só é usado quando você escolher e autorizar o gasto.'],
+    paid: false,
     workflows: []
+  },
+  {
+    id: 'narracao', group: 'som', title: 'Gerar narração local',
+    what: 'Transforma seu roteiro em voz pelo Cortez Voz, instalado junto do Cortez a partir da cópia controlada pela Empire. No Mac, as vozes instaladas do sistema também são uma opção.',
+    say: 'Gere uma narração local para este roteiro.',
+    prompt: 'Gere uma narração local para [roteiro]. Mostre as vozes e os modelos locais disponíveis para eu escolher. Confira pronúncia e obtenha os tempos das palavras antes de sincronizar legendas. Se faltar algum componente, me diga o que precisa ser preparado. Não use serviço pago automaticamente.',
+    tips: ['Cortez Voz precisa estar preparado e aberto. A instalação não baixa modelos nem inicia o banco local; o primeiro início é separado e autorizado.', 'Clonar a voz de alguém exige autorização.', 'A qualidade da voz precisa ser ouvida e aprovada.'],
+    paid: false, workflows: []
   },
   {
     id: 'silencio', group: 'som', title: 'Cortar silêncios',
@@ -164,12 +172,12 @@ export const functions = [
     workflows: ['CLEAN_SPEECH.md']
   },
   {
-    id: 'musica', group: 'som', title: 'Trilha original',
-    what: 'Música gerada sob medida, sem direitos autorais, com a virada no momento certo e abaixando sozinha quando você fala.',
+    id: 'musica', group: 'som', title: 'Trilha e biblioteca de músicas',
+    what: 'Reutiliza faixas locais com licença ou autorização registrada, ajusta a duração e abaixa a música quando você fala. Geração paga é opcional.',
     say: 'Coloque uma trilha tensa que vira no final.',
-    prompt: 'Coloque na [E04] uma trilha original [tensa / animada / calma], que mude no momento [da virada, aos 0:45]. A música precisa ficar bem abaixo da voz o tempo todo.',
-    tips: ['Usa a chave ElevenLabs.'],
-    keys: ['ElevenLabs'], paid: true,
+    prompt: 'Use na [E04] uma trilha licenciada da minha biblioteca, [tensa / animada / calma], com mudança na virada aos [0:45]. Mantenha a música abaixo da voz. Se não houver uma faixa adequada, me avise antes de usar qualquer serviço pago.',
+    tips: ['Envie uma faixa que você tenha direito de reutilizar e informe sua origem ou licença.', 'A biblioteca é privada e não é enviada com o código do Cortez.', 'ElevenLabs Music é opcional e exige sua autorização para cada geração.'],
+    paid: false,
     workflows: []
   },
   {

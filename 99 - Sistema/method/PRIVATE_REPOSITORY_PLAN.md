@@ -1,14 +1,14 @@
 # Plano vigente: um repositório único, publicação pública solicitada
 
-Decisão atualizada em 07/10/2026: um repositório ativo público independente (ID 1408655066), com login no fluxo guiado. O anterior foi renomeado para edicao-por-ia-antigo-nao-usar e permanece privado como arquivo, sem participação na distribuição. Este plano substitui a proposta de dois repositórios e download de referências sob demanda. Não criar `edicao-por-ia-dist`; esse nome fica apenas como possibilidade futura, sem destino de publicação ativo.
+Decisão atualizada em 07/10/2026: um repositório ativo público independente (ID 1408655066), com instalação pública sem login GitHub (ordem de 22/10/2026). O anterior foi renomeado para edicao-por-ia-antigo-nao-usar e permanece privado como arquivo, sem participação na distribuição. Este plano substitui a proposta de dois repositórios e download de referências sob demanda. Não criar `edicao-por-ia-dist`; esse nome fica apenas como possibilidade futura, sem destino de publicação ativo.
 
 ## Organização e acesso
 
 - Repositório único: `Empire-Business/edicao-por-ia`; público, com histórico inicial independente e revisado; fonte de atualização: `main`.
 - Mantenedor: conta autenticada com escrita neste repositório exato; pode cadastrar os códigos oficiais quando houver ordem atual do autor.
-- Usuário: leitura pública padrão; o fluxo guiado exige login na conta própria; pode copiar e atualizar a fábrica, mas não enviar mudanças para o código central. Nenhuma pessoa é convidada automaticamente por este plano.
+- Usuário: leitura pública padrão; o fluxo guiado dispensa conta/login GitHub; pode copiar e atualizar a fábrica, mas não enviar mudanças para o código central. Nenhuma pessoa é convidada automaticamente por este plano.
 - A pasta local guarda mídias, trabalhos, memória, cadastros particulares, configurações e chaves próprias. Esses dados não são enviados ao GitHub pela atualização.
-- A galeria pública continua ligada ao repositório atual, com Root Directory `99 - Sistema/web/modelos-edicao`, build `npm run build` e saída `dist`. O domínio é `https://modelos-edicao.empirebusiness.com.br`.
+- A galeria pública continua ligada ao repositório atual, com Root Directory `99 - Sistema/web/modelos-edicao`, build `npm run build` e saída `dist`. O domínio é `https://cortez.highticketai.com.br`.
 
 O papel Read permite obter o conteúdo e versões, sem push no central. Ele não impede a pessoa de modificar arquivos da própria cópia no computador. O controle real de escrita é do GitHub, não de uma promessa da IA. Referência: [papéis de repositório em organização](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization).
 
@@ -23,7 +23,7 @@ O papel Read permite obter o conteúdo e versões, sem push no central. Ele não
 
 Novas famílias devem declarar seu prefixo particular antes de serem introduzidas. Os códigos atuais continuam legíveis e não são renumerados: formatos, IDs, edições, arquivos e revisões antigas permanecem intactos.
 
-Criação normal em uma cópia de uso gera FP/IDP. Criação oficial exige a opção explícita de publicação e conferência da permissão da conta autenticada no repositório central. Uma configuração local “sou autor” não basta. A ferramenta consulta metadados da sessão do GitHub, sem ler/imprimir chaves. Sem autenticação verificável, não criar/alterar oficial. O prompt de instalação exige login antes de baixar, e setup --apply verifica esse login; depois os particulares continuam locais. Isso não bloqueia uma cópia manual de repositório público.
+Criação normal em uma cópia de uso gera FP/IDP. Criação oficial exige a opção explícita de publicação e conferência da permissão da conta autenticada no repositório central. Uma configuração local “sou autor” não basta. A ferramenta consulta metadados da sessão do GitHub, sem ler/imprimir chaves. Sem autenticação verificável, não criar/alterar oficial. O prompt e o setup público não exigem login. A autenticação continua obrigatória para mudar oficiais ou enviar alterações ao central.
 
 Edições novas usam EP nas cópias de uso. Na instalação de manutenção, o marcador privado de intenção de publicação escolhe E somente após a mesma conferência de escrita; esse marcador não é distribuído e não é prova de autoridade. Edições já identificadas mantêm seu código sem consultar rede a cada retomada. Revisões preservam a ordem de versões e não sobrescrevem arquivos anteriores.
 
@@ -53,7 +53,7 @@ F16 mantém pesquisa de B-roll e gráficos próprios, sem simplificação ao F08
 
 ## Instalação e sincronização com main
 
-A IA prepara o acesso à conta própria da pessoa e obtém a versão autorizada. A autenticação não viaja no pacote nem usa a conta/chave do autor. O updater usa a sessão GitHub CLI quando disponível; falta de login/permissão é um bloqueio de acesso, não motivo para trocar o repositório por outro.
+A IA obtém a versão pública sem exigir conta GitHub. O updater usa a sessão CLI quando disponível e a API pública se a CLI estiver ausente ou sem sessão. Repo ID, commit e manifesto continuam obrigatórios. Falha real de rede ou limite da API é tratada sem trocar a origem; nenhuma credencial do autor viaja no pacote.
 
 “Sincronizar com main” significa consultar essa branch, fixar seu commit, conferir o manifesto e aplicar somente código gerenciado, com backup, conflito/mescla e rollback. Não executar `git pull`, `reset` ou `clean` por cima de cadastros, trabalhos e personalizações para forçar atualização. O recibo informa a revisão recebida. Catálogos oficiais ficam nos defaults; particulares ficam no contexto local e são preservados. Uma instalação antiga sem manifesto/layout confiável é recuperada em pasta nova, mantendo a origem.
 

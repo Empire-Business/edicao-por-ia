@@ -36,6 +36,12 @@ limitation and research alternatives through the same provider. No yt-dlp/browse
 ## 5. Automatic silence cleanup
 Enabled by default for speech jobs. Run `REMOVE_SILENCE.md` against the assembly EDL, with the active pattern, timestamped speech and protected ranges. Respect job overrides. The result is `edit/edl.json` and `analysis/silence_edit_report.json`. Do not stop at merely detecting silence. If disabled, preserve the assembly as the final EDL and record the choice.
 
+## 5b. Limpeza local da voz
+Tratar as fontes inteiras antes de aplicar os cortes ao áudio, conforme `method/EXTERNAL_SERVICES.md`.
+DeepFilterNet é a rota preferida; FFmpeg é a alternativa básica identificada no recibo.
+ElevenLabs é opcional e exige autorização atual por chamada; uma chave preenchida não autoriza gasto.
+Não trocar para nuvem em caso de falha local. Conferir ruído, sincronismo e voz antes da prévia.
+
 ## 6. Draft render
 Choose the human-readable video name from `job.yaml` (or the source filename on an older job),
 resolve its format profile ID and output proportion, then get a unique preview path with

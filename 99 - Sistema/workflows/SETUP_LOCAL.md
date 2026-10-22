@@ -1,3 +1,5 @@
+**Instalação completa:** `INSTALL_WITH_CLAUDE.md` é o roteiro canônico para a IA adaptar macOS, Windows e Linux; `tools/install_environment.py` produz o inventário sem instalar nada. O usuário usa um pedido em português, não esta referência de comandos.
+
 **v1.6:** A entrada principal agora é `workflows/ASSISTED_START.md`; use o instalador com prévia/backup, não apenas recomendações. O conteúdo abaixo continua como referência técnica de ambiente.
 
 # Workflow — Setup Local
@@ -45,3 +47,13 @@ not overwritten. `tools/install_memory_hooks.py` previews; `--apply` requires us
 No new package dependency for the memory store. Test one simulated save/recall separately from
 real format data, then remove the fixture. A live-host test is distinct from our unit tests.
 Never replace a user's format stores/jobs/patterns with templates during a skill update.
+
+## Áudio local e serviços opcionais (22/10/2026)
+DeepFilterNet: prévia com `tools/prepare_local_audio.py`; aplicar somente quando a instalação estiver autorizada.
+FFmpeg continua como alternativa básica. O diagnóstico distingue runtime encontrado de áudio testado.
+Cortez Voz é instalado junto do setup aplicado, pela revisão fixa de `Empire-Business/cortez-voz`.
+A prévia detalha os downloads; também existe a capacidade `voice` para preparar uma instalação antiga.
+Não usar o instalador do autor original. A preparação não inicia servidor, banco/migrations ou modelos.
+O primeiro início pede autorização explícita para o banco local de `.factory/cortez-voz-data`.
+Consulte `method/EXTERNAL_SERVICES.md` e `config/cortez-voice.json` para plataformas e validações.
+As chaves ElevenLabs e Apify são opcionais. Nunca lê-las durante diagnóstico/setup.

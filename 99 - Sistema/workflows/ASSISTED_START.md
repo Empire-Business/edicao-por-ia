@@ -4,10 +4,11 @@
 O usuário conversa com um editor; o coordenador organiza ferramentas e decisões. Uma pergunta essencial por vez. Não abrir outro briefing para dados já fornecidos.
 
 ## Preparação
-Na instalação guiada pelo usuário, confirmar sua conta do GitHub antes de obter o projeto e seguir INSTALL_WITH_CLAUDE.md. O setup aplicado verifica essa autenticação, sem ler/imprimir credenciais. Público não implica permissão de escrita nem bloqueia downloads manuais anônimos.
+Para instalar o sistema completo em um pedido, siga o roteiro adaptativo de `INSTALL_WITH_CLAUDE.md` e o plano de `tools/install_environment.py`. A IA resolve as diferenças do computador real e reaproveita a autorização já dada; não pede confirmação de cada dependência.
+Na instalação guiada, seguir INSTALL_WITH_CLAUDE.md: primeiro verificar acesso real ao computador; depois preparar pelo repositório público, sem conta GitHub nem gh obrigatório. O PDF já contém o pedido. Escrita no central e oficiais continuam exigindo autenticação/permissão real.
 1. Detectar pasta e host atual. Ler `COMECE-AQUI.md`, executar `python factory.py doctor` usando Python 3.11+. Se Python faltar, apresentar instalação oficial adequada e obter autorização; não fingir que o instalador Python se executa sem Python.
 2. Não declarar “pronto” com base só em FFmpeg. Para fala, precisa de transcritor; para JS, navegador e Node; máscara/rastreamento continuam opcionais com implantação própria.
-3. Gerar `python factory.py setup --host both` como prévia (ou apenas host escolhido). Mostrar resumo/conflitos; com autorização usar `--apply`. Não substituir configurações globais nem ampliar permissões.
+3. Gerar `python factory.py setup --host both --preserve-agent-config` como prévia (ou apenas host escolhido). Mostrar resumo/conflitos; com autorização usar `--apply`. Não substituir configurações globais nem ampliar permissões.
 4. Preparar apenas dependências faltantes: `dependencies --capability ffmpeg`, depois `speech`; `motion` somente se o pedido usar animações. Cada comando mostra prévia; obter autorização antes de `--apply`. Criar `.venv`, não alterar Python global. Após criar venv, repetir setup para os hooks usarem o novo interpretador.
 5. Executar `doctor --smoke` e, após instalação de ASR/pesos autorizada, transcrever trecho de prova. Biblioteca encontrada não é prova de voz reconhecida. Registrar o que foi realmente testado e o que está pendente.
 6. Verificar modelos no seletor do próprio host e modo assinatura/API, sem ler `.env`, chaves ou arquivos de auth. Confirmar créditos extras com usuário quando “nada por fora” for uma restrição. Usar `model-bind` somente com evidência da disponibilidade. Não presumir preços ou equivalência de modelos entre hosts.

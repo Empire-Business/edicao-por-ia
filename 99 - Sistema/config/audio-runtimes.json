@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "deepfilter": {
+    "Darwin-arm64": {
+      "version": "0.5.6",
+      "platform": "Darwin-arm64",
+      "url": "https://github.com/Rikorose/DeepFilterNet/releases/download/v0.5.6/deep-filter-0.5.6-aarch64-apple-darwin",
+      "sha256": "4601e7f4e4c03e59a4c5b5000216ef3add3e808799cfccd95e14e83ea4611081",
+      "size": 27877081,
+      "provenance": "official GitHub release over HTTPS; hash pinned from reviewed download, not independent attestation",
+      "macos_signature": "codesign verify succeeded; no quarantine or signature modifications"
+    }
+  }
+}

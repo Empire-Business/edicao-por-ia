@@ -68,7 +68,7 @@ def toml_agents(existing,models,limit):
     result=''.join(lines[:start]+section+lines[end:]);tomllib.loads(result)
     return result
 
-def desired_setup(root,host='both',profile='equilibrado'):
+def desired_setup(root,host='both',profile='equilibrado',preserve_agent_config=False):
     root=Path(root).resolve();p=validate_profile(root,profile);models=bindings(root);files={}
     if host not in ('claude','codex','both'):fail('HOST','Host desconhecido.')
     if host in ('claude','both'):
@@ -78,19 +78,23 @@ def desired_setup(root,host='both',profile='equilibrado'):
         merged=merge(old,cmd)
         files['.claude/settings.json']=(json.dumps(merged,ensure_ascii=False,indent=2)+'\n').encode()
         for role,(tier,turns) in ROLES.items():
+            if preserve_agent_config and managed_path(root,'.claude/agents/'+role+'.md').exists():continue
             template=root/'adapters/claude'/(role+'.md')
             text=template.read_text(encoding='utf-8')
             text=re.sub(r'(?m)^model: .*$', 'model: '+models['claude'][tier]['model'],text)
+            if preserve_agent_config:text=re.sub(r'(?m)^model: .*\n?', '',text)
             text=re.sub(r'(?m)^maxTurns: .*$', 'maxTurns: '+str(min(turns,p['max_turns']*2)),text)
             files['.claude/agents/'+role+'.md']=text.encode()
     if host in ('codex','both'):
         cfg=managed_path(root,'.codex/config.toml');old=cfg.read_text(encoding='utf-8') if cfg.exists() else ''
-        files['.codex/config.toml']=toml_agents(old,models['codex'],p['max_parallel']).encode()
+        if not preserve_agent_config:files['.codex/config.toml']=toml_agents(old,models['codex'],p['max_parallel']).encode()
         for role,(tier,turns) in ROLES.items():
+            if preserve_agent_config and managed_path(root,'.codex/agents/'+role+'.toml').exists():continue
             prompt=(root/'adapters/roles'/(role+'.md')).read_text(encoding='utf-8')
             text='\n'.join([f'name = {json.dumps(role)}',f'description = {json.dumps("Video Factory: "+role)}',
               f'model = {json.dumps(models["codex"][tier]["model"])}',f'model_reasoning_effort = {json.dumps(models["codex"][tier]["effort"])}',
               'sandbox_mode = "read-only"',f'developer_instructions = {json.dumps(prompt,ensure_ascii=False)}',''])
+            if preserve_agent_config:text=re.sub(r'(?m)^model(?:_reasoning_effort)? = .*\n?', '',text)
             tomllib.loads(text);files['.codex/agents/'+role+'.toml']=text.encode()
     return files
 
@@ -130,14 +134,18 @@ def apply_files(root,files,kind='setup',apply=False,known=None):
         atomic_json(backup/'receipt.json',receipt)
     return {**out,'status':receipt['status'],'receipt':str(backup/'receipt.json'),'message':'Reabra o agente para carregar configurações. Disponibilidade de modelos e cobrança ainda precisam ser confirmadas.'}
 
-def setup(root=ROOT,host='both',profile='equilibrado',apply=False):
+def setup(root=ROOT,host='both',profile='equilibrado',apply=False,preserve_agent_config=False):
     if sys.version_info<(3,11):fail('PYTHON_VERSION','Use Python 3.11 ou superior para a preparação assistida.')
     access_policy=inside(root,'config/github-access.json')
     if apply and access_policy.is_file() and read_json(access_policy).get('require_authenticated_guided_setup'):
         from github_access import verify
         try:verify(root)
         except (ValueError,OSError,subprocess.SubprocessError) as exc:fail('GITHUB_AUTH_REQUIRED',str(exc))
-    files=desired_setup(root,host,profile)
+    voice = None
+    if (Path(root)/'config/cortez-voice.json').is_file():
+        from prepare_cortez_voice import prepare as prepare_voice
+        voice = prepare_voice(root, False)
+    files=desired_setup(root,host,profile,preserve_agent_config)
     # Configuration merge is explicit; edited agent files must be preserved, not silently replaced.
     manifest=read_json(Path(root)/'PACKAGE_MANIFEST.json').get('files',{}) if (Path(root)/'PACKAGE_MANIFEST.json').exists() else {}
     known=dict(manifest)
@@ -147,6 +155,8 @@ def setup(root=ROOT,host='both',profile='equilibrado',apply=False):
         path=managed_path(root,rel)
         if path.exists():known[rel]=sha(path) # these two were structurally merged above
     result=apply_files(root,files,'setup',apply,known)
+    if voice is not None:
+        result['cortez_voice'] = prepare_voice(root, True) if apply and not result['conflicts'] else voice
     if apply:
         from service_keys import prepare
         prepare(root)
@@ -229,10 +239,16 @@ def upgrade(source,target,apply=False):
 
 def dependency_plan(root,capability='speech',system=None,machine=None):
     system=system or platform.system();machine=machine or platform.machine();root=Path(root).resolve()
-    if capability not in ('base','speech','motion','studio-audio','ffmpeg'):fail('CAPABILITY','Capacidade de instalação desconhecida.')
+    if capability not in ('base','speech','motion','studio-audio','audio-cleanup','voice','ffmpeg'):fail('CAPABILITY','Capacidade de instalação desconhecida.')
     py=root/'.venv'/('Scripts/python.exe' if system=='Windows' else 'bin/python')
     commands=[];notes=[]
-    if capability=='ffmpeg':
+    if capability=='voice':
+        commands=[[sys.executable, str(root/'tools/prepare_cortez_voice.py'), '--apply']]
+        notes.append('Instala Cortez Voz da revisão fixa da Empire; não inicia aplicativo, banco nem modelos.')
+    elif capability=='audio-cleanup':
+        commands=[[sys.executable, str(root/'tools/prepare_local_audio.py'), '--apply']]
+        notes.append('Prepara somente o runtime DeepFilterNet revisado para esta plataforma; sem chaves, banco ou mudanças no Python. FFmpeg continua necessário.')
+    elif capability=='ffmpeg':
         if shutil.which('ffmpeg') and shutil.which('ffprobe'):notes.append('FFmpeg/FFprobe já encontrados no PATH.')
         elif system=='Darwin' and shutil.which('brew'):commands=[['brew','install','ffmpeg']]
         elif system=='Windows' and shutil.which('winget'):commands=[['winget','install','--id','Gyan.FFmpeg','--exact','--source','winget']]
@@ -254,6 +270,9 @@ def dependency_plan(root,capability='speech',system=None,machine=None):
     return {'ok':True,'status':'preview','capability':capability,'commands':commands,'notes':notes,'downloads':bool(commands),'no_llm_calls':True}
 
 def dependencies(root,capability='speech',apply=False):
+    if capability=='voice':
+        from prepare_cortez_voice import prepare as prepare_voice
+        return prepare_voice(root,apply)
     plan=dependency_plan(root,capability)
     if not apply:return plan
     with workspace_lock(root,'dependencies'):

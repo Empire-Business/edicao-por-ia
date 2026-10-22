@@ -18,21 +18,74 @@ Bruno and historical test colors are never global defaults. These services consu
 record authorized use in the job decision log. A request to use TikTok/YouTube scenes authorizes
 ScrapeCreators research and retrieval for that job; accept it without asking for duplicate consent.
 
-## ElevenLabs — Audio Isolation (noisy camera voice)
-- MANDATORY (user rule, 2026-10-02: "isso tem q ser uma regra inviolavel em todos os videos"): every video's voice goes
-  through Audio Isolation before the first preview, for every format/job. Standing authorization for this endpoint only;
-  music depends on the format/job; a TikTok/YouTube scene request authorizes ScrapeCreators.
-- Tool: `python3 tools/el_isolate_voice.py jobs/<id> --base-video renders/X.mp4 --out renders/Y.mp4`
-- ORDER MATTERS. Isolate the FULL source audio (mono, peak-normalized to −2 dBFS) and only then
-  apply the EDL cuts. Isolating the already-cut, quiet, stereo voice removed only 3–6 dB of noise
-  and the user rejected it; the right order removed ~15 dB between words and was approved.
-- Endpoint: `POST /v1/audio-isolation`, multipart field `audio`. Returns mp3 44.1 kHz mono. Only audio is uploaded.
-- After isolation keep the plain voice chain: HPF 70 Hz + gain to ≈ −16.7 LUFS + peak limiter.
-- Evidence to report: noise in the source's real pauses before/after, sync offset, loudness; a
-  spectrogram pair (`showspectrumpic`) shows whether gaps between words went black.
-- The current key cannot read the account (no `user_read`), so credit balance is unknown.
+## Áudio local por padrão (ordem atual do autor, 22/10/2026)
 
-## ElevenLabs — Music (original, royalty-free beds)
+Esta ordem substitui a obrigação histórica de enviar toda voz ao ElevenLabs. Limpar a fala continua
+parte da edição; a rota padrão é local. ELEVENLABS_API_KEY e APIFY_API_TOKEN são opcionais e podem
+ficar vazios. A presença de uma chave nunca autoriza uma cobrança. Não alternar para nuvem em uma falha local.
+
+### Limpeza da voz
+- `tools/audio_local.py INPUT --out OUTPUT.wav` trata uma fonte inteira. Auto usa o executável
+  DeepFilterNet se preparado; caso contrário usa FFmpeg básico e identifica essa limitação no recibo.
+- `tools/el_isolate_voice.py JOB --base-video renders/X.mp4 --out renders/Y.mp4` preserva o fluxo
+  existente: fonte inteira → limpeza local → cortes da EDL → loudness/limiter → vídeo novo.
+  `--provider deepfilter` exige esse runtime; `--provider ffmpeg` seleciona a alternativa básica.
+- `tools/prepare_local_audio.py` mostra a preparação; `--apply` só após autorização de instalação.
+  Runtime oficial v0.5.6, hash fixado em `config/audio-runtimes.json`; por enquanto o download revisado
+  cobre Mac Apple Silicon. Outros sistemas usam FFmpeg ou um deep-filter oficial previamente preparado.
+  Nenhuma instalação altera Gatekeeper, assinatura, permissões globais ou o Python existente.
+- O cache considera hash da fonte, provedor e runtime. Não reutilizar limpeza paga antiga como evidência
+  de execução local. Originais e versões anteriores não são sobrescritos.
+- DeepFilterNet recebe padding e compensação de atraso; a saída volta à duração original. FFmpeg reduz
+  ruído básico; não prometer que remove eco ou que equivale ao ElevenLabs. Medir pausas, conferir sincronismo
+  e ouvir antes de aprovar. Os recibos `.audio.json` mantêm a avaliação auditiva pendente.
+- ElevenLabs permanece disponível somente com `--provider elevenlabs --accept-paid`, após o sim atual
+  para aquele áudio. Apenas áudio é enviado, sem retries automáticos. A autorização permanente anterior
+  de isolamento pago foi substituída. O alinhamento do resultado pago ainda exige conferência.
+
+### Narração local e alinhamento
+- `tools/narrate.py voices` consulta Cortez Voz local em `http://127.0.0.1:3930`.
+  `speak --voice ID --model ENGINE --text-file F --out X.wav` usa um engine local escolhido explicitamente.
+  `el_tts.py` é uma ponte para essa mesma interface; não chama ElevenLabs por padrão.
+- Cortez Voz é a cópia AGPL controlada em `Empire-Business/cortez-voz`, derivada de VoiceStudio.
+  O setup aplicado inclui sua instalação a partir de commit e SHA-256 fixos em `config/cortez-voice.json`.
+  Não seguir main/latest do autor original; não remover quarentena, refazer assinatura ou instalar globalmente.
+  Ferramentas e dependências ficam isoladas. Prévia informa os downloads; a preparação pode consumir vários GB.
+- O setup não inicia banco, migrations, servidor ou modelos. Primeiro início requer pedido explícito de
+  inicialização do banco local no ambiente/diretório escolhido. `tools/prepare_cortez_voice.py --start
+  --initialize-data` direciona somente `.factory/cortez-voz-data`. Não executar isso como validação automática.
+- Mac Apple Silicon, Windows x64 e Linux x64/glibc possuem caminho de instalação. Somente as plataformas
+  com recibo real podem ser declaradas testadas. Mac Intel/ARM Windows/Linux permanecem pendentes.
+- Sem Cortez Voz preparado e aberto, informar a pendência; nunca chamar serviço pago. No Mac pode-se escolher
+  explicitamente `--provider macos --voice NOME` entre as vozes instaladas listadas por `voices --provider macos`.
+  São vozes de sistema: não prometer clonagem ou naturalidade equivalente. Sem downloads automáticos de vozes.
+- A API só aceita loopback literal; proxies e redirects ficam bloqueados. O provedor padrão verifica a identidade
+  Empire-Business/cortez-voz. O provedor legado `voicestudio` requer URL explícita da instalação externa.
+  Aliases como `tts-1` e `omnivoice` não são aceitos porque podem escolher outro backend ativo.
+- Esta edição do aplicativo inclui engines OmniVoice, MLX Audio e KittenTTS; engines extras não são instalados
+  pelo app. Os pesos exigem escolha e revisão de licença próprias; não presumir uso comercial dos pesos OmniVoice.
+- Voz clonada exige pedido explícito para a pessoa. Conferir licença do engine/pesos e autorização da voz.
+- Após gerar localmente, usar `tools/narrate.py align AUDIO --backend mlx --model MODELO_LOCAL`
+  (ou backend faster) para transcrever com pesos já em cache, em modo offline. Gera `.words.json` e
+  `.alignment.json` com hash do áudio, tempos reais e origem. Não distribui tempos pelo roteiro.
+  O recibo da geração registra a pendência original; o recibo de alinhamento comprova sua conclusão.
+  Se o modelo não estiver preparado, informar a falta; não baixar pesos nem usar nuvem automaticamente.
+- ElevenLabs TTS é opcional: `--provider elevenlabs --model MODELO --accept-paid`, com consentimento
+  atual por narração. A chave é lida apenas nessa rota. Tempos retornados são gravados em `.words.json`.
+
+### Música: biblioteca local primeiro
+- `tools/music_library.py list` lista as trilhas privadas. `add SOURCE --id ID --title TITULO
+  --license ORIGEM_OU_LICENCA --rights-confirmed` importa uma cópia de material já dentro da fábrica.
+  Só confirmar direitos com declaração real do usuário; não inventar licença nem importar trilhas de outro cliente.
+- Biblioteca em `context/audio-library/`, fora da distribuição de código. Cada faixa guarda origem/licença
+  e hash. `prepare --track ID --seconds N --out X.wav` prepara duração, volume e fade sem pagar API.
+- Biblioteca vazia: pedir uma faixa autorizada ou uma geração paga específica. Não instalar músicas,
+  escolher mídia privada histórica ou fabricar uma licença. Reutilizar somente quando combinar com o trecho.
+- Mistura por `mix_voice_music.py` / `score_two_act.py` continua com ducking e variação por capítulo/virada.
+- ElevenLabs Music é opção adicional: `tools/el_music.py --accept-paid ...`, somente com o sim atual
+  para a geração. A preferência de um formato por música não autoriza automaticamente gerar música paga.
+
+## Composição quando uma geração paga for escolhida
 - Endpoint: `POST /v1/music?output_format=mp3_44100_192`, JSON `{prompt, music_length_ms, model_id:"music_v1", force_instrumental:true}`.
 - Describe instruments, mood, tempo and structure; do NOT name artists or songs in the prompt
   (a reference the user gives is translated into a description).
