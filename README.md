@@ -4,15 +4,15 @@ Edite vídeos conversando com o Cortez. Escolha um formato de edição e uma ide
 
 ## Instalação guiada pelo Claude
 
-[Abra e baixe o guia em PDF](99%20-%20Sistema/method/CLAUDE_INSTALL_GUIDE.pdf), anexe-o ao Claude Code ou Codex e diga: **“Instale o Cortez neste computador.”** O documento contém o pedido completo: a IA identifica macOS, Windows ou Linux, pergunta onde criar a pasta, conduz o login no GitHub e prepara vídeo, fala, animações e Cortez Voz, adaptando a instalação ao computador. Use um ambiente com acesso real aos seus arquivos e terminal, como Claude Code; um chat sem essas ferramentas não instala no computador.
+[Abra e baixe o guia em PDF](99%20-%20Sistema/method/CLAUDE_INSTALL_GUIDE.pdf), anexe-o ao Claude e envie. Não é preciso digitar um comando. O documento contém o pedido completo: a IA identifica macOS, Windows ou Linux, pergunta onde criar a pasta, dispensa conta no GitHub e prepara vídeo, fala, animações e Cortez Voz, adaptando a instalação ao computador. Use um ambiente com acesso real aos seus arquivos e terminal, como Claude Code; um chat sem essas ferramentas não instala no computador.
 
-A conta é a sua própria. Não envie senha, token ou chave na conversa. O fluxo guiado exige login antes do download/preparação, mesmo com o repositório público. Downloads manuais anônimos continuam possíveis no GitHub. A escrita no central é restrita às permissões de mantenedor; suas criações particulares ficam locais.
+Não é preciso ter conta no GitHub. Criar uma conta gratuita é recomendado para enviar sugestões e colaborar, e pode ficar para depois. O download público é feito pela IA. A conta do Claude e o acesso local precisam estar disponíveis; no chat sem ferramentas, o PDF orienta a abertura da aba Code em ambiente local. Um plano compatível pode ser necessário, e nenhuma assinatura é contratada automaticamente. A escrita no central continua restrita a mantenedores autenticados; suas criações particulares ficam locais.
 
 A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **1408655066**. O anterior, **edicao-por-ia-antigo-nao-usar**, é apenas arquivo privado; não instalar, atualizar, publicar ou importar histórico dele.
 
 ## Escolher os modelos
 
-[Abra a galeria visual](https://modelos-edicao.empirebusiness.com.br/) para ver exemplos, pesquisar e copiar o pedido. Formato e identidade são escolhas separadas; não há um par padrão.
+[Abra a galeria visual](https://cortez.highticketai.com.br/) para ver exemplos, pesquisar e copiar o pedido. Formato e identidade são escolhas separadas; não há um par padrão.
 
 | Código | Formato ativo |
 | --- | --- |

@@ -277,8 +277,10 @@ def rollback(root,receipt_id):
 def remote_json(repo,path):
  if shutil.which('gh'):
   response=subprocess.run(['gh','api',f'repos/{repo}'+('/'+path if path else '')],capture_output=True,text=True,timeout=30)
-  if response.returncode:raise ValueError('Não foi possível acessar o GitHub. Verifique conexão e acesso à conta; nenhuma chave foi lida ou impressa.')
-  return json.loads(response.stdout)
+  if not response.returncode:return json.loads(response.stdout)
+  # Only an unconfigured CLI may fall back; rate limits/service errors must stop.
+  if 'To get started with GitHub CLI' not in response.stderr or 'gh auth login' not in response.stderr:
+   raise ValueError('Consulta ao GitHub falhou; respeite limites de acesso e tente após resolver a causa.')
  request=urllib.request.Request('https://api.github.com/repos/'+repo+('/'+path if path else ''),headers={'User-Agent':'VideoFactory-Updater'})
  with urllib.request.urlopen(request,timeout=30) as response:return json.load(response)
 

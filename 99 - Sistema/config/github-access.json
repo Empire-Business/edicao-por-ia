@@ -1,7 +1,8 @@
 {
-  "require_authenticated_guided_setup": true,
+  "require_authenticated_guided_setup": false,
   "repository": "Empire-Business/edicao-por-ia",
   "repository_id": 1408655066,
   "branch": "main",
-  "tokens_in_factory": false
+  "tokens_in_factory": false,
+  "public_installation": "anonymous_read_only"
 }

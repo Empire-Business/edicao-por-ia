@@ -5,7 +5,7 @@ O usuário conversa com um editor; o coordenador organiza ferramentas e decisõe
 
 ## Preparação
 Para instalar o sistema completo em um pedido, siga o roteiro adaptativo de `INSTALL_WITH_CLAUDE.md` e o plano de `tools/install_environment.py`. A IA resolve as diferenças do computador real e reaproveita a autorização já dada; não pede confirmação de cada dependência.
-Na instalação guiada pelo usuário, confirmar sua conta do GitHub antes de obter o projeto e seguir INSTALL_WITH_CLAUDE.md. O setup aplicado verifica essa autenticação, sem ler/imprimir credenciais. Público não implica permissão de escrita nem bloqueia downloads manuais anônimos.
+Na instalação guiada, seguir INSTALL_WITH_CLAUDE.md: primeiro verificar acesso real ao computador; depois preparar pelo repositório público, sem conta GitHub nem gh obrigatório. O PDF já contém o pedido. Escrita no central e oficiais continuam exigindo autenticação/permissão real.
 1. Detectar pasta e host atual. Ler `COMECE-AQUI.md`, executar `python factory.py doctor` usando Python 3.11+. Se Python faltar, apresentar instalação oficial adequada e obter autorização; não fingir que o instalador Python se executa sem Python.
 2. Não declarar “pronto” com base só em FFmpeg. Para fala, precisa de transcritor; para JS, navegador e Node; máscara/rastreamento continuam opcionais com implantação própria.
 3. Gerar `python factory.py setup --host both --preserve-agent-config` como prévia (ou apenas host escolhido). Mostrar resumo/conflitos; com autorização usar `--apply`. Não substituir configurações globais nem ampliar permissões.

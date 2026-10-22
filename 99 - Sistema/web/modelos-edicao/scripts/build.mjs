@@ -27,6 +27,8 @@ for (const format of catalog.formats) {
 if (catalog.identities.some(identity => !/^ID\d{2,}$/.test(identity.code))) throw Error('Identidade inválida.');
 await rm(destination, { recursive: true, force: true });
 await mkdir(destination, { recursive: true });
+// One canonical installer in the repository, served directly by the panel.
+await cp(path.resolve(root, '../../method/CLAUDE_INSTALL_GUIDE.pdf'), path.join(destination, 'instalar.pdf'));
 await cp(path.join(root, 'public/catalog.json'), path.join(destination, 'catalog.json'));
 await cp(path.join(root, 'public/assets/brand/cortez'), path.join(destination, 'assets/brand/cortez'), { recursive: true });
 await cp(path.join(root, 'public/assets/fonts'), path.join(destination, 'assets/fonts'), { recursive: true });

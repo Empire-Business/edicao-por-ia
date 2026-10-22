@@ -1,16 +1,16 @@
 {
-  "version": "2.3 - 22/10/2026",
+  "version": "2.4 - 22/10/2026",
   "pages": [
     {
-      "title": "IA, instale o Cortez.",
+      "title": "Claude, instale o Cortez.",
       "blocks": [
         {
           "heading": "Você grava, o Cortez edita, você aprova.",
-          "text": "O Cortez é o agente que edita seus vídeos. Anexe este PDF ao Claude Code ou Codex e envie: “Instale o Cortez neste computador”. A IA conduz a instalação."
+          "text": "O Cortez é o agente que edita seus vídeos. Anexe este PDF ao Claude e envie. O pedido já está neste documento: não é preciso digitar um comando nem ter conta no GitHub."
         },
         {
           "heading": "Pedido para a IA",
-          "text": "Instale o Cortez completo. Identifique macOS, Windows ou Linux e adapte você mesmo a instalação. Faça a parte técnica até concluir; pergunte apenas o destino e o que depender de mim, como login e permissões do sistema. Não me entregue comandos nem peça outro computador para testar."
+          "text": "Instale o Cortez completo no meu computador. Primeiro confira se consegue operar arquivos e processos nele. Se não conseguir, conduza a abertura do modo local adequado do Claude. Depois identifique macOS, Windows ou Linux e adapte a instalação. Faça a parte técnica; pergunte apenas o que realmente depender de mim."
         },
         {
           "heading": "Comece pelo destino",
@@ -18,65 +18,69 @@
         },
         {
           "heading": "Depois da escolha",
-          "text": "Conduza a conexão à conta própria do usuário no GitHub e continue a instalação. Não peça comandos ao leigo nem um briefing técnico. Login, permissões do computador e escolhas do usuário continuam necessários."
+          "text": "Com acesso local e destino definidos, faça o download público e prepare o sistema. Não exija conta GitHub nem peça comandos ou briefing técnico. Eu só escolho a pasta e concedo os acessos necessários; não contrate assinatura nem serviços pagos."
         },
         {
           "heading": "Origem oficial",
-          "text": "https://github.com/Empire-Business/edicao-por-ia | Branch main | ID 1408655066. Painel: https://modelos-edicao.empirebusiness.com.br/"
+          "text": "https://github.com/Empire-Business/edicao-por-ia | Branch main | ID 1408655066. Painel: https://cortez.highticketai.com.br/"
         },
         {
           "heading": "Acesso real ao computador",
-          "text": "Este pedido vale para instalação local, preparação e verificação. Um chat sem ferramentas locais não instala no computador: conduza a abertura de um ambiente com arquivos e terminal, como Claude Code. Não apresente uma pasta em nuvem como instalação local."
+          "text": "Um chat ou um terminal em nuvem não prova acesso ao computador da pessoa. Siga a próxima página antes de instalar. Se o Claude já tem ferramentas no destino real, prossiga sem obrigar a pessoa a trocar de aplicativo."
         }
       ]
     },
     {
-      "title": "Destino e acesso local",
+      "title": "Só tenho Claude. E agora?",
       "blocks": [
         {
-          "heading": "Uma pergunta por vez",
-          "text": "Use linguagem comum e resolva o caminho no sistema operacional real. Não escolha um destino silenciosamente."
+          "heading": "Primeira verificação da IA",
+          "text": "Confirme se suas ferramentas podem ler, escrever e executar programas no computador da pessoa. Se sim, pergunte a pasta e continue. Não confunda arquivos numa nuvem ou VM com uma instalação no computador dela."
         },
         {
-          "heading": "Confira a capacidade",
-          "text": "Verifique se consegue operar arquivos e terminal na pasta escolhida do computador da pessoa. Se precisar de permissão, explique onde ela deve permitir o acesso e limite o escopo ao destino escolhido."
+          "heading": "Se estiver apenas no chat",
+          "text": "Explique uma etapa por vez: abrir o aplicativo oficial Claude, acessar a aba Code e escolher o ambiente Local e uma pasta. Oriente a reenviar este mesmo PDF nessa sessão. Não peça comandos nem exija conta GitHub. A interface pode mudar: confirme o caminho disponível em vez de inventar botões."
         },
         {
-          "heading": "Preserve o que existe",
-          "text": "Confira escrita, espaço e colisões. Não substitua uma pasta ocupada, não apague arquivos e não altere permissões globais para contornar bloqueios. Se houver colisão, peça outro nome ou local."
+          "heading": "Se faltar o aplicativo ou o acesso",
+          "text": "Use https://claude.com/download e a própria conta Claude da pessoa. A aba Code exige plano compatível; se aparecer uma solicitação de upgrade ou bloqueio da organização, explique o requisito e aguarde a decisão. Nunca compre assinatura ou use API paga automaticamente."
         },
         {
-          "heading": "Se estiver no chat sem ferramentas",
-          "text": "Explique: “Para criar a pasta no seu computador, preciso operar num ambiente local com arquivos e terminal, como Claude Code. Abra esse ambiente, permita acesso ao destino e envie este mesmo PDF.” Oriente conforme a interface disponível, sem inventar botões."
+          "heading": "Depois, escolha a pasta",
+          "text": "Pergunte onde criar o Cortez, usando linguagem comum. Confira espaço, escrita e colisões. Preserve pastas existentes. A pessoa concede apenas os acessos necessários e realiza eventuais permissões do sistema."
         },
         {
-          "heading": "Antes do download",
-          "text": "Confirme a conta própria autenticada no GitHub antes de baixar o projeto ou criar arquivos do Cortez. A pessoa realiza as permissões e os desafios exigidos pela plataforma. Não instalar programas desconhecidos."
+          "heading": "Referência oficial para a IA",
+          "text": "https://code.claude.com/docs/en/desktop-quickstart. Conferido em 22/10/2026. Não declarar instalado sem ferramentas locais e verificações reais. Só ter uma conta Claude não garante que qualquer conversa consiga instalar programas."
         }
       ]
     },
     {
-      "title": "Conecte a conta do usuário",
+      "title": "GitHub: vale criar sua conta",
       "blocks": [
         {
-          "heading": "Autenticação neste fluxo",
-          "text": "O guia e o setup exigem login, mesmo com o repositório público. Downloads manuais anônimos continuam possíveis no GitHub; isso não concede escrita no central."
+          "heading": "Recomendado, mas opcional",
+          "text": "Recomende criar uma conta gratuita em https://github.com/signup para enviar sugestões e colaborar com o Cortez. Se a pessoa quiser, abra o site oficial e acompanhe uma etapa por vez. Ela própria informa e-mail, senha e códigos no site; nunca na conversa. Pode deixar para depois e continuar a instalação."
         },
         {
-          "heading": "Ferramenta oficial",
-          "text": "Confira a integração e a presença da CLI gh, usada pelo setup. Se ela faltar, prepare pelo canal oficial adequado ao computador, dentro da autorização deste pedido. Login somente no navegador não comprova a sessão da CLI."
+          "heading": "Download público",
+          "text": "A pessoa não precisa criar conta, fazer login no GitHub nem instalar sua CLI. Obtenha o código público pela IA. O usuário não precisa aprender Git ou copiar comandos."
         },
         {
-          "heading": "Sem sessão autenticada",
-          "text": "Conduza o fluxo oficial de login da própria pessoa. Ela faz login, MFA, consentimentos e desafios. Espere a conclusão antes do download. Nunca solicite, copie, imprima ou guarde senhas, tokens ou chaves na conversa ou na pasta."
+          "heading": "Origem oficial e revisão fixa",
+          "text": "Use exclusivamente Empire-Business/edicao-por-ia, ID 1408655066, main. Confira os metadados públicos, fixe o commit e verifique o manifesto, os tamanhos e os hashes dos arquivos antes de executar. Não usar forks, arquivo privado antigo ou um repositório com nome parecido."
         },
         {
-          "heading": "Verifique o destino exato",
-          "text": "Exija Empire-Business/edicao-por-ia, ID 1408655066, main. Para instalação, não usar forks, o repositório privado antigo ou projetos com nome parecido. A pessoa não usa as credenciais do autor."
+          "heading": "Se uma ferramenta pedir login",
+          "text": "Para leitura pública, use HTTPS/API pública. Uma CLI instalada sem sessão não obriga a pessoa a criar conta. Respeite falhas de rede ou limite de requisições; não troque a origem nem ignore a integridade para continuar."
         },
         {
-          "heading": "Acesso negado ou rede indisponível",
-          "text": "Explique o bloqueio e preserve o estado. Não baixe anonimamente para contornar a exigência deste fluxo. Este documento não concede escrita nem autoriza aceitar termos em nome do usuário."
+          "heading": "Privacidade e permissão de escrita",
+          "text": "Não pedir, imprimir ou guardar senhas, tokens ou chaves na conversa. Baixar o Cortez não concede escrita no central. Alterações oficiais e contribuições continuam exigindo autenticação e permissões reais do GitHub, em um pedido separado."
+        },
+        {
+          "heading": "Painel do Cortez",
+          "text": "https://cortez.highticketai.com.br. O botão de instalação entrega este PDF mantido no próprio repositório. O painel apresenta formatos e instruções; não envia os arquivos particulares da pessoa para o projeto."
         }
       ]
     },
@@ -85,7 +89,7 @@
       "blocks": [
         {
           "heading": "Obtenha a versão correta",
-          "text": "Depois do destino escolhido e do login confirmado, continue sem outra confirmação genérica. Crie a pasta nova escolhida, obtenha a main, fixe o commit e confira os arquivos pelo manifesto. Não incorporar histórico do repositório antigo."
+          "text": "Depois de confirmar o acesso local e o destino, continue sem outra confirmação genérica. Crie a pasta nova, obtenha a main pública, fixe o commit e confira os arquivos pelo manifesto. Não exigir conta GitHub nem incorporar histórico do repositório antigo."
         },
         {
           "heading": "Leia as regras",
@@ -110,7 +114,7 @@
       "blocks": [
         {
           "heading": "Dependências gratuitas",
-          "text": "Autorizo instalar as dependências necessárias do Cortez no destino escolhido, incluindo Python compatível, ferramentas de vídeo, transcrição, animações, limpeza de áudio e Cortez Voz. Mostre o resumo e prossiga. Permissões do sistema e login são realizados por mim quando exigidos."
+          "text": "Autorizo instalar as dependências necessárias do Cortez no destino escolhido, incluindo Python compatível, ferramentas de vídeo, transcrição, animações, limpeza de áudio e Cortez Voz. Mostre o resumo e prossiga. Permissões do sistema e login no Claude são realizados por mim quando exigidos."
         },
         {
           "heading": "Dados no meu computador",

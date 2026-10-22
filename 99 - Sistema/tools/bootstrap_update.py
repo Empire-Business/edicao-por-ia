@@ -13,8 +13,10 @@ REPO='Empire-Business/edicao-por-ia';REPOSITORY_ID=1408655066
 def remote(repo,path):
  if shutil.which('gh'):
   call=subprocess.run(['gh','api','repos/'+repo+('/'+path if path else '')],capture_output=True,text=True,timeout=30)
-  if call.returncode:raise ValueError('Não foi possível acessar o GitHub; nenhuma chave foi lida ou impressa.')
-  return json.loads(call.stdout)
+  if not call.returncode:return json.loads(call.stdout)
+  # Only an unconfigured CLI may fall back; rate limits/service errors must stop.
+  if 'To get started with GitHub CLI' not in call.stderr or 'gh auth login' not in call.stderr:
+   raise ValueError('Consulta ao GitHub falhou; respeite limites de acesso e tente após resolver a causa.')
  request=urllib.request.Request('https://api.github.com/repos/'+repo+('/'+path if path else ''),headers={'User-Agent':'VideoFactory-Bootstrap'})
  with urllib.request.urlopen(request,timeout=30) as result:return json.load(result)
 

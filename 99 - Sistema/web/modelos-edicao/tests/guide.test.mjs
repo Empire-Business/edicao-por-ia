@@ -27,7 +27,7 @@ test('functions are complete, unique and grouped', () => {
 
 test('the Cortez panel publishes the exact user tutorial and installer, with a safe contribution prompt', async () => {
   const { tutorials, installerPdf } = await import('../src/guide.js');
-  assert.equal(installerPdf, 'https://github.com/Empire-Business/edicao-por-ia/raw/refs/heads/main/99%20-%20Sistema/method/CLAUDE_INSTALL_GUIDE.pdf');
+  assert.equal(installerPdf, 'instalar.pdf');
   const usage = tutorials.find(item => item.id === 'como-usar');
   assert.equal(usage.videoId, '1238030963');
   assert.equal(usage.hash, '1c867e709c');
