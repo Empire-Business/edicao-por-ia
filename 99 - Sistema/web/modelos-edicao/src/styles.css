@@ -69,5 +69,56 @@ input,textarea,select{color:var(--ink)}.identity-sample{color-scheme:light}.deta
 @media(prefers-reduced-motion:reduce){.spotlight:hover,.group-tile:hover,.button-primary:hover{transform:none}}
 @media(max-width:720px){.home-intro{row-gap:0}.cortez-intro-copy{display:contents}.home-intro .intro-eyebrow{grid-column:1;grid-row:1}.home-intro h1{grid-column:1;grid-row:2}.cortez-portrait{grid-column:2;grid-row:1 / span 2;margin:0;align-self:center}.cortez-lead{grid-column:1 / -1;grid-row:3;width:auto;margin-top:24px}.home-intro .intro-note{grid-column:1 / -1;grid-row:4;width:auto}}
 
-.contribute-callout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:56px;margin-top:56px;padding:36px;border:1px solid var(--line);border-radius:20px;background:#17092C}.contribute-callout h2{font-size:30px;letter-spacing:-1px;line-height:1.2;margin:12px 0 16px;max-width:24ch}.contribute-callout p,.contribute-callout ol{font-size:13px;line-height:1.85;color:var(--muted);max-width:68ch}.contribute-callout ol{padding-left:20px;margin:20px 0 0}.contribute-callout li+li{margin-top:12px}.contribute-callout strong{color:var(--ink)}.contribute-action{align-self:center;min-width:0}.contribute-mark{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border:1px solid var(--line);border-radius:18px;background:var(--surface);color:var(--accent);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:24px}.contribute-action p{font-size:19px;line-height:1.45;color:var(--ink);margin:18px 0 24px}.contribute-action .button{white-space:normal;text-align:center}
-@media(max-width:720px){.contribute-callout{grid-template-columns:minmax(0,1fr);gap:28px;padding:24px;margin-top:40px}.contribute-callout h2{font-size:25px}.contribute-action{border-top:1px solid var(--line);padding-top:24px}.contribute-mark{width:48px;height:48px;border-radius:12px;font-size:20px}.contribute-action p{font-size:16px}}
+
+/* Tema claro: leitura confortável. Mantém o violeta da marca como destaque. */
+:root{--paper:#FAF7FD;--surface:#FFFFFF;--ink:#1B0F2E;--muted:#5C4C73;--line:rgba(60,25,110,.16);--accent:#820AD1;--accent-soft:rgba(130,10,209,.1);--navy:#820AD1;--green:#0E8A4F;--grad:linear-gradient(120deg,#820AD1,#A43DF0);color-scheme:light}
+body{background:var(--paper)}
+.skip-link,.categories button[aria-pressed=true],.button-primary,.example-switcher button[aria-pressed=true],.toast{color:#fff}
+.toast{background:#1B0F2E;border-color:#1B0F2E}
+.button:hover{border-color:var(--accent)}
+.install-callout,.contribute-callout{background:#F1E8FB;border-color:rgba(130,10,209,.22)}
+.cortez-portrait{background:radial-gradient(ellipse at 100% 0%,rgba(130,10,209,.16),transparent 65%),#F1E8FB;border-color:var(--line);box-shadow:0 24px 60px rgba(60,25,110,.14)}
+.cortez-portrait figcaption{background:#F1E8FB;color:var(--ink)}
+.group-tile:hover,.fn-card:hover{border-color:var(--accent)}
+.fn-badge-new,.fn-badge.fn-badge-new{background:var(--accent);color:#fff}
+.fn-say{background:#F5EFFC}
+.model-code{color:var(--accent)}
+.spotlight{background:#820AD1;color:#fff}
+.spotlight .eyebrow,.spotlight p:not(.eyebrow),.spotlight-reel figcaption{color:#EBDDFB}
+.spotlight .button-light{background:#fff;color:#1B0F2E;border-color:#fff}
+.tutorial-player{background:#1B0F2E}
+.media-error{color:#fff}
+.eyebrow{color:var(--accent)}
+.fn-copy:hover,.button-primary:hover:not(:disabled){background:#6A08AB;color:#fff}
+.site-header{background:rgba(250,247,253,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:9}
+
+/* Instalação */
+.install-actions{display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex-shrink:0}
+.install-intro{padding-bottom:28px;max-width:900px}
+.install-warning{display:flex;flex-direction:column;gap:6px;max-width:900px;padding:18px 22px;border-radius:14px;border:1px solid #E5B84D;background:#FFF6DC;color:#4A3500;font-size:14px;line-height:1.7}.install-warning strong{font-size:15px;color:#2E2000}
+.install-steps{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:20px;max-width:900px}
+.install-step{display:grid;grid-template-columns:64px minmax(0,1fr);gap:24px;padding:28px;border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:0 2px 14px rgba(60,25,110,.06)}
+.install-number{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;font:700 20px 'JetBrains Mono',monospace}
+.install-step h2{font-size:24px;letter-spacing:-.7px;line-height:1.25;margin:4px 0 10px}
+.install-step p{font-size:15px;line-height:1.75;color:var(--muted);margin:0 0 12px}
+.install-list{margin:0 0 16px;padding-left:22px;font-size:15px;line-height:1.75}.install-list li+li{margin-top:8px}.install-list a,.install-step p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.install-note{font-size:13px!important;padding:10px 14px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;color:var(--ink)!important}
+.install-buttons{display:flex;flex-wrap:wrap;gap:12px;margin:4px 0 16px}
+.license-card{max-width:900px;padding:26px 28px;border:1px solid rgba(130,10,209,.3);border-radius:20px;background:#F1E8FB}.license-card ul{margin:0;padding-left:20px;font-size:15px;line-height:1.75}.license-card li+li{margin-top:10px}
+.install-extra{max-width:900px}
+.license-block{max-width:900px}
+@media(max-width:720px){.install-step{grid-template-columns:minmax(0,1fr);gap:14px;padding:22px 20px}.install-number{width:44px;height:44px;font-size:17px}.install-callout{flex-direction:column;align-items:flex-start}.install-step h2{font-size:21px}}
+
+
+/* Home organizada e Ajuda */
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 20px}
+.home-block{padding-top:72px}
+.home-steps li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.models-strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}.models-strip a{display:block;min-width:0}.models-strip img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#EDE4F7;transition:transform 180ms var(--ease)}.models-strip a:hover img{transform:translateY(-3px)}.models-strip span{display:block;margin-top:8px;font:11px/1.4 'JetBrains Mono',monospace;color:var(--muted)}
+.group-tile h3{margin:8px 0 6px}.group-tile p{margin:0;font-size:13px;line-height:1.6;color:var(--muted)}
+.home-help{margin-top:56px;padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);font-size:14px;line-height:1.8}.home-help a,.page-intro a,.help-block p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.home-help p{margin:0}
+.help-nav{display:flex;flex-wrap:wrap;gap:8px;max-width:900px;margin-bottom:8px}.help-nav a{padding:9px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;background:var(--surface)}.help-nav a:hover{border-color:var(--accent);color:var(--accent)}
+.help-block{max-width:900px;padding-top:44px;scroll-margin-top:100px}.help-block h2{font-size:26px;letter-spacing:-.8px;margin:0 0 16px}.help-block>p{font-size:15px;line-height:1.75;color:var(--muted)}
+@media(max-width:1279px){.models-strip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.home-block{padding-top:52px}.models-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-actions{grid-column:1 / -1;grid-row:4;flex-direction:column}.hero-actions .button{width:100%}.home-intro .intro-note{grid-row:5}.help-nav{flex-wrap:nowrap;overflow-x:auto}.help-nav a{white-space:nowrap}}
+.tutorial-grid{grid-template-columns:minmax(0,880px)}
