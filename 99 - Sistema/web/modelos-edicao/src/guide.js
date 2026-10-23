@@ -25,7 +25,7 @@ export const internalWorkflows = ['CLIENT_MEMORY.md', 'INGEST.md', 'PERSONALIZAT
 export const functions = [
   {
     id: 'contribuir', group: 'cuidar', title: 'Sugerir um formato ou uma melhoria',
-    what: 'Você descreve a ideia e o Cortez prepara a mudança numa cópia separada, como um PR (pedido de revisão). A versão de todos só muda depois da aprovação.',
+    what: 'Você descreve a ideia e o Cortez prepara a mudança numa cópia separada, como um PR, uma proposta de mudança. A versão de todos só muda depois da aprovação.',
     say: 'Cortez, prepare um PR com esta sugestão: [descreva sua ideia].',
     prompt: 'Cortez, quero propor [um formato novo / uma melhoria] para o projeto.\n\nMinha ideia: [descreva].\nExemplo público autorizado, se for um formato: [link].\n\nPrepare a alteração em uma cópia separada da versão atual e abra um PR em rascunho para revisão. Confira comigo quais materiais podem ser publicados; envie apenas código, documentação e referências autorizadas. Não envie meus vídeos de trabalho, memória, chaves ou configurações. Não altere a versão oficial nem aprove ou publique a proposta por conta própria. Ao terminar, entregue o link do PR e explique o que foi verificado e o que falta.',
     tips: ['Não precisa saber programar: basta descrever o que você quer.', 'Formato novo precisa de um exemplo que você tenha autorização para compartilhar.', 'Sem permissão no projeto, o Cortez usa uma cópia na sua conta do GitHub e pede a revisão.'],
