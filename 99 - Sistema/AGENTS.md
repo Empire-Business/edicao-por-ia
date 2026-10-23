@@ -59,6 +59,7 @@ Never claim a save without its tool receipt. Only the coordinator writes format 
 - Visual direction from speech / illustrations / scene-aware composition → `workflows/DIRECT_VISUALS.md` + `method/VISUAL_DIRECTION.md`
 - Reference-driven motion studio / state lists / seek(t) / critique loop → `workflows/MOTION_STUDIO.md` + `studio/CONTRACT.md`
 - JavaScript animation / motion graphics → `workflows/CREATE_JS_ANIMATIONS.md` + `method/MOTION_POLICY.md`
+- Effects library / FX codes / find, preview or reuse an effect → `workflows/EFFECT_CATALOG.md` (canonical data: `motion/effects/catalog.json`; local visual catalogue in `03 - Ajuda/CATÁLOGO DE EFEITOS.html`)
 - Speech cleanup → `workflows/CLEAN_SPEECH.md` + `method/SPEECH_ERROR_POLICY.md` (always run `tools/find_hidden_retakes.py` on the source and on the final voice)
 - Reel variations for A/B testing, any format and any quantity (“5 variações”, “ganchos diferentes”, “versões para testar”, “F19 com outra foto”) → `workflows/REEL_VARIATIONS.md` (tool: `tools/reel_variations.py` plan/check/post)
 - Multiple videos / one recording containing several pieces → `workflows/SPLIT_MULTI_VIDEO.md` + `method/MULTI_VIDEO_POLICY.md`

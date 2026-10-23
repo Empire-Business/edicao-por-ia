@@ -21,6 +21,9 @@ def build(root):
   for p in base.rglob('*'):
    if not p.is_file() or p.is_symlink() or any(x in excluded for x in p.relative_to(root).parts):continue
    name=p.relative_to(root).as_posix()
+   # User-supplied research originals and generated QA media are local evidence, not distribution code.
+   if name.startswith(('examples/research/','motion/effects/evidence-')):continue
+   if name in ('motion/effects/reference-notes.json','motion/effects/verification.json','motion/effects/native-ui-verification.json'):continue
    if name.startswith('examples/reference-library/'):continue
    if name.startswith('patterns/') and name not in stock_patterns and p.relative_to(surface).as_posix() not in tracked:continue
    if not allowed(name) or p.suffix in ('.pyc','.mp4','.wav','.mp3','.mov','.zip'):continue

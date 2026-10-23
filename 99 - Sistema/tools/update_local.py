@@ -13,7 +13,7 @@ from pathlib import Path,PurePosixPath
 PACKAGE='claude-video-factory'
 PROTECTED=('.factory/','context/','jobs/','sources/repos/','sources/reference-material/','arquivo/','prototipos/','.venv/','node_modules/')
 JOB_FILES={'jobs/JOB_SCHEMA.json','jobs/EDL_SCHEMA.json','jobs/INTAKE_TEMPLATE.json','jobs/REFERENCE_SCRIPT_TEMPLATE.json','jobs/REFERENCE_GUIDED_JOB_TEMPLATE.yaml','jobs/PROTECTED_RANGES_TEMPLATE.json','jobs/JOB_TEMPLATE.yaml'}
-SURFACE_FILES={'.factory-root.json','00 - COMECE AQUI.html','03 - Ajuda/AJUDA.html','factory.py','README.md','03 - Ajuda/ATUALIZAR SEM PERDER TRABALHOS.html','AGENTS.md','CLAUDE.md','.gitignore'}
+SURFACE_FILES={'.factory-root.json','00 - COMECE AQUI.html','03 - Ajuda/AJUDA.html','03 - Ajuda/CATÁLOGO DE EFEITOS.html','factory.py','README.md','03 - Ajuda/ATUALIZAR SEM PERDER TRABALHOS.html','AGENTS.md','CLAUDE.md','.gitignore'}
 # Accepted only when retiring/rolling back an older manifest, never in a new release.
 RETIRED_SURFACE_FILES={'@surface/Atualizar Fábrica.command','@surface/Atualizar Fábrica.cmd','@surface/Atualizar Fábrica.sh','@surface/ATUALIZACAO.md','@surface/CHANGELOG.md'}
 MAX_ARCHIVE=1024*1024*1024  # Legacy archive policy; GitHub updates no longer download a zipball.

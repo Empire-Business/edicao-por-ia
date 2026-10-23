@@ -24,6 +24,15 @@ export const internalWorkflows = ['CLIENT_MEMORY.md', 'INGEST.md', 'PERSONALIZAT
 
 export const functions = [
   {
+    id: 'efeitos', group: 'cenas', title: 'Escolher efeitos para o vídeo',
+    what: 'Na seção Efeitos do painel, explore as prévias, veja as referências e escolha um efeito pelo código FX. O Cortez ajusta texto, tempo e aparência ao seu trabalho e mostra a aplicação para revisar.',
+    say: 'Mostre o catálogo de efeitos e sugira os que ajudam nesta edição.',
+    prompt: 'Mostre o catálogo de efeitos e sugira quais ajudam a explicar as ideias da [E03]. Para cada sugestão, diga o código FX, o trecho da fala e o motivo. Preserve o formato F e a identidade ID escolhidos para esse trabalho. Use os materiais reais autorizados; telas e dados das demonstrações são ilustrativos. Sincronize com a montagem final, preserve o rosto e as legendas e mostre uma prévia antes de considerar a aplicação aprovada. Se faltar F ou ID no trabalho, pergunte pela escolha que falta.',
+    tips: ['FX identifica um efeito, F identifica a edição e ID escolhe cores e fontes.', 'As referências públicas indicam o que foi realmente observado.', 'Logotipo exige um pedido explícito para aquele trabalho.'],
+    link: {href:'#efeitos', label:'Explorar os efeitos'},
+    workflows: ['EFFECT_CATALOG.md']
+  },
+  {
     id: 'contribuir', group: 'cuidar', title: 'Sugerir um formato ou uma melhoria',
     what: 'Você descreve a ideia e o Cortez prepara a mudança numa cópia separada, como um PR, uma proposta de mudança. A versão de todos só muda depois da aprovação.',
     say: 'Cortez, prepare um PR com esta sugestão: [descreva sua ideia].',

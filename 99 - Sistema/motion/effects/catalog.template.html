@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><title>Efeitos | Cortez</title>
+<style>{{SITE_CSS}}
+{{EFFECTS_CSS}}</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Ir para o conteúdo</a>
+<header class="site-header">
+  <a class="site-title" href="#efeitos" aria-label="Catálogo de efeitos do Cortez"><img src="{{LOGO}}" alt="Cortez" width="150" height="40"><span>Painel do Cortez</span></a>
+  <nav aria-label="Navegação principal"><a href="#efeitos" data-nav="efeitos" aria-current="page">Efeitos</a><a href="https://cortez.highticketai.com.br/#modelos" target="_blank" rel="noopener">Modelos</a></nav>
+  <span class="header-note">VOCÊ GRAVA. O CORTEZ EDITA.</span>
+</header>
+<main id="main" tabindex="-1"></main>
+<footer class="site-footer"><p>Uma referência inspira. O seu vídeo tem a sua cara.</p><span>Feito para o seu Cortez local.</span></footer>
+<div id="toast" role="status" aria-live="polite" class="toast" hidden></div>
+<noscript><div class="noscript">Ative o JavaScript para ver as prévias ou peça ao Cortez para consultar o catálogo de efeitos.</div></noscript>
+<script id="catalog-data" type="application/json">{{CATALOG}}</script>
+<script id="reference-data" type="application/json">{{REFERENCES}}</script>
+<script>{{RENDERER}}</script>
+<script type="module">
+{{VIEW_MODULE}}
+const main=document.querySelector('main');
+const library=JSON.parse(document.getElementById('catalog-data').textContent);
+const references=JSON.parse(document.getElementById('reference-data').textContent);
+const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+let storage;try{storage=localStorage}catch{storage={getItem:()=>null,setItem:()=>{}}}
+let toastTimer;
+function notify(message){const toast=document.getElementById('toast');toast.textContent=message;toast.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>{toast.hidden=true},4000)}
+async function copyText(text,fallback){try{await navigator.clipboard.writeText(text);notify('Copiado. Cole o pedido na conversa com o Cortez.')}catch{const previous=document.activeElement;const input=fallback||document.createElement('textarea');input.value=text;if(!fallback){input.style.cssText='position:fixed;left:-9999px';document.body.append(input)}input.focus();input.select();let copied=false;try{copied=document.execCommand('copy')}catch{}if(!fallback)input.remove();previous?.focus({preventScroll:true});notify(copied?'Pedido copiado.':'Selecione o pedido e copie para a conversa.')}}
+const view=createEffectsView({main,library,references,notify,copyText,storage,reducedMotion,icon});
+function route(){view.destroy();if(location.hash.startsWith('#efeito='))view.detail(location.hash.slice('#efeito='.length));else view.gallery();window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);window.addEventListener('pagehide',()=>view.destroy());
+route();
+</script>
+</body></html>

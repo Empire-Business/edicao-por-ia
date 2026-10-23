@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "hyperframes-registry",
+      "title": "HyperFrames public component registry",
+      "url": "https://github.com/heygen-com/hyperframes/blob/main/registry/registry.json",
+      "author": "HeyGen / HyperFrames contributors",
+      "kind": "documentation",
+      "observed": "Consultei o registro público e encontrei nomes de componentes relacionados a alguns efeitos do catálogo.",
+      "inspection": "text-only",
+      "notes": "Registro e nomes são metadados, não demonstração visual. Não usei a quantidade de itens como evidência de qualidade, compatibilidade ou licença."
+    },
+    {
+      "id": "motion-split-reveal-demo",
+      "title": "Hero: Split text reveal — Motion UI section",
+      "url": "https://examples.motion.dev/ui/sections/text-split-reveal?utm_source=embed",
+      "author": "Motion (motion.dev)",
+      "kind": "visual-demo",
+      "observed": "Na demo ao vivo, observei um quadro de título parcialmente revelado e outro com o título completo. São estados capturados; não avaliei a reprodução inteira.",
+      "inspection": "frames-observed",
+      "notes": "Serve como referência visual de revelação de texto. A animação, as fontes e a identidade do Motion não devem ser copiadas como implementação do Cortez."
+    },
+    {
+      "id": "gsap-splittext-docs",
+      "title": "GSAP SplitText documentation",
+      "url": "https://gsap.com/docs/v3/Plugins/SplitText/",
+      "author": "GreenSock",
+      "kind": "documentation",
+      "observed": "A documentação do GSAP descreve a divisão de texto em linhas, palavras e caracteres e o ciclo de vida dessa divisão.",
+      "inspection": "text-only",
+      "notes": "Referência técnica de mecanismo, sem demo visual inspecionada nesta consulta."
+    },
+    {
+      "id": "codrops-typography-motion-demo",
+      "title": "Typography Motion Effect — Codrops demo",
+      "url": "https://tympanus.net/Tutorials/TypographyMotion/",
+      "author": "Codrops recreation by Manoela Ilic; original design credited to Thibaud Allie / Dani Morales",
+      "kind": "visual-demo",
+      "observed": "Abri a página e observei um estado estático do exemplo após interação. Não capturei a transição completa.",
+      "inspection": "frames-observed",
+      "notes": "Referência visual limitada a um estado; associações não significam que cada efeito listado esteja demonstrado."
+    },
+    {
+      "id": "codrops-parallax-gallery",
+      "title": "Building an Infinite GSAP Scroll Gallery with Parallax and Flip Transitions",
+      "url": "https://tympanus.net/codrops/2026/07/30/building-an-infinite-gsap-scroll-gallery-with-parallax-and-flip-transitions/",
+      "author": "Surya Aditya, Codrops",
+      "kind": "documentation",
+      "observed": "O tutorial descreve uma galeria com movimento parallax e transições de layout.",
+      "inspection": "text-only",
+      "notes": "Fonte textual; não inspecionei a animação ao vivo. A presença de uma técnica no artigo não prova adequação ao Cortez."
+    },
+    {
+      "id": "codrops-image-stack",
+      "title": "Image Stack Intro Animation",
+      "url": "https://tympanus.net/codrops/2020/11/24/image-stack-intro-animation/",
+      "author": "Manoela Ilic, Codrops",
+      "kind": "documentation",
+      "observed": "O artigo descreve uma entrada de pilha de imagens que se transforma em grade.",
+      "inspection": "text-only",
+      "notes": "Referência textual de composição; não capturei quadros da animação ao vivo."
+    },
+    {
+      "id": "motion-cursor-floating-target",
+      "title": "Cursor: Floating target — Motion for Vue Example",
+      "url": "https://examples.motion.dev/vue/cursor-floating-target",
+      "author": "Motion / Matt Perry",
+      "kind": "visual-demo",
+      "observed": "Na demo aberta, vi um alvo circular “SEE MORE” com texto em órbita e uma seta que acompanha o ponteiro. Após clicar, observei o alvo em outra posição. Registrei estados visuais antes/depois; não avaliei a reprodução inteira.",
+      "inspection": "frames-observed",
+      "notes": "A interação observada é um alvo que acompanha o ponteiro; não é uma animação de clique nem uma lupa. Serve de referência limitada para o movimento de cursor em cursor-click."
+    },
+    {
+      "id": "motion-card-stack",
+      "title": "Card stack — Motion for React Example",
+      "url": "https://examples.motion.dev/react/card-stack",
+      "author": "Motion / Matt Perry",
+      "kind": "visual-demo",
+      "observed": "Vi três fotografias em pilha; arrastei o cartão da frente para a esquerda e observei outra foto avançar, com a carta movida reaparecendo atrás. São quadros antes/depois da interação, não uma avaliação da animação completa.",
+      "inspection": "frames-observed",
+      "notes": "Referência direta para a ideia de pilha de cartões. O exemplo é uma interface interativa; a adaptação para uma animação de vídeo precisa ser desenhada e revisada no Cortez."
+    },
+    {
+      "id": "motion-image-reveal-slider",
+      "title": "Image reveal slider — Motion for JavaScript Example",
+      "url": "https://examples.motion.dev/js/image-reveal-slider",
+      "author": "Motion / Matt Perry",
+      "kind": "visual-demo",
+      "observed": "Vi uma imagem colorida e a mesma imagem em preto e branco separadas por um controle vertical. Arrastei o controle para a direita e observei a área colorida crescer. São estados antes/depois; não avaliei a reprodução inteira.",
+      "inspection": "frames-observed",
+      "notes": "Referência visual direta para comparação antes/depois e recorte revelado por máscara. A demo usa interação manual e não prova integração com timeline de vídeo."
+    },
+    {
+      "id": "d3-pie-chart-update",
+      "title": "Pie chart update",
+      "url": "https://observablehq.com/@d3/pie-chart-update",
+      "author": "D3 / equipe D3 (@d3)",
+      "kind": "visual-demo",
+      "observed": "Observei um gráfico circular vazado com fatias coloridas e dois seletores de métrica. Alternei a seleção entre Oranges e Apples e vi as proporções do gráfico mudarem. Capturei estados visuais; não avaliei a transição quadro a quadro.",
+      "inspection": "frames-observed",
+      "notes": "Referência visual para gráfico de rosca e atualização de valores. Os dados e a apresentação do exemplo não devem ser tratados como material do Cortez."
+    },
+    {
+      "id": "motion-line-graph",
+      "title": "Line graph — Motion for Vue Example",
+      "url": "https://examples.motion.dev/vue/line-graph",
+      "author": "Motion / Matt Perry",
+      "kind": "documentation",
+      "observed": "A página oficial descreve um gráfico de linha SVG com cursor e valores animados. Abri a demo hospedada, mas a área do gráfico permaneceu vazia; não observei a animação visualmente.",
+      "inspection": "text-only",
+      "notes": "Referência textual para investigar depois; não conta como evidência visual de line-chart. A demo não carregou durante a inspeção."
+    },
+    {
+      "id": "codrops-horizontal-parallax-demo",
+      "title": "Horizontal Parallax Gallery — demo original",
+      "url": "https://tympanus.net/Tutorials/HorizontalParallaxGallery/index.html",
+      "author": "David Faure / Codrops",
+      "kind": "visual-demo",
+      "observed": "Na demo hospedada, foram observados estados antes e depois de rolar: as imagens mudam de posição horizontal com deslocamentos relativos.",
+      "inspection": "frames-observed",
+      "notes": "Observação de estados por interação, sem revisão de playback completo. O estudo do Cortez é uma interpretação original."
+    },
+    {
+      "id": "w3schools-magnifier-demo",
+      "title": "Image Magnifier Glass — demo original",
+      "url": "https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_image_magnifier_glass",
+      "author": "W3Schools",
+      "kind": "visual-demo",
+      "observed": "Na demo hospedada, a lupa circular acompanha o ponteiro e mostra uma área ampliada da mesma fotografia. O código textual consultado confirma a relação entre posição e escala.",
+      "inspection": "frames-observed",
+      "notes": "Referência do mecanismo de ampliação. O Cortez usa implementação própria controlada pelo tempo, sem interação de ponteiro no render."
+    },
+    {
+      "id": "d3-line-chart-reference",
+      "title": "Line chart — referência oficial D3",
+      "url": "https://observablehq.com/@d3/line-chart/2",
+      "author": "D3 / Observable",
+      "kind": "documentation",
+      "observed": "Página oficial identificada como Line chart, com autoria D3 e visualização incorporada. A aparência e a animação não foram confirmadas nesta consulta.",
+      "inspection": "text-only",
+      "notes": "Referência documental de gráfico. Não comprova movimento nem fidelidade visual do componente; o estudo do Cortez exige revisão própria."
+    },
+    {
+      "id": "gsap-drawsvg-stroke-reference",
+      "title": "DrawSVG — revelação progressiva de traços",
+      "url": "https://gsap.com/docs/v3/Plugins/DrawSVGPlugin/",
+      "author": "GSAP",
+      "kind": "documentation",
+      "observed": "A documentação primária descreve revelação progressiva de traços SVG, incluindo linhas e caminhos.",
+      "inspection": "text-only",
+      "notes": "Referência parcial do mecanismo da linha, sem callout completo observado. A posição, o rótulo e a composição da anotação são proposta original do Cortez."
+    }
+  ]
+}

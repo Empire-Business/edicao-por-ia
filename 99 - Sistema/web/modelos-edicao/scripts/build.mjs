@@ -1,6 +1,7 @@
 import { cp, mkdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { effectNativeAssets } from './export_effects.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const destination = path.join(root, 'dist');
@@ -43,6 +44,9 @@ for (const format of catalog.formats) {
  }
 }
 await cp(path.join(root, 'src'), destination, { recursive: true });
+const effectAssets = await effectNativeAssets();
+await writeFile(path.join(destination, 'effects-data.js'), effectAssets.dataModule);
+await writeFile(path.join(destination, 'effects-renderer.js'), effectAssets.renderer);
 const html = await readFile(path.join(root, 'src/index.html'), 'utf8');
 await writeFile(path.join(destination, 'index.html'), html);
 const publishedVideoBytes = (await Promise.all(catalog.formats.flatMap(format => [format,...(format.examples || [])]).filter(sample=>sample.video).map(sample=>stat(path.join(root,'public',sample.video))))).reduce((sum,item)=>sum+item.size,0);

@@ -242,3 +242,14 @@ CHAVES DAS INTEGRAÇÕES.txt
 !/99 - Sistema/examples/reference-library/**/*.jpg
 !/99 - Sistema/examples/reference-library/**/*.jpeg
 !/99 - Sistema/examples/reference-library/**/*.webp
+
+# Local effect research originals and rendered QA evidence
+99 - Sistema/examples/research/
+99 - Sistema/motion/effects/evidence-*/
+99 - Sistema/motion/effects/reference-notes.json
+99 - Sistema/motion/effects/verification.json
+99 - Sistema/motion/effects/native-ui-verification.json
+
+# Generated effect browser assets (canonical sources live in the engine)
+99 - Sistema/web/modelos-edicao/public/effects-data.js
+99 - Sistema/web/modelos-edicao/public/effects-renderer.js

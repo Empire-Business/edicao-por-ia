@@ -1,0 +1,2348 @@
+{
+  "schema_version": 1,
+  "version": "1.0.0",
+  "updated_at": "2026-10-23",
+  "title": "Biblioteca de efeitos do Cortez",
+  "demo_notice": "Todas as telas, números, mapas e imagens das prévias são ilustrações. Cores de demonstração não escolhem a identidade visual do seu vídeo.",
+  "effects": [
+    {
+      "code": "FX01",
+      "id": "connect-hook",
+      "name": "Gancho palavra por palavra",
+      "category": "Texto",
+      "description": "Revelar uma promessa curta com ênfase na última palavra.",
+      "use_when": "Aberturas que ganham sentido em poucas palavras.",
+      "caution": "Não repetir a legenda nem acrescentar promessa que a fala não faz.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Sua ideia em movimento",
+        "title": "Sua ideia em movimento",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "words",
+        "wordCues"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "motion-split-reveal-demo",
+        "gsap-splittext-docs",
+        "codrops-typography-motion-demo"
+      ]
+    },
+    {
+      "code": "FX02",
+      "id": "gravity-drop",
+      "name": "Palavras com gravidade",
+      "category": "Texto",
+      "description": "Dar peso a um conceito com queda e dois amortecimentos.",
+      "use_when": "Uma palavra decisiva ou uma oposição curta.",
+      "caution": "Evitar frases longas e movimento em toda a fala.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "IDEIAS QUE PESAM",
+        "title": "IDEIAS QUE PESAM",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3.5,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX03",
+      "id": "giant-caption",
+      "name": "Legenda com palavra em destaque",
+      "category": "Texto",
+      "description": "Organizar um grupo curto de palavras com hierarquia clara.",
+      "use_when": "Ênfase pontual em palavras realmente pronunciadas.",
+      "caution": "A demonstração não fornece transcrição; usar as palavras retimadas do trabalho.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Cada palavra importa",
+        "title": "Cada palavra importa",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "words",
+        "wordCues"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "motion-split-reveal-demo",
+        "gsap-splittext-docs",
+        "codrops-typography-motion-demo"
+      ]
+    },
+    {
+      "code": "FX04",
+      "id": "prompt-bar",
+      "name": "Barra de prompt",
+      "category": "Interface",
+      "description": "Mostrar a construção de um pedido numa interface genérica.",
+      "use_when": "Tutoriais e explicação de comandos em linguagem comum.",
+      "caution": "Não representar a interface como uma captura real de produto.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Descreva sua próxima ideia",
+        "title": "Descreva sua próxima ideia",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 4,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX05",
+      "id": "storyboard",
+      "name": "Cartões de storyboard",
+      "category": "Composição",
+      "description": "Transformar uma pilha de cenas em uma sequência visual.",
+      "use_when": "Planejamento e explicação de etapas de produção.",
+      "caution": "Miniaturas ilustrativas precisam ser trocadas pelas cenas autorizadas.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma ideia. Cinco cenas.",
+        "title": "Uma ideia. Cinco cenas.",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "scene0",
+          "scene1",
+          "scene2",
+          "scene3",
+          "scene4"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "codrops-parallax-gallery",
+        "codrops-image-stack"
+      ]
+    },
+    {
+      "code": "FX06",
+      "id": "impact-icon",
+      "name": "Ícone com impacto",
+      "category": "Ênfase",
+      "description": "Acentuar um símbolo com chegada, onda curta e risco opcional.",
+      "use_when": "Contraste, eliminação de uma etapa ou destaque de ferramenta.",
+      "caution": "Impacto discreto; não usar tremor repetitivo.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Menos etapas",
+        "title": "Menos etapas",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX07",
+      "id": "dragged-file",
+      "name": "Arquivo arrastado",
+      "category": "Interface",
+      "description": "Demonstrar o envio de um arquivo com cursor e confirmação.",
+      "use_when": "Instruções sobre importar materiais.",
+      "caution": "Nome, tamanho e resolução são ilustrativos até receber um arquivo real.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "gravacao.mp4",
+        "title": "gravacao.mp4",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX08",
+      "id": "editor-timeline",
+      "name": "Timeline de edição",
+      "category": "Interface",
+      "description": "Explicar uma montagem com trilhas e indicador de reprodução.",
+      "use_when": "Bastidores e explicação de cortes, voz e legendas.",
+      "caution": "A timeline é uma metáfora, não uma leitura de um editor real.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Do bruto à edição",
+        "title": "Do bruto à edição",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX09",
+      "id": "jiggle-delete",
+      "name": "Ícones removidos",
+      "category": "Interface",
+      "description": "Mostrar uma seleção sendo reduzida com exclusão em sequência.",
+      "use_when": "Simplificação de um processo ou comparação de ferramentas.",
+      "caution": "Usar símbolos próprios; não atribuir ações reais a aplicativos.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Simplifique o processo",
+        "title": "Simplifique o processo",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX10",
+      "id": "color-slider",
+      "name": "Comparador com divisor",
+      "category": "Imagem",
+      "description": "Revelar duas imagens com uma divisória móvel.",
+      "use_when": "Comparação de versões da mesma imagem.",
+      "caution": "Exige antes e depois verdadeiros; a prévia usa ilustração.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Antes e depois",
+        "title": "Antes e depois",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "before",
+          "after"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX11",
+      "id": "color-picker",
+      "name": "Paleta com conta-gotas",
+      "category": "Imagem",
+      "description": "Relacionar pontos de uma imagem às cores coletadas.",
+      "use_when": "Explicação de paletas e direção de arte.",
+      "caution": "A demonstração usa cores ilustrativas; nunca trocar a ID automaticamente.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "As cores da cena",
+        "title": "As cores da cena",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Estudo do mecanismo. Extração de cores e tratamento real do vídeo usam ferramentas de imagem próprias; este componente não executa essas operações.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "study-only",
+      "reference_ids": []
+    },
+    {
+      "code": "FX12",
+      "id": "cinematic-look",
+      "name": "Tratamento de imagem",
+      "category": "Imagem",
+      "description": "Demonstrar uma transição de tratamento, moldura e textura.",
+      "use_when": "Explicar uma escolha de acabamento visual.",
+      "caution": "O canvas não corrige um vídeo real; o tratamento final exige revisão da pele e da imagem.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Um novo acabamento",
+        "title": "Um novo acabamento",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Estudo do mecanismo. Extração de cores e tratamento real do vídeo usam ferramentas de imagem próprias; este componente não executa essas operações.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "before",
+          "after"
+        ]
+      ],
+      "production_support": "study-only",
+      "reference_ids": []
+    },
+    {
+      "code": "FX13",
+      "id": "phone-frame",
+      "name": "Vídeo em moldura",
+      "category": "Composição",
+      "description": "Recompor a imagem dentro de uma moldura vertical com título.",
+      "use_when": "Mudança de capítulo, demonstração e apresentação de peça.",
+      "caution": "A moldura não deve tornar o material ilegível.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Sua próxima história",
+        "title": "Sua próxima história",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "screenshot"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "codrops-typography-motion-demo"
+      ]
+    },
+    {
+      "code": "FX14",
+      "id": "video-grid",
+      "name": "Grade de vídeos",
+      "category": "Composição",
+      "description": "Organizar várias cenas em uma grade progressiva.",
+      "use_when": "Variedade de materiais e explicação de uma coleção.",
+      "caution": "A prévia usa miniaturas ilustrativas; vídeos simultâneos exigem compositor próprio.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Muitas cenas. Uma ideia.",
+        "title": "Muitas cenas. Uma ideia.",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "grid0",
+          "grid1",
+          "grid2",
+          "grid3",
+          "grid4",
+          "grid5",
+          "grid6",
+          "grid7",
+          "grid8"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "codrops-parallax-gallery",
+        "codrops-image-stack"
+      ]
+    },
+    {
+      "code": "FX15",
+      "id": "reels-feed",
+      "name": "Feed vertical",
+      "category": "Interface",
+      "description": "Mostrar uma peça dentro de um feed genérico com rolagem.",
+      "use_when": "Explicação de distribuição e formatos sociais.",
+      "caution": "Contadores ilustrativos não são prova de engajamento.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma ideia no feed",
+        "title": "Uma ideia no feed",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "videoPoster"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX16",
+      "id": "video-card",
+      "name": "Cartão de vídeo",
+      "category": "Composição",
+      "description": "Apresentar uma miniatura com botão de reprodução e foco.",
+      "use_when": "Introdução de um exemplo ou material de apoio.",
+      "caution": "O canvas mostra a capa; reprodução de vídeo requer camada de mídia.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Veja este exemplo",
+        "title": "Veja este exemplo",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "screenshot"
+        ],
+        [
+          "frame0",
+          "frame1",
+          "frame2"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "codrops-image-stack"
+      ]
+    },
+    {
+      "code": "FX17",
+      "id": "comment-cta",
+      "name": "Chamada para comentar",
+      "category": "Interface",
+      "description": "Exibir uma palavra sendo escrita numa caixa de comentário.",
+      "use_when": "Uma ação final coerente com a oferta falada.",
+      "caution": "Não prometer entrega ou benefício inexistente.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "QUERO",
+        "title": "QUERO",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX18",
+      "id": "falling-comments",
+      "name": "Comentários em sequência",
+      "category": "Interface",
+      "description": "Organizar balões que chegam e se empilham.",
+      "use_when": "Demonstração de conversa ou perguntas frequentes.",
+      "caution": "Comentários da prévia são fictícios; não usar como depoimentos.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "A conversa continua",
+        "title": "A conversa continua",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "items"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX19",
+      "id": "counter",
+      "name": "Contador numérico",
+      "category": "Dados",
+      "description": "Revelar um valor com desaceleração e rótulo legível.",
+      "use_when": "Uma quantidade ou resultado sustentado por dados.",
+      "caution": "O número da demonstração é fictício; conferir valor, unidade e fonte.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Projetos concluídos",
+        "title": "Projetos concluídos",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "value"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX20",
+      "id": "word-highlight",
+      "name": "Marca-texto",
+      "category": "Texto",
+      "description": "Passar um traço atrás de uma expressão importante.",
+      "use_when": "Ênfase localizada sem trocar o enquadramento.",
+      "caution": "Usar com moderação e preservar o contraste das letras.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "O ponto principal",
+        "title": "O ponto principal",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "words",
+        "wordCues"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "gsap-splittext-docs"
+      ]
+    },
+    {
+      "code": "FX21",
+      "id": "punch-in",
+      "name": "Aproximação de enquadramento",
+      "category": "Composição",
+      "description": "Dar ênfase com aproximação curta e retorno suave.",
+      "use_when": "Uma virada relevante na fala.",
+      "caution": "A amostra é ilustrativa; centro do rosto e recorte exigem inspeção do vídeo real.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Mais perto da ideia",
+        "title": "Mais perto da ideia",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "screenshot"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX22",
+      "id": "lower-third",
+      "name": "Nome e cargo",
+      "category": "Texto",
+      "description": "Identificar uma pessoa com tarja e entrada curta.",
+      "use_when": "Primeira apresentação de um entrevistado.",
+      "caution": "Nome e função precisam ser informados e conferidos.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Nome da pessoa",
+        "title": "Nome da pessoa",
+        "subtitle": "Função ou especialidade",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX23",
+      "id": "notification",
+      "name": "Notificação",
+      "category": "Interface",
+      "description": "Introduzir uma mensagem curta num cartão que desce.",
+      "use_when": "Chegada de informação e mudança de contexto.",
+      "caution": "Não inventar notificação real de um serviço.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma nova ideia chegou",
+        "title": "Uma nova ideia chegou",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX24",
+      "id": "cursor-click",
+      "name": "Cursor e clique",
+      "category": "Interface",
+      "description": "Guiar o olhar até um alvo com um clique desenhado.",
+      "use_when": "Tutoriais e demonstrações de navegação.",
+      "caution": "O alvo deve corresponder ao print real ao aplicar.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Ver demonstração",
+        "title": "Ver demonstração",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "motion-cursor-floating-target"
+      ]
+    },
+    {
+      "code": "FX25",
+      "id": "bar-chart",
+      "name": "Gráfico de barras",
+      "category": "Dados",
+      "description": "Comparar valores com barras e rótulos que aparecem em sequência.",
+      "use_when": "Comparações quantitativas de mesma unidade.",
+      "caution": "Dados e escala devem ser verdadeiros; zero e unidade precisam ser explícitos.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Comparação ilustrativa",
+        "title": "Comparação ilustrativa",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ],
+        "values": [
+          24,
+          46,
+          35,
+          63
+        ],
+        "labels": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "values",
+        "labels"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX26",
+      "id": "map-pin",
+      "name": "Mapa com localização",
+      "category": "Dados",
+      "description": "Localizar um ponto numa representação geográfica simplificada.",
+      "use_when": "Contexto territorial e indicação de cidade.",
+      "caution": "Mapa ilustrativo sem precisão cartográfica; confirmar coordenadas e licença do mapa final.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "São Paulo",
+        "title": "São Paulo",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX27",
+      "id": "price-badge",
+      "name": "Selo de preço",
+      "category": "Dados",
+      "description": "Apresentar preço e condição com destaque controlado.",
+      "use_when": "Uma oferta já definida no conteúdo.",
+      "caution": "Conferir moeda, condição e validade; não criar preço ou desconto.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Condição especial",
+        "title": "Condição especial",
+        "subtitle": "Condição ilustrativa",
+        "duration": 3,
+        "value": 149,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "value"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX28",
+      "id": "countdown",
+      "name": "Contagem regressiva",
+      "category": "Ênfase",
+      "description": "Preparar uma revelação com três estados numéricos.",
+      "use_when": "Um começo ou passagem já previsto no roteiro.",
+      "caution": "Não simular urgência comercial nem ocultar informação.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Vamos começar",
+        "title": "Vamos começar",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3.5,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "countdownFrom"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX29",
+      "id": "checklist",
+      "name": "Checklist sincronizado",
+      "category": "Texto",
+      "description": "Revelar itens e marcar cada um na fala correspondente.",
+      "use_when": "Explicar etapas, critérios e verificações.",
+      "caution": "Só marcar como concluído o que de fato foi realizado.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Pronto para seguir",
+        "title": "Pronto para seguir",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "items"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX30",
+      "id": "before-after",
+      "name": "Antes e depois",
+      "category": "Composição",
+      "description": "Mostrar duas versões com rótulos inequívocos.",
+      "use_when": "Uma comparação visual verdadeira e autorizada.",
+      "caution": "Mesma escala e condições comparáveis; imagens ilustrativas não provam resultado.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Compare as versões",
+        "title": "Compare as versões",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "before",
+          "after"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "motion-image-reveal-slider"
+      ]
+    },
+    {
+      "code": "FX31",
+      "id": "transition-flash",
+      "name": "Passagem de luz suave",
+      "category": "Transição",
+      "description": "Conectar dois estados por uma passagem luminosa gradual.",
+      "use_when": "Mudança de assunto com intenção visual.",
+      "caution": "Sem estrobo ou flash branco abrupto; evitar sobre fala contínua sem motivo.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma nova etapa",
+        "title": "Uma nova etapa",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX32",
+      "id": "typewriter",
+      "name": "Texto digitado",
+      "category": "Texto",
+      "description": "Revelar uma frase progressivamente com cursor.",
+      "use_when": "Pergunta, busca ou texto curto sendo construído.",
+      "caution": "A velocidade deve permitir leitura sem alongar uma frase curta.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma boa pergunta muda tudo.",
+        "title": "Uma boa pergunta muda tudo.",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 4,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "motion-split-reveal-demo",
+        "gsap-splittext-docs",
+        "codrops-typography-motion-demo"
+      ]
+    },
+    {
+      "code": "FX33",
+      "id": "hand-circle",
+      "name": "Círculo de anotação",
+      "category": "Ênfase",
+      "description": "Desenhar um contorno de caneta ao redor de um detalhe.",
+      "use_when": "Apontar um elemento específico num print.",
+      "caution": "A posição precisa ser revisada no material final; não há rastreamento automático.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Olhe este detalhe",
+        "title": "Olhe este detalhe",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry",
+        "gsap-drawsvg-stroke-reference"
+      ]
+    },
+    {
+      "code": "FX34",
+      "id": "chat",
+      "name": "Conversa de mensagens",
+      "category": "Interface",
+      "description": "Narrar uma troca em balões com estados de digitação.",
+      "use_when": "Exemplo de atendimento ou explicação de diálogo.",
+      "caution": "Conversa ilustrativa deve permanecer identificada; não inventar testemunho.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma conversa simples",
+        "title": "Uma conversa simples",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 4,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX35",
+      "id": "numbered-list",
+      "name": "Lista numerada",
+      "category": "Texto",
+      "description": "Guiar uma sequência com número ativo e itens anteriores discretos.",
+      "use_when": "Explicações ordenadas com continuidade.",
+      "caution": "Não acumular texto demais nem conflitar com a legenda.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Passo a passo",
+        "title": "Passo a passo",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "items"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX36",
+      "id": "logo-reveal",
+      "name": "Revelação de logotipo",
+      "category": "Composição",
+      "description": "Revelar um arquivo autorizado por uma máscara circular.",
+      "use_when": "Encerramento explicitamente solicitado para aquele trabalho.",
+      "caution": "Bloqueado por padrão: exige pedido atual e arquivo real do logotipo.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Seu arquivo de logotipo",
+        "title": "Seu arquivo de logotipo",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "logosEnabled"
+      ],
+      "asset_alternatives": [
+        [
+          "logo"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX37",
+      "id": "search-bar",
+      "name": "Busca com resultados",
+      "category": "Interface",
+      "description": "Construir uma pergunta e revelar cartões de resultado.",
+      "use_when": "Pesquisa e comparação de alternativas.",
+      "caution": "Resultados de exemplo são fictícios; usar conteúdo comprovado quando factual.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Como explicar melhor?",
+        "title": "Como explicar melhor?",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 4,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX38",
+      "id": "news-ticker",
+      "name": "Faixa informativa",
+      "category": "Texto",
+      "description": "Apresentar uma manchete curta em uma faixa de contexto.",
+      "use_when": "Contexto jornalístico ou atualização verdadeira.",
+      "caution": "Evitar urgência falsa e rolagem rápida; não cobrir a legenda.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma informação importante",
+        "title": "Uma informação importante",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX39",
+      "id": "social-post",
+      "name": "Cartão de publicação",
+      "category": "Interface",
+      "description": "Trazer uma publicação para dentro da narrativa.",
+      "use_when": "Comentar uma publicação própria ou autorizada.",
+      "caution": "Nomes, frases e métricas precisam de fonte; a prévia é fictícia.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma ideia para compartilhar",
+        "title": "Uma ideia para compartilhar",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": []
+    },
+    {
+      "code": "FX40",
+      "id": "progress-bar",
+      "name": "Progresso do vídeo",
+      "category": "Ênfase",
+      "description": "Indicar visualmente quanto resta de uma sequência.",
+      "use_when": "Peças com capítulos ou estrutura reconhecível.",
+      "caution": "Movimento linear é intencional; não sugerir avanço de tarefa real.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Da ideia ao resultado",
+        "title": "Da ideia ao resultado",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX41",
+      "id": "split-screen",
+      "name": "Tela dividida com imagem",
+      "category": "Composição",
+      "description": "Reservar áreas distintas para material e apresentador.",
+      "use_when": "Explicar um produto mantendo a pessoa em cena.",
+      "caution": "Exige materiais reais e revisão do recorte; prévia sem apresentador real.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Mostre e explique",
+        "title": "Mostre e explique",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "before",
+          "after"
+        ]
+      ],
+      "production_support": "review-required",
+      "reference_ids": [
+        "codrops-parallax-gallery"
+      ]
+    },
+    {
+      "code": "FX42",
+      "id": "confetti",
+      "name": "Confete discreto",
+      "category": "Ênfase",
+      "description": "Marcar uma conclusão com partículas curtas e finitas.",
+      "use_when": "Conclusão ou celebração pertinente ao conteúdo.",
+      "caution": "Evitar sobrepor rosto e dados; não transformar em loop.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Etapa concluída",
+        "title": "Etapa concluída",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "reference_ids": [
+        "hyperframes-registry"
+      ]
+    },
+    {
+      "code": "FX43",
+      "id": "mask-reveal",
+      "name": "Revelação por máscara",
+      "category": "Transição",
+      "description": "Revelar o conteúdo por uma abertura controlada.",
+      "use_when": "Mudança de estado ou introdução de uma imagem.",
+      "caution": "Preservar tempo de leitura e evitar ocultar evidência importante.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Revele a ideia",
+        "title": "Revele a ideia",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "motion-split-reveal-demo",
+        "gsap-splittext-docs",
+        "codrops-parallax-gallery",
+        "motion-image-reveal-slider"
+      ]
+    },
+    {
+      "code": "FX44",
+      "id": "callout",
+      "name": "Anotação com conector",
+      "category": "Ênfase",
+      "description": "Ligar uma legenda curta a um ponto da imagem.",
+      "use_when": "Explicar um detalhe de interface ou produto.",
+      "caution": "Âncora deve apontar para o elemento real; sem rastreamento automático.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Este detalhe importa",
+        "title": "Este detalhe importa",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "gsap-drawsvg-stroke-reference"
+      ]
+    },
+    {
+      "code": "FX45",
+      "id": "donut-chart",
+      "name": "Gráfico de proporção",
+      "category": "Dados",
+      "description": "Apresentar uma parcela de um total com rótulo central.",
+      "use_when": "Uma proporção factual de base conhecida.",
+      "caution": "Valor e denominador precisam de fonte; evitar precisão inventada.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Parte de um todo",
+        "title": "Parte de um todo",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "value"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "d3-pie-chart-update"
+      ]
+    },
+    {
+      "code": "FX46",
+      "id": "line-chart",
+      "name": "Gráfico de evolução",
+      "category": "Dados",
+      "description": "Mostrar uma trajetória com eixo, pontos e rótulo final.",
+      "use_when": "Uma série temporal real e legível.",
+      "caution": "A linha ilustrativa não é previsão nem resultado; manter escala honesta.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Evolução no período",
+        "title": "Evolução no período",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ],
+        "values": [
+          22,
+          34,
+          29,
+          52,
+          48,
+          71,
+          67
+        ],
+        "labels": [
+          "Jan",
+          "Fev",
+          "Mar",
+          "Abr",
+          "Mai",
+          "Jun",
+          "Jul"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed",
+        "values",
+        "labels"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "motion-line-graph",
+        "d3-line-chart-reference"
+      ]
+    },
+    {
+      "code": "FX47",
+      "id": "card-stack",
+      "name": "Pilha de cartões",
+      "category": "Composição",
+      "description": "Concentrar atenção em um cartão enquanto os demais criam contexto.",
+      "use_when": "Etapas, alternativas e portfólio.",
+      "caution": "Evitar perspectiva que torne o texto ilegível.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Uma escolha de cada vez",
+        "title": "Uma escolha de cada vez",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "codrops-parallax-gallery",
+        "codrops-image-stack",
+        "motion-card-stack"
+      ]
+    },
+    {
+      "code": "FX48",
+      "id": "photo-parallax",
+      "name": "Foto em camadas",
+      "category": "Imagem",
+      "description": "Criar deslocamento relativo entre camadas de uma imagem.",
+      "use_when": "Uma imagem estática que ganha profundidade discreta.",
+      "caution": "A prévia é abstrata; profundidade real requer camadas ou máscara autorizada.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Profundidade com intenção",
+        "title": "Profundidade com intenção",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "photo"
+        ]
+      ],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "codrops-parallax-gallery",
+        "codrops-horizontal-parallax-demo"
+      ]
+    },
+    {
+      "code": "FX49",
+      "id": "magnifier",
+      "name": "Lupa de detalhe",
+      "category": "Ênfase",
+      "description": "Ampliar uma área da imagem mantendo o contexto ao redor.",
+      "use_when": "Ler um detalhe pequeno ou destacar uma característica.",
+      "caution": "Não cria resolução inexistente; usar a imagem original e conferir a posição.",
+      "version": "1.0.0",
+      "kind": "asset-composition",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Veja mais de perto",
+        "title": "Veja mais de perto",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": true,
+      "production_note": "Aplicação no trabalho exige os materiais reais, F e ID escolhidos, montagem fechada e revisão de posicionamento.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [
+        [
+          "screenshot"
+        ]
+      ],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "w3schools-magnifier-demo"
+      ]
+    },
+    {
+      "code": "FX50",
+      "id": "split-text",
+      "name": "Título com revelação recortada",
+      "category": "Texto",
+      "description": "Revelar linhas de texto por janelas com entrada em sequência.",
+      "use_when": "Abertura tipográfica com poucas palavras.",
+      "caution": "Ajustar a quebra ao conteúdo e à proporção final.",
+      "version": "1.0.0",
+      "kind": "overlay",
+      "status": "preview",
+      "status_label": "Estudo interativo",
+      "demo": {
+        "text": "Dê espaço à sua ideia",
+        "title": "Dê espaço à sua ideia",
+        "subtitle": "Demonstração ilustrativa",
+        "duration": 3,
+        "value": 72,
+        "items": [
+          "Defina a ideia",
+          "Organize a mensagem",
+          "Revise o resultado"
+        ]
+      },
+      "requires_assets": false,
+      "production_note": "Componente reutilizável; sincronizar à fala da montagem final e revisar leitura e posição.",
+      "evidence": "Estudo original em código. Não é uma captura da referência nem aprovação do usuário.",
+      "parameters": [
+        "text",
+        "title",
+        "subtitle",
+        "duration",
+        "accent",
+        "foreground",
+        "background",
+        "fontFamily",
+        "seed"
+      ],
+      "asset_alternatives": [],
+      "production_support": "review-required",
+      "origin": "research",
+      "reference_ids": [
+        "hyperframes-registry",
+        "motion-split-reveal-demo",
+        "gsap-splittext-docs",
+        "codrops-typography-motion-demo"
+      ]
+    }
+  ]
+}

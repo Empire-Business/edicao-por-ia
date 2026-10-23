@@ -2,11 +2,14 @@ import { icon } from './icons.js';
 import { PreviewManager } from './players.js';
 import { filterFormats, buildPrompt, buildStarterPrompt, readStorage, writeStorage, selectionFromHash, normalize } from './selection.js';
 import { functions, groups, folders, codes, guideUpdated, tutorials, installerPdf } from './guide.js';
+import { createEffectsView } from './effects.js';
+import { library as effectLibrary, references as effectReferences } from './effects-data.js';
+import './effects-renderer.js';
 
 const main = document.querySelector('main');
 const escape = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
 const favoriteKey = 'modelos-edicao:favorites:v1';
-let catalog, players, toastTimer;
+let catalog, players, effectsView, toastTimer;
 let storage;
 try { storage = window.localStorage; } catch { storage = { getItem: () => null, setItem: () => { throw Error('Storage unavailable'); } }; }
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -204,10 +207,12 @@ function notFound() { main.innerHTML = `<div class="empty-state"><h1>Esse modelo
 
 function renderRoute({ focus = false } = {}) {
   players?.destroy();
+  effectsView?.destroy();
   const hash = location.hash.slice(1);
   const detailRoute = hash.startsWith('modelo=');
+  const effectDetailRoute = hash.startsWith('efeito=');
   const functionRoute = hash.split('=')[0] === 'funcoes' || hash.startsWith('funcao=');
-  const section = detailRoute ? 'modelos' : functionRoute ? 'funcoes' : !hash ? 'inicio' : hash === 'como-usar' || hash.startsWith('ajuda') ? 'ajuda' : hash;
+  const section = detailRoute ? 'modelos' : effectDetailRoute ? 'efeitos' : functionRoute ? 'funcoes' : !hash ? 'inicio' : hash === 'como-usar' || hash.startsWith('ajuda') ? 'ajuda' : hash;
   document.querySelectorAll('[data-nav]').forEach(link => {
     const active = link.dataset.nav === section;
     if (active) link.setAttribute('aria-current', 'page'); else link.removeAttribute('aria-current');
@@ -233,8 +238,11 @@ function renderRoute({ focus = false } = {}) {
       functionsPage();
       target = fn && document.querySelector(`#funcao-${fn.id}`);
       if (target) { target.querySelector('details')?.setAttribute('open', ''); target.classList.add('is-target'); }
+    } else if (hash === 'efeitos' || effectDetailRoute) {
+      if (effectDetailRoute) effectsView.detail(hash.slice('efeito='.length));
+      else effectsView.gallery();
     } else if (hash === 'modelos') gallery(); else if (hash === 'identidades') identities(); else if (hash.startsWith('ajuda') || hash === 'como-usar') { helpPage(); if (hash.startsWith('ajuda-')) target = document.getElementById(hash); } else if (hash === 'instalar') installPage(); else home();
-    document.title = hash === 'instalar' ? 'Como instalar o Cortez | Painel do Cortez' : hash.startsWith('ajuda') || hash === 'como-usar' ? 'Ajuda | Painel do Cortez' : hash === 'modelos' ? 'Modelos de edição | Painel do Cortez' : functionRoute ? 'Funções e prompts | Painel do Cortez' : 'Painel do Cortez | Modelos de edição';
+    document.title = hash === 'efeitos' || effectDetailRoute ? 'Efeitos | Painel do Cortez' : hash === 'instalar' ? 'Como instalar o Cortez | Painel do Cortez' : hash.startsWith('ajuda') || hash === 'como-usar' ? 'Ajuda | Painel do Cortez' : hash === 'modelos' ? 'Modelos de edição | Painel do Cortez' : functionRoute ? 'Funções e prompts | Painel do Cortez' : 'Painel do Cortez | Modelos de edição';
     if (target) { target.scrollIntoView({ block: 'start' }); main.focus({ preventScroll: true }); return; }
   }
   if (focus) { window.scrollTo(0, hash === 'modelos' ? state.galleryScroll : 0); main.focus({ preventScroll: true }); }
@@ -345,12 +353,14 @@ document.addEventListener('keydown', event => {
   if (event.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName) && (document.querySelector('#search') || document.querySelector('#fn-search'))) { event.preventDefault(); (document.querySelector('#search') || document.querySelector('#fn-search')).focus(); }
 });
 window.addEventListener('hashchange', () => renderRoute({ focus: true }));
-window.addEventListener('pagehide', () => players?.destroy());
+window.addEventListener('pagehide', () => { players?.destroy(); effectsView?.destroy(); });
 window.addEventListener('pageshow', event => { if (event.persisted && catalog) renderRoute(); });
 
 try {
   const response = await fetch('catalog.json'); if (!response.ok) throw Error('Catálogo indisponível');
   catalog = await response.json();
+  effectsView = createEffectsView({ main, library: effectLibrary, references: effectReferences, notify, copyText, storage, reducedMotion, icon,
+    getPromptContext: () => ({ format: state.selectedFormat?.code, identity: state.selectedIdentity?.code, aspect: state.aspect }) });
   state.favorites = state.favorites.filter(code => catalog.formats.some(format => format.code === code));
   renderRoute();
 } catch {
