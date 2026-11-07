@@ -2,7 +2,10 @@
 from pathlib import Path
 import json
 import time
-import requests
+try:
+    import requests
+except ImportError:  # instalado pela capacidade base
+    requests = None
 from service_keys import api_key
 MAX_RESPONSE_BYTES = 128 * 1024 * 1024
 
@@ -10,6 +13,7 @@ MAX_RESPONSE_BYTES = 128 * 1024 * 1024
 def eleven_request(endpoint, output=None, payload=None, audio=None, method='POST'):
     if endpoint not in ('/v1/audio-isolation', '/v1/music', '/v2/voices') and not endpoint.startswith('/v1/text-to-speech/'):
         raise ValueError('Endpoint ElevenLabs não permitido.')
+    if requests is None: raise ValueError('Falta o pacote requests no Python do Cortez. A IA deve rodar factory.py dependencies --capability base --apply e tentar de novo.')
     with requests.Session() as session:
         session.trust_env = False
         headers = {'xi-api-key': api_key('ELEVENLABS_API_KEY')}

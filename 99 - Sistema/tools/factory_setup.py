@@ -258,7 +258,7 @@ def dependency_plan(root,capability='speech',system=None,machine=None):
         else:notes.append('Gerenciador compatível não encontrado. O agente deve apresentar um caminho de instalação para este sistema e pedir autorização.')
     else:
         if not py.is_file():commands.append([sys.executable,'-m','venv',str(root/'.venv')])
-        packages=['PyYAML>=6,<7']
+        packages=['PyYAML>=6,<7','requests>=2.31,<3']
         if capability=='speech':packages+=['mlx-whisper'] if system=='Darwin' and machine.lower() in ('arm64','aarch64') else ['faster-whisper']
         if capability=='motion':packages+=['playwright','Pillow>=10,<13','numpy>=1.26,<3']
         if capability=='studio-audio':packages+=['numpy>=1.26,<3','librosa>=0.11,<0.12','soundfile>=0.12,<1']

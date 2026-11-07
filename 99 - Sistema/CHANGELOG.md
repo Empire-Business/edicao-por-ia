@@ -1,3 +1,9 @@
+# 2.10.1 — pacote requests na instalação base
+
+- `dependencies --capability base` passa a instalar `requests`, usado pela voz local e pelos serviços opcionais. Antes, a narração quebrava ao abrir em instalações novas.
+- Sem `requests`, a narração e o ElevenLabs explicam o que falta em vez de quebrar; a voz do macOS funciona sem ele.
+- O teste automático do repositório instala `requests`, como a instalação base.
+
 # 2.10.0 — porta de entrada "cortez" e pasta registrada
 
 - Nova skill de entrada `cortez` (`adapters/skill-global/cortez`): instalada no Claude do usuário, acha a pasta de trabalho registrada em `~/.config/cortez/config.json`, pergunta onde criar quando não há instalação e manda trabalhar dentro da pasta. Não guarda vídeo, memória nem chave.

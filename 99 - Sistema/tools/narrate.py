@@ -12,7 +12,10 @@ from pathlib import Path
 import re
 import tempfile
 from urllib.parse import urlsplit
-import requests
+try:
+    import requests
+except ImportError:  # instalado pela capacidade base; só a voz local e a paga precisam dele
+    requests = None
 from audio_local import ROOT, run, probe, output_path, publish, receipt
 from workspace_files import resolve_file, digest
 
@@ -32,6 +35,7 @@ def local_url(value):
 
 def voicestudio(endpoint, base_url, payload=None, output=None):
     url = local_url(base_url) + endpoint
+    if requests is None: raise ValueError('Falta o pacote requests no Python do Cortez. A IA deve rodar factory.py dependencies --capability base --apply e tentar de novo.')
     with requests.Session() as session:
         session.trust_env = False
         try:

@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Preparar dependência dos testes
-        run: python -m pip install 'PyYAML==6.0.3' 'Pillow==12.3.0' 'numpy>=2,<3'
+        run: python -m pip install 'PyYAML==6.0.3' 'Pillow==12.3.0' 'numpy>=2,<3' 'requests>=2.31,<3'
       - name: Preparar FFmpeg para testes de mídia
         run: |
           sudo apt-get update -qq
