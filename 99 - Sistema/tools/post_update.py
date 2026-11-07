@@ -16,7 +16,10 @@ def main():
  f02_recipe=migrate_f02_talking_head_v2(root)
  # A new registry can coexist with the preserved legacy stores. Original databases are untouched.
  guides=refresh(root)
- result={'ok':guides['ok'],'migration':'design-v2','defaults':receipt,'legacy':legacy,'examples':examples,'f02_recipe':f02_recipe,'guides':guides,'original_data_preserved':True}
+ # Machine-level fix delivered by updates: entry skill + folder registry. Additive; never fails the update.
+ from global_skill import safe_install
+ global_skill=safe_install(root,True)
+ result={'ok':guides['ok'],'migration':'design-v2','defaults':receipt,'legacy':legacy,'examples':examples,'f02_recipe':f02_recipe,'guides':guides,'global_skill':global_skill,'original_data_preserved':True}
  atomic_json(inside(root,'.factory/migrations/design-v2.json'),result)
  print(json.dumps(result,ensure_ascii=False));return 0 if result['ok'] else 2
 if __name__=='__main__':raise SystemExit(main())

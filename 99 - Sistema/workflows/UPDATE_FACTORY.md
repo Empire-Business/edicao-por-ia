@@ -11,6 +11,15 @@ Use `update --apply` quando não houver edição em execução. A atualização 
 Nunca substituir trabalhos, mídia, exportações, bancos de memória, catálogo do usuário, IDs visuais/revisões, chaves, modelos vinculados, configurações locais ou gastos. Não usar git reset/clean/pull como instalador de uma pasta de usuário.
 Arquivos desconhecidos permanecem. Código gerenciado sem alteração local é atualizado. Código modificado é mesclado em três vias quando existe uma base verificada e a mescla não conflita. Conflito mantém toda a versão ativa intacta e guarda a versão recebida em um recibo para revisão do assistente.
 
+## Porta de entrada e registro da pasta
+
+A migração de toda atualização também instala ou renova a skill de entrada `cortez` no Claude do
+usuário (`~/.claude/skills/cortez`, a partir de `adapters/skill-global/cortez`) e registra esta pasta
+em `~/.config/cortez/config.json`. É aditivo e idempotente, não toca em dados, não substitui uma skill
+`cortez` que não foi instalada pelo Cortez e uma falha nessa etapa é só relatada (`global_skill` no
+recibo), sem bloquear a atualização. `CORTEZ_SKILL_GLOBAL=0` desliga. Para refazer só essa etapa:
+`skill-global --apply`.
+
 ## Recuperação
 
 Cada escrita tem backup e journal antes de mudar o arquivo. Falha recupera o código já aplicado; migrações são aditivas e preservam os dados originais. Remoções do código publicado só retiram arquivos gerenciados que continuam idênticos à base conhecida. Não apagar personalizações desconhecidas.

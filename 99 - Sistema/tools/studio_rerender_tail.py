@@ -1,7 +1,9 @@
 # Re-render only the overlay chunks touched by a caption fix; other chunks are reused from the previous parts version.
 import subprocess,sys,os,shutil,json,glob,time
-ROOT='/Volumes/bguzelassd/edicao-por-ia';J=f'{ROOT}/jobs/{sys.argv[1]}';S=J+'/studio';OLD,NEW,FROM=sys.argv[2],sys.argv[3],int(sys.argv[4])
-PY=ROOT+'/.venv/bin/python'
+from pathlib import Path
+ENGINE=Path(__file__).resolve().parents[1];SURFACE=ENGINE.parent if (ENGINE.parent/'.factory-root.json').is_file() else ENGINE
+ROOT=str(SURFACE);J=str(ENGINE/'jobs'/sys.argv[1]);S=J+'/studio';OLD,NEW,FROM=sys.argv[2],sys.argv[3],int(sys.argv[4])
+PY=sys.executable  # run this helper with the Cortez Python; works on macOS, Windows and Linux
 insp=json.loads(subprocess.run([PY,ROOT+'/factory.py','studio','render',S+'/scene/spec.json','--inspect'],capture_output=True,text=True).stdout)
 B=insp.get('bundle_sha256') or insp.get('bundle');open(S+'/bundle.txt','w').write(B)
 N=json.load(open(S+'/scene/spec.json'))['duration_frames'];CH=240;OUT=f'{S}/parts-{NEW}';os.makedirs(OUT,exist_ok=True)

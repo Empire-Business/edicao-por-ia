@@ -160,6 +160,13 @@ ser refeita sem mudança que justifique. Após falha, ler o erro, corrigir a cau
 a etapa pertinente. Usar timeouts proporcionais que encerrem os filhos; não deixar processos
 perdidos, não repetir downloads indefinidamente e não relaxar segurança para obter passagem.
 
+Antes de encerrar, registrar a porta de entrada com `skill-global --apply` (também de `factory.py`).
+Ele copia a skill pequena `cortez` para `~/.claude/skills/cortez` (`%USERPROFILE%\.claude\skills\cortez`
+no Windows) e anota esta pasta em `~/.config/cortez/config.json`, para a pessoa chamar o Cortez de
+qualquer conversa. É aditivo: não altera modelos, permissões, autenticação nem dados, não substitui
+uma skill `cortez` alheia e, se o Claude não estiver nesse computador, só informa. Os trabalhos
+continuam nesta pasta; nada de vídeo ou memória vai para a skill.
+
 Ao final, abrir a entrada humana e o painel, explicar em poucas linhas o que funciona.
 Executar as provas no sistema instalado; testes simulados de outro OS não provam execução.
 A falta de Windows/Linux no computador do autor não é tarefa pendente do usuário.

@@ -1,3 +1,11 @@
+# 2.10.0 — porta de entrada "cortez" e pasta registrada
+
+- Nova skill de entrada `cortez` (`adapters/skill-global/cortez`): instalada no Claude do usuário, acha a pasta de trabalho registrada em `~/.config/cortez/config.json`, pergunta onde criar quando não há instalação e manda trabalhar dentro da pasta. Não guarda vídeo, memória nem chave.
+- `skill-global --apply` no `factory.py`; a migração de cada atualização instala ou renova a skill e registra a pasta, de forma aditiva, sem tocar em dados e sem bloquear a atualização se falhar.
+- Instruções para macOS, Windows e Linux na skill de entrada.
+- `studio_rerender_tail.py` deixa de depender de um caminho fixo do computador do autor.
+- Repositório de download e PDF de instalação inalterados.
+
 # 2.8.0 — painel e identidade Cortez
 
 - Painel com a marca, a personagem e a aparência da página Cortez; logo, tipografia e cores preservam a independência das IDs dos vídeos.
