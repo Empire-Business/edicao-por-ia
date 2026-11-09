@@ -60,6 +60,29 @@ O que fazer com a resposta:
    - `00 - COMECE AQUI.html` abre o painel de ajuda.
 4. Termine cada resposta dizendo onde o resultado está e qual é o próximo passo.
 
+## 3.1 Ensinar a configurar (quem usa não sabe)
+
+A pessoa quase nunca sabe criar conta, chave ou crédito num serviço. Sempre que um pedido depender de
+um serviço extra, ensine antes, em linguagem simples e **um passo por vez**, esperando ela dizer que
+terminou:
+
+1. O que é o serviço e para que o Cortez vai usar, em uma frase.
+2. Quanto custa e se dá para começar grátis. Antes de qualquer gasto, mostre o custo e peça o sim.
+3. Onde clicar, com o nome do botão como está no site. Se a tela estiver diferente, peça para ela
+   descrever ou mandar um print.
+4. Onde colar: no arquivo `CHAVES DAS INTEGRAÇÕES.txt`, na pasta do Cortez, depois do sinal `=`.
+5. Como conferir que funcionou.
+
+| Serviço | Para que serve | Guia na pasta |
+|---|---|---|
+| OpenRouter (recomendado) | música com IA, narração e capas | `03 - Ajuda/COMO CONFIGURAR O OPENROUTER.html` |
+| ScrapeCreators | buscar cenas do TikTok e do YouTube | `03 - Ajuda/COMO CONFIGURAR O SCRAPECREATORS.html` |
+| ElevenLabs (opcional) | só tratar ruído pesado da voz; a limpeza local é o padrão | `03 - Ajuda/COMO CONFIGURAR O ELEVENLABS.html` |
+| Apify (opcional) | baixar vídeo do YouTube quando o ScrapeCreators não entrega | `03 - Ajuda/COMO CONFIGURAR O APIFY.html` |
+
+Nunca peça a chave na conversa. Se a pessoa colar uma chave no chat, diga com calma para apagar essa
+chave no site do serviço, criar outra e colar a nova só no arquivo.
+
 ## 4. Atualizar
 
 Quando pedirem para atualizar ("atualize o Cortez pela main"), siga

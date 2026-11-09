@@ -148,7 +148,8 @@ sistema ou iniciar automaticamente em todo login. Pesos têm licença própria: 
 termos/restrições em nome da pessoa nem afirmar uso comercial liberado por causa da licença
 do código. Se precisar de escolha legal/material, explicar essa única decisão ao usuário.
 Gerar e ouvir uma frase de prova com o modelo autorizado; instalação do pacote não prova fala.
-ElevenLabs e Apify são opcionais; não ler suas chaves durante instalação.
+OpenRouter (música com IA, narração e capas), ElevenLabs (só ruído) e Apify são opcionais; não ler suas chaves durante instalação.
+Quando a pessoa quiser configurar uma chave, ensinar um passo por vez com os guias de `03 - Ajuda/` (regra de didática do AGENTS.md).
 
 ### 4. Corrigir, retomar e entregar
 

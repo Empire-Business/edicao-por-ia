@@ -102,10 +102,13 @@ class AudioTests(unittest.TestCase):
     def test_narration_blocks_paid_and_ambiguous_engines_before_io(self):
         for model in ('tts-1', 'omnivoice', 'gpt-4o-mini-tts', 'elevenlabs', None):
             with self.assertRaisesRegex(ValueError, 'engine local'):
-                narrate.speak('missing', 'missing', 'default', model=model, root=self.root)
+                narrate.speak('missing', 'missing', 'default', 'cortez-voz', model=model, root=self.root)
+        # 09/11/2026: ElevenLabs no longer narrates; the default OpenRouter route needs explicit consent.
         with patch.object(service_keys, 'api_key', side_effect=AssertionError('no keys')):
-            with self.assertRaisesRegex(ValueError, 'autorização'):
+            with self.assertRaisesRegex(ValueError, 'openrouter'):
                 narrate.speak('missing', 'missing', 'voice', 'elevenlabs', root=self.root)
+            with self.assertRaisesRegex(ValueError, 'accept-paid'):
+                narrate.speak('missing', 'missing', root=self.root)
 
     def test_voicestudio_mocked_contract_and_no_fabricated_alignment(self):
         if not shutil.which('ffmpeg'): self.skipTest('FFmpeg absent')
@@ -118,7 +121,7 @@ class AudioTests(unittest.TestCase):
             self.assertEqual(payload['language'], 'pt')
             shutil.copyfile(self.src, output)
         with patch.object(narrate, 'voicestudio', side_effect=response):
-            result = narrate.speak(text, self.root/'narration.wav', 'default', model='mlx-audio', root=self.root)
+            result = narrate.speak(text, self.root/'narration.wav', 'default', 'cortez-voz', model='mlx-audio', root=self.root)
         self.assertEqual(result['alignment'], 'pending_local_transcription')
         self.assertFalse((self.root/'narration.words.json').exists())
 
@@ -154,7 +157,7 @@ class AudioTests(unittest.TestCase):
         target = self.root/'partial.mp3'
         with patch.object(audio_remote, 'MAX_RESPONSE_BYTES', 8), patch.object(audio_remote, 'api_key', return_value='fake-key'), patch.object(audio_remote.requests, 'Session') as cls:
             cls.return_value.__enter__.return_value = session
-            with self.assertRaisesRegex(ValueError, 'limite'): audio_remote.eleven_request('/v1/music', target, payload={'prompt': 'fixture'})
+            with self.assertRaisesRegex(ValueError, 'limite'): audio_remote.eleven_request('/v1/audio-isolation', target, payload={'prompt': 'fixture'})
         self.assertFalse(target.exists()); session.request.assert_called_once()
         self.assertFalse(session.request.call_args.kwargs['allow_redirects'])
 

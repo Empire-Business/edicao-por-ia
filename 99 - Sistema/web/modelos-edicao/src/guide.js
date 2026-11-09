@@ -1,6 +1,6 @@
 // Painel de instruções do Cortez. Mantido pelo Cortez: ao criar, mudar ou retirar uma função
 // (workflow em 99 - Sistema/workflows), atualizar esta lista e guideUpdated na mesma mudança.
-export const guideUpdated = '2026-10-23';
+export const guideUpdated = '2026-11-09';
 
 export const installerPdf = 'instalar.pdf';
 
@@ -58,11 +58,11 @@ export const functions = [
   },
   {
     id: 'chaves', group: 'comecar', title: 'Ligar as integrações',
-    what: 'Você cola só as chaves dos serviços que quiser usar. Limpeza de voz e trilhas locais funcionam sem ElevenLabs; ElevenLabs e Apify são opcionais.',
-    say: 'Quais chaves faltam no arquivo de integrações?',
-    prompt: 'Quais integrações do Cortez estão sem chave? Não leia nem mostre os valores das chaves; diga apenas quais estão faltando e para que cada uma serve.',
-    tips: ['Abra “CHAVES DAS INTEGRAÇÕES.txt” na pasta, cole cada chave depois do sinal = e salve.', 'ElevenLabs e Apify podem ficar vazios, e chave preenchida não autoriza cobrança.', 'O arquivo é privado e nunca é publicado.'],
-    keys: ['ElevenLabs', 'ScrapeCreators', 'OpenRouter', 'Apify'],
+    what: 'Você cola só as chaves dos serviços que quiser usar. A OpenRouter faz música com IA, narração e capas; o ElevenLabs é opcional e serve só para tratar ruído; o Apify também é opcional.',
+    say: 'Me ensine a configurar a chave da OpenRouter, um passo por vez.',
+    prompt: 'Me ensine a configurar a chave da OpenRouter, um passo por vez, esperando eu terminar cada um: o que é, quanto custa, onde criar a conta, como colocar créditos, como criar a chave com limite de gasto e onde colar no arquivo de chaves. Depois confira se a chave funciona sem gastar nada. Não leia nem mostre os valores das chaves.',
+    tips: ['Abra “CHAVES DAS INTEGRAÇÕES.txt” na pasta, cole cada chave depois do sinal = e salve. Nunca cole a chave na conversa.', 'Guias passo a passo em “03 - Ajuda”: Configurar o OpenRouter e Configurar o ElevenLabs.', 'ElevenLabs e Apify podem ficar vazios, e chave preenchida não autoriza cobrança.', 'O arquivo é privado e nunca é publicado.'],
+    keys: ['OpenRouter', 'ElevenLabs', 'ScrapeCreators', 'Apify'],
     workflows: []
   },
   {
@@ -152,17 +152,17 @@ export const functions = [
     what: 'O Cortez reduz o ruído da voz no seu computador, antes dos cortes, com DeepFilterNet ou uma limpeza básica. A voz é conferida antes de você ver a prévia.',
     say: 'Limpe a voz deste vídeo antes da prévia.',
     prompt: 'Limpe a voz do vídeo [nome] antes de montar a prévia: isole a voz do arquivo inteiro e só depois aplique os cortes. Me diga quanto ruído saiu nas pausas.',
-    tips: ['Funciona sem chave ElevenLabs e sem enviar áudio para a internet.', 'O Cortez diz qual limpeza usou; a básica não promete tirar eco.', 'ElevenLabs só entra se você escolher e autorizar o gasto.'],
+    tips: ['Funciona sem chave ElevenLabs e sem enviar áudio para a internet.', 'O Cortez diz qual limpeza usou; a básica não promete tirar eco.', 'O ElevenLabs, que agora serve só para ruído, entra apenas se você escolher e autorizar o gasto.'],
     paid: false,
     workflows: []
   },
   {
-    id: 'narracao', group: 'som', title: 'Gerar narração local',
-    what: 'O Cortez transforma seu roteiro em voz com o Cortez Voz, que vem na instalação a partir da cópia controlada pela Empire. No Mac, você também pode usar as vozes do sistema.',
-    say: 'Gere uma narração local para este roteiro.',
-    prompt: 'Gere uma narração local para [roteiro]. Mostre as vozes e os modelos locais disponíveis para eu escolher. Confira pronúncia e obtenha os tempos das palavras antes de sincronizar legendas. Se faltar algum componente, me diga o que precisa ser preparado. Não use serviço pago automaticamente.',
-    tips: ['A instalação não baixa os modelos de voz nem liga a base local: o primeiro início é à parte, com sua autorização, e depois o Cortez Voz precisa estar aberto.', 'Clonar a voz de alguém exige autorização.', 'Ouça e aprove a voz antes de usar.'],
-    paid: false, workflows: []
+    id: 'narracao', group: 'som', title: 'Gerar narração',
+    what: 'O Cortez transforma seu roteiro em voz em português pela OpenRouter, com um custo de frações de centavo por trecho. Sem gastar nada, dá para usar o Cortez Voz da instalação ou, no Mac, as vozes do sistema.',
+    say: 'Gere uma narração para este roteiro.',
+    prompt: 'Gere uma narração em português para [roteiro] pela OpenRouter. Antes, me diga o custo estimado e espere meu sim. Confira a pronúncia e obtenha os tempos das palavras antes de sincronizar legendas. Se a chave da OpenRouter ainda não estiver configurada, me ensine um passo por vez.',
+    tips: ['Prefere sem custo? Peça “use a voz local” (Cortez Voz aberto ou vozes do Mac).', 'O primeiro início do Cortez Voz é à parte, com sua autorização.', 'Clonar a voz de alguém exige autorização.', 'Ouça e aprove a voz antes de usar.'],
+    keys: ['OpenRouter'], paid: true, workflows: []
   },
   {
     id: 'silencio', group: 'som', title: 'Cortar silêncios',
@@ -182,10 +182,10 @@ export const functions = [
   },
   {
     id: 'musica', group: 'som', title: 'Trilha e biblioteca de músicas',
-    what: 'O Cortez usa faixas da sua biblioteca com licença ou autorização registrada, ajusta a duração e abaixa a música quando você fala. Gerar música com serviço pago é opcional.',
+    what: 'O Cortez usa faixas da sua biblioteca com licença ou autorização registrada, ajusta a duração e abaixa a música quando você fala. Também pode criar uma música original com IA pela OpenRouter, por alguns centavos de dólar, se você autorizar.',
     say: 'Coloque uma trilha tensa que vira no final.',
     prompt: 'Use na [E04] uma trilha licenciada da minha biblioteca, [tensa / animada / calma], com mudança na virada aos [0:45]. Mantenha a música abaixo da voz. Se não houver uma faixa adequada, me avise antes de usar qualquer serviço pago.',
-    tips: ['Envie só faixas que você tem direito de usar e diga a origem ou a licença.', 'A biblioteca é privada e não vai junto com o código do Cortez.', 'ElevenLabs Music é opcional e pede sua autorização a cada geração.'],
+    tips: ['Envie só faixas que você tem direito de usar e diga a origem ou a licença.', 'A biblioteca é privada e não vai junto com o código do Cortez.', 'Música com IA pela OpenRouter: cerca de US$ 0,04 até 30 segundos e US$ 0,08 acima disso, sempre com sua autorização. Para gerar, diga “crie uma trilha com IA” e descreva o clima.', 'O serviço de música ainda está em teste e às vezes falha; aí o Cortez oferece a sua biblioteca.'],
     paid: false,
     workflows: []
   },

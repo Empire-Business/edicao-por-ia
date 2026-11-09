@@ -2,6 +2,8 @@
 
 Used only by an explicitly requested/authorized external-service operation. Configuration
 checks and setup never read the user's credentials. Existing .env/local JSON remain usable.
+The update migration (post_update.py) may append plain-language notes to an existing keys file
+with annotate_services: append-only, values kept byte for byte and never returned.
 """
 from __future__ import annotations
 import json
@@ -11,26 +13,43 @@ from project_layout import engine_root, surface_root
 
 KEY_FILE = 'CHAVES DAS INTEGRAÇÕES.txt'
 KEY_NAMES = ('SCRAPECREATORS_API_KEY', 'ELEVENLABS_API_KEY', 'OPENROUTER_API_KEY', 'APIFY_API_TOKEN', 'VIMEO_ACCESS_TOKEN')
+SERVICES_MARKER = '# CORTEZ: INTEGRACOES v2 (2026-11)'
+SERVICES_NOTES = '''# O que é cada chave (em palavras simples):
+#
+# OpenRouter (RECOMENDADO): faz a música com IA, a narração (voz) e as capas.
+#   É pago: você coloca créditos na conta e cada uso desconta um pouco (o Cortez sempre
+#   mostra o custo e pede o seu sim antes de gastar).
+#   Onde criar a chave: https://openrouter.ai/settings/keys
+#   Dica: ao criar a chave, defina um limite de gasto (por exemplo, US$ 5).
+#   Passo a passo: 03 - Ajuda/COMO CONFIGURAR O OPENROUTER.html
+#
+# ElevenLabs (OPCIONAL): só para tratar ruído da voz, quando você pedir.
+#   A limpeza de ruído no seu computador já vem pronta e não precisa desta chave.
+#   Onde criar a chave: https://elevenlabs.io/app/settings/api-keys
+#   Passo a passo: 03 - Ajuda/COMO CONFIGURAR O ELEVENLABS.html
+#
+# ScrapeCreators: buscar cenas do TikTok e do YouTube (100 buscas grátis para começar).
+#   Onde criar a chave: https://app.scrapecreators.com/
+#   Passo a passo: 03 - Ajuda/COMO CONFIGURAR O SCRAPECREATORS.html
+# Apify (OPCIONAL): baixar vídeo do YouTube quando o ScrapeCreators não entrega o arquivo.
+#   Onde criar a chave: https://console.apify.com/settings/integrations (plano grátis: US$ 5 por mês)
+#   Passo a passo: 03 - Ajuda/COMO CONFIGURAR O APIFY.html
+#
+# Pode deixar vazias as chaves que não usa. Ter uma chave aqui NÃO autoriza gasto.
+# Nunca cole uma chave na conversa com a IA: cole só aqui, depois do sinal =.
+'''
 TEMPLATE = '''# CHAVES DAS INTEGRAÇÕES
 # Cole cada chave depois do sinal =, sem apagar o nome à esquerda.
 # Salve este arquivo. Não é preciso usar terminal nem renomear o arquivo.
-# ScrapeCreators: https://app.scrapecreators.com/
-# ElevenLabs — OPCIONAL: limpeza, narração e música pagas, somente quando solicitadas.
-# A limpeza local e a biblioteca de trilhas não precisam desta chave.
-# https://elevenlabs.io/app/settings/api-keys
-# OpenRouter (troca de roupa/cenário e capas): https://openrouter.ai/settings/keys
-# Apify — OPCIONAL: baixar YouTube quando ScrapeCreators não fornece o arquivo.
-# Sem Apify, envie o arquivo de vídeo ou escolha outra cena disponível.
-# https://console.apify.com/settings/integrations
-# Pode deixar ELEVENLABS_API_KEY e APIFY_API_TOKEN vazios. Ter uma chave não autoriza cobranças.
 # Este arquivo é privado: não o envie junto com a fábrica para outras pessoas.
-
-SCRAPECREATORS_API_KEY=
-ELEVENLABS_API_KEY=
+''' + SERVICES_MARKER + '\n' + SERVICES_NOTES + '''
 OPENROUTER_API_KEY=
+ELEVENLABS_API_KEY=
+SCRAPECREATORS_API_KEY=
 APIFY_API_TOKEN=
 VIMEO_ACCESS_TOKEN=
 '''
+OPENROUTER_GUIDE = '03 - Ajuda/COMO CONFIGURAR O OPENROUTER.html'
 
 
 def prepare(root):
@@ -47,26 +66,16 @@ def prepare(root):
     return path
 
 
-def annotate_optional(root):
-    """Explicit user-requested comment update; preserve all credential bytes privately.
-
-    Not called by setup: setup must never read existing credentials. No values,
-    hashes of keys, or credential contents are returned to the caller.
-    """
+def _append_block(root, marker, comment, lock_name):
+    """Append comments in one O_APPEND write: never replace the credential file, never return values."""
     from factory_common import workspace_lock
     path = prepare(root)
-    marker = b'# CORTEZ: INTEGRACOES OPCIONAIS v1'
-    comment = (marker + b'\n' +
-        '# ElevenLabs é OPCIONAL: limpeza e narração locais e trilhas da biblioteca não precisam desta chave.\n'
-        '# Apify é OPCIONAL: usado apenas para baixar YouTube quando ScrapeCreators não entrega o arquivo.\n'
-        '# Você pode deixar ELEVENLABS_API_KEY e APIFY_API_TOKEN vazios.\n'
-        '# Uma chave preenchida não autoriza gastos; ElevenLabs exige escolha e autorização para cada chamada.\n\n'.encode('utf-8'))
-    with workspace_lock(engine_root(root), 'optional-key-comments'):
+    with workspace_lock(engine_root(root), lock_name):
         if path.is_symlink(): raise ValueError('Arquivo de chaves não pode ser um atalho.')
         original = path.read_bytes()
-        if marker in original: return {'ok': True, 'status': 'already_documented', 'values_exposed': False}
-        # Append comments in one O_APPEND write: never replace the credential
-        # file, so a human edit between check and write cannot be overwritten.
+        if marker in original: return None, original
+        block = comment(original)
+        # A human edit between check and write cannot be overwritten: same inode and bytes are required.
         before = path.stat()
         flags = os.O_WRONLY | os.O_APPEND | getattr(os, 'O_NOFOLLOW', 0)
         fd = os.open(path, flags)
@@ -74,7 +83,6 @@ def annotate_optional(root):
             opened = os.fstat(fd)
             if (before.st_dev, before.st_ino) != (opened.st_dev, opened.st_ino) or path.read_bytes() != original:
                 raise ValueError('As chaves mudaram durante a atualização; tente novamente sem substituir o arquivo.')
-            block = b'\n' + comment
             if os.write(fd, block) != len(block): raise ValueError('Comentário incompleto; confira apenas as instruções do arquivo.')
             os.fsync(fd)
             after = path.stat()
@@ -82,7 +90,62 @@ def annotate_optional(root):
                 raise ValueError('O arquivo foi salvo por outro programa; comentários podem precisar ser reaplicados.')
         finally:
             os.close(fd)
-        return {'ok': True, 'status': 'optional_comments_added', 'credential_bytes_preserved': True, 'values_exposed': False}
+        return block, original
+
+
+def annotate_optional(root):
+    """Explicit user-requested comment update; preserve all credential bytes privately.
+
+    Not called by setup: setup must never read existing credentials. No values,
+    hashes of keys, or credential contents are returned to the caller.
+    """
+    marker = b'# CORTEZ: INTEGRACOES OPCIONAIS v1'
+    comment = (marker + b'\n' +
+        '# ElevenLabs é OPCIONAL: limpeza e narração locais e trilhas da biblioteca não precisam desta chave.\n'
+        '# Apify é OPCIONAL: usado apenas para baixar YouTube quando ScrapeCreators não entrega o arquivo.\n'
+        '# Você pode deixar ELEVENLABS_API_KEY e APIFY_API_TOKEN vazios.\n'
+        '# Uma chave preenchida não autoriza gastos; ElevenLabs exige escolha e autorização para cada chamada.\n\n'.encode('utf-8'))
+    block, _ = _append_block(root, marker, lambda original: b'\n' + comment, 'optional-key-comments')
+    if block is None: return {'ok': True, 'status': 'already_documented', 'values_exposed': False}
+    return {'ok': True, 'status': 'optional_comments_added', 'credential_bytes_preserved': True, 'values_exposed': False}
+
+
+def has_assignment(content, name):
+    """Whether a NAME= line exists (filled or empty). Only names are inspected, never values."""
+    for line in content.decode('utf-8-sig', 'replace').splitlines():
+        line = line.strip()
+        if line.startswith('export '): line = line[7:].lstrip()
+        if line.partition('=')[0].strip() == name and '=' in line: return True
+    return False
+
+
+def annotate_services(root, create=False):
+    """Additive, idempotent update of an EXISTING keys file to the 09/11/2026 service map.
+
+    Appends plain-language notes (OpenRouter = music, narration and covers; ElevenLabs = only noise)
+    and an empty OPENROUTER_API_KEY= line when that name is absent. Existing bytes, values and
+    permissions are kept; nothing is returned about the values. Without a file nothing is created
+    unless `create` (setup creates it with the current template).
+    """
+    path = surface_root(root) / KEY_FILE
+    if not create and not path.exists() and not path.is_symlink():
+        return {'ok': True, 'status': 'no_keys_file', 'values_exposed': False}
+    marker = SERVICES_MARKER.encode('utf-8')
+    added = []
+
+    def comment(original):
+        parts = [marker, '# Atualizado em 09/11/2026: estas notas valem no lugar das anotações antigas acima.'.encode('utf-8'),
+                 SERVICES_NOTES.rstrip('\n').encode('utf-8')]
+        if not has_assignment(original, 'OPENROUTER_API_KEY'):
+            parts += [b'# Cole a chave da OpenRouter na linha abaixo, depois do sinal =.', b'OPENROUTER_API_KEY=']
+            added.append('OPENROUTER_API_KEY')
+        lead = b'\n' if not original or original.endswith(b'\n') else b'\n\n'
+        return lead + b'\n'.join(parts) + b'\n'
+
+    block, _ = _append_block(root, marker, comment, 'optional-key-comments')
+    if block is None: return {'ok': True, 'status': 'already_documented', 'values_exposed': False}
+    return {'ok': True, 'status': 'service_notes_added', 'empty_lines_added': added,
+            'credential_bytes_preserved': True, 'values_exposed': False}
 
 
 def read_assignments(path):
@@ -144,8 +207,11 @@ def api_key(name, root=None):
                 raise ValueError('Configuração antiga do ScrapeCreators inválida.') from None
     if not isinstance(value, str) or not value.strip():
         if name in ('ELEVENLABS_API_KEY', 'APIFY_API_TOKEN'):
-            alternative = 'use o áudio local' if name == 'ELEVENLABS_API_KEY' else 'envie o vídeo ou escolha outra cena disponível'
+            alternative = 'use a limpeza de ruído local' if name == 'ELEVENLABS_API_KEY' else 'envie o vídeo ou escolha outra cena disponível'
             raise ValueError(f'Integração opcional sem chave: {alternative}, ou preencha {name} em “{KEY_FILE}” para usar este serviço.')
+        if name == 'OPENROUTER_API_KEY':
+            raise ValueError(f'Falta a chave da OpenRouter: preencha OPENROUTER_API_KEY no arquivo visível “{KEY_FILE}” e salve. '
+                             f'Passo a passo em {OPENROUTER_GUIDE}. Nunca cole a chave na conversa.')
         raise ValueError(f'Preencha {name} no arquivo visível “{KEY_FILE}” e salve para continuar.')
     value = value.strip()
     if any(c.isspace() for c in value):

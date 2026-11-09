@@ -56,4 +56,4 @@ A prévia detalha os downloads; também existe a capacidade `voice` para prepara
 Não usar o instalador do autor original. A preparação não inicia servidor, banco/migrations ou modelos.
 O primeiro início pede autorização explícita para o banco local de `.factory/cortez-voz-data`.
 Consulte `method/EXTERNAL_SERVICES.md` e `config/cortez-voice.json` para plataformas e validações.
-As chaves ElevenLabs e Apify são opcionais. Nunca lê-las durante diagnóstico/setup.
+As chaves OpenRouter (música com IA, narração e capas), ElevenLabs (só ruído) e Apify são opcionais. Nunca lê-las durante diagnóstico/setup.

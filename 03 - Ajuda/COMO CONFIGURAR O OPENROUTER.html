@@ -1,0 +1,44 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Configurar o OpenRouter</title><style>body{margin:0;background:#f7f6f3;color:#2f3437;font:18px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}main{max-width:940px;margin:auto;padding:40px 24px 64px}h1{font:normal 42px/1.15 Georgia,serif}h2{font-size:23px}section{border-bottom:1px solid #ddd;padding:20px 0}a{color:#315636}ol li{margin:.5em 0}code{background:#fff;border:1px solid #ddd;border-radius:4px;padding:1px 6px;font-size:16px;word-break:break-all}.note{font-size:16px;color:#5d5a54}.box{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px 18px}.alert{background:#fff6e5;border:1px solid #e6c27a;border-radius:8px;padding:12px 18px}table{border-collapse:collapse;width:100%;background:#fff}th,td{text-align:left;padding:12px;border-bottom:1px solid #ddd;vertical-align:top}a:focus-visible{outline:3px solid #956400;outline-offset:4px}@media(max-width:600px){h1{font-size:32px}table,tbody,tr,td{display:block}thead{display:none}tr{border-bottom:1px solid #ddd}td{border:0;padding:6px 12px}}</style><link rel="stylesheet" href="../99%20-%20Sistema/assets/branding/cortez/local.css"><main><a class="cortez-local-brand" href="../00%20-%20COMECE%20AQUI.html"><img src="../99%20-%20Sistema/assets/branding/cortez/logo-lockup.svg" alt="Cortez" width="150" height="40"></a><a href="AJUDA.html">Voltar à ajuda</a>
+<h1>Configurar o OpenRouter</h1>
+<p>Faça um passo de cada vez. Se travar em algum, conte ao Cortez o que aparece na tela e ele explica o próximo.</p>
+<section><h2>O que é e para que serve</h2>
+<p>O OpenRouter é um site que dá acesso a vários serviços de inteligência artificial com uma conta só. O Cortez usa o OpenRouter para:</p>
+<ul><li><strong>Música com IA</strong>: cria uma trilha original, sem voz, do tamanho do seu vídeo.</li>
+<li><strong>Narração</strong>: transforma um texto em voz falada em português.</li>
+<li><strong>Capas</strong> de vídeo e <strong>troca de roupa ou de cenário</strong> em trechos curtos.</li></ul>
+<p>Sem OpenRouter o Cortez continua editando: você pode usar trilhas da sua biblioteca e as vozes do computador.</p></section>
+<section><h2>Quanto custa</h2>
+<p>É pré-pago: você coloca créditos e cada uso desconta um pouco. Valores de referência (em dólar):</p>
+<table><thead><tr><th>Uso</th><th>Custo aproximado</th></tr></thead><tbody>
+<tr><td>Música de até 30 segundos</td><td>US$ 0,04 cada</td></tr>
+<tr><td>Música mais longa (até 4 minutos)</td><td>US$ 0,08 cada</td></tr>
+<tr><td>Narração</td><td>Frações de centavo por trecho curto</td></tr>
+<tr><td>Troca de roupa ou cenário</td><td>Cerca de US$ 0,03 por segundo de vídeo</td></tr></tbody></table>
+<p><strong>O Cortez sempre mostra o custo e pede o seu sim antes de gastar.</strong> Ter a chave salva não autoriza nenhum gasto sozinho.</p></section>
+<section><h2>Passo 1: criar a conta</h2>
+<ol><li>Abra <a href="https://openrouter.ai">openrouter.ai</a>.</li><li>Clique em <strong>Sign up</strong> (cadastrar) e entre com sua conta Google ou com e-mail.</li><li>Confirme o e-mail, se o site pedir.</li></ol></section>
+<section><h2>Passo 2: colocar créditos</h2>
+<ol><li>Abra <a href="https://openrouter.ai/settings/credits">openrouter.ai/settings/credits</a>.</li><li>Clique em <strong>Add credits</strong> (adicionar créditos).</li><li>Comece com pouco, por exemplo US$ 5. Isso já dá para dezenas de músicas e narrações.</li></ol>
+<p class="note">O cartão pode cobrar IOF e uma pequena taxa do site. O valor final aparece antes de você confirmar.</p></section>
+<section><h2>Passo 3: criar a chave com limite de gasto</h2>
+<p>A chave é uma senha que deixa o Cortez usar a sua conta. O limite de gasto é a sua proteção: a chave para de funcionar quando chega nele.</p>
+<ol><li>Abra <a href="https://openrouter.ai/settings/keys">openrouter.ai/settings/keys</a>.</li>
+<li>Clique em <strong>Create Key</strong> (criar chave).</li>
+<li>No nome, escreva <code>Cortez</code>.</li>
+<li>Em <strong>Credit limit</strong> (limite de crédito), coloque um valor, por exemplo <code>5</code>.</li>
+<li>Confirme. A chave aparece uma vez só e começa com <code>sk-or-</code>. Clique para copiar.</li></ol></section>
+<section><h2>Passo 4: colar no arquivo de chaves</h2>
+<ol><li>Na pasta do Cortez, abra o arquivo <strong>CHAVES DAS INTEGRAÇÕES.txt</strong> (dois cliques; abre no Bloco de Notas ou no TextEdit).</li>
+<li>Ache a linha <code>OPENROUTER_API_KEY=</code>. Se ela não existir, escreva essa linha no fim do arquivo.</li>
+<li>Cole a chave logo depois do sinal <code>=</code>, sem espaço e sem aspas. Fica assim: <code>OPENROUTER_API_KEY=sk-or-...</code></li>
+<li>Salve o arquivo e feche.</li></ol>
+<p class="alert"><strong>Nunca cole a chave na conversa com a IA.</strong> Se colou por engano, volte em <a href="https://openrouter.ai/settings/keys">openrouter.ai/settings/keys</a>, apague essa chave e crie outra. Também não envie o arquivo de chaves para ninguém.</p></section>
+<section><h2>Passo 5: conferir se funcionou</h2>
+<p>Peça ao Cortez:</p><p class="box">“Confira se a chave da OpenRouter está funcionando, sem gastar nada.”</p>
+<p>Ele confere sem gerar nada e sem mostrar a chave, e diz quanto ainda resta do limite.</p></section>
+<section><h2>Se aparecer um aviso</h2>
+<ul><li><strong>Chave recusada:</strong> a chave foi copiada pela metade ou foi apagada. Crie outra e cole de novo.</li>
+<li><strong>Sem créditos:</strong> coloque mais créditos (Passo 2) ou aumente o limite da chave.</li>
+<li><strong>Serviço instável:</strong> a música com IA ainda está em teste no Google e às vezes falha. O Cortez não repete sozinho, para não cobrar duas vezes. Tente mais tarde ou peça uma trilha da sua biblioteca.</li></ul></section>
+<p class="note">Atualizado em 09/11/2026. Os nomes dos botões nos sites podem mudar um pouco; se não achar algum, peça ajuda ao Cortez dizendo o que aparece na sua tela.</p>
+</main></html>

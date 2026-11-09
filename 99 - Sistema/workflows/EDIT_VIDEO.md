@@ -39,7 +39,8 @@ Enabled by default for speech jobs. Run `REMOVE_SILENCE.md` against the assembly
 ## 5b. Limpeza local da voz
 Tratar as fontes inteiras antes de aplicar os cortes ao áudio, conforme `method/EXTERNAL_SERVICES.md`.
 DeepFilterNet é a rota preferida; FFmpeg é a alternativa básica identificada no recibo.
-ElevenLabs é opcional e exige autorização atual por chamada; uma chave preenchida não autoriza gasto.
+ElevenLabs (agora só para ruído) é opcional e exige autorização atual por chamada; uma chave preenchida não autoriza gasto.
+Narração e música com IA são pelo OpenRouter (`tools/narrate.py`, `tools/or_music.py`), também só com o sim atual e o custo mostrado.
 Não trocar para nuvem em caso de falha local. Conferir ruído, sincronismo e voz antes da prévia.
 
 ## 6. Draft render
