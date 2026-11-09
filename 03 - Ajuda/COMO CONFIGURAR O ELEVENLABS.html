@@ -1,0 +1,25 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Configurar o ElevenLabs</title><style>body{margin:0;background:#f7f6f3;color:#2f3437;font:18px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}main{max-width:940px;margin:auto;padding:40px 24px 64px}h1{font:normal 42px/1.15 Georgia,serif}h2{font-size:23px}section{border-bottom:1px solid #ddd;padding:20px 0}a{color:#315636}ol li{margin:.5em 0}code{background:#fff;border:1px solid #ddd;border-radius:4px;padding:1px 6px;font-size:16px;word-break:break-all}.note{font-size:16px;color:#5d5a54}.box{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px 18px}.alert{background:#fff6e5;border:1px solid #e6c27a;border-radius:8px;padding:12px 18px}table{border-collapse:collapse;width:100%;background:#fff}th,td{text-align:left;padding:12px;border-bottom:1px solid #ddd;vertical-align:top}a:focus-visible{outline:3px solid #956400;outline-offset:4px}@media(max-width:600px){h1{font-size:32px}table,tbody,tr,td{display:block}thead{display:none}tr{border-bottom:1px solid #ddd}td{border:0;padding:6px 12px}}</style><link rel="stylesheet" href="../99%20-%20Sistema/assets/branding/cortez/local.css"><main><a class="cortez-local-brand" href="../00%20-%20COMECE%20AQUI.html"><img src="../99%20-%20Sistema/assets/branding/cortez/logo-lockup.svg" alt="Cortez" width="150" height="40"></a><a href="AJUDA.html">Voltar à ajuda</a>
+<h1>Configurar o ElevenLabs (opcional)</h1>
+<p><strong>Você provavelmente não precisa disto.</strong> O Cortez já limpa o ruído da voz no seu computador, de graça. O ElevenLabs é uma opção paga para tratar ruído em gravações difíceis.</p>
+<section><h2>O que é e para que serve</h2>
+<p>O ElevenLabs é um serviço de áudio com IA. No Cortez ele serve <strong>só para tratar ruído</strong>: separa a sua voz do barulho de fundo. Música e narração são feitas pelo OpenRouter (veja <a href="COMO CONFIGURAR O OPENROUTER.html">Configurar o OpenRouter</a>).</p>
+<p>Quando vale a pena: a limpeza no computador não resolveu e o ruído atrapalha entender a fala (vento, ar-condicionado alto, rua).</p></section>
+<section><h2>Quanto custa</h2>
+<p>O ElevenLabs cobra por plano e desconta créditos por minuto de áudio tratado. Confira o preço atual em <a href="https://elevenlabs.io/pricing">elevenlabs.io/pricing</a>. O Cortez pede o seu sim antes de cada áudio enviado.</p></section>
+<section><h2>Passo 1: criar a conta</h2>
+<ol><li>Abra <a href="https://elevenlabs.io">elevenlabs.io</a> e clique em <strong>Sign up</strong>.</li><li>Escolha um plano que permita usar a API.</li></ol></section>
+<section><h2>Passo 2: criar a chave</h2>
+<ol><li>Abra <a href="https://elevenlabs.io/app/settings/api-keys">elevenlabs.io/app/settings/api-keys</a>.</li>
+<li>Clique em <strong>Create API Key</strong> (criar chave) e dê o nome <code>Cortez</code>.</li>
+<li>Se o site oferecer, deixe a chave liberada só para isolamento de voz (<strong>Voice Isolator</strong> ou <strong>Audio Isolation</strong>) e defina um limite de créditos.</li>
+<li>Copie a chave. Ela aparece uma vez só.</li></ol></section>
+<section><h2>Passo 3: colar no arquivo de chaves</h2>
+<ol><li>Na pasta do Cortez, abra <strong>CHAVES DAS INTEGRAÇÕES.txt</strong>.</li>
+<li>Ache a linha <code>ELEVENLABS_API_KEY=</code> (se não existir, escreva no fim do arquivo).</li>
+<li>Cole a chave logo depois do sinal <code>=</code>, sem espaço e sem aspas, e salve.</li></ol>
+<p class="alert"><strong>Nunca cole a chave na conversa com a IA.</strong> Se colou por engano, apague essa chave no site e crie outra.</p></section>
+<section><h2>Passo 4: usar</h2>
+<p>Peça ao Cortez:</p><p class="box">“Limpe a voz deste vídeo com o ElevenLabs. Me diga o custo antes.”</p>
+<p>Sem esse pedido, o Cortez continua usando a limpeza do computador. A chave salva não autoriza gasto.</p></section>
+<p class="note">Atualizado em 09/11/2026. Os nomes dos botões nos sites podem mudar um pouco; se não achar algum, peça ajuda ao Cortez dizendo o que aparece na sua tela.</p>
+</main></html>

@@ -1,43 +1,27 @@
 #!/usr/bin/env python3
-"""Generate one original, royalty-free instrumental cue with ElevenLabs Music (see method/EXTERNAL_SERVICES.md).
+"""Retired: ElevenLabs Music is no longer used (owner decision, 09/11/2026).
 
-Paid call: explicit current consent required (--accept-paid). Prefer music_library.py for licensed local tracks.
-The prompt describes instruments, mood, tempo and structure — never artists or song names.
-
-usage: el_music.py --prompt "..." --seconds 180 --out context/clients/<format>/assets/music/<name>.mp3
+AI music is generated with Google Lyria 3 on OpenRouter by tools/or_music.py. This file stays so
+existing installations (additive updates) get a clear message instead of a missing command.
+Nothing is called, no key is read and nothing is charged.
 """
-import argparse, sys
-from pathlib import Path
+import sys
+
+MESSAGE = '''A música com IA do Cortez agora é feita pelo OpenRouter (modelos Google Lyria 3).
+O ElevenLabs Music foi desligado em 09/11/2026; o ElevenLabs ficou só para tratar ruído.
+Nada foi gerado e nada foi cobrado.
+
+Use, depois do sim da pessoa para o gasto (cerca de US$ 0,04 até 30 s; US$ 0,08 acima disso):
+  python3 tools/or_music.py --prompt "instrumentos, clima, BPM e estrutura" --seconds 60 --out CAMINHO.mp3 --accept-paid
+
+Sem gasto: python3 tools/music_library.py list (biblioteca local de trilhas).
+Chave: OPENROUTER_API_KEY no arquivo "CHAVES DAS INTEGRAÇÕES.txt" (guia em 03 - Ajuda/COMO CONFIGURAR O OPENROUTER.html).'''
 
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+def main():
+    sys.stderr.write(MESSAGE + '\n')
+    return 2
 
 
-ap = argparse.ArgumentParser()
-ap.add_argument('--accept-paid', action='store_true')
-ap.add_argument('--prompt', required=True); ap.add_argument('--seconds', type=float, required=True); ap.add_argument('--out', required=True)
-a = ap.parse_args()
-if not a.accept_paid:
-    ap.error('ElevenLabs Music é opcional e pago. Prefira music_library.py; confirme o gasto antes de usar --accept-paid.')
-import math
-if not math.isfinite(a.seconds) or not 3 <= a.seconds <= 600:
-    ap.error('Duração inválida; use entre 3 e 600 segundos.')
-out = Path(a.out)
-if out.exists():
-    raise SystemExit(f'exists, not overwriting: {out}')
-from audio_local import output_path, probe, publish, receipt
-from audio_remote import eleven_request
-from workspace_files import digest
-import tempfile
-out = output_path(out)
-if out.suffix.lower() != '.mp3': ap.error('ElevenLabs Music requer saída .mp3.')
-if out.with_suffix('.audio.json').exists(): ap.error('Recibo já existe; escolha outra versão.')
-with tempfile.TemporaryDirectory(prefix='.music-', dir=out.parent) as folder:
-    result = Path(folder) / 'music.mp3'
-    eleven_request('/v1/music', result, payload={'prompt': a.prompt, 'music_length_ms': int(a.seconds * 1000),
-                   'model_id': 'music_v1', 'force_instrumental': True})
-    info = probe(result)
-    publish(result, out)
-    receipt(out.with_suffix('.audio.json'), {'provider': 'elevenlabs', 'paid_request': True,
-            'duration': info['duration'], 'output_sha256': digest(result), 'quality_review': 'pending_listening'})
-print(out)
+if __name__ == '__main__':
+    raise SystemExit(main())

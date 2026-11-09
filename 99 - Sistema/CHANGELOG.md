@@ -1,3 +1,27 @@
+# 2.11.0 — música e narração pelo OpenRouter; ElevenLabs só para ruído
+
+Decisão do dono em 09/11/2026.
+
+- **Música com IA pelo OpenRouter** (Google Lyria 3): nova ferramenta `tools/or_music.py`. Até 30 s usa
+  `google/lyria-3-clip-preview` (US$ 0,04); acima, `google/lyria-3-pro-preview` (US$ 0,08). O Lyria não respeita a
+  duração: o resultado é cortado no tamanho pedido com fade-out; se vier mais curto, avisa e não estica. Recibo
+  `.audio.json` com o custo real (`usage.cost`), modelo, duração, sha256 e audição pendente. `--check-key` confere a
+  chave sem gastar.
+- **Narração pelo OpenRouter por padrão** (`tools/narrate.py`, provedor `openrouter`, `google/gemini-3.8-flash-tts`,
+  voz `Kore`, instruções em português). O áudio PCM vira WAV/MP3 com FFmpeg; os tempos das palavras continuam
+  vindo do alinhamento local. Cortez Voz, VoiceStudio e vozes do Mac continuam como alternativas sem custo.
+- **ElevenLabs só para tratar ruído**, opcional e pago; a limpeza local continua sendo o padrão. A narração e a
+  música pelo ElevenLabs saíram: `--provider elevenlabs` explica a mudança e `tools/el_music.py` virou um aviso
+  com o comando novo (sem chamar nada).
+- Toda chamada paga continua exigindo o sim da pessoa na hora (`--accept-paid`), com o custo estimado mostrado
+  antes. Sem repetição automática; em falha do OpenRouter a alternativa é a biblioteca local de trilhas.
+- Arquivo de chaves explica em linguagem simples para que serve cada chave. Instalações existentes recebem,
+  uma vez, as notas novas e uma linha `OPENROUTER_API_KEY=` vazia se faltar, sem tocar nos valores
+  (migração aditiva em `post_update.py`).
+- Guias passo a passo em `03 - Ajuda`: “Configurar o OpenRouter” e “Configurar o ElevenLabs” (opcional).
+  Nova regra de didática no AGENTS: ensinar um passo por vez e nunca pedir chave na conversa.
+- Painel (`guide.js`), ajuda e documentação atualizados. Repositório de download e PDF de instalação inalterados.
+
 # 2.10.1 — pacote requests na instalação base
 
 - `dependencies --capability base` passa a instalar `requests`, usado pela voz local e pelos serviços opcionais. Antes, a narração quebrava ao abrir em instalações novas.

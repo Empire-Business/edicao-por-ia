@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Local VoiceStudio / macOS narration, or explicitly authorized paid TTS."""
+"""Narration: OpenRouter TTS by default (paid, explicit --accept-paid), or local Cortez Voz / VoiceStudio / macOS voices.
+
+ElevenLabs no longer narrates (owner decision, 09/11/2026). Word timings always come from local alignment (align).
+"""
 from __future__ import annotations
 import argparse
-import base64
 import json
 import math
 import os
@@ -14,7 +16,7 @@ import tempfile
 from urllib.parse import urlsplit
 try:
     import requests
-except ImportError:  # instalado pela capacidade base; só a voz local e a paga precisam dele
+except ImportError:  # instalado pela capacidade base; só a voz local precisa dele aqui
     requests = None
 from audio_local import ROOT, run, probe, output_path, publish, receipt
 from workspace_files import resolve_file, digest
@@ -56,11 +58,63 @@ def voicestudio(endpoint, base_url, payload=None, output=None):
             raise ValueError('VoiceStudio local indisponível. Abra o aplicativo com o modelo preparado; nenhum serviço pago foi chamado.') from None
 
 
-def speak(text_file, output, voice, provider='cortez-voz', model=None, speed=1.0,
-          base_url='http://127.0.0.1:3930', accept_paid=False, root=ROOT):
-    if provider not in ('cortez-voz', 'voicestudio', 'macos', 'elevenlabs'): raise ValueError('Provedor desconhecido.')
-    if provider == 'elevenlabs' and not accept_paid:
-        raise ValueError('ElevenLabs é opcional e pago; falta autorização explícita para esta chamada.')
+OPENROUTER_TTS_MODEL = 'google/gemini-3.8-flash-tts'
+OPENROUTER_TTS_VOICE = 'Kore'
+OPENROUTER_TTS_INSTRUCTIONS = 'Fale em português do Brasil, tom natural, claro e próximo.'
+PROVIDERS = ('openrouter', 'cortez-voz', 'voicestudio', 'macos')
+ELEVENLABS_RETIRED = ('A narração pelo ElevenLabs foi desligada em 09/11/2026: o ElevenLabs agora só trata ruído. '
+                      'Use --provider openrouter (padrão; pago, com o sim da pessoa e --accept-paid) '
+                      'ou uma voz local sem custo (--provider cortez-voz ou macos).')
+OPENROUTER_PAID = ('Narração pelo OpenRouter é paga: custo estimado de frações de centavo de dólar por trecho curto '
+                   '(o preço exato por token está na lista de modelos da OpenRouter). Mostre o custo, peça o sim da pessoa '
+                   'para esta narração e rode de novo com --accept-paid. Sem gasto: --provider cortez-voz ou macos.')
+PCM_TYPES = ('audio/pcm', 'audio/l16')
+SUFFIXES = {'audio/mpeg': '.mp3', 'audio/mp3': '.mp3', 'audio/wav': '.wav', 'audio/x-wav': '.wav', 'audio/wave': '.wav',
+            'audio/flac': '.flac', 'audio/ogg': '.ogg', 'audio/opus': '.opus', 'audio/aac': '.aac'}
+
+
+def pcm_input(content_type):
+    """FFmpeg input options for raw PCM (Gemini sends 16-bit little-endian, 24 kHz, mono)."""
+    params = {}
+    for part in content_type.split(';')[1:]:
+        name, sep, value = part.partition('=')
+        if sep: params[name.strip().lower()] = value.strip()
+    try:
+        rate, channels = int(params.get('rate', 24000)), int(params.get('channels', 1))
+    except ValueError:
+        raise ValueError('A OpenRouter devolveu um formato de áudio inesperado; nada foi salvo.') from None
+    if not 8000 <= rate <= 192000 or channels not in (1, 2):
+        raise ValueError('A OpenRouter devolveu um formato de áudio inesperado; nada foi salvo.')
+    return ['-f', 's16le', '-ar', str(rate), '-ac', str(channels)]
+
+
+def openrouter_payload(text, voice, model, speed, instructions):
+    if not re.fullmatch(r'[a-z0-9][a-z0-9._-]*/[A-Za-z0-9][A-Za-z0-9._:-]*', model or ''):
+        raise ValueError('Modelo de fala inválido; use o id da OpenRouter, como google/gemini-3.8-flash-tts.')
+    payload = {'model': model, 'input': text, 'voice': voice,
+               # Gemini TTS only returns raw PCM; other speech models return MP3.
+               'response_format': 'pcm' if model.startswith('google/') else 'mp3'}
+    if instructions is None and model.startswith('google/'):
+        instructions = OPENROUTER_TTS_INSTRUCTIONS
+    if instructions:
+        if len(instructions) > 1000: raise ValueError('Instruções de fala muito longas; use até 1000 caracteres.')
+        payload['instructions'] = instructions
+    if speed != 1:
+        payload['speed'] = speed
+    return payload
+
+
+def speak(text_file, output, voice=None, provider='openrouter', model=None, speed=1.0,
+          base_url='http://127.0.0.1:3930', accept_paid=False, root=ROOT, instructions=None):
+    if provider == 'elevenlabs': raise ValueError(ELEVENLABS_RETIRED)
+    if provider not in PROVIDERS: raise ValueError('Provedor desconhecido.')
+    if provider == 'openrouter':
+        model = model or OPENROUTER_TTS_MODEL
+        if not voice:
+            if model != OPENROUTER_TTS_MODEL:
+                raise ValueError('Escolha a voz deste modelo com --voice (alguns modelos exigem uma voz explícita).')
+            voice = OPENROUTER_TTS_VOICE
+        if not accept_paid: raise ValueError(OPENROUTER_PAID)
     if provider in ('cortez-voz', 'voicestudio'):
         local_url(base_url)
         if model not in LOCAL_ENGINES:
@@ -79,9 +133,10 @@ def speak(text_file, output, voice, provider='cortez-voz', model=None, speed=1.0
     if fmt not in ('wav', 'mp3', 'flac'): raise ValueError('Use WAV, MP3 ou FLAC.')
     sidecar = target.with_suffix('.audio.json')
     if sidecar.exists() or target.with_suffix('.words.json').exists(): raise ValueError('Recibos já existem; escolha outra versão.')
-    words = None
+    payload = openrouter_payload(text, voice, model, speed, instructions) if provider == 'openrouter' else None
+    remote = {}
     with tempfile.TemporaryDirectory(prefix='.narration-', dir=target.parent) as folder:
-        tmp = Path(folder); raw = tmp / 'voice.wav'
+        tmp = Path(folder); raw = tmp / 'voice.wav'; decode = []
         if provider in ('cortez-voz', 'voicestudio'):
             voicestudio('/v1/audio/speech', base_url, {'model': model, 'voice': voice,
                         'input': text, 'language': 'pt', 'response_format': 'wav', 'speed': speed}, raw)
@@ -90,28 +145,27 @@ def speak(text_file, output, voice, provider='cortez-voz', model=None, speed=1.0
             raw = tmp / 'voice.aiff'
             run(['/usr/bin/say', '-v', voice, '-r', str(round(175 * speed)), '-f', source, '-o', raw], 600)
         else:
-            from audio_remote import eleven_request
-            if not re.fullmatch(r'[A-Za-z0-9_-]+', voice): raise ValueError('ID de voz inválido.')
-            if not model: raise ValueError('Escolha o modelo ElevenLabs explicitamente.')
-            result = eleven_request(f'/v1/text-to-speech/{voice}/with-timestamps', payload={
-                'text': text, 'model_id': model, 'voice_settings': {'speed': speed}})
-            raw = tmp / 'voice.mp3'; raw.write_bytes(base64.b64decode(result['audio_base64'], validate=True))
-            al = result.get('alignment') or {}; words, current = [], None
-            for char, start, end in zip(al.get('characters', []), al.get('character_start_times_seconds', []), al.get('character_end_times_seconds', [])):
-                if char.isspace(): current = None; continue
-                if current is None:
-                    current = {'word': '', 'start': start, 'end': end}; words.append(current)
-                current['word'] += char; current['end'] = end
-        probe(raw)
+            from audio_remote import openrouter_speech
+            raw = tmp / 'voice.raw'
+            remote = openrouter_speech(payload, raw)  # the only paid step; never repeated here
+            kind = remote['content_type'].split(';')[0].strip().lower()
+            if kind in PCM_TYPES:
+                decode = pcm_input(remote['content_type'])
+            else:
+                raw = raw.rename(tmp / ('voice' + SUFFIXES.get(kind, '.bin')))
+        if not decode: probe(raw)
         converted = tmp / ('output.' + fmt)
-        run(['ffmpeg', '-v', 'error', '-nostdin', '-n', '-i', raw, converted])
+        run(['ffmpeg', '-v', 'error', '-nostdin', '-n', *decode, '-i', raw, converted])
         info = probe(converted)
         evidence = {'schema_version': 1, 'provider': provider, 'model': model, 'voice': voice,
                     'text_sha256': digest(source), 'output': str(target), 'output_sha256': digest(converted),
-                    'duration': info['duration'], 'paid_request': provider == 'elevenlabs', 'cloud_fallback': False,
-                    'alignment': 'available' if words else 'pending_local_transcription', 'quality_review': 'pending_listening'}
+                    'duration': info['duration'], 'paid_request': provider == 'openrouter', 'cloud_fallback': False,
+                    'alignment': 'pending_local_transcription', 'quality_review': 'pending_listening'}
+        if provider == 'openrouter':
+            evidence.update({'instructions': payload.get('instructions'), 'response_format': payload['response_format'],
+                             'provider_content_type': remote['content_type'], 'generation_id': remote.get('generation_id'),
+                             'cost_usd': None, 'cost_note': 'A resposta de fala não traz o custo; consulte https://openrouter.ai/activity pelo generation_id.'})
         publish(converted, target); receipt(sidecar, evidence, root)
-        if words: receipt(target.with_suffix('.words.json'), {'words': words, 'text': text, 'provider': provider}, root)
     return evidence
 
 
@@ -151,23 +205,29 @@ def main():
     al = sub.add_parser('align'); al.add_argument('audio'); al.add_argument('--backend', choices=['mlx', 'faster'], required=True)
     al.add_argument('--model', required=True); al.add_argument('--language', default='pt')
     for p in (voices, sp):
-        p.add_argument('--provider', choices=['cortez-voz', 'voicestudio', 'macos', 'elevenlabs'], default='cortez-voz')
+        # 'elevenlabs' stays accepted by the parser only to explain that it was retired.
+        p.add_argument('--provider', choices=[*PROVIDERS, 'elevenlabs'], default='openrouter')
         p.add_argument('--url', default='http://127.0.0.1:3930')
     voices.add_argument('--lang', default='pt')
     sp.add_argument('--text-file', required=True); sp.add_argument('--out', required=True)
-    sp.add_argument('--voice', required=True); sp.add_argument('--model')
+    sp.add_argument('--voice'); sp.add_argument('--model'); sp.add_argument('--instructions')
     sp.add_argument('--speed', type=float, default=1); sp.add_argument('--accept-paid', action='store_true')
     a = ap.parse_args()
     try:
         if a.command == 'align': result = align(a.audio, a.backend, a.model, a.language)
-        elif a.command == 'speak': result = speak(a.text_file, a.out, a.voice, a.provider, a.model, a.speed, a.url, a.accept_paid)
+        elif a.command == 'speak': result = speak(a.text_file, a.out, a.voice, a.provider, a.model, a.speed, a.url,
+                                                  a.accept_paid, instructions=a.instructions)
+        elif a.provider == 'elevenlabs': raise ValueError(ELEVENLABS_RETIRED)
+        elif a.provider == 'openrouter':
+            result = {'provider': 'openrouter', 'default_model': OPENROUTER_TTS_MODEL, 'default_voice': OPENROUTER_TTS_VOICE,
+                      'default_instructions': OPENROUTER_TTS_INSTRUCTIONS, 'paid': True,
+                      'note': 'A OpenRouter não lista vozes por API. Kore é a voz padrão verificada no Gemini; '
+                              'outros modelos (ex.: fish-audio/s2.1-pro, microsoft/mai-voice-2.1, elevenlabs/eleven-multilingual-v2) '
+                              'são escolhidos com --model e alguns exigem --voice explícita.'}
         elif a.provider in ('cortez-voz', 'voicestudio'): result = voicestudio('/v1/audio/voices', a.url)
-        elif a.provider == 'macos':
+        else:
             raw, _ = run(['/usr/bin/say', '-v', '?'], 20)
             result = [line for line in raw.decode().splitlines() if not a.lang or a.lang in line]
-        else:
-            from audio_remote import eleven_request
-            result = eleven_request('/v2/voices', method='GET')
         print(json.dumps(result, ensure_ascii=False, indent=2))
     except (ValueError, OSError, KeyError) as exc: ap.exit(2, str(exc) + '\n')
 

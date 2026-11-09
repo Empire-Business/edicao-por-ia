@@ -23,7 +23,7 @@ with 0.05 s margins), with no "glued speech" complaint.
 - The cap is applied to the pattern default and to `tight`; an explicit job choice wins: `--mode natural|relaxed|off`
   or explicit numeric job settings (e.g. a slow documentary, a demonstration, a joke beat the user asked to keep).
 - Long-form phrase pacing (`workflows/LONG_FORM.md`, when present) keeps its own per-context caps.
-- Measure on the ISOLATED voice (ElevenLabs Audio Isolation) — room tone and music hide gaps.
+- Measure on the ISOLATED voice (local cleanup by default; ElevenLabs Audio Isolation only when authorized) — room tone and music hide gaps.
 - Before delivery, list every retained pause > 0.18 s of the final voice; each one needs a reason (intentional beat).
 - Protect intentional pauses in `edit/protected_ranges.json`; the cap never deletes words (speech protection stays).
 

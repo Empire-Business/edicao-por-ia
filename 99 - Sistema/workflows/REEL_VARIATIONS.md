@@ -54,4 +54,4 @@ usuário — nunca inventada ou herdada de um exemplo.
 
 ## Custos e tempo
 `post` não gasta serviços externos (só render local). `hook` gasta render local e, se pedido, uma trilha por variação
-(ElevenLabs Music). Troca de roupa, quando houver, é gerada uma vez na base e vale para todas as variações.
+(música com IA pelo OpenRouter, `tools/or_music.py`, com o sim para cada gasto; sem gasto, biblioteca local). Troca de roupa, quando houver, é gerada uma vez na base e vale para todas as variações.
