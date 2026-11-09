@@ -18,7 +18,10 @@ Decisão do dono em 09/11/2026.
 - Arquivo de chaves explica em linguagem simples para que serve cada chave. Instalações existentes recebem,
   uma vez, as notas novas e uma linha `OPENROUTER_API_KEY=` vazia se faltar, sem tocar nos valores
   (migração aditiva em `post_update.py`).
-- Guias passo a passo em `03 - Ajuda`: “Configurar o OpenRouter” e “Configurar o ElevenLabs” (opcional).
+- Guias passo a passo em `03 - Ajuda` para todas as chaves: “Configurar o OpenRouter”, “Configurar o ScrapeCreators”,
+  “Configurar o Apify” (opcional) e “Configurar o ElevenLabs” (opcional), com links na Ajuda e no arquivo de chaves.
+  A porta de entrada (`skill-global/cortez`) ganhou a seção “Ensinar a configurar”: o que é, quanto custa, onde
+  clicar, onde colar e como conferir, um passo por vez.
   Nova regra de didática no AGENTS: ensinar um passo por vez e nunca pedir chave na conversa.
 - Painel (`guide.js`), ajuda e documentação atualizados. Repositório de download e PDF de instalação inalterados.
 

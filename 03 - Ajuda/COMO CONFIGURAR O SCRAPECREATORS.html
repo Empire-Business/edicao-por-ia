@@ -1,0 +1,29 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Configurar o ScrapeCreators</title><style>body{margin:0;background:#f7f6f3;color:#2f3437;font:18px/1.65 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}main{max-width:940px;margin:auto;padding:40px 24px 64px}h1{font:normal 42px/1.15 Georgia,serif}h2{font-size:23px}section{border-bottom:1px solid #ddd;padding:20px 0}a{color:#315636}ol li{margin:.5em 0}code{background:#fff;border:1px solid #ddd;border-radius:4px;padding:1px 6px;font-size:16px;word-break:break-all}.note{font-size:16px;color:#5d5a54}.box{background:#fff;border:1px solid #ddd;border-radius:8px;padding:12px 18px}.alert{background:#fff6e5;border:1px solid #e6c27a;border-radius:8px;padding:12px 18px}table{border-collapse:collapse;width:100%;background:#fff}th,td{text-align:left;padding:12px;border-bottom:1px solid #ddd;vertical-align:top}a:focus-visible{outline:3px solid #956400;outline-offset:4px}@media(max-width:600px){h1{font-size:32px}table,tbody,tr,td{display:block}thead{display:none}tr{border-bottom:1px solid #ddd}td{border:0;padding:6px 12px}}</style><link rel="stylesheet" href="../99%20-%20Sistema/assets/branding/cortez/local.css"><main><a class="cortez-local-brand" href="../00%20-%20COMECE%20AQUI.html"><img src="../99%20-%20Sistema/assets/branding/cortez/logo-lockup.svg" alt="Cortez" width="150" height="40"></a><a href="AJUDA.html">Voltar à ajuda</a>
+<h1>Configurar o ScrapeCreators</h1>
+<p>Faça um passo de cada vez. Se travar em algum, conte ao Cortez o que aparece na tela e ele explica o próximo.</p>
+<section><h2>O que é e para que serve</h2>
+<p>O ScrapeCreators é um serviço que encontra vídeos públicos do <strong>TikTok</strong> e do <strong>YouTube</strong>. O Cortez usa para <strong>buscar cenas</strong> que combinam com o seu vídeo (por exemplo, um trecho de notícia para comentar) e baixar o arquivo quando o site permite.</p>
+<p>Sem ScrapeCreators o Cortez continua editando: você mesmo pode colocar os vídeos de cena em <strong>01 - Enviar vídeos</strong>.</p></section>
+<section><h2>Quanto custa</h2>
+<p>A conta começa com <strong>100 créditos grátis</strong>, sem cartão. Cada busca gasta, na maioria das vezes, 1 crédito; resultados repetidos que o serviço já tem guardados não gastam nada. Os créditos comprados não vencem.</p>
+<p>Quando os grátis acabarem, dá para comprar um pacote (o menor, quando este guia foi escrito, era de US$ 47 por 25 mil créditos). Veja o preço atual em <a href="https://scrapecreators.com/#pricing">scrapecreators.com</a>.</p>
+<p><strong>Pedir uma busca de cenas ao Cortez já autoriza usar a sua chave naquela busca.</strong> Ter a chave salva não faz busca nenhuma sozinha.</p></section>
+<section><h2>Passo 1: criar a conta</h2>
+<ol><li>Abra <a href="https://app.scrapecreators.com/">app.scrapecreators.com</a>.</li><li>Clique para criar a conta e entre com o seu e-mail (ou com a opção de login que aparecer).</li><li>Confirme o e-mail, se o site pedir.</li></ol></section>
+<section><h2>Passo 2: copiar a chave</h2>
+<p>A chave é uma senha que deixa o Cortez fazer buscas na sua conta.</p>
+<ol><li>Dentro do painel do ScrapeCreators, procure <strong>API Key</strong> (chave da API). Ela costuma aparecer logo na primeira tela.</li><li>Clique para copiar.</li></ol></section>
+<section><h2>Passo 3: colar no arquivo de chaves</h2>
+<ol><li>Na pasta do Cortez, abra o arquivo <strong>CHAVES DAS INTEGRAÇÕES.txt</strong> (dois cliques; abre no Bloco de Notas ou no TextEdit).</li>
+<li>Ache a linha <code>SCRAPECREATORS_API_KEY=</code>. Se ela não existir, escreva essa linha no fim do arquivo.</li>
+<li>Cole a chave logo depois do sinal <code>=</code>, sem espaço e sem aspas.</li>
+<li>Salve o arquivo e feche.</li></ol>
+<p class="note"><strong>Nunca cole a chave na conversa com a IA.</strong> Se colou por engano, troque a chave no painel do ScrapeCreators (gere uma nova) e cole a nova no arquivo. Também não envie o arquivo de chaves para ninguém.</p></section>
+<section><h2>Passo 4: conferir se funcionou</h2>
+<p>Peça ao Cortez: <strong>“Busque uma cena curta no YouTube sobre [assunto] para eu testar a chave do ScrapeCreators.”</strong> Ele mostra o que achou antes de usar qualquer coisa no vídeo.</p></section>
+<section><h2>Se aparecer um aviso</h2>
+<ul><li><strong>Chave recusada:</strong> a chave foi copiada pela metade. Copie de novo e cole.</li>
+<li><strong>Sem créditos:</strong> os créditos acabaram. Compre um pacote ou envie os vídeos de cena você mesmo.</li>
+<li><strong>Achou o vídeo, mas sem arquivo para baixar:</strong> acontece com o YouTube. Aí o Cortez pode usar o Apify (guia <a href="COMO CONFIGURAR O APIFY.html">Configurar o Apify</a>) ou você envia o vídeo.</li></ul></section>
+<p class="note">Atualizado em 09/11/2026. Os nomes dos botões nos sites podem mudar um pouco; se não achar algum, peça ajuda ao Cortez dizendo o que aparece na sua tela.</p>
+</main></html>

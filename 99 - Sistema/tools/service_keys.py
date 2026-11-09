@@ -28,9 +28,12 @@ SERVICES_NOTES = '''# O que é cada chave (em palavras simples):
 #   Onde criar a chave: https://elevenlabs.io/app/settings/api-keys
 #   Passo a passo: 03 - Ajuda/COMO CONFIGURAR O ELEVENLABS.html
 #
-# ScrapeCreators: buscar cenas do TikTok e do YouTube. https://app.scrapecreators.com/
+# ScrapeCreators: buscar cenas do TikTok e do YouTube (100 buscas grátis para começar).
+#   Onde criar a chave: https://app.scrapecreators.com/
+#   Passo a passo: 03 - Ajuda/COMO CONFIGURAR O SCRAPECREATORS.html
 # Apify (OPCIONAL): baixar vídeo do YouTube quando o ScrapeCreators não entrega o arquivo.
-#   https://console.apify.com/settings/integrations
+#   Onde criar a chave: https://console.apify.com/settings/integrations (plano grátis: US$ 5 por mês)
+#   Passo a passo: 03 - Ajuda/COMO CONFIGURAR O APIFY.html
 #
 # Pode deixar vazias as chaves que não usa. Ter uma chave aqui NÃO autoriza gasto.
 # Nunca cole uma chave na conversa com a IA: cole só aqui, depois do sinal =.
