@@ -1628,6 +1628,90 @@
         }
       ],
       "missing_sources": []
+    },
+    "F22": {
+      "code": "F22",
+      "name": "Anúncio com motion",
+      "uid": "official.4120f76762d8407c930706f8ac494a5d",
+      "references": [
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/README.md",
+          "kind": "reference_analysis",
+          "sha256": "f1773b60dc9b6293729f39ff484f388b65598a870b0d58e67b47a6852f1efaae",
+          "bytes": 635,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9"
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "9624e95d5f607742f282daefce54161d0121e98b3b5a3dfe83455e9ce1f418a8",
+          "bytes": 8572,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9"
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/app-assistente.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "8664a3cedb523f4989220274d8ae3dad3a82f8565702429331598d8f1a5c5b76",
+          "bytes": 65581,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "caption": "Passo 1: réplica realista do app onde o produto roda; agente anexado, pedido do usuário e resposta digitando.",
+          "at_seconds": 16.6
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/apresentador-titulo.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "58e666e718767afd0b9782851d59d9ae916565d7a99a20a0be11298e20b0680d",
+          "bytes": 210000,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "caption": "Trecho com rosto: enquadramento fixo e centralizado, título alinhado à esquerda com bloco na cor da ID e painel \"NESTE VÍDEO\".",
+          "at_seconds": 50.2
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/gancho-galeria.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c62b9f85512a63fa4e002266b838494834fd3f4daabc5228e3a7fab6381c35a5",
+          "bytes": 100663,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "caption": "Gancho 100% motion: celular 3D com a galeria de fotos (miniaturas variadas, selos de duração, contador \"vídeos sem editar\") e título cinético com a palavra-chave em bloco.",
+          "at_seconds": 1.6
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/modelos-mostrador.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "75f634550b43f05aa2f282fb3ba475439ae8e22ff70549c34445d196966bb662",
+          "bytes": 148929,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "caption": "Grade 3D de modelos com mostrador contando até o total, antes do modelo escolhido sair do plano.",
+          "at_seconds": 26.4
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "bytes": 18571111,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "caption": "Anúncio completo de 68 s (versão final aprovada), cópia H.264 1080x1920 otimizada."
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/resultado-identidade.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0eac863b41ac765b251b0cdd06292cb1991ade6c1ac9cf362490756afc12c67c",
+          "bytes": 114807,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "caption": "Resultado: painel de identidade visual (paleta sendo escolhida, fonte, estilo de legenda) recolorindo a prévia no celular.",
+          "at_seconds": 44.0
+        },
+        {
+          "path": "examples/reference-library/F22/anuncio-com-motion/revelacao-timeline.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4e859c5f0b80153f238d8ab39bebd7af2c8da7baf1aa0df626db0b88cb08487d",
+          "bytes": 62042,
+          "source_sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+          "caption": "Revelação no drop da música: o nome do produto vira linha do tempo que se monta sozinha a partir dos clipes.",
+          "at_seconds": 6.8
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -2192,7 +2276,16 @@
     "examples/reference-library/F21/mural-de-investigacao/panorama.jpg": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
     "examples/reference-library/F21/mural-de-investigacao/reference.mp4": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
     "examples/reference-library/F21/mural-de-investigacao/status-cards.jpg": "4b05820686a81fbd50418ce0ef49f1e34215ebb10f899d706233a63238cace1b",
-    "examples/reference-library/F21/mural-de-investigacao/suspects.jpg": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb"
+    "examples/reference-library/F21/mural-de-investigacao/suspects.jpg": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb",
+    "examples/reference-library/F22/anuncio-com-motion/README.md": "f1773b60dc9b6293729f39ff484f388b65598a870b0d58e67b47a6852f1efaae",
+    "examples/reference-library/F22/anuncio-com-motion/analysis.json": "9624e95d5f607742f282daefce54161d0121e98b3b5a3dfe83455e9ce1f418a8",
+    "examples/reference-library/F22/anuncio-com-motion/app-assistente.jpg": "8664a3cedb523f4989220274d8ae3dad3a82f8565702429331598d8f1a5c5b76",
+    "examples/reference-library/F22/anuncio-com-motion/apresentador-titulo.jpg": "58e666e718767afd0b9782851d59d9ae916565d7a99a20a0be11298e20b0680d",
+    "examples/reference-library/F22/anuncio-com-motion/gancho-galeria.jpg": "c62b9f85512a63fa4e002266b838494834fd3f4daabc5228e3a7fab6381c35a5",
+    "examples/reference-library/F22/anuncio-com-motion/modelos-mostrador.jpg": "75f634550b43f05aa2f282fb3ba475439ae8e22ff70549c34445d196966bb662",
+    "examples/reference-library/F22/anuncio-com-motion/reference.mp4": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+    "examples/reference-library/F22/anuncio-com-motion/resultado-identidade.jpg": "0eac863b41ac765b251b0cdd06292cb1991ade6c1ac9cf362490756afc12c67c",
+    "examples/reference-library/F22/anuncio-com-motion/revelacao-timeline.jpg": "4e859c5f0b80153f238d8ab39bebd7af2c8da7baf1aa0df626db0b88cb08487d"
   },
   "retired_generations": {
     "factory.f02": {

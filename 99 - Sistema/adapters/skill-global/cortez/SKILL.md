@@ -1,6 +1,6 @@
 ---
 name: cortez
-description: Cortez edita vídeos com IA numa pasta de trabalho no computador da pessoa (gravações em "01 - Enviar vídeos", entregas em "02 - Ver vídeos"), com formatos de edição (F01 a F21, como Talking Head, Notícia Comentada, Pessoa + Tela) e identidades visuais (IDs). Use quando pedirem "Cortez", editar, cortar ou legendar um vídeo, tirar silêncio, aplicar um formato ou uma identidade visual, fazer cortes de um vídeo longo, instalar o Cortez, achar a pasta do Cortez, atualizar o Cortez pela main ou sugerir um formato novo. Não use para escrever roteiro de VSL, planejar conteúdo de redes sociais ou criar site.
+description: Cortez edita vídeos com IA numa pasta de trabalho no computador da pessoa (gravações em "01 - Enviar vídeos", entregas em "02 - Ver vídeos"), com formatos de edição (F01 a F22, como Talking Head, Notícia Comentada, Pessoa + Tela) e identidades visuais (IDs). Use quando pedirem "Cortez", editar, cortar ou legendar um vídeo, tirar silêncio, aplicar um formato ou uma identidade visual, fazer cortes de um vídeo longo, instalar o Cortez, achar a pasta do Cortez, atualizar o Cortez pela main ou sugerir um formato novo. Não use para escrever roteiro de VSL, planejar conteúdo de redes sociais ou criar site.
 ---
 
 # Cortez: porta de entrada

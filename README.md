@@ -37,6 +37,7 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | F19 | Print Repost |
 | F20 | React |
 | F21 | Mural de investigação |
+| F22 | Anúncio com motion |
 
 Os códigos e nomes consolidados são preservados. Novos formatos oficiais ocupam o menor número ativo disponível com identidade interna própria; um código reaproveitado não herda a geração retirada. Todo oficial novo também precisa aparecer na galeria com exemplo real.
 

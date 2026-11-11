@@ -1,0 +1,427 @@
+{
+ "_comment": "Exemplo real (anúncio aprovado de 68 s). Fontes são cópias dentro da fábrica; caminhos relativos à pasta do trabalho. Textos de cena são props: troque por produto/roteiro do novo anúncio. Cores e fontes vêm da ID escolhida (identity_tokens).",
+ "format": "anuncio-com-motion-v1",
+ "identity": "ID05",
+ "identity_tokens": {
+  "p": "#820AD1",
+  "p-hi": "#B26CFF",
+  "ink": "#17092C",
+  "deep": "#0D0419"
+ },
+ "canvas": [
+  1080,
+  1920,
+  30
+ ],
+ "background": "#0D0419",
+ "sources": {
+  "cam": {
+   "path": "../../inputs/camera.MP4",
+   "rotate": "ccw"
+  },
+  "voz": {
+   "path": "../../inputs/voz.mp4"
+  },
+  "cam2": {
+   "path": "../../inputs/camera-2.MP4",
+   "rotate": "ccw"
+  }
+ },
+ "transcripts": {
+  "cam": "analysis/transcript-cam.json",
+  "voz": "analysis/transcript-voz.json"
+ },
+ "word_fixes": {
+  "cláudio": "Claude",
+  "cloud": "Claude",
+  "cortês": "Cortez",
+  "corteis": "Cortez",
+  "ai": "IA",
+  "envi": "Envie",
+  "animas": "anima",
+  "modo": "modelo",
+  "sábio": "Saiba"
+ },
+ "drop_words": [],
+ "drop_at": [
+  {
+   "src": "cam",
+   "t": 90.98,
+   "w": "a"
+  }
+ ],
+ "manual_words": {
+  "T7": {
+   "window": [
+    37.65,
+    41.35
+   ],
+   "text": "Ele corta os erros e os silêncios, coloca as cenas de apoio para explicar"
+  }
+ },
+ "music": "audio/music.mp3",
+ "music_volume": 0.42,
+ "punch_in_first_face": true,
+ "stills": {
+  "preview": {
+   "src": "cam",
+   "t": 47.2
+  },
+  "roll": [
+   {
+    "src": "cam",
+    "t": 130,
+    "crop": "close"
+   },
+   {
+    "src": "cam2",
+    "t": 60,
+    "crop": "medium"
+   },
+   {
+    "src": "cam",
+    "t": 300,
+    "crop": "wide"
+   },
+   {
+    "src": "cam2",
+    "t": 200,
+    "crop": "close"
+   },
+   {
+    "src": "cam",
+    "t": 520,
+    "crop": "medium"
+   },
+   {
+    "src": "cam2",
+    "t": 330,
+    "crop": "wide"
+   },
+   {
+    "src": "cam",
+    "t": 700,
+    "crop": "close"
+   },
+   {
+    "src": "cam2",
+    "t": 450,
+    "crop": "medium"
+   },
+   {
+    "src": "cam",
+    "t": 860,
+    "crop": "medium"
+   },
+   {
+    "src": "cam2",
+    "t": 560,
+    "crop": "close"
+   },
+   {
+    "src": "cam",
+    "t": 1000,
+    "crop": "wide"
+   },
+   {
+    "src": "cam2",
+    "t": 690,
+    "crop": "medium"
+   },
+   {
+    "src": "cam",
+    "t": 395,
+    "crop": "close"
+   },
+   {
+    "src": "cam2",
+    "t": 790,
+    "crop": "wide"
+   },
+   {
+    "src": "cam",
+    "t": 210,
+    "crop": "medium"
+   },
+   {
+    "src": "cam2",
+    "t": 860,
+    "crop": "close"
+   },
+   {
+    "src": "cam",
+    "t": 640,
+    "crop": "wide"
+   },
+   {
+    "src": "cam2",
+    "t": 140,
+    "crop": "medium"
+   }
+  ]
+ },
+ "panel": {
+  "title": "neste vídeo",
+  "items": [
+   "Vídeo parado",
+   "Agente no assistente",
+   "Envia o bruto",
+   "Escolhe o modelo",
+   "Edição automática",
+   "Resultado",
+   "Pede ajuste",
+   "Saiba mais"
+  ],
+  "show_on": [
+   "T3",
+   "T9"
+  ],
+  "step_of": {
+   "T1": 0,
+   "T2": 1,
+   "T3": 1,
+   "T4": 1,
+   "T5": 2,
+   "T6": 3,
+   "T7": 4,
+   "T8": 5,
+   "T9": 6,
+   "T10": 6,
+   "T11": 6,
+   "T12": 6,
+   "T13": 7
+  }
+ },
+ "segments": [
+  {
+   "id": "T1",
+   "scene": "hook_gallery",
+   "type": "voice",
+   "src": "cam",
+   "in": 25.45,
+   "out": 30.05,
+   "props": {
+    "label": "você tem algum",
+    "line1": "vídeo",
+    "line2": "parado?",
+    "anchor2": "parado",
+    "counter": 37,
+    "counter_label": "sem editar",
+    "pain_chip": "⏱ sem tempo pra editar",
+    "pain_anchor": "tempo"
+   }
+  },
+  {
+   "id": "T2",
+   "scene": "reveal_timeline",
+   "type": "voice",
+   "src": "cam",
+   "in": 35.75,
+   "out": 41.1,
+   "props": {
+    "product_label": "com o",
+    "product": "Cortez",
+    "head_label": "o claude vira um",
+    "line1": "editor de",
+    "line2": "vídeo"
+   }
+  },
+  {
+   "id": "T3",
+   "scene": "face_title",
+   "type": "face",
+   "src": "cam",
+   "in": 46.7,
+   "out": 48.95,
+   "props": {
+    "label": "vou te mostrar em",
+    "lines": [
+     {
+      "text": "3 passos",
+      "alt": true,
+      "anchor": "três"
+     }
+    ]
+   }
+  },
+  {
+   "id": "T4",
+   "scene": "app_agent",
+   "type": "voice",
+   "src": "voz",
+   "in": 2.3,
+   "out": 8.49,
+   "props": {
+    "app_title": "Claude",
+    "agent": "Cortez",
+    "user_message": "Ativa o Cortez e edita meus vídeos.",
+    "reply": "Pronto! Agora eu edito seus vídeos como um editor profissional.",
+    "attach_anchor": "cortez",
+    "reply_anchor": "agente"
+   }
+  },
+  {
+   "id": "T5",
+   "scene": "upload_raw",
+   "type": "voice",
+   "src": "voz",
+   "in": 9.4,
+   "out": 14.83
+  },
+  {
+   "id": "T6",
+   "scene": "models_dial",
+   "type": "voice",
+   "src": "voz",
+   "in": 15.4,
+   "out": 20.55,
+   "props": {
+    "prompt": "“Cortez, edita esse vídeo no modelo Pessoa falando, roxo, vertical.”"
+   }
+  },
+  {
+   "id": "T6",
+   "scene": "models_dial",
+   "type": "voice",
+   "src": "voz",
+   "in": 27.95,
+   "out": 32.75
+  },
+  {
+   "id": "T7",
+   "scene": "editor_checklist",
+   "type": "voice",
+   "src": "voz",
+   "in": 37.55,
+   "out": 45.05,
+   "props": {
+    "window_title": "Cortez · editando video_bruto.mov"
+   }
+  },
+  {
+   "id": "T8",
+   "scene": "result_phone",
+   "type": "voice",
+   "src": "voz",
+   "in": 45.75,
+   "out": 51.55,
+   "props": {
+    "palette": [
+     [
+      "#1FB57A",
+      "Verde"
+     ],
+     [
+      "#2D6BFF",
+      "Azul"
+     ],
+     [
+      "var(--p)",
+      "Roxo"
+     ],
+     [
+      "#FF7A1A",
+      "Laranja"
+     ],
+     [
+      "#C9A227",
+      "Dourado"
+     ]
+    ],
+    "font_name": "Manrope"
+   }
+  },
+  {
+   "id": "T9",
+   "scene": "face_title",
+   "type": "face",
+   "src": "cam",
+   "in": 62.52,
+   "out": 67.88,
+   "props": {
+    "label": "passo 3 · não gostou?",
+    "lines": [
+     {
+      "text": "é só pedir",
+      "anchor": "pedir"
+     },
+     {
+      "text": "um ajuste",
+      "alt": true,
+      "anchor": "alteração"
+     }
+    ]
+   }
+  },
+  {
+   "id": "T10",
+   "scene": "typed_request",
+   "type": "text",
+   "src": null,
+   "in": 0.0,
+   "out": 2.7,
+   "props": {
+    "request": "“Cortez, aos 12 segundos, tira esse texto.”"
+   }
+  },
+  {
+   "id": "T11",
+   "scene": "version_update",
+   "type": "voice",
+   "src": "voz",
+   "in": 52.3,
+   "out": 54.85
+  },
+  {
+   "id": "T12",
+   "scene": "face_steps",
+   "type": "face",
+   "src": "cam",
+   "in": 75.68,
+   "out": 81.5,
+   "props": {
+    "label": "resumindo",
+    "steps": [
+     {
+      "text": "você envia",
+      "anchor": "gravação"
+     },
+     {
+      "text": "escolhe o modelo",
+      "anchor": "modelo"
+     },
+     {
+      "text": "o cortez edita",
+      "anchor": "cortez"
+     }
+    ]
+   }
+  },
+  {
+   "id": "T13",
+   "scene": "face_cta",
+   "type": "face",
+   "src": "cam",
+   "in": 86.28,
+   "out": 91.4,
+   "props": {
+    "label": "transforme o claude em",
+    "lines": [
+     {
+      "text": "editor",
+      "anchor": "editor"
+     },
+     {
+      "text": "de vídeo",
+      "alt": true,
+      "anchor": "vídeos"
+     }
+    ],
+    "cta": "Toque em Saiba mais →",
+    "cta_anchor": "saiba"
+   }
+  }
+ ],
+ "framing": "static",
+ "rnnoise_model_optional": "audio/models/cb.rnnn (só sem DeepFilterNet)"
+}

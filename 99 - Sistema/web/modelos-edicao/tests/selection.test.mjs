@@ -136,7 +136,7 @@ test("numeric code order is stable for library, favorites and searches", () => {
  const shuffled=[catalog.formats.find(x=>x.code==="F16"),catalog.formats.find(x=>x.code==="F04"),catalog.formats.find(x=>x.code==="F01")];
  assert.deepEqual(filterFormats(shuffled).map(x=>x.code),["F01","F04","F16"]);
  assert.deepEqual(filterFormats(shuffled,{favoritesOnly:true,favorites:["F16","F01"]}).map(x=>x.code),["F01","F16"]);
- assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20","F21"]);
+ assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20","F21","F22"]);
 });
 
 test('the authorized new F02 uses its actual full example and a fresh media generation', () => {

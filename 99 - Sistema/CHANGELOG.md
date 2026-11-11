@@ -1,3 +1,10 @@
+# 2.11.0 — F22 Anúncio com motion
+
+- Novo formato oficial F22 Anúncio com motion: gancho só em motion cheio no primeiro quadro, revelação no drop da música, uma cena de motion por passo falado, rosto em enquadramento fixo e legenda grande palavra a palavra com bloco na cor da ID.
+- Kit reutilizável `studio/ad-motion`: biblioteca de 12 cenas por tipo (`hook_gallery`, `reveal_timeline`, `app_agent`, `upload_raw`, `models_dial`, `editor_checklist`, `result_phone`, `typed_request`, `version_update`, `face_title`, `face_steps`, `face_cta`) com textos e âncoras de palavra como props, e pipeline `ad_motion.py` (plan, stills, track, frames, base, overlay em navegadores paralelos, audio, final, qa).
+- Lições incorporadas: quadro 0 sempre preenchido, bloco do título só aparece com a palavra, câmera fixa no rosto, movimento contínuo para não parecer travado, novas tentativas na captura de quadros pesados, voz limpa com DeepFilterNet quando instalado e fades de 25 ms.
+- Exemplo real aprovado pelo autor na biblioteca de referências e na seleção da galeria.
+
 # 2.10.1 — pacote requests na instalação base
 
 - `dependencies --capability base` passa a instalar `requests`, usado pela voz local e pelos serviços opcionais. Antes, a narração quebrava ao abrir em instalações novas.

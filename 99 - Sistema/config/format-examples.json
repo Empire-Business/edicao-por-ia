@@ -490,5 +490,37 @@
       "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
       "caption": "Panorama final: as evidências do caso reunidas e ligadas por fio, com a frase de fecho."
     }
+  ],
+  "F22": [
+    {
+      "path": "examples/reference-library/F22/anuncio-com-motion/gancho-galeria.jpg",
+      "sha256": "c62b9f85512a63fa4e002266b838494834fd3f4daabc5228e3a7fab6381c35a5",
+      "caption": "Gancho 100% motion: celular 3D com a galeria de fotos (miniaturas variadas, selos de duração, contador \"vídeos sem editar\") e título cinético com a palavra-chave em bloco."
+    },
+    {
+      "path": "examples/reference-library/F22/anuncio-com-motion/revelacao-timeline.jpg",
+      "sha256": "4e859c5f0b80153f238d8ab39bebd7af2c8da7baf1aa0df626db0b88cb08487d",
+      "caption": "Revelação no drop da música: o nome do produto vira linha do tempo que se monta sozinha a partir dos clipes."
+    },
+    {
+      "path": "examples/reference-library/F22/anuncio-com-motion/app-assistente.jpg",
+      "sha256": "8664a3cedb523f4989220274d8ae3dad3a82f8565702429331598d8f1a5c5b76",
+      "caption": "Passo 1: réplica realista do app onde o produto roda; agente anexado, pedido do usuário e resposta digitando."
+    },
+    {
+      "path": "examples/reference-library/F22/anuncio-com-motion/modelos-mostrador.jpg",
+      "sha256": "75f634550b43f05aa2f282fb3ba475439ae8e22ff70549c34445d196966bb662",
+      "caption": "Grade 3D de modelos com mostrador contando até o total, antes do modelo escolhido sair do plano."
+    },
+    {
+      "path": "examples/reference-library/F22/anuncio-com-motion/resultado-identidade.jpg",
+      "sha256": "0eac863b41ac765b251b0cdd06292cb1991ade6c1ac9cf362490756afc12c67c",
+      "caption": "Resultado: painel de identidade visual (paleta sendo escolhida, fonte, estilo de legenda) recolorindo a prévia no celular."
+    },
+    {
+      "path": "examples/reference-library/F22/anuncio-com-motion/apresentador-titulo.jpg",
+      "sha256": "58e666e718767afd0b9782851d59d9ae916565d7a99a20a0be11298e20b0680d",
+      "caption": "Trecho com rosto: enquadramento fixo e centralizado, título alinhado à esquerda com bloco na cor da ID e painel \"NESTE VÍDEO\"."
+    }
   ]
 }

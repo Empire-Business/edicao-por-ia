@@ -71,6 +71,7 @@ Never claim a save without its tool receipt. Only the coordinator writes format 
 - Review/QA → `workflows/QA.md` + `method/QUALITY_BAR.md`
 - Feedback, format info or results → `workflows/FORMAT_MEMORY.md` + `workflows/LEARN_FROM_RESULT.md`
 - Personalization check → `workflows/PERSONALIZATION_QA.md`
+- Product ad with motion (F22: motion-first hook, scene library, word-highlight captions) → `studio/ad-motion/README.md` (tool: `studio/ad-motion/kit/ad_motion.py`)
 - Product/platform motion (UI recreated from repo, 16:9 + 9:16) → `workflows/PRODUCT_MOTION.md` + `studio/product-motion/README.md` (tool: `tools/product_motion.py`)
 - Swap the presenter's outfit and/or the scenery in a short range (any format) → `workflows/SWAP_OUTFIT_SCENERY.md` + `method/EXTERNAL_SERVICES.md` (tool: `tools/gen_video_edit.py`)
 - Cortez Voz / áudio local DeepFilterNet-FFmpeg / ElevenLabs opcional / ScrapeCreators / Apify / OpenRouter (incl. cover images) / API keys → `method/EXTERNAL_SERVICES.md`

@@ -907,5 +907,57 @@
       "história",
       "dark"
     ]
+  },
+  "F22": {
+    "category": "products",
+    "categories": [
+      "products",
+      "presenter"
+    ],
+    "tags": [
+      "Anúncio",
+      "Motion",
+      "Produto",
+      "Com ou sem apresentador"
+    ],
+    "use": "Vender um produto ou ferramenta digital num anúncio curto: gancho em motion, demonstração passo a passo em telas animadas e chamada para ação.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação com rosto e/ou áudio só de voz do roteiro",
+      "Nome e telas do produto",
+      "Trilha (opcional)"
+    ],
+    "buildingBlocks": [
+      "Gancho com celular e galeria",
+      "Revelação no drop da música",
+      "Réplica do app",
+      "Grade 3D com mostrador",
+      "Editor com checklist",
+      "Paleta sendo escolhida",
+      "Legenda palavra a palavra",
+      "Chamada final"
+    ],
+    "searchTerms": [
+      "anuncio",
+      "anúncio",
+      "ads",
+      "criativo",
+      "trafego",
+      "tráfego",
+      "produto",
+      "ferramenta",
+      "saas",
+      "app",
+      "motion",
+      "demonstracao",
+      "demonstração",
+      "venda",
+      "lancamento",
+      "lançamento",
+      "reels",
+      "sem aparecer",
+      "passo a passo"
+    ]
   }
 }
