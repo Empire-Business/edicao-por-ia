@@ -180,6 +180,14 @@
         "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
       },
       "reference_conflicts": []
+    },
+    "official.4120f76762d8407c930706f8ac494a5d": {
+      "code": "F22",
+      "primary_reference": {
+        "path": "examples/reference-library/F22/anuncio-com-motion/reference.mp4",
+        "sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9"
+      },
+      "reference_conflicts": []
     }
   }
 }

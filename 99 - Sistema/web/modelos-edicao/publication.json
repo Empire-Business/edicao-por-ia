@@ -365,6 +365,30 @@
         "avoid": "Não inventar ou rotular errado provas, falas, fontes, datas ou resultados judiciais; não apresentar alegação como fato julgado; não ligar com fio o que a fala não liga; não usar foto sem licença nem gerar rosto de pessoa real; não mostrar criança vítima; não deixar foto com rosto cortado, escura ou ilegível; não usar cartões rápidos demais para ler; não copiar caso, pessoa, frases, selo, @ ou chamada do exemplo; nenhuma logo. Cores e fontes vêm da ID escolhida."
       },
       "asset_id": "F21-mural-de-investigacao"
+    },
+    {
+      "code": "F22",
+      "name": "Anúncio com motion",
+      "description": "Anúncio vertical que vende um produto: gancho só em motion cheio no primeiro quadro, revelação no drop da música, uma cena de motion por passo falado (app, envio, modelos, editor, resultado), rosto nas viradas e chamada final, com legenda grande palavra a palavra.",
+      "pattern": "f22-anuncio-com-motion-v1",
+      "uid": "official.4120f76762d8407c930706f8ac494a5d",
+      "mechanism_details": {
+        "inputs": "Gravação bruta da pessoa (trechos com rosto) e/ou áudio só de voz com o roteiro do anúncio, de preferência dividido em trechos COM ROSTO, SÓ VOZ e NÃO GRAVAR (texto que aparece digitado na tela). Opcional: segunda gravação com outra roupa para variar a galeria, trilha (gerada só com autorização da chamada) e o nome/telas do produto. A pessoa não precisa aparecer no começo. A ID visual é escolhida separadamente.",
+        "mechanism": "Anúncio vertical 9:16 que vende um produto digital. O começo é 100% motion e já está cheio no primeiro quadro: um celular 3D com a galeria de fotos (miniaturas reais variadas, selos de duração e contador subindo) mostra a dor; a revelação do produto cai no 'drop' da música, com brilho, e a dor se resolve na tela (clipes voando para uma linha do tempo que se monta sozinha, vídeo pronto saltando à frente). Depois o anúncio alterna trechos com rosto (enquadramento fixo e centralizado, título cinético alinhado à esquerda com a palavra-chave dentro de um bloco na cor principal da ID e painel 'NESTE VÍDEO' que acende o passo atual) com cenas de motion para cada passo falado: réplica realista do app onde o produto roda, envio do arquivo bruto com marcas de erro/pausa/repetição, grade 3D de modelos com mostrador que conta até o total, pedido sendo digitado, editor com checklist que marca no ritmo da fala e linha do tempo, resultado no celular com paleta de cores sendo escolhida, pedido de ajuste e nova versão. Fecha com resumo em passos e chamada para ação. Legenda grande e branca no terço inferior (sem cobrir o conteúdo), montada palavra por palavra, com a palavra falada dentro de um bloco na cor principal da ID. Toda cena tem movimento contínuo e leve; poucos efeitos sonoros só nos momentos-chave; trilha abaixo da voz com ducking.",
+        "steps": [
+          "Transcrever cada fonte com tempo por palavra e localizar os trechos do roteiro (COM ROSTO, SÓ VOZ) e as tomadas repetidas; escolher a melhor tomada e cortar silêncios e retakes pela EDL.",
+          "Definir o job.json do kit studio/ad-motion: um segmento por trecho com o tipo de cena (hook_gallery, reveal_timeline, app_agent, upload_raw, models_dial, editor_checklist, result_phone, typed_request, version_update, face_title, face_steps, face_cta) e os textos/âncoras de palavra como props.",
+          "Variar: cada anúncio combina cenas diferentes e outra ordem; trocar galeria, cenas de passo e o tipo de revelação conforme a fala. Não repetir a mesma sequência em todos.",
+          "Gerar o still de prévia (quadro natural, olhando para a câmera) e as miniaturas da galeria de vários momentos, roupas e enquadramentos (rosto, meio corpo, aberto).",
+          "Medir a posição do rosto em cada trecho e enquadrar FIXO na mediana, centralizado; punch-in curto só no primeiro rosto.",
+          "Renderizar quadros-chave e revisar: primeiro quadro cheio, título nunca com bloco vazio, nada sobre mãos/rosto, legenda sem colidir com cartões, nenhuma cena parada.",
+          "Renderizar o motion com transparência em várias abas do navegador em paralelo e compor sobre a base de rosto/fundo.",
+          "Áudio: limpar a voz localmente (DeepFilterNet quando instalado, com folga de −6 dB e mesma duração), fades de 25 ms nos cortes, efeitos sintetizados esparsos e trilha com ducking; final em −14 LUFS e −1,2 dBTP.",
+          "QA: zero trecho congelado acima de 0,4 s, decodificação completa sem erros, folha de quadros do vídeo inteiro e conferência dos trechos de rosto."
+        ],
+        "avoid": "Não abrir com a pessoa parada ou com tela vazia; não colocar efeito sonoro em todo título; não usar câmera que segue o rosto (parece que a tela mexe); não cobrir mãos, rosto ou a legenda com cartões; não deixar cena parada (parece travado); não usar transições exageradas (giros, zoom forte, flashes); não repetir texto da legenda em selos; não fixar marca, logo, pessoa, cores ou fontes do exemplo: produto, textos e cores vêm do trabalho e da ID escolhida."
+      },
+      "asset_id": "F22-anuncio-com-motion"
     }
   ],
   "reference_media": {
@@ -524,6 +548,14 @@
         "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
         "evidence_label": "Demo do formato",
         "evidence_note": "Demo produzido com a ferramenta do formato: caso histórico, fotos de época em domínio público e narração própria. Caso, pessoas e fotos são do exemplo, não padrões; cores e fontes vêm da ID escolhida."
+      }
+    ],
+    "F22": [
+      {
+        "path": "examples/reference-library/F22/anuncio-com-motion/reference.mp4",
+        "sha256": "c826ad727c0cdd68cbe9c0af33454838d356b752be722c23399a9e3048b146c9",
+        "evidence_label": "Anúncio real aprovado",
+        "evidence_note": "Versão final de um anúncio real de produto, aprovada pelo autor. Produto, pessoa e textos são do exemplo, não padrões; cores e fontes vêm da ID escolhida."
       }
     ]
   },
@@ -807,6 +839,50 @@
           "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77"
         },
         "caption": "Panorama final: as evidências do caso reunidas e ligadas por fio, com a frase de fecho."
+      }
+    ],
+    "F22": [
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/anuncio-com-motion/gancho-galeria.jpg",
+          "sha256": "c62b9f85512a63fa4e002266b838494834fd3f4daabc5228e3a7fab6381c35a5"
+        },
+        "caption": "Gancho 100% motion: celular 3D com a galeria de fotos (miniaturas variadas, selos de duração, contador \"vídeos sem editar\") e título cinético com a palavra-chave em bloco."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/anuncio-com-motion/revelacao-timeline.jpg",
+          "sha256": "4e859c5f0b80153f238d8ab39bebd7af2c8da7baf1aa0df626db0b88cb08487d"
+        },
+        "caption": "Revelação no drop da música: o nome do produto vira linha do tempo que se monta sozinha a partir dos clipes."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/anuncio-com-motion/app-assistente.jpg",
+          "sha256": "8664a3cedb523f4989220274d8ae3dad3a82f8565702429331598d8f1a5c5b76"
+        },
+        "caption": "Passo 1: réplica realista do app onde o produto roda; agente anexado, pedido do usuário e resposta digitando."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/anuncio-com-motion/modelos-mostrador.jpg",
+          "sha256": "75f634550b43f05aa2f282fb3ba475439ae8e22ff70549c34445d196966bb662"
+        },
+        "caption": "Grade 3D de modelos com mostrador contando até o total, antes do modelo escolhido sair do plano."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/anuncio-com-motion/resultado-identidade.jpg",
+          "sha256": "0eac863b41ac765b251b0cdd06292cb1991ade6c1ac9cf362490756afc12c67c"
+        },
+        "caption": "Resultado: painel de identidade visual (paleta sendo escolhida, fonte, estilo de legenda) recolorindo a prévia no celular."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/anuncio-com-motion/apresentador-titulo.jpg",
+          "sha256": "58e666e718767afd0b9782851d59d9ae916565d7a99a20a0be11298e20b0680d"
+        },
+        "caption": "Trecho com rosto: enquadramento fixo e centralizado, título alinhado à esquerda com bloco na cor da ID e painel \"NESTE VÍDEO\"."
       }
     ]
   },

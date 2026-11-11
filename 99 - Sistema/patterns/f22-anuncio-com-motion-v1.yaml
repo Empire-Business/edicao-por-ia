@@ -1,0 +1,119 @@
+id: f22-anuncio-com-motion-v1
+version: 1
+status: draft
+format_code: F22
+created: 2026-11-10
+origin: >-
+  Formato oficial criado pelo autor em 10/11/2026 a partir de um anúncio real de produto, revisado em 5 rodadas e
+  aprovado como versão final. Referências de estilo de terceiros inspiraram a mecânica e não são distribuídas.
+purpose: >-
+  Anúncio vertical que vende um produto: gancho 100% motion cheio no primeiro quadro, revelação no drop da música,
+  uma cena de motion por passo falado, trechos com rosto para conversar com o espectador e chamada final.
+engine: playwright_seek        # studio/ad-motion/kit: composição GSAP renderizada quadro a quadro por seek(t)
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: tight
+  pacing_rule: >-
+    A fala conduz o tempo. O gancho (dor) e a revelação do produto abrem em motion, sem apresentador. Cada passo
+    falado vira uma cena; o rosto volta nas viradas da conversa, no resumo e na chamada final. Cada elemento entra
+    no início da palavra que o justifica (âncoras de palavra).
+  remove_explicit_mistakes: true
+  retakes: keep_best_take   # tomadas repetidas no áudio: escolher a completa e cortar a outra pela EDL
+  filler_policy: conservative
+  max_unmotivated_silence_seconds: 0.15
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.15
+    keep_pause_seconds: 0
+    word_handle_seconds: 0.1
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  min_jump_cut_interval_seconds: 0.9
+visual:
+  first_frame: full_composition          # nada vazio ou preto no quadro 0
+  presenter_framing: static_centered     # mediana do rosto por trecho; câmera que segue o rosto é proibida
+  punch_ins: first_face_only
+  max_punch_in_scale: 1.10
+  continuous_motion: required            # deriva/zoom lento em toda cena; nada parado > 0,4 s
+  scene_library:
+    - hook_gallery: celular 3D com galeria de fotos variada, contador e selo da dor
+    - reveal_timeline: brilho do produto no drop, clipes viram linha do tempo, resultado salta à frente
+    - app_agent: réplica realista do app onde o produto roda (anexar, pedir, resposta digitando, carimbo)
+    - upload_raw: arquivo bruto entrando, forma de onda com marcas de erro/pausa/repetição
+    - models_dial: grade 3D de opções com mostrador contando, opção escolhida sai do plano, pedido digitado
+    - editor_checklist: editor com checklist marcando no ritmo da fala e linha do tempo
+    - result_phone: resultado no celular com paleta de cores, fonte e legenda sendo escolhidas
+    - typed_request / version_update: pedido de ajuste digitado e nova versão
+    - face_title / face_steps / face_cta: rosto com título cinético, resumo em passos, chamada para ação
+  side_panel: neste_video_steps          # painel de vidro com o passo atual aceso, só nos trechos com rosto
+  variation_rule: >-
+    Cada anúncio combina cenas diferentes, em outra ordem, com outros textos. Variar o gancho, a revelação e as
+    cenas de passo conforme o roteiro; não repetir a mesma sequência em todos os anúncios.
+  random_effects: false
+motion:
+  entrances: short_fade_and_slide        # 0,35-0,55 s; sem giros, zoom forte ou flashes
+  titles: left_aligned_kinetic_with_key_block
+  block_reveal: hidden_until_its_word    # o bloco do título nunca aparece vazio
+captions:
+  enabled: true
+  style: word_by_word_highlight
+  max_words: 3
+  placement: lower_third_clear_of_content   # ~75% da altura no rosto, ~81% nas cenas de motion
+  rule: >-
+    Só palavras realmente ditas, com a grafia correta (corrigir reconhecimento: nomes de produto e marcas).
+    Texto grande branco com sombra; a palavra falada fica dentro de um bloco na cor principal da ID.
+  font_source: explicit_visual_identity
+audio:
+  normalize: true
+  voice_cleanup: local_deepfilternet_preferred
+  loudness_target_lufs: -14
+  true_peak_db: -1.2
+  edge_fade_ms: 25
+  music: requested_per_job          # gerada ou fornecida; nunca paga sem autorização da chamada
+  music_drop_on_reveal: preferred
+  sound_effects_policy: sparse_key_moments_only
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 17
+  audio_codec: aac
+  audio_bitrate: 256k
+tooling:
+  kit: studio/ad-motion/kit
+  usage: >-
+    Criar jobs/<id>/job.json a partir de studio/ad-motion/example/job.example.json e rodar
+    studio/ad-motion/kit/ad_motion.py --job jobs/<id> plan | stills | track | frames … | base | overlay | audio | final | qa.
+  palette_roles: p (principal), p-hi (destaque claro), ink (texto escuro), deep (fundo escuro)
+qa:
+  black_segment_seconds: 0.5
+  frozen_stretch_seconds: 0.4
+  first_frame_filled: required
+  captions_clear_of_cards: required
+  presenter_framing_stable: required
+  full_decode_without_errors: required
+forbidden:
+  - automatic_logo
+  - automatic_wordmark
+  - inherited_brand_text
+  - automatic_branded_end_card
+  - inherit_palette_from_format
+  - inherit_font_from_format
+  - automatic_personal_identity
+  - face_following_camera
+  - sound_effect_on_every_title
+  - gratuitous_zoom
+  - random_transition
+  - stretch_video
+  - delete_source
+design:
+  source: explicit_visual_identity
+  palette_from_format: false
+  fonts_from_format: false
+  logos_enabled: false
+reference_materials:
+  video: examples/reference-library/F22/anuncio-com-motion/reference.mp4
+  analysis: examples/reference-library/F22/anuncio-com-motion/analysis.json
