@@ -164,6 +164,12 @@ def track(job: Job, step=0.2):
     (job.dir / 'analysis/face_track.json').write_text(json.dumps(out), encoding='utf-8'); print('track ok', list(out))
 
 
+def track_safe(job: Job):
+    """Face measurement is an optimisation: without OpenCV (or on failure) faces stay center-framed."""
+    try: track(job)
+    except Exception as e: print('track ignorado (enquadramento central):', type(e).__name__, str(e)[:120])
+
+
 def face_vf(job, key, zoom, trackpts=None, punch=False):
     sw, sh = src_dims(job, key); rot = 'transpose=2,' if job.rotate(key) == 'ccw' else ''
     cxs = [p[1] for p in trackpts] if trackpts else [.5]; cy = sorted(p[2] for p in trackpts)[len(trackpts) // 2] if trackpts else .35
@@ -388,6 +394,6 @@ def qa(job: Job, video=None):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); ap.add_argument('--job', required=True); ap.add_argument('cmd'); ap.add_argument('args', nargs='*')
     a = ap.parse_args(); job = Job(Path(a.job))
-    {'plan': lambda: plan(job), 'stills': lambda: still_and_thumbs(job), 'track': lambda: track(job), 'base': lambda: base(job),
+    {'plan': lambda: plan(job), 'stills': lambda: still_and_thumbs(job), 'track': lambda: track_safe(job), 'base': lambda: base(job),
      'overlay': lambda: overlay(job, int(a.args[0]) if a.args else 5), 'frames': lambda: frames(job, [float(x) for x in a.args]),
      'audio': lambda: audio(job), 'final': lambda: final(job, a.args[0] if a.args else None), 'qa': lambda: qa(job, a.args[0] if a.args else None)}[a.cmd]()
