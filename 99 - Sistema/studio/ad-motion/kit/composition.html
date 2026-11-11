@@ -107,7 +107,9 @@ function bgScene(t0,t1,opts={}){ // dark purple world, fades in/out
   return b}
 function kinetic(parent,text,cls,t,stagger=.035){ // splits text in chars and pops them
   const d=el(`<div class="big ${cls||''}"></div>`,parent);
-  text.split('').forEach(c=>{const s=document.createElement('span');s.className='ch';s.textContent=c===' '?' ':c;d.appendChild(s)});
+  text.split(' ').forEach((word,wi,arr)=>{const wd=document.createElement('span');wd.style.whiteSpace='nowrap';wd.style.display='inline-block';   // break lines only between words
+    word.split('').forEach(c=>{const s=document.createElement('span');s.className='ch';s.textContent=c;wd.appendChild(s)});d.appendChild(wd);
+    if(wi<arr.length-1)wd.style.marginRight='.26em';});
   tl.set(d,{visibility:'hidden'},0);tl.set(d,{visibility:'visible'},t);
   if(cls==='alt')tl.from(d,{clipPath:'inset(0 100% 0 0)',duration:.35,ease:'power3.inOut'},t);
   tl.from(d.querySelectorAll('.ch'),{yPercent:55,opacity:0,scale:.85,filter:'blur(8px)',duration:.5,ease:'power3.out',stagger},t);
@@ -449,9 +451,9 @@ function sceneT8(sg){ // result: identity panel (palette being chosen, font, cap
   const ph=el(`<div class="phone" style="left:560px;top:380px;width:450px;height:860px">
      <div class="abs" style="inset:0;background:#000 url('${PLAN.still}') center/cover"></div>
      <div class="tint abs" style="inset:0;background:linear-gradient(180deg,rgba(60,60,70,.35),transparent 45%)"></div>
-     <div class="abs" style="left:0;right:0;top:64px;text-align:center"><div class="mono" style="font-size:14px;letter-spacing:.32em;color:#fff">VOCÊ TEM ALGUM</div>
-       <div style="font-weight:900;font-size:54px;line-height:.95;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5)">VÍDEO<br><span class="acc" style="display:inline-block;margin-top:6px;padding:2px 12px 6px;border-radius:10px;background:#555">PARADO?</span></div></div>
-     <div class="abs" style="left:0;right:0;bottom:110px;text-align:center;font-weight:900;font-size:30px;color:#fff;text-shadow:0 2px 8px #000">no seu <span class="acc2" style="padding:0 8px;border-radius:8px;background:#555">celular</span></div>
+     <div class="abs" style="left:0;right:0;top:64px;text-align:center"><div class="mono" style="font-size:14px;letter-spacing:.32em;color:#fff">${pr(sg,'phone_label','O SEU VÍDEO')}</div>
+       <div style="font-weight:900;font-size:54px;line-height:.95;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5)">${pr(sg,'phone_l1','EDITADO')}<br><span class="acc" style="display:inline-block;margin-top:6px;padding:2px 12px 6px;border-radius:10px;background:#555">${pr(sg,'phone_l2','EM MINUTOS')}</span></div></div>
+     <div class="abs" style="left:0;right:0;bottom:110px;text-align:center;font-weight:900;font-size:30px;color:#fff;text-shadow:0 2px 8px #000">${pr(sg,'phone_cap_a','pronto pra')} <span class="acc2" style="padding:0 8px;border-radius:8px;background:#555">${pr(sg,'phone_cap_b','postar')}</span></div>
      <div class="shine"></div></div>`,b);
   tl.from(ph,{y:80,opacity:0,duration:.5,ease:'power2.out'},tr);
   // identity panel (left)
