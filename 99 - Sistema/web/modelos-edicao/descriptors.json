@@ -907,5 +907,67 @@
       "história",
       "dark"
     ]
+  },
+  "F22": {
+    "category": "stories",
+    "categories": [
+      "stories"
+    ],
+    "tags": [
+      "Colagem",
+      "Stop-motion",
+      "Sem apresentador",
+      "Humor"
+    ],
+    "use": "Contar uma história, curiosidade, briga ou bastidor com humor, sem aparecer: cada frase vira uma cena de papel recortado com uma piada visual.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Narração (gravada ou locução)",
+      "Fotos das pessoas citadas, para recortar",
+      "Ideia de piada visual para cada frase (opcional)"
+    ],
+    "buildingBlocks": [
+      "Recortes de papel em P&B",
+      "Faixas de texto palavra por palavra",
+      "Objetos-piada e rabiscos",
+      "Fundos de papel e raios",
+      "Stop-motion e folha deslizando"
+    ],
+    "searchTerms": [
+      "colagem",
+      "colagem de papel",
+      "papel",
+      "recorte",
+      "recortes",
+      "papel recortado",
+      "zine",
+      "fanzine",
+      "scrapbook",
+      "stop motion",
+      "stop-motion",
+      "animação",
+      "animacao",
+      "humor",
+      "engraçado",
+      "engracado",
+      "meme",
+      "piada",
+      "história",
+      "historia",
+      "curiosidade",
+      "versus",
+      "briga",
+      "narração",
+      "narracao",
+      "sem aparecer",
+      "sem apresentador",
+      "faixas",
+      "texto palavra por palavra",
+      "raios",
+      "retrô",
+      "retro",
+      "vintage"
+    ]
   }
 }

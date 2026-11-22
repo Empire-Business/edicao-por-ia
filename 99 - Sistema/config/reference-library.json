@@ -1628,6 +1628,121 @@
         }
       ],
       "missing_sources": []
+    },
+    "F22": {
+      "code": "F22",
+      "name": "Colagem de Papel",
+      "uid": "official.293e8e9831874a1290677daf7051f280",
+      "references": [
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/README.md",
+          "kind": "reference_analysis",
+          "sha256": "3f08436aee83d1b22d0d6d003a4aa67add68f9d434a7b2b04d9a137387fb418e",
+          "bytes": 1418,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2"
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "03428ae5678d2abbf741825e37787d28bcfcd6813e115e49ce83334aa39c7ef5",
+          "bytes": 7914,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2"
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/cenas.example.py",
+          "kind": "reference_analysis",
+          "sha256": "b7ae999e764658edd1ea4dc539d62a6bc91fb13a364d9b0ed91b89bf5bb32a22",
+          "bytes": 8528,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2"
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/character-card.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "25eb1f26dcb53686534a7f173a06a65fa9cb9b6a83d2316de83d7176c28d1fef",
+          "bytes": 105610,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "\"Pra quem não conhece\": ficha em folha de caderno com fita, rosto recortado e dados em faixas coladas no instante em que são ditos.",
+          "at_seconds": 10.5
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/closing.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4623801178abb0c5922cda0566628c73d4db2dd6003c52b86fdfad81f9293e2b",
+          "bytes": 105560,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "Fecho em papel creme: objeto recortado (relógio) junto do protagonista e a frase final em faixas.",
+          "at_seconds": 53.0
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/cutouts.example.json",
+          "kind": "reference_analysis",
+          "sha256": "32d593da323b920e21793b18845b65d89ffc29763b63fc171e508490ab4121be",
+          "bytes": 1535,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2"
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/impact-burst.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "cdd7d6bd7aaa9f7b15137f09d2b38a5bfc7f613da5289e389c89a35281a8e3ee",
+          "bytes": 170291,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "Momento de impacto com raios: foto de época em P&B como cartão impresso e a ação em faixa colorida.",
+          "at_seconds": 23.8
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/literal-props.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "409c904b9e10e00310373b7d1796995b49ff1afab6188332229b3866b93dc400",
+          "bytes": 104462,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "Piada visual literal: \"estacionava\" vira placa de proibido estacionar recortada; foto impressa com borda de papel.",
+          "at_seconds": 19.5
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/opening.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ee67d24ad5ef23e36b06889f856e1a79872ca01cd8c8f89343ae14bed913cbf4",
+          "bytes": 181978,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "Abertura sobre raios na cor da ID: protagonista recortado com borda de papel e o nome em faixas; a palavra de impacto entra maior, na cor principal.",
+          "at_seconds": 3.9
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "bytes": 8667510,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2"
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/reveal.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "58c080461dbfe97c4e755e5b0df6e2676fdbc8c9a5d9569f933fef560b82d674",
+          "bytes": 168441,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "Revelação sobre raios: os novos personagens recortados lado a lado.",
+          "at_seconds": 31.6
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/silhouette-tease.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9dc75fde1117e9e552e9485ebca2740743aef80b33949bbf02f52c6be5dc29b3",
+          "bytes": 119810,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "Suspense antes da revelação: silhuetas pretas com borda de papel e rabisco de ondas para \"do outro lado do oceano\".",
+          "at_seconds": 29.8
+        },
+        {
+          "path": "examples/reference-library/F22/colagem-de-papel/versus.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "caa914deb3285189a108ef1f4b32650868b63fada23689267155457a5ca4b55c",
+          "bytes": 125963,
+          "source_sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+          "caption": "Confronto: personagem recortado dentro de um octógono desenhado à mão, sobre raios.",
+          "at_seconds": 45.5
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -2192,7 +2307,20 @@
     "examples/reference-library/F21/mural-de-investigacao/panorama.jpg": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
     "examples/reference-library/F21/mural-de-investigacao/reference.mp4": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
     "examples/reference-library/F21/mural-de-investigacao/status-cards.jpg": "4b05820686a81fbd50418ce0ef49f1e34215ebb10f899d706233a63238cace1b",
-    "examples/reference-library/F21/mural-de-investigacao/suspects.jpg": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb"
+    "examples/reference-library/F21/mural-de-investigacao/suspects.jpg": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb",
+    "examples/reference-library/F22/colagem-de-papel/README.md": "3f08436aee83d1b22d0d6d003a4aa67add68f9d434a7b2b04d9a137387fb418e",
+    "examples/reference-library/F22/colagem-de-papel/analysis.json": "03428ae5678d2abbf741825e37787d28bcfcd6813e115e49ce83334aa39c7ef5",
+    "examples/reference-library/F22/colagem-de-papel/cenas.example.py": "b7ae999e764658edd1ea4dc539d62a6bc91fb13a364d9b0ed91b89bf5bb32a22",
+    "examples/reference-library/F22/colagem-de-papel/character-card.jpg": "25eb1f26dcb53686534a7f173a06a65fa9cb9b6a83d2316de83d7176c28d1fef",
+    "examples/reference-library/F22/colagem-de-papel/closing.jpg": "4623801178abb0c5922cda0566628c73d4db2dd6003c52b86fdfad81f9293e2b",
+    "examples/reference-library/F22/colagem-de-papel/cutouts.example.json": "32d593da323b920e21793b18845b65d89ffc29763b63fc171e508490ab4121be",
+    "examples/reference-library/F22/colagem-de-papel/impact-burst.jpg": "cdd7d6bd7aaa9f7b15137f09d2b38a5bfc7f613da5289e389c89a35281a8e3ee",
+    "examples/reference-library/F22/colagem-de-papel/literal-props.jpg": "409c904b9e10e00310373b7d1796995b49ff1afab6188332229b3866b93dc400",
+    "examples/reference-library/F22/colagem-de-papel/opening.jpg": "ee67d24ad5ef23e36b06889f856e1a79872ca01cd8c8f89343ae14bed913cbf4",
+    "examples/reference-library/F22/colagem-de-papel/reference.mp4": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2",
+    "examples/reference-library/F22/colagem-de-papel/reveal.jpg": "58c080461dbfe97c4e755e5b0df6e2676fdbc8c9a5d9569f933fef560b82d674",
+    "examples/reference-library/F22/colagem-de-papel/silhouette-tease.jpg": "9dc75fde1117e9e552e9485ebca2740743aef80b33949bbf02f52c6be5dc29b3",
+    "examples/reference-library/F22/colagem-de-papel/versus.jpg": "caa914deb3285189a108ef1f4b32650868b63fada23689267155457a5ca4b55c"
   },
   "retired_generations": {
     "factory.f02": {

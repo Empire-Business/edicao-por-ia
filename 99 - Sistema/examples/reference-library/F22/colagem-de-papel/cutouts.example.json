@@ -1,0 +1,152 @@
+[
+{
+"out": "sd_head",
+"src": "sd_nadar.jpg",
+"crop": [
+0.12,
+0.12,
+0.88,
+0.66
+],
+"mode": "person",
+"neck": 0.93,
+"width": 700,
+"border": 16
+},
+{
+"out": "sd_bust",
+"src": "sd_nadar.jpg",
+"crop": [
+0,
+0.08,
+1,
+1
+],
+"mode": "person",
+"width": 800,
+"border": 16
+},
+{
+"out": "orville_head",
+"src": "orville.jpg",
+"crop": [
+0.15,
+0.08,
+0.85,
+0.62
+],
+"mode": "person",
+"neck": 0.95,
+"width": 600,
+"border": 16
+},
+{
+"out": "wilbur_head",
+"src": "wilbur.jpg",
+"crop": [
+0.15,
+0.06,
+0.85,
+0.6
+],
+"mode": "person",
+"neck": 0.95,
+"width": 600,
+"border": 16
+},
+{
+"out": "orville_bust",
+"src": "orville.jpg",
+"crop": [
+0,
+0,
+1,
+1
+],
+"mode": "person",
+"width": 700,
+"border": 16
+},
+{
+"out": "wilbur_bust",
+"src": "wilbur.jpg",
+"crop": [
+0,
+0,
+1,
+1
+],
+"mode": "person",
+"width": 700,
+"border": 16
+},
+{
+"out": "coffee",
+"src": "coffee.jpg",
+"crop": [
+0.5,
+0,
+1,
+0.75
+],
+"mode": "print",
+"bw": false,
+"width": 520,
+"border": 14
+},
+{
+"out": "p_14bis",
+"src": "14bis_b.jpg",
+"mode": "print",
+"width": 820,
+"border": 18
+},
+{
+"out": "p_14bis_ground",
+"src": "14bis_c.jpg",
+"mode": "print",
+"width": 820,
+"border": 18
+},
+{
+"out": "p_balloon",
+"src": "balloon.jpg",
+"crop": [
+0,
+0,
+1,
+0.9
+],
+"mode": "print",
+"width": 620,
+"border": 18
+},
+{
+"out": "p_no9",
+"src": "no9.jpg",
+"mode": "print",
+"width": 820,
+"border": 18
+},
+{
+"out": "p_firstflight",
+"src": "firstflight.jpg",
+"mode": "print",
+"width": 860,
+"border": 18
+},
+{
+"out": "p_eiffel",
+"src": "eiffel.png",
+"crop": [
+0.52,
+0.08,
+0.94,
+0.68
+],
+"mode": "print",
+"bw": false,
+"width": 560,
+"border": 18
+}
+]
