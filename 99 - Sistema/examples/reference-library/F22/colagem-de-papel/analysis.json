@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "format_code": "F22",
+  "format_uid": "official.293e8e9831874a1290677daf7051f280",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F22/colagem-de-papel/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Uma narração em off (gravada ou locução) com tom leve ou de humor, sem apresentador em câmera; fotos das pessoas citadas (para recortar) com licença e crédito, e a ideia de piada visual de cada frase. A ID visual é escolhida separadamente; a cor principal dela vira a cor das faixas de destaque e dos raios.",
+    "mechanism": "Vídeo vertical 9:16 todo em colagem de papel animada em stop-motion. Uma cena por frase da narração (~3 a 5 s): o fundo troca entre papel creme, kraft amassado, cartolina preta e raios na cor da ID. Pessoas aparecem recortadas em P&B com borda branca grossa e irregular (cabeça ou busto), fotos de lugares e objetos entram como cartões impressos, e objetos recortados ou desenhados ilustram literalmente cada frase. Rabiscos à mão (setas, círculos, estrelinhas, coroa, globo, octógono) completam a piada. O texto em tela são faixas de papel coladas palavra a palavra no instante em que são ditas: contexto pequeno em preto/branco e palavra de impacto grande na cor da ID. Os elementos tremem a 12 qps; a troca de cena é corte seco ou uma folha de papel que desliza. Silhueta antes de revelar um personagem novo e versus em arena desenhada. Sem legenda separada. Grão de papel e de filme em tudo.",
+    "steps": [
+      "Transcrever a narração com tempo por palavra e corrigir a grafia dos nomes pelo roteiro.",
+      "Limpar a fala (erros, retakes, silêncios no padrão apertado) antes de montar.",
+      "Dividir em cenas, uma por frase/ideia, e escolher para cada uma o fundo, o título (contexto + palavra de impacto) e a piada visual literal.",
+      "Buscar fotos com licença verificável e registrar fonte e licença; recortar com tools/paper_collage.py cutouts (pessoa, foto impressa ou objeto em fundo branco) e conferir as bordas em tamanho real.",
+      "Escrever o roteiro de cenas (cenas.py) com faixas, recortes e rabiscos ancorados nas palavras ditas e revisar quadros-chave com tools/paper_collage.py frames.",
+      "Renderizar com tools/paper_collage.py render (stop-motion a 12 qps, pop ou deslize curtos, corte seco ou folha deslizando).",
+      "Gerar os efeitos de papel com sfx e mixar com mix: narração a −16 LUFS / −1,5 dBTP, trilha leve só se o usuário escolher.",
+      "QA: folha de quadros, faixas legíveis e iguais à fala, nenhum texto repetido em legenda, recortes limpos, zero quadro preto."
+    ],
+    "avoid": "Não usar apresentador em câmera nem legenda karaokê duplicando as faixas; não escrever em tela o que não foi dito; não gerar rosto de pessoa real nem usar foto sem licença; não usar transições suaves de software ou zoom aleatório; não deixar faixa rápida demais para ler; não copiar tema, pessoas, piadas, @ ou logo do exemplo. Cores e fontes vêm da ID escolhida."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/opening.jpg",
+      "sha256": "ee67d24ad5ef23e36b06889f856e1a79872ca01cd8c8f89343ae14bed913cbf4",
+      "at_seconds": 3.9,
+      "caption": "Abertura sobre raios na cor da ID: protagonista recortado com borda de papel e o nome em faixas; a palavra de impacto entra maior, na cor principal."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/character-card.jpg",
+      "sha256": "25eb1f26dcb53686534a7f173a06a65fa9cb9b6a83d2316de83d7176c28d1fef",
+      "at_seconds": 10.5,
+      "caption": "\"Pra quem não conhece\": ficha em folha de caderno com fita, rosto recortado e dados em faixas coladas no instante em que são ditos."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/literal-props.jpg",
+      "sha256": "409c904b9e10e00310373b7d1796995b49ff1afab6188332229b3866b93dc400",
+      "at_seconds": 19.5,
+      "caption": "Piada visual literal: \"estacionava\" vira placa de proibido estacionar recortada; foto impressa com borda de papel."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/impact-burst.jpg",
+      "sha256": "cdd7d6bd7aaa9f7b15137f09d2b38a5bfc7f613da5289e389c89a35281a8e3ee",
+      "at_seconds": 23.8,
+      "caption": "Momento de impacto com raios: foto de época em P&B como cartão impresso e a ação em faixa colorida."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/silhouette-tease.jpg",
+      "sha256": "9dc75fde1117e9e552e9485ebca2740743aef80b33949bbf02f52c6be5dc29b3",
+      "at_seconds": 29.8,
+      "caption": "Suspense antes da revelação: silhuetas pretas com borda de papel e rabisco de ondas para \"do outro lado do oceano\"."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/reveal.jpg",
+      "sha256": "58c080461dbfe97c4e755e5b0df6e2676fdbc8c9a5d9569f933fef560b82d674",
+      "at_seconds": 31.6,
+      "caption": "Revelação sobre raios: os novos personagens recortados lado a lado."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/versus.jpg",
+      "sha256": "caa914deb3285189a108ef1f4b32650868b63fada23689267155457a5ca4b55c",
+      "at_seconds": 45.5,
+      "caption": "Confronto: personagem recortado dentro de um octógono desenhado à mão, sobre raios."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/closing.jpg",
+      "sha256": "4623801178abb0c5922cda0566628c73d4db2dd6003c52b86fdfad81f9293e2b",
+      "at_seconds": 53.0,
+      "caption": "Fecho em papel creme: objeto recortado (relógio) junto do protagonista e a frase final em faixas."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/reference.mp4",
+      "sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2"
+    }
+  ],
+  "observations": [
+    "Mecânica tirada de um Reel de colagem de papel animada (1:25, 27 frases, ~3 s por cena); o Reel não é distribuído, só a mecânica.",
+    "Testado no demo de 56 s: 14 cenas, uma por frase, renderizado com tools/paper_collage.py.",
+    "Faixas entram no início da palavra falada (tempos por palavra da transcrição); a palavra de impacto vai na cor da ID, maior.",
+    "Fundos alternam a cada cena; raios só em abertura, impacto, revelação e versus.",
+    "Recortes de pessoa com MODNet, P&B de alto contraste, borda branca irregular e sombra; fotos de lugar e objeto como cartões impressos.",
+    "Piadas visuais literais: coroa no \"rei do café\", placa no \"estacionava\", olho riscado no \"quase ninguém viu\", globo no \"resto do mundo\".",
+    "Silhuetas com borda de papel antes de revelar personagens novos; versus dentro de um octógono desenhado.",
+    "Elementos tremem a 12 qps e a cena tem zoom lento do fundo; troca por corte seco ou folha deslizando com whoosh.",
+    "Efeitos de pop e papel gerados a partir das entradas do render, sem banco de sons externo."
+  ],
+  "audio": {
+    "voice": "narração em off normalizada a −16 LUFS / −1,5 dBTP",
+    "music": "opcional, leve e abaixada pela voz; o demo não usa trilha",
+    "sound_effects": "pop, papel e whoosh discretos nas entradas"
+  },
+  "provenance": {
+    "created": "2026-11-22",
+    "by": "autor",
+    "source": "demo \"Santos Dumont x irmãos Wright\" produzido com tools/paper_collage.py; cópia H.264 720x1280. Fotos da Wikimedia Commons em domínio público, CC BY-SA 4.0 ou CC0 (lista no README). Narração em voz de IA gerada para o demo.",
+    "publication_authorized": "O autor aprovou em 22/11/2026 publicar este demo como exemplo do F22 no repositório e na galeria."
+  },
+  "limitations": [
+    "Receita em rascunho, validada em uma edição (o demo).",
+    "Recorte de pessoa depende do download do MODNet na primeira execução."
+  ]
+}

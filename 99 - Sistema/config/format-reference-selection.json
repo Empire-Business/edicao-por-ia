@@ -180,6 +180,14 @@
         "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
       },
       "reference_conflicts": []
+    },
+    "official.293e8e9831874a1290677daf7051f280": {
+      "code": "F22",
+      "primary_reference": {
+        "path": "examples/reference-library/F22/colagem-de-papel/reference.mp4",
+        "sha256": "e378b82b8746938c3a1346597e84db874c50725edb07a663931effdb82f7dcc2"
+      },
+      "reference_conflicts": []
     }
   }
 }

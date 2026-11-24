@@ -490,5 +490,47 @@
       "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
       "caption": "Panorama final: as evidências do caso reunidas e ligadas por fio, com a frase de fecho."
     }
+  ],
+  "F22": [
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/opening.jpg",
+      "sha256": "ee67d24ad5ef23e36b06889f856e1a79872ca01cd8c8f89343ae14bed913cbf4",
+      "caption": "Abertura sobre raios na cor da ID: protagonista recortado com borda de papel e o nome em faixas; a palavra de impacto entra maior, na cor principal."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/character-card.jpg",
+      "sha256": "25eb1f26dcb53686534a7f173a06a65fa9cb9b6a83d2316de83d7176c28d1fef",
+      "caption": "\"Pra quem não conhece\": ficha em folha de caderno com fita, rosto recortado e dados em faixas coladas no instante em que são ditos."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/literal-props.jpg",
+      "sha256": "409c904b9e10e00310373b7d1796995b49ff1afab6188332229b3866b93dc400",
+      "caption": "Piada visual literal: \"estacionava\" vira placa de proibido estacionar recortada; foto impressa com borda de papel."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/impact-burst.jpg",
+      "sha256": "cdd7d6bd7aaa9f7b15137f09d2b38a5bfc7f613da5289e389c89a35281a8e3ee",
+      "caption": "Momento de impacto com raios: foto de época em P&B como cartão impresso e a ação em faixa colorida."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/silhouette-tease.jpg",
+      "sha256": "9dc75fde1117e9e552e9485ebca2740743aef80b33949bbf02f52c6be5dc29b3",
+      "caption": "Suspense antes da revelação: silhuetas pretas com borda de papel e rabisco de ondas para \"do outro lado do oceano\"."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/reveal.jpg",
+      "sha256": "58c080461dbfe97c4e755e5b0df6e2676fdbc8c9a5d9569f933fef560b82d674",
+      "caption": "Revelação sobre raios: os novos personagens recortados lado a lado."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/versus.jpg",
+      "sha256": "caa914deb3285189a108ef1f4b32650868b63fada23689267155457a5ca4b55c",
+      "caption": "Confronto: personagem recortado dentro de um octógono desenhado à mão, sobre raios."
+    },
+    {
+      "path": "examples/reference-library/F22/colagem-de-papel/closing.jpg",
+      "sha256": "4623801178abb0c5922cda0566628c73d4db2dd6003c52b86fdfad81f9293e2b",
+      "caption": "Fecho em papel creme: objeto recortado (relógio) junto do protagonista e a frase final em faixas."
+    }
   ]
 }

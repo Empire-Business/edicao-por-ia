@@ -1,0 +1,128 @@
+id: f22-colagem-de-papel-v1
+version: 1
+status: draft
+format_code: F22
+created: 2026-11-22
+origin: >-
+  Formato oficial criado a pedido do autor em 22/11/2026 a partir de um Reel de colagem de papel animada (1:25)
+  usado só como referência de mecanismo, e de uma edição real: o demo público "Santos Dumont x irmãos Wright",
+  com narração própria (voz de IA) e fotos em domínio público ou licença livre. O Reel de referência não é
+  distribuído; o exemplo publicado é o demo.
+purpose: >-
+  Narração em off contada como colagem de papel recortado (estilo zine/fanzine animado em stop-motion): cabeças e
+  corpos recortados em P&B com borda branca, faixas de texto coladas palavra a palavra e objetos-piada que
+  ilustram literalmente cada frase.
+engine: python_seek            # tools/paper_collage.py: quadro a quadro a partir do tempo t, stop-motion a 12 qps
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  fit: cover
+editorial:
+  target_pace: fast_natural
+  pacing_rule: >-
+    A narração conduz o tempo. Uma cena por frase (média ~3 s na referência, 27 frases em 84 s). Dentro da cena,
+    cada palavra-chave do título entra colada no início da palavra falada; elementos de apoio entram nas palavras
+    que os justificam. A cena só troca quando a frase muda de ideia.
+  remove_explicit_mistakes: true
+  filler_policy: aggressive
+  max_unmotivated_silence_seconds: 0.4
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.25
+    keep_pause_seconds: 0.12
+    word_handle_seconds: 0.06
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  min_jump_cut_interval_seconds: 0.8
+  preserve_required_phrases: []
+  presenter_on_camera: none
+structure:
+  opening: >-
+    Primeiro segundo já com o conflito montado: nome do protagonista em faixa grande, corpo recortado e o
+    antagonista ao lado, sobre fundo de raios (sunburst). Sem vinheta.
+  introduction: '"Pra quem não conhece": ficha do personagem em folha de caderno presa com fita, com rótulo de papel.'
+  middle: >-
+    Cada frase vira uma piada visual literal tirada da própria fala: coroa para "rei", placa de proibido para
+    "estacionava", olho riscado para "quase ninguém viu", globo para "resto do mundo", relógio para o fato final.
+    Rostos podem ser coloridos ou deformados para humor, sem ridicularizar pessoas reais.
+  reveal: Silhueta preta com "?" sobre raios antes de revelar o personagem novo.
+  versus: Os dois corpos recortados com "VS" num octógono/arena desenhado em linha.
+  closing: Fecho em papel com o objeto ou o fato que encerra a história; chamada (data, oferta, link) só quando a narração pede.
+visual:
+  primary_composition: paper_collage_scene_per_sentence
+  backgrounds:
+    rotate_between: [papel creme liso, papel kraft amassado, cartolina preta com giz, raios (sunburst) na cor principal da ID]
+    rule: Trocar de fundo a cada cena; raios só em momentos de impacto (abertura, revelação, versus, fechamento).
+  cutouts: >-
+    Pessoas sempre recortadas (rosto ou corpo inteiro), P&B com contraste alto e granulação, borda branca de papel
+    grossa e irregular, leve sombra. Cabeça grande sobre corpo pequeno para caricatura. Nunca gerar rosto de pessoa real.
+  text_strips: >-
+    Faixas de papel coladas: texto preto em fundo branco ou branco em fundo preto, condensada bold caixa alta; a
+    palavra de impacto em faixa da cor principal da ID, maior. Hierarquia: linha pequena de contexto + palavra
+    grande. Cada palavra entra no instante em que é dita, levemente rotacionada (±3°).
+  props: Objetos recortados ou desenhados ligados à fala, rabiscos à mão (setas, círculos, estrelinhas, coroa, globo, octógono), fita adesiva, carimbos.
+  motion: >-
+    Stop-motion a ~12 qps nos elementos (tremidinha de papel), entradas por "pop" com leve overshoot ou deslize
+    curto; zoom lento do fundo. Sem animação suave de software.
+  transitions: >-
+    Corte seco para um papel novo, às vezes uma folha em branco que desliza/cobre a cena (paper wipe ~0,2 s).
+    Rabiscos e elementos se desenham na entrada.
+  texture: Grão de papel e de filme sobre tudo; cores dessaturadas exceto a cor principal da ID.
+  punch_ins: none
+  random_effects: false
+captions:
+  enabled: false
+  rule: >-
+    Não há legenda karaokê separada: o texto em tela são as faixas coladas com as palavras-chave da própria fala
+    (nunca repetir a mesma frase em legenda e em tela). Só palavras realmente ditas, nomes com grafia correta.
+audio:
+  normalize: true
+  loudness_target_lufs: -16
+  true_peak_db: -1.5
+  edge_fade_ms: 5
+  voice: narração em off, ritmo de humor, sem apresentador em câmera
+  music_policy: trilha leve por baixo da fala
+  sound_effects_policy: efeitos de papel/pop/whoosh discretos nas entradas
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 18
+  audio_codec: aac
+  audio_bitrate: 192k
+tooling:
+  renderer: tools/paper_collage.py
+  usage: >-
+    Recortar as fotos com `tools/paper_collage.py cutouts <fotos> <recortes> cutouts.json` (pessoa com MODNet, foto
+    impressa ou objeto em fundo branco; borda de papel, P&B e grão) e gerar as peças com `props`. Escrever o roteiro
+    de cenas do trabalho (cenas.py: ACCENT com a cor principal da ID, CUT_DIR, WORDS, SCENE_DUR e SCENES com faixas,
+    imagens e rabiscos ancorados em palavras ditas). Revisar quadros-chave com `frames`, renderizar com `render`,
+    gerar os efeitos com `sfx` e mixar com `mix` (trilha opcional com `--music`, só com escolha do usuário).
+    Exemplo completo em examples/reference-library/F22/colagem-de-papel/cenas.example.py.
+  elements: >-
+    strip (faixa de papel; style w/k/a = branco, preto, cor da ID; keys liga cada palavra à fala), img (recorte;
+    anim pop/slide_*; sil para silhueta), doodle (circle, stars, rays, arrow, waves, wind, crown, eyex, globe, medal,
+    crowd, octagon, underline, line, question). Fundos: cream, kraft, black, burst. wipe_in na cena = folha deslizando.
+  cutouts: MODNet ONNX (Apache-2.0), baixado uma vez para .factory/models e conferido por hash.
+  fonts: assets/fonts/portable/anton-regular.ttf (faixas) e permanent-marker-regular.ttf (rabiscos), licenças livres.
+qa:
+  black_segment_seconds: 0.5
+  long_silence_seconds: 2.5
+  text_strip_matches_spoken_word: required
+  strip_readability: required
+  cutout_edge_review: required_full_size
+  no_caption_duplicate_of_on_screen_text: required
+forbidden:
+  - generated_face_of_real_person
+  - copied_branding_or_logo
+  - fixed_case_or_person
+  - text_not_spoken
+  - smooth_software_transitions
+  - unreadable_rapid_strips
+  - forced_call_to_action
+insertion_assets:
+  policy: encouraged
+  density: high
+  default_preferred_duration_s: 3
+  default_max_duration_s: 5
+  allow_image_motion: true

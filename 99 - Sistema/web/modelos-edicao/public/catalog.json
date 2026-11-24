@@ -1751,6 +1751,107 @@
         }
       ],
       "examples": []
+    },
+    {
+      "code": "F22",
+      "name": "Colagem de Papel",
+      "description": "Uma narração contada em colagem de papel animada: pessoas recortadas em P&B com borda branca, faixas de texto coladas palavra por palavra e objetos-piada que ilustram cada frase, em stop-motion.",
+      "category": "stories",
+      "tags": [
+        "Colagem",
+        "Stop-motion",
+        "Sem apresentador",
+        "Humor"
+      ],
+      "use": "Contar uma história, curiosidade, briga ou bastidor com humor, sem aparecer: cada frase vira uma cena de papel recortado com uma piada visual.",
+      "inputs": "Uma narração em off (gravada ou locução) com tom leve ou de humor, sem apresentador em câmera; fotos das pessoas citadas (para recortar) com licença e crédito, e a ideia de piada visual de cada frase. A ID visual é escolhida separadamente; a cor principal dela vira a cor das faixas de destaque e dos raios.",
+      "mechanism": "Vídeo vertical 9:16 todo em colagem de papel animada em stop-motion. Uma cena por frase da narração (~3 a 5 s): o fundo troca entre papel creme, kraft amassado, cartolina preta e raios na cor da ID. Pessoas aparecem recortadas em P&B com borda branca grossa e irregular (cabeça ou busto), fotos de lugares e objetos entram como cartões impressos, e objetos recortados ou desenhados ilustram literalmente cada frase. Rabiscos à mão (setas, círculos, estrelinhas, coroa, globo, octógono) completam a piada. O texto em tela são faixas de papel coladas palavra a palavra no instante em que são ditas: contexto pequeno em preto/branco e palavra de impacto grande na cor da ID. Os elementos tremem a 12 qps; a troca de cena é corte seco ou uma folha de papel que desliza. Silhueta antes de revelar um personagem novo e versus em arena desenhada. Sem legenda separada. Grão de papel e de filme em tudo.",
+      "steps": [
+        "Transcrever a narração com tempo por palavra e corrigir a grafia dos nomes pelo roteiro.",
+        "Limpar a fala (erros, retakes, silêncios no padrão apertado) antes de montar.",
+        "Dividir em cenas, uma por frase/ideia, e escolher para cada uma o fundo, o título (contexto + palavra de impacto) e a piada visual literal.",
+        "Buscar fotos com licença verificável e registrar fonte e licença; recortar com tools/paper_collage.py cutouts (pessoa, foto impressa ou objeto em fundo branco) e conferir as bordas em tamanho real.",
+        "Escrever o roteiro de cenas (cenas.py) com faixas, recortes e rabiscos ancorados nas palavras ditas e revisar quadros-chave com tools/paper_collage.py frames.",
+        "Renderizar com tools/paper_collage.py render (stop-motion a 12 qps, pop ou deslize curtos, corte seco ou folha deslizando).",
+        "Gerar os efeitos de papel com sfx e mixar com mix: narração a −16 LUFS / −1,5 dBTP, trilha leve só se o usuário escolher.",
+        "QA: folha de quadros, faixas legíveis e iguais à fala, nenhum texto repetido em legenda, recortes limpos, zero quadro preto."
+      ],
+      "avoid": "Não usar apresentador em câmera nem legenda karaokê duplicando as faixas; não escrever em tela o que não foi dito; não gerar rosto de pessoa real nem usar foto sem licença; não usar transições suaves de software ou zoom aleatório; não deixar faixa rápida demais para ler; não copiar tema, pessoas, piadas, @ ou logo do exemplo. Cores e fontes vêm da ID escolhida.",
+      "pattern": "f22-colagem-de-papel-v1",
+      "video": "assets/videos/F22-colagem-de-papel.mp4",
+      "vimeo": null,
+      "duration": 56,
+      "evidence": "video",
+      "evidenceLabel": "Demo do formato",
+      "evidenceNote": "Demo produzido com a ferramenta do formato: tema histórico, fotos em domínio público ou licença livre e narração em voz de IA. Tema, pessoas, fotos e piadas são do exemplo, não padrões; a cor de destaque vem da ID escolhida.",
+      "categories": [
+        "stories"
+      ],
+      "cameraRequired": false,
+      "hasPersonOnScreen": false,
+      "startingMaterials": [
+        "Narração (gravada ou locução)",
+        "Fotos das pessoas citadas, para recortar",
+        "Ideia de piada visual para cada frase (opcional)"
+      ],
+      "buildingBlocks": [
+        "Recortes de papel em P&B",
+        "Faixas de texto palavra por palavra",
+        "Objetos-piada e rabiscos",
+        "Fundos de papel e raios",
+        "Stop-motion e folha deslizando"
+      ],
+      "searchTerms": [
+        "colagem",
+        "colagem de papel",
+        "papel",
+        "recorte",
+        "recortes",
+        "papel recortado",
+        "zine",
+        "fanzine",
+        "scrapbook",
+        "stop motion",
+        "stop-motion",
+        "animação",
+        "animacao",
+        "humor",
+        "engraçado",
+        "engracado",
+        "meme",
+        "piada",
+        "história",
+        "historia",
+        "curiosidade",
+        "versus",
+        "briga",
+        "narração",
+        "narracao",
+        "sem aparecer",
+        "sem apresentador",
+        "faixas",
+        "texto palavra por palavra",
+        "raios",
+        "retrô",
+        "retro",
+        "vintage"
+      ],
+      "poster": "assets/posters/F22-colagem-de-papel.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F22-colagem-de-papel-frame-0.jpg",
+          "caption": "\"Pra quem não conhece\": ficha em folha de caderno com fita, rosto recortado e dados em faixas coladas no instante em que são ditos."
+        },
+        {
+          "poster": "assets/posters/F22-colagem-de-papel-frame-1.jpg",
+          "caption": "Piada visual literal: \"estacionava\" vira placa de proibido estacionar recortada; foto impressa com borda de papel."
+        },
+        {
+          "poster": "assets/posters/F22-colagem-de-papel-frame-2.jpg",
+          "caption": "Confronto: personagem recortado dentro de um octógono desenhado à mão, sobre raios."
+        }
+      ],
+      "examples": []
     }
   ],
   "identities": [
