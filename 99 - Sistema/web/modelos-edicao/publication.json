@@ -365,6 +365,29 @@
         "avoid": "Não inventar ou rotular errado provas, falas, fontes, datas ou resultados judiciais; não apresentar alegação como fato julgado; não ligar com fio o que a fala não liga; não usar foto sem licença nem gerar rosto de pessoa real; não mostrar criança vítima; não deixar foto com rosto cortado, escura ou ilegível; não usar cartões rápidos demais para ler; não copiar caso, pessoa, frases, selo, @ ou chamada do exemplo; nenhuma logo. Cores e fontes vêm da ID escolhida."
       },
       "asset_id": "F21-mural-de-investigacao"
+    },
+    {
+      "code": "F22",
+      "name": "Corte de Live 3D",
+      "description": "Trecho de live, podcast ou depoimento vira criativo 9:16 para anúncio: a fala real conduz e a prova aparece em cenas 3D (telas, celulares e texto) no momento certo, com chamada escrita \"Saiba mais\" no fim.",
+      "pattern": "f22-corte-de-live-3d-v1",
+      "uid": "official.56af1c22ff7d4a7ba80ecb661b35d4a6",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento em que alguém fala do produto/serviço (pode ser mais de uma fonte), e as provas do próprio usuário: vídeos ou telas reais do resultado (por exemplo, vídeos editados pela ferramenta), sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Corte vertical 9:16 de 25 a 45 s pensado como criativo de anúncio. A fala real conduz: gancho no primeiro segundo, uma virada (expectativa → surpresa) e a prova. A pessoa aparece em cartão ou círculo (live tem baixa resolução), com nome, papel e rótulo \"trecho da live\"; títulos curtos no alto e legenda das palavras ditas. Atrás, uma cena 3D (three.js) mostra a prova no momento em que a fala cita o resultado: parede viva de miniaturas desfocada, tela 3D com reflexo para vídeo longo, celulares em leque para vídeos curtos e a palavra-chave em texto 3D. Voz limpa e no mesmo nível entre as pessoas, trilha bem abaixo da fala com a virada no momento-chave. No fim, a fala termina e um cartão escrito com \"Saiba mais\" encerra o vídeo.",
+        "steps": [
+          "Transcrever as fontes e escolher o trecho pelo gancho mais forte e por uma virada clara; pode juntar trechos de mais de uma fonte mantendo o sentido.",
+          "Montar o EDL pelas palavras reais, com bordas ajustadas pela energia da voz e pausas internas cortadas (sem cortar sílabas nem repetir frase).",
+          "Limpar a voz (local por padrão; serviço pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar.",
+          "Separar as provas próprias (vídeo longo 16:9, vídeos curtos 9:16), conferir quadro a quadro que não têm marca de terceiros e rotular com honestidade.",
+          "Planejar as cenas pelas palavras: gancho com a pessoa sobre o fundo 3D, virada com brilho curto, prova longa, provas curtas, palavra-chave em 3D, cartão final.",
+          "Montar a composição pelo modelo motion/templates/corte-de-live-3d com as cores e fontes da ID escolhida e renderizar.",
+          "Mixar a trilha ~22 dB abaixo da voz com compressão lateral, virada no momento-chave e efeitos discretos; final −15 LUFS.",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, das provas (nítidas) e do CTA, ausência de preto e de logotipos."
+        ],
+        "avoid": "Não usar efeitos baratos (partículas aleatórias, holofotes, neon, glitch) nem 3D que não mostra prova. Não deixar a música competir com a fala. Não ampliar a live em tela cheia. Não usar vídeo, logotipo ou documento de terceiros como prova, nem sugerir que a prova é da pessoa entrevistada quando não é. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, o dourado ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "asset_id": "F22-corte-de-live-3d"
     }
   ],
   "reference_media": {
@@ -524,6 +547,14 @@
         "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
         "evidence_label": "Demo do formato",
         "evidence_note": "Demo produzido com a ferramenta do formato: caso histórico, fotos de época em domínio público e narração própria. Caso, pessoas e fotos são do exemplo, não padrões; cores e fontes vêm da ID escolhida."
+      }
+    ],
+    "F22": [
+      {
+        "path": "examples/reference-library/F22/corte-de-live-3d/reference.mp4",
+        "sha256": "441d7ce525b696d444a7abc39dda9ac8b8586ade3f45e710dd3d9b37cad56430",
+        "evidence_label": "Prévia aprovada pelo autor",
+        "evidence_note": "Prévia real aprovada pelo autor: corte de uma live com cliente, editado pelo Cortez. As provas são vídeos do próprio autor editados pelo Cortez. Pessoas, nomes, assunto, provas, o dourado e as fontes são do exemplo, não padrões; cores e fontes vêm da ID escolhida."
       }
     ]
   },
@@ -807,6 +838,29 @@
           "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77"
         },
         "caption": "Panorama final: as evidências do caso reunidas e ligadas por fio, com a frase de fecho."
+      }
+    ],
+    "F22": [
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/corte-de-live-3d/hook.jpg",
+          "sha256": "9b0eb77ce7bc0dbc5ea6acb839c2f8aa6d2d6d37dcddf99c6e771720b5cbd35e"
+        },
+        "caption": "Gancho no primeiro quadro: frase forte no alto, cartão da pessoa (\"trecho da live\", nome e papel) e legenda; ao fundo, a parede viva de provas em 3D, desfocada."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/corte-de-live-3d/long-screen.jpg",
+          "sha256": "3878b9c3b928f25a685100f84f660bf347480097c7f1e3d3a00c659d05750b5d"
+        },
+        "caption": "Prova de vídeo longo: tela 3D 16:9 com reflexo no chão tocando o vídeo longo editado pelo Cortez, com rótulo honesto."
+      },
+      {
+        "reference": {
+          "path": "examples/reference-library/F22/corte-de-live-3d/phones-fan.jpg",
+          "sha256": "9b33ac43594ae948058770cb73187f69d5c4ba125719b08b65742a2cff44dca2"
+        },
+        "caption": "Prova de vídeos curtos: celulares 3D abrem em leque, cada um tocando um vídeo curto editado pelo Cortez."
       }
     ]
   },

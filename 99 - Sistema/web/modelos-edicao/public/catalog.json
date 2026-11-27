@@ -1751,6 +1751,108 @@
         }
       ],
       "examples": []
+    },
+    {
+      "code": "F22",
+      "name": "Corte de Live 3D",
+      "description": "Trecho de live, podcast ou depoimento vira criativo 9:16 para anúncio: a fala real conduz e a prova aparece em cenas 3D (telas, celulares e texto) no momento certo, com chamada escrita \"Saiba mais\" no fim.",
+      "category": "products",
+      "tags": [
+        "Live e depoimento",
+        "Prova em 3D",
+        "Anúncio"
+      ],
+      "use": "Transformar um trecho de live, podcast, entrevista ou depoimento em criativo para anúncio, com a prova do produto em cenas 3D e chamada \"Saiba mais\".",
+      "inputs": "A gravação de uma live, podcast, entrevista ou depoimento em que alguém fala do produto/serviço (pode ser mais de uma fonte), e as provas do próprio usuário: vídeos ou telas reais do resultado (por exemplo, vídeos editados pela ferramenta), sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+      "mechanism": "Corte vertical 9:16 de 25 a 45 s pensado como criativo de anúncio. A fala real conduz: gancho no primeiro segundo, uma virada (expectativa → surpresa) e a prova. A pessoa aparece em cartão ou círculo (live tem baixa resolução), com nome, papel e rótulo \"trecho da live\"; títulos curtos no alto e legenda das palavras ditas. Atrás, uma cena 3D (three.js) mostra a prova no momento em que a fala cita o resultado: parede viva de miniaturas desfocada, tela 3D com reflexo para vídeo longo, celulares em leque para vídeos curtos e a palavra-chave em texto 3D. Voz limpa e no mesmo nível entre as pessoas, trilha bem abaixo da fala com a virada no momento-chave. No fim, a fala termina e um cartão escrito com \"Saiba mais\" encerra o vídeo.",
+      "steps": [
+        "Transcrever as fontes e escolher o trecho pelo gancho mais forte e por uma virada clara; pode juntar trechos de mais de uma fonte mantendo o sentido.",
+        "Montar o EDL pelas palavras reais, com bordas ajustadas pela energia da voz e pausas internas cortadas (sem cortar sílabas nem repetir frase).",
+        "Limpar a voz (local por padrão; serviço pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar.",
+        "Separar as provas próprias (vídeo longo 16:9, vídeos curtos 9:16), conferir quadro a quadro que não têm marca de terceiros e rotular com honestidade.",
+        "Planejar as cenas pelas palavras: gancho com a pessoa sobre o fundo 3D, virada com brilho curto, prova longa, provas curtas, palavra-chave em 3D, cartão final.",
+        "Montar a composição pelo modelo motion/templates/corte-de-live-3d com as cores e fontes da ID escolhida e renderizar.",
+        "Mixar a trilha ~22 dB abaixo da voz com compressão lateral, virada no momento-chave e efeitos discretos; final −15 LUFS.",
+        "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, das provas (nítidas) e do CTA, ausência de preto e de logotipos."
+      ],
+      "avoid": "Não usar efeitos baratos (partículas aleatórias, holofotes, neon, glitch) nem 3D que não mostra prova. Não deixar a música competir com a fala. Não ampliar a live em tela cheia. Não usar vídeo, logotipo ou documento de terceiros como prova, nem sugerir que a prova é da pessoa entrevistada quando não é. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, o dourado ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho.",
+      "pattern": "f22-corte-de-live-3d-v1",
+      "video": "assets/videos/F22-corte-de-live-3d.mp4",
+      "vimeo": null,
+      "duration": 32,
+      "evidence": "video",
+      "evidenceLabel": "Prévia aprovada pelo autor",
+      "evidenceNote": "Prévia real aprovada pelo autor: corte de uma live com cliente, editado pelo Cortez. As provas são vídeos do próprio autor editados pelo Cortez. Pessoas, nomes, assunto, provas, o dourado e as fontes são do exemplo, não padrões; cores e fontes vêm da ID escolhida.",
+      "categories": [
+        "products",
+        "presenter"
+      ],
+      "cameraRequired": false,
+      "hasPersonOnScreen": true,
+      "startingMaterials": [
+        "Gravação da live, podcast ou entrevista",
+        "Vídeos ou telas reais do resultado (prova própria)",
+        "Trilha própria ou licenciada (opcional)"
+      ],
+      "buildingBlocks": [
+        "Gancho falado",
+        "Pessoa em cartão ou círculo",
+        "Cenas 3D de prova",
+        "Texto 3D da palavra-chave",
+        "Legenda das falas",
+        "Cartão final \"Saiba mais\""
+      ],
+      "searchTerms": [
+        "live",
+        "corte de live",
+        "cortes",
+        "podcast",
+        "entrevista",
+        "depoimento",
+        "testemunho",
+        "cliente",
+        "prova",
+        "prova social",
+        "resultado",
+        "3d",
+        "three",
+        "threejs",
+        "three.js",
+        "anuncio",
+        "anúncio",
+        "criativo",
+        "meta",
+        "meta ads",
+        "facebook ads",
+        "instagram ads",
+        "trafego pago",
+        "saiba mais",
+        "cta",
+        "produto",
+        "ferramenta",
+        "software",
+        "vendas",
+        "premium",
+        "celular 3d",
+        "tela 3d",
+        "reels"
+      ],
+      "poster": "assets/posters/F22-corte-de-live-3d.jpg",
+      "referenceFrames": [
+        {
+          "poster": "assets/posters/F22-corte-de-live-3d-frame-0.jpg",
+          "caption": "Gancho no primeiro quadro: frase forte no alto, cartão da pessoa (\"trecho da live\", nome e papel) e legenda; ao fundo, a parede viva de provas em 3D, desfocada."
+        },
+        {
+          "poster": "assets/posters/F22-corte-de-live-3d-frame-1.jpg",
+          "caption": "Prova de vídeo longo: tela 3D 16:9 com reflexo no chão tocando o vídeo longo editado pelo Cortez, com rótulo honesto."
+        },
+        {
+          "poster": "assets/posters/F22-corte-de-live-3d-frame-2.jpg",
+          "caption": "Prova de vídeos curtos: celulares 3D abrem em leque, cada um tocando um vídeo curto editado pelo Cortez."
+        }
+      ],
+      "examples": []
     }
   ],
   "identities": [

@@ -1628,6 +1628,89 @@
         }
       ],
       "missing_sources": []
+    },
+    "F22": {
+      "code": "F22",
+      "name": "Corte de Live 3D",
+      "uid": "official.56af1c22ff7d4a7ba80ecb661b35d4a6",
+      "references": [
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/README.md",
+          "kind": "reference_analysis",
+          "sha256": "dd56137bbea96a303837b118f1907fe03d102bfa98ebfaa56b593f5b9d663a29",
+          "bytes": 835,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114"
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "0635b6b57ece10446a30c2618c0d599a911b9d8391f9d571adfbd1ea3345c080",
+          "bytes": 7858,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114"
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "785c5ff0b0481ffe2a55487fd189b2d9936a1209bd8dde13e2720987e03bd7a0",
+          "bytes": 141169,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114",
+          "caption": "Cartão final escrito: benefício em uma frase, provas em celulares e o botão \"Saiba mais\" com toque. A fala já terminou.",
+          "at_seconds": 30.8
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9b0eb77ce7bc0dbc5ea6acb839c2f8aa6d2d6d37dcddf99c6e771720b5cbd35e",
+          "bytes": 201282,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114",
+          "caption": "Gancho no primeiro quadro: frase forte no alto, cartão da pessoa (\"trecho da live\", nome e papel) e legenda; ao fundo, a parede viva de provas em 3D, desfocada.",
+          "at_seconds": 0.6
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/long-screen.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "3878b9c3b928f25a685100f84f660bf347480097c7f1e3d3a00c659d05750b5d",
+          "bytes": 226143,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114",
+          "caption": "Prova de vídeo longo: tela 3D 16:9 com reflexo no chão tocando o vídeo longo editado pelo Cortez, com rótulo honesto.",
+          "at_seconds": 16.0
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/phones-fan.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9b33ac43594ae948058770cb73187f69d5c4ba125719b08b65742a2cff44dca2",
+          "bytes": 161268,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114",
+          "caption": "Prova de vídeos curtos: celulares 3D abrem em leque, cada um tocando um vídeo curto editado pelo Cortez.",
+          "at_seconds": 20.5
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "441d7ce525b696d444a7abc39dda9ac8b8586ade3f45e710dd3d9b37cad56430",
+          "bytes": 11031623,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114"
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/wall-reveal.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "645acec8ba71f21d471b9070cb089c8c8cfe6e2699d047324a87a8a342e65d33",
+          "bytes": 197884,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114",
+          "caption": "Virada: na palavra \"nossa\" a parede de miniaturas avança com brilho curto e a música vira; a pessoa vai para o círculo no canto.",
+          "at_seconds": 13.2
+        },
+        {
+          "path": "examples/reference-library/F22/corte-de-live-3d/word-3d.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9d05db5786aedbc8006e9c603c73451c8ed54843f168c77873171275b8f24cbc",
+          "bytes": 117689,
+          "source_sha256": "b45136bf0cb6dab04a487ceaa342c6ec23443d7427f1afe1674e485a10479114",
+          "caption": "Palavra-chave dita (\"Incrível.\") em texto 3D extrudado na cor de destaque da ID, sobre a pessoa.",
+          "at_seconds": 27.2
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -2059,6 +2142,14 @@
     "examples/reference-library/F09/cortez-2026-10/personagem-2.jpg": "e5e2e49632ab3d77257545383e63dffbd2c73970aed159d8df0896313f1511cc",
     "examples/reference-library/F09/example-01.jpg": "c1ba1f208c4f01c383d05d606c886ccf24a02460d838aa5dcaaa7db6c98eb110",
     "examples/reference-library/F09/example-02.jpg": "1d7d2679084ee070dd3c3e8bbd6439e3391f3b97f6a6db56e74ad97c076577ec",
+    "examples/reference-library/F09/personagem/README.md": "2e185be8a36ace9c336397ad8d2ac9ca3755216ef48eb00968365c6dc6c617d5",
+    "examples/reference-library/F09/personagem/analysis.json": "4db5bb71330717c3e0d0f5ed81d48ea5f6fe50e4e75a89d3d65011d93328c794",
+    "examples/reference-library/F09/personagem/caption-build.jpg": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1",
+    "examples/reference-library/F09/personagem/character-1.jpg": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad",
+    "examples/reference-library/F09/personagem/character-2.jpg": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
+    "examples/reference-library/F09/personagem/closing.jpg": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
+    "examples/reference-library/F09/personagem/reference.mp4": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
+    "examples/reference-library/F09/personagem/turn.jpg": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4",
     "examples/reference-library/F09/video-example-02.mp4": "61b3c2729132be3d64b62a1d1e4445f437c1a0c12a20ef7014b9c0fb21f478fe",
     "examples/reference-library/F10/README.md": "de948f7e8aa873ef8f58fe6026c432668ea0bc13ef21783395f90dacc309e7be",
     "examples/reference-library/F10/collection-01/sax-act1-tension-v1.mp3": "8e03a96377913e95fe1b6c336f9f9b6413d753ef5b78e41aaf8dfaab52b718da",
@@ -2163,7 +2254,6 @@
     "examples/reference-library/F19/print-repost/opening.jpg": "0839acff62dd17652fca6179560366ee9787cb7bc1c66f490ae9a182a6a7ed29",
     "examples/reference-library/F19/print-repost/reference.mp4": "21a10e2c67c8e7a285c115c28c732512ee2b5a3e14413a03e7ccdd4e0ba3662e",
     "examples/reference-library/F19/print-repost/watermark.jpg": "6bf87a468ba19dca3d1e8fe013ad27f57876a8bec598346ce1321fc4150c4f59",
-    "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1",
     "examples/reference-library/F20/react/README.md": "e617b3d8d15788b293da1c3ad9cb2333fa9bb4f3b00b03371408b2d8e20eded1",
     "examples/reference-library/F20/react/analysis.json": "7c5328cf4179967159b69204c7c726e7f6fd42629d2597dfc1efeba41bbe7296",
     "examples/reference-library/F20/react/broll-movie-split.jpg": "877f3a1ac3cd0c53fcbde0d1ed0d802d1ad2f098b8ae12db8d74d1748a236d9e",
@@ -2175,14 +2265,6 @@
     "examples/reference-library/F20/react/react-split.jpg": "7626ee4bc6bd0784fd13ece35a0d45334e5930b7d5ed71c22956f0e2fbe619cb",
     "examples/reference-library/F20/react/reference.mp4": "ac7f4ffb9c46d76440c3ebd157a7af8e67a21ca0ba86ae180b9bcaecf2ba5e73",
     "examples/reference-library/F20/react/source-callback-split.jpg": "b0e36b0821b30d1a955eccac98d98fb5c408ddff52d43971a8615f2117b5a5d2",
-    "examples/reference-library/F09/personagem/README.md": "2e185be8a36ace9c336397ad8d2ac9ca3755216ef48eb00968365c6dc6c617d5",
-    "examples/reference-library/F09/personagem/analysis.json": "4db5bb71330717c3e0d0f5ed81d48ea5f6fe50e4e75a89d3d65011d93328c794",
-    "examples/reference-library/F09/personagem/caption-build.jpg": "c0a122362711bad294b8f3d0713392d5ae735f5655e53a5bbcab337881eca5a1",
-    "examples/reference-library/F09/personagem/character-1.jpg": "53bdc211272952f933d5f5001b48ff7a8ee23e72e81206c63dcad6e1d39122ad",
-    "examples/reference-library/F09/personagem/character-2.jpg": "03910cd35fe31b008a6a619cab90455f5da6dd3e195673827d86103ddc51d6c7",
-    "examples/reference-library/F09/personagem/closing.jpg": "03ac61bedf4a79a104d7c4e331db7c351987f3632f5a28dd32f6fd813bd2fb6b",
-    "examples/reference-library/F09/personagem/reference.mp4": "36e208fd5de66ab3a0d436ee4252a659a30f0f71158a9219adc777d53fa50a8e",
-    "examples/reference-library/F09/personagem/turn.jpg": "404ceda401282f16f4a6fc11091c16a403b5abc59bb3819ad8030f04d9de69a4",
     "examples/reference-library/F21/mural-de-investigacao/README.md": "fb06839793490a3df165f804d1c634ed8ae62a9a1ccdaa89b160fd2e868fed6a",
     "examples/reference-library/F21/mural-de-investigacao/act-board.jpg": "2a9c448f3dbdc7cad6ded662823f9aca99aa52b0b24050fae4f509240c359d36",
     "examples/reference-library/F21/mural-de-investigacao/analysis.json": "9fce6b6ee0435b91a60806add1198cc74511d57621d976d3fdf2315700cc94af",
@@ -2192,7 +2274,17 @@
     "examples/reference-library/F21/mural-de-investigacao/panorama.jpg": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
     "examples/reference-library/F21/mural-de-investigacao/reference.mp4": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4",
     "examples/reference-library/F21/mural-de-investigacao/status-cards.jpg": "4b05820686a81fbd50418ce0ef49f1e34215ebb10f899d706233a63238cace1b",
-    "examples/reference-library/F21/mural-de-investigacao/suspects.jpg": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb"
+    "examples/reference-library/F21/mural-de-investigacao/suspects.jpg": "5923285c5372f6e993b42ab797c5cd77f75d5c581ae661a652378dbe29c636fb",
+    "examples/reference-library/F22/corte-de-live-3d/README.md": "dd56137bbea96a303837b118f1907fe03d102bfa98ebfaa56b593f5b9d663a29",
+    "examples/reference-library/F22/corte-de-live-3d/analysis.json": "0635b6b57ece10446a30c2618c0d599a911b9d8391f9d571adfbd1ea3345c080",
+    "examples/reference-library/F22/corte-de-live-3d/cta.jpg": "785c5ff0b0481ffe2a55487fd189b2d9936a1209bd8dde13e2720987e03bd7a0",
+    "examples/reference-library/F22/corte-de-live-3d/hook.jpg": "9b0eb77ce7bc0dbc5ea6acb839c2f8aa6d2d6d37dcddf99c6e771720b5cbd35e",
+    "examples/reference-library/F22/corte-de-live-3d/long-screen.jpg": "3878b9c3b928f25a685100f84f660bf347480097c7f1e3d3a00c659d05750b5d",
+    "examples/reference-library/F22/corte-de-live-3d/phones-fan.jpg": "9b33ac43594ae948058770cb73187f69d5c4ba125719b08b65742a2cff44dca2",
+    "examples/reference-library/F22/corte-de-live-3d/reference.mp4": "441d7ce525b696d444a7abc39dda9ac8b8586ade3f45e710dd3d9b37cad56430",
+    "examples/reference-library/F22/corte-de-live-3d/wall-reveal.jpg": "645acec8ba71f21d471b9070cb089c8c8cfe6e2699d047324a87a8a342e65d33",
+    "examples/reference-library/F22/corte-de-live-3d/word-3d.jpg": "9d05db5786aedbc8006e9c603c73451c8ed54843f168c77873171275b8f24cbc",
+    "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1"
   },
   "retired_generations": {
     "factory.f02": {

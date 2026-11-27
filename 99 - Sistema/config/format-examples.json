@@ -490,5 +490,37 @@
       "sha256": "6030ffa0e9db92813580dfb9e526d1182c08eb0a682532e66e4c6403992aea77",
       "caption": "Panorama final: as evidências do caso reunidas e ligadas por fio, com a frase de fecho."
     }
+  ],
+  "F22": [
+    {
+      "path": "examples/reference-library/F22/corte-de-live-3d/hook.jpg",
+      "sha256": "9b0eb77ce7bc0dbc5ea6acb839c2f8aa6d2d6d37dcddf99c6e771720b5cbd35e",
+      "caption": "Gancho no primeiro quadro: frase forte no alto, cartão da pessoa (\"trecho da live\", nome e papel) e legenda; ao fundo, a parede viva de provas em 3D, desfocada."
+    },
+    {
+      "path": "examples/reference-library/F22/corte-de-live-3d/wall-reveal.jpg",
+      "sha256": "645acec8ba71f21d471b9070cb089c8c8cfe6e2699d047324a87a8a342e65d33",
+      "caption": "Virada: na palavra \"nossa\" a parede de miniaturas avança com brilho curto e a música vira; a pessoa vai para o círculo no canto."
+    },
+    {
+      "path": "examples/reference-library/F22/corte-de-live-3d/long-screen.jpg",
+      "sha256": "3878b9c3b928f25a685100f84f660bf347480097c7f1e3d3a00c659d05750b5d",
+      "caption": "Prova de vídeo longo: tela 3D 16:9 com reflexo no chão tocando o vídeo longo editado pelo Cortez, com rótulo honesto."
+    },
+    {
+      "path": "examples/reference-library/F22/corte-de-live-3d/phones-fan.jpg",
+      "sha256": "9b33ac43594ae948058770cb73187f69d5c4ba125719b08b65742a2cff44dca2",
+      "caption": "Prova de vídeos curtos: celulares 3D abrem em leque, cada um tocando um vídeo curto editado pelo Cortez."
+    },
+    {
+      "path": "examples/reference-library/F22/corte-de-live-3d/word-3d.jpg",
+      "sha256": "9d05db5786aedbc8006e9c603c73451c8ed54843f168c77873171275b8f24cbc",
+      "caption": "Palavra-chave dita (\"Incrível.\") em texto 3D extrudado na cor de destaque da ID, sobre a pessoa."
+    },
+    {
+      "path": "examples/reference-library/F22/corte-de-live-3d/cta.jpg",
+      "sha256": "785c5ff0b0481ffe2a55487fd189b2d9936a1209bd8dde13e2720987e03bd7a0",
+      "caption": "Cartão final escrito: benefício em uma frase, provas em celulares e o botão \"Saiba mais\" com toque. A fala já terminou."
+    }
   ]
 }

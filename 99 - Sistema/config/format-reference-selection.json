@@ -180,6 +180,14 @@
         "sha256": "1f8292d17a38feb569528a0bf7c1406049ec97c4b0df066463954b1d1d20cec4"
       },
       "reference_conflicts": []
+    },
+    "official.56af1c22ff7d4a7ba80ecb661b35d4a6": {
+      "code": "F22",
+      "primary_reference": {
+        "path": "examples/reference-library/F22/corte-de-live-3d/reference.mp4",
+        "sha256": "441d7ce525b696d444a7abc39dda9ac8b8586ade3f45e710dd3d9b37cad56430"
+      },
+      "reference_conflicts": []
     }
   }
 }

@@ -907,5 +907,68 @@
       "história",
       "dark"
     ]
+  },
+  "F22": {
+    "category": "products",
+    "categories": [
+      "products",
+      "presenter"
+    ],
+    "tags": [
+      "Live e depoimento",
+      "Prova em 3D",
+      "Anúncio"
+    ],
+    "use": "Transformar um trecho de live, podcast, entrevista ou depoimento em criativo para anúncio, com a prova do produto em cenas 3D e chamada \"Saiba mais\".",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação da live, podcast ou entrevista",
+      "Vídeos ou telas reais do resultado (prova própria)",
+      "Trilha própria ou licenciada (opcional)"
+    ],
+    "buildingBlocks": [
+      "Gancho falado",
+      "Pessoa em cartão ou círculo",
+      "Cenas 3D de prova",
+      "Texto 3D da palavra-chave",
+      "Legenda das falas",
+      "Cartão final \"Saiba mais\""
+    ],
+    "searchTerms": [
+      "live",
+      "corte de live",
+      "cortes",
+      "podcast",
+      "entrevista",
+      "depoimento",
+      "testemunho",
+      "cliente",
+      "prova",
+      "prova social",
+      "resultado",
+      "3d",
+      "three",
+      "threejs",
+      "three.js",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "meta",
+      "meta ads",
+      "facebook ads",
+      "instagram ads",
+      "trafego pago",
+      "saiba mais",
+      "cta",
+      "produto",
+      "ferramenta",
+      "software",
+      "vendas",
+      "premium",
+      "celular 3d",
+      "tela 3d",
+      "reels"
+    ]
   }
 }

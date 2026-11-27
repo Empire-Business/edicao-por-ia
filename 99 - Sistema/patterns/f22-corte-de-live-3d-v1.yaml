@@ -1,0 +1,127 @@
+id: f22-corte-de-live-3d-v1
+version: 1
+status: draft
+format_code: F22
+created: 2026-11-27
+origin: >-
+  Formato oficial criado pelo autor em 27/11/2026 a partir de uma edição real aprovada por ele: um corte de uma live
+  (entrevista com um cliente) transformado em criativo 9:16 para anúncio, com cenas 3D de prova. O exemplo publicado é
+  a prévia aprovada (E119 V1). A receita foi tirada dessa edição e da prévia anterior do mesmo lote; ainda não foi
+  testada numa edição nova de outro tema.
+purpose: >-
+  Transformar um trecho de live, podcast, entrevista ou depoimento em criativo vertical que vende: a fala real de quem
+  usa conduz o vídeo, e a prova (vídeos do próprio criador/produto) aparece em cenas 3D bem acabadas no momento exato em
+  que a fala cita o resultado. Fecha com chamada escrita "Saiba mais".
+engine: hyperframes_gsap_threejs   # HTML + GSAP pausado + three.js r186 guiado pelo tempo do quadro (motion/templates/corte-de-live-3d)
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  duration_s: [25, 45]
+  fit: cover
+editorial:
+  target_pace: fast_but_clear
+  pacing_rule: >-
+    A fala conduz o tempo. Escolher o trecho pelo gancho (frase que para o dedo no primeiro segundo) e por uma
+    virada clara (expectativa → surpresa → prova → fecho). Pode juntar trechos de mais de uma fonte quando o sentido
+    se mantém. Cada cena 3D entra na palavra que a justifica; nada de cena sem fala que a peça.
+  hook: Primeiro 1–2 s com a frase mais forte e já com imagem em movimento (sem tela de título parada).
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  silence_removal:
+    enabled: true
+    minimum_silence_seconds: 0.15
+    keep_pause_seconds: 0.05
+    word_handle_seconds: 0.05
+    minimum_cut_seconds: 0.1
+    trim_edges: true
+  edge_snapping: energy   # bordas das falas ajustadas pela energia da voz limpa, nunca no meio de sílaba
+  min_jump_cut_interval_seconds: 0.8
+  no_silent_takes: true
+  preserve_required_phrases: []
+structure:
+  opening: Gancho falado + cartão da pessoa (rótulo "trecho da live") sobre um fundo 3D vivo das provas, desfocado.
+  turn: >-
+    Na palavra da virada (ex.: "nossa"), o fundo avança com um brilho curto e a música vira junto; a pessoa vai para um
+    círculo no canto e a prova ganha a tela.
+  proof_scenes:
+    - tela 3D 16:9 com reflexo no chão para vídeo longo
+    - celulares 3D em leque/órbita para vídeos curtos 9:16
+    - parede viva de miniaturas (fileiras que correm devagar) como fundo
+    - palavra-chave da fala em texto 3D extrudado, no momento em que é dita
+  people: >-
+    Live costuma ser de baixa resolução: a pessoa fica em cartão ou círculo, nunca ampliada em tela cheia. Nome e papel
+    reais de quem fala; quem pergunta e quem responde ficam distintos.
+  headlines: Título curto em duas linhas no alto, por bloco de fala (rótulo pequeno + frase com a palavra de destaque).
+  cta: >-
+    A fala termina; um cartão final escrito (benefício em uma frase + "Saiba mais" com seta/botão e um toque) fica de
+    4 a 5 s, com as provas ao fundo, e o vídeo acaba ali.
+visual:
+  primary_composition: person_card_over_3d_proof
+  renderer: three.js r186 (ESM local) + EffectComposer (RenderPass, UnrealBloomPass suave, BokehPass, OutputPass), RoomEnvironment
+  camera: Escala em pixels (fov 30; distância = 960 / tan 15°) para alinhar 3D e HTML; movimentos lentos e motivados.
+  depth_of_field: >-
+    Fundo com profundidade de campo; prova em foco sempre nítida (abertura ≈ 3,5e-6 em foco, ≈ 2e-5 no fundo, na escala
+    em pixels). Conferir em quadro cheio que a prova não ficou borrada.
+  video_textures: Sequências JPG indexadas pelo quadro (floor(t*30)), nunca vídeo tocando em tempo real dentro do 3D.
+  determinism: Tudo em função do tempo do quadro (evento hf-seek); Math.random com semente fixa.
+  forbidden_look:
+    - partículas aleatórias, holofotes, neon, brilho exagerado, glitch genérico
+    - 3D decorativo que não mostra prova
+    - zoom repetido sem motivo
+  colors_fonts: Vêm só da ID escolhida (o exemplo usou ID04 Dourado apenas como exemplo).
+proof:
+  source_policy: >-
+    Só material do próprio usuário/produto editado pelo Cortez (ou o produto real), conferido quadro a quadro, sem
+    logotipos de terceiros, documentos ou pessoas alheias. Rotular com honestidade ("editado pelo Cortez",
+    "vídeo longo", "vídeos curtos") e nunca sugerir que são vídeos da pessoa entrevistada quando não são.
+captions:
+  enabled: true
+  style: job_choice   # estilos L01–L08 (workflows/CAPTION_GALLERY.md); o exemplo usou L04
+  max_lines: 2
+  max_chars: 40
+  rule: >-
+    Só palavras realmente ditas. O reconhecimento erra nomes em áudio cortado; a legenda usa o texto conferido na
+    transcrição contínua da fonte. Bloco não atravessa troca de quem fala.
+audio:
+  voice_cleanup: >-
+    Obrigatória. Limpeza local por padrão; isolamento pago (ElevenLabs) só com o sim atual do usuário, por chamada.
+    Mesmo nível entre as pessoas (≈ −17 LUFS por trecho), HPF 85 Hz, EQ de clareza, compressão suave, voz final −16 LUFS.
+  music: >-
+    Trilha subordinada à fala: ≈ 22 dB abaixo da voz (fundo ≈ −37/−38 LUFS sob a fala) com compressão lateral pela voz;
+    virada da trilha na palavra da virada; no cartão final sobe para ≈ −20 LUFS. O filtro volume com expressão do
+    ffmpeg usa ganho linear.
+  sound_effects_policy: discretos (whoosh curto nas trocas, um impacto grave na virada, um clique no CTA)
+  loudness_target_lufs: -15
+  true_peak_db: -1.0
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 12
+  audio_codec: aac
+  audio_bitrate: 192k
+tooling:
+  template: motion/templates/corte-de-live-3d   # copiar para jobs/<trabalho>/src e preencher (ver README.md)
+  render: npx -y hyperframes@0.8.92 render comp -o renders/picture.mp4 -w 4 --video-frame-format png --crf 12
+qa:
+  retranscribe_final_voice: required   # inteligibilidade da mix final ≈ da voz limpa; sem retakes escondidos
+  background_stem_level: required      # trilha + efeitos sozinhos ≈ −37/−38 LUFS sob a fala
+  black_segment_seconds: 0.2
+  proof_sharpness_full_frame: required
+  third_party_logo_scan: required
+  cta_written_and_voice_finished: required
+forbidden:
+  - third_party_media_or_logo_as_proof
+  - proof_misattributed_to_the_speaker
+  - generated_face_of_real_person
+  - cheap_decorative_effects
+  - music_masking_speech
+  - fixed_person_brand_or_palette
+  - automatic_logo_or_signature
+  - spoken_cta_over_end_card
+insertion_assets:
+  policy: own_proof_only
+  density: high
+  default_preferred_duration_s: 3
+  default_max_duration_s: 5
+  allow_image_motion: true

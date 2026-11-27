@@ -72,3 +72,4 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 
 - `f20-react-v1`: F20 React, criado pelo autor em 21/10/2026 a partir do vídeo de exemplo enviado por ele e de um teste real de edição (3 prévias comparadas quadro a quadro). Draft; a trilha é escolhida com o usuário. Flare de transição em `tools/flare_transition.py`.
 - `f21-mural-de-investigacao-v1`: F21 Mural de investigação, criado pelo autor em 21/10/2026 a partir de um Reel de referência (não distribuído) e de duas edições reais; exemplo público é o demo "O roubo da Mona Lisa (1911)". Draft. Renderizador em `tools/mural_board.py`; visual pensado para a ID09 Mural escuro, sem associação automática.
+- `f22-corte-de-live-3d-v1`: F22 Corte de Live 3D, criado pelo autor em 27/11/2026 a partir da prévia aprovada E119 V1 (corte de live com cenas 3D de prova). Draft. Código-base da composição em `motion/templates/corte-de-live-3d`.
