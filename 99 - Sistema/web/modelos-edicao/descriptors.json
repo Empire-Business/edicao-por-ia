@@ -920,7 +920,7 @@
       "Anúncio"
     ],
     "use": "Transformar um trecho de live, podcast, entrevista ou depoimento em criativo para anúncio, com a prova do produto em cenas 3D e chamada \"Saiba mais\".",
-    "cameraRequired": false,
+    "cameraRequired": true,
     "hasPersonOnScreen": true,
     "startingMaterials": [
       "Gravação da live, podcast ou entrevista",

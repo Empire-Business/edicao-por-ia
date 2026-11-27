@@ -1787,7 +1787,7 @@
         "products",
         "presenter"
       ],
-      "cameraRequired": false,
+      "cameraRequired": true,
       "hasPersonOnScreen": true,
       "startingMaterials": [
         "Gravação da live, podcast ou entrevista",
