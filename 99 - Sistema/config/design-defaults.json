@@ -1021,6 +1021,879 @@
         "path": "examples/reference-library/F22/corte-de-live-3d/analysis.json",
         "sha256": "0635b6b57ece10446a30c2618c0d599a911b9d8391f9d571adfbd1ea3345c080"
       }
+    },
+    {
+      "code": "F23",
+      "name": "Corte de Live Editorial",
+      "memory_store": "corte-de-live-editorial",
+      "pattern": "f23-corte-de-live-editorial-v1",
+      "description": "Trecho de entrevista ou live em 9:16 com cara de revista: pergunta e resposta em cartões, títulos editoriais curtos e a prova real num celular 3D sóbrio, com chamada escrita no fim.",
+      "uid": "official.ab0ffe0bee244b52aa605a055a56a92b",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F23/corte-de-live-editorial/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Corte vertical de 30 a 45 s guiado por pergunta e resposta. Quem pergunta e quem responde aparecem em cartões recortados da gravação, com nome, papel e o rótulo \"trecho da live\"; um título editorial curto em duas linhas (fonte serifada com itálico de destaque) abre cada bloco de fala e a legenda acompanha as palavras ditas. Quando a fala cita o resultado, a pessoa encolhe para um cartão pequeno e a prova entra num celular 3D discreto ou num cartão de vídeo maior, sempre com rótulo honesto. Fundo escuro de alto valor, transições secas, trilha bem abaixo da voz. A fala termina e um cartão escrito com a promessa em uma frase e o botão \"Saiba mais\" encerra.",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Planejar os blocos por pergunta e resposta: título editorial por bloco, cartão de quem fala, prova no celular 3D no momento em que a fala cita o resultado, cartão final.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/corte-de-live-editorial com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não ampliar a live em tela cheia (baixa resolução). Não misturar as falas de quem pergunta e de quem responde no mesmo cartão. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/reference.mp4",
+          "sha256": "04f77beac73c81a1712ca936a7d39650dec15c9131c77c714d9dcdaecc78a4fd"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/hook.jpg",
+          "sha256": "01af6cba0e774c945d50af8626724eddd1baa3f366bbbff6ff4c9dda07a16c94"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/question.jpg",
+          "sha256": "03fef58e1731a170d55e970154976fc28701b2cc11b48718fb24ad328e43a737"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/answer.jpg",
+          "sha256": "7203bf719d6b7e5a10809fed5244d3413c5bc3777fd7a27b5dac8d181f0433a4"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/proof-phone.jpg",
+          "sha256": "386bf41271a0bfd4e003516ad2b7ea4bfd0e16f528d3dea2299b690669f5719e"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/proof-card.jpg",
+          "sha256": "d9ed7176b74e53763e7b4696c2259cdd8b7bf66cebc4dca6d1afbc057fc21418"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/cta.jpg",
+          "sha256": "d92d3b9619072b33e4015d255f29ee36a1f14198ce06e487b4cff1c6fd4093ef"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F23/corte-de-live-editorial/analysis.json",
+        "sha256": "4c2c6644708d47f3eb5f0263fa8f4d00b3a6582e324dac05fcb0f46f8c138ae2"
+      }
+    },
+    {
+      "code": "F24",
+      "name": "Vitrine em Cilindro",
+      "memory_store": "vitrine-em-cilindro",
+      "pattern": "f24-vitrine-em-cilindro-v1",
+      "description": "Quando a fala lista opções (tipos, modelos, variações), a câmera fica dentro de um cilindro de telas e cada opção citada gira para a frente com seu exemplo real.",
+      "uid": "official.fd257d53ecf44b0884b7ce229934c6b8",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F24/vitrine-em-cilindro/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Criativo 9:16 para falas que enumeram opções. A câmera fica no centro de um cilindro 3D de telas curvas, cada uma tocando um exemplo real. A cada opção dita, a tela correspondente gira para a frente, ganha número e nome e o resto do cilindro recua ou desfoca; quando a fala fala de estilo (letra, tamanho, cor), uma palavra em 3D troca de fonte, tamanho e paleta passando por identidades reais. A câmera pode subir sobre o cilindro e mergulhar numa tela. Pessoa em círculo no canto com nome e papel; legenda das palavras ditas. Fecha com o cilindro como coroa sobre o cartão final \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Mapear cada opção citada para um exemplo real que a demonstra (conferido por quadros) e marcar a palavra exata em que a tela gira para a frente.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/vitrine-em-cilindro com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não mostrar opção que não tem exemplo real (use um cartão de texto). Não girar o cilindro sem uma palavra que peça. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/reference.mp4",
+          "sha256": "719ac9399a6d42d1e556413180fb985fed02171ecc7b25ce31d5b8dff4c2ba44"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/hook.jpg",
+          "sha256": "9eb08f684e87b3f11d3d2fba0813eaf2b280f7035ee14bb2dc0bc02877106f9c"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/ring.jpg",
+          "sha256": "6658e0962a99d7d6929bd8c4768dda510045950ee5fc8eeebb695295f4e6ea80"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/style-type.jpg",
+          "sha256": "f304a13e219e1959bfe0e7c498c29e648cad7d42f5a8e309f257729a637fd8a8"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/focus.jpg",
+          "sha256": "8b6abe228b9357601fae5bab5a75e44044631aa4cc42f32b064b77417891dd69"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/possibilities.jpg",
+          "sha256": "d00b7c72f9030704c547adfec9f12c9f7884486868b45831c64f96a7c706f86f"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/cta.jpg",
+          "sha256": "754166b3ac421c42a45ad7ee774a6ba7ba145407ec9f1a20250ec4d91f7da4c5"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F24/vitrine-em-cilindro/analysis.json",
+        "sha256": "3e78435d267942e3a04ef988d371a941011e4a4f8e1fb21bac9ab4d3be6e0c06"
+      }
+    },
+    {
+      "code": "F25",
+      "name": "Antes e Depois em Fita",
+      "memory_store": "antes-e-depois-em-fita",
+      "pattern": "f25-antes-e-depois-em-fita-v1",
+      "description": "A gravação bruta vira uma fita 3D com os trechos reais de fala, silêncio e erro; enquanto alguém explica a edição, os erros e pausas saem e a fita vira o vídeo pronto.",
+      "uid": "official.ad36a27c834646ffb67233f4e1825067",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F25/antes-e-depois-em-fita/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Demonstração de antes e depois em 9:16. Abre com o \"ANTES\": um tropeço real da gravação bruta, marcado. A gravação inteira vira uma fita 3D de blocos reais (fala, silêncio, hesitação, erro) com miniaturas, texto e a onda de áudio; quem explica aparece em círculo no canto. Conforme a fala cita cada ação, a onda ruidosa fica limpa, os erros são marcados e saem para um lado, os silêncios para o outro, e a fita se fecha com a duração final ao lado da original. A fita fica em pé e vira o \"DEPOIS\": a mesma frase limpa no vídeo pronto. Cartão final escrito com \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Transcrever a gravação bruta com tempos por palavra e classificar os trechos reais (fala, silêncio, hesitação, erro) para montar a fita.",
+          "Escolher o mesmo trecho no ANTES e no DEPOIS para a comparação ser honesta.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/antes-e-depois-em-fita com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não inventar erros nem durações: tudo vem da gravação real. Não apresentar o DEPOIS como outra gravação. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/reference.mp4",
+          "sha256": "e890a60fea16e255f8d66d9fbee2490a1c378cf41aef09542a8204fc436268fa"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/before.jpg",
+          "sha256": "3270b36716ac70b0ffb8079e3ad3c6219321c5e371b245adcd2db81aafdfe096"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/tape.jpg",
+          "sha256": "99d482c4a8ff083d84d57412027b2f4517c99558ae652465387dc9828ce5f669"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/errors.jpg",
+          "sha256": "27c0e7eb1d93c8b13e22a91ac7d837b3825dbaa801e6801fee985fe1b7710a9e"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/closed.jpg",
+          "sha256": "cdeae5bb4eeeb35edd4fd8b69beb96955a081bdfbe31927365c2973835a2ce95"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/after.jpg",
+          "sha256": "160d0802251c4bd9faa8c7fc16b9e28b6ce7f718a4dbe569fcf344840a3a7753"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/cta.jpg",
+          "sha256": "07eac127eec375165f6d743b2355537a67c45e88ab468f7b9c34d711f94061d0"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F25/antes-e-depois-em-fita/analysis.json",
+        "sha256": "43b45a11a24af9cc77d8a71ffc675ad0c5645d41554a755aa18615196307d814"
+      }
+    },
+    {
+      "code": "F26",
+      "name": "Mesa de Papel 3D",
+      "memory_store": "mesa-de-papel-3d",
+      "pattern": "f26-mesa-de-papel-3d-v1",
+      "description": "Cena clara de mesa de papel em 3D, com sombras suaves e plano-sequência: relógio, calendário, cópias impressas e agenda viram objetos que contam a fala.",
+      "uid": "official.5a0acfcc50784684a2707811f74311ba",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F26/mesa-de-papel-3d/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Criativo 9:16 claro, em plano-sequência sobre uma mesa de papel com sombras reais e profundidade de campo. Cada ideia da fala vira um objeto de mesa: relógio de papel para tempo, calendário de mesa que vira as páginas (datas reais e coerentes), cópias impressas que tocam vídeos reais, uma tela fina com a gravação real do processo, a foto de quem dá o depoimento e uma agenda da semana que se enche. Quem fala aparece em círculo pequeno com nome e papel; títulos curtos no alto; legenda das falas. Fecha com um cartão que cai na mesa com a promessa e um botão físico \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Traduzir cada ideia da fala em um objeto de mesa (tempo → relógio, prazo → calendário, entregas → cópias impressas) e encadear a câmera num plano-sequência.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/mesa-de-papel-3d com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não errar datas/dias da semana no calendário. Não deixar a mesa vazia por mais de um segundo: cada momento precisa de um objeto em foco. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/reference.mp4",
+          "sha256": "b9c783156f7f0f9309efcf5d2979f525eaa2fe0fa3c5d45edc38271811098f2c"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/hook.jpg",
+          "sha256": "ed49b49ee90b25ab91ded018a571109098c8e0a8b414f3e16aebc663c7310cea"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/calendar.jpg",
+          "sha256": "c789ddce26097086300b982101fb8037d03724f5d7f26546a82d607175ebcb1a"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/process.jpg",
+          "sha256": "9379f222636b1a22a75903b2fe8cc6e3381b57dce189842e2000c3aed711bd87"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/testimony.jpg",
+          "sha256": "0bf6ce135062ca4c692011f1bbac3a21cf37473e487c4855a9a2e399f6c3dac6"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/planner.jpg",
+          "sha256": "ec83a41a7228dbfb8dbdbda4f1c48856f1b034a0a1db22e27bf2c84198d94552"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/cta.jpg",
+          "sha256": "e9af3fc50bec03bb28160803e44d693a91c113982d467992bd9d1eecfd99689f"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F26/mesa-de-papel-3d/analysis.json",
+        "sha256": "6ad16142319974f5fd4c78cb41546a6bffb220854a929f2d31d6d0f291bf3c48"
+      }
+    },
+    {
+      "code": "F27",
+      "name": "Maquete Passo a Passo",
+      "memory_store": "maquete-passo-a-passo",
+      "pattern": "f27-maquete-passo-a-passo-v1",
+      "description": "Um processo explicado como maquete 3D clara vista de cima: cada passo da fala monta uma peça (arquivo, computador, pastas) até o resultado sair pronto.",
+      "uid": "official.fe600238eb8948228ba50628dd05d6e3",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F27/maquete-passo-a-passo/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Explicação de processo em 9:16 com uma maquete 3D clara, câmera ortográfica (vista de cima, estilo miniatura), materiais macios e sombras de contato. Abre resolvendo a objeção (ex.: janelas de código que implodem num único arquivo simples). Cada passo dito monta uma peça: o arquivo voa para o computador, a tela mostra a ação, as pastas saem em arco, o material bruto entra numa pasta e o resultado sai da outra. Quem fala fica em círculo no canto; depoimento de cliente entra como cartão com selo. Títulos \"Passo 1, 2, 3\"; legenda em ficha branca. Fecha com o resultado e \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Quebrar a fala em passos numerados e definir a peça da maquete que cada passo monta; manter o herói grande (70–85% da largura).",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/maquete-passo-a-passo com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não deixar a maquete pequena no meio da tela. Não mostrar logotipo de programa de terceiros: nomes só como texto quando a fala cita. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/reference.mp4",
+          "sha256": "75ee973d8c646ee5721ad44ceab9bdd84d78b8644589499d770bc5cdcce41dc3"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/objection.jpg",
+          "sha256": "318ca95b9054c557737bbaf779d3bbd00ed225de1c7fac0ab198f7614596b62d"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/step-1.jpg",
+          "sha256": "fd6beb5147ad98b0bba2946122b8d45c9196fca492b28932118ecd676b375c63"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/step-2.jpg",
+          "sha256": "422facfe6d06651ae927a144d15fd6bf5a80bd05e9da9a480192503b4580e36d"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/client.jpg",
+          "sha256": "54fbd4ed7df7dcaa9714d69fb1a52cf42b81b3e2586553aa972ac8e10e991a1f"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/request.jpg",
+          "sha256": "ecedf83f00a99892b5d68ae7747b581bf917f5efbbedbbee33a2294cf22deec5"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/cta.jpg",
+          "sha256": "ac265d6c673c8889094a116e20d1b61be06d067e0a1d8bb3e3301d4332f217dd"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F27/maquete-passo-a-passo/analysis.json",
+        "sha256": "4c5b740aaeb6843d6780bd7762f814e70421014d088f83776a28a942c553d1b6"
+      }
+    },
+    {
+      "code": "F28",
+      "name": "Lente Reveladora",
+      "memory_store": "lente-reveladora",
+      "pattern": "f28-lente-reveladora-v1",
+      "description": "Um feed genérico e cinza rola em 3D; uma lente de vidro passa por cima e, dentro dela, aparece o conteúdo real e caprichado — o contraste vende a qualidade.",
+      "uid": "official.6e1238637d764c7890393d8c18615a5e",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F28/lente-reveladora/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Comparação \"genérico × de verdade\" em 9:16. Um feed 3D de cartões cinzas e iguais (só formas abstratas, nenhum conteúdo de terceiros) rola enquanto a fala descreve o problema; todos fazem a mesma animação de modelo para mostrar o \"padrão\". Uma lente de vidro com refração passeia e, dentro dela, os cartões viram vídeos reais nítidos e coloridos. Na palavra da virada (\"aqui não\"), os cartões viram em onda para as entregas reais. Um trecho mostra o processo por trás (ex.: busca de cenas e a cena escolhida encaixando no vídeo) e o melhor resultado ocupa a tela cheia. Quem fala fica em círculo; legenda forte. Cartão final com a promessa e \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Construir o feed genérico só com formas abstratas e escolher as entregas reais que a lente revela; marcar a palavra da virada para a onda.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/lente-reveladora com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não usar vídeos reais de outras pessoas como \"exemplo ruim\". No fechamento, usar um quadro forte e contrastado (nunca uma animação branca que pareça vazia) e não deixar legendas queimadas da prova brigarem com a legenda. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/reference.mp4",
+          "sha256": "534238df947f119af5a8e37c1920dd242631fe8113722469db0ad2f2737eb68f"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/feed.jpg",
+          "sha256": "c339d948f3c1a95709e509eb673f8cff46b8faac9f8a94be28afc2b4144cf0cd"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/template.jpg",
+          "sha256": "dce188a20b550d829bd383f4bad7611b7db043317d39d55e48f6de036a370890"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/reveal.jpg",
+          "sha256": "c72abb86fdf63a7734325f38119af3c336b0f9c7e78380c12282a2cf1be0e276"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/search.jpg",
+          "sha256": "482224d1306a3148553d1d8da2b882ea9600f4c7f8398c587a44f9fc16a40771"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/place.jpg",
+          "sha256": "848c2af82e32e2cd3c85f41aa071591d8b9fe88c5ba0b6d65931981cc5e44113"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/cta.jpg",
+          "sha256": "02674e2dc93a1e50e7260f0b8ee06dc24707c823acc59947a5f92f0d66181cff"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F28/lente-reveladora/analysis.json",
+        "sha256": "f074be7c83fd0b2cb0337845e7c133b645873aee2825ff64c4bc7101d77102b7"
+      }
+    },
+    {
+      "code": "F29",
+      "name": "Camadas da Edição",
+      "memory_store": "camadas-da-edicao",
+      "pattern": "f29-camadas-da-edicao-v1",
+      "description": "O próprio vídeo se desmonta em camadas 3D (cenas, animação, legenda, voz, trilha) enquanto a narração conta como ele foi feito; no fim, as camadas viram o vídeo pronto.",
+      "uid": "official.a254ae1788ea42ac935d6811fcecaecb",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F29/camadas-da-edicao/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+        "mechanism": "Criativo 9:16 metalinguístico guiado por narração. Abre com um quadro do próprio vídeo e uma frase de impacto; na palavra da virada, o quadro se separa em camadas 3D empilhadas em profundidade, cada uma com conteúdo real (cenas, curva de animação, legenda, onda da voz, trilha). Cada camada vem para a frente quando a narração a cita: a voz mostra a onda real, o corte acontece numa lâmina, a legenda se digita, a curva se redesenha. Depois as camadas esvaziam num espaço \"seu vídeo\", recebem um material bruto e se fecham no resultado em tela cheia. Cartão final escrito com \"Saiba mais\".",
+        "steps": [
+          "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+          "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+          "Definir as camadas reais da própria edição (cenas, animação, legenda, voz, trilha) e a palavra que traz cada uma para a frente.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/camadas-da-edicao com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não inventar camadas que a edição não tem. Rótulos de camada pequenos não podem se sobrepor no topo da pilha. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/reference.mp4",
+          "sha256": "affe19225dcbed7bc69b80982823de65ed80407781b061565ffffa732670086b"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/hook.jpg",
+          "sha256": "cce715d9301680b363fa28349cb01883a065e67cc369f52b4721b86fcc578090"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/layers.jpg",
+          "sha256": "297a80c350e874ab8b48b183b9cc13296297416c74d0787eb685fa6c1af2f068"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/cut.jpg",
+          "sha256": "c856abb9783b2ec9cf582bb5a1334b59c1a4a0f335c15ca8ac5848c93abf5991"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/your-video.jpg",
+          "sha256": "518d1e39fad1e9604db1d6c25ca3beebe9a7c587cd2a69636f86c6b92f95d881"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/ready.jpg",
+          "sha256": "ed78acc49f134968db0f5c9ddc3f3766b9569c48a4df8cd13904796012ac7a3d"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/cta.jpg",
+          "sha256": "d5e893b90d7f94175013aa0212930615c2c2f1252a9fe7b54f61128927a82271"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F29/camadas-da-edicao/analysis.json",
+        "sha256": "5b7a279250143319aae6f711746c5854d05d500be6d261602ea5320fb81fb3c2"
+      }
+    },
+    {
+      "code": "F30",
+      "name": "Linha de Acabamento",
+      "memory_store": "linha-de-acabamento",
+      "pattern": "f30-linha-de-acabamento-v1",
+      "description": "O material bruto real desfila numa esteira 3D e passa por estações; a cada etapa narrada ele muda de estado até sair como vídeo pronto, aprovado com um toque.",
+      "uid": "official.5f8d34118a25489ca424a70d3e237d6f",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F30/linha-de-acabamento/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+        "mechanism": "Processo de transformação em 9:16 guiado por narração. O material bruto real (ex.: uma gravação com tropeços) vira uma fileira de blocos sobre uma esteira 3D clara, um bloco por trecho, com etiquetas que apontam os defeitos reais. Na apresentação do serviço, estações em arco sobem do chão; cada estação passa por cima da fileira na palavra da sua etapa e o estado muda (cor volta, silêncios afundam, erros saem, cenas entram, legenda/música/animação encaixam). A fileira se junta no vídeo pronto, há um toque em \"Aprovar\" e, se a narração falar de ajustes, um exemplo de pedido e a versão 2. Cartão final escrito com \"Saiba mais\".",
+        "steps": [
+          "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+          "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+          "Transcrever o material bruto, marcar os defeitos reais e dividir em blocos; associar cada estação a uma palavra da narração.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/linha-de-acabamento com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não inventar defeitos. Pedidos de ajuste mostrados devem ser rotulados como exemplo. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/reference.mp4",
+          "sha256": "c54da77fe91002cd204b38910d410576efbe09c9b725da65b3317308cb267ff0"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/hook.jpg",
+          "sha256": "12787d0af4517e0f80bd365dd129a2480456b20e103614d970f0e9a87acf6bd6"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/line.jpg",
+          "sha256": "6770083c223967a7c74e6a5df0b96a53cfdadeb9838767cbcedd03b4ad06eb7e"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/stations.jpg",
+          "sha256": "723566b5cdb72bcddb2b2df4e000d52e1bd3ebf0d4403c709a86e6bf04deddea"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/finishing.jpg",
+          "sha256": "90c71f6a29484b0f11f0cdd4437a76d751ae0e8b01c7aee28e2b7924c1c805ff"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/adjust.jpg",
+          "sha256": "fa5d3947d0851aae70892ae731a01afa12ad5a9a15c295f116f188308ac189af"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/cta.jpg",
+          "sha256": "c76e96f70a47091e4aae5d740f02ad172ea0c76719f02e81d742c5eddf8dfbfd"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F30/linha-de-acabamento/analysis.json",
+        "sha256": "9daf697154643a39a822e27befdd85778fbbf873757ec95fac05e80b2ec1e957"
+      }
+    },
+    {
+      "code": "F31",
+      "name": "Bastidor em Wireframe",
+      "memory_store": "bastidor-em-wireframe",
+      "pattern": "f31-bastidor-em-wireframe-v1",
+      "description": "Tom de confissão: a narração revela um segredo e o próprio cenário vira wireframe, mostrando os bastidores 3D, até renderizar o resultado final.",
+      "uid": "official.b9f9e20a079b4565866e3e8f27b2e311",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F31/bastidor-em-wireframe/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+        "mechanism": "Criativo 9:16 intimista guiado por narração. Abre escuro e próximo, com uma frase de confissão e um anel/forma 3D que reage à onda real da voz sobre piso espelhado. Na revelação, a câmera recua e o próprio cenário vira wireframe (malha, grade do chão, câmera virtual), como um programa 3D aberto; na apresentação, uma varredura renderiza o cenário de wireframe para final. Os verbos da narração viram demonstrações curtas em material real (escolher, cortar, legendar, animar) e o resultado aparece nítido. Fecha claro, com um espaço vazio \"seu conteúdo aqui\" e o cartão \"Saiba mais\".",
+        "steps": [
+          "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+          "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+          "Marcar a frase da revelação (vira wireframe), a da apresentação (renderiza) e um verbo por demonstração real.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/bastidor-em-wireframe com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "O anel de áudio precisa vir da voz real, não de barras aleatórias. Não colocar a prova em tela cheia sobre a legenda queimada dela: enquadrar. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/reference.mp4",
+          "sha256": "e0afab18763790d0af7d4808ec68af9d52c9bfe03dfd1f2bfd2294925c46ed31"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/hook.jpg",
+          "sha256": "58e905a99aefa51ca3f46c49d43be89d6dd8cfd5b7087b7b71827f313f3aa0af"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/wireframe.jpg",
+          "sha256": "2c7edb731b8edfecf0a41dc6de13caa339b7349ea8e0f825a610503934211be2"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/render.jpg",
+          "sha256": "5ec0158b3926090676e7158e73e2bc1bbd7c4256adab159d336fab7b62110ab4"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/verbs.jpg",
+          "sha256": "2d7cb183a1d7590e563e99f37ff3541ba764a378e580201f50d13b860590c577"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/result.jpg",
+          "sha256": "bb70e5f1cac7255f2cff4b315a411620a794f4c4c608f1ac5d53148f10710f4e"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/cta.jpg",
+          "sha256": "ea27ea89eefdb0a5ffa0f900b7ae2133add01b20fd1dd35f0e8cd520d0541349"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F31/bastidor-em-wireframe/analysis.json",
+        "sha256": "97e83f631062b96133726d1dce6965b4dd71cba05f29bbbda113647e18296d1d"
+      }
+    },
+    {
+      "code": "F32",
+      "name": "Recibo de Valor",
+      "memory_store": "recibo-de-valor",
+      "pattern": "f32-recibo-de-valor-v1",
+      "description": "Comparação de valor em cenário escuro e luxuoso: uma etiqueta de preço que vira na palavra-chave, um recibo que imprime o que o produto entrega e pilhas do custo alternativo.",
+      "uid": "official.668760f91bb044d7bdc5fce6fe14d39f",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F32/recibo-de-valor/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Criativo 9:16 de valor guiado pela fala de quem usa. Abre com uma etiqueta de preço 3D que gira até a palavra dita (ex.: \"de graça\"). Um recibo impresso por uma pequena impressora lista o que o produto entrega; em pedestais, a alternativa (ex.: \"editor por fora\") recebe notas com o nome de cada serviço — sem valores inventados — e maços por mês quando a fala faz a conta. Quem fala aparece em cartão grande enquanto fala; um plano aberto mostra a comparação inteira. Fundo escuro com friso dourado, mudança visual a cada 1,5–2 s. Cartão final com a promessa e \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Listar o que o produto entrega e o que a alternativa custaria (só o que é dito), e marcar as palavras de cada impressão e de cada nota.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/recibo-de-valor com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Nunca escrever preços ou números que não foram ditos. Não deixar o meio do vídeo escuro e vazio: objetos grandes e legíveis. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/reference.mp4",
+          "sha256": "007d9ccf8400a3806ed71eaa882d8bf296c3003a203d8c869ebd0cca4c5beb29"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/hook.jpg",
+          "sha256": "4da08e32e99b757cde70c6d03c04db645e736299ca0867a21c29c49b96772979"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/receipt.jpg",
+          "sha256": "e8476f70160310db0b420ae3dfbe797f83944fc1081f771e87556155c0e402df"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/alternative.jpg",
+          "sha256": "82dd671d99604deabd40c8ebd7dd7b2a64849d3c33ab81e58becc645d718ceb9"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/months.jpg",
+          "sha256": "6d4187a0a4f5a491b24dce25b547f32b8b7e96c5de700499daec9b22d56debe8"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/wide.jpg",
+          "sha256": "8e16333407701c6dfa3bfd51610e9cb99edff3cac07fb0ac4480b07b52eee769"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/cta.jpg",
+          "sha256": "5efb131c1de5d56c7db2c63187a1687e331a5ca21a66179ea596e09471bd0cc2"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F32/recibo-de-valor/analysis.json",
+        "sha256": "805608a3f415f75abe30962af3c8aefde7176149450e6149ae6db2860cc90a86"
+      }
+    },
+    {
+      "code": "F33",
+      "name": "Câmera do Agente",
+      "memory_store": "camera-do-agente",
+      "pattern": "f33-camera-do-agente-v1",
+      "description": "A câmera é o próprio software trabalhando: navega pelas telas reais, tira print, grava a tela e monta o resultado, com uma lista que vai se marcando no alto.",
+      "uid": "official.1e90331d6b244f00b554ede5d77880dd",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F33/camera-do-agente/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Demonstração de produto/software em 9:16 com a câmera no ponto de vista do agente. Telas reais do produto viram painéis 3D escuros que a câmera percorre; uma constelação mostra as entregas feitas. Na fala da ação, um marcador mira e trava num ponto da tela e o recorte sobe como print; um selo de gravação com contador grava a tela e quadros se soltam; as peças se montam no resultado final, que pode aparecer dentro de outro vídeo. No alto, uma lista (\"entrou\", \"tirou o print\", \"gravou\", \"montou\") vai se marcando. Depois, monólitos de vidro mostram usos para outros negócios. Pessoa pequena em círculo; legenda. Cartão final com \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Separar telas reais do produto e as entregas finais; marcar as palavras de cada ação (entrar, capturar, gravar, montar) para a lista e o marcador.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/camera-do-agente com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Painéis pequenos e sem contraste não leem no celular: telas grandes (75–90% da largura) e mais claras. Evitar superfícies 3D coincidentes (tremulação). Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/reference.mp4",
+          "sha256": "8048fd95633e2b82c258b12e8cd3a3fd2e99bcf2fb2a5b20a8fb60f16e91511a"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/hook.jpg",
+          "sha256": "6dda7ce550c01b72010d1a21bfb222709ea30b33b07912aa0d274e270bca574a"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/constellation.jpg",
+          "sha256": "51453e25ed213376ef3c22ed8ce34b84e126d2d8669d205ae817aed28c88e438"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/capture.jpg",
+          "sha256": "a4be2c3f19069d2ca9c14d5b8cb4f31edc9f7349d01e56cf3274c8bf873a9adf"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/record.jpg",
+          "sha256": "7c311e5ba8ee2e91c997bb01c9ce1dcc8339a9c0beb161b7bd8a5cf2e57c7141"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/uses.jpg",
+          "sha256": "663d3cd155c00f2aaa6159590d0522c469f74fe388d417006b105a278e5b8e4f"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/cta.jpg",
+          "sha256": "226aae36a27af9f92d6ca61ca5fee070bd83de0a3fcf5c33f262ddd51d6f5571"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F33/camera-do-agente/analysis.json",
+        "sha256": "fac5675725e6c9ecebc56f9973e74b6b49936891f30324d2dbf74af67156212a"
+      }
+    },
+    {
+      "code": "F34",
+      "name": "Arquivo de Fichas",
+      "memory_store": "arquivo-de-fichas",
+      "pattern": "f34-arquivo-de-fichas-v1",
+      "description": "Um arquivo de fichas em 3D: cada opção citada é uma gaveta etiquetada que abre e entrega a ficha com o exemplo real; as cores mudam num leque de amostras.",
+      "uid": "official.ac95517501304d45badc953d5163936c",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F34/arquivo-de-fichas/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+        "mechanism": "Catálogo em 9:16 guiado por narração. Abre num close das etiquetas de um arquivo de gavetas 3D com o número grande da promessa. A câmera recua e mostra o arquivo inteiro; a cada opção dita, a gaveta certa abre e a ficha sobe e vem para a frente com o exemplo real (quando não houver exemplo próprio, só a ficha desenhada). Para \"escolher cores\", um leque de amostras recolore a ficha passando por paletas reais. Na apresentação, todas as gavetas abrem em cascata e uma placa com o nome brilha; no fim, uma ficha mostra o próprio vídeo (recursão). Cartão final \"Saiba mais\".",
+        "steps": [
+          "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+          "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+          "Mapear cada opção citada para uma gaveta etiquetada e para um exemplo real próprio (ou ficha desenhada se não houver), e marcar a palavra da abertura.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/arquivo-de-fichas com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Não mostrar como exemplo uma referência com marca ou notícias de terceiros: use a ficha desenhada. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/reference.mp4",
+          "sha256": "bc246ed84fec9ff3b61074cefdfe3ed276bd1692956213030e5d331014cfa038"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/hook.jpg",
+          "sha256": "6f62b10ec8e1f00e9d90a893eebab0cc09452360bc546e5f6fee79398095b4d1"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/card.jpg",
+          "sha256": "809e5bc28c6650377eb36c4c32d8dde061e4809c659d0b0ae91e2213c8568fb8"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/colors.jpg",
+          "sha256": "b4af2f1c8d7dd003e633ca82b0bf4b1d39746e8eacacad2225608e1d0e552a8f"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/cascade.jpg",
+          "sha256": "c65dd280d3c73069e8fe6d930b14bac24fd4e96ea8d815232a62a8687ef8260a"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/recursion.jpg",
+          "sha256": "74eb29998d3a8a2007ddbecab46cd42cdf008e572f6dc13d7d51b26810244daf"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/cta.jpg",
+          "sha256": "f1b8f998d29be0d822d745cb4fe98d1a54e8312b2110a7378943237624453cc6"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F34/arquivo-de-fichas/analysis.json",
+        "sha256": "8062ee1150e2695aa2749fa724a5baa6a329c4630d110a9ec71235d256752a66"
+      }
+    },
+    {
+      "code": "F35",
+      "name": "Blocos de Tempo",
+      "memory_store": "blocos-de-tempo",
+      "pattern": "f35-blocos-de-tempo-v1",
+      "description": "O tempo vira objeto: blocos maciços de dias caem pesados sobre uma régua de horas e se comprimem no tempo novo, com a prova real e o número final em 3D.",
+      "uid": "official.06c28c5423374ca99078d35ba0a7056d",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F35/blocos-de-tempo/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+        "mechanism": "Comparação de tempo em 9:16 guiada por narração. Abre com um bloco maciço rotulado (ex.: \"2 DIAS\") caindo pesado sobre uma régua de horas; cada atraso dito acrescenta outro bloco. Na apresentação, uma varredura passa pelos blocos, as fatias de hora se soltam e se comprimem num segmento curto rotulado com o tempo novo. O material bruto real cai sobre esse segmento, uma barra/cabeça de leitura corre e o cartão vira o resultado pronto; um pedido de ajuste (exemplo) vira a versão 2. O número final sobe do chão em 3D com uma fileira de entregas reais atrás. Cartão final \"Saiba mais\".",
+        "steps": [
+          "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+          "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+          "Definir os tempos de antes e de depois exatamente como a narração diz e marcar as palavras de cada queda, da compressão e do número final.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/blocos-de-tempo com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Os tempos escritos têm de bater com a fala; nada de compressão com partículas: segmentos rígidos e precisos. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/reference.mp4",
+          "sha256": "2c4989e4e31252067bcc5e0878d2aecae4da3da7075379fde8945c019eb01fc9"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/hook.jpg",
+          "sha256": "1b662ca87686f5fc2a49a4622ad7110e26371c8cb11429d04a382e4508c9d3d3"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/plus.jpg",
+          "sha256": "06f8534f9e964f03b739260f4cb0226fb4fa1b785a5d626afa2795c85ce057c7"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/compress.jpg",
+          "sha256": "6b482f763637b470bdf52e14a846731903ea56816f3f2cc841e05e32bafa343d"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/machine.jpg",
+          "sha256": "b42459b1be4a60ae5c639dbdebba01ca08a22717068e7b4fbbe3b7b7da10d2e9"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/number.jpg",
+          "sha256": "62681d5051e1a592d4ea2f1aaa1126ea2d83ae9a7b3974e43e475337a384c0a2"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/cta.jpg",
+          "sha256": "aaf3b2da08fee37c5399f521ff3cd36fff38425ae74a89182f56ffc94dfef248"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F35/blocos-de-tempo/analysis.json",
+        "sha256": "c0c0fd14bd93efc683382f2d7bc091ed051fe7130c82ebf3ac1ff9bd73e048cd"
+      }
+    },
+    {
+      "code": "F36",
+      "name": "Interface em 3D",
+      "memory_store": "interface-em-3d",
+      "pattern": "f36-interface-em-3d-v1",
+      "description": "A interface real do produto ganha volume: cartões sobem da página, botões afundam no clique e o fluxo de uso vira uma demonstração 3D clara, do primeiro clique ao resultado.",
+      "uid": "official.0f94d7b7ffdc41a3b3476a9c99e88d37",
+      "origin": "official",
+      "design_independent": true,
+      "default_visual_identity": null,
+      "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F36/interface-em-3d/reference.mp4",
+      "example_link_status": "provided",
+      "validation_status": "reference_analyzed",
+      "mechanism_details": {
+        "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+        "mechanism": "Demonstração de produto em 9:16 com a interface real capturada e levada para 3D. Abre com o botão principal (ex.: \"Copiar pedido\") como tecla 3D que afunda no clique. A página real aparece inclinada e os cartões sobem dela com selos e etiquetas que entram nas palavras ditas; o item escolhido vem à frente, opções (ex.: paletas) abrem em leque, a ação principal mostra o resultado (ex.: o pedido pronto, com aviso de copiado) e o cartão vira o resultado final em vídeo. Quem fala fica em círculo pequeno; legenda em pílula. Fundo claro na cor da ID. Cartão final \"Saiba mais\".",
+        "steps": [
+          "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+          "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+          "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+          "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+          "Capturar a interface real (navegador automatizado) nos estados do fluxo e marcar a palavra de cada clique/estado.",
+          "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+          "Montar a composição pelo modelo em motion/templates/interface-em-3d com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+          "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+        ],
+        "avoid": "Usar só a interface real do próprio produto, sem dados pessoais visíveis. Não mostrar texto de interface ilegível: aproximar o estado em foco. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+      },
+      "reference_materials": [
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/reference.mp4",
+          "sha256": "3ad84f3ef0984aa3107beab14590f93028870c25d893112babd3f14948a0f052"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/hook.jpg",
+          "sha256": "27aa30794e826f32ab882e36bca057e16cc4e55f45cfe70ae5c87280ac13de51"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/page.jpg",
+          "sha256": "7820452a7f196f3e590260d812a3d62ad49ea37510b8ea9cfa664d32d1da5a67"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/cards.jpg",
+          "sha256": "5d20508f0459d85809bc44dfe5accf3425763dd6f4b814870fae69b65397fab3"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/choose.jpg",
+          "sha256": "b3cfe3beda5f7d27de5979d570a13fa1724c482c1480744af37bfb98acb67538"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/result.jpg",
+          "sha256": "746ac929d376c1126147e01cbc7a1d09b8a6ba61e8f345a3d3491b12facbc923"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/cta.jpg",
+          "sha256": "da436ba0003747be06222de7b41d1cd3bc4d22e1d6227d8bfa3ccd6c3706f599"
+        }
+      ],
+      "analysis_receipt": {
+        "path": "examples/reference-library/F36/interface-em-3d/analysis.json",
+        "sha256": "f45340449cde53bb095f9ababb6b9bc40dc76d85b63d04a575e626fbb8c99436"
+      }
     }
   ],
   "visual_identities": [

@@ -38,6 +38,20 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | F20 | React |
 | F21 | Mural de investigação |
 | F22 | Corte de Live 3D |
+| F23 | Corte de Live Editorial |
+| F24 | Vitrine em Cilindro |
+| F25 | Antes e Depois em Fita |
+| F26 | Mesa de Papel 3D |
+| F27 | Maquete Passo a Passo |
+| F28 | Lente Reveladora |
+| F29 | Camadas da Edição |
+| F30 | Linha de Acabamento |
+| F31 | Bastidor em Wireframe |
+| F32 | Recibo de Valor |
+| F33 | Câmera do Agente |
+| F34 | Arquivo de Fichas |
+| F35 | Blocos de Tempo |
+| F36 | Interface em 3D |
 
 Os códigos e nomes consolidados são preservados. Novos formatos oficiais ocupam o menor número ativo disponível com identidade interna própria; um código reaproveitado não herda a geração retirada. Todo oficial novo também precisa aparecer na galeria com exemplo real.
 

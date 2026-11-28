@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F31",
+  "format_uid": "official.b9f9e20a079b4565866e3e8f27b2e311",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F31/bastidor-em-wireframe/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Criativo 9:16 intimista guiado por narração. Abre escuro e próximo, com uma frase de confissão e um anel/forma 3D que reage à onda real da voz sobre piso espelhado. Na revelação, a câmera recua e o próprio cenário vira wireframe (malha, grade do chão, câmera virtual), como um programa 3D aberto; na apresentação, uma varredura renderiza o cenário de wireframe para final. Os verbos da narração viram demonstrações curtas em material real (escolher, cortar, legendar, animar) e o resultado aparece nítido. Fecha claro, com um espaço vazio \"seu conteúdo aqui\" e o cartão \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Marcar a frase da revelação (vira wireframe), a da apresentação (renderiza) e um verbo por demonstração real.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/bastidor-em-wireframe com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "O anel de áudio precisa vir da voz real, não de barras aleatórias. Não colocar a prova em tela cheia sobre a legenda queimada dela: enquadrar. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/reference.mp4",
+      "sha256": "e0afab18763790d0af7d4808ec68af9d52c9bfe03dfd1f2bfd2294925c46ed31"
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/hook.jpg",
+      "sha256": "58e905a99aefa51ca3f46c49d43be89d6dd8cfd5b7087b7b71827f313f3aa0af"
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/wireframe.jpg",
+      "sha256": "2c7edb731b8edfecf0a41dc6de13caa339b7349ea8e0f825a610503934211be2"
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/render.jpg",
+      "sha256": "5ec0158b3926090676e7158e73e2bc1bbd7c4256adab159d336fab7b62110ab4"
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/verbs.jpg",
+      "sha256": "2d7cb183a1d7590e563e99f37ff3541ba764a378e580201f50d13b860590c577"
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/result.jpg",
+      "sha256": "bb70e5f1cac7255f2cff4b315a411620a794f4c4c608f1ac5d53148f10710f4e"
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/cta.jpg",
+      "sha256": "ea27ea89eefdb0a5ffa0f900b7ae2133add01b20fd1dd35f0e8cd520d0541349"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/hook.jpg",
+      "sha256": "58e905a99aefa51ca3f46c49d43be89d6dd8cfd5b7087b7b71827f313f3aa0af",
+      "at_seconds": 0.8,
+      "caption": "Gancho: frase de confissão, close nas barras da voz real sobre piso espelhado."
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/wireframe.jpg",
+      "sha256": "2c7edb731b8edfecf0a41dc6de13caa339b7349ea8e0f825a610503934211be2",
+      "at_seconds": 5.0,
+      "caption": "Revelação: o cenário vira wireframe, com a malha do objeto e a grade do chão."
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/render.jpg",
+      "sha256": "5ec0158b3926090676e7158e73e2bc1bbd7c4256adab159d336fab7b62110ab4",
+      "at_seconds": 7.2,
+      "caption": "Apresentação: o cenário renderizado, ainda escuro."
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/verbs.jpg",
+      "sha256": "2d7cb183a1d7590e563e99f37ff3541ba764a378e580201f50d13b860590c577",
+      "at_seconds": 11.0,
+      "caption": "Demonstração dos verbos sobre material real (escolha, corte, legenda, animação)."
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/result.jpg",
+      "sha256": "bb70e5f1cac7255f2cff4b315a411620a794f4c4c608f1ac5d53148f10710f4e",
+      "at_seconds": 15.5,
+      "caption": "Resultado real nítido com o título de qualidade."
+    },
+    {
+      "path": "examples/reference-library/F31/bastidor-em-wireframe/cta.jpg",
+      "sha256": "ea27ea89eefdb0a5ffa0f900b7ae2133add01b20fd1dd35f0e8cd520d0541349",
+      "at_seconds": 21.5,
+      "caption": "Final claro: espaço vazio \"seu vídeo aqui\" sobre o anel e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/bastidor-em-wireframe",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E129 V1",
+    "original_filename": "E129 V1 - IA 3 Confissao (previa).mp4",
+    "original_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691",
+    "duration_s": 23.57,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

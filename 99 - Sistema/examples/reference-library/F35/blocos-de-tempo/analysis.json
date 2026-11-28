@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F35",
+  "format_uid": "official.06c28c5423374ca99078d35ba0a7056d",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F35/blocos-de-tempo/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Comparação de tempo em 9:16 guiada por narração. Abre com um bloco maciço rotulado (ex.: \"2 DIAS\") caindo pesado sobre uma régua de horas; cada atraso dito acrescenta outro bloco. Na apresentação, uma varredura passa pelos blocos, as fatias de hora se soltam e se comprimem num segmento curto rotulado com o tempo novo. O material bruto real cai sobre esse segmento, uma barra/cabeça de leitura corre e o cartão vira o resultado pronto; um pedido de ajuste (exemplo) vira a versão 2. O número final sobe do chão em 3D com uma fileira de entregas reais atrás. Cartão final \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Definir os tempos de antes e de depois exatamente como a narração diz e marcar as palavras de cada queda, da compressão e do número final.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/blocos-de-tempo com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Os tempos escritos têm de bater com a fala; nada de compressão com partículas: segmentos rígidos e precisos. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/reference.mp4",
+      "sha256": "2c4989e4e31252067bcc5e0878d2aecae4da3da7075379fde8945c019eb01fc9"
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/hook.jpg",
+      "sha256": "1b662ca87686f5fc2a49a4622ad7110e26371c8cb11429d04a382e4508c9d3d3"
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/plus.jpg",
+      "sha256": "06f8534f9e964f03b739260f4cb0226fb4fa1b785a5d626afa2795c85ce057c7"
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/compress.jpg",
+      "sha256": "6b482f763637b470bdf52e14a846731903ea56816f3f2cc841e05e32bafa343d"
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/machine.jpg",
+      "sha256": "b42459b1be4a60ae5c639dbdebba01ca08a22717068e7b4fbbe3b7b7da10d2e9"
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/number.jpg",
+      "sha256": "62681d5051e1a592d4ea2f1aaa1126ea2d83ae9a7b3974e43e475337a384c0a2"
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/cta.jpg",
+      "sha256": "aaf3b2da08fee37c5399f521ff3cd36fff38425ae74a89182f56ffc94dfef248"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/hook.jpg",
+      "sha256": "1b662ca87686f5fc2a49a4622ad7110e26371c8cb11429d04a382e4508c9d3d3",
+      "at_seconds": 0.8,
+      "caption": "Gancho: bloco maciço \"2 DIAS\" caindo sobre a régua de horas."
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/plus.jpg",
+      "sha256": "06f8534f9e964f03b739260f4cb0226fb4fa1b785a5d626afa2795c85ce057c7",
+      "at_seconds": 3.8,
+      "caption": "Outro bloco (\"+1 DIA\") cai atrás no atraso seguinte."
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/compress.jpg",
+      "sha256": "6b482f763637b470bdf52e14a846731903ea56816f3f2cc841e05e32bafa343d",
+      "at_seconds": 6.0,
+      "caption": "Varredura e compressão: os blocos viram fatias de hora prontas para encolher."
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/machine.jpg",
+      "sha256": "b42459b1be4a60ae5c639dbdebba01ca08a22717068e7b4fbbe3b7b7da10d2e9",
+      "at_seconds": 9.0,
+      "caption": "Tempo novo: o material bruto real sobre o segmento curto, com a barra de edição."
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/number.jpg",
+      "sha256": "62681d5051e1a592d4ea2f1aaa1126ea2d83ae9a7b3974e43e475337a384c0a2",
+      "at_seconds": 15.5,
+      "caption": "O número final em 3D com a prova real atrás."
+    },
+    {
+      "path": "examples/reference-library/F35/blocos-de-tempo/cta.jpg",
+      "sha256": "aaf3b2da08fee37c5399f521ff3cd36fff38425ae74a89182f56ffc94dfef248",
+      "at_seconds": 21.0,
+      "caption": "Cartão final com a promessa de tempo e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/blocos-de-tempo",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E134 V1",
+    "original_filename": "E134 V1 - IA 5 Dois dias ou trinta minutos (previa).mp4",
+    "original_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc",
+    "duration_s": 23.2,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

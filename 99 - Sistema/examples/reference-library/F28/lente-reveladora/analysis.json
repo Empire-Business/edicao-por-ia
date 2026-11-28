@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F28",
+  "format_uid": "official.6e1238637d764c7890393d8c18615a5e",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F28/lente-reveladora/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Comparação \"genérico × de verdade\" em 9:16. Um feed 3D de cartões cinzas e iguais (só formas abstratas, nenhum conteúdo de terceiros) rola enquanto a fala descreve o problema; todos fazem a mesma animação de modelo para mostrar o \"padrão\". Uma lente de vidro com refração passeia e, dentro dela, os cartões viram vídeos reais nítidos e coloridos. Na palavra da virada (\"aqui não\"), os cartões viram em onda para as entregas reais. Um trecho mostra o processo por trás (ex.: busca de cenas e a cena escolhida encaixando no vídeo) e o melhor resultado ocupa a tela cheia. Quem fala fica em círculo; legenda forte. Cartão final com a promessa e \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Construir o feed genérico só com formas abstratas e escolher as entregas reais que a lente revela; marcar a palavra da virada para a onda.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/lente-reveladora com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não usar vídeos reais de outras pessoas como \"exemplo ruim\". No fechamento, usar um quadro forte e contrastado (nunca uma animação branca que pareça vazia) e não deixar legendas queimadas da prova brigarem com a legenda. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/reference.mp4",
+      "sha256": "534238df947f119af5a8e37c1920dd242631fe8113722469db0ad2f2737eb68f"
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/feed.jpg",
+      "sha256": "c339d948f3c1a95709e509eb673f8cff46b8faac9f8a94be28afc2b4144cf0cd"
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/template.jpg",
+      "sha256": "dce188a20b550d829bd383f4bad7611b7db043317d39d55e48f6de036a370890"
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/reveal.jpg",
+      "sha256": "c72abb86fdf63a7734325f38119af3c336b0f9c7e78380c12282a2cf1be0e276"
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/search.jpg",
+      "sha256": "482224d1306a3148553d1d8da2b882ea9600f4c7f8398c587a44f9fc16a40771"
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/place.jpg",
+      "sha256": "848c2af82e32e2cd3c85f41aa071591d8b9fe88c5ba0b6d65931981cc5e44113"
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/cta.jpg",
+      "sha256": "02674e2dc93a1e50e7260f0b8ee06dc24707c823acc59947a5f92f0d66181cff"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/feed.jpg",
+      "sha256": "c339d948f3c1a95709e509eb673f8cff46b8faac9f8a94be28afc2b4144cf0cd",
+      "at_seconds": 1.0,
+      "caption": "Gancho: feed 3D cinza e genérico, com a lente de vidro já mostrando um vídeo real ampliado."
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/template.jpg",
+      "sha256": "dce188a20b550d829bd383f4bad7611b7db043317d39d55e48f6de036a370890",
+      "at_seconds": 6.5,
+      "caption": "Cara de modelo: os cartões genéricos fazem a mesma animação em sincronia."
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/reveal.jpg",
+      "sha256": "c72abb86fdf63a7734325f38119af3c336b0f9c7e78380c12282a2cf1be0e276",
+      "at_seconds": 10.0,
+      "caption": "Virada: a lente pousa numa entrega real e os cartões viram em onda."
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/search.jpg",
+      "sha256": "482224d1306a3148553d1d8da2b882ea9600f4c7f8398c587a44f9fc16a40771",
+      "at_seconds": 17.5,
+      "caption": "Processo por trás: busca de cenas com resultados reais da própria entrega."
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/place.jpg",
+      "sha256": "848c2af82e32e2cd3c85f41aa071591d8b9fe88c5ba0b6d65931981cc5e44113",
+      "at_seconds": 20.5,
+      "caption": "A cena escolhida encaixa no vídeo vertical, no lugar onde foi usada."
+    },
+    {
+      "path": "examples/reference-library/F28/lente-reveladora/cta.jpg",
+      "sha256": "02674e2dc93a1e50e7260f0b8ee06dc24707c823acc59947a5f92f0d66181cff",
+      "at_seconds": 28.0,
+      "caption": "Cartão final: promessa de contraste (ex.: \"cara de editor, não de IA\") e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/lente-reveladora",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E125 V2",
+    "original_filename": "E125 V2 - Corte 8 Cara de IA (previa).mp4",
+    "original_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14",
+    "duration_s": 30.53,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

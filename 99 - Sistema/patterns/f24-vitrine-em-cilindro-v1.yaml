@@ -1,0 +1,159 @@
+# F24 Vitrine em Cilindro — receita criada a partir de um criativo real (28/11/2026)
+id: f24-vitrine-em-cilindro-v1
+version: 1
+status: draft
+format_code: F24
+created: '2026-11-28'
+origin: Formato oficial criado pelo autor em 28/11/2026 a partir de um criativo real do lote do Cortez (E121 V1),
+  publicado como modelo a pedido dele. A receita foi tirada dessa edição e ainda não foi testada numa edição nova
+  de outro tema.
+purpose: 'Provar variedade: cada opção que a pessoa cita aparece na hora com um exemplo real, numa vitrine 3D que
+  impressiona sem poluir.'
+summary: Quando a fala lista opções (tipos, modelos, variações), a câmera fica dentro de um cilindro de telas e
+  cada opção citada gira para a frente com seu exemplo real.
+engine: hyperframes_gsap_threejs
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  duration_s:
+  - 25
+  - 40
+  fit: cover
+editorial:
+  target_pace: fast_but_clear
+  speech_source: recorded_speech (live, podcast, entrevista ou câmera)
+  pacing_rule: A fala conduz o tempo. Cada cena entra na palavra que a justifica; nada de cena sem fala que a peça.
+    Frases inteiras e com sentido do começo ao fim (sem conector solto no começo, sem lista cortada no fim).
+  hook: Primeiro 1–2 s com a frase mais forte e já com imagem em movimento (sem tela de título parada).
+  remove_explicit_mistakes: true
+  filler_policy: conservative
+  silence_removal:
+    enabled: true
+    threshold: relative_to_take (p90 do envelope − 35 dB)
+    minimum_silence_seconds: 0.3
+    keep_pause_seconds: 0.12
+    word_handle_seconds: 0.15
+    minimum_cut_seconds: 0.25
+    trim_edges: true
+  word_protection: Nunca cortar dentro de palavra; folga ≥ 0,15 s depois do fim real da última palavra e ≥ 0,06
+    s antes do ataque da primeira; nenhum pedaço < 0,25 s.
+  no_overlapping_source_audio: true
+  no_silent_takes: true
+structure:
+  opening: A primeira opção citada já gira para a frente no primeiro quadro, com título e pessoa em círculo.
+  beats:
+  - uma tela por opção citada, na palavra
+  - 'estilo: palavra 3D trocando fonte/tamanho/cor'
+  - mergulho numa tela em foco com rótulos
+  - cilindro cresce para "muitas possibilidades"
+  cta: Cilindro vira coroa sobre o cartão final "Saiba mais".
+visual:
+  primary_composition: camera_inside_cylinder_of_screens
+  renderer: three.js r186 (ESM local) + EffectComposer (RenderPass, bloom suave, profundidade de campo quando ajuda,
+    OutputPass), RoomEnvironment
+  camera: Escala em pixels (fov 30; distância = 960 / tan 15°) para alinhar 3D e HTML; movimentos lentos e motivados
+    pela fala.
+  framing: O herói ocupa ≈70–85% da largura; nada de 40% de baixo vazio; ≈18% de baixo livres para a interface da
+    rede; cada momento com um foco claro; nada sobreposto.
+  video_textures: Sequências JPG indexadas pelo quadro (floor(t*30)), nunca vídeo tocando em tempo real dentro do
+    3D.
+  determinism: Tudo em função do tempo do quadro (evento hf-seek); Math.random com semente fixa.
+  forbidden_look:
+  - partículas aleatórias, holofotes, neon, lens flare, glitch genérico
+  - 3D decorativo que não mostra nada
+  - zoom repetido sem motivo
+  - texto ilegível no celular
+  colors_fonts: Vêm só da ID escolhida (o exemplo usou ID05 apenas como exemplo).
+proof:
+  source_policy: Só material do próprio usuário/produto, conferido quadro a quadro, sem logotipos de terceiros,
+    documentos ou pessoas alheias. Rotular com honestidade e nunca atribuir a prova a quem não a fez. Ilustrações
+    e exemplos de pedido rotulados como tal.
+captions:
+  enabled: true
+  style: 'job_choice  # estilos L01–L08; o exemplo usou L05'
+  max_lines: 2
+  max_chars: 40
+  rule: Só palavras realmente ditas, com o texto conferido; bloco não atravessa troca de quem fala.
+audio:
+  voice_cleanup: Obrigatória. Limpeza local por padrão; isolamento pago só com o sim atual do usuário, por chamada.
+    Mesmo nível entre as pessoas, HPF 85 Hz, EQ de clareza, compressão suave, voz final −16 LUFS.
+  music: Trilha ≈ 22 dB abaixo da voz (fundo ≈ −37/−38 LUFS sob a fala) com compressão lateral; sobe no cartão final.
+    Expressão de volume do ffmpeg é ganho linear.
+sound_effects_policy: discretos (whoosh curto nas trocas, um impacto na virada, clique ou pop no CTA)
+loudness_target_lufs: -15
+true_peak_db: -1.0
+cta:
+  rule: A fala termina; um cartão escrito (promessa em uma frase + botão) fica de 4 a 5 s e o vídeo acaba ali.
+  variants:
+  - '"Saiba mais" com botão e toque'
+  - '"Comente <PALAVRA>" com balão e campo de comentário digitado (sem prometer link ou brinde)'
+  build_parameter: CTA=more | CTA=comment
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 15
+  audio_codec: aac
+  audio_bitrate: 192k
+tooling:
+  template: motion/templates/vitrine-em-cilindro
+  render: npx -y hyperframes@0.8.92 render comp -o renders/picture.mp4 -w 4 --video-frame-format png --crf 15
+qa:
+  retranscribe_final_mix: required
+  word_edges_check: required
+  background_stem_level: required
+  black_segment_seconds: 0.2
+  full_frame_checks: gancho, picos 3D, provas nítidas e as duas telas finais
+  third_party_logo_scan: required
+  cta_written_and_voice_finished: required
+forbidden:
+- third_party_media_or_logo_as_proof
+- proof_misattributed
+- invented_numbers_or_prices
+- clipped_words
+- overlapping_source_audio
+- cheap_decorative_effects
+- music_masking_speech
+- fixed_person_brand_or_palette
+- automatic_logo_or_signature
+- spoken_cta_over_end_card
+insertion_assets:
+  policy: own_proof_only
+  density: high
+  default_preferred_duration_s: 3
+  default_max_duration_s: 5
+  allow_image_motion: true
+mechanism_details:
+  inputs: 'A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas
+    do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria
+    ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.'
+  mechanism: Criativo 9:16 para falas que enumeram opções. A câmera fica no centro de um cilindro 3D de telas curvas,
+    cada uma tocando um exemplo real. A cada opção dita, a tela correspondente gira para a frente, ganha número
+    e nome e o resto do cilindro recua ou desfoca; quando a fala fala de estilo (letra, tamanho, cor), uma palavra
+    em 3D troca de fonte, tamanho e paleta passando por identidades reais. A câmera pode subir sobre o cilindro
+    e mergulhar numa tela. Pessoa em círculo no canto com nome e papel; legenda das palavras ditas. Fecha com o
+    cilindro como coroa sobre o cartão final "Saiba mais".
+  steps:
+  - 'Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector
+    solto no começo nem lista cortada no fim.'
+  - 'Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra,
+    folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir
+    as bordas e retranscrever.'
+  - 'Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz
+    não separa duas vozes.'
+  - Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e
+    normalizar para cerca de −16 LUFS.
+  - Mapear cada opção citada para um exemplo real que a demonstra (conferido por quadros) e marcar a palavra exata
+    em que a tela gira para a frente.
+  - Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular
+    com honestidade.
+  - Montar a composição pelo modelo em motion/templates/vitrine-em-cilindro com as cores e fontes da ID escolhida,
+    renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).
+  - 'Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão
+    final, ausência de preto, de sobreposição de textos e de logotipos.'
+  avoid: 'Não mostrar opção que não tem exemplo real (use um cartão de texto). Não girar o cilindro sem uma palavra
+    que peça. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem
+    3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros
+    como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os
+    nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só
+    com pedido do trabalho.'

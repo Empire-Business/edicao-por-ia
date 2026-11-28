@@ -1,0 +1,473 @@
+<!-- MODELO F27 Maquete Passo a Passo: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · corte da live "Não precisa ser técnico" (F10 · ID06)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x51ED27;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID06 Azul Claro — fundo #F5F8FC · texto #13233C · azul #0A4DFF · superfície #FFFFFF · apoio #64748B · Inter + IBM Plex Mono.
+   F10: pessoa + prova do produto. Cena = diorama isométrico 3D (three.js r186, câmera ortográfica, sombras suaves VSM, oclusão
+   ambiente GTAO, leve tilt-shift de miniatura). Prova = trechos reais de vídeos editados pelo Cortez, sem logotipos. */
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin-ext.woff2") format("woff2"); font-weight:400; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-500-latin.woff2") format("woff2"); font-weight:500; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin.woff2") format("woff2"); font-weight:600; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin-ext.woff2") format("woff2"); font-weight:600; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-700-latin.woff2") format("woff2"); font-weight:700; }
+@font-face { font-family:"Inter"; src:url("assets/inter-700-latin-ext.woff2") format("woff2"); font-weight:700; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin-ext.woff2") format("woff2"); font-weight:800; unicode-range:U+0100-024F; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; background:#F5F8FC; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#F5F8FC; font-family:"Inter", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#veil { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(245,248,252,.94) 0%, rgba(245,248,252,.78) 13%, rgba(245,248,252,0) 23%, rgba(245,248,252,0) 80%, rgba(245,248,252,.45) 90%, rgba(245,248,252,.7) 100%); }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.045; mix-blend-mode:multiply; }
+
+#pipw { position:absolute; left:836px; top:150px; width:180px; z-index:8; opacity:0; }
+#pip { width:180px; height:180px; border-radius:50%; overflow:hidden; box-shadow:0 0 0 6px #FFFFFF, 0 18px 40px rgba(19,35,60,.22); background:#13233C; }
+#pip video { display:block; width:180px; height:180px; object-fit:cover; border-radius:50%; clip-path:circle(50% at 50% 50%); }   /* o render troca o vídeo por quadros: o recorte precisa estar no próprio elemento */
+#pipl { width:280px; margin-left:-50px; margin-top:18px; text-align:center; font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:16px; letter-spacing:.12em; text-transform:uppercase; color:#13233C; line-height:1.35; }
+#pipl span { color:#0A4DFF; }
+
+.hd { position:absolute; left:80px; width:740px; top:150px; z-index:6; }
+.lab { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:22px; letter-spacing:.16em; text-transform:uppercase; color:#0A4DFF; overflow:hidden; height:32px; }
+.lab .in { display:inline-flex; align-items:center; gap:12px; }
+.lab i { width:11px; height:11px; border-radius:3px; background:#0A4DFF; display:block; flex:none; }
+.ttl { margin-top:12px; }
+.ln { display:block; overflow:hidden; padding:0 0 .1em; font-family:"Inter", sans-serif; font-weight:800; font-size:76px; line-height:1.02; letter-spacing:-.035em; color:#13233C; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:normal; color:#0A4DFF; }
+
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:40px; right:40px; top:1296px; text-align:center; opacity:0; }
+.cap .cl { display:inline-block; white-space:nowrap; font-family:"Inter", sans-serif; font-weight:800; font-size:62px; line-height:1.15; letter-spacing:-.03em; color:#13233C;
+  padding:8px 26px 12px; border-radius:24px; background:rgba(255,255,255,.9); box-shadow:0 10px 30px rgba(19,35,60,.12); }
+.cw { display:inline-block; transform-origin:50% 75%; }
+.cw.k { margin:0 .1em; }   /* a palavra de ênfase cresce sem engolir os espaços */
+
+.cta-h { position:absolute; left:40px; right:40px; top:168px; z-index:10; text-align:center; }
+.cta-h .ln { font-size:86px; text-align:center; }
+.cta-s { position:absolute; left:60px; right:60px; top:392px; z-index:10; text-align:center; opacity:0; font-family:"Inter", sans-serif; font-weight:500; font-size:38px; color:#13233C; letter-spacing:-.01em; }
+.cta-s b { font-weight:700; color:#0A4DFF; }
+.pillw { position:absolute; left:0; right:0; z-index:10; text-align:center; opacity:0; }
+.pill { display:inline-flex; align-items:center; gap:10px; padding:10px 18px 10px 16px; border-radius:999px; background:#FFFFFF; box-shadow:0 8px 24px rgba(19,35,60,.12);
+  font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:19px; letter-spacing:.12em; text-transform:uppercase; color:#13233C; white-space:nowrap; }
+.pill i { width:9px; height:9px; border-radius:50%; background:#0A4DFF; display:block; }
+#btnw { position:absolute; left:0; right:0; top:1416px; z-index:10; text-align:center; opacity:0; }
+#btn { display:inline-flex; align-items:center; justify-content:center; gap:18px; width:520px; height:118px; border-radius:999px; background:#0A4DFF; color:#FFFFFF;
+  font-family:"Inter", sans-serif; font-weight:800; font-size:48px; letter-spacing:-.015em; white-space:nowrap; box-shadow:0 24px 50px rgba(10,77,255,.32); }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }
+/* variante de CTA "Comente CORTEZ" (CTA=comment no build): mesma peça, só a tela final escrita muda */
+.cta-saiba #cmtw { display:none; } .cta-comment #btnw { display:none; } .cta-comment #p4 { top:1324px !important; }
+#cmtw { position:absolute; left:0; right:0; top:1394px; z-index:10; text-align:center; }
+#cmt1 { display:inline-flex; align-items:center; gap:18px; opacity:0; font-family:"Inter", sans-serif; font-weight:800; font-size:66px; letter-spacing:-.03em; color:#13233C; line-height:1; }
+#cmt1 b { color:#0A4DFF; font-weight:800; }
+#cmt1 svg { width:66px; height:66px; flex:none; }
+#cmtf { position:relative; margin:22px auto 0; width:660px; height:86px; border-radius:43px; background:#FFFFFF; box-shadow:0 14px 34px rgba(19,35,60,.16), inset 0 0 0 2px #D9E2EE;
+  display:flex; align-items:center; padding:0 0 0 34px; opacity:0; text-align:left; }
+#cmtph { font-family:"Inter", sans-serif; font-weight:500; font-size:30px; color:#94A3B8; white-space:nowrap; }
+#cmttx { font-family:"Inter", sans-serif; font-weight:800; font-size:40px; letter-spacing:.02em; color:#0A4DFF; white-space:nowrap; }
+#cmttx span { display:none; }
+#cmtc { display:inline-block; width:4px; height:44px; margin-left:4px; background:#0A4DFF; opacity:0; }
+#cmts { position:absolute; right:13px; top:13px; width:60px; height:60px; border-radius:50%; background:#0A4DFF; display:flex; align-items:center; justify-content:center; }
+#cmts svg { width:30px; height:30px; }
+</style>
+</head>
+<body>
+<div id="root" class="cta-{{CTAMODE}}" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="veil"></div>
+  <div id="pipw"><div id="pip"><video class="clip" src="assets/apresentador_pip.mp4" data-start="0" data-duration="{{PIPDUR}}" data-track-index="1" muted playsinline></video></div>
+    <div id="pipl">Apresentador<br><span>Equipe do Cortez</span></div></div>
+
+  {{HEADS}}
+
+  <div id="caps">{{CAPS}}</div>
+
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Edição profissional,</span></span><span class="ln"><span class="in" id="ch2"><em>sem ser técnico.</em></span></span></div>
+  <div class="cta-s" id="cs">Você grava. <b>O Cortez edita.</b> Você aprova.</div>
+  <div class="pillw" id="p4" style="top:1338px"><span class="pill"><i></i>Vídeos editados pelo Cortez</span></div>
+  <div id="btnw"><div id="btn">Saiba mais <span>→</span></div></div>
+  <div id="cmtw"><div id="cmt1"><svg id="cmtb" viewBox="0 0 66 66"><path d="M10 12 Q10 6 16 6 L50 6 Q56 6 56 12 L56 38 Q56 44 50 44 L28 44 L16 56 L17 44 L16 44 Q10 44 10 38 Z" fill="#0A4DFF"/>
+      <circle cx="22" cy="25" r="3.6" fill="#FFFFFF"/><circle cx="33" cy="25" r="3.6" fill="#FFFFFF"/><circle cx="44" cy="25" r="3.6" fill="#FFFFFF"/></svg><span>Comente <b>CORTEZ</b></span></div>
+    <div id="cmtf"><span id="cmtph">Escreva aqui nos comentários…</span><span id="cmttx"><span>C</span><span>O</span><span>R</span><span>T</span><span>E</span><span>Z</span></span><span id="cmtc"></span>
+      <span id="cmts"><svg viewBox="0 0 30 30"><path d="M15 24 L15 7 M7 14 L15 6 L23 14" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div></div>
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#FFFFFF" stroke="#13233C" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1, #ch2',{yPercent:112});
+  gsap.set('#h1 .lab .in, #h1l0 .in',{yPercent:0});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:.3,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.6); });
+    OUT(`${sel} .lab .in`,h.end-.3); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.3+j*.03)); });
+  // PiP do Apresentador: presente desde o 1º quadro; sai quando o Convidado fala
+  tl.set('#pipw',{opacity:1},0);
+  tl.to('#pipw',{opacity:0,scale:.8,duration:.3,ease:'power2.in'},T.fala0-.3);
+  // fechamento escrito (a voz já terminou)
+  IN('#ch1',T.cta0+.2,.75); IN('#ch2',T.cta0+.38,.75);
+  tl.fromTo('#cs',{opacity:0,y:18},{opacity:1,y:0,duration:.55,ease:'power3.out',immediateRender:false},T.cta0+.75);
+  tl.fromTo('#p4',{opacity:0,y:10},{opacity:1,y:0,duration:.4,immediateRender:false},T.cta0+1.25);
+  if(DATA.cta==='comment'){
+    // "Comente CORTEZ": linha principal + campo de comentário onde CORTEZ é digitado e enviado
+    tl.fromTo('#cmt1',{opacity:0,y:30},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.0);
+    tl.fromTo('#cmtf',{opacity:0,y:30},{opacity:1,y:0,duration:.55,ease:'power3.out',immediateRender:false},T.cta0+1.2);
+    tl.set('#cmtph',{display:'none'},T.type0-.05);
+    document.querySelectorAll('#cmttx span').forEach((el,i)=>tl.set(el,{display:'inline'},T.type0+i*.11));
+    for(let k=0;k*.27<T.end-T.cta0-1.25;k++) tl.set('#cmtc',{opacity:k%2?0:1},T.cta0+1.25+k*.27);
+    tl.fromTo('#cursor',{opacity:0,x:900,y:1720},{opacity:1,x:798,y:1512,duration:.8,ease:'power2.inOut',immediateRender:false},T.tap-.85);
+    tl.to('#cmts',{scale:.88,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+    tl.to('#cursor',{scale:.86,duration:.09,yoyo:true,repeat:1,transformOrigin:'20% 10%'},T.tap-.02);
+    tl.to('#cmtb',{scale:1.18,duration:.14,yoyo:true,repeat:1,ease:'power2.out',transformOrigin:'50% 60%'},T.tap+.08);
+    tl.to('#cursor',{x:860,y:1600,opacity:0,duration:.6,ease:'power2.in'},T.tap+.5);
+  } else {
+  tl.fromTo('#btnw',{opacity:0,y:40},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.0);
+  tl.fromTo('#cursor',{opacity:0,x:830,y:1700},{opacity:1,x:610,y:1478,duration:.8,ease:'power2.inOut',immediateRender:false},T.tap-.85);
+  tl.to('#btn',{scale:.95,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+  tl.to('#cursor',{scale:.86,duration:.09,yoyo:true,repeat:1,transformOrigin:'20% 10%'},T.tap-.02);
+  tl.to('#cursor',{x:680,y:1570,opacity:0,duration:.6,ease:'power2.in'},T.tap+.5);
+  }
+  // legenda L07 (ênfase pontual): frase de até 4 palavras; a palavra escolhida pelo sentido ganha cor e um pulo breve
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},g.s); tl.set(`#cg${i}`,{opacity:0},g.e);
+    g.w.forEach((w,j)=>{ if(!w.k) return;
+      tl.set(`#cg${i}w${j}`,{color:'#0A4DFF'},w.s);
+      tl.fromTo(`#cg${i}w${j}`,{scale:1},{scale:1.1,duration:.11,ease:'power2.out',immediateRender:false},w.s);
+      tl.to(`#cg${i}w${j}`,{scale:1,duration:.2,ease:'power2.inOut'},w.s+.11); }); });
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { GTAOPass } from 'three/addons/postprocessing/GTAOPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { HorizontalTiltShiftShader } from 'three/addons/shaders/HorizontalTiltShiftShader.js';
+import { VerticalTiltShiftShader } from 'three/addons/shaders/VerticalTiltShiftShader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const DATA = window.__DATA, T = DATA.T;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const K=(t,a,d)=>clamp((t-a)/d,0,1);
+const sm=(x)=>{ x=clamp(x,0,1); return x*x*(3-2*x); };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const ei=(x)=>Math.pow(clamp(x,0,1),3);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const bo=(x,s)=>{ x=clamp(x,0,1); const c1=s||1.70158, c3=c1+1; return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2); };
+const lerp=(a,b,u)=>a+(b-a)*u;
+const NAVY=0x13233C, BLUE=0x0A4DFF, WHITE=0xFFFFFF;
+
+// ---------- renderizador, cena e luz (estúdio claro, sombras macias) ----------
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.NeutralToneMapping; R.toneMappingExposure={{EXPOSURE}};
+R.shadowMap.enabled=true; R.shadowMap.type=THREE.VSMShadowMap;
+const S=new THREE.Scene(); S.background=new THREE.Color(0xF5F8FC);
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity={{ENVI}};
+const AZ0=Math.PI/4, EL=THREE.MathUtils.degToRad(30);
+const stage=new THREE.Group(); stage.rotation.y=AZ0; S.add(stage); stage.updateMatrixWorld(true);
+const C=new THREE.OrthographicCamera(-540,540,960,-960,1,12000);
+const hemi=new THREE.HemisphereLight(0xFFFFFF,0xBFCDE3,{{HEMI}}); S.add(hemi);
+const key=new THREE.DirectionalLight(0xFFFFFF,{{KEY}}); key.castShadow=true; key.shadow.mapSize.set(2048,2048);
+Object.assign(key.shadow.camera,{left:-1000,right:1000,top:1000,bottom:-1000,near:10,far:6000}); key.shadow.radius=10; key.shadow.blurSamples=16; key.shadow.bias=-0.0006;
+key.position.copy(stage.localToWorld(new THREE.Vector3(-560,1500,820))); key.target.position.set(0,0,0); S.add(key); S.add(key.target);
+const fill=new THREE.DirectionalLight(0xDCE7FF,{{FILL}}); fill.position.copy(stage.localToWorld(new THREE.Vector3(900,500,300))); S.add(fill);
+
+const composer=new EffectComposer(R,new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4})); composer.setPixelRatio(1); composer.setSize(1080,1920);
+composer.addPass(new RenderPass(S,C));
+const gtao=new GTAOPass(S,C,1080,1920); gtao.output=GTAOPass.OUTPUT.Default; gtao.blendIntensity={{AOI}};
+gtao.updateGtaoMaterial({radius:30,distanceExponent:1.2,thickness:8,scale:1.0,samples:16,distanceFallOff:1.0,screenSpaceRadius:false});
+gtao.updatePdMaterial({lumaPhi:10,depthPhi:2,normalPhi:3,radius:6,rings:2,samples:16});
+composer.addPass(gtao);
+const tsH=new ShaderPass(HorizontalTiltShiftShader), tsV=new ShaderPass(VerticalTiltShiftShader);
+tsH.uniforms.h.value={{TILT}}/1080; tsV.uniforms.v.value={{TILT}}/1920; tsH.uniforms.r.value=tsV.uniforms.r.value=0.52;
+composer.addPass(tsH); composer.addPass(tsV);
+composer.addPass(new OutputPass());
+
+// ---------- utilitários ----------
+function mat(color,rough,extra){ return new THREE.MeshStandardMaterial(Object.assign({color,roughness:rough??.58,metalness:0},extra||{})); }
+function rbox(w,h,d,r,m,seg){ const o=new THREE.Mesh(new RoundedBoxGeometry(w,h,d,seg||4,r),m); o.castShadow=true; o.receiveShadow=true; return o; }
+function roundMask(w,h,r){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,w,h);
+  g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+function ctex(w,h){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); const t=new THREE.CanvasTexture(c);
+  t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=8; t.generateMipmaps=true; t.minFilter=THREE.LinearMipmapLinearFilter; return {c,g,t}; }
+function face(w,h,map,alpha){ const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map,alphaMap:alpha||null,transparent:!!alpha,toneMapped:false})); return m; }
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(img && tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+const SEQ={}; let READY=null, BUILT=false;
+function loadImg(src,n){ n=n||0; return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>{ if(n<4) setTimeout(()=>loadImg(src,n+1).then(res,rej),120*(n+1)); else rej(new Error(src)); }; im.src=src; }); }
+function frameOf(name,t,t0,loop){ const a=SEQ[name]; let i=Math.floor(Math.max(0,t-t0)*30+1e-6); i = loop ? i%a.length : Math.min(i,a.length-1); return a[i]; }
+const DRAWS=[];   // texturas de texto: desenhadas de novo depois que as fontes carregam
+function later(fn){ DRAWS.push(fn); fn(); }
+
+// ---------- mesa / chão ----------
+let floorTex;
+floorTex=ctex(1024,1024); { const g=floorTex.g, gr=g.createRadialGradient(512,512,0,512,512,512); gr.addColorStop(0,'#FFFFFF'); gr.addColorStop(0.035,'#F4F7FC'); gr.addColorStop(0.12,'#DCE5F2'); gr.addColorStop(1,'#CFDAEA');
+  g.fillStyle=gr; g.fillRect(0,0,1024,1024); floorTex.t.needsUpdate=true; }
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(24000,24000),mat(0xFFFFFF,1,{map:floorTex.t})); floor.rotation.x=-Math.PI/2; floor.receiveShadow=true; S.add(floor);
+const desk=rbox(900,34,580,16,mat(0xFFFFFF,.5),5); desk.position.set(0,17,0); stage.add(desk);
+const DY=34;
+
+// ---------- notebook ----------
+const lap=new THREE.Group(); lap.position.set(0,DY,-70); stage.add(lap);
+const shell=mat(0xD8E0EB,.42,{metalness:.15});
+const base=rbox(390,14,252,6,shell); base.position.y=7; lap.add(base);
+const kb=ctex(640,256); { const g=kb.g; g.fillStyle='#C9D3E0'; g.fillRect(0,0,640,256); g.fillStyle='#E4EAF2';
+  for(let r=0;r<5;r++) for(let c=0;c<14;c++){ g.beginPath(); g.roundRect(14+c*44.5,14+r*46,38,38,6); g.fill(); } }
+const kbm=face(330,132,kb.t); kbm.rotation.x=-Math.PI/2; kbm.position.set(0,14.3,-34); lap.add(kbm);
+const pad=new THREE.Mesh(new THREE.PlaneGeometry(120,66),mat(0xCAD4E1,.4)); pad.rotation.x=-Math.PI/2; pad.position.set(0,14.3,78); lap.add(pad);
+const hinge=new THREE.Group(); hinge.position.set(0,14,-122); hinge.rotation.x=-0.2; lap.add(hinge);
+const lid=rbox(390,256,10,6,shell); lid.position.set(0,128,0); hinge.add(lid);
+const bezel=new THREE.Mesh(new THREE.PlaneGeometry(374,240),mat(NAVY,.35)); bezel.position.set(0,128,5.3); hinge.add(bezel);
+const SCR=ctex(1024,634); const scrMesh=face(354,219,SCR.t,roundMask(354,219,6)); scrMesh.position.set(0,130,5.6); hinge.add(scrMesh);
+const scrAnchor=new THREE.Object3D(); scrAnchor.position.set(0,130,6); hinge.add(scrAnchor);
+stage.updateMatrixWorld(true);
+const SCREEN_L=stage.worldToLocal(scrAnchor.getWorldPosition(new THREE.Vector3()));
+
+// ---------- janelas de terminal (o "técnico") ----------
+const CODE=[
+  ['$ git clone https://…/setup.git','$ cd setup && npm install','npm ERR! code EACCES','npm ERR! permission denied'],
+  ['$ python3 -m venv .venv','$ source .venv/bin/activate','$ pip install -r requirements.txt','ERROR: No matching distribution'],
+  ['export PATH="$HOME/.local/bin:$PATH"','$ chmod +x install.sh','$ sudo ./install.sh --force','[sudo] password for user:'],
+  ['$ brew install ffmpeg node python','==> Downloading…','Error: Xcode CLT outdated','$ xcode-select --install'],
+  ['config.yaml','  api_key: ••••••••','  model: ???','  port: 8080  # ???'],
+  ['$ docker compose up -d','ERROR: Cannot connect to','the Docker daemon','$ systemctl start docker'],
+  ['Traceback (most recent call last):','  File "main.py", line 42','ModuleNotFoundError:','No module named "cv2"'],
+  ['$ ssh-keygen -t ed25519','$ git push origin main','fatal: Authentication failed','remote: Permission denied'],
+  ['{ "scripts": { "build": "vite" } }','$ npm run build','✖ Build failed (3 errors)','  at node_modules/…'],
+];
+function termCanvas(lines){ const k=ctex(640,372); const g=k.g; g.fillStyle='#13233C'; g.fillRect(0,0,640,372);
+  g.fillStyle='#1E3354'; g.fillRect(0,0,640,48); [0,1,2].forEach(i=>{ g.fillStyle=['#5B6B84','#4A5A73','#3C4B62'][i]; g.beginPath(); g.arc(30+i*26,24,8,0,7); g.fill(); });
+  g.font='500 27px "IBM Plex Mono"'; g.textBaseline='top';
+  lines.forEach((s,i)=>{ const err=/ERR|Error|ERROR|fatal|failed|Traceback|Module|denied|✖/.test(s); g.fillStyle= err ? '#FFFFFF' : (s.startsWith('$')? '#9DB8FF':'#C9D6EA');
+    if(err){ g.fillStyle='rgba(10,77,255,.35)'; g.fillRect(18,72+i*68-6,604,44); g.fillStyle='#FFFFFF'; }
+    g.fillText(s,28,72+i*68); });
+  k.t.needsUpdate=true; return k.t; }
+const cards=[];
+const CARD_POS=[ // x, y, z, rotY, rotZ, escala, aparece em (s)
+  [-205,560,-40,0.30,0.05,1.0,-1],[205,640,-90,-0.26,-0.05,0.95,-1],[-20,410,70,0.08,-0.025,1.14,-1],[250,360,10,-0.34,0.06,0.9,-1],
+  [-265,290,40,0.38,-0.045,0.86,-1],[30,760,-150,-0.06,0.03,0.9,-1],[-150,170,130,0.16,0.02,0.82,0.45],[190,190,120,-0.28,-0.035,0.86,0.95],[-10,600,10,0.02,0.015,1.0,1.55]];
+CARD_POS.forEach((p,i)=>{ const g=new THREE.Group(); const body=rbox(330,194,12,10,mat(NAVY,.45)); g.add(body);
+  const f=face(322,186,null,roundMask(322,186,9)); later(()=>{ f.material.map=termCanvas(CODE[i%CODE.length]); f.material.needsUpdate=true; });
+  f.position.z=6.4; g.add(f); g.userData={p,i}; stage.add(g); cards.push(g); });
+const IMPLODE=new THREE.Vector3(0,300,90);
+
+// ---------- PDF ----------
+const pdf=new THREE.Group(); stage.add(pdf);
+const pdfBody=rbox(196,256,6,4,mat(WHITE,.5)); pdf.add(pdfBody);
+const PDFC=ctex(392,512); later(()=>{ const g=PDFC.g; g.fillStyle='#FFFFFF'; g.fillRect(0,0,392,512);
+  g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(30,34,96,44,10); g.fill(); g.fillStyle='#FFFFFF'; g.font='700 26px "IBM Plex Mono"'; g.textBaseline='middle'; g.fillText('PDF',50,57);
+  g.fillStyle='#13233C'; g.font='800 66px Inter'; g.textBaseline='alphabetic'; g.fillText('Cortez',30,170);
+  g.fillStyle='#64748B'; g.font='500 27px Inter'; g.fillText('Guia de instalação',32,212);
+  g.fillStyle='#E3E9F2'; [262,292,322,352].forEach((y,i)=>{ g.beginPath(); g.roundRect(32,y,[300,320,260,290][i],14,7); g.fill(); });
+  g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(32,410,328,62,14); g.fill(); g.fillStyle='#FFFFFF'; g.font='700 25px Inter'; g.textBaseline='middle'; g.fillText('Envie para o Claude',62,442);
+  PDFC.t.needsUpdate=true; });
+const pdfFace=face(190,248,PDFC.t,roundMask(190,248,6)); pdfFace.position.z=3.3; pdf.add(pdfFace);
+
+// ---------- pastas do Cortez ----------
+const FOLD=[['01','Enviar','vídeos'],['02','Ver','vídeos'],['03','Ajuda',''],['04','Formatos',''],['05','IDs','Visuais']];
+function folderShape(w,h,tw,th){ const s=new THREE.Shape(); const r=10; s.moveTo(-w/2+r,-h/2); s.lineTo(w/2-r,-h/2); s.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);
+  s.lineTo(w/2,h/2-r); s.quadraticCurveTo(w/2,h/2,w/2-r,h/2); s.lineTo(-w/2+tw+th,h/2); s.lineTo(-w/2+tw,h/2+th); s.lineTo(-w/2+r,h/2+th);
+  s.quadraticCurveTo(-w/2,h/2+th,-w/2,h/2+th-r); s.lineTo(-w/2,-h/2+r); s.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2); return s; }
+const folders=FOLD.map((f,i)=>{ const g=new THREE.Group(); stage.add(g);
+  const back=new THREE.Mesh(new THREE.ExtrudeGeometry(folderShape(164,128,62,16),{depth:6,bevelEnabled:true,bevelThickness:3,bevelSize:3,bevelSegments:3,curveSegments:8}),mat(0x0839C9,.5));
+  back.castShadow=true; back.receiveShadow=true; back.position.z=-10; g.add(back);
+  const paper=rbox(150,118,3,3,mat(0xFFFFFF,.6)); paper.position.set(0,4,-3); g.add(paper);
+  const front=new THREE.Group(); front.position.set(0,-64,2); g.add(front);
+  const fb=rbox(170,120,7,8,mat(BLUE,.45)); fb.position.y=60; front.add(fb);
+  const lc=ctex(480,340); later(()=>{ const q=lc.g; q.clearRect(0,0,480,340); q.fillStyle='#FFFFFF'; q.textBaseline='alphabetic';
+  q.font='800 112px Inter'; q.fillText(f[0],30,118); q.font='700 64px Inter'; q.fillText(f[1],32,214); if(f[2]) q.fillText(f[2],32,290); lc.t.needsUpdate=true; });
+  const lab=new THREE.Mesh(new THREE.PlaneGeometry(160,113),new THREE.MeshBasicMaterial({map:lc.t,transparent:true,toneMapped:false})); lab.position.set(0,60,3.8); front.add(lab);
+  g.userData={front,i}; g.visible=false; return g; });
+const FSLOT=FOLD.map((f,i)=>{ const k=i-2; return [k*178, 486+26*Math.cos(k*0.9), -150-18*Math.abs(k), -k*0.13]; });
+
+// ---------- cartão do Convidado ----------
+const jo=new THREE.Group(); jo.position.set(-282,DY,128); stage.add(jo); jo.visible=false;
+const joFrame=rbox(262,262,14,16,mat(WHITE,.48)); joFrame.position.y=74+131; jo.add(joFrame);
+const joTx=videoTex(); const joPhoto=face(240,240,joTx,roundMask(240,240,12)); joPhoto.position.set(0,205,7.4); jo.add(joPhoto);
+const joPlate=rbox(262,66,16,12,mat(NAVY,.45)); joPlate.position.set(0,36,14); jo.add(joPlate);
+const JP=ctex(786,198); later(()=>{ const g=JP.g; g.clearRect(0,0,786,198); g.fillStyle='#FFFFFF'; g.font='800 64px Inter'; g.textBaseline='alphabetic'; g.fillText('Convidado',36,92);
+  g.fillStyle='#9DB8FF'; g.font='500 31px "IBM Plex Mono"'; g.fillText('CANAL CANAL DO CONVIDADO',38,156); JP.t.needsUpdate=true; });
+const joPlateF=new THREE.Mesh(new THREE.PlaneGeometry(262,66),new THREE.MeshBasicMaterial({map:JP.t,transparent:true,toneMapped:false})); joPlateF.position.set(0,36,22.2); jo.add(joPlateF);
+function tagMesh(text,bg,fg,w){ const k=ctex(w*3,132); later(()=>{ const g=k.g; g.clearRect(0,0,w*3,132); g.fillStyle=bg; g.beginPath(); g.roundRect(3,3,w*3-6,126,63); g.fill();
+  g.fillStyle=fg; g.font='500 44px "IBM Plex Mono"'; g.textBaseline='middle'; g.textAlign='center'; g.fillText(text,w*1.5,68); k.t.needsUpdate=true; });
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(w,44),new THREE.MeshBasicMaterial({map:k.t,transparent:true,toneMapped:false,depthWrite:false})); return m; }
+const joBadge=tagMesh('✓ CLIENTE DO CORTEZ','#0A4DFF','#FFFFFF',270); joBadge.position.set(40,348,10); jo.add(joBadge);
+
+// ---------- telas de vídeo (bruto, depois, cartão final) ----------
+function tile(w,h,body){ const g=new THREE.Group(); const b=rbox(w+16,h+16,10,14,mat(body??WHITE,.48)); b.position.y=(h+16)/2; g.add(b);
+  const tx=videoTex(); const s=face(w,h,tx,roundMask(Math.round(w),Math.round(h),10)); s.position.set(0,(h+16)/2,5.4); g.add(s); g.userData={tx}; g.visible=false; stage.add(g); return g; }
+const raw=tile(204,363,0xC7D0DC); const rawTag=tagMesh('GRAVAÇÃO BRUTA','#13233C','#FFFFFF',220); rawTag.position.set(0,418,8); raw.add(rawTag);
+const hero=tile(234,416); const heroTag=tagMesh('EXEMPLO · EDITADO PELO CORTEZ','#0A4DFF','#FFFFFF',330); heroTag.position.set(0,472,8); hero.add(heroTag);
+const ctaT=[tile(206,366),tile(226,402),tile(206,366)];
+const SPOT=new THREE.Vector3(282,DY,128);
+
+// ---------- câmera (ortográfica isométrica) ----------
+const CAMK={{CAMK}};
+function camAt(t){ let i=0; while(i<CAMK.length-1 && CAMK[i+1][0]<=t) i++;
+  const a=CAMK[i], b=CAMK[Math.min(i+1,CAMK.length-1)]; const u = b[0]>a[0] ? eio((t-a[0])/(b[0]-a[0])) : 0;
+  return {f:new THREE.Vector3(lerp(a[1],b[1],u),lerp(a[2],b[2],u),lerp(a[3],b[3],u)), z:lerp(a[4],b[4],u), sy:lerp(a[5],b[5],u), az:lerp(a[6],b[6],u)}; }
+function placeCam(t){ const k=camAt(t); const az=AZ0 + THREE.MathUtils.degToRad(k.az + {{ORBIT}}*Math.sin(t*0.23+0.4)), el=EL + 0.03*Math.sin(t*0.17);
+  const fw=stage.localToWorld(k.f.clone());
+  const dir=new THREE.Vector3(Math.sin(az)*Math.cos(el),Math.sin(el),Math.cos(az)*Math.cos(el));
+  const right=new THREE.Vector3().crossVectors(new THREE.Vector3(0,1,0),dir).normalize(); const up=new THREE.Vector3().crossVectors(dir,right).normalize();
+  const tgt=fw.clone().addScaledVector(up,-(960-k.sy)/k.z);
+  C.position.copy(tgt).addScaledVector(dir,5000); C.up.set(0,1,0); C.lookAt(tgt); C.zoom=k.z; C.updateProjectionMatrix(); }
+
+// ---------- tela do notebook (desenhada a partir do tempo) ----------
+let scrKey='';
+function drawScreen(t){
+  const g=SCR.g, W=1024, H=634;
+  const term = t < T.nada+0.18;
+  const p = clamp((t-T.inst-0.05)/(T.soz+0.35-T.inst),0,1);
+  const c2 = t >= T.ask0-0.25;   // 2ª conversa: o pedido em linguagem comum
+  const typed = Math.round(ASK.length*clamp((t-T.ask0)/(T.askSend-T.ask0-0.12),0,1));
+  const p2 = clamp((t-T.askReply)/(T.hero0-T.askReply),0,1);
+  const st = term ? 'term'+(Math.floor(t*2.2)%2) : c2 ? ['c2', typed, t>=T.askSend, t>=T.askReply, Math.round(p2*60), Math.floor(t*2.4)%2].join(':')
+    : ['chat', t>=T.send, t>=T.inst-0.1, Math.round(p*60), t>=T.simp-0.08].join(':');
+  if(st===scrKey) return; scrKey=st;
+  if(c2){ drawAsk(g,W,H,t,typed,p2); SCR.t.needsUpdate=true; return; }
+  if(term){ g.fillStyle='#0F1C31'; g.fillRect(0,0,W,H); g.font='500 30px "IBM Plex Mono"'; g.textBaseline='top';
+    ['$ ./install.sh','Checking dependencies…','✖ node: command not found','✖ python3.11 required','✖ ffmpeg missing','npm ERR! code EACCES','$ █'].forEach((s,i)=>{
+      g.fillStyle = s.startsWith('✖')||s.startsWith('npm') ? '#FFFFFF' : '#9DB8FF'; if(i===6 && st.endsWith('1')) s='$ '; g.fillText(s,40,40+i*76); });
+    SCR.t.needsUpdate=true; return; }
+  g.fillStyle='#F5F8FC'; g.fillRect(0,0,W,H);
+  g.fillStyle='#FFFFFF'; g.fillRect(0,0,W,86); g.fillStyle='#E3E9F2'; g.fillRect(0,86,W,2);
+  g.fillStyle='#13233C'; g.font='700 34px Inter'; g.textBaseline='middle'; g.fillText('Claude',40,44);
+  g.fillStyle='#64748B'; g.font='500 22px "IBM Plex Mono"'; g.fillText('NOVA CONVERSA',176,46);
+  g.fillStyle='#FFFFFF'; g.beginPath(); g.roundRect(40,H-92,W-80,64,32); g.fill(); g.strokeStyle='#D9E2EE'; g.lineWidth=2; g.stroke();
+  g.fillStyle='#94A3B8'; g.font='500 26px Inter'; g.fillText('Escreva uma mensagem…',76,H-60);
+  if(t>=T.send){ // mensagem da pessoa: o PDF + o pedido
+    g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(W-560,112,520,138,26); g.fill();
+    g.fillStyle='#FFFFFF'; g.beginPath(); g.roundRect(W-538,130,250,56,12); g.fill();
+    g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(W-528,140,60,36,7); g.fill(); g.fillStyle='#FFFFFF'; g.font='700 18px "IBM Plex Mono"'; g.fillText('PDF',W-517,159);
+    g.fillStyle='#13233C'; g.font='600 25px Inter'; g.fillText('Cortez.pdf',W-456,159);
+    g.fillStyle='#FFFFFF'; g.font='600 31px Inter'; g.fillText('Instala o Cortez pra mim?',W-536,222); }
+  if(t>=T.inst-0.1){ // resposta: instalando sozinho
+    g.fillStyle='#0A4DFF'; g.beginPath(); g.arc(68,302,22,0,7); g.fill(); g.fillStyle='#FFFFFF'; g.beginPath(); g.moveTo(68,288); g.quadraticCurveTo(70,300,82,302); g.quadraticCurveTo(70,304,68,316); g.quadraticCurveTo(66,304,54,302); g.quadraticCurveTo(66,300,68,288); g.fill();
+    g.fillStyle='#FFFFFF'; g.beginPath(); g.roundRect(104,272,600,(p>=1? 236:206),22); g.fill();
+    g.fillStyle='#13233C'; g.font='700 32px Inter'; g.fillText(p<1?'Instalando o Cortez…':'Pronto! Tudo instalado.',132,312);
+    g.fillStyle='#E3E9F2'; g.beginPath(); g.roundRect(132,344,540,16,8); g.fill();
+    g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(132,344,Math.max(16,540*p),16,8); g.fill();
+    [['Pasta do Cortez criada',.34],['Formatos e IDs visuais',.68],['Pronto para editar',.999]].forEach(([s,th],i)=>{ if(p<th) return;
+      g.fillStyle='#0A4DFF'; g.beginPath(); g.arc(146,394+i*36,11,0,7); g.fill(); g.strokeStyle='#FFFFFF'; g.lineWidth=3.5; g.beginPath(); g.moveTo(140,394+i*36); g.lineTo(145,399+i*36); g.lineTo(153,389+i*36); g.stroke();
+      g.fillStyle='#13233C'; g.font='500 26px Inter'; g.fillText(s,168,395+i*36); }); }
+  if(t>=T.simp-0.08){ g.fillStyle='rgba(245,248,252,.0)'; g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(730,300,250,200,24); g.fill();
+    g.strokeStyle='#FFFFFF'; g.lineWidth=12; g.lineCap='round'; g.lineJoin='round'; g.beginPath(); g.moveTo(812,398); g.lineTo(845,430); g.lineTo(900,365); g.stroke();
+    g.fillStyle='#FFFFFF'; g.font='700 24px "IBM Plex Mono"'; g.textAlign='center'; g.fillText('INSTALADO',855,470); g.textAlign='left'; }
+  SCR.t.needsUpdate=true; }
+
+const ASK='Cortez, edita o vídeo da pasta 01 pra mim';
+function wrap(g,txt,maxW){ const out=[]; let line=''; txt.split(' ').forEach(w=>{ const tt=line?line+' '+w:w; if(g.measureText(tt).width>maxW && line){ out.push(line); line=w; } else line=tt; }); if(line) out.push(line); return out; }
+function drawAsk(g,W,H,t,typed,p2){
+  g.fillStyle='#F5F8FC'; g.fillRect(0,0,W,H);
+  g.fillStyle='#FFFFFF'; g.fillRect(0,0,W,86); g.fillStyle='#E3E9F2'; g.fillRect(0,86,W,2);
+  g.fillStyle='#13233C'; g.font='700 34px Inter'; g.textBaseline='middle'; g.fillText('Claude',40,44);
+  g.fillStyle='#64748B'; g.font='500 22px "IBM Plex Mono"'; g.fillText('NOVA CONVERSA',176,46);
+  const sent = t>=T.askSend;
+  // campo de digitação
+  g.fillStyle='#FFFFFF'; g.beginPath(); g.roundRect(30,H-118,W-60,92,30); g.fill(); g.strokeStyle= sent ? '#D9E2EE' : '#0A4DFF'; g.lineWidth=3; g.stroke();
+  g.font='600 40px Inter'; g.textBaseline='middle';
+  if(!sent){ const s=ASK.slice(0,typed); g.fillStyle='#13233C'; const tw=g.measureText(s).width; g.fillText(s,62,H-72);
+    if(Math.floor(t*2.4)%2===0){ g.fillStyle='#0A4DFF'; g.fillRect(66+tw,H-96,4,48); } }
+  else { g.fillStyle='#94A3B8'; g.font='500 30px Inter'; g.fillText('Escreva uma mensagem…',62,H-72); }
+  // botão enviar
+  g.fillStyle='#0A4DFF'; g.beginPath(); g.arc(W-84,H-72,30,0,7); g.fill(); g.strokeStyle='#FFFFFF'; g.lineWidth=5; g.lineCap='round';
+  g.beginPath(); g.moveTo(W-84,H-58); g.lineTo(W-84,H-86); g.moveTo(W-96,H-74); g.lineTo(W-84,H-86); g.lineTo(W-72,H-74); g.stroke();
+  if(sent){ g.font='600 40px Inter'; const ls=wrap(g,ASK,560); const bh=36+ls.length*52;
+    g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(W-660,112,620,bh,28); g.fill(); g.fillStyle='#FFFFFF'; g.textBaseline='top'; ls.forEach((l,i)=>g.fillText(l,W-632,130+i*52)); }
+  if(t>=T.askReply){ const y=300;
+    g.fillStyle='#0A4DFF'; g.beginPath(); g.arc(64,y+30,24,0,7); g.fill(); g.fillStyle='#FFFFFF'; g.beginPath(); g.moveTo(64,y+14); g.quadraticCurveTo(66,y+28,80,y+30); g.quadraticCurveTo(66,y+32,64,y+46); g.quadraticCurveTo(62,y+32,48,y+30); g.quadraticCurveTo(62,y+28,64,y+14); g.fill();
+    g.fillStyle='#FFFFFF'; g.beginPath(); g.roundRect(104,y-4,640,128,24); g.fill();
+    g.fillStyle='#13233C'; g.font='700 38px Inter'; g.textBaseline='middle'; g.fillText(p2<1?'Editando o seu vídeo…':'Pronto! Está na pasta 02.',132,y+40);
+    g.fillStyle='#E3E9F2'; g.beginPath(); g.roundRect(132,y+80,580,18,9); g.fill(); g.fillStyle='#0A4DFF'; g.beginPath(); g.roundRect(132,y+80,Math.max(18,580*p2),18,9); g.fill(); }
+}
+
+// ---------- quadro a quadro ----------
+function render(t){
+  placeCam(t);
+  // janelas de terminal flutuando; somem implodindo no PDF em "nada disso"
+  cards.forEach((g,i)=>{ const [x,y,z,ry,rz,s,at]=g.userData.p; const born = at<0 ? 1 : bo(K(t,at,0.42),1.4);
+    const imp = ei(K(t,T.nada+0.02+i*0.024,0.34));
+    g.visible = born>0.001 && imp<0.999;
+    if(!g.visible) return;
+    const bob=7*Math.sin(t*1.7+i*1.3);
+    g.position.set(lerp(x,IMPLODE.x,imp), lerp(y+bob,IMPLODE.y,imp), lerp(z,IMPLODE.z,imp));
+    g.rotation.set(0.02*Math.sin(t*1.1+i), ry + imp*1.6*(i%2?1:-1), rz + 0.012*Math.sin(t*1.9+i*2));
+    g.scale.setScalar(s*Math.max(0.001,born)*(1-imp*0.95)); });
+  // PDF nasce do que sobrou do "técnico", flutua e entra no notebook
+  { const pop=bo(K(t,T.nada+0.3,0.5),1.6), fly=eio(K(t,T.cl0+0.05,0.62));
+    pdf.visible = t>T.nada+0.3 && fly<0.999;
+    if(pdf.visible){ const pulse=1+0.07*Math.exp(-Math.pow((t-T.pdfw-0.08)/0.12,2));
+      const hx=IMPLODE.x, hy=IMPLODE.y+9*Math.sin((t-T.nada)*1.6), hz=IMPLODE.z;
+      pdf.position.set(lerp(hx,SCREEN_L.x,fly), lerp(hy,SCREEN_L.y,fly)+150*Math.sin(Math.PI*fly), lerp(hz,SCREEN_L.z+8,fly));
+      pdf.rotation.set(lerp(0.04*Math.sin(t*0.9),-0.2,fly), lerp(-0.42+0.72*sm(K(t,T.nada+0.3,T.cl0-T.nada-0.3)),0,fly), lerp(0.03*Math.sin(t*1.2),0,fly));
+      pdf.scale.setScalar(Math.max(0.001,pop)*pulse*lerp(1,0.18,fly)); } }
+  drawScreen(t);
+  // pastas saem da tela do notebook e formam um arco
+  // pastas saem da tela do notebook e formam um arco; nos planos fechados voltam para dentro do notebook (e saem de novo quando são usadas)
+  const tuck = eio(K(t,T.convidado+0.3,0.55))*(1-eo(K(t,T.raw0-0.15,0.5))) + eio(K(t,T.hero0+0.12,0.45))*(1-eo(K(t,T.cta0+0.3,0.6)));
+  folders.forEach((g,i)=>{ const t0=T.pas0+0.42+i*0.11; const u=K(t,t0,0.56); const tk=clamp(tuck+0.0*i,0,1);
+    g.visible = t>t0 && tk<0.985;
+    if(!g.visible) return; const [x,y,z,ry]=FSLOT[i]; const e=eo(u)*(1-tk), b=bo(u,1.5)*(1-tk);
+    let bump=0; if(i===0) bump+=Math.exp(-Math.pow((t-T.raw1-0.05)/0.09,2)); if(i===1) bump+=Math.exp(-Math.pow((t-T.hero0+0.02)/0.09,2));
+    if(i===1) for(let k=0;k<3;k++) bump+=0.8*Math.exp(-Math.pow((t-T.cta0-0.75-k*0.16)/0.08,2));
+    g.position.set(lerp(SCREEN_L.x,x,e), lerp(SCREEN_L.y,y,e)+(t>T.convidado?30:110)*Math.sin(Math.PI*e)*(1-e*0.2)+5*Math.sin(t*1.4+i)*e+18*bump, lerp(SCREEN_L.z,z,e));
+    g.rotation.set(0.05*Math.sin(t*1.1+i)*e, ry*e + (1-e)*0.8, 0.02*Math.sin(t*0.9+i*2));
+    g.scale.setScalar(Math.max(0.001,lerp(0.18,1,b))*(1+0.07*bump));
+    g.userData.front.rotation.x = 0.12 + 0.5*bump; });
+  // Convidado: cartão (foto parada enquanto o Apresentador fala dele; vídeo da live quando ele fala)
+  { const up=bo(K(t,T.convidado-0.12,0.55),1.5), out=ei(K(t,T.cta0+0.05,0.4));
+    jo.visible = t>T.convidado-0.12 && out<0.999;
+    if(jo.visible){ jo.position.x = -282 - 270*eio(K(t,T.ele-0.1,0.7))*(1-eio(K(t,T.raw0-0.45,0.6)));   // abre espaço para a tela do notebook
+      jo.scale.set(Math.max(.001,up*(1-out)),Math.max(.001,up*(1-out)),Math.max(.001,up*(1-out))); jo.rotation.y=0.18*(1-eo(K(t,T.convidado-0.12,0.9)))+0.04*Math.sin(t*0.6);
+      setFrame(joTx, t>=T.fala0 ? frameOf('convidado_live',t,T.fala0,false) : SEQ.convidado_still[0]);
+      const bb=bo(K(t,T.comprou,0.45),1.8); joBadge.visible=bb>0.01; joBadge.scale.setScalar(Math.max(.001,bb)); } }
+  // antes → depois: o bruto entra na pasta 01; a pasta 02 devolve o vídeo editado
+  { const a=bo(K(t,T.raw0,0.42),1.4), f=eio(K(t,T.raw1-0.42,0.42));
+    raw.visible = t>T.raw0 && t<T.raw1+0.02;
+    if(raw.visible){ const sl=FSLOT[0]; raw.position.set(lerp(SPOT.x,sl[0],f), lerp(SPOT.y,sl[1]-40,f)+90*Math.sin(Math.PI*f), lerp(SPOT.z,sl[2],f));
+      raw.rotation.set(0,lerp(-0.2,0,f),lerp(0,0.3,f)); raw.scale.setScalar(Math.max(.001,a*lerp(1,0.2,f))); setFrame(raw.userData.tx,frameOf('raw',t,T.raw0-0.6,true)); } }
+  { const e=eo(K(t,T.hero0,0.55)), b=bo(K(t,T.hero0,0.6),1.3), out=ei(K(t,T.cta0+0.05,0.4)); const sl=FSLOT[1];
+    hero.visible = t>T.hero0 && out<0.999;
+    if(hero.visible){ hero.position.set(lerp(sl[0],SPOT.x,e), lerp(sl[1]-40,SPOT.y,e)+130*Math.sin(Math.PI*e), lerp(sl[2],SPOT.z,e));
+      hero.rotation.set(0,lerp(0.6,-0.2,e)+0.03*Math.sin(t*0.8),0); hero.scale.setScalar(Math.max(.001,lerp(0.2,1,b)*(1-out)));
+      setFrame(hero.userData.tx,frameOf('hero',t,T.hero0,true)); } }
+  // cartão final: três vídeos editados pelo Cortez saem da pasta 02
+  ctaT.forEach((g,i)=>{ const t0=T.cta0+0.75+i*0.16; const e=eo(K(t,t0,0.6)), b=bo(K(t,t0,0.62),1.3); g.visible=t>t0; if(!g.visible) return;
+    const sl=FSLOT[1]; const k=i-1; const tx=k*250, tz=170+(k===0?40:0);
+    g.position.set(lerp(sl[0],tx,e), lerp(sl[1]-40,DY,e)+140*Math.sin(Math.PI*e)+ (e>=1? 5*Math.sin(t*1.3+i):0), lerp(sl[2],tz,e));
+    g.rotation.set(0,lerp(0.5,-k*0.3,e)+0.04*Math.sin((t-T.cta0)*0.7+i),0); g.scale.setScalar(Math.max(.001,lerp(0.2,1,b)));
+    setFrame(g.userData.tx,frameOf(['c2','c1','c3'][i],t,t0,true)); });
+  composer.render();
+  const fr=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((fr*97)%64))+'px,'+(-((fr*61)%64))+'px)';
+}
+
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.ready, ...['800 66px Inter','700 32px Inter','600 31px Inter','500 26px Inter','500 27px "IBM Plex Mono"','700 18px "IBM Plex Mono"'].map(f=>document.fonts.load(f))];
+  Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  jobs.push(loadImg('assets/convidado_still.jpg').then(im=>SEQ.convidado_still=[im]));
+  READY=Promise.all(jobs).then(()=>{ DRAWS.forEach(fn=>fn()); scrKey=''; BUILT=true; }); return READY; }
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!BUILT){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

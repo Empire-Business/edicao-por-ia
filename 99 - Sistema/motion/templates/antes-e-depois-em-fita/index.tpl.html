@@ -1,0 +1,422 @@
+<!-- MODELO F25 Antes e Depois em Fita: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · corte "Antes e depois" (F10 · ID03)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID03 Azul — fundo #0C1118 · texto #F2F6FC · azul #4A92E6 · superfície #172333 · apoio #9AA8B8 · Inter + IBM Plex Mono.
+   F10: pessoa + prova do produto. Prova = a gravação bruta real do EXEMPLO_2 e a própria entrega EXEMPLO_2 V2 editada pelo Cortez (sem logotipos).
+   3D: three.js r186 (ESM) — "mesa de edição": a gravação inteira como uma fita de blocos reais (ilhas de fala, silêncios, erros),
+   com sombra, profundidade e pós-processamento leve; tudo em função do tempo do quadro. */
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin-ext.woff2") format("woff2"); font-weight:400; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin.woff2") format("woff2"); font-weight:600; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; background:#0C1118; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#0C1118; font-family:"Inter", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#vig { position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(12,17,24,.95) 0%, rgba(12,17,24,.88) 14%, rgba(12,17,24,.45) 21%, rgba(12,17,24,0) 27%, rgba(12,17,24,0) 74%, rgba(12,17,24,.55) 82%, rgba(12,17,24,.9) 100%); }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.06; mix-blend-mode:overlay; }
+
+#pip { position:absolute; left:842px; top:150px; width:180px; height:180px; border-radius:50%; overflow:hidden; z-index:8; opacity:0; box-shadow:0 0 0 3px #4A92E6, 0 18px 40px rgba(0,0,0,.55); }
+#pip video { display:block; width:180px; height:180px; object-fit:cover; }
+#pipn { position:absolute; left:772px; top:342px; width:320px; text-align:center; z-index:8; opacity:0; font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:17px;
+  letter-spacing:.12em; text-transform:uppercase; color:#F2F6FC; text-shadow:0 2px 10px rgba(0,0,0,.8); }
+#pipn b { display:block; font-family:"Inter"; font-weight:800; font-size:26px; letter-spacing:-.01em; text-transform:none; margin-bottom:4px; }
+
+.hd { position:absolute; left:72px; top:150px; width:740px; z-index:6; }
+.lab { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:24px; letter-spacing:.14em; text-transform:uppercase; color:#4A92E6; overflow:hidden; height:34px; }
+.lab .in { display:inline-flex; align-items:center; gap:14px; }
+.lab i { width:10px; height:10px; border-radius:2px; background:#4A92E6; display:block; flex:none; }
+.ttl { margin-top:12px; }
+.ln { display:block; overflow:hidden; padding:0 0 .08em; font-family:"Inter", sans-serif; font-weight:800; font-size:72px; line-height:1.03; letter-spacing:-.035em; color:#F2F6FC; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:normal; color:#4A92E6; }
+.big .ln { font-size:170px; letter-spacing:-.05em; line-height:.98; }
+.num { font-variant-numeric:tabular-nums; }
+
+#stut { position:absolute; left:0; right:0; top:1586px; z-index:9; text-align:center; }
+.st { position:absolute; left:0; right:0; opacity:0; font-family:"Inter"; font-weight:800; font-size:76px; letter-spacing:-.02em; color:#F2F6FC; text-shadow:0 4px 22px rgba(0,0,0,.75); }
+.st s { text-decoration:none; position:relative; }
+.st s::after { content:""; position:absolute; left:-6px; right:-6px; top:52%; height:7px; border-radius:4px; background:#9AA8B8; transform-origin:0 50%; transform:scaleX(var(--k,0)); }
+.st small { display:block; margin-top:10px; font-family:"IBM Plex Mono"; font-weight:500; font-size:22px; letter-spacing:.14em; text-transform:uppercase; color:#9AA8B8; }
+
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cw { position:absolute; left:40px; right:40px; top:1592px; text-align:center; opacity:0; white-space:nowrap; font-family:"Inter"; font-weight:800; font-size:104px; line-height:1;
+  letter-spacing:-.03em; color:#F2F6FC; -webkit-text-stroke:3px rgba(6,9,14,.9); paint-order:stroke fill; text-shadow:0 6px 26px rgba(0,0,0,.7); }
+.cw.k { color:#4A92E6; }
+
+.chip { position:absolute; left:0; top:0; z-index:7; opacity:0; width:310px; padding:14px 16px 15px; border-radius:14px; background:rgba(12,17,24,.92);
+  box-shadow:inset 0 0 0 1.5px rgba(154,168,184,.55), 0 14px 34px rgba(0,0,0,.5); }
+.chip b { display:flex; align-items:center; gap:9px; font-family:"IBM Plex Mono"; font-weight:500; font-size:16px; letter-spacing:.12em; text-transform:uppercase; color:#9AA8B8; }
+.chip b i { width:20px; height:20px; border-radius:50%; background:#F2F6FC; color:#0C1118; font-style:normal; font-family:"Inter"; font-weight:800; font-size:15px; letter-spacing:0;
+  display:flex; align-items:center; justify-content:center; flex:none; }
+.chip span { display:block; margin-top:7px; font-family:"Inter"; font-weight:600; font-size:23px; line-height:1.22; color:#F2F6FC; text-decoration:line-through; text-decoration-color:rgba(242,246,252,.55); text-decoration-thickness:2px; }
+.lead { position:absolute; left:0; top:0; height:2px; z-index:7; opacity:0; background:rgba(154,168,184,.75); transform-origin:0 50%; }
+
+.tagc { position:absolute; left:0; right:0; z-index:8; text-align:center; opacity:0; }
+.tagc span { display:inline-flex; align-items:center; gap:10px; padding:10px 18px 10px 15px; border-radius:999px; background:rgba(12,17,24,.88); box-shadow:inset 0 0 0 1.5px rgba(74,146,230,.6);
+  font-family:"IBM Plex Mono"; font-weight:500; font-size:19px; letter-spacing:.12em; text-transform:uppercase; color:#F2F6FC; white-space:nowrap; }
+.tagc i { width:9px; height:9px; border-radius:50%; background:#4A92E6; display:block; }
+
+.pile { position:absolute; left:0; top:0; z-index:7; opacity:0; white-space:nowrap; }
+.pile span { display:inline-flex; align-items:center; gap:10px; padding:10px 18px 10px 12px; border-radius:999px; background:rgba(12,17,24,.9);
+  box-shadow:inset 0 0 0 1.5px rgba(154,168,184,.6), 0 12px 30px rgba(0,0,0,.5); font-family:"Inter"; font-weight:800; font-size:30px; letter-spacing:-.01em; color:#F2F6FC; }
+.pile i { width:28px; height:28px; border-radius:50%; background:#9AA8B8; color:#0C1118; font-style:normal; font-size:18px; display:flex; align-items:center; justify-content:center; }
+.cta-h { position:absolute; left:60px; right:60px; top:236px; z-index:10; text-align:center; }
+.cta-h .ln { font-size:92px; text-align:center; }
+.cta-s { position:absolute; left:60px; right:60px; top:478px; z-index:10; text-align:center; opacity:0; font-family:"IBM Plex Mono"; font-weight:500; font-size:25px; letter-spacing:.1em; text-transform:uppercase; color:#9AA8B8; }
+.cta-s b { color:#F2F6FC; font-weight:500; }
+#btn { position:absolute; left:290px; top:1262px; width:500px; height:120px; z-index:10; opacity:0; display:flex; align-items:center; justify-content:center; gap:18px; border-radius:999px;
+  background:#4A92E6; color:#0C1118; font-family:"Inter"; font-weight:800; font-size:48px; letter-spacing:-.015em; white-space:nowrap; box-shadow:0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.12) inset; }
+#cmt { position:absolute; left:110px; top:1112px; width:860px; z-index:10; opacity:0; padding:34px 40px 30px; border-radius:40px; background:rgba(12,17,24,.9);
+  box-shadow:0 30px 70px rgba(0,0,0,.55), inset 0 0 0 1.5px rgba(74,146,230,.35); text-align:center; }
+.cm-h { display:flex; align-items:center; justify-content:center; gap:22px; font-family:"Inter"; font-weight:800; font-size:78px; line-height:1; letter-spacing:-.03em; color:#F2F6FC; white-space:nowrap; }
+.cm-h em { font-style:normal; color:#4A92E6; }
+.cm-h svg { width:74px; height:74px; flex:none; }
+.cm-f { margin:30px auto 0; width:720px; height:104px; border-radius:999px; background:#172333; box-shadow:inset 0 0 0 2px rgba(74,146,230,.55);
+  display:flex; align-items:center; gap:18px; padding:0 14px 0 18px; }
+.cm-f .av { width:66px; height:66px; border-radius:50%; background:#2a3a52; flex:none; position:relative; overflow:hidden; }
+.cm-f .av::before { content:""; position:absolute; left:21px; top:12px; width:24px; height:24px; border-radius:50%; background:#9AA8B8; }
+.cm-f .av::after { content:""; position:absolute; left:11px; top:40px; width:44px; height:36px; border-radius:50% 50% 0 0; background:#9AA8B8; }
+.cm-f .tx { flex:1; text-align:left; font-family:"Inter"; font-weight:800; font-size:44px; letter-spacing:.02em; color:#F2F6FC; white-space:nowrap; position:relative; }
+.cm-f .tx .ph { position:absolute; left:0; top:50%; transform:translateY(-50%); font-weight:400; font-size:34px; letter-spacing:0; color:#6b7a8c; }
+.cm-f .tx b { font-weight:800; display:none; }
+.cm-f .tx i { display:inline-block; width:4px; height:46px; margin-left:4px; vertical-align:-6px; background:#4A92E6; opacity:0; }
+.cm-f .send { width:76px; height:76px; border-radius:50%; background:#4A92E6; flex:none; display:flex; align-items:center; justify-content:center; }
+.cm-f .send svg { width:38px; height:38px; }
+.cm-s { margin-top:22px; font-family:"IBM Plex Mono"; font-weight:500; font-size:24px; letter-spacing:.14em; text-transform:uppercase; color:#9AA8B8; }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="vig"></div>
+  <div id="pip"><video class="clip" src="assets/apresentador_pip.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="1" muted playsinline></video></div>
+  <div id="pipn"><b>Apresentador</b>Equipe do Cortez</div>
+
+  {{HEADS}}
+
+  <div id="stut">
+    <div class="st" id="st0"><s id="sk0">“É assim.”</s><small>gravação bruta · erro 1</small></div>
+    <div class="st" id="st1"><s id="sk1">“É assim que…”</s><small>gravação bruta · erro 2</small></div>
+  </div>
+
+  {{CHIPS}}
+  <div class="tagc" id="tg1" style="top:1548px"><span><i></i>Depois · a mesma gravação, editada pelo Cortez</span></div>
+  <div class="pile" id="pl0"><span><i>✕</i>{{NERR}} erros</span></div>
+  <div class="pile" id="pl1"><span><i>−</i>{{NSIL}} de pausas</span></div>
+
+  <div id="caps">{{CAPS}}</div>
+
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Grave do seu jeito.</span></span><span class="ln"><span class="in" id="ch2"><em>O Cortez deixa pronto.</em></span></span></div>
+  <div class="cta-s" id="cs">Tira ruído <b>·</b> corta silêncios <b>·</b> remove erros</div>
+  <div id="btn">Saiba mais <span>→</span></div>
+  <div id="cmt">
+    <div class="cm-h"><svg viewBox="0 0 74 74"><path d="M14 10 H60 Q66 10 66 16 V46 Q66 52 60 52 H32 L18 64 V52 H14 Q8 52 8 46 V16 Q8 10 14 10 Z" fill="none" stroke="#4A92E6" stroke-width="5" stroke-linejoin="round"/><circle cx="25" cy="31" r="4" fill="#4A92E6"/><circle cx="37" cy="31" r="4" fill="#4A92E6"/><circle cx="49" cy="31" r="4" fill="#4A92E6"/></svg>Comente <em>CORTEZ</em></div>
+    <div class="cm-f"><span class="av"></span><span class="tx"><span class="ph" id="cph">Adicione um comentário…</span><b id="k0">C</b><b id="k1">O</b><b id="k2">R</b><b id="k3">T</b><b id="k4">E</b><b id="k5">Z</b><i id="caret"></i></span>
+      <span class="send" id="send"><svg viewBox="0 0 38 38"><path d="M7 19 L31 8 L24 31 L19 21 Z" fill="#0C1118"/></svg></span></div>
+    <div class="cm-s">aqui nos comentários ↓</div>
+  </div>
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#F2F6FC" stroke="#0C1118" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1, #ch2',{yPercent:112});
+  gsap.set('#h0 .lab .in, #h0l0 .in',{yPercent:0});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:.3,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.6); });
+    OUT(`${sel} .lab .in`,h.end-.3); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.3+j*.03)); });
+  // gagueira da gravação bruta: palavra entra, risco atravessa
+  [['#st0','#sk0',DATA.stut[0]],['#st1','#sk1',DATA.stut[1]]].forEach(([s,k,w])=>{
+    tl.fromTo(s,{opacity:0,y:14},{opacity:1,y:0,duration:.16,ease:'power2.out',immediateRender:false},w.s);
+    tl.fromTo(k,{'--k':0},{'--k':1,duration:.22,ease:'power2.inOut',immediateRender:false},w.x);
+    tl.to(s,{opacity:0,duration:.12},w.e); });
+  // PiP do Apresentador: aparece quando ele fala; some no trecho da entrega e no fechamento
+  const pipOn=(a)=>{ tl.fromTo('#pip',{opacity:0,scale:.6},{opacity:1,scale:1,duration:.4,ease:'back.out(1.6)',immediateRender:false},a);
+    tl.fromTo('#pipn',{opacity:0,y:8},{opacity:1,y:0,duration:.3,immediateRender:false},a+.12); };
+  const pipOff=(a)=>{ tl.to('#pip',{opacity:0,scale:.7,duration:.25,ease:'power2.in'},a); tl.to('#pipn',{opacity:0,duration:.2},a); };
+  pipOn(T.errou0-.05); pipOff(T.dep0-.3);
+  tl.fromTo('#tg1',{opacity:0,y:10},{opacity:1,y:0,duration:.35,immediateRender:false},T.dep0+.15); tl.to('#tg1',{opacity:0,duration:.2},T.speechEnd-.15);
+  // legenda L03: uma palavra por vez, só a fala do Apresentador
+  DATA.caps.forEach((w,i)=>{ tl.fromTo(`#cw${i}`,{opacity:0,scale:.9},{opacity:1,scale:1,duration:Math.min(.07,(w.e-w.s)*.5),ease:'power2.out',immediateRender:false},w.s);
+    tl.set(`#cw${i}`,{opacity:0},w.e); });
+  // fechamento
+  IN('#ch1',T.cta0+.2,.8); IN('#ch2',T.cta0+.42,.8);
+  tl.fromTo('#cs',{opacity:0,y:16},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+.8);
+  if(DATA.cta==='comment'){                     // variante "Comente CORTEZ": a palavra é digitada no campo de comentário e enviada
+    gsap.set('#btn,#cursor',{display:'none'});
+    tl.fromTo('#cmt',{opacity:0,y:40},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.0);
+    const k0=T.type0; tl.set('#caret',{opacity:1},T.cta0+1.3);
+    [0,1,2,3,4,5].forEach(i=>{ tl.set(`#k${i}`,{display:'inline'},k0+i*.16); }); tl.set('#cph',{opacity:0},k0);
+    for(let b=T.cta0+1.55;b<k0;b+=.5) tl.set('#caret',{opacity:0},b), tl.set('#caret',{opacity:1},b+.25);
+    tl.to('#send',{scale:.86,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+    tl.set('#caret',{opacity:0},T.tap+.1);
+    tl.to('#cmt .cm-f',{boxShadow:'inset 0 0 0 3px rgba(74,146,230,1)',duration:.2,yoyo:true,repeat:1},T.tap);
+  } else {
+    gsap.set('#cmt',{display:'none'});
+    tl.fromTo('#btn',{opacity:0,y:40},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.0);
+    tl.fromTo('#cursor',{opacity:0,x:820,y:1600},{opacity:1,x:600,y:1320,duration:.8,ease:'power2.inOut',immediateRender:false},T.tap-.85);
+    tl.to('#btn',{scale:.95,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+    tl.to('#cursor',{scale:.86,duration:.09,yoyo:true,repeat:1,transformOrigin:'20% 10%'},T.tap-.02);
+    tl.to('#cursor',{x:660,y:1420,opacity:0,duration:.6,ease:'power2.in'},T.tap+.5);
+  }
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const DATA = window.__DATA, T = DATA.T, TP = DATA.tape;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const sm=(a,b,x)=>{ const t=clamp((x-a)/(b-a),0,1); return t*t*(3-2*t); };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const e3=(x)=>{ x=clamp(x,0,1); return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2; };
+const lerp=(a,b,u)=>a+(b-a)*u;
+// trajetória por chaves: [[t, valor], ...] — linear entre chaves e suavizada por média móvel triangular (±0,35 s):
+// movimento contínuo de câmera, sem parar em cada chave
+function lin(keys,t){ if(t<=keys[0][0]) return keys[0][1]; for(let i=1;i<keys.length;i++){ if(t<=keys[i][0]){ const [a,va]=keys[i-1],[b,vb]=keys[i]; return lerp(va,vb,(t-a)/(b-a)); } } return keys[keys.length-1][1]; }
+function path(keys,t,r){ r=r||0.35; let acc=0, ws=0; for(let k=-8;k<=8;k++){ const w=9-Math.abs(k); acc+=w*lin(keys,t+r*k/8); ws+=w; } return acc/ws; }
+
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.NoToneMapping;
+R.shadowMap.enabled=true; R.shadowMap.type=THREE.PCFShadowMap;   // r186: PCF com raio (o PCFSoft foi removido)
+const S=new THREE.Scene(); S.background=new THREE.Color(0x0C1118);
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity=0.55;
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);              // no plano z=0, 1 unidade = 1 px do quadro
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,10,40000); C.position.set(0,0,D); C.lookAt(0,0,0);
+const key=new THREE.DirectionalLight(0xf4f8ff,1.5); key.position.set(900,1500,2600); key.castShadow=true;
+key.shadow.mapSize.set(4096,4096); key.shadow.camera.left=-3200; key.shadow.camera.right=3200; key.shadow.camera.top=3200; key.shadow.camera.bottom=-3200;
+key.shadow.camera.near=100; key.shadow.camera.far=12000; key.shadow.bias=-0.0004; key.shadow.radius=6; S.add(key); S.add(key.target);
+const rim=new THREE.DirectionalLight(0x4A92E6,1.2); rim.position.set(-1600,-400,-900); S.add(rim);
+
+const composer=new EffectComposer(R,new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4})); composer.setPixelRatio(1); composer.setSize(1080,1920);
+composer.addPass(new RenderPass(S,C));
+const bloom=new UnrealBloomPass(new THREE.Vector2(1080,1920),0.16,0.35,0.9); composer.addPass(bloom);
+const bokeh=new BokehPass(S,C,{focus:D,aperture:0.0,maxblur:0.012}); composer.addPass(bokeh);
+composer.addPass(new OutputPass());
+
+function roundMask(w,h,r){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,w,h);
+  g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+const SEQ={}; let READY=null, BUILT=false;
+function loadImg(src,n){ n=n===undefined?4:n; return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>{ if(n>0) setTimeout(()=>loadImg(src,n-1).then(res,rej),60); else rej(new Error(src)); }; im.src=src; }); }
+// quadro da sequência: segundos desde t0; segura o último quadro (loop=false) ou repete (loop=true)
+function frameOf(name,t,t0,loop){ const a=SEQ[name]; let i=Math.floor(Math.max(0,t-t0)*30+1e-6); i = loop ? i%a.length : Math.min(i,a.length-1); return a[i]; }
+const THUMBS={};
+
+// ---------------- fita (gravação bruta inteira) ----------------
+const K=36, GAP=3, WT=820, TH=16, CS=1.4;
+const MINH={keep:46,err:46,hes:24,sil:14};
+const B=TP.blocks.map((b,i)=>({...b,i,h:Math.max(MINH[b.k],(b.e-b.s)*K)}));
+let cur=0; B.forEach(b=>{ b.top=cur; b.yo=-(cur+b.h/2); cur+=b.h+GAP; }); const LO=cur;
+let cc=0; B.filter(b=>b.k==='keep').forEach(b=>{ b.yc=-(cc+b.h/2); cc+=b.h+GAP; }); const LC=cc;
+const errs=B.filter(b=>b.k==='err'), rem=B.filter(b=>b.k==='sil'||b.k==='hes');
+errs.forEach((b,j)=>b.order=j); rem.forEach((b,j)=>b.order=j);
+function yOfTime(tau){ for(const b of B){ if(tau<b.s) return b.top; if(tau<=b.e) return b.top+(tau-b.s)/(b.e-b.s)*b.h; } return LO; }
+
+const tapeRoot=new THREE.Group(); S.add(tapeRoot);
+const tapeInner=new THREE.Group(); tapeRoot.add(tapeInner);
+const desk=new THREE.Mesh(new THREE.PlaneGeometry(9000,16000), new THREE.MeshStandardMaterial({color:0x0E151F,roughness:.92,metalness:0}));
+desk.position.z=-TH/2-2; desk.receiveShadow=true; tapeRoot.add(desk);
+const bodyMat=new THREE.MeshPhysicalMaterial({color:0x172333,roughness:.42,metalness:.35,clearcoat:.6,clearcoatRoughness:.3});
+const faceVS='varying vec2 v; void main(){ v=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }';
+const faceFS=`varying vec2 v; uniform sampler2D ta; uniform sampler2D tb; uniform float f; uniform float dim;
+  void main(){ vec4 a=texture2D(ta,v), b=texture2D(tb,v); float m=smoothstep(f-0.004,f+0.004,1.0-v.y); vec4 c=mix(b,a,m);
+    if(c.a<0.5) discard; float l=dot(c.rgb,vec3(.299,.587,.114)); c.rgb=mix(c.rgb, vec3(l)*0.5, dim*0.75); gl_FragColor=vec4(c.rgb,1.0); }`;
+
+function tc(s){ const m=Math.floor(s/60), r=s-m*60; return `${String(m).padStart(2,'0')}:${r.toFixed(1).padStart(4,'0').replace('.',',')}`; }
+function wrap(g,txt,maxW,maxL){ const ws=txt.split(' '); const L=[]; let l=''; for(const w of ws){ const tt=l?l+' '+w:w; if(g.measureText(tt).width>maxW && l){ L.push(l); l=w; } else l=tt; } if(l) L.push(l);
+  if(L.length>maxL){ L.length=maxL; L[maxL-1]=L[maxL-1].replace(/[\s,.;:!?…]*$/,'')+'…'; } return L; }
+
+function drawFace(b,clean){
+  const w=Math.round(WT*CS), h=Math.max(8,Math.round(b.h*CS)), c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.scale(CS,CS);
+  const W=WT, H=b.h, r=Math.min(10,H/2-1);
+  g.save(); g.beginPath(); g.roundRect(0,0,W,H,r); g.clip();
+  if(b.k==='sil'){
+    g.fillStyle=clean?'#101a27':'#0F151E'; g.fillRect(0,0,W,H);
+    g.strokeStyle=clean?'rgba(74,146,230,.38)':'rgba(154,168,184,.16)'; g.lineWidth=2;
+    for(let x=-H;x<W;x+=16){ g.beginPath(); g.moveTo(x,H); g.lineTo(x+H,0); g.stroke(); }
+    if(H>=22){ g.font='500 15px "IBM Plex Mono"'; g.textBaseline='middle'; const s=b.txt.toUpperCase(); const tw=g.measureText(s).width;
+      g.fillStyle=clean?'#0F1824':'#0F151E'; g.fillRect(14,H/2-11,tw+16,22); g.fillStyle=clean?'#4A92E6':'#5d6876'; g.fillText(s,22,H/2+1); }
+  } else {
+    g.fillStyle=b.k==='hes'?'#121A25':'#172333'; g.fillRect(0,0,W,H);
+    g.fillStyle=b.k==='keep'?(clean?'#4A92E6':'#3a5f8c'):(b.k==='err'?'#9AA8B8':'#4a5563'); g.fillRect(0,0,6,H);
+    let x0=18;
+    if(b.thumb && THUMBS[b.thumb] && H>=60){ const th=Math.min(H-12,150), tw=th*9/16; g.save(); g.beginPath(); g.roundRect(16,(H-th)/2,tw,th,7); g.clip(); g.drawImage(THUMBS[b.thumb],16,(H-th)/2,tw,th); g.restore(); x0=16+tw+18; }
+    g.textBaseline='alphabetic';
+    if(b.k==='hes'){ g.font='500 14px "IBM Plex Mono"'; g.fillStyle='#6b7684'; g.textBaseline='middle'; g.fillText('HESITAÇÃO',x0,H/2+1); }
+    else if(H>=60){ g.font='500 15px "IBM Plex Mono"'; g.fillStyle='#9AA8B8'; g.fillText(tc(b.s),x0,24);
+      g.font='600 23px "Inter"'; g.fillStyle='#F2F6FC'; const ls=wrap(g,b.txt,575-x0,Math.max(1,Math.floor((H-34)/28))); ls.forEach((l,j)=>g.fillText(l,x0,52+j*28)); b.tw=Math.min(575-x0,Math.max(...ls.map(l=>g.measureText(l).width))); b.tx=x0; b.ty=[52,52+(ls.length-1)*28]; }
+    else { g.font='600 21px "Inter"'; g.fillStyle='#F2F6FC'; g.textBaseline='middle'; const l=wrap(g,b.txt,575-x0,1)[0]; g.fillText(l,x0,H/2+1); b.tw=g.measureText(l).width; b.tx=x0; b.ty=[H/2+8,H/2+8]; }
+  }
+  // forma de onda real (0,1 s): bruta em cinza (com o ruído da sala), limpa em azul
+  const wv=clean?TP.wave_clean:TP.wave_raw, i0=Math.floor(b.s*10), i1=Math.max(i0+1,Math.ceil(b.e*10)), n=i1-i0, bh=H/n;
+  g.fillStyle = clean ? (b.k==='sil'||b.k==='hes' ? '#2a4566' : '#4A92E6') : '#8592a3';
+  for(let i=i0;i<i1;i++){ const a=wv[Math.min(i,wv.length-1)]||0; const ww=Math.max(1.5,a*200); const y=(i-i0)*bh; g.fillRect(700-ww/2, y+bh*0.2, ww, Math.max(1,bh*0.6)); }
+  g.restore();
+  g.strokeStyle='rgba(242,246,252,.07)'; g.lineWidth=1.5; g.beginPath(); g.roundRect(.75,.75,W-1.5,H-1.5,r); g.stroke();
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=8; t.generateMipmaps=true; t.minFilter=THREE.LinearMipmapLinearFilter; return t;
+}
+
+function buildTape(){
+  B.forEach(b=>{
+    const g=new THREE.Group();
+    const body=new THREE.Mesh(new RoundedBoxGeometry(WT,b.h,TH,2,Math.min(6,b.h/2-0.5)), bodyMat); body.castShadow=true; body.receiveShadow=true; g.add(body);
+    const mat=new THREE.ShaderMaterial({uniforms:{ta:{value:drawFace(b,false)},tb:{value:drawFace(b,true)},f:{value:0},dim:{value:0}},vertexShader:faceVS,fragmentShader:faceFS});
+    const face=new THREE.Mesh(new THREE.PlaneGeometry(WT,b.h),mat); face.position.z=TH/2+0.3; g.add(face);
+    if(b.k==='err' && b.tw){ const sk=new THREE.Mesh(new THREE.PlaneGeometry(1,3.2), new THREE.MeshBasicMaterial({color:0xF2F6FC}));
+      sk.geometry.translate(0.5,0,0); sk.position.set(-WT/2+b.tx-4, b.h/2-(b.ty[0]-8), TH/2+0.8); sk.scale.x=0.0001; g.add(sk); b.strike=sk; }
+    g.position.set(0,b.yo,0); tapeInner.add(g); b.g=g; b.mat=mat;
+  });
+  // linha de leitura (scanner) que limpa o som
+  const sc=new THREE.Group();
+  sc.add(new THREE.Mesh(new THREE.PlaneGeometry(WT+70,3), new THREE.MeshBasicMaterial({color:0x8EC0FF})));
+  const gc=document.createElement('canvas'); gc.width=8; gc.height=128; const gg=gc.getContext('2d'); const gr=gg.createLinearGradient(0,0,0,128);
+  gr.addColorStop(0,'rgba(74,146,230,0)'); gr.addColorStop(.5,'rgba(74,146,230,.55)'); gr.addColorStop(1,'rgba(74,146,230,0)'); gg.fillStyle=gr; gg.fillRect(0,0,8,128);
+  const glow=new THREE.Mesh(new THREE.PlaneGeometry(WT+70,90), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(gc),transparent:true,depthWrite:false,blending:THREE.AdditiveBlending}));
+  sc.add(glow); sc.position.z=TH/2+6; tapeInner.add(sc); window.__scan=sc;
+}
+
+// ---------------- tela 9:16 (antes / depois) ----------------
+function makeCard(w,h,r){ const g=new THREE.Group();
+  const body=new THREE.Mesh(new RoundedBoxGeometry(w+24,h+24,22,6,r+10), new THREE.MeshPhysicalMaterial({color:0x172333,roughness:.34,metalness:.55,clearcoat:1,clearcoatRoughness:.18,transparent:true}));
+  body.castShadow=true; g.add(body);
+  const mask=roundMask(256,Math.round(256*h/w),Math.round(256*r/w));
+  const ftx=videoTex(), front=new THREE.Mesh(new THREE.PlaneGeometry(w,h), new THREE.MeshBasicMaterial({map:ftx,alphaMap:mask,transparent:true}));
+  front.position.z=11.5; g.add(front);
+  const btx=videoTex(), back=new THREE.Mesh(new THREE.PlaneGeometry(w,h), new THREE.MeshBasicMaterial({map:btx,alphaMap:mask,transparent:true}));
+  back.position.z=-11.5; back.rotation.y=Math.PI; g.add(back);
+  g.userData={ftx,btx,mats:[body.material,front.material,back.material]}; return g; }
+function cardOpacity(cd,o){ cd.userData.mats.forEach(m=>{ m.opacity=o; m.depthWrite=o>0.98; }); cd.visible=o>0.004; }
+const CW=600, CH=1066;
+const card=makeCard(CW,CH,34); S.add(card);
+const scenes=[makeCard(420,746,26),makeCard(420,746,26)]; scenes.forEach(s=>{ s.visible=false; S.add(s); s.userData.mats[2].color.setRGB(0.86,0.87,0.9); });
+card.userData.mats[2].color.setRGB(0.93,0.94,0.96);
+
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.ready, document.fonts.load('600 23px "Inter"'), document.fonts.load('500 15px "IBM Plex Mono"'), document.fonts.load('800 20px "Inter"')];
+  Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  B.forEach(b=>{ if(b.thumb) jobs.push(loadImg(b.thumb).then(im=>THUMBS[b.thumb]=im)); });
+  READY=Promise.all(jobs).then(()=>{ buildTape(); BUILT=true; }); return READY; }
+
+// ---------------- etiquetas de erro presas aos blocos (HTML nítido, posição projetada) ----------------
+const V3=new THREE.Vector3();
+function proj(obj,x,y,z){ V3.set(x,y,z); obj.localToWorld(V3); V3.project(C); return [(V3.x*0.5+0.5)*1080,(-V3.y*0.5+0.5)*1920]; }
+const fmt=(s)=>`${Math.floor(s/60)}:${String(Math.round(s%60)).padStart(2,'0')}`;
+
+function render(t){
+  const E0=T.errou0, B0=T.bruto0, C0=T.cortez0, R0=T.erros0, lp=T.limpar, M0=T.remontar0, F0=T.fecho0, dp=T.dep0, CE=T.speechEnd, CTA=T.cta0;
+  // ---- câmera da fita por poses (cada fase é uma pose; a passagem entre fases é suavizada) ----
+  const su=clamp((t-C0-0.05)/(T.sweepEnd-C0-0.05),0,1), scan=103*Math.pow(su,1.35);      // "O Cortez tira o ruído e corta os silêncios": leitura da fita inteira
+  const yScan=yOfTime(scan);
+  const gl=eio((t-B0)/(C0-B0));
+  const P0={tilt:-1.0,yaw:0,roll:0,zz:-5200,py:-80,dx:0,fy:140};                                                                          // abertura: fita longe
+  const PR={tilt:-0.72,yaw:0.2,roll:-0.04,zz:lerp(-180,-900,gl),py:lerp(430,170,gl),dx:-20,fy:lerp(yOfTime(1),yOfTime(34),gl)};               // a gravação bruta
+  const P1={tilt:-0.58,yaw:0.17,roll:-0.04,zz:lerp(-900,-2500,sm(0,1,su)),py:lerp(170,0,sm(0,1,su)),dx:-40,fy:lerp(yOfTime(34),LO*0.42,sm(0,1,su))};   // limpeza
+  const cp=eio((t-R0)/(lp-R0));
+  const P2={tilt:-0.5,yaw:0.16,roll:-0.03,zz:-1750,py:lerp(-10,-40,cp),dx:-150,fy:lerp(yOfTime(22),yOfTime(35),cp)};                        // os erros
+  const P3={tilt:-0.45,yaw:0.18,roll:-0.05,zz:-2700,py:-40,dx:0,fy:LO*0.5};                                                               // saem erros e pausas
+  const ac=eio((t-T.remontar+0.1)/1.2);
+  const P3b={tilt:-0.36,yaw:0.14,roll:-0.03,zz:-3300,py:-90,dx:0,fy:lerp(LO*0.5,LC*0.5,ac)};                                               // remontagem
+  const pf=eio((t-F0)/(dp-1.2-F0));
+  const P5={tilt:-0.42,yaw:lerp(-0.13,0.13,pf),roll:0,zz:lerp(-5300,-4300,pf),py:-70,dx:0,fy:LC*0.5};                                  // o que saiu × o que ficou (órbita lenta)
+  const P4={tilt:0,yaw:0,roll:0,zz:-4214,py:-20,dx:0,fy:LC*0.5};                                                                          // fica de pé
+  const mixP=(A,Bp,w)=>{ const o={}; for(const k in A) o[k]=lerp(A[k],Bp[k],w); return o; };
+  let cam=mixP(P0,PR,e3((t-B0+0.2)/0.9)); cam=mixP(cam,P1,e3((t-C0+0.25)/0.6)); cam=mixP(cam,P2,e3((t-R0+0.1)/0.7)); cam=mixP(cam,P3,e3((t-lp+0.05)/0.7));
+  cam=mixP(cam,P3b,e3((t-M0+0.1)/0.8)); cam=mixP(cam,P5,e3((t-F0+0.1)/1.1)); cam=mixP(cam,P4,e3((t-dp+1.15)/0.65));
+  tapeRoot.position.set(cam.dx,cam.py,cam.zz); tapeRoot.rotation.set(cam.tilt,cam.yaw,cam.roll,'YXZ');
+  tapeInner.position.y=cam.fy;
+  tapeRoot.visible = BUILT && t<dp+0.1;
+  desk.visible = t<dp-1.3;          // de pé, a mesa viraria uma parede clara atrás da fita
+  if(BUILT){
+    const pk=clamp((t-F0-0.6)/(dp-1.3-F0-0.6),0,1), playOn=t>F0+0.6 && t<dp-1.25;      // no fecho, a linha de leitura toca a fita já pronta
+    window.__scan.position.y = playOn ? -LC*pk : -yScan; window.__scan.visible = (t>C0+0.05 && t<T.sweepEnd+0.2) || playOn;
+    const pileY=-LC*0.5;
+    B.forEach(b=>{
+      const f=clamp((yScan-b.top)/b.h,0,1); b.mat.uniforms.f.value = t<C0 ? 0 : f;
+      let x=0, y=b.yo, z=0, rz=0, vis=true;
+      const jit=(k)=>Math.sin(k*12.9898+b.i*78.233)*43758.5453%1;
+      if(b.k==='err'||b.k==='sil'||b.k==='hes'){
+        const isE=b.k==='err', t0=isE ? lp+0.02+b.order*0.07 : lp+0.32+b.order*0.02;
+        if(isE){ const fl=T.flags[b.order]; b.mat.uniforms.dim.value=sm(fl,fl+0.25,t); if(b.strike) b.strike.scale.x=Math.max(0.0001,b.tw*eo((t-fl-0.05)/0.3)); }
+        const u=eio((t-t0)/0.85);
+        const px=(isE?880:-880)+30*jit(1), py=pileY+50*jit(2)+(isE?60:-40), pz=(TH*0.5+2)*(b.order+1), prz=(isE?-0.12:0.12)+0.16*jit(3);
+        x=lerp(0,px,u); y=lerp(b.yo,py,u); z=lerp(0,pz,u)+420*Math.sin(Math.PI*u); rz=lerp(0,prz,u)+(isE?-1:1)*0.9*Math.sin(Math.PI*u);
+      }
+      if(b.k==='keep'){ const u=eio((t-(T.remontar-0.05+(b.yc/-LC)*0.45))/0.85); y=lerp(b.yo,b.yc,u); }
+      b.g.position.set(x,y,z); b.g.rotation.set(0,0,rz); b.g.visible=vis;
+      if(b.k!=='keep'){ const t0=b.k==='err' ? lp+0.02+b.order*0.07 : lp+0.32+b.order*0.02; b.g.scale.setScalar(lerp(1,0.5,eio((t-t0)/0.85))); }
+    });
+    // etiquetas dos erros: à direita da fita, abaixo do PiP, empilhadas sem sobreposição
+    let lastY=-1e9;
+    DATA.chips.forEach((ch,j)=>{ const b=B[ch.block]; const el=document.getElementById(`chip${j}`), ld=document.getElementById(`lead${j}`);
+      const fl=T.flags[ch.order]; const [ex,ey]=proj(b.g, WT/2, 0, TH/2); const o=sm(fl,fl+0.2,t)*(1-sm(lp,lp+0.22,t))*sm(300,420,ey);
+      el.style.opacity=o; ld.style.opacity=o*0.9;
+      if(o>0.001){ const cx=Math.min(Math.max(ex+44,700),1080-336); let cy=Math.min(Math.max(ey-34,420,lastY+104),1460); lastY=cy;
+        el.style.transform=`translate(${cx}px,${cy}px) scale(${0.92+0.08*eo((t-fl)/0.25)})`;
+        const ly=cy+34; const ang=Math.atan2(ly-ey,cx-ex); const len=Math.hypot(cx-ex,ly-ey);
+        ld.style.width=Math.max(0,len-6)+'px'; ld.style.transform=`translate(${ex+3}px,${ey}px) rotate(${ang}rad)`; } });
+    // etiquetas das pilhas (o que saiu)
+    [['pl0',880,errs.length],['pl1',-880,rem.length]].forEach(([id,px,n])=>{ const el=document.getElementById(id);
+      const o=sm(F0+0.2,F0+0.6,t)*(1-sm(dp-1.3,dp-1.0,t)); el.style.opacity=o;
+      if(o>0.001){ V3.set(px,pileY+140,(TH*0.5+2)*(n+2)); tapeInner.localToWorld(V3); V3.project(C); const sx=(V3.x*0.5+0.5)*1080, sy=(-V3.y*0.5+0.5)*1920;
+        const pu = id==='pl0' ? 1+0.12*Math.exp(-Math.pow((t-T.erros3-0.1)/0.22,2)) : 1;      // "esses erros": a pilha de erros pulsa
+        el.style.transform=`translate(${Math.round(sx)}px,${Math.round(sy-70)}px) translateX(-50%) scale(${pu})`; } });
+    // contadores
+    const nE=T.flags.filter(f=>t>=f+0.05).length; const ne=document.getElementById('nerr'); if(ne) ne.textContent=`${nE} ${nE===1?'erro':'erros'}`;
+    const kd=lerp(TP.stats.raw_s,TP.stats.delivery_s,eio((t-T.remontar)/1.0)); const nd=document.getElementById('ndur'); if(nd) nd.textContent=fmt(kd);
+  }
+  // ---- tela 9:16: ANTES (frente) toca a gravação bruta; deita na mesa no "Esse é o vídeo bruto"; volta de pé como DEPOIS (verso) ----
+  if(t<B0+1.0){ const away=eio((t-B0-0.1)/0.8);
+    card.position.set(0, lerp(-20,-260,away), lerp(0,-3600,away)); card.rotation.set(lerp(0.03,-0.9,away), 0.06*Math.sin(t*0.9), 0); card.scale.setScalar(1+0.012*t);
+    setFrame(card.userData.ftx, frameOf('antes',t,0,false)); cardOpacity(card,1-sm(B0+0.55,B0+0.9,t)); }
+  else if(t>dp-0.55){ const u=e3((t-dp+0.55)/0.55), cu=eio((t-CTA+0.05)/1.0);
+    card.position.set(0, lerp(-20,-100,cu), lerp(0,-1400,cu)); card.rotation.set(0.0, Math.PI - (Math.PI/2)*(1-u) + 0.03*Math.sin((t-dp)*0.8)*u, 0);
+    card.scale.setScalar(1+0.012*clamp(t-dp,0,5)); cardOpacity(card,u>0.001?1:0);
+    setFrame(card.userData.btx, frameOf('depois',t,dp,false)); }
+  else cardOpacity(card,0);
+  // ---- fechamento: cenas da mesma entrega ao lado, em profundidade e desfocadas ----
+  const SC=['m1','m3'];
+  scenes.forEach((s,i)=>{ const cu=eio((t-CTA+0.05)/1.0); if(t<CTA-0.05){ cardOpacity(s,0); return; } const k=i===0?-1:1;
+    s.position.set(lerp(k*1500,k*430,cu), -100+6*Math.sin(t*1.2+i), -1640); s.rotation.set(0.05, Math.PI-k*0.42, 0); s.scale.setScalar(1.12);
+    const dm=0.6; s.userData.mats[2].color.setRGB(dm,dm*1.01,dm*1.04); cardOpacity(s,0.92*Math.min(1,cu*1.5)); setFrame(s.userData.btx, frameOf(SC[i],t,CTA,true)); });
+  // ---- luz, profundidade ----
+  bloom.strength = 0.22*sm(C0,C0+0.3,t)*(1-sm(T.sweepEnd-0.1,T.sweepEnd+0.3,t)) + 0.14*sm(F0+0.5,F0+0.8,t)*(1-sm(dp-1.4,dp-1.2,t));
+  const hook = t<B0-0.1, end=t>CTA+0.2;
+  bokeh.uniforms.focus.value = D; bokeh.uniforms.aperture.value = hook ? 0.000016 : (end ? 0.00002*sm(CTA,CTA+0.8,t) : 0.0);
+  composer.render();
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!BUILT){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

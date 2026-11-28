@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F27",
+  "format_uid": "official.fe600238eb8948228ba50628dd05d6e3",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F27/maquete-passo-a-passo/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Explicação de processo em 9:16 com uma maquete 3D clara, câmera ortográfica (vista de cima, estilo miniatura), materiais macios e sombras de contato. Abre resolvendo a objeção (ex.: janelas de código que implodem num único arquivo simples). Cada passo dito monta uma peça: o arquivo voa para o computador, a tela mostra a ação, as pastas saem em arco, o material bruto entra numa pasta e o resultado sai da outra. Quem fala fica em círculo no canto; depoimento de cliente entra como cartão com selo. Títulos \"Passo 1, 2, 3\"; legenda em ficha branca. Fecha com o resultado e \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Quebrar a fala em passos numerados e definir a peça da maquete que cada passo monta; manter o herói grande (70–85% da largura).",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/maquete-passo-a-passo com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não deixar a maquete pequena no meio da tela. Não mostrar logotipo de programa de terceiros: nomes só como texto quando a fala cita. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/reference.mp4",
+      "sha256": "75ee973d8c646ee5721ad44ceab9bdd84d78b8644589499d770bc5cdcce41dc3"
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/objection.jpg",
+      "sha256": "318ca95b9054c557737bbaf779d3bbd00ed225de1c7fac0ab198f7614596b62d"
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/step-1.jpg",
+      "sha256": "fd6beb5147ad98b0bba2946122b8d45c9196fca492b28932118ecd676b375c63"
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/step-2.jpg",
+      "sha256": "422facfe6d06651ae927a144d15fd6bf5a80bd05e9da9a480192503b4580e36d"
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/client.jpg",
+      "sha256": "54fbd4ed7df7dcaa9714d69fb1a52cf42b81b3e2586553aa972ac8e10e991a1f"
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/request.jpg",
+      "sha256": "ecedf83f00a99892b5d68ae7747b581bf917f5efbbedbbee33a2294cf22deec5"
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/cta.jpg",
+      "sha256": "ac265d6c673c8889094a116e20d1b61be06d067e0a1d8bb3e3301d4332f217dd"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/objection.jpg",
+      "sha256": "318ca95b9054c557737bbaf779d3bbd00ed225de1c7fac0ab198f7614596b62d",
+      "at_seconds": 1.5,
+      "caption": "Objeção resolvida: janelas de código flutuando sobre a maquete antes de virarem um arquivo simples."
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/step-1.jpg",
+      "sha256": "fd6beb5147ad98b0bba2946122b8d45c9196fca492b28932118ecd676b375c63",
+      "at_seconds": 5.0,
+      "caption": "Passo 1: o arquivo entra no computador da maquete."
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/step-2.jpg",
+      "sha256": "422facfe6d06651ae927a144d15fd6bf5a80bd05e9da9a480192503b4580e36d",
+      "at_seconds": 10.0,
+      "caption": "Passo 2: a tela da maquete mostra a ação acontecendo sozinha."
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/client.jpg",
+      "sha256": "54fbd4ed7df7dcaa9714d69fb1a52cf42b81b3e2586553aa972ac8e10e991a1f",
+      "at_seconds": 16.5,
+      "caption": "Cliente: cartão com selo e as pastas da maquete em arco."
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/request.jpg",
+      "sha256": "ecedf83f00a99892b5d68ae7747b581bf917f5efbbedbbee33a2294cf22deec5",
+      "at_seconds": 22.5,
+      "caption": "O pedido em linguagem comum digitado na tela da maquete."
+    },
+    {
+      "path": "examples/reference-library/F27/maquete-passo-a-passo/cta.jpg",
+      "sha256": "ac265d6c673c8889094a116e20d1b61be06d067e0a1d8bb3e3301d4332f217dd",
+      "at_seconds": 32.5,
+      "caption": "Resultado: pastas e vídeos prontos sobre a maquete, promessa e botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/maquete-passo-a-passo",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E124 V2",
+    "original_filename": "E124 V2 - Corte 7 Nao precisa ser tecnico (previa).mp4",
+    "original_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4",
+    "duration_s": 34.8,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

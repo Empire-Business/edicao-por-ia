@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F34",
+  "format_uid": "official.ac95517501304d45badc953d5163936c",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F34/arquivo-de-fichas/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Catálogo em 9:16 guiado por narração. Abre num close das etiquetas de um arquivo de gavetas 3D com o número grande da promessa. A câmera recua e mostra o arquivo inteiro; a cada opção dita, a gaveta certa abre e a ficha sobe e vem para a frente com o exemplo real (quando não houver exemplo próprio, só a ficha desenhada). Para \"escolher cores\", um leque de amostras recolore a ficha passando por paletas reais. Na apresentação, todas as gavetas abrem em cascata e uma placa com o nome brilha; no fim, uma ficha mostra o próprio vídeo (recursão). Cartão final \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Mapear cada opção citada para uma gaveta etiquetada e para um exemplo real próprio (ou ficha desenhada se não houver), e marcar a palavra da abertura.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/arquivo-de-fichas com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não mostrar como exemplo uma referência com marca ou notícias de terceiros: use a ficha desenhada. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/reference.mp4",
+      "sha256": "bc246ed84fec9ff3b61074cefdfe3ed276bd1692956213030e5d331014cfa038"
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/hook.jpg",
+      "sha256": "6f62b10ec8e1f00e9d90a893eebab0cc09452360bc546e5f6fee79398095b4d1"
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/card.jpg",
+      "sha256": "809e5bc28c6650377eb36c4c32d8dde061e4809c659d0b0ae91e2213c8568fb8"
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/colors.jpg",
+      "sha256": "b4af2f1c8d7dd003e633ca82b0bf4b1d39746e8eacacad2225608e1d0e552a8f"
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/cascade.jpg",
+      "sha256": "c65dd280d3c73069e8fe6d930b14bac24fd4e96ea8d815232a62a8687ef8260a"
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/recursion.jpg",
+      "sha256": "74eb29998d3a8a2007ddbecab46cd42cdf008e572f6dc13d7d51b26810244daf"
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/cta.jpg",
+      "sha256": "f1b8f998d29be0d822d745cb4fe98d1a54e8312b2110a7378943237624453cc6"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/hook.jpg",
+      "sha256": "6f62b10ec8e1f00e9d90a893eebab0cc09452360bc546e5f6fee79398095b4d1",
+      "at_seconds": 0.8,
+      "caption": "Gancho: close das etiquetas das gavetas com o número da promessa em destaque."
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/card.jpg",
+      "sha256": "809e5bc28c6650377eb36c4c32d8dde061e4809c659d0b0ae91e2213c8568fb8",
+      "at_seconds": 5.6,
+      "caption": "Uma gaveta aberta: a ficha vem para a frente com o exemplo real da opção citada."
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/colors.jpg",
+      "sha256": "b4af2f1c8d7dd003e633ca82b0bf4b1d39746e8eacacad2225608e1d0e552a8f",
+      "at_seconds": 12.0,
+      "caption": "Leque de amostras recolorindo a ficha por paletas reais."
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/cascade.jpg",
+      "sha256": "c65dd280d3c73069e8fe6d930b14bac24fd4e96ea8d815232a62a8687ef8260a",
+      "at_seconds": 16.0,
+      "caption": "Todas as gavetas abertas em cascata, com a placa do nome."
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/recursion.jpg",
+      "sha256": "74eb29998d3a8a2007ddbecab46cd42cdf008e572f6dc13d7d51b26810244daf",
+      "at_seconds": 20.0,
+      "caption": "A ficha que mostra o próprio vídeo, em recursão."
+    },
+    {
+      "path": "examples/reference-library/F34/arquivo-de-fichas/cta.jpg",
+      "sha256": "f1b8f998d29be0d822d745cb4fe98d1a54e8312b2110a7378943237624453cc6",
+      "at_seconds": 24.0,
+      "caption": "Cartão final sobre o arquivo: promessa e botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/arquivo-de-fichas",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E133 V1",
+    "original_filename": "E133 V1 - IA 4 22 jeitos de editar (previa).mp4",
+    "original_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46",
+    "duration_s": 26.2,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

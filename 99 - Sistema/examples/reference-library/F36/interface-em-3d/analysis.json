@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F36",
+  "format_uid": "official.0f94d7b7ffdc41a3b3476a9c99e88d37",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F36/interface-em-3d/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Demonstração de produto em 9:16 com a interface real capturada e levada para 3D. Abre com o botão principal (ex.: \"Copiar pedido\") como tecla 3D que afunda no clique. A página real aparece inclinada e os cartões sobem dela com selos e etiquetas que entram nas palavras ditas; o item escolhido vem à frente, opções (ex.: paletas) abrem em leque, a ação principal mostra o resultado (ex.: o pedido pronto, com aviso de copiado) e o cartão vira o resultado final em vídeo. Quem fala fica em círculo pequeno; legenda em pílula. Fundo claro na cor da ID. Cartão final \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Capturar a interface real (navegador automatizado) nos estados do fluxo e marcar a palavra de cada clique/estado.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/interface-em-3d com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Usar só a interface real do próprio produto, sem dados pessoais visíveis. Não mostrar texto de interface ilegível: aproximar o estado em foco. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/reference.mp4",
+      "sha256": "3ad84f3ef0984aa3107beab14590f93028870c25d893112babd3f14948a0f052"
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/hook.jpg",
+      "sha256": "27aa30794e826f32ab882e36bca057e16cc4e55f45cfe70ae5c87280ac13de51"
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/page.jpg",
+      "sha256": "7820452a7f196f3e590260d812a3d62ad49ea37510b8ea9cfa664d32d1da5a67"
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/cards.jpg",
+      "sha256": "5d20508f0459d85809bc44dfe5accf3425763dd6f4b814870fae69b65397fab3"
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/choose.jpg",
+      "sha256": "b3cfe3beda5f7d27de5979d570a13fa1724c482c1480744af37bfb98acb67538"
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/result.jpg",
+      "sha256": "746ac929d376c1126147e01cbc7a1d09b8a6ba61e8f345a3d3491b12facbc923"
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/cta.jpg",
+      "sha256": "da436ba0003747be06222de7b41d1cd3bc4d22e1d6227d8bfa3ccd6c3706f599"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/hook.jpg",
+      "sha256": "27aa30794e826f32ab882e36bca057e16cc4e55f45cfe70ae5c87280ac13de51",
+      "at_seconds": 0.8,
+      "caption": "Gancho: o botão principal como tecla 3D afundando no clique."
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/page.jpg",
+      "sha256": "7820452a7f196f3e590260d812a3d62ad49ea37510b8ea9cfa664d32d1da5a67",
+      "at_seconds": 9.5,
+      "caption": "A página real com os cartões de modelo subindo dela."
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/cards.jpg",
+      "sha256": "5d20508f0459d85809bc44dfe5accf3425763dd6f4b814870fae69b65397fab3",
+      "at_seconds": 16.0,
+      "caption": "Cartões com selos e etiquetas que entram nas palavras ditas."
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/choose.jpg",
+      "sha256": "b3cfe3beda5f7d27de5979d570a13fa1724c482c1480744af37bfb98acb67538",
+      "at_seconds": 22.5,
+      "caption": "O item escolhido vem à frente com o botão de uso."
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/result.jpg",
+      "sha256": "746ac929d376c1126147e01cbc7a1d09b8a6ba61e8f345a3d3491b12facbc923",
+      "at_seconds": 27.0,
+      "caption": "A ação principal: o resultado pronto (pedido completo) com o botão destacado."
+    },
+    {
+      "path": "examples/reference-library/F36/interface-em-3d/cta.jpg",
+      "sha256": "da436ba0003747be06222de7b41d1cd3bc4d22e1d6227d8bfa3ccd6c3706f599",
+      "at_seconds": 35.0,
+      "caption": "Cartão final com exemplos e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/interface-em-3d",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E136 V1",
+    "original_filename": "E136 V1 - Corte 13 Modelo pronto um clique (previa).mp4",
+    "original_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23",
+    "duration_s": 36.93,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

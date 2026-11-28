@@ -970,5 +970,698 @@
       "tela 3d",
       "reels"
     ]
+  },
+  "F23": {
+    "category": "products",
+    "categories": [
+      "products",
+      "presenter"
+    ],
+    "tags": [
+      "Live e entrevista",
+      "Editorial",
+      "Anúncio"
+    ],
+    "use": "Transformar uma pergunta e resposta de live, podcast ou entrevista em criativo elegante para anúncio, com a prova num celular 3D e chamada \"Saiba mais\".",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação da live, podcast ou entrevista",
+      "Vídeos ou telas reais do resultado (prova própria)",
+      "Trilha própria ou licenciada (opcional)"
+    ],
+    "buildingBlocks": [
+      "Título editorial por bloco",
+      "Cartões de quem pergunta e quem responde",
+      "Celular 3D com a prova",
+      "Legenda das falas",
+      "Cartão final \"Saiba mais\""
+    ],
+    "searchTerms": [
+      "live",
+      "corte de live",
+      "entrevista",
+      "podcast",
+      "pergunta e resposta",
+      "depoimento",
+      "testemunho",
+      "cliente",
+      "editorial",
+      "revista",
+      "elegante",
+      "alto valor",
+      "premium",
+      "celular 3d",
+      "prova",
+      "prova social",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "meta ads",
+      "saiba mais",
+      "reels"
+    ]
+  },
+  "F24": {
+    "category": "products",
+    "categories": [
+      "products",
+      "presenter"
+    ],
+    "tags": [
+      "Lista de opções",
+      "Vitrine 3D",
+      "Anúncio"
+    ],
+    "use": "Mostrar a variedade de um produto ou serviço (modelos, tipos, estilos) quando a fala lista as opções, cada uma com exemplo real.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação em que a pessoa lista as opções",
+      "Um exemplo real para cada opção citada",
+      "Paletas/fontes reais (se a fala citar estilo)"
+    ],
+    "buildingBlocks": [
+      "Cilindro 3D de telas",
+      "Opção citada gira para a frente",
+      "Palavra 3D que troca de estilo",
+      "Pessoa em círculo",
+      "Cartão final \"Saiba mais\""
+    ],
+    "searchTerms": [
+      "vitrine",
+      "catalogo",
+      "catálogo",
+      "opções",
+      "variações",
+      "modelos",
+      "tipos",
+      "portfolio",
+      "portfólio",
+      "lista",
+      "cilindro",
+      "carrossel 3d",
+      "telas",
+      "exemplos",
+      "estilos",
+      "formatos",
+      "produto",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais",
+      "reels"
+    ]
+  },
+  "F25": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "products"
+    ],
+    "tags": [
+      "Antes e depois",
+      "Demonstração",
+      "Anúncio"
+    ],
+    "use": "Provar o que um serviço de edição (ou qualquer processo) faz com o material bruto: erros e pausas saem, o vídeo pronto aparece.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "A gravação bruta real (com erros e pausas)",
+      "O vídeo pronto feito a partir dela",
+      "Uma fala explicando o processo (opcional)"
+    ],
+    "buildingBlocks": [
+      "ANTES com o erro real",
+      "Fita 3D da gravação",
+      "Erros e silêncios saindo",
+      "Duração antes × depois",
+      "DEPOIS",
+      "Cartão final \"Saiba mais\""
+    ],
+    "searchTerms": [
+      "antes e depois",
+      "antes",
+      "depois",
+      "bruto",
+      "gravação bruta",
+      "erros",
+      "silêncio",
+      "cortar silêncios",
+      "tirar ruído",
+      "limpeza",
+      "edição",
+      "linha do tempo",
+      "timeline",
+      "fita",
+      "demonstração",
+      "prova",
+      "transformação",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F26": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "presenter"
+    ],
+    "tags": [
+      "Tempo e rotina",
+      "Cena clara",
+      "Anúncio"
+    ],
+    "use": "Explicar ganho de tempo, prazos ou rotina de forma tátil e clara, com objetos de mesa que mostram cada ideia da fala.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação da fala (live, entrevista ou câmera)",
+      "Vídeos reais do resultado",
+      "Gravação de tela do processo (opcional)"
+    ],
+    "buildingBlocks": [
+      "Mesa de papel em plano-sequência",
+      "Relógio e calendário 3D",
+      "Cópias impressas tocando vídeos",
+      "Agenda que se enche",
+      "Cartão que cai na mesa"
+    ],
+    "searchTerms": [
+      "tempo",
+      "economia de tempo",
+      "prazo",
+      "rotina",
+      "agenda",
+      "calendário",
+      "relógio",
+      "produtividade",
+      "mesa",
+      "papel",
+      "claro",
+      "clean",
+      "minimalista",
+      "sombras",
+      "objetos",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais",
+      "reels"
+    ]
+  },
+  "F27": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "products"
+    ],
+    "tags": [
+      "Passo a passo",
+      "Maquete 3D",
+      "Objeção"
+    ],
+    "use": "Explicar um processo simples (instalação, uso, entrega) e quebrar a objeção \"é difícil/técnico\" com uma maquete 3D passo a passo.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação explicando os passos",
+      "Telas ou vídeos reais do resultado",
+      "Depoimento de cliente (opcional)"
+    ],
+    "buildingBlocks": [
+      "Maquete isométrica 3D",
+      "Passo 1, 2, 3",
+      "Peças que se montam",
+      "Cartão de cliente com selo",
+      "Cartão final \"Saiba mais\""
+    ],
+    "searchTerms": [
+      "passo a passo",
+      "tutorial",
+      "como funciona",
+      "instalação",
+      "processo",
+      "etapas",
+      "maquete",
+      "diorama",
+      "isometrico",
+      "isométrico",
+      "miniatura",
+      "simples",
+      "fácil",
+      "sem ser técnico",
+      "objeção",
+      "explicação",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F28": {
+    "category": "products",
+    "categories": [
+      "products",
+      "explain"
+    ],
+    "tags": [
+      "Comparação",
+      "Qualidade",
+      "Anúncio"
+    ],
+    "use": "Diferenciar um produto de qualidade do \"genérico\" do mercado: o feed cinza mostra o comum, a lente revela o trabalho real.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação da fala sobre o problema e a diferença",
+      "Entregas reais de boa qualidade",
+      "Material do processo por trás (opcional)"
+    ],
+    "buildingBlocks": [
+      "Feed 3D genérico",
+      "Lente de vidro com refração",
+      "Virada em onda",
+      "Processo por trás",
+      "Resultado em tela cheia",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "comparação",
+      "qualidade",
+      "diferencial",
+      "genérico",
+      "cara de ia",
+      "feed",
+      "lente",
+      "lupa",
+      "vidro",
+      "refração",
+      "revelar",
+      "contraste",
+      "premium",
+      "profissional",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais",
+      "reels"
+    ]
+  },
+  "F29": {
+    "category": "stories",
+    "categories": [
+      "stories",
+      "products"
+    ],
+    "tags": [
+      "Narração",
+      "Bastidores da edição",
+      "Anúncio"
+    ],
+    "use": "Mostrar, de forma impressionante, tudo o que existe dentro de uma edição — ideal para produtos de edição, criação de conteúdo ou serviços criativos.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Vídeos reais para as camadas",
+      "Material bruto e resultado pronto (para o fecho)"
+    ],
+    "buildingBlocks": [
+      "Quadro que se desmonta",
+      "Camadas 3D em profundidade",
+      "Camada que vem à frente na palavra",
+      "Espaço \"seu vídeo\"",
+      "Resultado em tela cheia"
+    ],
+    "searchTerms": [
+      "camadas",
+      "bastidores",
+      "making of",
+      "como foi feito",
+      "edição",
+      "linha do tempo",
+      "timeline",
+      "explodido",
+      "metalinguagem",
+      "narração",
+      "voz de ia",
+      "sem aparecer",
+      "dark",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F30": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "products"
+    ],
+    "tags": [
+      "Processo",
+      "Transformação",
+      "Narração"
+    ],
+    "use": "Mostrar etapa por etapa como um material cru vira produto pronto — edição, produção, beneficiamento, qualquer serviço com processo.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "O material bruto real",
+      "O resultado pronto feito a partir dele"
+    ],
+    "buildingBlocks": [
+      "Esteira 3D com blocos do bruto",
+      "Etiquetas dos defeitos reais",
+      "Estações em arco",
+      "Lista de etapas",
+      "Toque em \"Aprovar\"",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "processo",
+      "etapas",
+      "linha de produção",
+      "esteira",
+      "fábrica",
+      "transformação",
+      "acabamento",
+      "bruto",
+      "antes e depois",
+      "qualidade",
+      "narração",
+      "voz de ia",
+      "sem aparecer",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F31": {
+    "category": "stories",
+    "categories": [
+      "stories",
+      "products"
+    ],
+    "tags": [
+      "Confissão",
+      "Bastidores 3D",
+      "Narração"
+    ],
+    "use": "Prender a atenção com uma revelação (\"isto foi feito por…\") e mostrar os bastidores técnicos de forma elegante.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto em tom de confissão e narração",
+      "Material real para as demonstrações",
+      "Resultado final real"
+    ],
+    "buildingBlocks": [
+      "Anel de áudio da voz",
+      "Cenário em wireframe",
+      "Varredura de render",
+      "Verbos demonstrados",
+      "Espaço \"seu conteúdo aqui\"",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "confissão",
+      "revelação",
+      "segredo",
+      "bastidores",
+      "wireframe",
+      "render",
+      "3d",
+      "malha",
+      "feito por ia",
+      "ia",
+      "narração",
+      "voz de ia",
+      "sem aparecer",
+      "dark",
+      "misterioso",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F32": {
+    "category": "products",
+    "categories": [
+      "products",
+      "presenter"
+    ],
+    "tags": [
+      "Preço e valor",
+      "Comparação",
+      "Anúncio"
+    ],
+    "use": "Defender o preço de uma oferta comparando o que ela entrega com o custo da alternativa, com a fala real de quem usa.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação em que alguém fala do valor/preço",
+      "Lista real do que o produto entrega",
+      "Provas reais (opcional)"
+    ],
+    "buildingBlocks": [
+      "Etiqueta de preço 3D",
+      "Recibo impresso",
+      "Pedestais da alternativa",
+      "Notas e maços rotulados",
+      "Cartão de quem fala",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "preço",
+      "valor",
+      "custo",
+      "barato",
+      "caro",
+      "de graça",
+      "comparação",
+      "oferta",
+      "roi",
+      "economia",
+      "recibo",
+      "etiqueta",
+      "luxo",
+      "dourado",
+      "premium",
+      "alto valor",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F33": {
+    "category": "products",
+    "categories": [
+      "products"
+    ],
+    "tags": [
+      "Software e SaaS",
+      "Ponto de vista",
+      "Demonstração"
+    ],
+    "use": "Mostrar um software, automação ou agente fazendo o trabalho sozinho, com as telas reais do produto.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação da fala sobre o produto (live, câmera ou narração)",
+      "Telas e gravações reais do produto",
+      "Entregas finais feitas com ele"
+    ],
+    "buildingBlocks": [
+      "Painéis 3D de telas reais",
+      "Marcador de captura",
+      "Selo de gravação",
+      "Lista que se marca",
+      "Monólitos de usos",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "software",
+      "saas",
+      "aplicativo",
+      "app",
+      "plataforma",
+      "agente",
+      "ia",
+      "automação",
+      "demonstração",
+      "demo",
+      "telas",
+      "interface",
+      "print",
+      "gravação de tela",
+      "institucional",
+      "produto digital",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F34": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "stories"
+    ],
+    "tags": [
+      "Catálogo",
+      "Lista de opções",
+      "Narração"
+    ],
+    "use": "Apresentar um catálogo de opções (modelos, serviços, planos) como um arquivo de fichas que abre na hora certa.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Um exemplo real por opção (ou ficha desenhada)",
+      "Paletas reais (se falar de cores)"
+    ],
+    "buildingBlocks": [
+      "Arquivo de gavetas 3D",
+      "Ficha que sobe com exemplo",
+      "Leque de cores",
+      "Cascata de gavetas",
+      "Recursão do próprio vídeo",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "catálogo",
+      "catalogo",
+      "opções",
+      "lista",
+      "menu",
+      "modelos",
+      "formatos",
+      "serviços",
+      "planos",
+      "fichas",
+      "gavetas",
+      "arquivo",
+      "biblioteca",
+      "escolher",
+      "cores",
+      "narração",
+      "voz de ia",
+      "sem aparecer",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F35": {
+    "category": "explain",
+    "categories": [
+      "explain"
+    ],
+    "tags": [
+      "Tempo",
+      "Comparação",
+      "Narração"
+    ],
+    "use": "Comparar o tempo de antes com o tempo de agora (prazos, espera, horas economizadas) de forma física e memorável.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração com os tempos",
+      "Material bruto real e o resultado pronto",
+      "Entregas reais para o fecho"
+    ],
+    "buildingBlocks": [
+      "Blocos de dias caindo",
+      "Régua de horas",
+      "Compressão em fatias",
+      "Segmento do tempo novo",
+      "Número 3D",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "tempo",
+      "prazo",
+      "rapidez",
+      "velocidade",
+      "horas",
+      "dias",
+      "minutos",
+      "espera",
+      "economia de tempo",
+      "produtividade",
+      "comparação",
+      "blocos",
+      "concreto",
+      "régua",
+      "narração",
+      "voz de ia",
+      "sem aparecer",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F36": {
+    "category": "products",
+    "categories": [
+      "products",
+      "presenter"
+    ],
+    "tags": [
+      "Interface e app",
+      "Demonstração",
+      "Anúncio"
+    ],
+    "use": "Demonstrar o fluxo de uso de um site, app ou plataforma com a interface real em 3D, do primeiro clique ao resultado.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação explicando o uso",
+      "A interface real do produto (capturada no navegador)",
+      "O resultado final em vídeo ou tela"
+    ],
+    "buildingBlocks": [
+      "Tecla 3D do clique",
+      "Página real inclinada",
+      "Cartões que sobem com selos",
+      "Opções em leque",
+      "Resultado pronto",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "interface",
+      "ui",
+      "app",
+      "aplicativo",
+      "site",
+      "plataforma",
+      "software",
+      "saas",
+      "demonstração",
+      "demo",
+      "clique",
+      "botão",
+      "fluxo",
+      "tutorial",
+      "como usar",
+      "produto digital",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
   }
 }

@@ -1,0 +1,451 @@
+<!-- MODELO F24 Vitrine em Cilindro: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · corte da live "Tem formato pra tudo" (F10 · ID05)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID05 Roxo — fundo #F7F4FB · texto #17092C · roxo #820AD1 · superfície #FFFFFF · apoio #5C0F8B · Manrope + JetBrains Mono.
+   Cenas escuras usam o "texto" #17092C como fundo e o "fundo" #F7F4FB como texto (mesma paleta, papéis invertidos).
+   F10: pessoa + prova do produto. Prova = trechos reais de vídeos editados pelo Cortez, sem logotipos.
+   3D: three.js r186 (ESM) — torre/anel de telas curvas (sombreador próprio: curvatura, cantos, desfoque por mip),
+   máquina de tipos com texto extrudado e sombra, fichas 3D; tudo em função do tempo do quadro. */
+@font-face { font-family:"Manrope"; src:url("assets/manrope-variable.ttf") format("truetype"); font-weight:200 800; }
+@font-face { font-family:"JetBrains Mono"; src:url("assets/jetbrains-mono-variable.ttf") format("truetype"); font-weight:100 800; }
+* { box-sizing:border-box; }
+body { margin:0; background:#17092C; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#17092C; font-family:"Manrope", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#vig { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(23,9,44,.92) 0%, rgba(23,9,44,.72) 13%, rgba(23,9,44,0) 25%, rgba(23,9,44,0) 70%, rgba(23,9,44,.78) 80%, rgba(23,9,44,.9) 100%); }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.05; mix-blend-mode:overlay; }
+
+.hd { position:absolute; left:72px; right:290px; top:150px; z-index:6; }
+.lab { font-family:"JetBrains Mono", monospace; font-weight:600; font-size:22px; letter-spacing:.16em; text-transform:uppercase; color:#F7F4FB; overflow:hidden; height:32px; opacity:.86; }
+.lab .in { display:inline-flex; align-items:center; gap:12px; }
+.lab i { width:10px; height:10px; border-radius:3px; background:#820AD1; display:block; flex:none; box-shadow:0 0 0 2px rgba(247,244,251,.25); }
+.ttl { margin-top:16px; }
+.ln { display:block; overflow:hidden; padding:0 0 .1em; font-family:"Manrope", sans-serif; font-weight:800; font-size:82px; line-height:1.02; letter-spacing:-.035em; color:#F7F4FB; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:normal; display:inline-block; background:#820AD1; color:#FFFFFF; padding:0 .12em .02em; margin-left:-.06em; border-radius:.14em; }
+.hd.light .lab { color:#17092C; } .hd.light .ln { color:#17092C; }
+
+/* miniatura de quem fala */
+.pip { position:absolute; left:830px; top:150px; width:184px; height:184px; border-radius:50%; overflow:hidden; z-index:8; opacity:0;
+  box-shadow:0 0 0 4px #820AD1, 0 0 0 7px rgba(247,244,251,.9), 0 18px 40px rgba(10,3,20,.55); background:#2a1747; }
+.pip video { display:block; width:184px; height:184px; object-fit:cover; }
+.pipn { position:absolute; left:796px; width:252px; top:350px; z-index:8; text-align:center; opacity:0;
+  font-family:"JetBrains Mono", monospace; font-weight:600; font-size:17px; letter-spacing:.12em; text-transform:uppercase; color:#F7F4FB; }
+.pipn.lt { color:#5C0F8B; } .pipn.lt b { color:#17092C; }
+.pipn b { display:block; font-family:"Manrope", sans-serif; font-weight:800; font-size:26px; letter-spacing:-.01em; text-transform:none; margin-bottom:2px; }
+
+/* rótulo do formato em destaque (caixa = motivo da legenda L05) */
+.fpill { position:absolute; left:0; right:0; top:1408px; z-index:7; text-align:center; opacity:0; }
+.fpill span { display:inline-flex; align-items:center; gap:14px; padding:12px 22px 12px 18px; border-radius:14px; background:#820AD1; color:#FFFFFF;
+  font-family:"JetBrains Mono", monospace; font-weight:700; font-size:28px; letter-spacing:.12em; text-transform:uppercase; box-shadow:0 14px 34px rgba(10,3,20,.45); }
+.fpill span i { font-style:normal; opacity:.7; font-weight:500; }
+
+/* máquina de tipos: LETRA · TAMANHO · COR */
+#spec { position:absolute; left:0; right:0; top:300px; z-index:7; text-align:center; opacity:0; }
+#spec span { display:inline-block; margin:0 6px; padding:8px 16px; border-radius:12px; font-family:"JetBrains Mono", monospace; font-weight:700; font-size:34px; letter-spacing:.12em; color:#17092C; }
+#spec b { display:inline-block; color:#5C0F8B; opacity:.5; font-weight:400; font-family:"JetBrains Mono", monospace; font-size:34px; }
+#swl { position:absolute; left:0; right:0; top:0; z-index:7; }
+#swl span { position:absolute; width:120px; margin-left:-60px; text-align:center; font-family:"JetBrains Mono", monospace; font-weight:600; font-size:20px; letter-spacing:.1em; color:#5C0F8B; opacity:0; }
+
+/* legendas L05 — caixa na palavra */
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:40px; right:40px; top:1496px; text-align:center; opacity:0; white-space:nowrap; }
+.cw { display:inline-block; margin:0 2px; padding:2px 12px 6px; border-radius:12px; font-family:"Manrope", sans-serif; font-weight:800; font-size:58px; line-height:1.15; letter-spacing:-.02em; }
+.cap.dk .cw { color:#FFFFFF; text-shadow:0 3px 16px rgba(10,3,20,.85); }
+.cap.lt .cw { color:#17092C; }
+
+#wipeL { position:absolute; inset:0; z-index:20; background:#F7F4FB; clip-path:inset(100% 0% 0% 0%); }
+#wipeD { position:absolute; inset:0; z-index:20; background:#17092C; clip-path:inset(0% 0% 100% 0%); }
+
+.cta-h { position:absolute; left:40px; right:40px; top:980px; z-index:10; text-align:center; }
+.cta-h .ln { font-size:104px; color:#17092C; text-align:center; }
+.cta-s { position:absolute; left:60px; right:60px; top:1236px; z-index:10; text-align:center; opacity:0; font-family:"Manrope", sans-serif; font-weight:500; font-size:38px; color:#17092C; }
+.cta-s b { font-weight:800; color:#820AD1; }
+#btn { position:absolute; left:280px; top:1330px; width:520px; height:120px; z-index:10; opacity:0; display:flex; align-items:center; justify-content:center; gap:18px; border-radius:999px;
+  background:#820AD1; color:#FFFFFF; font-family:"Manrope", sans-serif; font-weight:800; font-size:48px; letter-spacing:-.01em; white-space:nowrap; box-shadow:0 24px 60px rgba(92,15,139,.38); }
+.cta-m { position:absolute; left:0; right:0; top:1492px; z-index:10; text-align:center; opacity:0; font-family:"JetBrains Mono", monospace; font-weight:600; font-size:20px; letter-spacing:.14em; text-transform:uppercase; color:#5C0F8B; }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }
+/* variante "Comente CORTEZ" */
+.cc-line { position:absolute; left:0; right:0; top:1240px; z-index:10; text-align:center; opacity:0; white-space:nowrap;
+  font-family:"Manrope", sans-serif; font-weight:800; font-size:66px; letter-spacing:-.03em; color:#17092C; }
+.cc-line svg { display:inline-block; width:74px; height:74px; vertical-align:-14px; margin-right:16px; }
+.cc-line em { font-style:normal; display:inline-block; background:#820AD1; color:#FFFFFF; padding:0 .16em .04em; margin-left:.18em; border-radius:.16em; letter-spacing:.01em; }
+#cf { position:absolute; left:160px; top:1356px; width:760px; height:112px; z-index:10; opacity:0; border-radius:999px; background:#FFFFFF;
+  border:3px solid #E2D6F3; box-shadow:0 20px 54px rgba(92,15,139,.20); display:flex; align-items:center; }
+#cf .ico { width:52px; height:52px; margin-left:30px; flex:none; }
+#cft { position:relative; flex:1; margin-left:20px; height:112px; display:flex; align-items:center; font-family:"Manrope", sans-serif; }
+#cph { position:absolute; left:0; font-weight:500; font-size:34px; color:#8C7BA8; }
+#cty { font-weight:800; font-size:42px; letter-spacing:.04em; color:#17092C; }
+#cty span { display:none; }
+#caret { display:inline-block; width:4px; height:46px; margin-left:4px; background:#820AD1; border-radius:2px; opacity:0; }
+#csend { width:84px; height:84px; margin-right:14px; flex:none; border-radius:50%; background:#820AD1; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(92,15,139,.35); }
+#csend svg { width:40px; height:40px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="vig"></div>
+
+  <div class="pip" id="pj"><video class="clip" src="assets/convidado.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="1" muted playsinline></video></div>
+  <div class="pip" id="pb"><video class="clip" src="assets/apresentador.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="2" muted playsinline></video></div>
+  <div class="pipn" id="nj"><b>Convidado</b>Trecho da live · cliente</div>
+  <div class="pipn" id="nb"><b>Apresentador</b>Trecho da live · Cortez</div>
+
+  {{HEADS}}
+
+  {{PILLS}}
+
+  <div id="spec"><span id="sp0">LETRA</span><b>·</b><span id="sp1">TAMANHO</span><b>·</b><span id="sp2">COR</span></div>
+  <div id="swl">{{SWL}}</div>
+
+  <div id="caps">{{CAPS}}</div>
+
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Tem formato</span></span><span class="ln"><span class="in" id="ch2"><em>pra tudo.</em></span></span></div>
+{{CTA_HTML}}
+
+  <div id="wipeL"></div><div id="wipeD"></div>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1, #ch2',{yPercent:112});
+  gsap.set('#h1 .lab .in, #h1l0 .in, #h1l1 .in',{yPercent:0});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:.3,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.6); });
+    if(h.end!==null){ OUT(`${sel} .lab .in`,h.end-.3); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.3+j*.03)); } });
+  // miniaturas de quem fala
+  DATA.spk.forEach(s=>{ const p=s.who==='apresentador'?'#pb':'#pj', n=s.who==='apresentador'?'#nb':'#nj';
+    if(s.a<0.01){ gsap.set([p,n],{opacity:1}); }   // no gancho a miniatura já está na tela no 1º quadro
+    else { tl.fromTo(p,{opacity:0,scale:.82},{opacity:1,scale:1,duration:.32,ease:'power3.out',immediateRender:false},s.a);
+      tl.fromTo(n,{opacity:0,y:8},{opacity:1,y:0,duration:.3,ease:'power3.out',immediateRender:false},s.a+.05); }
+    tl.to(p,{opacity:0,scale:.9,duration:.22,ease:'power2.in'},s.b-.2); tl.to(n,{opacity:0,duration:.18},s.b-.2); });
+  // rótulos dos formatos citados
+  DATA.pills.forEach(p=>{ tl.fromTo(`#${p.id}`,{opacity:0,y:18},{opacity:1,y:0,duration:.3,ease:'power3.out',immediateRender:false},p.a);
+    tl.to(`#${p.id}`,{opacity:0,y:-10,duration:.2,ease:'power2.in'},p.b); });
+  // nome sob a miniatura legível no fundo claro da máquina de tipos
+  tl.set('#nj b, #nb b',{color:'#17092C'},T.t03-.02); tl.set('#nj, #nb',{color:'#5C0F8B'},T.t03-.02);
+  tl.set('#nj b, #nb b',{color:'#F7F4FB'},T.t04-.02); tl.set('#nj, #nb',{color:'#F7F4FB'},T.t04-.02);
+  // véu escuro (só nas cenas escuras)
+  tl.to('#vig',{opacity:0,duration:.01},T.t03-.05); tl.to('#vig',{opacity:1,duration:.01},T.t04-.05); tl.to('#vig',{opacity:0,duration:.01},T.cta0);
+  // cortinas de cena
+  tl.fromTo('#wipeL',{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:.26,ease:'power3.in',immediateRender:false},T.t03-.28);
+  tl.fromTo('#wipeL',{clipPath:'inset(0% 0% 0% 0%)'},{clipPath:'inset(0% 0% 100% 0%)',duration:.34,ease:'power3.out',immediateRender:false},T.t03-.02);
+  tl.fromTo('#wipeD',{clipPath:'inset(0% 0% 100% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:.22,ease:'power3.in',immediateRender:false},T.t04-.24);
+  tl.fromTo('#wipeD',{clipPath:'inset(0% 0% 0% 0%)'},{clipPath:'inset(100% 0% 0% 0%)',duration:.34,ease:'power3.out',immediateRender:false},T.t04-.02);
+  tl.fromTo('#wipeL',{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:.3,ease:'power3.in',immediateRender:false},T.cta0-.05);
+  tl.fromTo('#wipeL',{clipPath:'inset(0% 0% 0% 0%)'},{clipPath:'inset(0% 0% 100% 0%)',duration:.42,ease:'power3.out',immediateRender:false},T.cta0+.25);
+  // máquina de tipos: a caixa anda entre LETRA · TAMANHO · COR
+  tl.fromTo('#spec',{opacity:0,y:16},{opacity:1,y:0,duration:.35,ease:'power3.out',immediateRender:false},T.t03+.25);
+  [['#sp0',T.letra],['#sp1',T.tam],['#sp2',T.cor]].forEach(([s,a],i,arr)=>{ tl.set(s,{backgroundColor:'#820AD1',color:'#FFFFFF'},a-.04);
+    if(i<2) tl.set(s,{backgroundColor:'rgba(130,10,209,0)',color:'#17092C'},arr[i+1][1]-.04); });
+  tl.to('#spec',{opacity:0,duration:.15},T.t04-.3);
+  DATA.swl.forEach((s,i)=>{ tl.fromTo(`#sw${i}`,{opacity:0,y:8},{opacity:.9,y:0,duration:.25,immediateRender:false},s.a); tl.to(`#sw${i}`,{opacity:0,duration:.15},T.t04-.3); });
+  // fechamento (CTA escrito; a voz já terminou)
+  IN('#ch1',T.cta0+.55,.8); IN('#ch2',T.cta0+.72,.8);
+  if(DATA.cta!=='comment'){
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.0);
+  tl.fromTo('#btn',{opacity:0,y:40},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.25);
+  tl.fromTo('#cm',{opacity:0},{opacity:1,duration:.5,immediateRender:false},T.cta0+1.5);
+  tl.fromTo('#cursor',{opacity:0,x:820,y:1660},{opacity:1,x:610,y:1392,duration:.8,ease:'power2.inOut',immediateRender:false},T.tap-.85);
+  tl.to('#btn',{scale:.95,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+  tl.to('#cursor',{scale:.86,duration:.09,yoyo:true,repeat:1,transformOrigin:'20% 10%'},T.tap-.02);
+  tl.to('#cursor',{x:670,y:1480,opacity:0,duration:.6,ease:'power2.in'},T.tap+.5);
+  } else {
+  // variante "Comente CORTEZ": chamada + campo de comentário em que CORTEZ é digitado e enviado (sem botão "Saiba mais")
+  tl.fromTo('#cl',{opacity:0,y:24},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.0);
+  tl.fromTo('#cf',{opacity:0,y:40},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.2);
+  tl.fromTo('#cm',{opacity:0,y:-6},{opacity:1,y:0,duration:.5,immediateRender:false},T.cta0+1.45);
+  DATA.typing.forEach((a,i)=>{ if(i===0) tl.set('#cph',{opacity:0},a); tl.set(`#ck${i}`,{display:'inline'},a); });
+  DATA.caret.forEach(([a,o])=>tl.set('#caret',{opacity:o},a));
+  tl.fromTo('#cursor',{opacity:0,x:900,y:1660},{opacity:1,x:838,y:1406,duration:.8,ease:'power2.inOut',immediateRender:false},T.tap-.85);
+  tl.to('#csend',{scale:.88,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+  tl.to('#cursor',{scale:.86,duration:.09,yoyo:true,repeat:1,transformOrigin:'20% 10%'},T.tap-.02);
+  tl.fromTo('#cf',{borderColor:'#E2D6F3'},{borderColor:'#820AD1',duration:.2,immediateRender:false},T.tap+.05);
+  tl.to('#cursor',{x:900,y:1530,opacity:0,duration:.6,ease:'power2.in'},T.tap+.5);
+  }
+  // legendas L05: o bloco aparece inteiro e a caixa roxa passa de palavra em palavra
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},g.s); tl.set(`#cg${i}`,{opacity:0},g.e);
+    const fg=g.light?'#17092C':'#FFFFFF';
+    g.w.forEach((w,j)=>{ tl.set(`#cg${i}w${j}`,{backgroundColor:'#820AD1',color:'#FFFFFF',textShadow:'none'},w.s);
+      tl.set(`#cg${i}w${j}`,{backgroundColor:'rgba(130,10,209,0)',color:fg,textShadow:g.light?'none':'0 3px 16px rgba(10,3,20,.85)'},w.e); }); });
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const DATA = window.__DATA, T = DATA.T;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const e3=(x)=>1-Math.pow(1-clamp(x,0,1),3);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const ei3=(x)=>{ x=clamp(x,0,1); return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2; };
+const lerp=(a,b,u)=>a+(b-a)*u;
+const bell=(x,c,w)=>Math.exp(-Math.pow((x-c)/w,2));
+
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.NoToneMapping; R.outputColorSpace=THREE.SRGBColorSpace;
+R.shadowMap.enabled=true; R.shadowMap.type=THREE.PCFShadowMap;
+const ENV=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture;
+const DARK=new THREE.Color('#17092C'), LIGHT=new THREE.Color('#F7F4FB'), PURPLE=new THREE.Color('#820AD1'), BACK_D=new THREE.Color('#2A1747'), BACK_L=new THREE.Color('#E9E1F5');
+
+// =============== Cena A: a torre de formatos (anel de telas curvas) ===============
+const SA=new THREE.Scene(); SA.background=DARK.clone(); SA.environment=ENV; SA.environmentIntensity=0.8;
+const CA=new THREE.PerspectiveCamera(50,1080/1920,0.1,500); CA.rotation.order='YXZ';
+const key=new THREE.DirectionalLight(0xffffff,1.6); key.position.set(-3,5,6); SA.add(key);
+const W=2.36, H=4.2, N=32, DA=Math.PI*2/N, R0=16, PITCH=5.1;
+const ALL=['h_sem','x_net','x_mes','h_apa','x_ui','x_th','h_cen','x_loj','x_pro','h_des','x_jor','x_ia','x_pr','x_eta','h_ed','x_ant'];
+const EXTRA=ALL.filter(n=>n[0]==='x');
+const HSLOT={h_sem:0,h_apa:3,h_cen:6,h_des:9,h_ed:14};
+const MID=[]; { const ex=EXTRA.slice(); let k=0; for(let i=0;i<N;i++){ const h=Object.keys(HSLOT).find(n=>HSLOT[n]===i); MID.push(h||ex[(k++)%ex.length]); } }
+const SEQ={}, TEX={};
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearMipmapLinearFilter; tx.magFilter=THREE.LinearFilter;
+  tx.generateMipmaps=true; tx.anisotropy=4; return tx; }
+ALL.forEach(n=>TEX[n]=videoTex());
+function frameOf(name,t,off){ const a=SEQ[name]; const i=Math.floor(Math.max(0,t)*30+1e-6+(off||0)); return a[((i%a.length)+a.length)%a.length]; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+// telas-herói: o trecho começa quando o formato é citado (o EXEMPLO_2 termina junto com a cena, sem dar a volta)
+function heroFrame(n,t){ const a=SEQ[n];
+  const t0 = n==='h_sem'?T.sem : n==='h_apa'?(t>=T.esc-0.62?T.esc-0.12:T.apa) : n==='h_cen'?T.cen : n==='h_des'?T.des : T.t05-3.1;
+  const i=Math.floor((t-t0)*30+1e-6); if(n==='h_ed') return a[clamp(i,0,a.length-1)]; return a[((i%a.length)+a.length)%a.length]; }
+
+const PV=`uniform float uR; uniform float uBend; varying vec2 vUv;
+void main(){ vUv=uv; vec3 p=position; float b=max(uBend,1e-4); float Rb=uR/b; float a=p.x/Rb;
+  p.x=Rb*sin(a); p.z=Rb*(1.0-cos(a)); gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0); }`;
+const PF=`uniform sampler2D map; uniform vec2 uSize; uniform float uRad; uniform float uDim; uniform float uBlur; uniform vec3 uBack; uniform vec3 uRim;
+uniform float uRimA; uniform float uSel; uniform vec3 uSelC; uniform vec3 uTint; uniform float uAlpha; varying vec2 vUv;
+float sdR(vec2 p, vec2 b, float r){ vec2 q=abs(p)-b+r; return length(max(q,0.0))+min(max(q.x,q.y),0.0)-r; }
+void main(){
+  vec2 px=(vUv-0.5)*uSize; float d=sdR(px,uSize*0.5,uRad); float aa=max(fwidth(d),1e-4); float al=1.0-smoothstep(-aa,aa,d);
+  if(al<0.004) discard;
+  vec3 col;
+  if(gl_FrontFacing){
+    if(uBlur>0.002){ vec3 acc=vec3(0.0); float lod=uBlur*3.2; float rr=uBlur*0.045;
+      for(int i=0;i<10;i++){ float an=float(i)*2.39996+0.5; float rad=rr*sqrt((float(i)+0.5)/10.0); vec2 o=vec2(cos(an),sin(an)*0.5625)*rad; acc+=texture2D(map,vUv+o,lod).rgb; }
+      col=acc/10.0; }
+    else col=texture2D(map,vUv).rgb;
+    col=mix(uTint,col,uDim);   // fora de foco: afunda na cor do fundo (não fica cinza)
+    float rim=smoothstep(-0.03,-0.004,d); col=mix(col,uRim,rim*uRimA);
+    float sel=smoothstep(-0.11,-0.035,d); col=mix(col,uSelC,sel*uSel);
+  } else {
+    float g=0.65+0.35*vUv.y; col=uBack*g; float rim=smoothstep(-0.05,-0.005,d); col=mix(col,uRim,rim*0.5);
+  }
+  gl_FragColor=vec4(col,al*uAlpha);
+}`;
+const GEO=new THREE.PlaneGeometry(W,H,40,1);
+function panelMat(name){ return new THREE.ShaderMaterial({vertexShader:PV,fragmentShader:PF,side:THREE.DoubleSide,transparent:true,
+  uniforms:{map:{value:TEX[name]},uR:{value:R0},uBend:{value:1},uSize:{value:new THREE.Vector2(W,H)},uRad:{value:0.13},uDim:{value:1},uBlur:{value:0},
+    uBack:{value:new THREE.Color('#2A1747')},uRim:{value:new THREE.Color('#F7F4FB')},uRimA:{value:0.22},uSel:{value:0},uSelC:{value:PURPLE.clone()},uTint:{value:DARK.clone()},uAlpha:{value:1}}}); }
+const ROWS=[-3,-2,-1,0,1];   // as linhas extras crescem para baixo (poço de telas) e a câmera sai por cima sem atravessar a parede
+const tower=new THREE.Group(); SA.add(tower);
+const P=[];   // {row,slot,name,pivot,mesh,mat}
+ROWS.forEach(k=>{ for(let i=0;i<N;i++){
+  const name = k===0 ? MID[i] : ALL[((i*5 + (k+3)*7) % ALL.length)];
+  const pivot=new THREE.Object3D(); pivot.position.y=k*PITCH; tower.add(pivot);
+  const mat=panelMat(name); const mesh=new THREE.Mesh(GEO,mat); mesh.position.z=-R0; pivot.add(mesh);
+  P.push({k,i,name,pivot,mesh,mat,off:(i*13+(k+3)*29)%45}); } });
+// tela escolhida (sai do anel e vem até a câmera)
+const selMat=panelMat('h_apa'); const sel=new THREE.Mesh(GEO,selMat); sel.visible=false; SA.add(sel);
+// fichas 3D (efeitos · música · visual)
+function chipTex(label,kind){ const c=document.createElement('canvas'); c.width=640; c.height=200; const tx=new THREE.CanvasTexture(c); tx.colorSpace=THREE.SRGBColorSpace;
+  tx.anisotropy=4; return {c,tx,label,kind}; }
+function drawChip(ch,t){ const g=ch.c.getContext('2d'); g.clearRect(0,0,640,200);
+  g.fillStyle='#FFFFFF'; g.beginPath(); g.roundRect(0,0,640,200,46); g.fill();
+  g.fillStyle='#820AD1'; g.beginPath(); g.roundRect(30,30,140,140,34); g.fill();
+  g.strokeStyle='#FFFFFF'; g.fillStyle='#FFFFFF'; g.lineWidth=13; g.lineCap='round'; g.lineJoin='round';
+  if(ch.kind==='music'){ for(let b=0;b<4;b++){ const h=32+44*(0.5+0.5*Math.sin(t*9.0+b*1.7))*(0.6+0.4*Math.sin(t*3.1+b)); g.beginPath(); g.roundRect(56+b*24,100-h/2,14,h,7); g.fill(); } }
+  else if(ch.kind==='fx'){ const star=(cx,cy,R,r)=>{ g.beginPath(); for(let s=0;s<8;s++){ const a=s*Math.PI/4-Math.PI/2, q=s%2?r:R; g[s?'lineTo':'moveTo'](cx+Math.cos(a)*q,cy+Math.sin(a)*q); } g.closePath(); g.fill(); };
+    star(92,108,46,13); star(138,62,20,6); }
+  else { g.beginPath(); g.moveTo(68,102); g.lineTo(92,126); g.lineTo(134,78); g.stroke(); }
+  g.fillStyle='#17092C'; g.font='800 84px Manrope'; g.textBaseline='middle'; g.fillText(ch.label,206,104); ch.tx.needsUpdate=true; }
+const chips=[['Efeitos','fx'],['Música','music'],['Visual','check']].map(([l,k])=>{ const ch=chipTex(l,k);
+  const g=new THREE.Group(); const body=new THREE.Mesh(new RoundedBoxGeometry(1.62,0.52,0.12,6,0.09),
+    new THREE.MeshPhysicalMaterial({color:0xF7F4FB,roughness:.35,clearcoat:.6,clearcoatRoughness:.25,metalness:0}));
+  g.add(body); const face=new THREE.Mesh(new THREE.PlaneGeometry(1.6,0.5),new THREE.MeshBasicMaterial({map:ch.tx,transparent:true,toneMapped:false}));
+  face.position.z=0.062; g.add(face); g.visible=false; SA.add(g); return {g,ch}; });
+
+// =============== Cena B: máquina de tipos (fundo claro) ===============
+const SB=new THREE.Scene(); SB.background=LIGHT.clone(); SB.environment=ENV; SB.environmentIntensity=0.55;
+const CB=new THREE.PerspectiveCamera(40,1080/1920,0.1,100); CB.position.set(0,0.2,12.4); CB.lookAt(0,0.05,0);
+const kb=new THREE.DirectionalLight(0xffffff,2.2); kb.position.set(-3.5,5,8); kb.castShadow=true; kb.shadow.mapSize.set(2048,2048);
+kb.shadow.camera.left=-6; kb.shadow.camera.right=6; kb.shadow.camera.top=6; kb.shadow.camera.bottom=-6; kb.shadow.camera.near=1; kb.shadow.camera.far=30; kb.shadow.radius=5; kb.shadow.bias=-0.0004;
+SB.add(kb); SB.add(new THREE.AmbientLight(0xffffff,0.35));
+const wall=new THREE.Mesh(new THREE.PlaneGeometry(40,40),new THREE.ShadowMaterial({opacity:0.085})); wall.position.z=-0.8; wall.receiveShadow=true; SB.add(wall);
+const FONTS={}; const LINES=[{txt:'Seu',y:0.92},{txt:'estilo.',y:-0.78}];
+const wordMat=new THREE.MeshPhysicalMaterial({color:0x820AD1,roughness:.32,clearcoat:.9,clearcoatRoughness:.12,metalness:0,envMapIntensity:.9});
+const lineGroups=LINES.map(()=>{ const g=new THREE.Group(); SB.add(g); return g; });
+const LG={};   // geometria por fonte e linha
+function buildWords(){ Object.entries(FONTS).forEach(([fk,f])=>{ LG[fk]=LINES.map(L=>{ const geo=new TextGeometry(L.txt,{font:f,size:1.05,depth:0.3,curveSegments:10,bevelEnabled:true,bevelThickness:0.035,bevelSize:0.022,bevelSegments:4});
+    geo.computeBoundingBox(); const bb=geo.boundingBox; geo.translate(-(bb.max.x+bb.min.x)/2,-(bb.max.y+bb.min.y)/2,-(bb.max.z+bb.min.z)/2); return geo; }); });
+  lineGroups.forEach((g,j)=>{ const m=new THREE.Mesh(LG.manrope[j],wordMat); m.castShadow=true; g.add(m); g.userData.m=m; g.position.y=LINES[j].y; }); }
+const SW=[['#25D366','ID01'],['#D6B46A','ID04'],['#F05A28','ID07'],['#4A92E6','ID03'],['#820AD1','ID05']];
+const swatches=SW.map(([c],i)=>{ const m=new THREE.Mesh(new RoundedBoxGeometry(0.52,0.52,0.16,5,0.1),new THREE.MeshPhysicalMaterial({color:new THREE.Color(c),roughness:.35,clearcoat:.7}));
+  m.position.set((i-2)*0.82,2.3,0.1); m.castShadow=true; m.visible=false; SB.add(m); return m; });
+
+// =============== pós-processamento ===============
+const rt=new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4});
+const composer=new EffectComposer(R,rt); composer.setPixelRatio(1); composer.setSize(1080,1920);
+const rpass=new RenderPass(SA,CA); composer.addPass(rpass);
+const bloom=new UnrealBloomPass(new THREE.Vector2(1080,1920),0.12,0.35,0.92); composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+let READY=null, built=false;
+function loadImg(src,k=0){ return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>{ if(k<4) setTimeout(()=>loadImg(src+(src.includes('?')?'':'?r')+k,k+1).then(res,rej),120*(k+1)); else rej(new Error(src)); }; im.src=src; }); }
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.ready, document.fonts.load('800 84px Manrope')];
+  [['manrope','tf-manrope.json'],['baskerville','tf-baskerville.json'],['mono','tf-mono.json'],['light','tf-manrope-light.json']].forEach(([k,f])=>
+    jobs.push(new Promise((res,rej)=>new FontLoader().load('assets/'+f,x=>{FONTS[k]=x;res();},undefined,rej))));
+  Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  READY=Promise.all(jobs).then(()=>{ buildWords(); placeSwatchLabels(); built=true; }); return READY; }
+
+// ---------- relógio da torre ----------
+const ACT=[['h_sem',T.sem,T.apa],['h_apa',T.apa,T.cen],['h_cen',T.cen,T.des],['h_des',T.des,T.apresentador+0.35]];
+function ringRot(t){
+  // abertura: giro que desacelera até a 1ª tela; depois um passo de 3 telas a cada formato citado
+  let r = 1.5*(1-eo(t/(T.sem+0.25)));
+  [[T.apa,3],[T.cen,6],[T.des,9]].forEach(([a,s],j)=>{ r += -3*DA*ei3((t-a+0.12)/0.5); });
+  // S1: a torre gira devagar até a tela "aparecendo" ficar de frente para a câmera que sobe
+  r += 6*DA*ei3((t-T.apresentador-0.1)/2.7);
+  // S3: a tela do EXEMPLO_2 vem para a frente, um pouco à esquerda
+  r += (-11*DA+0.085)*ei3((t-T.t04+0.4)/0.4);
+  // S4: o giro solta e desacelera até parar ("tranquilo de mexer")
+  r += -0.55*e3((t-T.t05)/(T.end-T.t05));
+  return r;
+}
+function camA(t){
+  let x=0,y=0,z=0,pitch=0,yaw=0,fov=50;
+  // S0: entra de cima na torre e assenta na altura das telas
+  // S0: abre já dentro da torre (parede cheia de telas) e avança até a distância de leitura
+  const a0=eo(t/1.9); y=0.6*(1-a0); pitch=-0.06*(1-a0); z=4.6*(1-a0) - 0.35*clamp(t/7,0,1);
+  if(t>=T.apresentador-0.05 && t<T.t04-0.25){ const a=ei3((t-T.apresentador+0.05)/1.1), b=ei3((t-T.apresentador-0.35)/1.7);
+    y=lerp(y,9,a)+11*b; z=lerp(z,0,a)+24*b; pitch=lerp(pitch,-0.26,a)-0.39*b; yaw=0.04*Math.sin((t-T.apresentador)*0.6)*b; }
+  if(t>=T.t04-0.25 && t<T.t05){ const u=t-T.t04; z=0.9-0.9*e3(u/3.3); y=0.05; pitch=0; yaw=lerp(-0.05,0.035,ei3(u/3.4)); fov=50; }
+  if(t>=T.t05){ const uy=ei3((t-T.t05)/1.6), uz=ei3((t-T.t05-0.7)/2.2), v=e3((t-T.t05-1.8)/3.0); y=15*uy+9*v; z=20*uz+14*v; pitch=-0.5*ei3((t-T.t05)/1.9)-0.12*v; yaw=0.05*Math.sin((t-T.t05)*0.35)*uz; }
+  if(t>=T.cta0){ const u=t-T.cta0; x=0; y=105+1.6*u; z=107.5-1.9*u; pitch=-0.967; yaw=0; fov=36; }
+  return {x,y,z,pitch,yaw,fov};
+}
+function pushOf(name,t){
+  let p=0; ACT.forEach(([n,a,b])=>{ if(n===name) p=Math.max(p, eo((t-a-0.18)/0.5)*(1-eio((t-b+0.3)/0.35))); });
+  if(name==='h_ed') p=eo((t-T.t04+0.1)/0.7)*(1-eio((t-T.t05+0.1)/0.6));
+  return p;
+}
+
+function render(t){
+  const inB = t>=T.t03-0.02 && t<T.t04-0.02;
+  if(inB){ renderB(t); } else { renderA(t); }
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+
+function renderA(t){
+  const cta = t>=T.cta0-0.02;
+  SA.background.copy(cta?LIGHT:DARK);
+  const c=camA(t); CA.position.set(c.x,c.y,c.z); CA.rotation.set(c.pitch,c.yaw,0); CA.fov=c.fov; CA.updateProjectionMatrix();
+  const rho=ringRot(t);
+  // linhas extras (N possibilidades) sobem/descem na S4 e somem no CTA
+  const grow=(k)=>{ const d=Math.abs(k); if(d<=1) return 1; const a=T.poss+(d-2)*0.22; return e3((t-a)/0.6)*(1-eio((t-T.cta0+0.1)/0.3)); };
+  const inS3 = t>=T.t04-0.25 && t<T.t05;
+  const selA=T.esc-0.12, selOn = t>=selA && t<T.t03+0.1;
+  const used=new Set();
+  P.forEach(o=>{
+    const g=grow(o.k); o.pivot.visible=g>0.002; if(!o.pivot.visible) return;
+    o.pivot.scale.setScalar(g<1?0.6+0.4*g:1);
+    const drift = o.k===0 ? 0 : o.k*0.012*t + o.k*0.5*DA;
+    o.pivot.rotation.y = o.i*DA + rho + drift;
+    const isHero = o.k===0 && o.name[0]==='h' && HSLOT[o.name]===o.i;
+    const p = isHero ? pushOf(o.name,t) : 0;
+    const r=lerp(R0, o.name==='h_ed'?9.4:10.2, p); o.mesh.position.z=-r; o.mat.uniforms.uR.value=r; o.mat.uniforms.uBend.value=lerp(1,0.22,p);
+    // foco: quem não é o formato citado escurece; no "desfoca o fundo" o resto desfoca de verdade
+    let anyP=0; ACT.forEach(([n,a,b])=>{ anyP=Math.max(anyP, eo((t-a-0.1)/0.4)*(1-eio((t-b+0.2)/0.4))); });
+    let dim=1, blur=0;
+    if(t<T.apresentador+0.4){ dim = isHero&&p>0.05 ? 1 : lerp(0.88,0.36,anyP); blur = (!isHero||p<0.05) ? 0.85*e3((t-T.des-0.25)/0.45)*(1-eio((t-T.apresentador-0.1)/0.5)) : 0; }
+    else if(!inS3 && t<T.t05){ dim = 0.88 - 0.5*eo((t-selA)/0.5); }
+    else if(inS3){ dim = o.name==='h_ed'&&isHero ? 1 : 0.34; blur = o.name==='h_ed'&&isHero ? 0 : 0.6; }
+    else { dim = cta ? 1 : lerp(0.72,0.92,e3((t-T.t05-0.8)/1.6)); }
+    if(isHero && o.name==='h_ed' && inS3) o.mat.uniforms.uSel.value = 0.9*bell(t,T.tudo+0.15,0.22); else o.mat.uniforms.uSel.value=0;
+    o.mat.uniforms.uDim.value=dim; o.mat.uniforms.uBlur.value=blur;
+    o.mat.uniforms.uBack.value.copy(cta?BACK_L:BACK_D); o.mat.uniforms.uTint.value.copy(cta?LIGHT:DARK);
+    o.mat.uniforms.uRim.value.copy(cta?PURPLE:LIGHT); o.mat.uniforms.uRimA.value=cta?0.5:0.22;
+    o.mesh.visible = !(selOn && o.k===0 && o.i===HSLOT.h_apa);
+    used.add(o.name);
+  });
+  // a tela escolhida sai do anel em direção à câmera e a câmera mergulha nela
+  sel.visible=selOn;
+  if(selOn){ const u=ei3((t-selA)/0.75), w=ei3((t-T.t03+0.42)/0.42);
+    const fwd=new THREE.Vector3(0,0,-1).applyEuler(CA.rotation); const cam=CA.position.clone();
+    const end=cam.clone().add(fwd.clone().multiplyScalar(lerp(11.5,4.2,w)));
+    const start=new THREE.Vector3(0,0,-R0);
+    sel.position.lerpVectors(start,end,u);
+    const qEnd=new THREE.Quaternion().setFromEuler(CA.rotation);
+    sel.quaternion.copy(new THREE.Quaternion().slerp(qEnd,u));
+    selMat.uniforms.uR.value=R0; selMat.uniforms.uBend.value=1-u; selMat.uniforms.uSel.value=0.85*u*(1-w);
+    selMat.uniforms.uDim.value=1; used.add('h_apa'); }
+  // fichas
+  chips.forEach((c,j)=>{ const a=[T.efe,T.mus,T.vis][j]-0.08; const u=eo((t-a)/0.5); const out=eio((t-T.t05+0.25)/0.35);
+    c.g.visible = inS3 && t>a-0.01 && out<0.999;
+    if(c.g.visible){ const tx=0.5, ty=0.74-j*0.68, tz=-6.4;
+      c.g.position.set(lerp(tx+2.6,tx,u)+0.03*Math.sin(t*1.3+j), lerp(ty-0.4,ty,u)+0.025*Math.sin(t*1.7+j*2), lerp(tz-3,tz,u)-4*out);
+      c.g.rotation.set(0.05*Math.sin(t*0.9+j), lerp(-0.9,-0.18,u)+0.04*Math.sin(t*1.1+j), lerp(0.25,0,u));
+      c.g.scale.setScalar(lerp(0.55,0.86,u)); drawChip(c.ch,t); } });
+  // texturas dos vídeos (um quadro por frame)
+  used.forEach(n=>{ setFrame(TEX[n], n[0]==='h' ? heroFrame(n,t) : frameOf(n,t,0)); });
+  // luz e brilho
+  bloom.strength = cta ? 0.0 : 0.12 + 0.12*bell(t,T.t04+0.1,0.25);
+  rpass.scene=SA; rpass.camera=CA; composer.render();
+}
+
+function renderB(t){
+  const u=t-T.t03;
+  // fonte: Manrope → Baskerville → JetBrains Mono → Manrope fina → Manrope extra-negrito (no "tamanho")
+  const FL=[[T.letra,'baskerville'],[T.letra+0.28,'mono'],[T.letra+0.56,'light'],[T.tam-0.02,'manrope']];
+  let fk='manrope', flip=0;
+  FL.forEach(([a,k])=>{ if(t>=a) fk=k; const d=t-a; if(d>-0.09&&d<0) flip=Math.max(flip, (d+0.09)/0.09); if(d>=0&&d<0.13) flip=Math.max(flip, 1-d/0.13); });
+  lineGroups.forEach((g,j)=>{ const m=g.userData.m; if(m.geometry!==LG[fk][j]) m.geometry=LG[fk][j];
+    const fj=clamp(flip*1.0 - j*0.0,0,1); g.rotation.x = (Math.PI/2)*Math.sin(fj*Math.PI/2)*(j%2?-1:1);
+    // tamanho: estoura e assenta
+    const z=t-T.tam; let s=1; if(z>0){ s = z<0.16 ? lerp(1,1.3,e3(z/0.16)) : z<0.38 ? lerp(1.3,0.9,ei3((z-0.16)/0.22)) : z<0.58 ? lerp(0.9,1.06,ei3((z-0.38)/0.2)) : lerp(1.06,1,ei3((z-0.58)/0.25)); }
+    g.scale.setScalar(s*(0.92+0.08*eo(u/0.5)));
+    g.position.y = LINES[j].y*(1+0.2*(s-1)) + 0.04*Math.sin(t*1.4+j);
+    g.rotation.y = 0.07*Math.sin(t*0.8+j*0.6) - 0.12*(1-eo(u/0.7));
+    g.position.z = -1.5*(1-eo(u/0.6)); });
+  // cor: passa pelas IDs e volta ao roxo
+  let col=PURPLE.clone(), act=-1;
+  if(t>=T.cor){ const k=Math.floor((t-T.cor)/0.12); if(k<SW.length){ col=new THREE.Color(SW[k][0]); act=k; } }
+  wordMat.color.copy(col);
+  swatches.forEach((m,i)=>{ const a=T.cor-0.32+i*0.06; const v=eo((t-a)/0.35); m.visible=v>0.001; m.scale.setScalar(Math.max(0.001,v));
+    m.position.y=2.3+0.2*(act===i?1:0); m.rotation.set(0.25*(1-v),0.5*(1-v)+0.08*Math.sin(t+i),0); });
+  bloom.strength=0.0;
+  rpass.scene=SB; rpass.camera=CB; composer.render();
+}
+function placeSwatchLabels(){ CB.updateMatrixWorld(); swatches.forEach((m,i)=>{ const v=new THREE.Vector3((i-2)*0.82,2.3-0.42,0.1).project(CB);
+  const el=document.getElementById('sw'+i); if(el){ el.style.left=((v.x+1)/2*1080).toFixed(1)+'px'; el.style.top=((1-v.y)/2*1920).toFixed(1)+'px'; } }); }
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!built){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

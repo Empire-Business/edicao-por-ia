@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F24",
+  "format_uid": "official.fd257d53ecf44b0884b7ce229934c6b8",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F24/vitrine-em-cilindro/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Criativo 9:16 para falas que enumeram opções. A câmera fica no centro de um cilindro 3D de telas curvas, cada uma tocando um exemplo real. A cada opção dita, a tela correspondente gira para a frente, ganha número e nome e o resto do cilindro recua ou desfoca; quando a fala fala de estilo (letra, tamanho, cor), uma palavra em 3D troca de fonte, tamanho e paleta passando por identidades reais. A câmera pode subir sobre o cilindro e mergulhar numa tela. Pessoa em círculo no canto com nome e papel; legenda das palavras ditas. Fecha com o cilindro como coroa sobre o cartão final \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Mapear cada opção citada para um exemplo real que a demonstra (conferido por quadros) e marcar a palavra exata em que a tela gira para a frente.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/vitrine-em-cilindro com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não mostrar opção que não tem exemplo real (use um cartão de texto). Não girar o cilindro sem uma palavra que peça. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/reference.mp4",
+      "sha256": "719ac9399a6d42d1e556413180fb985fed02171ecc7b25ce31d5b8dff4c2ba44"
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/hook.jpg",
+      "sha256": "9eb08f684e87b3f11d3d2fba0813eaf2b280f7035ee14bb2dc0bc02877106f9c"
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/ring.jpg",
+      "sha256": "6658e0962a99d7d6929bd8c4768dda510045950ee5fc8eeebb695295f4e6ea80"
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/style-type.jpg",
+      "sha256": "f304a13e219e1959bfe0e7c498c29e648cad7d42f5a8e309f257729a637fd8a8"
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/focus.jpg",
+      "sha256": "8b6abe228b9357601fae5bab5a75e44044631aa4cc42f32b064b77417891dd69"
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/possibilities.jpg",
+      "sha256": "d00b7c72f9030704c547adfec9f12c9f7884486868b45831c64f96a7c706f86f"
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/cta.jpg",
+      "sha256": "754166b3ac421c42a45ad7ee774a6ba7ba145407ec9f1a20250ec4d91f7da4c5"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/hook.jpg",
+      "sha256": "9eb08f684e87b3f11d3d2fba0813eaf2b280f7035ee14bb2dc0bc02877106f9c",
+      "at_seconds": 1.5,
+      "caption": "Gancho: dentro do cilindro de telas, a primeira opção citada vem para a frente; título no alto e pessoa em círculo."
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/ring.jpg",
+      "sha256": "6658e0962a99d7d6929bd8c4768dda510045950ee5fc8eeebb695295f4e6ea80",
+      "at_seconds": 9.0,
+      "caption": "O cilindro visto de cima: várias telas com exemplos reais tocando ao mesmo tempo."
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/style-type.jpg",
+      "sha256": "f304a13e219e1959bfe0e7c498c29e648cad7d42f5a8e309f257729a637fd8a8",
+      "at_seconds": 12.5,
+      "caption": "Estilo: uma palavra em 3D troca de fonte, tamanho e cor passando por identidades visuais reais."
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/focus.jpg",
+      "sha256": "8b6abe228b9357601fae5bab5a75e44044631aa4cc42f32b064b77417891dd69",
+      "at_seconds": 16.5,
+      "caption": "Uma tela em foco com rótulos curtos que entram nas palavras ditas (\"Efeitos\", \"Música\")."
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/possibilities.jpg",
+      "sha256": "d00b7c72f9030704c547adfec9f12c9f7884486868b45831c64f96a7c706f86f",
+      "at_seconds": 20.0,
+      "caption": "Muitas possibilidades: o cilindro cresce e vira um poço de telas."
+    },
+    {
+      "path": "examples/reference-library/F24/vitrine-em-cilindro/cta.jpg",
+      "sha256": "754166b3ac421c42a45ad7ee774a6ba7ba145407ec9f1a20250ec4d91f7da4c5",
+      "at_seconds": 25.5,
+      "caption": "Cartão final: o cilindro vira uma coroa sobre a promessa e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/vitrine-em-cilindro",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E121 V1",
+    "original_filename": "E121 V1 - Corte 4 Tem formato pra tudo (previa).mp4",
+    "original_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387",
+    "duration_s": 27.7,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

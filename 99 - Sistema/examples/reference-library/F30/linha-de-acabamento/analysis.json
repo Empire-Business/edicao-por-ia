@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F30",
+  "format_uid": "official.5f8d34118a25489ca424a70d3e237d6f",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F30/linha-de-acabamento/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Processo de transformação em 9:16 guiado por narração. O material bruto real (ex.: uma gravação com tropeços) vira uma fileira de blocos sobre uma esteira 3D clara, um bloco por trecho, com etiquetas que apontam os defeitos reais. Na apresentação do serviço, estações em arco sobem do chão; cada estação passa por cima da fileira na palavra da sua etapa e o estado muda (cor volta, silêncios afundam, erros saem, cenas entram, legenda/música/animação encaixam). A fileira se junta no vídeo pronto, há um toque em \"Aprovar\" e, se a narração falar de ajustes, um exemplo de pedido e a versão 2. Cartão final escrito com \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Transcrever o material bruto, marcar os defeitos reais e dividir em blocos; associar cada estação a uma palavra da narração.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/linha-de-acabamento com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não inventar defeitos. Pedidos de ajuste mostrados devem ser rotulados como exemplo. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/reference.mp4",
+      "sha256": "c54da77fe91002cd204b38910d410576efbe09c9b725da65b3317308cb267ff0"
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/hook.jpg",
+      "sha256": "12787d0af4517e0f80bd365dd129a2480456b20e103614d970f0e9a87acf6bd6"
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/line.jpg",
+      "sha256": "6770083c223967a7c74e6a5df0b96a53cfdadeb9838767cbcedd03b4ad06eb7e"
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/stations.jpg",
+      "sha256": "723566b5cdb72bcddb2b2df4e000d52e1bd3ebf0d4403c709a86e6bf04deddea"
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/finishing.jpg",
+      "sha256": "90c71f6a29484b0f11f0cdd4437a76d751ae0e8b01c7aee28e2b7924c1c805ff"
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/adjust.jpg",
+      "sha256": "fa5d3947d0851aae70892ae731a01afa12ad5a9a15c295f116f188308ac189af"
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/cta.jpg",
+      "sha256": "c76e96f70a47091e4aae5d740f02ad172ea0c76719f02e81d742c5eddf8dfbfd"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/hook.jpg",
+      "sha256": "12787d0af4517e0f80bd365dd129a2480456b20e103614d970f0e9a87acf6bd6",
+      "at_seconds": 0.8,
+      "caption": "Gancho: blocos do material bruto real em preto e branco, com o título do desafio."
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/line.jpg",
+      "sha256": "6770083c223967a7c74e6a5df0b96a53cfdadeb9838767cbcedd03b4ad06eb7e",
+      "at_seconds": 4.0,
+      "caption": "A gravação real como fileira de blocos sobre a esteira."
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/stations.jpg",
+      "sha256": "723566b5cdb72bcddb2b2df4e000d52e1bd3ebf0d4403c709a86e6bf04deddea",
+      "at_seconds": 9.0,
+      "caption": "Estações em arco alinhadas no fim da esteira."
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/finishing.jpg",
+      "sha256": "90c71f6a29484b0f11f0cdd4437a76d751ae0e8b01c7aee28e2b7924c1c805ff",
+      "at_seconds": 14.0,
+      "caption": "Linha de acabamento: lista de etapas marcadas e blocos já coloridos."
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/adjust.jpg",
+      "sha256": "fa5d3947d0851aae70892ae731a01afa12ad5a9a15c295f116f188308ac189af",
+      "at_seconds": 21.0,
+      "caption": "Exemplo de pedido de ajuste sobre o vídeo pronto."
+    },
+    {
+      "path": "examples/reference-library/F30/linha-de-acabamento/cta.jpg",
+      "sha256": "c76e96f70a47091e4aae5d740f02ad172ea0c76719f02e81d742c5eddf8dfbfd",
+      "at_seconds": 26.0,
+      "caption": "Cartão final: promessa curta e botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/linha-de-acabamento",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E128 V1",
+    "original_filename": "E128 V1 - IA 2 Me manda o seu pior video (previa).mp4",
+    "original_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90",
+    "duration_s": 28.6,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

@@ -1,0 +1,5 @@
+{
+ "CTA_CSS": "",
+ "CTA_HTML": "<div id=\"btn\">Saiba mais <span>→</span></div>",
+ "CTA_TL": "  tl.fromTo('#btn',{opacity:0,y:40},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.05);\n  tl.fromTo('#cursor',{opacity:0,x:800,y:1520},{opacity:1,x:600,y:1236,duration:.8,ease:'power2.inOut',immediateRender:false},T.tap-.85);\n  tl.to('#btn',{scale:.95,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);\n  tl.to('#cursor',{scale:.86,duration:.09,yoyo:true,repeat:1,transformOrigin:'20% 10%'},T.tap-.02);\n  tl.to('#cursor',{x:660,y:1330,opacity:0,duration:.6,ease:'power2.in'},T.tap+.5);"
+}

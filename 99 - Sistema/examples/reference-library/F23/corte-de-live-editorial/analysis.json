@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F23",
+  "format_uid": "official.ab0ffe0bee244b52aa605a055a56a92b",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F23/corte-de-live-editorial/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Corte vertical de 30 a 45 s guiado por pergunta e resposta. Quem pergunta e quem responde aparecem em cartões recortados da gravação, com nome, papel e o rótulo \"trecho da live\"; um título editorial curto em duas linhas (fonte serifada com itálico de destaque) abre cada bloco de fala e a legenda acompanha as palavras ditas. Quando a fala cita o resultado, a pessoa encolhe para um cartão pequeno e a prova entra num celular 3D discreto ou num cartão de vídeo maior, sempre com rótulo honesto. Fundo escuro de alto valor, transições secas, trilha bem abaixo da voz. A fala termina e um cartão escrito com a promessa em uma frase e o botão \"Saiba mais\" encerra.",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Planejar os blocos por pergunta e resposta: título editorial por bloco, cartão de quem fala, prova no celular 3D no momento em que a fala cita o resultado, cartão final.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/corte-de-live-editorial com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não ampliar a live em tela cheia (baixa resolução). Não misturar as falas de quem pergunta e de quem responde no mesmo cartão. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/reference.mp4",
+      "sha256": "04f77beac73c81a1712ca936a7d39650dec15c9131c77c714d9dcdaecc78a4fd"
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/hook.jpg",
+      "sha256": "01af6cba0e774c945d50af8626724eddd1baa3f366bbbff6ff4c9dda07a16c94"
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/question.jpg",
+      "sha256": "03fef58e1731a170d55e970154976fc28701b2cc11b48718fb24ad328e43a737"
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/answer.jpg",
+      "sha256": "7203bf719d6b7e5a10809fed5244d3413c5bc3777fd7a27b5dac8d181f0433a4"
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/proof-phone.jpg",
+      "sha256": "386bf41271a0bfd4e003516ad2b7ea4bfd0e16f528d3dea2299b690669f5719e"
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/proof-card.jpg",
+      "sha256": "d9ed7176b74e53763e7b4696c2259cdd8b7bf66cebc4dca6d1afbc057fc21418"
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/cta.jpg",
+      "sha256": "d92d3b9619072b33e4015d255f29ee36a1f14198ce06e487b4cff1c6fd4093ef"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/hook.jpg",
+      "sha256": "01af6cba0e774c945d50af8626724eddd1baa3f366bbbff6ff4c9dda07a16c94",
+      "at_seconds": 0.6,
+      "caption": "Gancho no primeiro quadro: título editorial em duas linhas com itálico de destaque, cartão de quem responde com nome e papel e legenda da fala."
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/question.jpg",
+      "sha256": "03fef58e1731a170d55e970154976fc28701b2cc11b48718fb24ad328e43a737",
+      "at_seconds": 5.0,
+      "caption": "Bloco da pergunta: o cartão troca para quem pergunta, com o título do bloco no alto."
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/answer.jpg",
+      "sha256": "7203bf719d6b7e5a10809fed5244d3413c5bc3777fd7a27b5dac8d181f0433a4",
+      "at_seconds": 12.5,
+      "caption": "Bloco da resposta: a pessoa volta em cartão grande e o título resume a resposta."
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/proof-phone.jpg",
+      "sha256": "386bf41271a0bfd4e003516ad2b7ea4bfd0e16f528d3dea2299b690669f5719e",
+      "at_seconds": 17.5,
+      "caption": "Prova: a pessoa vira um cartão pequeno e a prova real entra num celular 3D sóbrio, rotulada."
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/proof-card.jpg",
+      "sha256": "d9ed7176b74e53763e7b4696c2259cdd8b7bf66cebc4dca6d1afbc057fc21418",
+      "at_seconds": 33.0,
+      "caption": "Prova em cartão de vídeo maior, com rótulo honesto, e a pessoa num círculo no canto."
+    },
+    {
+      "path": "examples/reference-library/F23/corte-de-live-editorial/cta.jpg",
+      "sha256": "d92d3b9619072b33e4015d255f29ee36a1f14198ce06e487b4cff1c6fd4093ef",
+      "at_seconds": 41.0,
+      "caption": "Cartão final escrito: promessa em uma frase, prova no celular e o botão \"Saiba mais\". A fala já terminou."
+    }
+  ],
+  "template": "motion/templates/corte-de-live-editorial",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E118 V2",
+    "original_filename": "E118 V2 - Corte 1 Editor caro (prévia para aprovação).mp4",
+    "original_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3",
+    "duration_s": 43.7,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F26",
+  "format_uid": "official.5a0acfcc50784684a2707811f74311ba",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F26/mesa-de-papel-3d/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Criativo 9:16 claro, em plano-sequência sobre uma mesa de papel com sombras reais e profundidade de campo. Cada ideia da fala vira um objeto de mesa: relógio de papel para tempo, calendário de mesa que vira as páginas (datas reais e coerentes), cópias impressas que tocam vídeos reais, uma tela fina com a gravação real do processo, a foto de quem dá o depoimento e uma agenda da semana que se enche. Quem fala aparece em círculo pequeno com nome e papel; títulos curtos no alto; legenda das falas. Fecha com um cartão que cai na mesa com a promessa e um botão físico \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Traduzir cada ideia da fala em um objeto de mesa (tempo → relógio, prazo → calendário, entregas → cópias impressas) e encadear a câmera num plano-sequência.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/mesa-de-papel-3d com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não errar datas/dias da semana no calendário. Não deixar a mesa vazia por mais de um segundo: cada momento precisa de um objeto em foco. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/reference.mp4",
+      "sha256": "b9c783156f7f0f9309efcf5d2979f525eaa2fe0fa3c5d45edc38271811098f2c"
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/hook.jpg",
+      "sha256": "ed49b49ee90b25ab91ded018a571109098c8e0a8b414f3e16aebc663c7310cea"
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/calendar.jpg",
+      "sha256": "c789ddce26097086300b982101fb8037d03724f5d7f26546a82d607175ebcb1a"
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/process.jpg",
+      "sha256": "9379f222636b1a22a75903b2fe8cc6e3381b57dce189842e2000c3aed711bd87"
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/testimony.jpg",
+      "sha256": "0bf6ce135062ca4c692011f1bbac3a21cf37473e487c4855a9a2e399f6c3dac6"
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/planner.jpg",
+      "sha256": "ec83a41a7228dbfb8dbdbda4f1c48856f1b034a0a1db22e27bf2c84198d94552"
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/cta.jpg",
+      "sha256": "e9af3fc50bec03bb28160803e44d693a91c113982d467992bd9d1eecfd99689f"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/hook.jpg",
+      "sha256": "ed49b49ee90b25ab91ded018a571109098c8e0a8b414f3e16aebc663c7310cea",
+      "at_seconds": 1.0,
+      "caption": "Gancho: relógio de papel com a fatia do tempo destacada, título grande e quem fala num círculo pequeno."
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/calendar.jpg",
+      "sha256": "c789ddce26097086300b982101fb8037d03724f5d7f26546a82d607175ebcb1a",
+      "at_seconds": 9.5,
+      "caption": "Calendário de mesa (\"do jeito antigo\") com data e dia da semana coerentes e a etapa escrita na página."
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/process.jpg",
+      "sha256": "9379f222636b1a22a75903b2fe8cc6e3381b57dce189842e2000c3aed711bd87",
+      "at_seconds": 18.5,
+      "caption": "A gravação real do processo numa tela fina sobre a mesa, com relógio marcando o tempo de máquina."
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/testimony.jpg",
+      "sha256": "0bf6ce135062ca4c692011f1bbac3a21cf37473e487c4855a9a2e399f6c3dac6",
+      "at_seconds": 24.5,
+      "caption": "A foto/vídeo de quem dá o depoimento grande sobre a mesa, com rótulo de trecho da live."
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/planner.jpg",
+      "sha256": "ec83a41a7228dbfb8dbdbda4f1c48856f1b034a0a1db22e27bf2c84198d94552",
+      "at_seconds": 37.0,
+      "caption": "Agenda da semana que se enche de vídeos reais."
+    },
+    {
+      "path": "examples/reference-library/F26/mesa-de-papel-3d/cta.jpg",
+      "sha256": "e9af3fc50bec03bb28160803e44d693a91c113982d467992bd9d1eecfd99689f",
+      "at_seconds": 42.0,
+      "caption": "Cartão escuro que cai na mesa com a promessa e o botão físico \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/mesa-de-papel-3d",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E123 V2",
+    "original_filename": "E123 V2 - Corte 6 5 minutos do seu dia (previa).mp4",
+    "original_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00",
+    "duration_s": 44.03,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

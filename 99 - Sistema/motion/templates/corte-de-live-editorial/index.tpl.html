@@ -1,0 +1,285 @@
+<!-- MODELO F23 Corte de Live Editorial: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 V3 — Cortez · corte da live "Editor caro" (F10 · IDP02)</title>
+<script src="assets/gsap.min.js"></script>
+<script>
+/* three.js usa Math.random só para UUIDs: PRNG de semente fixa → quadros reprodutíveis. */
+(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();
+</script>
+<script src="assets/three.min.js"></script>
+<style>
+/* IDP02 Black Alto Valor — preto #131211 · grafite #1f1e1c · creme #f0ede4 · rosa #f6c6c3 (itálico do fim do título e rótulos) · texto #d8d4ca · mudo #b6b3ac.
+   Instrument Serif 400 · Roboto Condensed 600 caixa alta · Schibsted Grotesk. Sem degradê, sem neon, sem partículas.
+   F10: pessoa + prova do produto. A prova são trechos reais de vídeos que o Cortez editou (sem logotipos). */
+@font-face { font-family:"Instrument Serif"; src:url("assets/InstrumentSerif-Regular.ttf") format("truetype"); font-weight:400; font-style:normal; }
+@font-face { font-family:"Instrument Serif"; src:url("assets/InstrumentSerif-Italic.ttf") format("truetype"); font-weight:400; font-style:italic; }
+@font-face { font-family:"Roboto Condensed"; src:url("assets/RobotoCondensed-wght.ttf") format("truetype"); font-weight:100 900; }
+@font-face { font-family:"Schibsted Grotesk"; src:url("assets/SchibstedGrotesk-wght.ttf") format("truetype"); font-weight:400 900; }
+* { box-sizing:border-box; }
+body { margin:0; background:#131211; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#131211; font-family:"Schibsted Grotesk", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.08; mix-blend-mode:overlay; }
+
+.hd { position:absolute; left:80px; right:80px; top:176px; z-index:6; }
+.lab { font-family:"Roboto Condensed", sans-serif; font-weight:600; font-size:25px; letter-spacing:.13em; text-transform:uppercase; color:#f6c6c3; overflow:hidden; height:34px; }
+.lab .in { display:inline-flex; align-items:center; gap:14px; }
+.lab i { width:9px; height:9px; border-radius:50%; background:#f6c6c3; display:block; flex:none; }
+.ttl { margin-top:14px; }
+.ln { display:block; overflow:hidden; padding:0 0 .1em; font-family:"Instrument Serif", serif; font-weight:400; font-size:82px; line-height:1.0; letter-spacing:-.02em; color:#f0ede4; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:italic; color:#f6c6c3; }
+
+/* cartão da pessoa */
+#cardwrap { position:absolute; left:150px; top:420px; width:780px; height:688px; z-index:4; transform-origin:50% 50%; }
+.face { position:absolute; left:0; top:0; width:780px; height:688px; border-radius:26px; overflow:hidden; background:#1f1e1c; }
+.pz { position:absolute; left:0; top:0; width:780px; height:688px; transform-origin:50% 36%; }
+.face video { display:block; width:780px; height:688px; object-fit:cover; }
+#fj { z-index:1; } #fb { z-index:2; clip-path:inset(0% 0% 0% 100%); }
+#cardwrap .frame { position:absolute; left:0; top:0; width:780px; height:688px; border-radius:26px; box-shadow:inset 0 0 0 1px rgba(240,237,228,.16); pointer-events:none; z-index:7; }
+#cardwrap .shadow { position:absolute; left:40px; right:40px; bottom:-30px; height:60px; border-radius:50%; background:#000; filter:blur(30px); opacity:.6; z-index:-1; }
+.tagl { position:absolute; left:24px; top:22px; z-index:4; display:flex; align-items:center; gap:10px; padding:9px 15px 9px 13px; border-radius:999px; background:rgba(19,18,17,.72);
+  font-family:"Roboto Condensed", sans-serif; font-weight:600; font-size:19px; letter-spacing:.13em; text-transform:uppercase; color:#f0ede4; }
+.tagl i { width:8px; height:8px; border-radius:50%; background:#f6c6c3; display:block; }
+.who { position:absolute; left:28px; bottom:24px; z-index:4; }
+.who b { display:block; font-family:"Instrument Serif", serif; font-weight:400; font-size:50px; line-height:1; color:#f0ede4; text-shadow:0 2px 16px rgba(0,0,0,.6); }
+.who span { display:block; margin-top:8px; font-family:"Roboto Condensed", sans-serif; font-weight:600; font-size:20px; letter-spacing:.13em; text-transform:uppercase; color:#f6c6c3; text-shadow:0 2px 12px rgba(0,0,0,.7); }
+.face .low { position:absolute; left:0; right:0; bottom:0; height:200px; background:rgba(0,0,0,.30); -webkit-mask:linear-gradient(transparent,#000); mask:linear-gradient(transparent,#000); }
+#wl { position:absolute; top:0; height:688px; width:3px; background:#f6c6c3; z-index:8; left:780px; opacity:0; }
+
+/* modo cinema (tela larga) */
+#cinebg { position:absolute; left:0; top:0; width:1080px; height:1920px; background:#000; z-index:5; opacity:0; }
+#cine { position:absolute; left:0; top:287px; width:1080px; height:953px; z-index:6; opacity:0; overflow:hidden; clip-path:inset(133px 150px 132px 150px round 26px); }
+#cine video { display:block; width:1080px; height:953px; object-fit:cover; transform-origin:50% 50%; filter:contrast(1.08) saturate(.82) sepia(.14); }
+.cinet { position:absolute; left:0; right:0; z-index:7; text-align:center; }
+.cinet .lab { justify-content:center; display:flex; }
+.cinet .ln { font-size:150px; text-align:center; line-height:1.05; }
+
+/* lista 01/02/03 */
+.lst { position:absolute; left:80px; width:410px; z-index:6; }
+.row { display:flex; align-items:baseline; gap:18px; padding:17px 0 14px; overflow:hidden; }
+.row .n, .row .t { display:inline-block; }
+.row .n { font-family:"Roboto Condensed", sans-serif; font-weight:600; font-size:24px; letter-spacing:.12em; color:#f6c6c3; }
+.row .t { font-family:"Instrument Serif", serif; font-size:54px; line-height:1; color:#f0ede4; white-space:nowrap; }
+.row .t em { font-style:italic; color:#f6c6c3; }
+.rule { height:1px; background:rgba(240,237,228,.22); transform-origin:left center; transform:scaleX(0); }
+.pill { position:absolute; z-index:8; display:flex; align-items:center; gap:10px; padding:9px 16px 9px 14px; border-radius:999px; background:rgba(19,18,17,.82);
+  font-family:"Roboto Condensed", sans-serif; font-weight:600; font-size:18px; letter-spacing:.14em; text-transform:uppercase; color:#f0ede4; opacity:0; white-space:nowrap; }
+.pill i { width:8px; height:8px; border-radius:50%; background:#f6c6c3; display:block; }
+
+/* animações reais em destaque */
+.fs { position:absolute; left:90px; width:900px; z-index:5; border-radius:26px; overflow:hidden; opacity:0; background:#1f1e1c;
+  box-shadow:0 40px 90px rgba(0,0,0,.6), inset 0 0 0 1px rgba(240,237,228,.14); }
+.fs video { display:block; width:900px; height:100%; object-fit:cover; }
+#pip { position:absolute; left:806px; top:168px; width:196px; height:196px; border-radius:50%; overflow:hidden; z-index:8; opacity:0; box-shadow:0 0 0 3px #f6c6c3, 0 16px 40px rgba(0,0,0,.6); }
+#pip video { display:block; width:222px; height:196px; object-fit:cover; margin-left:-13px; transform:scale(1.35); transform-origin:50% 36%; }
+
+/* legenda L04 */
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:70px; right:70px; text-align:center; opacity:0; }
+.cap .cl { display:block; white-space:nowrap; font-family:"Schibsted Grotesk", sans-serif; font-weight:600; font-size:52px; line-height:1.24; letter-spacing:-.012em; color:#f0ede4;
+  text-shadow:0 3px 18px rgba(0,0,0,.75); }
+.cw { display:inline-block; }
+
+/* fechamento */
+.cta-h { position:absolute; left:60px; right:60px; top:186px; z-index:10; text-align:center; }
+.cta-h .ln { font-size:100px; text-align:center; }
+.cta-s { position:absolute; left:60px; right:60px; top:418px; z-index:10; text-align:center; opacity:0; font-family:"Schibsted Grotesk", sans-serif; font-weight:500; font-size:40px; color:#d8d4ca; }
+.cta-s b { font-weight:600; color:#f0ede4; }
+#btn { position:absolute; left:290px; top:1176px; width:500px; height:116px; z-index:10; opacity:0; display:flex; align-items:center; justify-content:center; gap:18px; border-radius:999px;
+  background:#f6c6c3; color:#131211; font-family:"Schibsted Grotesk", sans-serif; font-weight:700; font-size:48px; letter-spacing:-.01em; white-space:nowrap; box-shadow:0 24px 60px rgba(0,0,0,.55); }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }{{CTA_CSS}}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+
+  <div id="cardwrap"><div class="shadow"></div>
+    <div class="face" id="fj"><div class="pz" id="pzj"><video id="vj" class="clip" src="assets/convidado.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="1" muted playsinline></video></div>
+      <div class="low"></div><div class="tagl"><i></i>Trecho da live</div><div class="who"><b>Convidado</b><span>Criador de conteúdo · cliente do Cortez</span></div></div>
+    <div class="face" id="fb"><div class="pz" id="pzb"><video class="clip" src="assets/apresentador.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="2" muted playsinline></video></div>
+      <div class="low"></div><div class="tagl"><i></i>Trecho da live</div><div class="who"><b>Apresentador</b><span>Equipe do Cortez</span></div></div>
+    <div id="wl"></div><div class="frame"></div>
+  </div>
+
+  <div id="cinebg"></div>
+  <div id="cine"><video id="vc" class="clip" src="assets/convidado_cine.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="3" muted playsinline></video></div>
+  <div class="cinet" id="cinet" style="top:300px"><div class="lab"><span class="in" id="cl0"><i></i>A reação dele</span></div><span class="ln"><span class="in" id="cl1"><em>de Hollywood.</em></span></span></div>
+
+  <div class="fs" id="fsA" style="top:440px;height:575px"><video class="clip" src="assets/fsA.mp4" data-start="{{FSA_START}}" data-duration="2.6" data-track-index="4" muted playsinline></video></div>
+  <div class="fs" id="fsB" style="top:368px;height:733px"><video class="clip" src="assets/fsB.mp4" data-start="{{FSB_START}}" data-duration="4.0" data-track-index="5" muted playsinline></video></div>
+  <div class="pill" id="fspill" style="left:110px;top:{{FSPILL_TOP}}px"><i></i>Animação feita pelo Cortez</div>
+  <div id="pip"><video class="clip" src="assets/convidado_pip.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="6" muted playsinline></video></div>
+
+  {{HEADS}}
+
+  <div class="lst" id="lst" style="top:858px">
+    <div class="rule" id="r0"></div>
+    <div class="row"><span class="n" id="n1">01</span><span class="t" id="t1">Imagens <em>bonitas</em></span></div><div class="rule" id="r1"></div>
+    <div class="row"><span class="n" id="n2">02</span><span class="t" id="t2">Cortes</span></div><div class="rule" id="r2"></div>
+    <div class="row"><span class="n" id="n3">03</span><span class="t" id="t3">Efeitos <em>sonoros</em></span></div><div class="rule" id="r3"></div>
+  </div>
+  <div class="pill" id="phcap" style="left:592px;top:1060px"><i></i>Vídeos editados pelo Cortez</div>
+
+  <div id="caps">{{CAPS}}</div>
+
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Edição profissional,</span></span><span class="ln"><span class="in" id="ch2"><em>sem editor.</em></span></span></div>
+  <div class="cta-s" id="cs">Você grava. <b>O Cortez edita.</b> Você aprova.</div>
+  <div class="pill" id="ctapill" style="left:405px;top:1112px"><i></i>Editado pelo Cortez</div>
+  {{CTA_HTML}}
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#f0ede4" stroke="#131211" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const sm=(a,b,x)=>{ const t=clamp((x-a)/(b-a),0,1); return t*t*(3-2*t); };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+
+/* ---------- 3D: celular com luz de estúdio; a tela toca vídeos reais editados pelo Cortez (sequência de quadros) ---------- */
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,alpha:false,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.setClearColor(0x131211,1);
+R.toneMapping=THREE.ACESFilmicToneMapping; R.toneMappingExposure=1.0; R.outputColorSpace=THREE.SRGBColorSpace;
+const S=new THREE.Scene();
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,10,20000); C.position.set(0,0,D);
+(function(){ const c=document.createElement('canvas'); c.width=1024; c.height=512; const g=c.getContext('2d');
+  g.fillStyle='#0d0c0b'; g.fillRect(0,0,1024,512);
+  g.fillStyle='#f4f1ea'; g.fillRect(120,120,200,220); g.fillRect(640,90,90,300);
+  g.fillStyle='#5a524f'; g.fillRect(0,420,1024,40); g.fillStyle='#f6c6c3'; g.fillRect(880,150,40,220);
+  const tx=new THREE.CanvasTexture(c); tx.mapping=THREE.EquirectangularReflectionMapping; tx.colorSpace=THREE.SRGBColorSpace;
+  const pm=new THREE.PMREMGenerator(R); S.environment=pm.fromEquirectangular(tx).texture; })();
+const key=new THREE.DirectionalLight(0xffffff,1.6); key.position.set(-900,1400,1800); S.add(key);
+S.add(new THREE.AmbientLight(0xffffff,.25));
+function rr(shape,W,H,Rr){ shape.moveTo(-W/2+Rr,-H/2); shape.lineTo(W/2-Rr,-H/2); shape.absarc(W/2-Rr,-H/2+Rr,Rr,-Math.PI/2,0,false); shape.lineTo(W/2,H/2-Rr);
+  shape.absarc(W/2-Rr,H/2-Rr,Rr,0,Math.PI/2,false); shape.lineTo(-W/2+Rr,H/2); shape.absarc(-W/2+Rr,H/2-Rr,Rr,Math.PI/2,Math.PI,false); shape.lineTo(-W/2,-H/2+Rr);
+  shape.absarc(-W/2+Rr,-H/2+Rr,Rr,Math.PI,Math.PI*1.5,false); return shape; }
+const PW=400, PH=828, PR=66, PD=30;
+const phone=new THREE.Group(); S.add(phone); phone.visible=false;
+const body=new THREE.Mesh(new THREE.ExtrudeGeometry(rr(new THREE.Shape(),PW,PH,PR),{depth:PD,bevelEnabled:true,bevelThickness:9,bevelSize:7,bevelSegments:10,curveSegments:40}),
+  new THREE.MeshPhysicalMaterial({color:0x1c1b1a,metalness:.85,roughness:.3,clearcoat:1,clearcoatRoughness:.12,envMapIntensity:1.25}));
+body.geometry.translate(0,0,-PD/2); phone.add(body);
+const glassZ=PD/2+9.6;
+const bezel=new THREE.Mesh(new THREE.ShapeGeometry(rr(new THREE.Shape(),PW-6,PH-6,PR-3),24), new THREE.MeshBasicMaterial({color:0x050505})); bezel.position.z=glassZ; phone.add(bezel);
+const SW=PW-30, SH=PH-30;
+const scrC=document.createElement('canvas'); scrC.width=560; scrC.height=1202; const scrG=scrC.getContext('2d');
+const scrT=new THREE.CanvasTexture(scrC); scrT.colorSpace=THREE.SRGBColorSpace; scrT.anisotropy=8;
+const scr=new THREE.Mesh(new THREE.PlaneGeometry(SW,SH), new THREE.MeshBasicMaterial({map:scrT,transparent:true,toneMapped:false})); scr.position.z=glassZ+.5; phone.add(scr);
+function drawScreen(img){ const W=560,H=1202,Rr=84; scrG.save(); scrG.clearRect(0,0,W,H); scrG.beginPath(); scrG.moveTo(Rr,0); scrG.arcTo(W,0,W,H,Rr); scrG.arcTo(W,H,0,H,Rr); scrG.arcTo(0,H,0,0,Rr); scrG.arcTo(0,0,W,0,Rr); scrG.closePath(); scrG.clip();
+  scrG.fillStyle='#000'; scrG.fillRect(0,0,W,H); const s=Math.max(W/img.width,H/img.height); scrG.drawImage(img,(W-img.width*s)/2,(H-img.height*s)/2,img.width*s,img.height*s);
+  scrG.fillStyle='#000'; scrG.beginPath(); scrG.roundRect((W-160)/2,26,160,44,22); scrG.fill(); scrG.restore(); scrT.needsUpdate=true; }
+const sheenC=document.createElement('canvas'); sheenC.width=256; sheenC.height=512; { const g=sheenC.getContext('2d');
+  g.fillStyle='rgba(255,255,255,0.07)'; g.beginPath(); g.moveTo(40,0); g.lineTo(150,0); g.lineTo(60,512); g.lineTo(-50,512); g.fill(); }
+const sheenT=new THREE.CanvasTexture(sheenC); sheenT.wrapS=THREE.RepeatWrapping;
+const sheen=new THREE.Mesh(new THREE.PlaneGeometry(SW,SH), new THREE.MeshBasicMaterial({map:sheenT,transparent:true,depthWrite:false,toneMapped:false})); sheen.position.z=glassZ+1.2; phone.add(sheen);
+[[PW/2+5, 180, 120],[ -PW/2-5, 230, 70],[ -PW/2-5, 120, 70]].forEach(([x,y,h])=>{ const b=new THREE.Mesh(new THREE.BoxGeometry(6,h,14), body.material); b.position.set(x,y,0); phone.add(b); });
+const shc=document.createElement('canvas'); shc.width=shc.height=128; { const g=shc.getContext('2d'); const r=g.createRadialGradient(64,64,0,64,64,64); r.addColorStop(0,'rgba(0,0,0,.85)'); r.addColorStop(1,'rgba(0,0,0,0)'); g.fillStyle=r; g.fillRect(0,0,128,128); }
+const shadow=new THREE.Mesh(new THREE.PlaneGeometry(520,120), new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(shc),transparent:true,depthWrite:false})); S.add(shadow); shadow.visible=false;
+
+const SEQ={A:[],B:[]}; let READY=null;
+function loadImg(src){ return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>rej(new Error('img '+src)); im.src=src; }); }
+function prepare(){ if(READY) return READY;
+  const pa=[]; for(let i=0;i<DATA.seqA;i++) pa.push(loadImg('assets/seqA/'+String(i).padStart(4,'0')+'.jpg'));
+  const pb=[]; for(let i=0;i<DATA.seqB;i++) pb.push(loadImg('assets/seqB/'+String(i).padStart(4,'0')+'.jpg'));
+  READY=Promise.all([document.fonts.ready, Promise.all(pa), Promise.all(pb)]).then(a=>{ SEQ.A=a[1]; SEQ.B=a[2]; }); return READY; }
+let lastImg=null;
+function render(t){
+  const aIn=T.phoneA0, aOut=T.phoneA1, cIn=T.phoneB0;
+  let vis=false, img=null;
+  if(t>=aIn-0.05 && t<aOut+0.7){ vis=true; const u=eo((t-aIn)/0.85), v=eio((t-aOut)/0.6);
+    phone.position.set(190+560*(1-u)+700*v, 190+10*Math.sin(t*1.3), 0);
+    phone.rotation.set(0.06+0.02*Math.sin(t), -1.05*(1-u) -0.36 + 0.16*clamp((t-aIn)/(aOut-aIn),0,1) - 0.9*v, 0.02*(1-u));
+    phone.scale.setScalar(0.9); img=SEQ.A[clamp(Math.floor((t-aIn)*30+1e-6),0,SEQ.A.length-1)]; }
+  else if(t>=cIn){ vis=true; const u=eo((t-cIn)/0.9);
+    phone.position.set(0, 140 - 900*(1-u) + 8*Math.sin(t*1.4), 0); phone.rotation.set(0.07, -0.40+0.28*Math.sin((t-cIn)*0.55) + 0.9*(1-u), 0); phone.scale.setScalar(0.8);
+    img=SEQ.B[clamp(Math.floor((t-cIn)*30+1e-6),0,SEQ.B.length-1)]; }
+  phone.visible=vis; shadow.visible=vis;
+  if(vis){ if(img && img!==lastImg){ drawScreen(img); lastImg=img; }
+    shadow.position.set(phone.position.x, phone.position.y-PH*phone.scale.x/2-34, -60); shadow.scale.setScalar(phone.scale.x); sheenT.offset.x=-phone.rotation.y*0.9; }
+  R.render(S,C);
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!SEQ.A.length){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+
+/* ---------- linha do tempo DOM ---------- */
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1, #ch2, #cl0, #cl1',{yPercent:110});
+  gsap.set('#h1 .lab .in, #h1l0 .in',{yPercent:0});
+  gsap.set(['#n1','#t1','#n2','#t2','#n3','#t3'],{yPercent:120});
+  gsap.set('#vc',{scale:780/1080});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:110},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-110,duration:.32,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.7); });
+    if(h.end!==null){ OUT(`${sel} .lab .in`,h.end-.32); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.32+j*.03)); } });
+
+  // cortes com zoom no ritmo da fala (plano aberto ↔ fechado)
+  DATA.punches.forEach(p=>tl.set(p.who==='apresentador'?'#pzb':'#pzj',{scale:p.s},p.t));
+  // trocas Apresentador/Convidado: cortina com linha rosa
+  DATA.wipes.forEach(w=>{ if(w.hidden) { tl.set('#fb',{clipPath:'inset(0% 0% 0% 100%)'},w.t); return; }
+    if(w.to==='apresentador'){ tl.fromTo('#fb',{clipPath:'inset(0% 0% 0% 100%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:.5,ease:'power3.inOut',immediateRender:false},w.t-.25);
+      tl.fromTo('#wl',{x:0,opacity:1},{x:-780,duration:.5,ease:'power3.inOut',immediateRender:false},w.t-.25); tl.set('#wl',{opacity:0},w.t+.26); }
+    else { tl.fromTo('#fb',{clipPath:'inset(0% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 100%)',duration:.5,ease:'power3.inOut',immediateRender:false},w.t-.25);
+      tl.fromTo('#wl',{x:-780,opacity:1},{x:0,duration:.5,ease:'power3.inOut',immediateRender:false},w.t-.25); tl.set('#wl',{opacity:0},w.t+.26); } });
+
+  // toda a edição: cartão vira miniatura; celular 3D com vídeos reais editados pelo Cortez; lista nas palavras
+  tl.to('#cardwrap',{x:-276,y:-96,scale:.44,duration:.75,ease:'power3.inOut'},T.phoneA0-.15);
+  tl.to('#cardwrap .who, #cardwrap .tagl',{opacity:0,duration:.25},T.phoneA0-.15);
+  tl.fromTo('#phcap',{opacity:0},{opacity:1,duration:.4,immediateRender:false},T.phoneA0+.85); tl.to('#phcap',{opacity:0,duration:.2},T.phoneA1-.15);
+  tl.fromTo('#r0',{scaleX:0},{scaleX:1,duration:.6,ease:'power3.out',immediateRender:false},T.items0-.25);
+  [['#n1','#t1','#r1',T.imagens],['#n2','#t2','#r2',T.cortes],['#n3','#t3','#r3',T.efeitos]].forEach(([n,t,r,a])=>{
+    tl.fromTo([n,t],{yPercent:120},{yPercent:0,duration:.6,ease:'power4.out',immediateRender:false},a-.06);
+    tl.fromTo(r,{scaleX:0},{scaleX:1,duration:.6,ease:'power3.out',immediateRender:false},a); });
+  tl.to('#lst',{opacity:0,duration:.3},T.phoneA1-.1);
+  tl.to('#cardwrap',{x:0,y:0,scale:1,duration:.75,ease:'power3.inOut'},T.phoneA1-.05);
+  tl.to('#cardwrap .who, #cardwrap .tagl',{opacity:1,duration:.3},T.phoneA1+.6);
+
+  // modo cinema: o cartão se abre em tela larga, faixas pretas, cor de cinema; título no "de Hollywood"
+  tl.set('#cine',{opacity:1},T.cine0); tl.set('#cardwrap',{opacity:0},T.cine0+.02);
+  tl.fromTo('#cinebg',{opacity:0},{opacity:1,duration:.8,ease:'power2.inOut',immediateRender:false},T.cine0);
+  tl.fromTo('#cine',{clipPath:'inset(133px 150px 132px 150px round 26px)'},{clipPath:'inset(250px 0px 250px 0px round 0px)',duration:.85,ease:'power3.inOut',immediateRender:false},T.cine0);
+  tl.fromTo('#vc',{scale:780/1080},{scale:1.0,duration:.85,ease:'power3.inOut',immediateRender:false},T.cine0);
+  tl.to('#vc',{scale:1.06,duration:T.cine1-T.cine0-.85,ease:'none'},T.cine0+.85);
+  IN('#cl0',T.cine0+.6,.5); IN('#cl1',T.holly1-.12,.8);
+  tl.fromTo(['#cl0','#cl1'],{yPercent:0},{yPercent:-110,duration:.3,ease:'power3.in',immediateRender:false},T.cine1-.3);
+  tl.fromTo('#cine',{clipPath:'inset(250px 0px 250px 0px round 0px)'},{clipPath:'inset(133px 150px 132px 150px round 26px)',duration:.6,ease:'power3.inOut',immediateRender:false},T.cine1);
+  tl.fromTo('#vc',{scale:1.06},{scale:780/1080,duration:.6,ease:'power3.inOut',immediateRender:false},T.cine1);
+  tl.to('#cinebg',{opacity:0,duration:.6,ease:'power2.inOut'},T.cine1);
+  tl.set('#cardwrap',{opacity:1},T.cine1+.6); tl.set('#cine',{opacity:0},T.cine1+.62);
+
+  // a animação: as animações reais em destaque, com o Convidado em miniatura
+  tl.to('#cardwrap',{opacity:0,scale:.92,duration:.3,ease:'power2.in'},T.fs0-.2);
+  tl.fromTo('#fsA',{opacity:0,scale:.9,y:30},{opacity:1,scale:1,y:0,duration:.5,ease:'power3.out',immediateRender:false},T.fs0-.05);
+  tl.fromTo('#pip',{opacity:0,scale:.6},{opacity:1,scale:1,duration:.45,ease:'power3.out',immediateRender:false},T.fs0+.1);
+  tl.fromTo('#fspill',{opacity:0},{opacity:1,duration:.3,immediateRender:false},T.fs0+.35);
+  tl.to('#fsA',{opacity:0,duration:.12},T.fs1); tl.set('#fsB',{opacity:1},T.fs1);
+  tl.fromTo('#fsB',{scale:1.04},{scale:1,duration:1.2,ease:'power2.out',immediateRender:false},T.fs1);
+  tl.set('#fspill',{top:DATA.fspillB},T.fs1);
+  tl.to(['#fsB','#fspill','#pip'],{opacity:0,duration:.3},T.fs2-.15);
+  tl.fromTo('#cardwrap',{opacity:0,scale:.92},{opacity:1,scale:1,duration:.45,ease:'power3.out',immediateRender:false},T.fs2-.1);
+
+  // fechamento: tudo escrito, voz já terminou
+  tl.to('#cardwrap',{opacity:0,scale:.74,y:-10,duration:.4,ease:'power2.in'},T.speechEnd-.25);
+  IN('#ch1',T.cta0+.25,.8); IN('#ch2',T.cta0+.45,.8);
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+.8);
+  tl.fromTo('#ctapill',{opacity:0},{opacity:1,duration:.4,immediateRender:false},T.cta0+1.2);
+{{CTA_TL}}
+  // legendas L04
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},g.s); tl.set(`#cg${i}`,{opacity:0},g.e);
+    g.w.forEach((w,j)=>{ tl.set(`#cg${i}w${j}`,{color:'#f6c6c3'},w.s); tl.set(`#cg${i}w${j}`,{color:'#f0ede4'},w.e); }); });
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+</body>
+</html>

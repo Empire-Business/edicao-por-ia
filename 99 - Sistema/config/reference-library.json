@@ -1711,6 +1711,1168 @@
         }
       ],
       "missing_sources": []
+    },
+    "F23": {
+      "code": "F23",
+      "name": "Corte de Live Editorial",
+      "uid": "official.ab0ffe0bee244b52aa605a055a56a92b",
+      "references": [
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/README.md",
+          "kind": "reference_analysis",
+          "sha256": "64812cf980138fb5862695e2551c926ea4450bafedeaf31a4b5e791274225ab8",
+          "bytes": 837,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "4c2c6644708d47f3eb5f0263fa8f4d00b3a6582e324dac05fcb0f46f8c138ae2",
+          "bytes": 7702,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3"
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/answer.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7203bf719d6b7e5a10809fed5244d3413c5bc3777fd7a27b5dac8d181f0433a4",
+          "bytes": 135055,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3",
+          "caption": "Bloco da resposta: a pessoa volta em cartão grande e o título resume a resposta.",
+          "at_seconds": 12.5
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d92d3b9619072b33e4015d255f29ee36a1f14198ce06e487b4cff1c6fd4093ef",
+          "bytes": 97355,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3",
+          "caption": "Cartão final escrito: promessa em uma frase, prova no celular e o botão \"Saiba mais\". A fala já terminou.",
+          "at_seconds": 41.0
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "01af6cba0e774c945d50af8626724eddd1baa3f366bbbff6ff4c9dda07a16c94",
+          "bytes": 156997,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3",
+          "caption": "Gancho no primeiro quadro: título editorial em duas linhas com itálico de destaque, cartão de quem responde com nome e papel e legenda da fala.",
+          "at_seconds": 0.6
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/proof-card.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d9ed7176b74e53763e7b4696c2259cdd8b7bf66cebc4dca6d1afbc057fc21418",
+          "bytes": 119585,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3",
+          "caption": "Prova em cartão de vídeo maior, com rótulo honesto, e a pessoa num círculo no canto.",
+          "at_seconds": 33.0
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/proof-phone.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "386bf41271a0bfd4e003516ad2b7ea4bfd0e16f528d3dea2299b690669f5719e",
+          "bytes": 129982,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3",
+          "caption": "Prova: a pessoa vira um cartão pequeno e a prova real entra num celular 3D sóbrio, rotulada.",
+          "at_seconds": 17.5
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/question.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "03fef58e1731a170d55e970154976fc28701b2cc11b48718fb24ad328e43a737",
+          "bytes": 124216,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3",
+          "caption": "Bloco da pergunta: o cartão troca para quem pergunta, com o título do bloco no alto.",
+          "at_seconds": 5.0
+        },
+        {
+          "path": "examples/reference-library/F23/corte-de-live-editorial/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "04f77beac73c81a1712ca936a7d39650dec15c9131c77c714d9dcdaecc78a4fd",
+          "bytes": 5753389,
+          "source_sha256": "6ba9c6950ec0bfedde815102239512c81965c18cff0818706e85473705b41bf3"
+        }
+      ],
+      "missing_sources": []
+    },
+    "F24": {
+      "code": "F24",
+      "name": "Vitrine em Cilindro",
+      "uid": "official.fd257d53ecf44b0884b7ce229934c6b8",
+      "references": [
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/README.md",
+          "kind": "reference_analysis",
+          "sha256": "5000c227a949596bb56fb134f2ce8b70e960266b3b5fdbce8ffaa751bdaf3c98",
+          "bytes": 813,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "3e78435d267942e3a04ef988d371a941011e4a4f8e1fb21bac9ab4d3be6e0c06",
+          "bytes": 7448,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "754166b3ac421c42a45ad7ee774a6ba7ba145407ec9f1a20250ec4d91f7da4c5",
+          "bytes": 154974,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387",
+          "caption": "Cartão final: o cilindro vira uma coroa sobre a promessa e o botão \"Saiba mais\".",
+          "at_seconds": 25.5
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/focus.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "8b6abe228b9357601fae5bab5a75e44044631aa4cc42f32b064b77417891dd69",
+          "bytes": 180370,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387",
+          "caption": "Uma tela em foco com rótulos curtos que entram nas palavras ditas (\"Efeitos\", \"Música\").",
+          "at_seconds": 16.5
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9eb08f684e87b3f11d3d2fba0813eaf2b280f7035ee14bb2dc0bc02877106f9c",
+          "bytes": 311014,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387",
+          "caption": "Gancho: dentro do cilindro de telas, a primeira opção citada vem para a frente; título no alto e pessoa em círculo.",
+          "at_seconds": 1.5
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/possibilities.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d00b7c72f9030704c547adfec9f12c9f7884486868b45831c64f96a7c706f86f",
+          "bytes": 161285,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387",
+          "caption": "Muitas possibilidades: o cilindro cresce e vira um poço de telas.",
+          "at_seconds": 20.0
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "719ac9399a6d42d1e556413180fb985fed02171ecc7b25ce31d5b8dff4c2ba44",
+          "bytes": 10253534,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387"
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/ring.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6658e0962a99d7d6929bd8c4768dda510045950ee5fc8eeebb695295f4e6ea80",
+          "bytes": 218874,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387",
+          "caption": "O cilindro visto de cima: várias telas com exemplos reais tocando ao mesmo tempo.",
+          "at_seconds": 9.0
+        },
+        {
+          "path": "examples/reference-library/F24/vitrine-em-cilindro/style-type.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f304a13e219e1959bfe0e7c498c29e648cad7d42f5a8e309f257729a637fd8a8",
+          "bytes": 108268,
+          "source_sha256": "db75695d6bb20ef4b9236edffc26116da57bfb122c2b3603b453847272c61387",
+          "caption": "Estilo: uma palavra em 3D troca de fonte, tamanho e cor passando por identidades visuais reais.",
+          "at_seconds": 12.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F25": {
+      "code": "F25",
+      "name": "Antes e Depois em Fita",
+      "uid": "official.ad36a27c834646ffb67233f4e1825067",
+      "references": [
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/README.md",
+          "kind": "reference_analysis",
+          "sha256": "335e82433f7d3f467aa4e459930ed316ca0e838ec0dbe539824643cea2e43c1a",
+          "bytes": 825,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/after.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "160d0802251c4bd9faa8c7fc16b9e28b6ce7f718a4dbe569fcf344840a3a7753",
+          "bytes": 173905,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a",
+          "caption": "DEPOIS: a mesma frase limpa no vídeo pronto, rotulado.",
+          "at_seconds": 30.0
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "43b45a11a24af9cc77d8a71ffc675ad0c5645d41554a755aa18615196307d814",
+          "bytes": 7439,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/before.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "3270b36716ac70b0ffb8079e3ad3c6219321c5e371b245adcd2db81aafdfe096",
+          "bytes": 145362,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a",
+          "caption": "ANTES: o tropeço real da gravação bruta, com o rótulo de gravação bruta.",
+          "at_seconds": 1.0
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/closed.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "cdeae5bb4eeeb35edd4fd8b69beb96955a081bdfbe31927365c2973835a2ce95",
+          "bytes": 244879,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a",
+          "caption": "A fita fechada: duração gravada contra duração pronta.",
+          "at_seconds": 20.0
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "07eac127eec375165f6d743b2355537a67c45e88ab468f7b9c34d711f94061d0",
+          "bytes": 146192,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a",
+          "caption": "Cartão final: promessa em uma frase, provas ao fundo e o botão \"Saiba mais\".",
+          "at_seconds": 35.5
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/errors.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "27c0e7eb1d93c8b13e22a91ac7d837b3825dbaa801e6801fee985fe1b7710a9e",
+          "bytes": 259837,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a",
+          "caption": "Os erros reais marcados com etiqueta antes de sair da fita.",
+          "at_seconds": 15.0
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "e890a60fea16e255f8d66d9fbee2490a1c378cf41aef09542a8204fc436268fa",
+          "bytes": 12118842,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a"
+        },
+        {
+          "path": "examples/reference-library/F25/antes-e-depois-em-fita/tape.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "99d482c4a8ff083d84d57412027b2f4517c99558ae652465387dc9828ce5f669",
+          "bytes": 277955,
+          "source_sha256": "8baeb865a177cb5fef849bd2aae15f764a06f47d0bee5fd99237f8e6dd39580a",
+          "caption": "A gravação inteira como fita 3D de blocos reais (fala, silêncio, erro) com a duração original no título.",
+          "at_seconds": 7.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F26": {
+      "code": "F26",
+      "name": "Mesa de Papel 3D",
+      "uid": "official.5a0acfcc50784684a2707811f74311ba",
+      "references": [
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/README.md",
+          "kind": "reference_analysis",
+          "sha256": "f16b37675771916ef88cccb06969fd98717b47bddfef5c20428d427eadc4534d",
+          "bytes": 795,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "6ad16142319974f5fd4c78cb41546a6bffb220854a929f2d31d6d0f291bf3c48",
+          "bytes": 7419,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/calendar.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c789ddce26097086300b982101fb8037d03724f5d7f26546a82d607175ebcb1a",
+          "bytes": 196323,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00",
+          "caption": "Calendário de mesa (\"do jeito antigo\") com data e dia da semana coerentes e a etapa escrita na página.",
+          "at_seconds": 9.5
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "e9af3fc50bec03bb28160803e44d693a91c113982d467992bd9d1eecfd99689f",
+          "bytes": 127026,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00",
+          "caption": "Cartão escuro que cai na mesa com a promessa e o botão físico \"Saiba mais\".",
+          "at_seconds": 42.0
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ed49b49ee90b25ab91ded018a571109098c8e0a8b414f3e16aebc663c7310cea",
+          "bytes": 207721,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00",
+          "caption": "Gancho: relógio de papel com a fatia do tempo destacada, título grande e quem fala num círculo pequeno.",
+          "at_seconds": 1.0
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/planner.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ec83a41a7228dbfb8dbdbda4f1c48856f1b034a0a1db22e27bf2c84198d94552",
+          "bytes": 214189,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00",
+          "caption": "Agenda da semana que se enche de vídeos reais.",
+          "at_seconds": 37.0
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/process.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9379f222636b1a22a75903b2fe8cc6e3381b57dce189842e2000c3aed711bd87",
+          "bytes": 232308,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00",
+          "caption": "A gravação real do processo numa tela fina sobre a mesa, com relógio marcando o tempo de máquina.",
+          "at_seconds": 18.5
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "b9c783156f7f0f9309efcf5d2979f525eaa2fe0fa3c5d45edc38271811098f2c",
+          "bytes": 10000673,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00"
+        },
+        {
+          "path": "examples/reference-library/F26/mesa-de-papel-3d/testimony.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0bf6ce135062ca4c692011f1bbac3a21cf37473e487c4855a9a2e399f6c3dac6",
+          "bytes": 193387,
+          "source_sha256": "5a0e9c5d767d2f02325eade452b94993e2f84318bb2b3340e529f683c31a9c00",
+          "caption": "A foto/vídeo de quem dá o depoimento grande sobre a mesa, com rótulo de trecho da live.",
+          "at_seconds": 24.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F27": {
+      "code": "F27",
+      "name": "Maquete Passo a Passo",
+      "uid": "official.fe600238eb8948228ba50628dd05d6e3",
+      "references": [
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/README.md",
+          "kind": "reference_analysis",
+          "sha256": "af2bb6b5cfa512832284720338c732a24df8d777964d4d1ed4d0a2e49081515b",
+          "bytes": 802,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "4c5b740aaeb6843d6780bd7762f814e70421014d088f83776a28a942c553d1b6",
+          "bytes": 7351,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/client.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "54fbd4ed7df7dcaa9714d69fb1a52cf42b81b3e2586553aa972ac8e10e991a1f",
+          "bytes": 228682,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4",
+          "caption": "Cliente: cartão com selo e as pastas da maquete em arco.",
+          "at_seconds": 16.5
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ac265d6c673c8889094a116e20d1b61be06d067e0a1d8bb3e3301d4332f217dd",
+          "bytes": 250274,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4",
+          "caption": "Resultado: pastas e vídeos prontos sobre a maquete, promessa e botão \"Saiba mais\".",
+          "at_seconds": 32.5
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/objection.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "318ca95b9054c557737bbaf779d3bbd00ed225de1c7fac0ab198f7614596b62d",
+          "bytes": 242499,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4",
+          "caption": "Objeção resolvida: janelas de código flutuando sobre a maquete antes de virarem um arquivo simples.",
+          "at_seconds": 1.5
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "75ee973d8c646ee5721ad44ceab9bdd84d78b8644589499d770bc5cdcce41dc3",
+          "bytes": 7565099,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4"
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/request.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ecedf83f00a99892b5d68ae7747b581bf917f5efbbedbbee33a2294cf22deec5",
+          "bytes": 174088,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4",
+          "caption": "O pedido em linguagem comum digitado na tela da maquete.",
+          "at_seconds": 22.5
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/step-1.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "fd6beb5147ad98b0bba2946122b8d45c9196fca492b28932118ecd676b375c63",
+          "bytes": 178164,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4",
+          "caption": "Passo 1: o arquivo entra no computador da maquete.",
+          "at_seconds": 5.0
+        },
+        {
+          "path": "examples/reference-library/F27/maquete-passo-a-passo/step-2.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "422facfe6d06651ae927a144d15fd6bf5a80bd05e9da9a480192503b4580e36d",
+          "bytes": 187764,
+          "source_sha256": "fd0c5d08a0b6696baf262daf647f861eb3f08395c20cde4dbdea9832ed7419c4",
+          "caption": "Passo 2: a tela da maquete mostra a ação acontecendo sozinha.",
+          "at_seconds": 10.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F28": {
+      "code": "F28",
+      "name": "Lente Reveladora",
+      "uid": "official.6e1238637d764c7890393d8c18615a5e",
+      "references": [
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/README.md",
+          "kind": "reference_analysis",
+          "sha256": "4759a2cc010b91d40614990973e77aede73e6bad7dd843a0e0355ed11ca51703",
+          "bytes": 799,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "f074be7c83fd0b2cb0337845e7c133b645873aee2825ff64c4bc7101d77102b7",
+          "bytes": 7501,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "02674e2dc93a1e50e7260f0b8ee06dc24707c823acc59947a5f92f0d66181cff",
+          "bytes": 190177,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14",
+          "caption": "Cartão final: promessa de contraste (ex.: \"cara de editor, não de IA\") e o botão \"Saiba mais\".",
+          "at_seconds": 28.0
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/feed.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c339d948f3c1a95709e509eb673f8cff46b8faac9f8a94be28afc2b4144cf0cd",
+          "bytes": 206327,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14",
+          "caption": "Gancho: feed 3D cinza e genérico, com a lente de vidro já mostrando um vídeo real ampliado.",
+          "at_seconds": 1.0
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/place.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "848c2af82e32e2cd3c85f41aa071591d8b9fe88c5ba0b6d65931981cc5e44113",
+          "bytes": 203297,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14",
+          "caption": "A cena escolhida encaixa no vídeo vertical, no lugar onde foi usada.",
+          "at_seconds": 20.5
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "534238df947f119af5a8e37c1920dd242631fe8113722469db0ad2f2737eb68f",
+          "bytes": 9624178,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14"
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/reveal.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c72abb86fdf63a7734325f38119af3c336b0f9c7e78380c12282a2cf1be0e276",
+          "bytes": 203039,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14",
+          "caption": "Virada: a lente pousa numa entrega real e os cartões viram em onda.",
+          "at_seconds": 10.0
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/search.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "482224d1306a3148553d1d8da2b882ea9600f4c7f8398c587a44f9fc16a40771",
+          "bytes": 176674,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14",
+          "caption": "Processo por trás: busca de cenas com resultados reais da própria entrega.",
+          "at_seconds": 17.5
+        },
+        {
+          "path": "examples/reference-library/F28/lente-reveladora/template.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "dce188a20b550d829bd383f4bad7611b7db043317d39d55e48f6de036a370890",
+          "bytes": 224337,
+          "source_sha256": "1d4400688e4b6fd9f0c3c20e544bc0437db247b8c809120e94a391e9320b0b14",
+          "caption": "Cara de modelo: os cartões genéricos fazem a mesma animação em sincronia.",
+          "at_seconds": 6.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F29": {
+      "code": "F29",
+      "name": "Camadas da Edição",
+      "uid": "official.a254ae1788ea42ac935d6811fcecaecb",
+      "references": [
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/README.md",
+          "kind": "reference_analysis",
+          "sha256": "56402df4552fd5de7b9f40d0c9db35930be1bba3518fe11b781605a5a8809128",
+          "bytes": 818,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "5b7a279250143319aae6f711746c5854d05d500be6d261602ea5320fb81fb3c2",
+          "bytes": 6940,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d5e893b90d7f94175013aa0212930615c2c2f1252a9fe7b54f61128927a82271",
+          "bytes": 163781,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504",
+          "caption": "Cartão final: o vídeo pronto em camadas atrás da promessa e do botão \"Saiba mais\".",
+          "at_seconds": 21.5
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/cut.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c856abb9783b2ec9cf582bb5a1334b59c1a4a0f335c15ca8ac5848c93abf5991",
+          "bytes": 159355,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504",
+          "caption": "A camada de cenas vem para a frente no corte.",
+          "at_seconds": 7.6
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "cce715d9301680b363fa28349cb01883a065e67cc369f52b4721b86fcc578090",
+          "bytes": 147317,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504",
+          "caption": "Gancho: um quadro do próprio vídeo, escurecido, sob a frase de impacto.",
+          "at_seconds": 0.5
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/layers.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "297a80c350e874ab8b48b183b9cc13296297416c74d0787eb685fa6c1af2f068",
+          "bytes": 166133,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504",
+          "caption": "O vídeo separado em camadas 3D empilhadas (trilha, voz, legenda, animação, cenas), com conteúdo real.",
+          "at_seconds": 3.0
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/ready.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ed78acc49f134968db0f5c9ddc3f3766b9569c48a4df8cd13904796012ac7a3d",
+          "bytes": 197027,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504",
+          "caption": "As camadas se preenchem de novo com o material e o resultado pronto.",
+          "at_seconds": 17.8
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "affe19225dcbed7bc69b80982823de65ed80407781b061565ffffa732670086b",
+          "bytes": 6734169,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504"
+        },
+        {
+          "path": "examples/reference-library/F29/camadas-da-edicao/your-video.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "518d1e39fad1e9604db1d6c25ca3beebe9a7c587cd2a69636f86c6b92f95d881",
+          "bytes": 113289,
+          "source_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504",
+          "caption": "As camadas esvaziam num espaço \"seu vídeo\".",
+          "at_seconds": 12.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F30": {
+      "code": "F30",
+      "name": "Linha de Acabamento",
+      "uid": "official.5f8d34118a25489ca424a70d3e237d6f",
+      "references": [
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/README.md",
+          "kind": "reference_analysis",
+          "sha256": "7ad567636561d99993a937abe630dd474df1efe68383de3cf6f1a122917b8662",
+          "bytes": 807,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/adjust.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "fa5d3947d0851aae70892ae731a01afa12ad5a9a15c295f116f188308ac189af",
+          "bytes": 160125,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90",
+          "caption": "Exemplo de pedido de ajuste sobre o vídeo pronto.",
+          "at_seconds": 21.0
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "9daf697154643a39a822e27befdd85778fbbf873757ec95fac05e80b2ec1e957",
+          "bytes": 6930,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c76e96f70a47091e4aae5d740f02ad172ea0c76719f02e81d742c5eddf8dfbfd",
+          "bytes": 151030,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90",
+          "caption": "Cartão final: promessa curta e botão \"Saiba mais\".",
+          "at_seconds": 26.0
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/finishing.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "90c71f6a29484b0f11f0cdd4437a76d751ae0e8b01c7aee28e2b7924c1c805ff",
+          "bytes": 215537,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90",
+          "caption": "Linha de acabamento: lista de etapas marcadas e blocos já coloridos.",
+          "at_seconds": 14.0
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "12787d0af4517e0f80bd365dd129a2480456b20e103614d970f0e9a87acf6bd6",
+          "bytes": 289069,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90",
+          "caption": "Gancho: blocos do material bruto real em preto e branco, com o título do desafio.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/line.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6770083c223967a7c74e6a5df0b96a53cfdadeb9838767cbcedd03b4ad06eb7e",
+          "bytes": 200573,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90",
+          "caption": "A gravação real como fileira de blocos sobre a esteira.",
+          "at_seconds": 4.0
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "c54da77fe91002cd204b38910d410576efbe09c9b725da65b3317308cb267ff0",
+          "bytes": 9451444,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90"
+        },
+        {
+          "path": "examples/reference-library/F30/linha-de-acabamento/stations.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "723566b5cdb72bcddb2b2df4e000d52e1bd3ebf0d4403c709a86e6bf04deddea",
+          "bytes": 165126,
+          "source_sha256": "189c722ed0cf557990f804a8e6fb56e40b5c2cdaa4f3294ee436e4284bec7d90",
+          "caption": "Estações em arco alinhadas no fim da esteira.",
+          "at_seconds": 9.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F31": {
+      "code": "F31",
+      "name": "Bastidor em Wireframe",
+      "uid": "official.b9f9e20a079b4565866e3e8f27b2e311",
+      "references": [
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/README.md",
+          "kind": "reference_analysis",
+          "sha256": "b2572e1ebb3a6d6d3a342375c113904c0d544519dfc8f96f05f97f3af263e56b",
+          "bytes": 799,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "97e83f631062b96133726d1dce6965b4dd71cba05f29bbbda113647e18296d1d",
+          "bytes": 7017,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ea27ea89eefdb0a5ffa0f900b7ae2133add01b20fd1dd35f0e8cd520d0541349",
+          "bytes": 158731,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691",
+          "caption": "Final claro: espaço vazio \"seu vídeo aqui\" sobre o anel e o botão \"Saiba mais\".",
+          "at_seconds": 21.5
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "58e905a99aefa51ca3f46c49d43be89d6dd8cfd5b7087b7b71827f313f3aa0af",
+          "bytes": 130413,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691",
+          "caption": "Gancho: frase de confissão, close nas barras da voz real sobre piso espelhado.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "e0afab18763790d0af7d4808ec68af9d52c9bfe03dfd1f2bfd2294925c46ed31",
+          "bytes": 8371115,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691"
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/render.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5ec0158b3926090676e7158e73e2bc1bbd7c4256adab159d336fab7b62110ab4",
+          "bytes": 163263,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691",
+          "caption": "Apresentação: o cenário renderizado, ainda escuro.",
+          "at_seconds": 7.2
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/result.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "bb70e5f1cac7255f2cff4b315a411620a794f4c4c608f1ac5d53148f10710f4e",
+          "bytes": 187443,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691",
+          "caption": "Resultado real nítido com o título de qualidade.",
+          "at_seconds": 15.5
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/verbs.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "2d7cb183a1d7590e563e99f37ff3541ba764a378e580201f50d13b860590c577",
+          "bytes": 175835,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691",
+          "caption": "Demonstração dos verbos sobre material real (escolha, corte, legenda, animação).",
+          "at_seconds": 11.0
+        },
+        {
+          "path": "examples/reference-library/F31/bastidor-em-wireframe/wireframe.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "2c7edb731b8edfecf0a41dc6de13caa339b7349ea8e0f825a610503934211be2",
+          "bytes": 299850,
+          "source_sha256": "b57349727552dce66e0153ba9ad6abdba6165d2d49f526b13950b6fc0c9bc691",
+          "caption": "Revelação: o cenário vira wireframe, com a malha do objeto e a grade do chão.",
+          "at_seconds": 5.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F32": {
+      "code": "F32",
+      "name": "Recibo de Valor",
+      "uid": "official.668760f91bb044d7bdc5fce6fe14d39f",
+      "references": [
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/README.md",
+          "kind": "reference_analysis",
+          "sha256": "356eb53af9c501d01a405540bb7f8e8a6c1002fbbdcf3c5e9c753f6604b9057a",
+          "bytes": 815,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/alternative.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "82dd671d99604deabd40c8ebd7dd7b2a64849d3c33ab81e58becc645d718ceb9",
+          "bytes": 128246,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680",
+          "caption": "Pedestal da alternativa recebendo notas com o nome de cada serviço (sem valores).",
+          "at_seconds": 8.0
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "805608a3f415f75abe30962af3c8aefde7176149450e6149ae6db2860cc90a86",
+          "bytes": 7285,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5efb131c1de5d56c7db2c63187a1687e331a5ca21a66179ea596e09471bd0cc2",
+          "bytes": 114117,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680",
+          "caption": "Cartão final: promessa e botão \"Saiba mais\" sobre os pedestais.",
+          "at_seconds": 22.0
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4da08e32e99b757cde70c6d03c04db645e736299ca0867a21c29c49b96772979",
+          "bytes": 127382,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680",
+          "caption": "Gancho: cartão de quem fala e a etiqueta de preço 3D com a pergunta.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/months.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6d4187a0a4f5a491b24dce25b547f32b8b7e96c5de700499daec9b22d56debe8",
+          "bytes": 141658,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680",
+          "caption": "A conta por mês: maços rotulados empilhados quando a fala faz a comparação.",
+          "at_seconds": 12.0
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/receipt.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "e8476f70160310db0b420ae3dfbe797f83944fc1081f771e87556155c0e402df",
+          "bytes": 148243,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680",
+          "caption": "Recibo impresso com a lista do que o produto entrega e a etiqueta já virada.",
+          "at_seconds": 3.5
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "007d9ccf8400a3806ed71eaa882d8bf296c3003a203d8c869ebd0cca4c5beb29",
+          "bytes": 4895020,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680"
+        },
+        {
+          "path": "examples/reference-library/F32/recibo-de-valor/wide.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "8e16333407701c6dfa3bfd51610e9cb99edff3cac07fb0ac4480b07b52eee769",
+          "bytes": 135638,
+          "source_sha256": "240f99b254d93beefb0840a0e0f03cf6112a731c4576bb64d66b2aa69451d680",
+          "caption": "Plano aberto da comparação: recibo e etiqueta de um lado, pilha da alternativa do outro.",
+          "at_seconds": 15.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F33": {
+      "code": "F33",
+      "name": "Câmera do Agente",
+      "uid": "official.1e90331d6b244f00b554ede5d77880dd",
+      "references": [
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/README.md",
+          "kind": "reference_analysis",
+          "sha256": "92b40b7cb53ef04720f2ac97149e66f41b6ac3ff415094b40a9ea07ad465073c",
+          "bytes": 800,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "fac5675725e6c9ecebc56f9973e74b6b49936891f30324d2dbf74af67156212a",
+          "bytes": 7352,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/capture.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "a4be2c3f19069d2ca9c14d5b8cb4f31edc9f7349d01e56cf3274c8bf873a9adf",
+          "bytes": 147506,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589",
+          "caption": "Ponto de vista do agente: marcador trava na tela real e a lista começa a marcar.",
+          "at_seconds": 12.0
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/constellation.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "51453e25ed213376ef3c22ed8ce34b84e126d2d8669d205ae817aed28c88e438",
+          "bytes": 199627,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589",
+          "caption": "Constelação de entregas reais em painéis 3D.",
+          "at_seconds": 5.0
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "226aae36a27af9f92d6ca61ca5fee070bd83de0a3fcf5c33f262ddd51d6f5571",
+          "bytes": 162127,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589",
+          "caption": "Cartão final com as entregas e o botão \"Saiba mais\".",
+          "at_seconds": 37.0
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6dda7ce550c01b72010d1a21bfb222709ea30b33b07912aa0d274e270bca574a",
+          "bytes": 142585,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589",
+          "caption": "Gancho: uma entrega final num painel de vidro escuro, com a frase sobre o custo de antes.",
+          "at_seconds": 1.0
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/record.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7c311e5ba8ee2e91c997bb01c9ce1dcc8339a9c0beb161b7bd8a5cf2e57c7141",
+          "bytes": 159932,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589",
+          "caption": "Lista quase completa e a tela gravada, com quadros se soltando.",
+          "at_seconds": 16.0
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "8048fd95633e2b82c258b12e8cd3a3fd2e99bcf2fb2a5b20a8fb60f16e91511a",
+          "bytes": 10159432,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589"
+        },
+        {
+          "path": "examples/reference-library/F33/camera-do-agente/uses.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "663d3cd155c00f2aaa6159590d0522c469f74fe388d417006b105a278e5b8e4f",
+          "bytes": 152620,
+          "source_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589",
+          "caption": "Monólitos de vidro com usos para outros negócios.",
+          "at_seconds": 24.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F34": {
+      "code": "F34",
+      "name": "Arquivo de Fichas",
+      "uid": "official.ac95517501304d45badc953d5163936c",
+      "references": [
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/README.md",
+          "kind": "reference_analysis",
+          "sha256": "0a1800d1ae67206772c2ef6d0b2c98b5b8bcbec566fc941688103b174e6495b3",
+          "bytes": 798,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "8062ee1150e2695aa2749fa724a5baa6a329c4630d110a9ec71235d256752a66",
+          "bytes": 6895,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46"
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/card.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "809e5bc28c6650377eb36c4c32d8dde061e4809c659d0b0ae91e2213c8568fb8",
+          "bytes": 158493,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46",
+          "caption": "Uma gaveta aberta: a ficha vem para a frente com o exemplo real da opção citada.",
+          "at_seconds": 5.6
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/cascade.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c65dd280d3c73069e8fe6d930b14bac24fd4e96ea8d815232a62a8687ef8260a",
+          "bytes": 165656,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46",
+          "caption": "Todas as gavetas abertas em cascata, com a placa do nome.",
+          "at_seconds": 16.0
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/colors.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "b4af2f1c8d7dd003e633ca82b0bf4b1d39746e8eacacad2225608e1d0e552a8f",
+          "bytes": 162230,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46",
+          "caption": "Leque de amostras recolorindo a ficha por paletas reais.",
+          "at_seconds": 12.0
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f1b8f998d29be0d822d745cb4fe98d1a54e8312b2110a7378943237624453cc6",
+          "bytes": 147413,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46",
+          "caption": "Cartão final sobre o arquivo: promessa e botão \"Saiba mais\".",
+          "at_seconds": 24.0
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6f62b10ec8e1f00e9d90a893eebab0cc09452360bc546e5f6fee79398095b4d1",
+          "bytes": 164041,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46",
+          "caption": "Gancho: close das etiquetas das gavetas com o número da promessa em destaque.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/recursion.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "74eb29998d3a8a2007ddbecab46cd42cdf008e572f6dc13d7d51b26810244daf",
+          "bytes": 126126,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46",
+          "caption": "A ficha que mostra o próprio vídeo, em recursão.",
+          "at_seconds": 20.0
+        },
+        {
+          "path": "examples/reference-library/F34/arquivo-de-fichas/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "bc246ed84fec9ff3b61074cefdfe3ed276bd1692956213030e5d331014cfa038",
+          "bytes": 6197985,
+          "source_sha256": "6d042ae9395f43267699cfe7c142796e3d7cbe48e4ba887eb0881a7e07060f46"
+        }
+      ],
+      "missing_sources": []
+    },
+    "F35": {
+      "code": "F35",
+      "name": "Blocos de Tempo",
+      "uid": "official.06c28c5423374ca99078d35ba0a7056d",
+      "references": [
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/README.md",
+          "kind": "reference_analysis",
+          "sha256": "aa26c9c508bd8e46e4bc26356d51c059f86b6026671c830530feb8ea6b873fa9",
+          "bytes": 792,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "c0c0fd14bd93efc683382f2d7bc091ed051fe7130c82ebf3ac1ff9bd73e048cd",
+          "bytes": 6878,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc"
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/compress.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6b482f763637b470bdf52e14a846731903ea56816f3f2cc841e05e32bafa343d",
+          "bytes": 138792,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc",
+          "caption": "Varredura e compressão: os blocos viram fatias de hora prontas para encolher.",
+          "at_seconds": 6.0
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "aaf3b2da08fee37c5399f521ff3cd36fff38425ae74a89182f56ffc94dfef248",
+          "bytes": 120151,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc",
+          "caption": "Cartão final com a promessa de tempo e o botão \"Saiba mais\".",
+          "at_seconds": 21.0
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "1b662ca87686f5fc2a49a4622ad7110e26371c8cb11429d04a382e4508c9d3d3",
+          "bytes": 103658,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc",
+          "caption": "Gancho: bloco maciço \"2 DIAS\" caindo sobre a régua de horas.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/machine.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "b42459b1be4a60ae5c639dbdebba01ca08a22717068e7b4fbbe3b7b7da10d2e9",
+          "bytes": 166626,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc",
+          "caption": "Tempo novo: o material bruto real sobre o segmento curto, com a barra de edição.",
+          "at_seconds": 9.0
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/number.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "62681d5051e1a592d4ea2f1aaa1126ea2d83ae9a7b3974e43e475337a384c0a2",
+          "bytes": 137172,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc",
+          "caption": "O número final em 3D com a prova real atrás.",
+          "at_seconds": 15.5
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/plus.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "06f8534f9e964f03b739260f4cb0226fb4fa1b785a5d626afa2795c85ce057c7",
+          "bytes": 87237,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc",
+          "caption": "Outro bloco (\"+1 DIA\") cai atrás no atraso seguinte.",
+          "at_seconds": 3.8
+        },
+        {
+          "path": "examples/reference-library/F35/blocos-de-tempo/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "2c4989e4e31252067bcc5e0878d2aecae4da3da7075379fde8945c019eb01fc9",
+          "bytes": 5046542,
+          "source_sha256": "a9103d056b5e0e77f79e8a2ef660799f3ec7faad680f106d4206c5d74887e9bc"
+        }
+      ],
+      "missing_sources": []
+    },
+    "F36": {
+      "code": "F36",
+      "name": "Interface em 3D",
+      "uid": "official.0f94d7b7ffdc41a3b3476a9c99e88d37",
+      "references": [
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/README.md",
+          "kind": "reference_analysis",
+          "sha256": "65e8ea2c6898d47de3148742e62d1b6bb5acf901479a7a07a014fd28c39bf1ab",
+          "bytes": 815,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "f45340449cde53bb095f9ababb6b9bc40dc76d85b63d04a575e626fbb8c99436",
+          "bytes": 7169,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/cards.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5d20508f0459d85809bc44dfe5accf3425763dd6f4b814870fae69b65397fab3",
+          "bytes": 192592,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23",
+          "caption": "Cartões com selos e etiquetas que entram nas palavras ditas.",
+          "at_seconds": 16.0
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/choose.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "b3cfe3beda5f7d27de5979d570a13fa1724c482c1480744af37bfb98acb67538",
+          "bytes": 124635,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23",
+          "caption": "O item escolhido vem à frente com o botão de uso.",
+          "at_seconds": 22.5
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "da436ba0003747be06222de7b41d1cd3bc4d22e1d6227d8bfa3ccd6c3706f599",
+          "bytes": 165938,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23",
+          "caption": "Cartão final com exemplos e o botão \"Saiba mais\".",
+          "at_seconds": 35.0
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "27aa30794e826f32ab882e36bca057e16cc4e55f45cfe70ae5c87280ac13de51",
+          "bytes": 99730,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23",
+          "caption": "Gancho: o botão principal como tecla 3D afundando no clique.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/page.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7820452a7f196f3e590260d812a3d62ad49ea37510b8ea9cfa664d32d1da5a67",
+          "bytes": 142966,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23",
+          "caption": "A página real com os cartões de modelo subindo dela.",
+          "at_seconds": 9.5
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "3ad84f3ef0984aa3107beab14590f93028870c25d893112babd3f14948a0f052",
+          "bytes": 6971984,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23"
+        },
+        {
+          "path": "examples/reference-library/F36/interface-em-3d/result.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "746ac929d376c1126147e01cbc7a1d09b8a6ba61e8f345a3d3491b12facbc923",
+          "bytes": 197684,
+          "source_sha256": "01d1b3b8fd82c5ad086eb50c8c3759fd09869473a22e3b34d95b3b023071aa23",
+          "caption": "A ação principal: o resultado pronto (pedido completo) com o botão destacado.",
+          "at_seconds": 27.0
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -2284,6 +3446,132 @@
     "examples/reference-library/F22/corte-de-live-3d/reference.mp4": "441d7ce525b696d444a7abc39dda9ac8b8586ade3f45e710dd3d9b37cad56430",
     "examples/reference-library/F22/corte-de-live-3d/wall-reveal.jpg": "645acec8ba71f21d471b9070cb089c8c8cfe6e2699d047324a87a8a342e65d33",
     "examples/reference-library/F22/corte-de-live-3d/word-3d.jpg": "9d05db5786aedbc8006e9c603c73451c8ed54843f168c77873171275b8f24cbc",
+    "examples/reference-library/F23/corte-de-live-editorial/README.md": "64812cf980138fb5862695e2551c926ea4450bafedeaf31a4b5e791274225ab8",
+    "examples/reference-library/F23/corte-de-live-editorial/analysis.json": "4c2c6644708d47f3eb5f0263fa8f4d00b3a6582e324dac05fcb0f46f8c138ae2",
+    "examples/reference-library/F23/corte-de-live-editorial/answer.jpg": "7203bf719d6b7e5a10809fed5244d3413c5bc3777fd7a27b5dac8d181f0433a4",
+    "examples/reference-library/F23/corte-de-live-editorial/cta.jpg": "d92d3b9619072b33e4015d255f29ee36a1f14198ce06e487b4cff1c6fd4093ef",
+    "examples/reference-library/F23/corte-de-live-editorial/hook.jpg": "01af6cba0e774c945d50af8626724eddd1baa3f366bbbff6ff4c9dda07a16c94",
+    "examples/reference-library/F23/corte-de-live-editorial/proof-card.jpg": "d9ed7176b74e53763e7b4696c2259cdd8b7bf66cebc4dca6d1afbc057fc21418",
+    "examples/reference-library/F23/corte-de-live-editorial/proof-phone.jpg": "386bf41271a0bfd4e003516ad2b7ea4bfd0e16f528d3dea2299b690669f5719e",
+    "examples/reference-library/F23/corte-de-live-editorial/question.jpg": "03fef58e1731a170d55e970154976fc28701b2cc11b48718fb24ad328e43a737",
+    "examples/reference-library/F23/corte-de-live-editorial/reference.mp4": "04f77beac73c81a1712ca936a7d39650dec15c9131c77c714d9dcdaecc78a4fd",
+    "examples/reference-library/F24/vitrine-em-cilindro/README.md": "5000c227a949596bb56fb134f2ce8b70e960266b3b5fdbce8ffaa751bdaf3c98",
+    "examples/reference-library/F24/vitrine-em-cilindro/analysis.json": "3e78435d267942e3a04ef988d371a941011e4a4f8e1fb21bac9ab4d3be6e0c06",
+    "examples/reference-library/F24/vitrine-em-cilindro/cta.jpg": "754166b3ac421c42a45ad7ee774a6ba7ba145407ec9f1a20250ec4d91f7da4c5",
+    "examples/reference-library/F24/vitrine-em-cilindro/focus.jpg": "8b6abe228b9357601fae5bab5a75e44044631aa4cc42f32b064b77417891dd69",
+    "examples/reference-library/F24/vitrine-em-cilindro/hook.jpg": "9eb08f684e87b3f11d3d2fba0813eaf2b280f7035ee14bb2dc0bc02877106f9c",
+    "examples/reference-library/F24/vitrine-em-cilindro/possibilities.jpg": "d00b7c72f9030704c547adfec9f12c9f7884486868b45831c64f96a7c706f86f",
+    "examples/reference-library/F24/vitrine-em-cilindro/reference.mp4": "719ac9399a6d42d1e556413180fb985fed02171ecc7b25ce31d5b8dff4c2ba44",
+    "examples/reference-library/F24/vitrine-em-cilindro/ring.jpg": "6658e0962a99d7d6929bd8c4768dda510045950ee5fc8eeebb695295f4e6ea80",
+    "examples/reference-library/F24/vitrine-em-cilindro/style-type.jpg": "f304a13e219e1959bfe0e7c498c29e648cad7d42f5a8e309f257729a637fd8a8",
+    "examples/reference-library/F25/antes-e-depois-em-fita/README.md": "335e82433f7d3f467aa4e459930ed316ca0e838ec0dbe539824643cea2e43c1a",
+    "examples/reference-library/F25/antes-e-depois-em-fita/after.jpg": "160d0802251c4bd9faa8c7fc16b9e28b6ce7f718a4dbe569fcf344840a3a7753",
+    "examples/reference-library/F25/antes-e-depois-em-fita/analysis.json": "43b45a11a24af9cc77d8a71ffc675ad0c5645d41554a755aa18615196307d814",
+    "examples/reference-library/F25/antes-e-depois-em-fita/before.jpg": "3270b36716ac70b0ffb8079e3ad3c6219321c5e371b245adcd2db81aafdfe096",
+    "examples/reference-library/F25/antes-e-depois-em-fita/closed.jpg": "cdeae5bb4eeeb35edd4fd8b69beb96955a081bdfbe31927365c2973835a2ce95",
+    "examples/reference-library/F25/antes-e-depois-em-fita/cta.jpg": "07eac127eec375165f6d743b2355537a67c45e88ab468f7b9c34d711f94061d0",
+    "examples/reference-library/F25/antes-e-depois-em-fita/errors.jpg": "27c0e7eb1d93c8b13e22a91ac7d837b3825dbaa801e6801fee985fe1b7710a9e",
+    "examples/reference-library/F25/antes-e-depois-em-fita/reference.mp4": "e890a60fea16e255f8d66d9fbee2490a1c378cf41aef09542a8204fc436268fa",
+    "examples/reference-library/F25/antes-e-depois-em-fita/tape.jpg": "99d482c4a8ff083d84d57412027b2f4517c99558ae652465387dc9828ce5f669",
+    "examples/reference-library/F26/mesa-de-papel-3d/README.md": "f16b37675771916ef88cccb06969fd98717b47bddfef5c20428d427eadc4534d",
+    "examples/reference-library/F26/mesa-de-papel-3d/analysis.json": "6ad16142319974f5fd4c78cb41546a6bffb220854a929f2d31d6d0f291bf3c48",
+    "examples/reference-library/F26/mesa-de-papel-3d/calendar.jpg": "c789ddce26097086300b982101fb8037d03724f5d7f26546a82d607175ebcb1a",
+    "examples/reference-library/F26/mesa-de-papel-3d/cta.jpg": "e9af3fc50bec03bb28160803e44d693a91c113982d467992bd9d1eecfd99689f",
+    "examples/reference-library/F26/mesa-de-papel-3d/hook.jpg": "ed49b49ee90b25ab91ded018a571109098c8e0a8b414f3e16aebc663c7310cea",
+    "examples/reference-library/F26/mesa-de-papel-3d/planner.jpg": "ec83a41a7228dbfb8dbdbda4f1c48856f1b034a0a1db22e27bf2c84198d94552",
+    "examples/reference-library/F26/mesa-de-papel-3d/process.jpg": "9379f222636b1a22a75903b2fe8cc6e3381b57dce189842e2000c3aed711bd87",
+    "examples/reference-library/F26/mesa-de-papel-3d/reference.mp4": "b9c783156f7f0f9309efcf5d2979f525eaa2fe0fa3c5d45edc38271811098f2c",
+    "examples/reference-library/F26/mesa-de-papel-3d/testimony.jpg": "0bf6ce135062ca4c692011f1bbac3a21cf37473e487c4855a9a2e399f6c3dac6",
+    "examples/reference-library/F27/maquete-passo-a-passo/README.md": "af2bb6b5cfa512832284720338c732a24df8d777964d4d1ed4d0a2e49081515b",
+    "examples/reference-library/F27/maquete-passo-a-passo/analysis.json": "4c5b740aaeb6843d6780bd7762f814e70421014d088f83776a28a942c553d1b6",
+    "examples/reference-library/F27/maquete-passo-a-passo/client.jpg": "54fbd4ed7df7dcaa9714d69fb1a52cf42b81b3e2586553aa972ac8e10e991a1f",
+    "examples/reference-library/F27/maquete-passo-a-passo/cta.jpg": "ac265d6c673c8889094a116e20d1b61be06d067e0a1d8bb3e3301d4332f217dd",
+    "examples/reference-library/F27/maquete-passo-a-passo/objection.jpg": "318ca95b9054c557737bbaf779d3bbd00ed225de1c7fac0ab198f7614596b62d",
+    "examples/reference-library/F27/maquete-passo-a-passo/reference.mp4": "75ee973d8c646ee5721ad44ceab9bdd84d78b8644589499d770bc5cdcce41dc3",
+    "examples/reference-library/F27/maquete-passo-a-passo/request.jpg": "ecedf83f00a99892b5d68ae7747b581bf917f5efbbedbbee33a2294cf22deec5",
+    "examples/reference-library/F27/maquete-passo-a-passo/step-1.jpg": "fd6beb5147ad98b0bba2946122b8d45c9196fca492b28932118ecd676b375c63",
+    "examples/reference-library/F27/maquete-passo-a-passo/step-2.jpg": "422facfe6d06651ae927a144d15fd6bf5a80bd05e9da9a480192503b4580e36d",
+    "examples/reference-library/F28/lente-reveladora/README.md": "4759a2cc010b91d40614990973e77aede73e6bad7dd843a0e0355ed11ca51703",
+    "examples/reference-library/F28/lente-reveladora/analysis.json": "f074be7c83fd0b2cb0337845e7c133b645873aee2825ff64c4bc7101d77102b7",
+    "examples/reference-library/F28/lente-reveladora/cta.jpg": "02674e2dc93a1e50e7260f0b8ee06dc24707c823acc59947a5f92f0d66181cff",
+    "examples/reference-library/F28/lente-reveladora/feed.jpg": "c339d948f3c1a95709e509eb673f8cff46b8faac9f8a94be28afc2b4144cf0cd",
+    "examples/reference-library/F28/lente-reveladora/place.jpg": "848c2af82e32e2cd3c85f41aa071591d8b9fe88c5ba0b6d65931981cc5e44113",
+    "examples/reference-library/F28/lente-reveladora/reference.mp4": "534238df947f119af5a8e37c1920dd242631fe8113722469db0ad2f2737eb68f",
+    "examples/reference-library/F28/lente-reveladora/reveal.jpg": "c72abb86fdf63a7734325f38119af3c336b0f9c7e78380c12282a2cf1be0e276",
+    "examples/reference-library/F28/lente-reveladora/search.jpg": "482224d1306a3148553d1d8da2b882ea9600f4c7f8398c587a44f9fc16a40771",
+    "examples/reference-library/F28/lente-reveladora/template.jpg": "dce188a20b550d829bd383f4bad7611b7db043317d39d55e48f6de036a370890",
+    "examples/reference-library/F29/camadas-da-edicao/README.md": "56402df4552fd5de7b9f40d0c9db35930be1bba3518fe11b781605a5a8809128",
+    "examples/reference-library/F29/camadas-da-edicao/analysis.json": "5b7a279250143319aae6f711746c5854d05d500be6d261602ea5320fb81fb3c2",
+    "examples/reference-library/F29/camadas-da-edicao/cta.jpg": "d5e893b90d7f94175013aa0212930615c2c2f1252a9fe7b54f61128927a82271",
+    "examples/reference-library/F29/camadas-da-edicao/cut.jpg": "c856abb9783b2ec9cf582bb5a1334b59c1a4a0f335c15ca8ac5848c93abf5991",
+    "examples/reference-library/F29/camadas-da-edicao/hook.jpg": "cce715d9301680b363fa28349cb01883a065e67cc369f52b4721b86fcc578090",
+    "examples/reference-library/F29/camadas-da-edicao/layers.jpg": "297a80c350e874ab8b48b183b9cc13296297416c74d0787eb685fa6c1af2f068",
+    "examples/reference-library/F29/camadas-da-edicao/ready.jpg": "ed78acc49f134968db0f5c9ddc3f3766b9569c48a4df8cd13904796012ac7a3d",
+    "examples/reference-library/F29/camadas-da-edicao/reference.mp4": "affe19225dcbed7bc69b80982823de65ed80407781b061565ffffa732670086b",
+    "examples/reference-library/F29/camadas-da-edicao/your-video.jpg": "518d1e39fad1e9604db1d6c25ca3beebe9a7c587cd2a69636f86c6b92f95d881",
+    "examples/reference-library/F30/linha-de-acabamento/README.md": "7ad567636561d99993a937abe630dd474df1efe68383de3cf6f1a122917b8662",
+    "examples/reference-library/F30/linha-de-acabamento/adjust.jpg": "fa5d3947d0851aae70892ae731a01afa12ad5a9a15c295f116f188308ac189af",
+    "examples/reference-library/F30/linha-de-acabamento/analysis.json": "9daf697154643a39a822e27befdd85778fbbf873757ec95fac05e80b2ec1e957",
+    "examples/reference-library/F30/linha-de-acabamento/cta.jpg": "c76e96f70a47091e4aae5d740f02ad172ea0c76719f02e81d742c5eddf8dfbfd",
+    "examples/reference-library/F30/linha-de-acabamento/finishing.jpg": "90c71f6a29484b0f11f0cdd4437a76d751ae0e8b01c7aee28e2b7924c1c805ff",
+    "examples/reference-library/F30/linha-de-acabamento/hook.jpg": "12787d0af4517e0f80bd365dd129a2480456b20e103614d970f0e9a87acf6bd6",
+    "examples/reference-library/F30/linha-de-acabamento/line.jpg": "6770083c223967a7c74e6a5df0b96a53cfdadeb9838767cbcedd03b4ad06eb7e",
+    "examples/reference-library/F30/linha-de-acabamento/reference.mp4": "c54da77fe91002cd204b38910d410576efbe09c9b725da65b3317308cb267ff0",
+    "examples/reference-library/F30/linha-de-acabamento/stations.jpg": "723566b5cdb72bcddb2b2df4e000d52e1bd3ebf0d4403c709a86e6bf04deddea",
+    "examples/reference-library/F31/bastidor-em-wireframe/README.md": "b2572e1ebb3a6d6d3a342375c113904c0d544519dfc8f96f05f97f3af263e56b",
+    "examples/reference-library/F31/bastidor-em-wireframe/analysis.json": "97e83f631062b96133726d1dce6965b4dd71cba05f29bbbda113647e18296d1d",
+    "examples/reference-library/F31/bastidor-em-wireframe/cta.jpg": "ea27ea89eefdb0a5ffa0f900b7ae2133add01b20fd1dd35f0e8cd520d0541349",
+    "examples/reference-library/F31/bastidor-em-wireframe/hook.jpg": "58e905a99aefa51ca3f46c49d43be89d6dd8cfd5b7087b7b71827f313f3aa0af",
+    "examples/reference-library/F31/bastidor-em-wireframe/reference.mp4": "e0afab18763790d0af7d4808ec68af9d52c9bfe03dfd1f2bfd2294925c46ed31",
+    "examples/reference-library/F31/bastidor-em-wireframe/render.jpg": "5ec0158b3926090676e7158e73e2bc1bbd7c4256adab159d336fab7b62110ab4",
+    "examples/reference-library/F31/bastidor-em-wireframe/result.jpg": "bb70e5f1cac7255f2cff4b315a411620a794f4c4c608f1ac5d53148f10710f4e",
+    "examples/reference-library/F31/bastidor-em-wireframe/verbs.jpg": "2d7cb183a1d7590e563e99f37ff3541ba764a378e580201f50d13b860590c577",
+    "examples/reference-library/F31/bastidor-em-wireframe/wireframe.jpg": "2c7edb731b8edfecf0a41dc6de13caa339b7349ea8e0f825a610503934211be2",
+    "examples/reference-library/F32/recibo-de-valor/README.md": "356eb53af9c501d01a405540bb7f8e8a6c1002fbbdcf3c5e9c753f6604b9057a",
+    "examples/reference-library/F32/recibo-de-valor/alternative.jpg": "82dd671d99604deabd40c8ebd7dd7b2a64849d3c33ab81e58becc645d718ceb9",
+    "examples/reference-library/F32/recibo-de-valor/analysis.json": "805608a3f415f75abe30962af3c8aefde7176149450e6149ae6db2860cc90a86",
+    "examples/reference-library/F32/recibo-de-valor/cta.jpg": "5efb131c1de5d56c7db2c63187a1687e331a5ca21a66179ea596e09471bd0cc2",
+    "examples/reference-library/F32/recibo-de-valor/hook.jpg": "4da08e32e99b757cde70c6d03c04db645e736299ca0867a21c29c49b96772979",
+    "examples/reference-library/F32/recibo-de-valor/months.jpg": "6d4187a0a4f5a491b24dce25b547f32b8b7e96c5de700499daec9b22d56debe8",
+    "examples/reference-library/F32/recibo-de-valor/receipt.jpg": "e8476f70160310db0b420ae3dfbe797f83944fc1081f771e87556155c0e402df",
+    "examples/reference-library/F32/recibo-de-valor/reference.mp4": "007d9ccf8400a3806ed71eaa882d8bf296c3003a203d8c869ebd0cca4c5beb29",
+    "examples/reference-library/F32/recibo-de-valor/wide.jpg": "8e16333407701c6dfa3bfd51610e9cb99edff3cac07fb0ac4480b07b52eee769",
+    "examples/reference-library/F33/camera-do-agente/README.md": "92b40b7cb53ef04720f2ac97149e66f41b6ac3ff415094b40a9ea07ad465073c",
+    "examples/reference-library/F33/camera-do-agente/analysis.json": "fac5675725e6c9ecebc56f9973e74b6b49936891f30324d2dbf74af67156212a",
+    "examples/reference-library/F33/camera-do-agente/capture.jpg": "a4be2c3f19069d2ca9c14d5b8cb4f31edc9f7349d01e56cf3274c8bf873a9adf",
+    "examples/reference-library/F33/camera-do-agente/constellation.jpg": "51453e25ed213376ef3c22ed8ce34b84e126d2d8669d205ae817aed28c88e438",
+    "examples/reference-library/F33/camera-do-agente/cta.jpg": "226aae36a27af9f92d6ca61ca5fee070bd83de0a3fcf5c33f262ddd51d6f5571",
+    "examples/reference-library/F33/camera-do-agente/hook.jpg": "6dda7ce550c01b72010d1a21bfb222709ea30b33b07912aa0d274e270bca574a",
+    "examples/reference-library/F33/camera-do-agente/record.jpg": "7c311e5ba8ee2e91c997bb01c9ce1dcc8339a9c0beb161b7bd8a5cf2e57c7141",
+    "examples/reference-library/F33/camera-do-agente/reference.mp4": "8048fd95633e2b82c258b12e8cd3a3fd2e99bcf2fb2a5b20a8fb60f16e91511a",
+    "examples/reference-library/F33/camera-do-agente/uses.jpg": "663d3cd155c00f2aaa6159590d0522c469f74fe388d417006b105a278e5b8e4f",
+    "examples/reference-library/F34/arquivo-de-fichas/README.md": "0a1800d1ae67206772c2ef6d0b2c98b5b8bcbec566fc941688103b174e6495b3",
+    "examples/reference-library/F34/arquivo-de-fichas/analysis.json": "8062ee1150e2695aa2749fa724a5baa6a329c4630d110a9ec71235d256752a66",
+    "examples/reference-library/F34/arquivo-de-fichas/card.jpg": "809e5bc28c6650377eb36c4c32d8dde061e4809c659d0b0ae91e2213c8568fb8",
+    "examples/reference-library/F34/arquivo-de-fichas/cascade.jpg": "c65dd280d3c73069e8fe6d930b14bac24fd4e96ea8d815232a62a8687ef8260a",
+    "examples/reference-library/F34/arquivo-de-fichas/colors.jpg": "b4af2f1c8d7dd003e633ca82b0bf4b1d39746e8eacacad2225608e1d0e552a8f",
+    "examples/reference-library/F34/arquivo-de-fichas/cta.jpg": "f1b8f998d29be0d822d745cb4fe98d1a54e8312b2110a7378943237624453cc6",
+    "examples/reference-library/F34/arquivo-de-fichas/hook.jpg": "6f62b10ec8e1f00e9d90a893eebab0cc09452360bc546e5f6fee79398095b4d1",
+    "examples/reference-library/F34/arquivo-de-fichas/recursion.jpg": "74eb29998d3a8a2007ddbecab46cd42cdf008e572f6dc13d7d51b26810244daf",
+    "examples/reference-library/F34/arquivo-de-fichas/reference.mp4": "bc246ed84fec9ff3b61074cefdfe3ed276bd1692956213030e5d331014cfa038",
+    "examples/reference-library/F35/blocos-de-tempo/README.md": "aa26c9c508bd8e46e4bc26356d51c059f86b6026671c830530feb8ea6b873fa9",
+    "examples/reference-library/F35/blocos-de-tempo/analysis.json": "c0c0fd14bd93efc683382f2d7bc091ed051fe7130c82ebf3ac1ff9bd73e048cd",
+    "examples/reference-library/F35/blocos-de-tempo/compress.jpg": "6b482f763637b470bdf52e14a846731903ea56816f3f2cc841e05e32bafa343d",
+    "examples/reference-library/F35/blocos-de-tempo/cta.jpg": "aaf3b2da08fee37c5399f521ff3cd36fff38425ae74a89182f56ffc94dfef248",
+    "examples/reference-library/F35/blocos-de-tempo/hook.jpg": "1b662ca87686f5fc2a49a4622ad7110e26371c8cb11429d04a382e4508c9d3d3",
+    "examples/reference-library/F35/blocos-de-tempo/machine.jpg": "b42459b1be4a60ae5c639dbdebba01ca08a22717068e7b4fbbe3b7b7da10d2e9",
+    "examples/reference-library/F35/blocos-de-tempo/number.jpg": "62681d5051e1a592d4ea2f1aaa1126ea2d83ae9a7b3974e43e475337a384c0a2",
+    "examples/reference-library/F35/blocos-de-tempo/plus.jpg": "06f8534f9e964f03b739260f4cb0226fb4fa1b785a5d626afa2795c85ce057c7",
+    "examples/reference-library/F35/blocos-de-tempo/reference.mp4": "2c4989e4e31252067bcc5e0878d2aecae4da3da7075379fde8945c019eb01fc9",
+    "examples/reference-library/F36/interface-em-3d/README.md": "65e8ea2c6898d47de3148742e62d1b6bb5acf901479a7a07a014fd28c39bf1ab",
+    "examples/reference-library/F36/interface-em-3d/analysis.json": "f45340449cde53bb095f9ababb6b9bc40dc76d85b63d04a575e626fbb8c99436",
+    "examples/reference-library/F36/interface-em-3d/cards.jpg": "5d20508f0459d85809bc44dfe5accf3425763dd6f4b814870fae69b65397fab3",
+    "examples/reference-library/F36/interface-em-3d/choose.jpg": "b3cfe3beda5f7d27de5979d570a13fa1724c482c1480744af37bfb98acb67538",
+    "examples/reference-library/F36/interface-em-3d/cta.jpg": "da436ba0003747be06222de7b41d1cd3bc4d22e1d6227d8bfa3ccd6c3706f599",
+    "examples/reference-library/F36/interface-em-3d/hook.jpg": "27aa30794e826f32ab882e36bca057e16cc4e55f45cfe70ae5c87280ac13de51",
+    "examples/reference-library/F36/interface-em-3d/page.jpg": "7820452a7f196f3e590260d812a3d62ad49ea37510b8ea9cfa664d32d1da5a67",
+    "examples/reference-library/F36/interface-em-3d/reference.mp4": "3ad84f3ef0984aa3107beab14590f93028870c25d893112babd3f14948a0f052",
+    "examples/reference-library/F36/interface-em-3d/result.jpg": "746ac929d376c1126147e01cbc7a1d09b8a6ba61e8f345a3d3491b12facbc923",
     "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1"
   },
   "retired_generations": {

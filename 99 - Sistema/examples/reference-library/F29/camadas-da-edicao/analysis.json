@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F29",
+  "format_uid": "official.a254ae1788ea42ac935d6811fcecaecb",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F29/camadas-da-edicao/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Criativo 9:16 metalinguístico guiado por narração. Abre com um quadro do próprio vídeo e uma frase de impacto; na palavra da virada, o quadro se separa em camadas 3D empilhadas em profundidade, cada uma com conteúdo real (cenas, curva de animação, legenda, onda da voz, trilha). Cada camada vem para a frente quando a narração a cita: a voz mostra a onda real, o corte acontece numa lâmina, a legenda se digita, a curva se redesenha. Depois as camadas esvaziam num espaço \"seu vídeo\", recebem um material bruto e se fecham no resultado em tela cheia. Cartão final escrito com \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Definir as camadas reais da própria edição (cenas, animação, legenda, voz, trilha) e a palavra que traz cada uma para a frente.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/camadas-da-edicao com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não inventar camadas que a edição não tem. Rótulos de camada pequenos não podem se sobrepor no topo da pilha. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/reference.mp4",
+      "sha256": "affe19225dcbed7bc69b80982823de65ed80407781b061565ffffa732670086b"
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/hook.jpg",
+      "sha256": "cce715d9301680b363fa28349cb01883a065e67cc369f52b4721b86fcc578090"
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/layers.jpg",
+      "sha256": "297a80c350e874ab8b48b183b9cc13296297416c74d0787eb685fa6c1af2f068"
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/cut.jpg",
+      "sha256": "c856abb9783b2ec9cf582bb5a1334b59c1a4a0f335c15ca8ac5848c93abf5991"
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/your-video.jpg",
+      "sha256": "518d1e39fad1e9604db1d6c25ca3beebe9a7c587cd2a69636f86c6b92f95d881"
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/ready.jpg",
+      "sha256": "ed78acc49f134968db0f5c9ddc3f3766b9569c48a4df8cd13904796012ac7a3d"
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/cta.jpg",
+      "sha256": "d5e893b90d7f94175013aa0212930615c2c2f1252a9fe7b54f61128927a82271"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/hook.jpg",
+      "sha256": "cce715d9301680b363fa28349cb01883a065e67cc369f52b4721b86fcc578090",
+      "at_seconds": 0.5,
+      "caption": "Gancho: um quadro do próprio vídeo, escurecido, sob a frase de impacto."
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/layers.jpg",
+      "sha256": "297a80c350e874ab8b48b183b9cc13296297416c74d0787eb685fa6c1af2f068",
+      "at_seconds": 3.0,
+      "caption": "O vídeo separado em camadas 3D empilhadas (trilha, voz, legenda, animação, cenas), com conteúdo real."
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/cut.jpg",
+      "sha256": "c856abb9783b2ec9cf582bb5a1334b59c1a4a0f335c15ca8ac5848c93abf5991",
+      "at_seconds": 7.6,
+      "caption": "A camada de cenas vem para a frente no corte."
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/your-video.jpg",
+      "sha256": "518d1e39fad1e9604db1d6c25ca3beebe9a7c587cd2a69636f86c6b92f95d881",
+      "at_seconds": 12.0,
+      "caption": "As camadas esvaziam num espaço \"seu vídeo\"."
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/ready.jpg",
+      "sha256": "ed78acc49f134968db0f5c9ddc3f3766b9569c48a4df8cd13904796012ac7a3d",
+      "at_seconds": 17.8,
+      "caption": "As camadas se preenchem de novo com o material e o resultado pronto."
+    },
+    {
+      "path": "examples/reference-library/F29/camadas-da-edicao/cta.jpg",
+      "sha256": "d5e893b90d7f94175013aa0212930615c2c2f1252a9fe7b54f61128927a82271",
+      "at_seconds": 21.5,
+      "caption": "Cartão final: o vídeo pronto em camadas atrás da promessa e do botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/camadas-da-edicao",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E127 V1",
+    "original_filename": "E127 V1 - IA 1 Ninguem editou este video (previa).mp4",
+    "original_sha256": "0ce01c5b9918da7cfbad7f31d96aab2e4cf3b180a22d92db244e328974967504",
+    "duration_s": 23.8,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

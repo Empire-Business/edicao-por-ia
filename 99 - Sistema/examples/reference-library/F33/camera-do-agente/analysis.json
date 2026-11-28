@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F33",
+  "format_uid": "official.1e90331d6b244f00b554ede5d77880dd",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F33/camera-do-agente/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Demonstração de produto/software em 9:16 com a câmera no ponto de vista do agente. Telas reais do produto viram painéis 3D escuros que a câmera percorre; uma constelação mostra as entregas feitas. Na fala da ação, um marcador mira e trava num ponto da tela e o recorte sobe como print; um selo de gravação com contador grava a tela e quadros se soltam; as peças se montam no resultado final, que pode aparecer dentro de outro vídeo. No alto, uma lista (\"entrou\", \"tirou o print\", \"gravou\", \"montou\") vai se marcando. Depois, monólitos de vidro mostram usos para outros negócios. Pessoa pequena em círculo; legenda. Cartão final com \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Separar telas reais do produto e as entregas finais; marcar as palavras de cada ação (entrar, capturar, gravar, montar) para a lista e o marcador.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/camera-do-agente com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Painéis pequenos e sem contraste não leem no celular: telas grandes (75–90% da largura) e mais claras. Evitar superfícies 3D coincidentes (tremulação). Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/reference.mp4",
+      "sha256": "8048fd95633e2b82c258b12e8cd3a3fd2e99bcf2fb2a5b20a8fb60f16e91511a"
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/hook.jpg",
+      "sha256": "6dda7ce550c01b72010d1a21bfb222709ea30b33b07912aa0d274e270bca574a"
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/constellation.jpg",
+      "sha256": "51453e25ed213376ef3c22ed8ce34b84e126d2d8669d205ae817aed28c88e438"
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/capture.jpg",
+      "sha256": "a4be2c3f19069d2ca9c14d5b8cb4f31edc9f7349d01e56cf3274c8bf873a9adf"
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/record.jpg",
+      "sha256": "7c311e5ba8ee2e91c997bb01c9ce1dcc8339a9c0beb161b7bd8a5cf2e57c7141"
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/uses.jpg",
+      "sha256": "663d3cd155c00f2aaa6159590d0522c469f74fe388d417006b105a278e5b8e4f"
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/cta.jpg",
+      "sha256": "226aae36a27af9f92d6ca61ca5fee070bd83de0a3fcf5c33f262ddd51d6f5571"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/hook.jpg",
+      "sha256": "6dda7ce550c01b72010d1a21bfb222709ea30b33b07912aa0d274e270bca574a",
+      "at_seconds": 1.0,
+      "caption": "Gancho: uma entrega final num painel de vidro escuro, com a frase sobre o custo de antes."
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/constellation.jpg",
+      "sha256": "51453e25ed213376ef3c22ed8ce34b84e126d2d8669d205ae817aed28c88e438",
+      "at_seconds": 5.0,
+      "caption": "Constelação de entregas reais em painéis 3D."
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/capture.jpg",
+      "sha256": "a4be2c3f19069d2ca9c14d5b8cb4f31edc9f7349d01e56cf3274c8bf873a9adf",
+      "at_seconds": 12.0,
+      "caption": "Ponto de vista do agente: marcador trava na tela real e a lista começa a marcar."
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/record.jpg",
+      "sha256": "7c311e5ba8ee2e91c997bb01c9ce1dcc8339a9c0beb161b7bd8a5cf2e57c7141",
+      "at_seconds": 16.0,
+      "caption": "Lista quase completa e a tela gravada, com quadros se soltando."
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/uses.jpg",
+      "sha256": "663d3cd155c00f2aaa6159590d0522c469f74fe388d417006b105a278e5b8e4f",
+      "at_seconds": 24.0,
+      "caption": "Monólitos de vidro com usos para outros negócios."
+    },
+    {
+      "path": "examples/reference-library/F33/camera-do-agente/cta.jpg",
+      "sha256": "226aae36a27af9f92d6ca61ca5fee070bd83de0a3fcf5c33f262ddd51d6f5571",
+      "at_seconds": 37.0,
+      "caption": "Cartão final com as entregas e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/camera-do-agente",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E132 V1",
+    "original_filename": "E132 V1 - Corte 12 Ele fez o institucional (previa).mp4",
+    "original_sha256": "38ac1f1cf086c35cf738e9b4c44e4b866d7680c1fd374ed13ec76cff8e75d589",
+    "duration_s": 39.4,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

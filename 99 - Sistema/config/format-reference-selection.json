@@ -188,6 +188,118 @@
         "sha256": "441d7ce525b696d444a7abc39dda9ac8b8586ade3f45e710dd3d9b37cad56430"
       },
       "reference_conflicts": []
+    },
+    "official.ab0ffe0bee244b52aa605a055a56a92b": {
+      "code": "F23",
+      "primary_reference": {
+        "path": "examples/reference-library/F23/corte-de-live-editorial/reference.mp4",
+        "sha256": "04f77beac73c81a1712ca936a7d39650dec15c9131c77c714d9dcdaecc78a4fd"
+      },
+      "reference_conflicts": []
+    },
+    "official.fd257d53ecf44b0884b7ce229934c6b8": {
+      "code": "F24",
+      "primary_reference": {
+        "path": "examples/reference-library/F24/vitrine-em-cilindro/reference.mp4",
+        "sha256": "719ac9399a6d42d1e556413180fb985fed02171ecc7b25ce31d5b8dff4c2ba44"
+      },
+      "reference_conflicts": []
+    },
+    "official.ad36a27c834646ffb67233f4e1825067": {
+      "code": "F25",
+      "primary_reference": {
+        "path": "examples/reference-library/F25/antes-e-depois-em-fita/reference.mp4",
+        "sha256": "e890a60fea16e255f8d66d9fbee2490a1c378cf41aef09542a8204fc436268fa"
+      },
+      "reference_conflicts": []
+    },
+    "official.5a0acfcc50784684a2707811f74311ba": {
+      "code": "F26",
+      "primary_reference": {
+        "path": "examples/reference-library/F26/mesa-de-papel-3d/reference.mp4",
+        "sha256": "b9c783156f7f0f9309efcf5d2979f525eaa2fe0fa3c5d45edc38271811098f2c"
+      },
+      "reference_conflicts": []
+    },
+    "official.fe600238eb8948228ba50628dd05d6e3": {
+      "code": "F27",
+      "primary_reference": {
+        "path": "examples/reference-library/F27/maquete-passo-a-passo/reference.mp4",
+        "sha256": "75ee973d8c646ee5721ad44ceab9bdd84d78b8644589499d770bc5cdcce41dc3"
+      },
+      "reference_conflicts": []
+    },
+    "official.6e1238637d764c7890393d8c18615a5e": {
+      "code": "F28",
+      "primary_reference": {
+        "path": "examples/reference-library/F28/lente-reveladora/reference.mp4",
+        "sha256": "534238df947f119af5a8e37c1920dd242631fe8113722469db0ad2f2737eb68f"
+      },
+      "reference_conflicts": []
+    },
+    "official.a254ae1788ea42ac935d6811fcecaecb": {
+      "code": "F29",
+      "primary_reference": {
+        "path": "examples/reference-library/F29/camadas-da-edicao/reference.mp4",
+        "sha256": "affe19225dcbed7bc69b80982823de65ed80407781b061565ffffa732670086b"
+      },
+      "reference_conflicts": []
+    },
+    "official.5f8d34118a25489ca424a70d3e237d6f": {
+      "code": "F30",
+      "primary_reference": {
+        "path": "examples/reference-library/F30/linha-de-acabamento/reference.mp4",
+        "sha256": "c54da77fe91002cd204b38910d410576efbe09c9b725da65b3317308cb267ff0"
+      },
+      "reference_conflicts": []
+    },
+    "official.b9f9e20a079b4565866e3e8f27b2e311": {
+      "code": "F31",
+      "primary_reference": {
+        "path": "examples/reference-library/F31/bastidor-em-wireframe/reference.mp4",
+        "sha256": "e0afab18763790d0af7d4808ec68af9d52c9bfe03dfd1f2bfd2294925c46ed31"
+      },
+      "reference_conflicts": []
+    },
+    "official.668760f91bb044d7bdc5fce6fe14d39f": {
+      "code": "F32",
+      "primary_reference": {
+        "path": "examples/reference-library/F32/recibo-de-valor/reference.mp4",
+        "sha256": "007d9ccf8400a3806ed71eaa882d8bf296c3003a203d8c869ebd0cca4c5beb29"
+      },
+      "reference_conflicts": []
+    },
+    "official.1e90331d6b244f00b554ede5d77880dd": {
+      "code": "F33",
+      "primary_reference": {
+        "path": "examples/reference-library/F33/camera-do-agente/reference.mp4",
+        "sha256": "8048fd95633e2b82c258b12e8cd3a3fd2e99bcf2fb2a5b20a8fb60f16e91511a"
+      },
+      "reference_conflicts": []
+    },
+    "official.ac95517501304d45badc953d5163936c": {
+      "code": "F34",
+      "primary_reference": {
+        "path": "examples/reference-library/F34/arquivo-de-fichas/reference.mp4",
+        "sha256": "bc246ed84fec9ff3b61074cefdfe3ed276bd1692956213030e5d331014cfa038"
+      },
+      "reference_conflicts": []
+    },
+    "official.06c28c5423374ca99078d35ba0a7056d": {
+      "code": "F35",
+      "primary_reference": {
+        "path": "examples/reference-library/F35/blocos-de-tempo/reference.mp4",
+        "sha256": "2c4989e4e31252067bcc5e0878d2aecae4da3da7075379fde8945c019eb01fc9"
+      },
+      "reference_conflicts": []
+    },
+    "official.0f94d7b7ffdc41a3b3476a9c99e88d37": {
+      "code": "F36",
+      "primary_reference": {
+        "path": "examples/reference-library/F36/interface-em-3d/reference.mp4",
+        "sha256": "3ad84f3ef0984aa3107beab14590f93028870c25d893112babd3f14948a0f052"
+      },
+      "reference_conflicts": []
     }
   }
 }
