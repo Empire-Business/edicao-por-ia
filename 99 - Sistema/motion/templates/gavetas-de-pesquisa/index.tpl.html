@@ -1,0 +1,506 @@
+<!-- MODELO F41 Gavetas de Pesquisa: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · "Pesquisa de verdade" (F22 · ID07)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x1F3A5C7;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID07 Laranja — fundo #F7F6F3 · texto #101828 · laranja #F05A28 · superfície #FFFFFF · mudo #667085. Inter (títulos/legenda), IBM Plex Mono
+   (rótulos). O salão do arquivo usa o azul-tinta #101828 da própria ID como ambiente; o CTA volta ao fundo claro #F7F6F3.
+   Sem logo automática. Prova = entregas do próprio usuário editadas pelo Cortez. */
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin-ext.woff2") format("woff2"); font-weight:400; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-500-latin.woff2") format("woff2"); font-weight:500; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin.woff2") format("woff2"); font-weight:600; }
+@font-face { font-family:"Inter"; src:url("assets/inter-700-latin.woff2") format("woff2"); font-weight:700; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; background:#0A1120; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#0A1120; font-family:"Inter", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#scrim { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(10,17,32,.92) 0%, rgba(10,17,32,.66) 13%, rgba(10,17,32,0) 25%, rgba(10,17,32,0) 70%, rgba(10,17,32,.74) 79%, rgba(10,17,32,.94) 100%); }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.05; mix-blend-mode:overlay; }
+
+.hd { position:absolute; left:76px; right:250px; top:168px; z-index:6; }
+.lab { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:23px; letter-spacing:.14em; text-transform:uppercase; color:#F05A28; overflow:hidden; height:32px; }
+.lab .in { display:inline-flex; align-items:center; gap:13px; }
+.lab i { width:10px; height:10px; border-radius:50%; background:#F05A28; display:block; flex:none; }
+.ttl { margin-top:12px; }
+.ln { display:block; overflow:hidden; padding:0 0 .1em; font-family:"Inter", sans-serif; font-weight:800; line-height:1.0; letter-spacing:-.035em; color:#F7F6F3; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:normal; color:#F05A28; }
+
+#pip { position:absolute; left:868px; top:164px; width:150px; height:150px; border-radius:50%; overflow:hidden; z-index:8; opacity:0; box-shadow:0 0 0 3px #F05A28, 0 18px 40px rgba(0,0,0,.6); }
+#pip video { display:block; width:150px; height:150px; object-fit:cover; transform:scale(1.18); transform-origin:50% 42%; }
+#pipl { position:absolute; left:838px; top:326px; width:210px; text-align:center; z-index:8; opacity:0; font-family:"IBM Plex Mono", monospace; font-weight:500;
+  font-size:16px; letter-spacing:.12em; text-transform:uppercase; color:#98A2B3; }
+#pipl b { color:#F7F6F3; font-weight:500; }
+
+.pill { position:absolute; z-index:8; display:flex; align-items:center; gap:10px; padding:9px 18px 9px 14px; border-radius:999px; background:rgba(16,24,40,.88);
+  box-shadow:inset 0 0 0 1.5px rgba(240,90,40,.45); font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:19px; letter-spacing:.10em;
+  text-transform:uppercase; color:#F7F6F3; opacity:0; white-space:nowrap; }
+.pill i { width:8px; height:8px; border-radius:50%; background:#F05A28; display:block; }
+
+/* L05 — caixa na palavra */
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:30px; right:30px; top:1448px; text-align:center; opacity:0; white-space:nowrap; }
+.cw { display:inline-block; margin:0 2px; padding:4px 14px 8px; border-radius:14px; font-family:"Inter", sans-serif; font-weight:800; font-size:62px;
+  line-height:1.12; letter-spacing:-.025em; color:#F7F6F3; text-shadow:0 3px 18px rgba(0,0,0,.55); }
+
+#cta { position:absolute; inset:0; z-index:10; pointer-events:none; clip-path:inset(100% 0 0 0); background:rgba(247,246,243,.93); }
+.cta-k { position:absolute; left:0; right:0; top:418px; text-align:center; z-index:11; opacity:0; font-family:"IBM Plex Mono", monospace; font-weight:500;
+  font-size:24px; letter-spacing:.16em; text-transform:uppercase; color:#667085; }
+.cta-h { position:absolute; left:40px; right:40px; top:478px; z-index:11; text-align:center; }
+.cta-h .ln { font-size:94px; color:#101828; line-height:1.04; letter-spacing:-.04em; }
+.cta-s { position:absolute; left:60px; right:60px; top:760px; z-index:11; text-align:center; opacity:0; font-family:"Inter", sans-serif; font-weight:500; font-size:40px; color:#475467; }
+.cta-s b { font-weight:700; color:#101828; }
+#btn { position:absolute; left:280px; top:1150px; width:520px; height:120px; z-index:11; opacity:0; display:flex; align-items:center; justify-content:center; gap:18px; border-radius:999px;
+  background:#F05A28; color:#FFFFFF; font-family:"Inter", sans-serif; font-weight:800; font-size:48px; letter-spacing:-.015em; box-shadow:0 24px 54px rgba(240,90,40,.32); }
+#cursor { position:absolute; z-index:12; width:84px; height:84px; opacity:0; left:0; top:0; }
+.cta-saiba #cmw { display:none; } .cta-comment #btn { display:none; }
+#cmw { position:absolute; left:0; right:0; top:1060px; z-index:11; text-align:center; }
+#cmh { display:inline-flex; align-items:center; gap:20px; opacity:0; font-family:"Inter", sans-serif; font-weight:800; font-size:70px; letter-spacing:-.03em; color:#101828; line-height:1; }
+#cmh b { color:#F05A28; font-weight:800; }
+#cmh svg { width:72px; height:72px; flex:none; }
+#cmf { position:relative; margin:34px auto 0; width:700px; height:96px; border-radius:48px; background:#FFFFFF; box-shadow:0 18px 44px rgba(16,24,40,.12), inset 0 0 0 2px #D0D5DD;
+  opacity:0; display:flex; align-items:center; padding:0 0 0 40px; text-align:left; }
+#cph { font-family:"Inter", sans-serif; font-weight:500; font-size:32px; color:#98A2B3; white-space:nowrap; }
+#ctx { font-family:"Inter", sans-serif; font-weight:800; font-size:44px; letter-spacing:.04em; color:#101828; white-space:nowrap; }
+#ctx span { display:none; }
+#ccar { display:inline-block; width:4px; height:46px; margin-left:4px; background:#F05A28; opacity:0; }
+#csnd { position:absolute; right:14px; top:14px; width:68px; height:68px; border-radius:50%; background:#F05A28; display:flex; align-items:center; justify-content:center; }
+#csnd svg { width:32px; height:32px; }
+#cms { margin-top:26px; opacity:0; font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:25px; letter-spacing:.14em; text-transform:uppercase; color:#667085; }
+#cms svg { width:24px; height:24px; vertical-align:-4px; margin-left:8px; }
+</style>
+</head>
+<body>
+<div id="root" class="cta-{{CTAMODE}}" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="scrim"></div>
+  <div id="pip"><video class="clip" src="assets/apresentador_pip.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="1" muted playsinline></video></div>
+  <div id="pipl"><b>Apresentador</b> · na live</div>
+
+  {{HEADS}}
+
+  <div class="pill" id="pA" style="left:262px;top:1346px"><i></i>Matérias reais · vídeo LONGO_1 do Cortez</div>
+  <div class="pill" id="pB" style="left:250px;top:1346px"><i></i>Telas reais · produtos do usuário</div>
+  <div class="pill" id="pC" style="left:290px;top:1346px"><i></i>Entrega EXEMPLO_2 · editada pelo Cortez</div>
+  <div class="pill" id="pD" style="left:206px;top:1346px"><i></i>Cenas que o Cortez achou · EXEMPLO_3</div>
+
+  <div id="caps">{{CAPS}}</div>
+
+  <div id="cta"></div>
+  <div class="cta-k" id="ck">Você grava · o Cortez edita · você aprova</div>
+  <div class="cta-h"><span class="ln"><span class="in" id="ch1">Pesquisa de verdade.</span></span><span class="ln"><span class="in" id="ch2">Edição de <em>editor.</em></span></span></div>
+  <div class="cta-s" id="cs">Notícias, prints e cenas reais. <b>Sem cara de banco de imagens.</b></div>
+  <div id="btn">Saiba mais <span>→</span></div>
+  <div id="cmw"><div id="cmh"><svg id="cmb" viewBox="0 0 72 72"><path d="M12 14 Q12 8 18 8 L54 8 Q60 8 60 14 L60 42 Q60 48 54 48 L31 48 L18 61 L19 48 L18 48 Q12 48 12 42 Z" fill="#F05A28"/>
+      <circle cx="25" cy="28" r="3.8" fill="#FFFFFF"/><circle cx="36" cy="28" r="3.8" fill="#FFFFFF"/><circle cx="47" cy="28" r="3.8" fill="#FFFFFF"/></svg><span>Comente <b>CORTEZ</b></span></div>
+    <div id="cmf"><span id="cph">Adicione um comentário…</span><span id="ctx"><span id="cl0">C</span><span id="cl1">O</span><span id="cl2">R</span><span id="cl3">T</span><span id="cl4">E</span><span id="cl5">Z</span></span><span id="ccar"></span>
+      <span id="csnd"><svg viewBox="0 0 32 32"><path d="M16 25 L16 7 M8 15 L16 7 L24 15" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+    <div id="cms">aqui nos comentários<svg viewBox="0 0 24 24"><path d="M12 3 L12 20 M5 13 L12 20 L19 13" stroke="#F05A28" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#101828" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1, #ch2',{yPercent:112});
+  gsap.set('#h1 .lab .in, #h1l0 .in, #h1l1 .in',{yPercent:0});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:.32,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.6); });
+    OUT(`${sel} .lab .in`,h.end-.32); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.32+j*.03)); });
+  // PiP do Apresentador (a fala inteira é dele)
+  tl.fromTo('#pip,#pipl',{opacity:0,scale:.8},{opacity:1,scale:1,duration:.45,ease:'power3.out',immediateRender:false},.2);
+  tl.to('#pip,#pipl',{opacity:0,scale:.85,duration:.3,ease:'power2.in'},T.speechEnd-.25);
+  // selos de origem
+  [['#pA',T.noticias+.3,T.ele2-.05],['#pB',T.prints+.35,T.t04-.05],['#pC',.3,T.colocou-.2],['#pD',T.internet-.1,T.t03-.05]].forEach(([s,a,b])=>{
+    tl.fromTo(s,{opacity:0,y:12},{opacity:1,y:0,duration:.35,immediateRender:false},a); tl.to(s,{opacity:0,duration:.2},b); });
+  // legenda L05: o bloco aparece inteiro e a caixa laranja passa de palavra em palavra (o 1º bloco já está no quadro 0)
+  DATA.caps.forEach((g,i)=>{ if(g.s<0.05){ gsap.set(`#cg${i}`,{opacity:1}); if(g.w[0].s<0.05) gsap.set(`#cg${i}w0`,{backgroundColor:'#F05A28',color:'#FFFFFF',textShadow:'none'}); } });
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},g.s); tl.set(`#cg${i}`,{opacity:0},g.e);
+    g.w.forEach((w,j)=>{ tl.set(`#cg${i}w${j}`,{backgroundColor:'#F05A28',color:'#FFFFFF',textShadow:'none'},w.s);
+      tl.set(`#cg${i}w${j}`,{backgroundColor:'rgba(240,90,40,0)',color:'#F7F6F3',textShadow:'0 3px 18px rgba(0,0,0,.55)'},w.e); }); });
+  // CTA escrito (a voz já terminou)
+  tl.fromTo('#cta',{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:.55,ease:'power3.inOut',immediateRender:false},T.cta0-.05);
+  tl.fromTo('#ck',{opacity:0,y:14},{opacity:1,y:0,duration:.5,ease:'power3.out',immediateRender:false},T.cta0+.35);
+  IN('#ch1',T.cta0+.4,.8); IN('#ch2',T.cta0+.58,.8);
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.0);
+  if(DATA.cta==='comment'){
+    tl.fromTo('#cmh',{opacity:0,y:30},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.1);
+    tl.fromTo('#cmf',{opacity:0,y:36},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+1.3);
+    tl.set('#cph',{display:'none'},T.type0-.05);
+    tl.set('#cmf',{boxShadow:'0 18px 44px rgba(16,24,40,.12), inset 0 0 0 3px #F05A28'},T.type0-.05);
+    for(let i=0;i<6;i++) tl.set(`#cl${i}`,{display:'inline'},T.type0+i*.11);
+    for(let k=0;k*.27<T.end-T.type0;k++) tl.set('#ccar',{opacity:k%2?0:1},T.type0-.05+k*.27);
+    tl.fromTo('#cursor',{opacity:0,x:900,y:1380},{opacity:1,x:826,y:1150,duration:.7,ease:'power3.out',immediateRender:false},T.tap-.75);
+    tl.to('#csnd',{scale:.86,duration:.09,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+    tl.to('#ctx',{y:-26,opacity:0,duration:.35,ease:'power2.in'},T.tap+.12);
+    tl.to('#cmb',{scale:1.18,duration:.14,yoyo:true,repeat:1,ease:'power2.out',transformOrigin:'50% 60%'},T.tap+.1);
+    tl.fromTo('#cms',{opacity:0,y:10},{opacity:1,y:0,duration:.45,ease:'power3.out',immediateRender:false},T.tap+.35);
+  } else {
+    tl.fromTo('#btn',{opacity:0,scale:.82},{opacity:1,scale:1,duration:.5,ease:'back.out(1.6)',immediateRender:false},T.cta0+1.25);
+    tl.fromTo('#cursor',{opacity:0,x:760,y:1420},{opacity:1,x:600,y:1222,duration:.75,ease:'power3.out',immediateRender:false},T.tap-.8);
+    tl.to('#btn',{scale:.93,duration:.1,yoyo:true,repeat:1,ease:'power2.out'},T.tap-.02);
+    tl.to('#cursor',{scale:.88,duration:.1,yoyo:true,repeat:1},T.tap-.02);
+  }
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const DATA = window.__DATA, T = DATA.T;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const seg=(t,a,b)=>clamp((t-a)/(b-a),0,1);
+const sm=(a,b,x)=>{ const u=seg(x,a,b); return u*u*(3-2*u); };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const ei=(x)=>Math.pow(clamp(x,0,1),3);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const back=(x)=>{ x=clamp(x,0,1); const c1=1.70158,c3=c1+1; return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2); };
+const lerp=(a,b,u)=>a+(b-a)*u;
+const ORANGE=0xF05A28, INK=0x101828, PAPER=0xF7F6F3, BG=0x0A1120, SCRK=0.97;
+
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.NeutralToneMapping; R.toneMappingExposure=1.0;
+const S=new THREE.Scene(); S.background=new THREE.Color(BG); S.fog=new THREE.Fog(BG,5600,10400);
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity=0.42;
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);              // no plano z=0, 1 unidade = 1 px do quadro
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,10,40000); C.position.set(0,0,D);
+const key=new THREE.DirectionalLight(0xfff4ea,2.2); key.position.set(-1600,2200,2600); S.add(key);
+const fill=new THREE.DirectionalLight(0xbcd0ff,0.55); fill.position.set(1800,300,1400); S.add(fill);
+const rim=new THREE.DirectionalLight(ORANGE,1.6); rim.position.set(1500,900,-1800); S.add(rim);
+S.add(new THREE.AmbientLight(0xffffff,0.16));
+
+const composer=new EffectComposer(R,new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4})); composer.setPixelRatio(1); composer.setSize(1080,1920);
+composer.addPass(new RenderPass(S,C));
+const bloom=new UnrealBloomPass(new THREE.Vector2(1080,1920),0.12,0.4,0.985); composer.addPass(bloom);   // limiar acima do branco das fichas: só o laranja brilha
+const bokeh=new BokehPass(S,C,{focus:D,aperture:0.0000035,maxblur:0.011}); composer.addPass(bokeh);
+composer.addPass(new OutputPass());
+
+function rr(shape,W,H,Rr){ shape.moveTo(-W/2+Rr,-H/2); shape.lineTo(W/2-Rr,-H/2); shape.absarc(W/2-Rr,-H/2+Rr,Rr,-Math.PI/2,0,false); shape.lineTo(W/2,H/2-Rr);
+  shape.absarc(W/2-Rr,H/2-Rr,Rr,0,Math.PI/2,false); shape.lineTo(-W/2+Rr,H/2); shape.absarc(-W/2+Rr,H/2-Rr,Rr,Math.PI/2,Math.PI,false); shape.lineTo(-W/2,-H/2+Rr);
+  shape.absarc(-W/2+Rr,-H/2+Rr,Rr,Math.PI,Math.PI*1.5,false); return shape; }
+function roundMask(w,h,r){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,w,h);
+  g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+function ctex(w,h){ const c=document.createElement('canvas'); c.width=w; c.height=h; const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=8; return {c,g:c.getContext('2d'),t}; }
+const later=[]; const LATER=(f)=>later.push(f);
+
+const SEQ={}; let READY=null;
+function loadImg(src,k){ k=k||0; return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im);
+  im.onerror=()=>{ if(k<4) setTimeout(()=>loadImg(src,k+1).then(res,rej),150*(k+1)); else rej(new Error(src)); }; im.src=k?src+'?r='+k:src; }); }
+function frameIdx(name,t,t0,off){ const s=DATA.seq[name]; return Math.floor(Math.max(0,(t-t0))*s.fps+1e-6+(off||0)) % s.n; }
+function frameOf(name,t,t0,off){ return SEQ[name][frameIdx(name,t,t0,off)]; }
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+
+// ---------- materiais ----------
+const lacquer=new THREE.MeshPhysicalMaterial({color:0x172238,metalness:.25,roughness:.42,clearcoat:.8,clearcoatRoughness:.22});
+const lacquerDark=new THREE.MeshPhysicalMaterial({color:0x111a2c,metalness:.2,roughness:.5,clearcoat:.5,clearcoatRoughness:.3});
+const inner=new THREE.MeshStandardMaterial({color:0x0c1322,roughness:.85,metalness:.05});
+const steel=new THREE.MeshStandardMaterial({color:0x98A2B3,metalness:.85,roughness:.28});
+const brass=new THREE.MeshStandardMaterial({color:ORANGE,metalness:.35,roughness:.3,emissive:ORANGE,emissiveIntensity:.35});
+
+// ---------- 1) parede de gavetas ----------
+const COLS=5, ROWS=7, DW=300, DH=190, GP=16, ZF=-300, DEPTH=380;
+const dpos=(c,r)=>({x:(c-2)*(DW+GP), y:40+(3-r)*(DH+GP)});
+const NAMES=['MATÉRIAS','ENTREVISTAS','DADOS','GRÁFICOS','MAPAS','DOCUMENTOS','TELAS','REFERÊNCIAS','RELATÓRIOS','ESTUDOS','SITES','VÍDEOS','CITAÇÕES',
+  'FONTES','LINHA DO TEMPO','BASTIDORES','ARQUIVO 2025','PESQUISAS','ÁUDIOS','PLANILHAS','DEPOIMENTOS','CASOS','IMAGENS REAIS','MANCHETES','REPORTAGENS',
+  'ANÚNCIOS','TUTORIAIS','INTERFACES','NÚMEROS','LIVES','PODCASTS'];
+const SPECIAL={'1,2':'NOTÍCIAS','3,3':'PRINTS','4,1':'BANCO DE IMAGENS','0,4':'CENAS'};
+const frontGeo=new THREE.ExtrudeGeometry(rr(new THREE.Shape(),DW,DH,10),{depth:22,bevelEnabled:true,bevelThickness:3,bevelSize:2.5,bevelSegments:3,curveSegments:8});
+frontGeo.translate(0,0,-22);
+const boxGeo=new THREE.BoxGeometry(DW-30,DH-34,DEPTH); boxGeo.translate(0,-6,-DEPTH/2-22);
+const handleGeo=new THREE.BoxGeometry(104,14,16);
+const DR=[]; const DRK={};
+let ni=0;
+for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){
+  const p=dpos(c,r); const sp=SPECIAL[c+','+r]; const name=sp||NAMES[(ni++)%NAMES.length];
+  const g=new THREE.Group(); g.position.set(p.x,p.y,ZF); S.add(g);
+  const front=new THREE.Mesh(frontGeo,lacquer); g.add(front);
+  const box=new THREE.Mesh(boxGeo,inner); g.add(box);
+  const h=new THREE.Mesh(handleGeo, sp && sp!=='BANCO DE IMAGENS' ? brass : steel); h.position.set(0,-46,6); g.add(h);
+  const L=ctex(512,128); const lab=new THREE.Mesh(new THREE.PlaneGeometry(176,44),new THREE.MeshStandardMaterial({map:L.t,roughness:.8,metalness:0}));
+  lab.position.set(0,34,2.2); g.add(lab);
+  const code=String.fromCharCode(65+r)+'-'+String(c+1).padStart(2,'0');
+  LATER(()=>{ const q=L.g; q.clearRect(0,0,512,128); q.fillStyle= sp==='BANCO DE IMAGENS' ? '#B8BDC6' : '#ECE9E2'; q.beginPath(); q.roundRect(4,4,504,120,14); q.fill();
+    if(sp && sp!=='BANCO DE IMAGENS'){ q.fillStyle='#F05A28'; q.fillRect(4,4,18,120); }
+    q.fillStyle='#101828'; q.font='500 '+(name.length>12?34:42)+'px "IBM Plex Mono"'; q.textBaseline='middle'; q.letterSpacing='3px'; q.fillText(name,40,62);
+    q.fillStyle='#667085'; q.font='500 24px "IBM Plex Mono"'; q.textAlign='right'; q.letterSpacing='2px'; q.fillText(code,494,100); q.textAlign='left'; L.t.needsUpdate=true; });
+  const d={g,front,box,c,r,x:p.x,y:p.y,name,sp}; DR.push(d); if(sp) DRK[sp]=d; }
+// moldura e fundo do móvel
+const backP=new THREE.Mesh(new THREE.PlaneGeometry(2600,2400),new THREE.MeshStandardMaterial({color:0x070c17,roughness:.95})); backP.position.set(0,40,ZF-DEPTH-60); S.add(backP);
+const gw=COLS*(DW+GP)-GP, gh=ROWS*(DH+GP)-GP;
+[[0,40+gh/2+34,gw+120,48],[0,40-gh/2-34,gw+120,48],[-gw/2-34,40,48,gh+120],[gw/2+34,40,48,gh+120]].forEach(([x,y,w,h])=>{
+  const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,90),lacquerDark); m.position.set(x,y,ZF-40); S.add(m); });
+// pilastras laterais (o arquivo continua fora do quadro)
+[-1,1].forEach(sx=>{ for(let k=1;k<=2;k++){ const m=new THREE.Mesh(new THREE.BoxGeometry(gw,gh+120,90),lacquerDark); m.position.set(sx*(gw+150)*k,40,ZF-60-120*k); S.add(m);
+  for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){ const f=new THREE.Mesh(frontGeo,lacquer); const p=dpos(c,r); f.position.set(sx*(gw+150)*k+p.x,p.y,ZF-14-120*k); S.add(f); } } });
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(9000,9000),new THREE.MeshStandardMaterial({color:0x0b1222,roughness:.35,metalness:.25}));
+floor.rotation.x=-Math.PI/2; floor.position.y=40-gh/2-60; S.add(floor);
+
+function drawerOpen(d,u){ d.g.position.z = ZF + DEPTH*0.92*u; }
+
+// ---------- fichas (papel + imagem + aba) ----------
+const tabTex={};
+function tabT(text){ if(tabTex[text]) return tabTex[text]; const k=ctex(400,80); LATER(()=>{ const q=k.g; q.clearRect(0,0,400,80); q.fillStyle='#F05A28'; q.beginPath(); q.roundRect(0,0,400,80,[16,16,0,0]); q.fill();
+  q.fillStyle='#FFFFFF'; q.font='500 34px "IBM Plex Mono"'; q.textBaseline='middle'; q.letterSpacing='3px'; q.fillText(text,22,44); k.t.needsUpdate=true; }); return (tabTex[text]=k.t); }
+function makeCard(w,h,o){ o=o||{}; const g=new THREE.Group(); const pad=o.pad||14;
+  const paper=new THREE.Mesh(new THREE.BoxGeometry(w+2*pad,h+2*pad,4),new THREE.MeshStandardMaterial({color:o.paper||PAPER,roughness:.85,metalness:0,transparent:true}));
+  paper.position.z=-2.5; g.add(paper);
+  const tx=o.tex||videoTex();
+  const img=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map:tx,toneMapped:false,transparent:true,color:new THREE.Color(SCRK,SCRK,SCRK)})); img.position.z=0.6; g.add(img);
+  let tab=null; if(o.tab){ tab=new THREE.Mesh(new THREE.PlaneGeometry(o.tabW||170,34),new THREE.MeshBasicMaterial({map:tabT(o.tab),toneMapped:false,transparent:true}));
+    tab.position.set(-w/2-pad+(o.tabW||170)/2+10,h/2+pad+16,-1); g.add(tab); }
+  g.userData={tx,paper,img,tab,w,h}; return g; }
+function cardOpacity(cd,a){ cd.visible=a>0.003; cd.userData.paper.material.opacity=a; cd.userData.img.material.opacity=a; if(cd.userData.tab) cd.userData.tab.material.opacity=a;
+  cd.userData.paper.material.depthWrite=a>0.97; }
+
+// gancho: a matéria com o grifo (16:9)
+const HA=makeCard(960,472,{pad:18,tab:'NOTÍCIA',tabW:180}); S.add(HA);
+// notícias, prints, cenas
+const NC=['n1','n2','n3'].map(n=>{ const c=makeCard(640,315,{tab:'NOTÍCIA',tabW:180}); c.userData.seq=n; S.add(c); return c; });
+const PC=[['p1',600,638],['p2',600,694],['p3',600,638]].map(([n,w,h])=>{ const c=makeCard(w,h,{tab:'PRINT REAL',tabW:220}); c.userData.seq=n; S.add(c); return c; });
+const SC=['s1','s2','s3'].map(n=>{ const c=makeCard(480,270,{tab:'CENA',tabW:130}); c.userData.seq=n; S.add(c); return c; });
+// banco de imagens: fichas genéricas (desenhadas, sem vida) + carimbo
+const GC=[0,1,2,3].map(i=>{ const k=ctex(520,360); LATER(()=>{ const q=k.g; q.fillStyle='#BCC1CA'; q.fillRect(0,0,520,360);
+    q.fillStyle='#A7ADB7'; q.beginPath(); q.arc(380-i*40,110,38,0,Math.PI*2); q.fill();
+    q.fillStyle='#98A0AB'; q.beginPath(); q.moveTo(40,300); q.lineTo(190-i*10,140); q.lineTo(300,300); q.closePath(); q.fill();
+    q.fillStyle='#8E96A2'; q.beginPath(); q.moveTo(200,300); q.lineTo(340+i*12,170); q.lineTo(490,300); q.closePath(); q.fill();
+    q.fillStyle='#868E99'; q.font='500 24px "IBM Plex Mono"'; q.letterSpacing='3px'; q.fillText('IMAGEM GENÉRICA · '+(1024+i*311),26,340); k.t.needsUpdate=true; });
+  const c=makeCard(520,360,{tex:k.t,paper:0xD6D9DE,tab:'BANCO DE IMAGENS',tabW:290}); c.userData.img.material.color.setRGB(.9,.9,.9); S.add(c); return c; });
+const STK=ctex(640,200); LATER(()=>{ const q=STK.g; q.clearRect(0,0,640,200); q.strokeStyle='#F05A28'; q.lineWidth=12; q.beginPath(); q.roundRect(10,10,620,180,22); q.stroke();
+  q.fillStyle='#F05A28'; q.font='800 104px "Inter"'; q.textAlign='center'; q.textBaseline='middle'; q.letterSpacing='4px'; q.fillText('GENÉRICO',320,106); STK.t.needsUpdate=true; });
+const stamp=new THREE.Mesh(new THREE.PlaneGeometry(400,125),new THREE.MeshBasicMaterial({map:STK.t,transparent:true,toneMapped:false,depthTest:false})); stamp.renderOrder=8; S.add(stamp);
+const XK=ctex(128,128); LATER(()=>{ const q=XK.g; q.clearRect(0,0,128,128); q.strokeStyle='#F05A28'; q.lineWidth=16; q.lineCap='round';
+  q.beginPath(); q.moveTo(30,30); q.lineTo(98,98); q.moveTo(98,30); q.lineTo(30,98); q.stroke(); XK.t.needsUpdate=true; });
+const xmark=new THREE.Mesh(new THREE.PlaneGeometry(56,56),new THREE.MeshBasicMaterial({map:XK.t,transparent:true,toneMapped:false})); S.add(xmark);
+
+// ---------- 2) a entrega 9:16 (painel de vidro) ----------
+function makePanel(W,H,o){ o=o||{}; const Rr=o.r||16, Dp=o.depth||14, b=o.border||12;
+  const g=new THREE.Group();
+  const body=new THREE.Mesh(new THREE.ExtrudeGeometry(rr(new THREE.Shape(),W+2*b,H+2*b,Rr+b*.6),{depth:Dp,bevelEnabled:true,bevelThickness:3,bevelSize:2.5,bevelSegments:4,curveSegments:18}),
+    new THREE.MeshPhysicalMaterial({color:0x0d1424,metalness:.5,roughness:.3,clearcoat:1,clearcoatRoughness:.16,transparent:true}));
+  body.geometry.translate(0,0,-Dp); g.add(body);
+  const tx=videoTex();
+  const mw=128, mh=Math.max(32,Math.round(128*H/W));
+  const scr=new THREE.Mesh(new THREE.PlaneGeometry(W,H), new THREE.MeshBasicMaterial({map:tx,alphaMap:roundMask(mw,mh,Math.round(Rr*mw/W)),transparent:true,toneMapped:false,color:new THREE.Color(SCRK,SCRK,SCRK)}));
+  scr.position.z=3.2; g.add(scr);
+  const pts=new THREE.Shape(); rr(pts,W+2*b+6,H+2*b+6,Rr+b*.6+3);
+  const line=new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts.getPoints(40)), new THREE.LineBasicMaterial({color:ORANGE,transparent:true,opacity:0,toneMapped:false}));
+  line.position.z=4; g.add(line);
+  g.userData={tx,body,scr,line,W,H}; return g; }
+function setPanelOpacity(p,a){ p.userData.scr.material.opacity=a; p.userData.body.material.opacity=a; p.visible=a>0.003;
+  p.userData.body.material.depthWrite=a>0.97; p.userData.scr.material.depthWrite=a>0.97; }
+const HV=makePanel(540,960,{r:26,border:16,depth:22}); S.add(HV);
+const hvTx={r_e91:HV.userData.tx, e117:videoTex()};
+// chips de "animação pronta" que tentam grudar e caem riscados
+const CHIPS=[['ANIMAÇÃO PRONTA','star'],['EFEITO GENÉRICO','arrow'],['TEMPLATE','smile']].map(([txt,ic],i)=>{ const k=ctex(640,180);
+  LATER(()=>{ const q=k.g; q.clearRect(0,0,640,180); q.fillStyle='#D0D5DD'; q.beginPath(); q.roundRect(6,6,628,168,84); q.fill();
+    q.fillStyle='#98A2B3'; q.strokeStyle='#98A2B3'; q.lineWidth=10; q.lineCap='round'; const cx=92, cy=90;
+    if(ic==='star'){ q.beginPath(); for(let k2=0;k2<10;k2++){ const a=-Math.PI/2+k2*Math.PI/5, rr2=k2%2?20:46; q.lineTo(cx+rr2*Math.cos(a),cy+rr2*Math.sin(a)); } q.closePath(); q.fill(); }
+    if(ic==='arrow'){ q.beginPath(); q.moveTo(cx-38,cy); q.lineTo(cx+34,cy); q.moveTo(cx+10,cy-26); q.lineTo(cx+36,cy); q.lineTo(cx+10,cy+26); q.stroke(); }
+    if(ic==='smile'){ q.beginPath(); q.arc(cx,cy,44,0,Math.PI*2); q.fill(); q.fillStyle='#D0D5DD'; q.beginPath(); q.arc(cx-15,cy-10,7,0,Math.PI*2); q.arc(cx+15,cy-10,7,0,Math.PI*2); q.fill();
+      q.strokeStyle='#D0D5DD'; q.lineWidth=7; q.beginPath(); q.arc(cx,cy+4,22,0.2,Math.PI-0.2); q.stroke(); }
+    q.fillStyle='#667085'; q.font='500 40px "IBM Plex Mono"'; q.textBaseline='middle'; q.letterSpacing='3px'; q.fillText(txt,160,94); k.t.needsUpdate=true; });
+  const g=new THREE.Group(); const m=new THREE.Mesh(new THREE.PlaneGeometry(320,90),new THREE.MeshBasicMaterial({map:k.t,transparent:true,toneMapped:false})); g.add(m);
+  const st=new THREE.Mesh(new THREE.PlaneGeometry(360,9),new THREE.MeshBasicMaterial({color:ORANGE,transparent:true,toneMapped:false})); st.position.z=1; st.rotation.z=-0.1; g.add(st);
+  g.userData={m,st}; S.add(g); return g; });
+
+// ---------- 3) resultados: 15 entregas sobem das gavetas e formam um mural ----------
+const RES_N=['t01','t03','t04','t05','t06','t07','t08','t02','t09','t10','t11','t12','t13','t14','t15'];   // o centro (índice 7) é o EXEMPLO_4
+const RES_FROM=[[0,0],[2,0],[4,0],[1,1],[3,1],[0,2],[2,2],[2,3],[4,2],[1,4],[3,4],[0,5],[2,5],[4,5],[1,6]];
+const RTAG=ctex(440,64); LATER(()=>{ const q=RTAG.g; q.clearRect(0,0,440,64); q.fillStyle='#F05A28'; q.beginPath(); q.roundRect(0,0,440,64,32); q.fill();
+  q.fillStyle='#FFFFFF'; q.font='500 28px "IBM Plex Mono"'; q.textAlign='center'; q.textBaseline='middle'; q.letterSpacing='3px'; q.fillText('EDITADO PELO CORTEZ',220,34); RTAG.t.needsUpdate=true; });
+const RES=RES_N.map((n,i)=>{ const p=makePanel(216,384,{r:12,border:9,depth:10}); p.userData.seq=n; p.userData.i=i;
+  const tg=new THREE.Mesh(new THREE.PlaneGeometry(176,26),new THREE.MeshBasicMaterial({map:RTAG.t,transparent:true,toneMapped:false,depthWrite:false})); tg.position.set(0,384/2+9+24,6); p.add(tg); p.userData.tag=tg;
+  S.add(p); return p; });
+
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.ready];
+  Object.entries(DATA.seq).forEach(([name,s])=>{ SEQ[name]=new Array(s.n); for(let i=0;i<s.n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  READY=Promise.all(jobs).then(()=>{ later.forEach(f=>f()); });
+  return READY; }
+
+// ---------- câmera por chaves (posição, alvo) ----------
+const K=[ // t, cam x,y,z(relativo a D), alvo x,y,z
+  [0.00,   40,60,330,   60,40,0],
+  [T.aqui1-0.05, -110,40,230, 60,48,0],
+  [T.pesquisas-0.15, -110,10,560, -150,-10,-200],
+  [T.cenas+0.05, -90,20,540, -120,0,-180],
+  [T.internet+0.25, -40,60,440, 80,60,-60],
+  [T.noticias-0.25, -190,230,520, -230,236,-250],
+  [T.ele2+0.05, -170,226,470, -224,234,-250],
+  [T.prints-0.1, 250,70,520, 280,64,-250],
+  [T.t04+0.05, 236,66,470, 276,62,-250],
+  [T.imagens1-0.25, 330,320,420, 380,330,-100],
+  [T.imagens2+0.05, 360,340,520, 440,360,-180],
+  [T.ja+0.05, 120,160,1250, 120,100,-300],
+  [T.resultados+0.25, 0,140,1600, 0,60,-260],
+  [T.cortez-0.35, 0,74,300, 0,64,0],
+  [T.saiu, 40,74,230, 0,64,0],
+  [T.prof+0.15, 0,64,-1120, 0,64,0],
+];
+function camAt(t){ let i=0; while(i<K.length-1 && t>=K[i+1][0]) i++;
+  const a=K[i], b=K[Math.min(i+1,K.length-1)]; const u= b===a?1:eio(seg(t,a[0],b[0]));
+  // pequenas pausas: cada chave segura até a próxima começar a se mover (movimento nos ~0,7 s antes de cada chave)
+  return {cx:lerp(a[1],b[1],u), cy:lerp(a[2],b[2],u), cz:D+lerp(a[3],b[3],u), tx:lerp(a[4],b[4],u), ty:lerp(a[5],b[5],u), tz:lerp(a[6],b[6],u)}; }
+
+const tmp=new THREE.Vector3();
+function bez(p0,p1,p2,u){ const a=(1-u)*(1-u), b=2*(1-u)*u, c=u*u; return new THREE.Vector3(a*p0.x+b*p1.x+c*p2.x, a*p0.y+b*p1.y+c*p2.y, a*p0.z+b*p1.z+c*p2.z); }
+function drawerMouth(d,open){ return new THREE.Vector3(d.x, d.y-10, ZF+DEPTH*0.92*open-150); }
+
+function render(t){
+  const CE=T.speechEnd, CTA=T.cta0, tt=Math.min(t,CE+0.4);
+  const ca=camAt(tt);
+  C.position.set(ca.cx+14*Math.sin(t*0.37), ca.cy+8*Math.sin(t*0.29), ca.cz); C.lookAt(ca.tx,ca.ty,ca.tz);
+  C.setViewOffset(1080,1920,0,96,1080,1920);              // a cena sobe 96 px: fica entre o título e a legenda
+  let focusD=Math.hypot(ca.cx-ca.tx,ca.cy-ca.ty,ca.cz-ca.tz);
+
+  // ---------- gavetas ----------
+  const N=DRK['NOTÍCIAS'], P=DRK['PRINTS'], B=DRK['BANCO DE IMAGENS'], CN=DRK['CENAS'];
+  const oN=eo(seg(t,T.ele1+0.1,T.ele1+0.65))*(1-ei(seg(t,T.ele2+0.15,T.ele2+0.6)));
+  const oP=eo(seg(t,T.ele2+0.2,T.ele2+0.75))*(1-ei(seg(t,T.t04+0.1,T.t04+0.55)));
+  const oB=eo(seg(t,T.t04+0.25,T.t04+1.0))*(1-ei(seg(t,T.imagens2-0.05,T.imagens2+0.12)));
+  const oC=eo(seg(t,T.aqui2+0.05,T.aqui2+0.6))*(1-ei(seg(t,T.t03+0.05,T.t03+0.5)));
+  const waveT=T.ja+0.05;
+  DR.forEach(d=>{ let o=0;
+    if(d===N) o=oN; else if(d===P) o=oP; else if(d===B) o=oB; else if(d===CN) o=oC;
+    const dist=Math.hypot(d.c-2,(d.r-3)*0.8);
+    const wv=eo(seg(t,waveT+dist*0.11,waveT+dist*0.11+0.55));      // resultados: todas abrem em onda a partir do centro
+    o=Math.max(o,wv*0.55);
+    drawerOpen(d,o); });
+  // ✕ na etiqueta do banco depois que a gaveta bate
+  const xa=sm(T.imagens2+0.1,T.imagens2+0.3,t)*(1-sm(T.ja+0.1,T.ja+0.5,t));
+  xmark.visible=xa>0.01; if(xmark.visible){ xmark.position.set(B.x+70,B.y+34,B.g.position.z+4); xmark.material.opacity=xa; xmark.scale.setScalar(lerp(3.2,2,eo(seg(t,T.imagens2+0.1,T.imagens2+0.3)))); }
+
+  HA.visible=false;   // V2: o gancho com o print da matéria saiu (o vídeo de exemplo tocava com som por baixo da fala)
+
+  // ---------- notícias: 3 matérias sobem em leque ----------
+  const FAN_N=[[-520,430,40,0.05,0.2],[-200,250,210,-0.02,0.04],[120,70,60,-0.05,-0.16]];
+  NC.forEach((cd,k)=>{ const up=eo(seg(t,T.ele1+0.2+k*0.14,T.ele1+1.0+k*0.14)), dn=ei(seg(t,T.ele2+0.0+k*0.05,T.ele2+0.45+k*0.05));
+    const on=up>0.001 && dn<0.999; cd.visible=on; if(!on){ return; }
+    const mouth=drawerMouth(N,oN); const f=FAN_N[k];
+    const tgt=new THREE.Vector3(f[0],f[1],f[2]+8*Math.sin(t*1.1+k));
+    const u=up*(1-dn);
+    const pos=bez(mouth,new THREE.Vector3(mouth.x,mouth.y+380,mouth.z+60),tgt,u);
+    cd.position.copy(pos); cd.rotation.set(lerp(-1.3,0,u), f[4]*u, f[3]*u); cd.scale.setScalar(lerp(0.35,0.95,u));
+    setFrame(cd.userData.tx, frameOf(cd.userData.seq,t,T.noticias,k*7)); cardOpacity(cd, sm(0,0.25,u)); });
+
+  // ---------- prints reais ----------
+  const FAN_P=[[-10,200,60,0.04,0.24,0.8],[300,100,250,-0.01,0.0,0.95],[610,200,60,-0.04,-0.24,0.8]];
+  PC.forEach((cd,k)=>{ const up=eo(seg(t,T.prints-0.2+k*0.12,T.prints+0.55+k*0.12)), dn=ei(seg(t,T.t04+0.0+k*0.05,T.t04+0.45+k*0.05));
+    const on=up>0.001 && dn<0.999; cd.visible=on; if(!on) return;
+    const mouth=drawerMouth(P,oP); const f=FAN_P[k];
+    const tgt=new THREE.Vector3(f[0],f[1]+8*Math.sin(t*1.2+k),f[2]); const u=up*(1-dn);
+    const pos=bez(mouth,new THREE.Vector3(mouth.x,mouth.y+420,mouth.z+60),tgt,u);
+    cd.position.copy(pos); cd.rotation.set(lerp(-1.3,0,u), f[4]*u, f[3]*u); cd.scale.setScalar(lerp(0.25,f[5],u));
+    setFrame(cd.userData.tx, frameOf(cd.userData.seq,t,T.prints,k*5)); cardOpacity(cd, sm(0,0.25,u)); });
+
+  // ---------- banco de imagens: genéricas sobem sem vida, levam o carimbo e voltam; a gaveta bate ----------
+  GC.forEach((cd,k)=>{ const up=eo(seg(t,T.imagens1-0.35+k*0.1,T.imagens1+0.5+k*0.1)), dn=ei(seg(t,T.banco-0.15+k*0.04,T.imagens2-0.02));
+    const on=up>0.001 && dn<0.999; cd.visible=on; if(!on) return;
+    const mouth=drawerMouth(B,oB); const u=up*(1-dn);
+    const tgt=new THREE.Vector3(420-k*44, 360-k*30, 60+k*46);
+    const pos=bez(mouth,new THREE.Vector3(mouth.x,mouth.y+300,mouth.z+40),tgt,u);
+    cd.position.copy(pos); cd.rotation.set(lerp(-1.3,0,u), -0.08, (k-1.5)*0.04*u); cd.scale.setScalar(lerp(0.3,0.98,u));
+    cardOpacity(cd, sm(0,0.25,u)); });
+  { const sa=sm(T.genericas-0.02,T.genericas+0.12,t)*(1-sm(T.banco-0.15,T.banco+0.1,t));
+    stamp.visible=sa>0.01;
+    if(stamp.visible){ const front=GC[3]; stamp.position.set(front.position.x+10,front.position.y+10,front.position.z+30);
+      const s=lerp(1.7,1.0,eo(seg(t,T.genericas-0.02,T.genericas+0.12))); stamp.scale.setScalar(s*1.25); stamp.rotation.set(0,-0.1,-0.14); stamp.material.opacity=sa; } }
+
+  // ---------- a entrega 9:16 ("repara") e depois o EXEMPLO_3 ----------
+  { const rise=eo(seg(t,-0.35,0.9)), flip=eio(seg(t,T.aqui1,T.aqui2+0.25)), toR=eio(seg(t,T.aqui1,T.pesquisas)), away=eio(seg(t,T.t03-0.05,T.t03+0.75));
+    HV.visible = t<T.t03+0.8;
+    if(HV.visible){
+      const x=lerp(110,190,toR), y=lerp(-120,24,rise)+lerp(0,40,toR)+6*Math.sin(t*0.9), z=lerp(lerp(-260,40,rise),20,toR) - 900*away;
+      HV.position.set(x,y,z); HV.rotation.set(0.02*(1-rise), Math.PI*2*flip + 0.06*Math.sin(t*0.5)*(1-toR) + lerp(0,-0.12,toR)*(1-away), 0);
+      HV.scale.setScalar(lerp(1.08,0.96,toR));
+      const useE = flip>0.5;
+      const tx=hvTx[useE?'e117':'r_e91']; if(HV.userData.scr.material.map!==tx){ HV.userData.scr.material.map=tx; HV.userData.scr.material.needsUpdate=true; }
+      if(useE){ setFrame(tx, frameOf('e117', t<T.internet ? T.internet : t, T.internet)); const lit=sm(T.cenas+0.4,T.internet,t);
+        HV.userData.scr.material.color.setRGB(lerp(.32,SCRK,lit),lerp(.32,SCRK,lit),lerp(.34,SCRK,lit)); }
+      else { setFrame(tx, frameOf('r_e91',t,0)); HV.userData.scr.material.color.setRGB(SCRK,SCRK,SCRK); }
+      setPanelOpacity(HV, 1-away);
+      HV.userData.line.material.opacity = 0.75*sm(T.cenas+0.35,T.internet,t)*(1-away);
+      if(t<T.aqui1) focusD=Math.hypot(C.position.x-HV.position.x,C.position.y-HV.position.y,C.position.z-HV.position.z);
+    } }
+  // chips de animação pronta: aparecem na palavra "animaçõezinhas", são riscados em "aleatórias" e caem
+  const CP=[[-420,430,150,0.08],[440,170,170,-0.06],[-410,-230,150,0.05]];
+  CHIPS.forEach((g,k)=>{ const a0=T.animac+k*0.17, s0=T.aleat+k*0.13, f0=T.aleat+0.35+k*0.13;
+    const pop=back(seg(t,a0,a0+0.35)), strike=eo(seg(t,s0,s0+0.18)), fall=ei(seg(t,f0,f0+0.75));
+    g.visible = t>a0 && fall<1; if(!g.visible) return;
+    const p=CP[k];
+    g.position.set(p[0]+18*Math.sin(t*7+k)*(1-strike), p[1]+14*Math.sin(t*5.3+k*2)*(1-strike) - 1300*fall, p[2]);
+    g.rotation.set(0,0,p[3]+0.16*Math.sin(t*6.1+k)*(1-strike) + 1.4*fall*(k%2?1:-1));
+    g.scale.setScalar(Math.max(0.001,1.3*pop)); g.userData.st.scale.x=Math.max(0.001,strike); g.userData.st.material.opacity=strike;
+    g.userData.m.material.opacity=1-0.4*strike; });
+
+  // ---------- cenas: sobem da gaveta e entram na tela do EXEMPLO_3 ----------
+  SC.forEach((cd,k)=>{ const up=eo(seg(t,T.pesquisas-0.15+k*0.12,T.pesquisas+0.5+k*0.12)), go=eio(seg(t,T.cenas+0.05+k*0.12,T.cenas+0.65+k*0.12));
+    const on=up>0.001 && go<0.999; cd.visible=on; if(!on) return;
+    const mouth=drawerMouth(CN,oC);
+    const col=new THREE.Vector3(-330, 330-k*300, 150+k*20);
+    let pos=bez(mouth,new THREE.Vector3(mouth.x,mouth.y+360,mouth.z+60),col,up);
+    const into=new THREE.Vector3(HV.position.x, HV.position.y+lerp(200,-200,k/2), HV.position.z+20);
+    pos=pos.lerp(into,go);
+    cd.position.copy(pos); cd.rotation.set(lerp(-1.3,0,up), lerp(0.14,-0.12,go), 0); cd.scale.setScalar(lerp(0.3,0.9,up)*lerp(1,0.35,go));
+    setFrame(cd.userData.tx, frameOf(cd.userData.seq,t,T.pesquisas,k*4)); cardOpacity(cd, sm(0,0.25,up)*(1-sm(0.75,1,go))); });
+
+  // ---------- resultados ----------
+  const center=7;
+  RES.forEach((p,i)=>{ const from=RES_FROM[i]; const d=DR[from[1]*COLS+from[0]];
+    const t0=waveT+0.12+0.045*i; const up=eo(seg(t,t0,t0+0.85));
+    const on=t>t0; p.visible=on; if(!on){ p.userData.tag.visible=false; return; }
+    const c=i%5, r=Math.floor(i/5); const gx=(c-2)*212, gy=64+(1-r)*350, gz=-0.00022*gx*gx;
+    const mouth=new THREE.Vector3(d.x,d.y,ZF+DEPTH*0.5);
+    let pos=bez(mouth,new THREE.Vector3(d.x*0.8,d.y+260,mouth.z+300),new THREE.Vector3(gx,gy,gz),up);
+    let sc=lerp(0.4,0.86,up);
+    const push=eio(seg(t,T.saiu-0.1,T.prof+0.1));
+    if(i===center){ pos.z+=520*push; sc*=lerp(1,1.32,push); }
+    else { pos.z-=120*push; }
+    p.position.copy(pos); p.rotation.set(lerp(-0.9,0,up), -gx/2400*up, 0); p.scale.setScalar(sc);
+    setPanelOpacity(p, sm(0,0.2,up)*(i===center?1:lerp(1,0.72,push)));
+    setFrame(p.userData.tx, frameOf(p.userData.seq,Math.min(t,CTA),t0,i*3));
+    // varredura laranja no "Cortez": contorno acende e a etiqueta aparece
+    const sx=lerp(-700,700,seg(t,T.cortez-0.1,T.cortez+0.7)); const hit=(t>T.cortez-0.1 && sx>gx-100) ? eo(seg(t,T.cortez-0.1+((gx+700)/1400)*0.8,T.cortez+0.25+((gx+700)/1400)*0.8)) : 0;
+    p.userData.line.material.opacity=(0.85*hit*(1-0.6*push) + (i===center?0.9*push:0))*p.userData.scr.material.opacity;
+    p.userData.tag.visible=hit>0.01 && push<0.6; p.userData.tag.material.opacity=hit*(1-sm(0.1,0.6,push));
+    if(i===center && t>T.saiu-0.1) focusD=Math.hypot(C.position.x-pos.x,C.position.y-pos.y,C.position.z-pos.z); });
+
+  // ---------- luz, bloom, foco ----------
+  rim.intensity = 1.6 + 1.2*Math.exp(-Math.pow((t-T.cortez)/0.4,2));
+  bloom.strength = 0.12 + 0.08*Math.exp(-Math.pow((t-T.cortez)/0.35,2)) + 0.06*Math.exp(-Math.pow((t-T.genericas)/0.15,2));
+  bokeh.uniforms.focus.value = focusD;
+  bokeh.uniforms.aperture.value = (t>T.saiu) ? 0.0000042 : 0.0000032;
+  composer.render();
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+window.__mod=true;
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!READY){ e.detail.waitUntil(prepare().then(()=>render(t))); } else e.detail.waitUntil(READY.then(()=>render(t))); });
+</script>
+</body>
+</html>

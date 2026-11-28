@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F42",
+  "format_uid": "official.aa963f0abedc46c49e98fab476c78794",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F42/tunel-da-pasta/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Explicação de serviço em 9:16 guiada por narração. Abre num close de uma pasta 3D de entrada; o material bruto real (cinza, granulado) cai nela e o resultado sobe de dentro da pasta de saída. No \"meio do caminho\", a câmera mergulha num tubo e percorre um túnel escuro com portões: cada etapa narrada transforma o clipe na frente da câmera (envelope ruidoso vira limpo, silêncios e erros saem, cenas encaixam, legenda, música e animação entram). Um painel genérico de programa de edição (sem marca) tomba e some na frase sobre não precisar de programa. O resultado sai grande pela pasta de saída. Cartão final com \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Definir pasta de entrada e de saída, o material bruto real e o resultado, e um portão do túnel por etapa narrada.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/tunel-da-pasta com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "O painel de programa de edição deve ser genérico, sem logotipo ou interface reconhecível de terceiros. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/reference.mp4",
+      "sha256": "183f555453144cd426a7b2e557e9e58e66df70cf1069c1b7289659bdaaa06646"
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/hook.jpg",
+      "sha256": "2fcbf59eedc687b2d1f5296f6e46ac361efc0c3db40019ef66008e30238dde30"
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/drop.jpg",
+      "sha256": "75d0236a902492d05da385b81bbd9c425ae8e6fd78767becb552c846d5f5788d"
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/appear.jpg",
+      "sha256": "7c943bd8f5828653b9e69ae4dd67abb43b9872204040e0fe549cd76097b01626"
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/tunnel.jpg",
+      "sha256": "6ea26507390a14ea4e837181294f78ad0ca03576fc6272066036056dcc94387e"
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/no-timeline.jpg",
+      "sha256": "1b6ea7454ecca104b729863e11763a85ac1b4b02a6f0849ba1db4ed90828e3a8"
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/cta.jpg",
+      "sha256": "5476d97263baaece079af07dfb1fd2187e167a88126e51f4c7d3b5b7a259f4cc"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/hook.jpg",
+      "sha256": "2fcbf59eedc687b2d1f5296f6e46ac361efc0c3db40019ef66008e30238dde30",
+      "at_seconds": 0.8,
+      "caption": "Gancho: close na pasta de entrada 3D com a frase de abertura."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/drop.jpg",
+      "sha256": "75d0236a902492d05da385b81bbd9c425ae8e6fd78767becb552c846d5f5788d",
+      "at_seconds": 3.5,
+      "caption": "O material bruto real cai na pasta de entrada."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/appear.jpg",
+      "sha256": "7c943bd8f5828653b9e69ae4dd67abb43b9872204040e0fe549cd76097b01626",
+      "at_seconds": 6.0,
+      "caption": "O resultado sobe de dentro da pasta de saída."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/tunnel.jpg",
+      "sha256": "6ea26507390a14ea4e837181294f78ad0ca03576fc6272066036056dcc94387e",
+      "at_seconds": 10.5,
+      "caption": "Dentro do túnel: o clipe passa por um portão e a etapa narrada acontece."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/no-timeline.jpg",
+      "sha256": "1b6ea7454ecca104b729863e11763a85ac1b4b02a6f0849ba1db4ed90828e3a8",
+      "at_seconds": 16.0,
+      "caption": "Um painel genérico de programa de edição tomba e some."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/cta.jpg",
+      "sha256": "5476d97263baaece079af07dfb1fd2187e167a88126e51f4c7d3b5b7a259f4cc",
+      "at_seconds": 22.9,
+      "caption": "Cartão final: \"Joga o bruto. Pega pronto.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/tunel-da-pasta",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E138 V1",
+    "original_filename": "E138 V1 - IA 7 Eu moro numa pasta (previa).mp4",
+    "original_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9",
+    "duration_s": 24.13,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

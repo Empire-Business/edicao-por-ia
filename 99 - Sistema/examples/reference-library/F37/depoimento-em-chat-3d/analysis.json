@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F37",
+  "format_uid": "official.012adc4cdd2f4a23a440a64499eaa76c",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F37/depoimento-em-chat-3d/reference.mp4",
+  "mechanism_details": {
+    "inputs": "O áudio ou mensagem real de um cliente (por exemplo, um áudio de WhatsApp tocado numa live) e trechos de live/entrevista com ele, mais as provas do próprio usuário; vídeos publicados pelo cliente só com rótulo honesto. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Depoimento em 9:16 montado como conversa. Um celular de vidro 3D (material físico com transmissão) flutua num fundo escuro; o áudio real do cliente aparece como bolhas de áudio com a onda viva desenhada pelo envelope de verdade e uma fita 3D que se mexe com a voz. Números ditos (\"2 dias\", \"100%\") giram num placar de palhetas; a frase-chave salta da tela em 3D com um círculo de vídeo da pessoa. Quando a fala cita resultados, a câmera mergulha pela tela (render target) até as provas — leque de estilos, vídeo longo virando cortes — e volta pelo próprio celular. Vídeos publicados pelo cliente entram rotulados como dele. Cartão final escrito com \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Separar o áudio real do cliente em frases inteiras e marcar as palavras dos números (placar) e da frase-chave; a conversa na tela é uma encenação rotulada.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/depoimento-em-chat-3d com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não inventar mensagens: as bolhas são o áudio real dividido. Vídeo publicado pelo cliente sempre com o rótulo dele, sem dizer quem editou se isso não for confirmado. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/reference.mp4",
+      "sha256": "74b09b70814529f97ba9f7568925d52127a280ed90ec1a0faf5917e34948f92a"
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/hook.jpg",
+      "sha256": "97a3fa39b59b2d00c63b0101cf0c5bf7f92f973b0aba7e089fb2fa6b0c037d43"
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/key-phrase.jpg",
+      "sha256": "c8558194db79266291d22f8c2e45601ed818def43d609e30f5308e6a193ab838"
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/voice-note.jpg",
+      "sha256": "035a35e412fe1885ed44847d10bc3c1c52bb046d18995cf3afb4be892db8d4e1"
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/styles.jpg",
+      "sha256": "7c905744f775c51cb275c033c62414a9d49631ef5917b287017853b675ab4be1"
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/client-video.jpg",
+      "sha256": "e39557c03efbda92ecefc21811535266f274d2bda15058d9534110269c5ff86b"
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/cta.jpg",
+      "sha256": "b4a82621d414af959b1c1177e9102504beaf9f916b918da945a74b07b811a1be"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/hook.jpg",
+      "sha256": "97a3fa39b59b2d00c63b0101cf0c5bf7f92f973b0aba7e089fb2fa6b0c037d43",
+      "at_seconds": 0.6,
+      "caption": "Gancho: bolha de áudio real do cliente com onda viva saindo do celular de vidro 3D."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/key-phrase.jpg",
+      "sha256": "c8558194db79266291d22f8c2e45601ed818def43d609e30f5308e6a193ab838",
+      "at_seconds": 7.0,
+      "caption": "A frase-chave (\"isso daqui é sinistro\") em destaque, com o círculo de vídeo da pessoa."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/voice-note.jpg",
+      "sha256": "035a35e412fe1885ed44847d10bc3c1c52bb046d18995cf3afb4be892db8d4e1",
+      "at_seconds": 9.5,
+      "caption": "Outra bolha de áudio com a fita de onda 3D que acompanha a voz."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/styles.jpg",
+      "sha256": "7c905744f775c51cb275c033c62414a9d49631ef5917b287017853b675ab4be1",
+      "at_seconds": 13.5,
+      "caption": "Mergulho pela tela: leque de vídeos em estilos diferentes, rotulados."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/client-video.jpg",
+      "sha256": "e39557c03efbda92ecefc21811535266f274d2bda15058d9534110269c5ff86b",
+      "at_seconds": 24.5,
+      "caption": "Vídeo publicado pelo próprio cliente, com rótulo do perfil, e o placar indo a 100%."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/cta.jpg",
+      "sha256": "b4a82621d414af959b1c1177e9102504beaf9f916b918da945a74b07b811a1be",
+      "at_seconds": 31.9,
+      "caption": "Cartão final: promessa, botão \"Saiba mais\" e o celular com a conversa."
+    }
+  ],
+  "template": "motion/templates/depoimento-em-chat-3d",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E120 V2",
+    "original_filename": "E120 V2 - Corte 3 Isso daqui e sinistro (previa).mp4",
+    "original_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468",
+    "duration_s": 33.1,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

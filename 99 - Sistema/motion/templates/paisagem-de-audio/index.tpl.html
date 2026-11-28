@@ -1,0 +1,410 @@
+<!-- MODELO F38 Paisagem de Áudio: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · "O áudio do cliente" (F22 · ID03)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID03 Azul — fundo #0C1118 · texto #F2F6FC · azul #4A92E6 · superfície #172333 · apoio #9AA8B8 · Inter + IBM Plex Mono.
+   F22 Corte de Live 3D. O áudio de WhatsApp real do Convidado é a estrela: vira uma paisagem 3D de barras (o envelope real da voz) sobre um
+   piso espelhado; a luz percorre as barras no ritmo do áudio. Prova = vídeos do próprio usuário editados pelo Cortez, rotulados.
+   three.js r186 (ESM) + EffectComposer (Render, UnrealBloom suave, Bokeh, Output) + Reflector; tudo em função do tempo do quadro. */
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin-ext.woff2") format("woff2"); font-weight:400; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin.woff2") format("woff2"); font-weight:600; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin-ext.woff2") format("woff2"); font-weight:600; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin-ext.woff2") format("woff2"); font-weight:800; unicode-range:U+0100-024F; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; background:#0C1118; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#0C1118; font-family:"Inter", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#scrim { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(12,17,24,.94) 0%, rgba(12,17,24,.62) 17%, rgba(12,17,24,0) 27%, rgba(12,17,24,0) 58%, rgba(12,17,24,.72) 68%, rgba(12,17,24,.94) 100%); }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.06; mix-blend-mode:overlay; }
+
+.hd { position:absolute; left:72px; right:72px; top:160px; z-index:6; }
+.lab { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:24px; letter-spacing:.14em; text-transform:uppercase; color:#4A92E6; overflow:hidden; height:34px; }
+.lab .in { display:inline-flex; align-items:center; gap:14px; }
+.lab i { width:9px; height:9px; border-radius:50%; background:#4A92E6; display:block; flex:none; }
+.ttl { margin-top:12px; }
+.ln { display:block; overflow:hidden; padding:0 0 .1em; font-family:"Inter", sans-serif; font-weight:800; font-size:78px; line-height:1.02; letter-spacing:-.035em; color:#F2F6FC; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:normal; color:#4A92E6; }
+
+/* cartão de quem fala (Convidado: foto + áudio real com progresso; Apresentador: webcam da live) */
+.who { position:absolute; left:50%; top:1206px; z-index:8; height:104px; display:flex; align-items:center; gap:22px; padding:0 34px 0 12px; border-radius:999px;
+  background:rgba(23,35,51,.86); box-shadow:0 18px 50px rgba(0,0,0,.5), inset 0 0 0 1px rgba(154,168,184,.18); opacity:0; white-space:nowrap; }
+.who .av { width:80px; height:80px; border-radius:50%; overflow:hidden; flex:none; box-shadow:0 0 0 3px #4A92E6; background:#172333; }
+.who .av img, .who .av video { display:block; width:80px; height:80px; object-fit:cover; }
+.who .tx b { display:block; font-family:"Inter", sans-serif; font-weight:800; font-size:34px; line-height:1.05; color:#F2F6FC; letter-spacing:-.01em; }
+.who .tx span { display:block; margin-top:6px; font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:17px; letter-spacing:.12em; text-transform:uppercase; color:#9AA8B8; }
+#wj { width:620px; margin-left:-310px; }
+#wj .tx { flex:1; }
+#wj .row { display:flex; align-items:center; gap:14px; margin-top:10px; }
+#wj .trk { position:relative; flex:1; height:6px; border-radius:3px; background:rgba(154,168,184,.28); overflow:hidden; }
+#wj .fill { position:absolute; left:0; top:0; height:6px; width:100%; background:#4A92E6; transform-origin:0 50%; transform:scaleX(0); }
+#wj .tm { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:18px; color:#9AA8B8; letter-spacing:.04em; }
+#wj .mic { width:26px; height:26px; flex:none; }
+#wb1, #wb2 { width:480px; margin-left:-240px; }
+
+.pill { position:absolute; z-index:8; display:flex; align-items:center; gap:10px; padding:9px 16px 9px 14px; border-radius:999px; background:rgba(12,17,24,.84);
+  font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:18px; letter-spacing:.12em; text-transform:uppercase; color:#F2F6FC; opacity:0; white-space:nowrap; }
+.pill i { width:8px; height:8px; border-radius:50%; background:#4A92E6; display:block; }
+
+/* L06 — frase que se constrói: as palavras aparecem quando são ditas (posição reservada) e ficam até a troca do bloco */
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:60px; right:60px; top:1352px; text-align:center; opacity:0; }
+.cap .cl { display:block; white-space:nowrap; font-family:"Inter", sans-serif; font-weight:700; font-size:56px; line-height:1.2; letter-spacing:-.02em; color:#F2F6FC;
+  text-shadow:0 3px 18px rgba(0,0,0,.85); }
+.cw { display:inline-block; opacity:0; }
+
+.cta-h { position:absolute; left:50px; right:50px; top:178px; z-index:10; text-align:center; }
+.cta-h .ln { font-size:88px; text-align:center; }
+.cta-s { position:absolute; left:60px; right:60px; top:404px; z-index:10; text-align:center; opacity:0; font-family:"Inter", sans-serif; font-weight:400; font-size:38px; color:#F2F6FC; }
+.cta-s b { font-weight:600; color:#4A92E6; }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }{{CTA_CSS}}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="scrim"></div>
+
+  {{HEADS}}
+
+  <div class="who" id="wj"><div class="av"><img src="assets/convidado_still.jpg" /></div>
+    <div class="tx"><b>Convidado <span style="display:inline;margin:0 0 0 8px;font-size:17px;color:#4A92E6">· áudio real</span></b>
+      <div class="row"><svg class="mic" viewBox="0 0 26 26"><rect x="9" y="3" width="8" height="13" rx="4" fill="#4A92E6"/><path d="M5.5 12.5a7.5 7.5 0 0 0 15 0M13 20v3.5" fill="none" stroke="#4A92E6" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <div class="trk"><div class="fill" id="jfill"></div></div><div class="tm" id="jtm">0:00</div></div>
+      <span>Cliente do Cortez · WhatsApp</span></div></div>
+  <div class="who" id="wb1"><div class="av"><video class="clip" src="assets/apresentador_intro.mp4" data-start="{{B1S}}" data-duration="{{B1D}}" data-track-index="1" muted playsinline></video></div>
+    <div class="tx"><b>Apresentador</b><span>Equipe do Cortez · na live</span></div></div>
+  <div class="who" id="wb2"><div class="av"><video class="clip" src="assets/apresentador_after.mp4" data-start="{{B2S}}" data-duration="{{B2D}}" data-track-index="2" muted playsinline></video></div>
+    <div class="tx"><b>Apresentador</b><span>Equipe do Cortez · na live</span></div></div>
+
+  <div class="pill" id="pA" style="left:{{PAX}}px;top:1130px"><i></i>Editados pelo Cortez · 4 identidades visuais</div>
+  <div class="pill" id="pB" style="left:{{PBX}}px;top:1130px"><i></i>Exemplo · 1 vídeo longo → vários cortes · Cortez</div>
+  <div class="pill" id="pC" style="left:{{PCX}}px;top:1130px"><i></i>Vídeos editados pelo Cortez</div>
+
+  <div id="caps">{{CAPS}}</div>
+
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Edição profissional</span></span><span class="ln"><span class="in" id="ch2"><em>com IA.</em></span></span></div>
+  <div class="cta-s" id="cs">Você grava. <b>O Cortez edita.</b> Você aprova.</div>
+  {{CTA_HTML}}
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#F2F6FC" stroke="#0C1118" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1, #ch2',{yPercent:112});
+  gsap.set('#h0 .lab .in, #h0l0 .in, #h0l1 .in',{yPercent:0});
+  gsap.set('#wj',{opacity:1});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:.32,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.7); });
+    if(h.end!==null){ OUT(`${sel} .lab .in`,h.end-.32); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.32+j*.03)); } });
+  // quem fala: Convidado (teaser) → Apresentador (apresenta) → Convidado (áudio) → Apresentador (quem é o Convidado)
+  const SW=(a,b,at)=>{ tl.to(a,{opacity:0,y:16,duration:.22,ease:'power2.in'},at-.22); tl.fromTo(b,{opacity:0,y:16},{opacity:1,y:0,duration:.32,ease:'power3.out',immediateRender:false},at+.02); };
+  SW('#wj','#wb1',T.i0); SW('#wb1','#wj',T.n0); SW('#wj','#wb2',T.b0);
+  tl.to('#wb2',{opacity:0,y:16,duration:.3,ease:'power2.in'},T.speechEnd-.15);
+  // rótulos honestos das provas
+  [['#pA',T.estilo+.2,T.neg+.25],['#pB',T.longo+.1,T.jr0-.05],['#pC',T.b0+.8,T.jr2-.1]].forEach(([s,a,b])=>{
+    tl.fromTo(s,{opacity:0,y:10},{opacity:1,y:0,duration:.35,immediateRender:false},a); tl.to(s,{opacity:0,duration:.2},b); });
+  // fechamento
+  tl.to('#scrim',{opacity:1.0,duration:.4},T.speechEnd);
+  IN('#ch1',T.cta0+.25,.8); IN('#ch2',T.cta0+.45,.8);
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+.8);
+{{CTA_TL}}
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},g.s); tl.set(`#cg${i}`,{opacity:0},g.e);
+    g.w.forEach((w,j)=>{ tl.fromTo(`#cg${i}w${j}`,{opacity:0,y:10},{opacity:1,y:0,duration:.12,ease:'power2.out',immediateRender:false},w.s);
+      tl.set(`#cg${i}w${j}`,{color:'#4A92E6'},w.s); tl.set(`#cg${i}w${j}`,{color:'#F2F6FC'},w.e); }); });
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { Reflector } from 'three/addons/objects/Reflector.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+
+const DATA = window.__DATA, T = DATA.T, AMP = DATA.amp, N = AMP.length;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const sm=(a,b,x)=>{ const t=clamp((x-a)/(b-a),0,1); return t*t*(3-2*t); };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const eo3=(x)=>1-Math.pow(1-clamp(x,0,1),3);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const ebk=(x)=>{ x=clamp(x,0,1); const c1=1.4,c3=c1+1; return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2); };
+const lerp=(a,b,u)=>a+(b-a)*u;
+const V3=(x,y,z)=>new THREE.Vector3(x,y,z);
+
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.ACESFilmicToneMapping; R.toneMappingExposure=1.0;
+const BG=0x0C1118;
+const S=new THREE.Scene(); S.background=new THREE.Color(BG); S.fog=new THREE.Fog(BG,3200,10500);
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity=0.55;
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,10,40000);
+const key=new THREE.DirectionalLight(0xe8f0ff,1.3); key.position.set(-1400,2200,1800); S.add(key);
+const rim=new THREE.DirectionalLight(0x9cc8ff,2.6); rim.position.set(1800,900,-2600); S.add(rim);
+const rim2b=new THREE.DirectionalLight(0x4A92E6,1.4); rim2b.position.set(-1800,500,-1200); S.add(rim2b);
+
+// provas e palavras ficam numa cena de sobreposição (limpa a profundidade): nunca atravessam as barras
+const S2=new THREE.Scene(); S2.environment=S.environment; S2.environmentIntensity=0.45;
+const key2=key.clone(), rim2=rim.clone(); key2.intensity=1.1; rim2.intensity=1.4; S2.add(key2, rim2, new THREE.AmbientLight(0xffffff,0.08));
+const composer=new EffectComposer(R,new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4})); composer.setPixelRatio(1); composer.setSize(1080,1920);
+// ordem: paisagem → profundidade de campo → brilho suave (só na paisagem) → provas/palavras nítidas por cima → saída
+composer.addPass(new RenderPass(S,C));
+const bokeh=new BokehPass(S,C,{focus:2400,aperture:0.000004,maxblur:0.010}); composer.addPass(bokeh);
+const bloom=new UnrealBloomPass(new THREE.Vector2(1080,1920),0.12,0.3,0.965); composer.addPass(bloom);
+const over=new RenderPass(S2,C); over.clear=false; over.clearDepth=true; composer.addPass(over);
+composer.addPass(new OutputPass());
+
+// ---------- paisagem do áudio: uma barra por 50 ms do áudio real do Convidado, em pé sobre o piso espelhado ----------
+const FL=-220, SP=34, BW=150, BD=20;
+const zOf=(i)=>-i*SP;
+const L=(N-1)*SP;
+const geoBar=new THREE.BoxGeometry(BW,1,BD); geoBar.translate(0,0.5,0);
+function gradMat(params,lo,hi){ const m=new THREE.MeshPhysicalMaterial(params);
+  m.onBeforeCompile=(sh)=>{ sh.vertexShader=sh.vertexShader.replace('#include <common>','#include <common>\nvarying float vH;').replace('#include <begin_vertex>','#include <begin_vertex>\nvH=position.y;');
+    sh.fragmentShader=sh.fragmentShader.replace('#include <common>','#include <common>\nvarying float vH;')
+      .replace('#include <color_fragment>','#include <color_fragment>\ndiffuseColor.rgb*=mix('+lo.toFixed(3)+','+hi.toFixed(3)+',smoothstep(0.0,1.0,vH));'); };
+  return m; }
+const matOff=gradMat({color:0x5a6f8c,metalness:.25,roughness:.22,clearcoat:1,clearcoatRoughness:.12,envMapIntensity:1.1},0.18,0.95);
+const matOn =gradMat({color:0x4A92E6,metalness:.2,roughness:.22,clearcoat:1,clearcoatRoughness:.1,emissive:0x0b2a5c,emissiveIntensity:.45,envMapIntensity:.8},0.25,1.1);
+const matHd =gradMat({color:0xF2F6FC,metalness:.1,roughness:.2,clearcoat:1,emissive:0x9cc6ff,emissiveIntensity:.35},0.4,1.1);
+const geoCap=new THREE.BoxGeometry(BW+6,5,BD+4);
+const capsOn=new THREE.InstancedMesh(geoCap,new THREE.MeshBasicMaterial({color:0xd6e8ff}),N), capsOff=new THREE.InstancedMesh(geoCap,new THREE.MeshBasicMaterial({color:0x6f86a6}),N);
+[capsOn,capsOff].forEach(m=>{ m.instanceMatrix.setUsage(THREE.DynamicDrawUsage); m.frustumCulled=false; });
+const ph=new THREE.PointLight(0xbcd8ff,0,0,2); 
+const barsOff=new THREE.InstancedMesh(geoBar,matOff,N), barsOn=new THREE.InstancedMesh(geoBar,matOn,N), barHd=new THREE.Mesh(geoBar,matHd);
+[barsOff,barsOn].forEach(m=>{ m.instanceMatrix.setUsage(THREE.DynamicDrawUsage); m.frustumCulled=false; S.add(m); }); S.add(barHd, capsOn, capsOff, ph);
+const HB=(i)=>12+AMP[i]*330;
+const _m=new THREE.Matrix4(), _p=new THREE.Vector3(), _q=new THREE.Quaternion(), _s=new THREE.Vector3();
+function setBars(lit, t){
+  for(let i=0;i<N;i++){ const on=i<lit; const h=HB(i)*(1+0.0*Math.sin(t)); _p.set(0,FL,zOf(i)); _s.set(1,h,1);
+    _m.compose(_p,_q,_s); barsOn.setMatrixAt(i, on?_m:_m.clone().scale(_s.set(0,0,0))); barsOff.setMatrixAt(i, on?_m.clone().scale(_s.set(0,0,0)):_m); }
+  barsOn.instanceMatrix.needsUpdate=true; barsOff.instanceMatrix.needsUpdate=true;
+  const Z=new THREE.Matrix4().makeScale(0,0,0);
+  for(let i=0;i<N;i++){ const on=i<lit; _m.makeTranslation(0,FL+HB(i)+2.5,zOf(i)); capsOn.setMatrixAt(i,on?_m:Z); capsOff.setMatrixAt(i,on?Z:_m); }
+  capsOn.instanceMatrix.needsUpdate=true; capsOff.instanceMatrix.needsUpdate=true;
+  const hi=clamp(Math.floor(lit),0,N-1); barHd.visible = lit>0.5 && lit<N-0.5;
+  barHd.position.set(0,FL,zOf(hi)); barHd.scale.set(1.02,HB(hi)+6,1.0);
+  ph.position.set(0,FL+HB(hi)+260,zOf(hi)+30); ph.intensity = barHd.visible ? 2.6e5 : 0;
+}
+// piso espelhado escuro (reflexo das barras) + véu com névoa para o reflexo sumir na distância
+const mirror=new Reflector(new THREE.PlaneGeometry(9000,30000),{textureWidth:1080,textureHeight:1920,color:0x8a96a6,clipBias:0.003});
+mirror.rotation.x=-Math.PI/2; mirror.position.set(0,FL-0.6,-L/2+2000); S.add(mirror);
+const veil=new THREE.Mesh(new THREE.PlaneGeometry(9000,30000), new THREE.MeshBasicMaterial({color:BG,transparent:true,opacity:.45,fog:true,depthWrite:false}));
+veil.rotation.x=-Math.PI/2; veil.position.set(0,FL+0.4,-L/2+2000); S.add(veil);
+
+// ---------- utilidades: cartões de vídeo (moldura extrudada + tela com textura por quadro + legenda) ----------
+function roundMask(w,h,r){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,w,h);
+  g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+function rr(shape,W,H,Rr){ shape.moveTo(-W/2+Rr,-H/2); shape.lineTo(W/2-Rr,-H/2); shape.absarc(W/2-Rr,-H/2+Rr,Rr,-Math.PI/2,0,false); shape.lineTo(W/2,H/2-Rr);
+  shape.absarc(W/2-Rr,H/2-Rr,Rr,0,Math.PI/2,false); shape.lineTo(-W/2+Rr,H/2); shape.absarc(-W/2+Rr,H/2-Rr,Rr,Math.PI/2,Math.PI,false); shape.lineTo(-W/2,-H/2+Rr);
+  shape.absarc(-W/2+Rr,-H/2+Rr,Rr,Math.PI,Math.PI*1.5,false); return shape; }
+function labelTex(txt,color,w,h,size){ const c=document.createElement('canvas'); c.width=w*2; c.height=h*2; const g=c.getContext('2d'); g.scale(2,2);
+  g.fillStyle='rgba(12,17,24,.88)'; g.beginPath(); g.roundRect(0,0,w,h,h/2); g.fill();
+  g.fillStyle=color; g.beginPath(); g.arc(h*0.55,h/2,5,0,Math.PI*2); g.fill();
+  g.fillStyle='#F2F6FC'; g.font=`500 ${size}px "IBM Plex Mono"`; g.textBaseline='middle'; g.fillText(txt.toUpperCase(),h*0.55+16,h/2+1);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=4; return t; }
+const SEQ={}; let READY=null, FONT=null;
+function loadImg(src,k){ k=k||0; return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>{ if(k<4) setTimeout(()=>loadImg(src,k+1).then(res,rej),150*(k+1)); else rej(new Error(src)); }; im.src=src+(k?('?r='+k):''); }); }
+function frameOf(name,t,t0,offset){ const a=SEQ[name]; const i=Math.floor(Math.max(0,(t-t0))*30+1e-6+(offset||0)); return a[i % a.length]; }
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+const masks={};
+function card(W,H,frameColor,label,labColor){
+  const g=new THREE.Group(); const Rr=Math.round(W*0.075);
+  const fr=new THREE.Mesh(new THREE.ExtrudeGeometry(rr(new THREE.Shape(),W+16,H+16,Rr+6),{depth:10,bevelEnabled:true,bevelThickness:3,bevelSize:3,bevelSegments:4,curveSegments:20}),
+    new THREE.MeshPhysicalMaterial({color:frameColor,metalness:.8,roughness:.28,clearcoat:.6,clearcoatRoughness:.2}));
+  fr.geometry.translate(0,0,-8); g.add(fr);
+  const k=W+'x'+H; masks[k]=masks[k]||roundMask(W,H,Rr);
+  const tx=videoTex(); const sc=new THREE.Mesh(new THREE.PlaneGeometry(W,H), new THREE.MeshBasicMaterial({map:tx,alphaMap:masks[k],transparent:true,toneMapped:false}));
+  sc.position.z=6; g.add(sc);
+  let lab=null; if(label){ const lw=Math.max(150,label.length*11+56), lh=36; lab=new THREE.Mesh(new THREE.PlaneGeometry(lw,lh), new THREE.MeshBasicMaterial({map:labelTex(label,labColor||'#4A92E6',lw,lh,15),transparent:true,toneMapped:false,depthWrite:false}));
+    lab.position.set(0,-H/2-40,8); g.add(lab); }
+  g.userData={tx,fr,lab,sc}; return g; }
+
+// câmera: base para posicionar objetos "em tela" (px) a uma distância d da câmera
+const _f=new THREE.Vector3(), _r=new THREE.Vector3(), _u=new THREE.Vector3();
+function camBasis(){ C.updateMatrixWorld(); C.matrixWorld.extractBasis(_r,_u,_f); _f.negate(); }
+function placeScreen(obj,sx,sy,d,s){ const k=d/D; obj.position.copy(C.position).addScaledVector(_f,d).addScaledVector(_r,(sx-540)*k).addScaledVector(_u,(960-sy)*k);
+  obj.quaternion.copy(C.quaternion); obj.scale.setScalar(Math.max(1e-4,k*(s===undefined?1:s))); }
+
+// ---------- provas ----------
+const IDC=[['id1',0xD6B46A,'Dourado','#D6B46A'],['id2',0x8B5CF6,'Roxo','#A78BFA'],['id3',0x38C172,'Verde','#4ADE80'],['id4',0x7CC4F5,'Azul claro','#7CC4F5']];
+const idCards=IDC.map(([s,c,l,lc])=>{ const g=card(230,409,c,l,lc); g.visible=false; S2.add(g); g.userData.seq=s; return g; });
+const longScr=card(760,428,0x2a3646,null); longScr.visible=false; S2.add(longScr);
+const KS=['k01','k02','k03','k04','k05','k06','k07','k08','k09','k10'];
+const kCards=KS.map((s,i)=>{ const g=card(163,290,0x4A92E6,null); g.visible=false; S2.add(g); g.userData.seq=s; return g; });
+const hero=card(300,533,0xE6ECF4,null); hero.visible=false; S2.add(hero); hero.userData.seq='jr';
+let heroLab=null;
+function makeHeroLab(){ const lw=560, lh=50; const c=document.createElement('canvas'); c.width=lw*2; c.height=lh*2; const g=c.getContext('2d'); g.scale(2,2);
+  g.fillStyle='rgba(12,17,24,.92)'; g.beginPath(); g.roundRect(0,0,lw,lh,lh/2); g.fill(); g.strokeStyle='rgba(242,246,252,.35)'; g.lineWidth=1.5; g.stroke();
+  g.fillStyle='#F2F6FC'; g.beginPath(); g.arc(26,lh/2,6,0,Math.PI*2); g.fill();
+  g.font='600 22px "Inter"'; g.textBaseline='middle'; g.fillStyle='#F2F6FC'; g.fillText('Reel do Convidado',44,lh/2+1);
+  const w1=g.measureText('Reel do Convidado').width; g.font='500 19px "IBM Plex Mono"'; g.fillStyle='#9AA8B8'; g.fillText('·  @perfil-do-convidado',44+w1+12,lh/2+1);
+  const tx=new THREE.CanvasTexture(c); tx.colorSpace=THREE.SRGBColorSpace; tx.anisotropy=4;
+  heroLab=new THREE.Mesh(new THREE.PlaneGeometry(lw,lh), new THREE.MeshBasicMaterial({map:tx,transparent:true,toneMapped:false,depthWrite:false}));
+  heroLab.position.set(0,-533/2-52,8); hero.add(heroLab); }
+// "rua" de resultados ao longo da paisagem (parte final): os mesmos vídeos de prova em pé dos dois lados das barras, sobre o espelho
+const street=[]; ['id1','k01','id2','k03','k05','id3','k07','k02','id4','k08','k06','k04','k09','k10'].forEach((s,i)=>{
+  const g=card(300,533, i%3===0?0x4A92E6:0x3a4a60, null); g.userData.seq=s; g.visible=false; S.add(g);
+  const side=i%2?1:-1; g.position.set(side*460, FL+533/2+30, -260-i*(L-200)/13); g.rotation.y=-side*0.32; street.push(g); });
+
+// ---------- disco com a foto do Convidado (o áudio "sai" dele e encaixa no cartão de baixo) ----------
+const jtex=new THREE.TextureLoader().load('assets/convidado_still.jpg'); jtex.colorSpace=THREE.SRGBColorSpace; jtex.center.set(0.5,0.5); jtex.rotation=Math.PI/2;
+const disc=new THREE.Group();
+const discBody=new THREE.Mesh(new THREE.CylinderGeometry(150,150,26,96,1),[new THREE.MeshPhysicalMaterial({color:0x4A92E6,metalness:.85,roughness:.25,clearcoat:1}),
+  new THREE.MeshBasicMaterial({map:jtex,toneMapped:false}), new THREE.MeshPhysicalMaterial({color:0x172333,metalness:.6,roughness:.4})]);
+discBody.rotation.x=Math.PI/2; disc.add(discBody);
+const ring=new THREE.Mesh(new THREE.TorusGeometry(176,3.2,16,160), new THREE.MeshBasicMaterial({color:0x9cc8ff})); disc.add(ring);
+disc.visible=false; S2.add(disc);
+// ---------- painel do pedido (ilustração): o prompt sendo escrito ----------
+const PTXT='Monta um prompt com a edição que eu mais gostei — só mudando o estilo e a cor.';
+const pc=document.createElement('canvas'); pc.width=1720; pc.height=600; const pg=pc.getContext('2d');
+const ptex=new THREE.CanvasTexture(pc); ptex.colorSpace=THREE.SRGBColorSpace; ptex.anisotropy=4;
+const panel=new THREE.Mesh(new THREE.PlaneGeometry(860,300), new THREE.MeshBasicMaterial({map:ptex,transparent:true,toneMapped:false,depthWrite:false}));
+panel.visible=false; S2.add(panel); let pLast=-1;
+function drawPanel(n){ if(n===pLast) return; pLast=n; const g=pg; g.setTransform(2,0,0,2,0,0); g.clearRect(0,0,860,300);
+  g.fillStyle='rgba(15,24,36,.92)'; g.beginPath(); g.roundRect(2,2,856,296,28); g.fill(); g.lineWidth=2; g.strokeStyle='rgba(74,146,230,.9)'; g.stroke();
+  g.fillStyle='#4A92E6'; g.beginPath(); g.arc(38,44,6,0,Math.PI*2); g.fill();
+  g.font='500 17px "IBM Plex Mono"'; g.fillStyle='#9AA8B8'; g.textBaseline='middle'; g.fillText('PEDIDO AO CORTEZ · ILUSTRAÇÃO',56,45);
+  g.font='700 35px "Inter"'; g.fillStyle='#F2F6FC'; const lines=[]; let cur='';
+  PTXT.split(' ').forEach(w=>{ const tryL=(cur?cur+' ':'')+w; if(g.measureText(tryL).width>780){ lines.push(cur); cur=w; } else cur=tryL; }); lines.push(cur);
+  let k=0, y=110; for(const L_ of lines){ const vis=Math.max(0,Math.min(L_.length,n-k)); g.fillText(L_.slice(0,vis),40,y); if(vis<L_.length&&vis>=0&&n>=k&&n<=k+L_.length){ const w=g.measureText(L_.slice(0,vis)).width; g.fillStyle='#4A92E6'; g.fillRect(42+w,y-19,4,38); g.fillStyle='#F2F6FC'; } k+=L_.length+1; y+=48; }
+  ptex.needsUpdate=true; }
+// ---------- texto 3D (Inter ExtraBold extrudada) ----------
+const WORDS={};
+function makeWord(key,txt,size,color){ const geo=new TextGeometry(txt,{font:FONT,size,depth:size*0.26,curveSegments:8,bevelEnabled:true,bevelThickness:size*0.035,bevelSize:size*0.022,bevelSegments:4});
+  geo.computeBoundingBox(); const bb=geo.boundingBox; geo.translate(-(bb.max.x+bb.min.x)/2,-bb.min.y,-(bb.max.z+bb.min.z)/2);
+  const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color,metalness:.45,roughness:.32}));
+  m.visible=false; S2.add(m); WORDS[key]={m,h:bb.max.y-bb.min.y,w:bb.max.x-bb.min.x}; }
+
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.ready, new Promise((res,rej)=>new FontLoader().load('assets/inter-800.typeface.json',f=>{FONT=f;res();},undefined,rej))];
+  Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  READY=Promise.all(jobs).then(()=>{ makeWord('caraca','CARACA!',230,0xE6ECF4); makeWord('craque','CRAQUE',190,0xE6ECF4); makeWord('prompt','PROMPT',170,0xE6ECF4);
+    makeWord('sin','SINISTRO.',190,0xE6ECF4);
+    // legendas em canvas dependem da fonte carregada
+    makeHeroLab();
+    idCards.forEach((g,i)=>{ const L_=g.userData.lab; if(L_){ L_.material.map=labelTex(IDC[i][2],IDC[i][3],L_.geometry.parameters.width,36,15); } });
+  });
+  return READY; }
+
+// ---------- câmera ----------
+const NOTE=(t)=>clamp((t-T.n0)/(T.b0-T.n0),0,1);
+function rigAt(zp,t){ const sway=40*Math.sin(t*0.35); return {pos:V3(860+sway,820,zp+1800), look:V3(-60,190,zp-260)}; }
+function camera(t){
+  const pN=NOTE(t)*(N-1), zp=zOf(pN);
+  let pos, look;
+  const start=rigAt(0,t);
+  if(t<T.i0){                                                     // gancho: empurra rápido por cima da paisagem acesa
+    const u=eo3(t/T.i0); pos=V3(lerp(820,640,u),lerp(620,420,u),lerp(-1400,-3000,u)); look=V3(-120,40,pos.z-2600);
+    const v=eio((t-(T.i0-0.3))/0.55); if(v>0){ pos.lerp(start.pos,v); look.lerp(start.look,v); }
+  } else if(t<T.n0+0.25){                                         // apresentação: visão alta da paisagem enquanto a luz rebobina; mergulho até o começo
+    const v=eio((t-T.i0+0.3)/1.3); const a=V3(640,420,-3000), al=V3(-120,40,-5600);
+    const hi=V3(1000+60*Math.sin(t*0.3),1200,700-160*(t-T.i0)), hl=V3(-60,-60,-L*0.36);
+    pos=a.clone().lerp(hi,v); look=al.clone().lerp(hl,v);
+    const w=eio((t-(T.n0-0.75))/1.0); if(w>0){ pos.lerp(start.pos,w); look.lerp(start.look,w); }
+  } else if(t<T.sin-0.1){ const r=rigAt(zp,t); pos=r.pos; look=r.look; }
+  else {                                                          // "muito sinistro": a câmera sobe e mostra a paisagem inteira acesa
+    const r=rigAt(zOf((N-1)*NOTE(T.sin-0.1)),t); const u=eio((t-T.sin+0.1)/1.6);
+    const ov=V3(1500+90*Math.sin(t*0.12),2900,900-260*(t-T.sin)), ol=V3(-60,-300,-L*0.58);
+    pos=r.pos.clone().lerp(ov,u); look=r.look.clone().lerp(ol,u);
+    const w=eio((t-T.b0)/2.2); if(w>0){ const tz=-L*0.30-L*0.42*clamp((t-T.b0)/(T.end-T.b0),0,1); pos.lerp(V3(1050,1150,tz+2300),w*0.9); look.lerp(V3(-80,-60,tz-1900),w*0.9); }
+  }
+  C.position.copy(pos); C.lookAt(look); C.updateMatrixWorld();
+  return zp;
+}
+
+function showWord(key,t,t0,t1,d,sx,sy,rot){ const W=WORDS[key]; if(!W) return; const vis=t>t0-0.05&&t<t1+0.45; W.m.visible=vis; if(!vis) return;
+  const u=ebk((t-t0)/0.55), o=eio((t-t1)/0.45);
+  const fit=Math.min(1,920/W.w);
+  placeScreen(W.m,sx,sy+lerp(70,0,u)+o*-60,d*(1+0.35*o),Math.max(1e-4,fit*lerp(0.45,1,u)*(1-o))); W.m.rotateX(lerp(-0.9,-0.08,u)); W.m.rotateY((rot||0)+0.06*Math.sin((t-t0)*1.6)); }
+
+function render(t){
+  // luz das barras: gancho acesa → rebobina na apresentação → acompanha o áudio → tudo aceso no fim
+  let lit;
+  if(t<T.i0) lit=N; else if(t<T.n0) lit=N*(1-eio((t-T.i0-0.05)/(T.n0-T.i0-0.45))); else if(t<T.b0) lit=NOTE(t)*(N-1)+1; else lit=N;
+  setBars(lit,t);
+  const zp=camera(t); camBasis();
+  // palavras 3D (saem de baixo, encaixam, recuam)
+  showWord('caraca',t,-0.25,T.i0-0.15,2300,540,760,0);
+  showWord('craque',t,T.craque-0.1,T.craque+1.1,2400,540,760,0);
+  showWord('prompt',t,T.prompt-0.1,T.prompt+0.72,2400,540,700,0);
+  showWord('sin',t,T.sinw-0.15,T.b0+0.25,2300,540,740,0);
+  { const a=T.audio-0.1, b=T.craque-0.4; const vis=t>a&&t<b+0.5; disc.visible=vis;
+    if(vis){ const u=eo((t-a)/0.6), o=eio((t-b)/0.5); const sx=lerp(540,282,o), sy=lerp(lerp(700,640,u),1258,o);
+      placeScreen(disc,sx,sy,2200,Math.max(1e-4,lerp(0.4,1.3,u)*lerp(1,80/458,o))); disc.rotateY((1-u)*1.2+0.12*Math.sin((t-a)*1.4)*(1-o)); disc.rotateX(0.06*Math.sin((t-a)*1.1)*(1-o));
+      ring.material.color.setHex(0x9cc8ff); } }
+  { const a=T.prompt+1.12, b=T.estilo-0.3; const vis=t>a&&t<b+0.45; panel.visible=vis;
+    if(vis){ const u=eo((t-a)/0.55), o=eio((t-b)/0.4); drawPanel(Math.floor(clamp((t-a-0.25)/2.3,0,1)*PTXT.length));
+      placeScreen(panel,540,lerp(780,700,u)-o*240,2300,Math.max(1e-4,lerp(0.6,1,u)*(1-o*0.6))); panel.rotateX((1-u)*-0.5); panel.material.opacity=1-o; } }
+  // quatro identidades: sobem em fila no "estilo de vídeo", acendem a moldura no "estilo de cor"
+  idCards.forEach((g,i)=>{ const a=T.estilo-0.15+i*0.09, b=T.neg+0.25; const vis=t>a&&t<b+0.5; g.visible=vis; if(!vis) return;
+    const u=eo((t-a)/0.7), o=eio((t-b)/0.55); const sx=150+i*260, sy=lerp(900,770,u)-o*1500;
+    placeScreen(g,sx,sy,2500,lerp(0.35,1,u)); g.rotateY((1-u)*(i<2?1.1:-1.1)+(i-1.5)*-0.05); g.rotateX((1-u)*0.35);
+    const lc=sm(T.cor-0.05+i*0.12,T.cor+0.25+i*0.12,t); g.userData.fr.material.emissive=new THREE.Color(IDC[i][1]); g.userData.fr.material.emissiveIntensity=0.03+0.22*lc*(1-o);
+    if(g.userData.lab){ g.userData.lab.material.opacity=lc; } setFrame(g.userData.tx,frameOf(g.userData.seq,t,a,i*11)); });
+  // um vídeo longo → uns 10 cortes "distribuídos" como cartas
+  { const a=T.longo-0.25, b=T.jr0; const vis=t>a&&t<b+0.5; longScr.visible=vis;
+    if(vis){ const u=eo((t-a)/0.8), d=eio((t-T.dez+0.05)/0.7), o=eio((t-b)/0.45);
+      placeScreen(longScr,540,lerp(800,690,u)-d*170-o*1300,lerp(2500,3600,d)+o*1200,lerp(0.3,1,u)*lerp(1,0.62,d)*(1-0.4*o)); longScr.rotateX((1-u)*0.5); longScr.rotateY(-0.12*(1-u)+0.04*Math.sin(t*0.7));
+      setFrame(longScr.userData.tx,frameOf('long',t,a)); } }
+  kCards.forEach((g,i)=>{ const a=T.dez+i*0.065, b=T.jr0-0.05; const vis=t>a-0.02&&t<b+0.5; g.visible=vis; if(!vis) return;
+    const u=eo3((t-a)/0.55), o=eio((t-b-i*0.02)/0.45); const col=i%5, row=Math.floor(i/5);
+    let sx=lerp(540,140+col*200,u), sy=lerp(700,620+row*340,u)-o*1500; let d=2500;
+    const pop=0;
+    placeScreen(g,sx,sy,d,lerp(0.35,1,u)*(1+0.14*pop)); g.rotateY((1-u)*Math.PI*(col<2?1:-1)*0.9); g.rotateZ((1-u)*(row?0.3:-0.3));
+    g.userData.fr.material.emissive=new THREE.Color(0x4A92E6); g.userData.fr.material.emissiveIntensity=0.05+0.25*pop;
+    setFrame(g.userData.tx,frameOf(g.userData.seq,t,a,i*7)); });
+  { const A1=T.jr0, B1=T.jr1, A2=T.jr2, B2=T.speechEnd+0.05;
+    const inA=t>A1-0.02&&t<B1+0.45, inB=t>A2-0.02&&t<B2+0.45; hero.visible=inA||inB;
+    if(hero.visible){ const a=inA?A1:A2, b=inA?B1:B2; const u=eo3((t-a)/0.6), o=eio((t-b)/0.42);
+      placeScreen(hero,540,lerp(840,760,u)-o*1500,2000,Math.max(1e-4,lerp(0.3,1,u)*(inB?1.1:1.2)));
+      hero.rotateY((1-u)*Math.PI*0.95+0.05*Math.sin((t-a)*1.3)); hero.rotateX(0.03*Math.sin((t-a)*0.9));
+      hero.userData.fr.material.emissive=new THREE.Color(0xF2F6FC); hero.userData.fr.material.emissiveIntensity=0.06;
+      setFrame(hero.userData.tx,frameOf('jr',t,a,inA?0:150)); } }
+  // a rua de resultados aparece quando a câmera sobe
+  const st=eio((t-T.sin+0.2)/1.4);
+  street.forEach((g,i)=>{ const vis=st>0.001; g.visible=vis; if(!vis) return; const k=eo3((st*14-i*0.45)/2.4);
+    g.scale.setScalar(Math.max(0.0001,k)); g.position.y=FL+(533/2+30)*k; setFrame(g.userData.tx,frameOf(g.userData.seq,t,T.sin,i*9)); });
+  // luz, brilho e foco
+  rim.intensity = 2.2 + 1.0*Math.exp(-Math.pow((t-T.n0-0.1)/0.3,2)) + 1.2*Math.exp(-Math.pow((t-T.sin-0.25)/0.35,2));
+  bloom.strength = 0.12 + 0.05*Math.exp(-Math.pow((t-T.n0)/0.3,2)) + 0.08*Math.exp(-Math.pow((t-T.sin-0.2)/0.35,2));
+  const proofNear=(t>T.estilo-0.2&&t<T.neg+0.6)||(t>T.longo-0.3&&t<T.sin);
+  bokeh.uniforms.focus.value = proofNear ? 2500 : (t>T.sin? 3200 : 2300);
+  bokeh.uniforms.aperture.value = proofNear ? 0.0000022 : (t>T.sin? 0.0000014 : 0.000004);
+  { const jf=document.getElementById('jfill'), jt=document.getElementById('jtm'); let fr=0;
+    if(t<T.i0) fr=DATA.teaserFrac; else if(t<T.b0) fr=NOTE(t);
+    jf.style.transform='scaleX('+fr.toFixed(4)+')'; const sec=Math.floor(fr*DATA.noteLen+1e-6); jt.textContent='0:'+String(sec).padStart(2,'0'); }
+  composer.render();
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+window.__mod=true;
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!FONT||!WORDS.caraca){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F49",
+  "format_uid": "official.669223f0164d449c893f64b368378c34",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F49/celular-de-teste/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Convite a testar em 9:16 guiado por narração. Um celular 3D (alumínio e vidro, interface genérica sem marca) sobe girando; a câmera entra na galeria e destaca o vídeo parado (gravação bruta real) com a etiqueta \"sem editar\". No \"me manda\", o vídeo sai da tela como cartão 3D e voa para uma pasta; um anel de progresso marca o tempo; o vídeo pronto sobe da pasta e volta para o celular, onde etiquetas de papel entram nas palavras (\"limpo\", \"cortado\", \"legendado\", \"com cena e música\"). Fecha com o celular de frente tocando o resultado. Cartão final \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Montar a galeria genérica com a gravação bruta real em destaque e marcar as palavras de cada etiqueta do resultado.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/celular-de-teste com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Interface de celular genérica, sem marca do sistema operacional. A gravação parada e o resultado devem ser o mesmo material. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/reference.mp4",
+      "sha256": "5ebfed06737184f13924af1cd360e733db215648b7c322ccc97893ec4255c8ad"
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/hook.jpg",
+      "sha256": "2b15a3b50b7d523f1e3ed57d4122b35b52f62696f68165af5af8ef22e7270b4b"
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/stopped.jpg",
+      "sha256": "ed1c46bd618e2f5bad3f078da1642c53109d498a867af14f8646f87249432a8b"
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/progress.jpg",
+      "sha256": "5eb2e7059839568c055e939b69c5bded6831046c32c7528f6f352e2bbbb5dc1c"
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/back.jpg",
+      "sha256": "d4009e4018e92067b90dd5d12896cd142e9d2b637b54f92dcfe3cc968a4be855"
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/done.jpg",
+      "sha256": "af6a9d9ba934ceaebf428776207e86090dac1a0c972d082ce3f9fe05d59ff7d0"
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/cta.jpg",
+      "sha256": "ca606a8718a98fa6d6bb97673412ac7c13ec810d04592a39b529ac91e15f6090"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/hook.jpg",
+      "sha256": "2b15a3b50b7d523f1e3ed57d4122b35b52f62696f68165af5af8ef22e7270b4b",
+      "at_seconds": 0.8,
+      "caption": "Gancho: celular 3D com a galeria e a frase \"Faz um teste comigo.\""
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/stopped.jpg",
+      "sha256": "ed1c46bd618e2f5bad3f078da1642c53109d498a867af14f8646f87249432a8b",
+      "at_seconds": 3.0,
+      "caption": "O vídeo parado destacado na galeria com a etiqueta \"sem editar\"."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/progress.jpg",
+      "sha256": "5eb2e7059839568c055e939b69c5bded6831046c32c7528f6f352e2bbbb5dc1c",
+      "at_seconds": 7.0,
+      "caption": "O vídeo na pasta com o anel de tempo correndo."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/back.jpg",
+      "sha256": "d4009e4018e92067b90dd5d12896cd142e9d2b637b54f92dcfe3cc968a4be855",
+      "at_seconds": 10.2,
+      "caption": "O vídeo volta pronto ao celular com as etiquetas entrando."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/done.jpg",
+      "sha256": "af6a9d9ba934ceaebf428776207e86090dac1a0c972d082ce3f9fe05d59ff7d0",
+      "at_seconds": 12.8,
+      "caption": "O celular de frente tocando o resultado."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/cta.jpg",
+      "sha256": "ca606a8718a98fa6d6bb97673412ac7c13ec810d04592a39b529ac91e15f6090",
+      "at_seconds": 17.6,
+      "caption": "Cartão final: \"Manda o vídeo parado. Ele volta pronto.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/celular-de-teste",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E145 V1",
+    "original_filename": "E145 V1 - IA 14 Faz um teste comigo (previa).mp4",
+    "original_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061",
+    "duration_s": 18.8,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

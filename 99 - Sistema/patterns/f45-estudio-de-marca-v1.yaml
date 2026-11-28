@@ -1,0 +1,156 @@
+# F45 Estúdio de Marca — receita criada a partir de um criativo real (28/11/2026)
+id: f45-estudio-de-marca-v1
+version: 1
+status: draft
+format_code: F45
+created: '2026-11-28'
+origin: Formato oficial criado pelo autor em 28/11/2026 a partir de um criativo real do lote do Cortez (E141 V1),
+  publicado como modelo a pedido dele. A receita foi tirada dessa edição e ainda não foi testada numa edição nova
+  de outro tema.
+purpose: 'Fazer a personalização ser vista: as peças da marca se juntam e o mesmo vídeo vira outro.'
+summary: Um kit de marca em 3D — leque de cores, tipos de metal, placas de legenda — monta a identidade visual,
+  e o mesmo vídeo troca de roupa ao vivo em várias identidades.
+engine: hyperframes_gsap_threejs
+output:
+  width: 1080
+  height: 1920
+  fps: 30
+  duration_s:
+  - 18
+  - 25
+  fit: cover
+editorial:
+  target_pace: fast_but_clear
+  speech_source: narration_script (voz própria ou de IA)
+  pacing_rule: A fala conduz o tempo. Cada cena entra na palavra que a justifica; nada de cena sem fala que a peça.
+    Frases inteiras e com sentido do começo ao fim (sem conector solto no começo, sem lista cortada no fim).
+  hook: Primeiro 1–2 s com a frase mais forte e já com imagem em movimento (sem tela de título parada).
+  remove_explicit_mistakes: false
+  filler_policy: conservative
+  silence_removal:
+    enabled: false
+    threshold: relative_to_take (p90 do envelope − 35 dB)
+    minimum_silence_seconds: 0.3
+    keep_pause_seconds: 0.12
+    word_handle_seconds: 0.15
+    minimum_cut_seconds: 0.25
+    trim_edges: true
+  word_protection: Nunca cortar dentro de palavra; folga ≥ 0,15 s depois do fim real da última palavra e ≥ 0,06
+    s antes do ataque da primeira; nenhum pedaço < 0,25 s.
+  no_overlapping_source_audio: false
+  no_silent_takes: true
+structure:
+  opening: Leque de cores reais abrindo na primeira frase.
+  beats:
+  - tipos de metal com as fontes
+  - placas de legenda
+  - prancha da identidade monta
+  - mesmo vídeo troca de pele
+  - genérico e cara de IA recusados
+  - arco de entregas reais
+  cta: Cartão final com "Saiba mais".
+visual:
+  primary_composition: brand_kit_assembly_and_live_reskin
+  renderer: three.js r186 (ESM local) + EffectComposer (RenderPass, bloom suave, profundidade de campo quando ajuda,
+    OutputPass), RoomEnvironment
+  camera: Escala em pixels (fov 30; distância = 960 / tan 15°) para alinhar 3D e HTML; movimentos lentos e motivados
+    pela fala.
+  framing: O herói ocupa ≈70–85% da largura; nada de 40% de baixo vazio; ≈18% de baixo livres para a interface da
+    rede; cada momento com um foco claro; nada sobreposto.
+  video_textures: Sequências JPG indexadas pelo quadro (floor(t*30)), nunca vídeo tocando em tempo real dentro do
+    3D.
+  determinism: Tudo em função do tempo do quadro (evento hf-seek); Math.random com semente fixa.
+  forbidden_look:
+  - partículas aleatórias, holofotes, neon, lens flare, glitch genérico
+  - 3D decorativo que não mostra nada
+  - zoom repetido sem motivo
+  - texto ilegível no celular
+  colors_fonts: Vêm só da ID escolhida (o exemplo usou ID05 apenas como exemplo).
+proof:
+  source_policy: Só material do próprio usuário/produto, conferido quadro a quadro, sem logotipos de terceiros,
+    documentos ou pessoas alheias. Rotular com honestidade e nunca atribuir a prova a quem não a fez. Ilustrações
+    e exemplos de pedido rotulados como tal.
+captions:
+  enabled: true
+  style: 'job_choice  # estilos L01–L08; o exemplo usou L01'
+  max_lines: 2
+  max_chars: 40
+  rule: Só palavras realmente ditas, com o texto conferido; bloco não atravessa troca de quem fala.
+audio:
+  narration: Narração conferida por transcrição; voz de IA só com o sim do usuário para o gasto. Voz ≈ −16 LUFS,
+    EQ/compressão suaves. A voz pode se apresentar como IA quando for verdade.
+  music: Trilha ≈ 18–20 dB abaixo da narração com compressão lateral; sobe no cartão final. Expressão de volume
+    do ffmpeg é ganho linear.
+sound_effects_policy: discretos (whoosh curto nas trocas, um impacto na virada, clique ou pop no CTA)
+loudness_target_lufs: -15
+true_peak_db: -1.0
+cta:
+  rule: A fala termina; um cartão escrito (promessa em uma frase + botão) fica de 4 a 5 s e o vídeo acaba ali.
+  variants:
+  - '"Saiba mais" com botão e toque'
+  - '"Comente <PALAVRA>" com balão e campo de comentário digitado (sem prometer link ou brinde)'
+  build_parameter: CTA=more | CTA=comment
+export:
+  container: mp4
+  video_codec: libx264
+  crf: 15
+  audio_codec: aac
+  audio_bitrate: 192k
+tooling:
+  template: motion/templates/estudio-de-marca
+  render: npx -y hyperframes@0.8.92 render comp -o renders/picture.mp4 -w 4 --video-frame-format png --crf 15
+qa:
+  retranscribe_final_mix: required
+  word_edges_check: n/a (narração inteira)
+  background_stem_level: required
+  black_segment_seconds: 0.2
+  full_frame_checks: gancho, picos 3D, provas nítidas e as duas telas finais
+  third_party_logo_scan: required
+  cta_written_and_voice_finished: required
+forbidden:
+- third_party_media_or_logo_as_proof
+- proof_misattributed
+- invented_numbers_or_prices
+- clipped_words
+- overlapping_source_audio
+- cheap_decorative_effects
+- music_masking_speech
+- fixed_person_brand_or_palette
+- automatic_logo_or_signature
+- spoken_cta_over_end_card
+insertion_assets:
+  policy: own_proof_only
+  density: high
+  default_preferred_duration_s: 3
+  default_max_duration_s: 5
+  allow_image_motion: true
+mechanism_details:
+  inputs: 'Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração
+    (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas
+    reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda
+    escolhidas separadamente.'
+  mechanism: Criativo 9:16 claro sobre identidade visual, guiado por narração. Um leque laqueado de cores reais
+    (código, nome e hex em cada lâmina), tipos de metal com "Aa" em 3D nas fontes reais e placas de estilo de legenda
+    entram nas palavras ditas; uma prancha "sua identidade visual" sobe e recebe cor, fonte e legenda. A placa com
+    o mesmo vídeo entra sem identidade e troca de pele ao vivo em várias identidades (legenda, cor e fonte mudam,
+    o vídeo é o mesmo). Cartões de "modelo pronto" genérico e "cara de IA" são recusados e deslizam para fora. Fecha
+    num arco de entregas reais. Cartão final com "Saiba mais".
+  steps:
+  - Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar
+    a narração e conferir por transcrição que todas as palavras saíram certas.
+  - Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a
+    justifica).
+  - Usar paletas, fontes e estilos de legenda reais das identidades; preparar o mesmo trecho de vídeo em 3 ou 4
+    identidades.
+  - Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular
+    com honestidade.
+  - Montar a composição pelo modelo em motion/templates/estudio-de-marca com as cores e fontes da ID escolhida,
+    renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).
+  - 'Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão
+    final, ausência de preto, de sobreposição de textos e de logotipos.'
+  avoid: 'Cores e fontes mostradas devem ser as reais das identidades citadas. Cartões "genéricos" só com formas
+    abstratas. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem
+    3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros
+    como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os
+    nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só
+    com pedido do trabalho.'

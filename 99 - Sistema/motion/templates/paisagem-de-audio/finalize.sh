@@ -1,0 +1,30 @@
+#!/bin/bash
+# EXEMPLO_1 cortez-live-c9 — EDL → voz limpa → mídia → materiais → transcrição da voz final → composição → HyperFrames (PNG, CRF 15, fila
+# compartilhada) → mixagem → mux.
+# Uso: src/finalize.sh [--skip-render]              versão principal (CTA "Saiba mais")
+#      CTA=comment src/finalize.sh [--skip-render]    variante "Comente CORTEZ" (mesma EDL/voz/mídia; só a tela final e o som do toque mudam)
+set -e -o pipefail
+cd "$(dirname "$0")/.."
+P=../../../.venv/bin/python
+export TMPDIR="$PWD/tmp/hf"; mkdir -p "$TMPDIR"
+CTA="${CTA:-saiba}"; export CTA
+if [ "$CTA" = "comment" ]; then SUF="-comment"; VAR="--variant comente-cortez"; COMP="comp-cta-comment"; else SUF=""; VAR=""; COMP="comp"; fi
+if [ "$1" != "--skip-render" ]; then
+  if [ "$CTA" != "comment" ]; then
+    $P src/make_edl.py | head -1
+    $P src/make_voice.py | tail -c 160; echo
+    $P src/make_media.py | tail -c 160; echo
+    [ -d comp/assets/three ] || $P src/make_assets.py | tail -c 160
+    ../material-compartilhado/bin/withlock.py whisper -- $P ../../tools/transcribe.py renders/voice.wav --output analysis/transcript_final_voice.json --backend mlx --language pt > tmp/transcribe.log 2>&1
+  fi
+  $P src/build.py | head -1
+  rm -f renders/picture$SUF.mp4
+  ../material-compartilhado/bin/withlock.py render -- npx -y hyperframes@0.8.92 render $COMP -o renders/picture$SUF.mp4 -w 4 --video-frame-format png --crf 15 > renders/render$SUF.log 2>&1
+fi
+$P src/mix.py
+OUT=$($P ../../tools/output_naming.py --name cortez-live-audio-do-cliente --proportion 9:16 --format F22 --visual-id ID03 --edition-code EXEMPLO_1 --kind preview --version 2 $VAR --directory renders)
+DUR=$($P -c "import json;print(json.load(open('analysis/motion_plan.json'))['T']['end'])")
+rm -f "$OUT"
+ffmpeg -v error -n -i renders/picture$SUF.mp4 -i renders/mix$SUF.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -ar 48000 -t $DUR -movflags +faststart "$OUT"
+echo "$OUT"
+ffprobe -v error -show_entries format=duration,bit_rate:stream=width,height,r_frame_rate,codec_name -of compact "$OUT"

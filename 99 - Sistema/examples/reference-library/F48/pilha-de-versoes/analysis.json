@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F48",
+  "format_uid": "official.44340f5a06d141c5bd62b9957efa92a4",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F48/pilha-de-versoes/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Demonstração de ajustes em 9:16 guiada por narração com ritmo de três batidas. O vídeo real fica numa tela 3D sobre um suporte, com cantoneiras que apontam o que vai mudar. A cada pedido (\"Não gostou de uma cena? Me fala.\") a mudança acontece na hora: varredura troca a cena, a legenda cresce, a faixa de áudio \"Trilha 1\" vira \"Trilha 2\"; cada mudança empilha uma placa de versão (V1 original, V2, V3…) sob o suporte. Em \"quantas vezes precisar\" as versões sobem rápido; blocos de calendário de espera dobram até sumir. Cartão final \"Me fala. Eu ajusto.\" com \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Preparar as alternativas reais do mesmo vídeo (outra cena, legenda maior, outra trilha) e casar cada troca com a palavra do pedido.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/pilha-de-versoes com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Pedidos mostrados são exemplos e devem ser rotulados assim; as versões precisam ser variações reais do mesmo vídeo. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/reference.mp4",
+      "sha256": "d646e29d0b29773476c9d686711a3d23dd6a78732cf200cac38ef196de60282b"
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v1.jpg",
+      "sha256": "185c69916d54bf2135dd19e3ac529f2bd8ca3088a1cf01a52c31d5e3850a927c"
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v2-scene.jpg",
+      "sha256": "880d25ca08f3bea486537f09040e0201b5584e43e10e00de6f5846926d605597"
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v3-caption.jpg",
+      "sha256": "0f219040c9881d95eb334ef581312eafb11e9253f1bfca446585c01fdbc7bac2"
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/stack.jpg",
+      "sha256": "f71f08f90f6efa656791c561638c24291f5733d38b7286c08e1a7094a7a6beb3"
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/many.jpg",
+      "sha256": "c3bf4fae7acd282946af1f5526bda1d5076c950212e82c147206fe3a60fe2dea"
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/cta.jpg",
+      "sha256": "9fc5d892c5f9febe2a8ebb89b0b583cfcd1ef8e2bbe94408d725b720e04ec92a"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v1.jpg",
+      "sha256": "185c69916d54bf2135dd19e3ac529f2bd8ca3088a1cf01a52c31d5e3850a927c",
+      "at_seconds": 0.8,
+      "caption": "Gancho: o vídeo real na tela 3D, versão 1, com as cantoneiras."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v2-scene.jpg",
+      "sha256": "880d25ca08f3bea486537f09040e0201b5584e43e10e00de6f5846926d605597",
+      "at_seconds": 2.2,
+      "caption": "Versão 2: a cena trocada, com o rótulo do ajuste."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v3-caption.jpg",
+      "sha256": "0f219040c9881d95eb334ef581312eafb11e9253f1bfca446585c01fdbc7bac2",
+      "at_seconds": 4.0,
+      "caption": "Versão 3: a legenda maior."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/stack.jpg",
+      "sha256": "f71f08f90f6efa656791c561638c24291f5733d38b7286c08e1a7094a7a6beb3",
+      "at_seconds": 6.5,
+      "caption": "A pilha de placas de versão sob o suporte."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/many.jpg",
+      "sha256": "c3bf4fae7acd282946af1f5526bda1d5076c950212e82c147206fe3a60fe2dea",
+      "at_seconds": 9.8,
+      "caption": "Muitas versões: a pilha sobe."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/cta.jpg",
+      "sha256": "9fc5d892c5f9febe2a8ebb89b0b583cfcd1ef8e2bbe94408d725b720e04ec92a",
+      "at_seconds": 17.3,
+      "caption": "Cartão final: \"Me fala. Eu ajusto.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/pilha-de-versoes",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E144 V1",
+    "original_filename": "E144 V1 - IA 13 Me fala que eu ajusto (previa).mp4",
+    "original_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237",
+    "duration_s": 18.5,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

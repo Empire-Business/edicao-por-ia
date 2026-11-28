@@ -2873,6 +2873,1085 @@
         }
       ],
       "missing_sources": []
+    },
+    "F37": {
+      "code": "F37",
+      "name": "Depoimento em Chat 3D",
+      "uid": "official.012adc4cdd2f4a23a440a64499eaa76c",
+      "references": [
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/README.md",
+          "kind": "reference_analysis",
+          "sha256": "6095f9e2fc7a6788c7ba52feb35f261eda562fe650788fd788e9bb70b1ebe975",
+          "bytes": 823,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468"
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "1bb2a3486189bfc74809c7ac096d417f24402fc3ed6c7d71ca53dc96fb0ad4e2",
+          "bytes": 7539,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468"
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/client-video.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "e39557c03efbda92ecefc21811535266f274d2bda15058d9534110269c5ff86b",
+          "bytes": 160602,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468",
+          "caption": "Vídeo publicado pelo próprio cliente, com rótulo do perfil, e o placar indo a 100%.",
+          "at_seconds": 24.5
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "b4a82621d414af959b1c1177e9102504beaf9f916b918da945a74b07b811a1be",
+          "bytes": 159326,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468",
+          "caption": "Cartão final: promessa, botão \"Saiba mais\" e o celular com a conversa.",
+          "at_seconds": 31.9
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "97a3fa39b59b2d00c63b0101cf0c5bf7f92f973b0aba7e089fb2fa6b0c037d43",
+          "bytes": 144537,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468",
+          "caption": "Gancho: bolha de áudio real do cliente com onda viva saindo do celular de vidro 3D.",
+          "at_seconds": 0.6
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/key-phrase.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c8558194db79266291d22f8c2e45601ed818def43d609e30f5308e6a193ab838",
+          "bytes": 150094,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468",
+          "caption": "A frase-chave (\"isso daqui é sinistro\") em destaque, com o círculo de vídeo da pessoa.",
+          "at_seconds": 7.0
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "74b09b70814529f97ba9f7568925d52127a280ed90ec1a0faf5917e34948f92a",
+          "bytes": 7424034,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468"
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/styles.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7c905744f775c51cb275c033c62414a9d49631ef5917b287017853b675ab4be1",
+          "bytes": 170304,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468",
+          "caption": "Mergulho pela tela: leque de vídeos em estilos diferentes, rotulados.",
+          "at_seconds": 13.5
+        },
+        {
+          "path": "examples/reference-library/F37/depoimento-em-chat-3d/voice-note.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "035a35e412fe1885ed44847d10bc3c1c52bb046d18995cf3afb4be892db8d4e1",
+          "bytes": 137213,
+          "source_sha256": "bb2f6b8a5db018d5b20230c4f05bc033f93d70023b960ae01adabda80be09468",
+          "caption": "Outra bolha de áudio com a fita de onda 3D que acompanha a voz.",
+          "at_seconds": 9.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F38": {
+      "code": "F38",
+      "name": "Paisagem de Áudio",
+      "uid": "official.e3b19582ad674e88ad4463e098217c05",
+      "references": [
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/README.md",
+          "kind": "reference_analysis",
+          "sha256": "c103bdc09ff0aa21bcfe9f7da9bb898c5bb2b1929e8ca14100b40eeb699a3d8b",
+          "bytes": 811,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1"
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "6f4a2e3a8047f887b499311ecd2f70998e892fda738c75f8485aa51dc890147e",
+          "bytes": 7236,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1"
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ca4bb9487eb8f6581f6cd7cb4fb899c3495c459615a0aaa7a0973141e3d8262a",
+          "bytes": 216303,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1",
+          "caption": "Cartão final: promessa e botão \"Saiba mais\" sobre a rua de vídeos.",
+          "at_seconds": 37.3
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "60b31246d6d946553c66d4a19ef7eb06579dddf75952fbf00b65246ebd3b8e3f",
+          "bytes": 169222,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1",
+          "caption": "Gancho: a palavra-chave em 3D sobre a paisagem de barras da voz real.",
+          "at_seconds": 0.6
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/keyword.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "327f90e2e30a1ea77a9a8f886c48dd1e97f67c68e3d0dbfa722a524e2276a5ab",
+          "bytes": 120093,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1",
+          "caption": "Outra palavra-chave em 3D enquanto a luz corre pelas barras.",
+          "at_seconds": 9.0
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/person.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "78bb6f05a1a16e082a8589f79e5d98b0de5c3ca48a0e8b8c8e3b61e3db1704b3",
+          "bytes": 137519,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1",
+          "caption": "Quem fala entra num disco com a foto, sobre as barras.",
+          "at_seconds": 5.5
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/proof.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7ede050c934b8df48ae16bbb806f3ddfa227ba32539ad6443d5bcca12447c0c4",
+          "bytes": 153679,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1",
+          "caption": "Prova citada aparecendo sobre a paisagem (vídeo longo/exemplo).",
+          "at_seconds": 16.5
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "d3b5e13ae3fece9d9a1932c8eed6f154de708e1e367e25d46ad00f9d9f00443e",
+          "bytes": 11803088,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1"
+        },
+        {
+          "path": "examples/reference-library/F38/paisagem-de-audio/street.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d0f481aedb474e7ff39f38f32fb97bb35595463e8bc70cb23209bb54093820b0",
+          "bytes": 205643,
+          "source_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1",
+          "caption": "Rua de vídeos reais ao longo das barras no fechamento.",
+          "at_seconds": 25.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F39": {
+      "code": "F39",
+      "name": "Escada de Testes",
+      "uid": "official.f3a50372df8f4b35a26db6ce2cf96da4",
+      "references": [
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/README.md",
+          "kind": "reference_analysis",
+          "sha256": "8070f7582d6d89a8a73429820c37eba96227a64d7638ceb334b4f5dc4009afe2",
+          "bytes": 796,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7"
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "e97d71fc37b4059f2ca499addea8b411c58ab9ae4ff0fc6b204742c70d4ce0b8",
+          "bytes": 7258,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7"
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "46b437334455b1006c0d5e6830f38b00525f721578b59f7ad7256166015730c6",
+          "bytes": 208737,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7",
+          "caption": "Cartão final: cinco cortes no último degrau e o botão \"Saiba mais\".",
+          "at_seconds": 39.5
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7c999da7e5fd6401b90923c7151be0292c9457dba079d914ceb0da7a3e40dac0",
+          "bytes": 248420,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7",
+          "caption": "Gancho: a reação mais forte com o vídeo longo de exemplo e o cartão da pessoa.",
+          "at_seconds": 1.0
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "674920c941984319fc2e8d945d06b159a29375d78f60144209535b9dacdf4008",
+          "bytes": 8442059,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7"
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/request.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "b0206c4c4d0c4d819c04d7802d6a8bf8d015e5eaeaf32de7cc510cbbef7d5350",
+          "bytes": 100842,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7",
+          "caption": "O pedido feito à ferramenta sendo digitado num cartão de vidro.",
+          "at_seconds": 21.0
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/result.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "bd6b030ef885c966bf9d7cf257fb23fa90e352970bedf1c827e5ecfc1711b3fd",
+          "bytes": 139173,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7",
+          "caption": "Resultado: o vídeo longo e as vagas dos cinco cortes.",
+          "at_seconds": 31.5
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/test-1.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f7239c068aaf4aa80021a6634467c6a2c3ec49e86ee77a5d3b5076970b517682",
+          "bytes": 134299,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7",
+          "caption": "Degrau 1: o vídeo curto publicado, com rótulo de quem publicou.",
+          "at_seconds": 6.5
+        },
+        {
+          "path": "examples/reference-library/F39/escada-de-testes/test-2.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4c8b34b7437ff1fdbb1e9b276692bcbcd211fb28a93a76efa73599ee59c77338",
+          "bytes": 136451,
+          "source_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7",
+          "caption": "Degrau 2: o vídeo longo em 16:9 numa tela maior.",
+          "at_seconds": 12.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F40": {
+      "code": "F40",
+      "name": "Íris de Depoimento",
+      "uid": "official.9a0e188f96a949c2879f1cd28df8cce9",
+      "references": [
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/README.md",
+          "kind": "reference_analysis",
+          "sha256": "0ef18027a862fec2b3db3f74a2d1b1700e8a7d4e52cfc211fb228b3e3799b3ff",
+          "bytes": 797,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205"
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/ai-back.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "906e34269d9c231616fcb1719904af79c81d6e0d6357ab89a26fac1d3e4bd139",
+          "bytes": 197873,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205",
+          "caption": "A narração volta: a íris fecha em parte sobre a pessoa.",
+          "at_seconds": 23.0
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "8b480be4602522bc97fdc4921461f3a70440a542d6842b377bb5d1d9ccbda597",
+          "bytes": 6966,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205"
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "89eeafc87b52e018cf401563ea1ee45401acae38f1904b6f2b7ad253279d6622",
+          "bytes": 226038,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205",
+          "caption": "Cartão final: \"Não acredite em mim. Ouça quem usa.\" e o botão \"Saiba mais\".",
+          "at_seconds": 32.6
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "72ac81f3a2f4225f3dbb0e69bcb01815cc91d404abf299a8ea5dea71d1865c27",
+          "bytes": 102194,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205",
+          "caption": "Gancho: macro das lâminas douradas da íris com a frase de apresentação do narrador.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/orbit.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "12d7698149b4c05650e049888a0e30db92cbec7b0794f08671a48a9f88be6c08",
+          "bytes": 215270,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205",
+          "caption": "Entregas reais orbitando a íris enquanto a narração fala.",
+          "at_seconds": 4.5
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "04d34b6ec9b4195de6e9314c729290a8eae21f599abad18f3a4ab33f170cb228",
+          "bytes": 10748557,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205"
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/reveal.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4e0693bcf3b632d4986e6bd3cf088b6a4a3983b09e28c07937628d205d9ad711",
+          "bytes": 190712,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205",
+          "caption": "Passagem: as lâminas começam a abrir sobre o rosto da pessoa real.",
+          "at_seconds": 7.5
+        },
+        {
+          "path": "examples/reference-library/F40/iris-de-depoimento/testimony.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "48622c0444fbf3fc63db4d5046811022d5b063dfa7b5a89f697f5538640ba8d4",
+          "bytes": 190711,
+          "source_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205",
+          "caption": "Depoimento real com selo de trecho da live dentro do aro dourado.",
+          "at_seconds": 14.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F41": {
+      "code": "F41",
+      "name": "Gavetas de Pesquisa",
+      "uid": "official.c5675bb0f39a4277b7143556510a95c0",
+      "references": [
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/README.md",
+          "kind": "reference_analysis",
+          "sha256": "6df809db32dec4b8ef7bf8e16a4b976f252554f397d4694668a68a93d3ea84c0",
+          "bytes": 827,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79"
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "0fcb38f5706074ab4bfa6c80901c192faf32355e5e3cfa0444ad6c8b104b401e",
+          "bytes": 7343,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79"
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "a1348367bdd1476d7199445cde15e675fc4cff33cce3a3317a14a81f76b1a925",
+          "bytes": 110489,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79",
+          "caption": "Cartão final: \"Pesquisa de verdade. Edição de editor.\" e o botão \"Saiba mais\".",
+          "at_seconds": 30.7
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/drawers.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "09b6d7a98acf66c3b8ec337e2a79fd4023c2a25d81dd567e0ed7a057f114c3db",
+          "bytes": 123745,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79",
+          "caption": "A parede de gavetas com as etiquetas marcadas.",
+          "at_seconds": 14.0
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/generic.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "3200c34070c5877619cbd04736f8b95c21a06d6a50b0f7d3814424d010504950",
+          "bytes": 178961,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79",
+          "caption": "O genérico: chips de \"animação pronta\" e \"efeito genérico\" saindo riscados.",
+          "at_seconds": 3.5
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "470577ba6bbb176c296a08d0346ce1074135aecbbe0d4535aeebe97d89353a4b",
+          "bytes": 181446,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79",
+          "caption": "Gancho: entrega real em destaque sobre a parede de gavetas, com a frase sobre qualidade.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "9e510491a8fdab625a76cde794e437b4fe28fc6a2a7d4cb5bf74b0b97028b046",
+          "bytes": 8303875,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79"
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/research.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "42fe64adb286736e705107f042efe12f1c46f3d5cf7d707d9e59e193c1cde0eb",
+          "bytes": 183290,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79",
+          "caption": "Gaveta aberta entregando prints reais pesquisados com grifo.",
+          "at_seconds": 11.8
+        },
+        {
+          "path": "examples/reference-library/F41/gavetas-de-pesquisa/results.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "57ab060384d8085dc4071531b15d6dd2877621c4fbc049f79541ea4c5bfd326f",
+          "bytes": 212400,
+          "source_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79",
+          "caption": "Mural de entregas reais sobre as gavetas.",
+          "at_seconds": 21.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F42": {
+      "code": "F42",
+      "name": "Túnel da Pasta",
+      "uid": "official.aa963f0abedc46c49e98fab476c78794",
+      "references": [
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/README.md",
+          "kind": "reference_analysis",
+          "sha256": "e0b0fb39b421b7e70a5ec6b3a89a9f39209d641442b26ee3e57df30896f4afa3",
+          "bytes": 799,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9"
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "23f818b66ca39174d3f03f700f52e278e68d234f4479bdfde350efee6f127017",
+          "bytes": 6840,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9"
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/appear.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7c943bd8f5828653b9e69ae4dd67abb43b9872204040e0fe549cd76097b01626",
+          "bytes": 122030,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9",
+          "caption": "O resultado sobe de dentro da pasta de saída.",
+          "at_seconds": 6.0
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5476d97263baaece079af07dfb1fd2187e167a88126e51f4c7d3b5b7a259f4cc",
+          "bytes": 136435,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9",
+          "caption": "Cartão final: \"Joga o bruto. Pega pronto.\" e o botão \"Saiba mais\".",
+          "at_seconds": 22.9
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/drop.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "75d0236a902492d05da385b81bbd9c425ae8e6fd78767becb552c846d5f5788d",
+          "bytes": 172401,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9",
+          "caption": "O material bruto real cai na pasta de entrada.",
+          "at_seconds": 3.5
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "2fcbf59eedc687b2d1f5296f6e46ac361efc0c3db40019ef66008e30238dde30",
+          "bytes": 137803,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9",
+          "caption": "Gancho: close na pasta de entrada 3D com a frase de abertura.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/no-timeline.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "1b6ea7454ecca104b729863e11763a85ac1b4b02a6f0849ba1db4ed90828e3a8",
+          "bytes": 139136,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9",
+          "caption": "Um painel genérico de programa de edição tomba e some.",
+          "at_seconds": 16.0
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "183f555453144cd426a7b2e557e9e58e66df70cf1069c1b7289659bdaaa06646",
+          "bytes": 7306413,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9"
+        },
+        {
+          "path": "examples/reference-library/F42/tunel-da-pasta/tunnel.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "6ea26507390a14ea4e837181294f78ad0ca03576fc6272066036056dcc94387e",
+          "bytes": 173963,
+          "source_sha256": "636774894e7289cefb67fcf2131b790d3b72bd9af5eebbbde33d4d2476c564a9",
+          "caption": "Dentro do túnel: o clipe passa por um portão e a etapa narrada acontece.",
+          "at_seconds": 10.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F43": {
+      "code": "F43",
+      "name": "Tomadas de Vidro",
+      "uid": "official.91f4032b7736478484358f61c019a60d",
+      "references": [
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/README.md",
+          "kind": "reference_analysis",
+          "sha256": "52eb3bc55b168fb5da6e7048a12c94498fd538c8fbe9f2dc0aa834f2f3075507",
+          "bytes": 792,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd"
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/after.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ea7a2c76b23009e09a5dc297891e96267573bee9dda2eaa00978b23b86793846",
+          "bytes": 180799,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd",
+          "caption": "A melhor tomada vira o resultado final, rotulado.",
+          "at_seconds": 17.0
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "2b4574390a13fe3766e5c0286e2858aa76b0fa0d5dad428c2ba57b61f1c26bf5",
+          "bytes": 6783,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd"
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/best.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d4555654576eecd710205666e1cc0bda938e4253422768d809ea45dfc4d16160",
+          "bytes": 168355,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd",
+          "caption": "Só a melhor tomada no centro.",
+          "at_seconds": 13.6
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "82b261b2f25547b3923f938d53894197a1bf0f402437e1fbbf04d7019117693b",
+          "bytes": 171092,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd",
+          "caption": "Cartão final: \"Errou? Relaxa.\" e o botão \"Saiba mais\".",
+          "at_seconds": 26.5
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "4819adc2c944fbb538d4e77bef2a90ff342fd59c96a47dcf7dfa382676fb14c1",
+          "bytes": 175172,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd",
+          "caption": "Gancho: a tomada real que trava, numa lâmina de vidro com legenda.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "d21e0949aeddf6082d2228849838f4224e1e9af41b9b633e797c4ea6aae90884",
+          "bytes": 5767986,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd"
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/repeated.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "e4235180d78bfeee6a9b859be1f5593acc811e250cd5845497f816d35e1af2bc",
+          "bytes": 194715,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd",
+          "caption": "As tomadas repetidas da mesma frase lado a lado, com o título dos erros.",
+          "at_seconds": 4.3
+        },
+        {
+          "path": "examples/reference-library/F43/tomadas-de-vidro/scan.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "2c3a0834758ec0717fa2fcf4615e7de1b3ec6a89525351272ffed2119fec929c",
+          "bytes": 184335,
+          "source_sha256": "7df1b1b1db78c6043130dce57f010c846f2c6cd872f773f31c3b3b8b5ca565dd",
+          "caption": "Apresentação: linha de luz varrendo o leque de lâminas.",
+          "at_seconds": 8.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F44": {
+      "code": "F44",
+      "name": "Cordilheira de Cortes",
+      "uid": "official.711e1739e46041f295cc297ac31f4f9f",
+      "references": [
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/README.md",
+          "kind": "reference_analysis",
+          "sha256": "0a1ec350f4cfa69fe8075848ebf159bab22cfd734b7c1a6cf84f7fcc8d589f3a",
+          "bytes": 806,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee"
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "d285ae46d58080538e43520d72226846df7fc71916bfc96b39ec530bb0e6e420",
+          "bytes": 6966,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee"
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/client.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "a7e04ef761935eb6d470af5d07f6026b9d57789a5c035fc0e0c8c68d0928bf4c",
+          "bytes": 174239,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee",
+          "caption": "Grade de cortes com o vídeo real do cliente em destaque, rotulado.",
+          "at_seconds": 11.0
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "20186b279993f69b4adddedc0bfd4357b6ff62bc64fe7430b046d7b5717a2614",
+          "bytes": 161540,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee",
+          "caption": "Cartão final: \"Um vídeo longo. Vários cortes prontos.\" e o botão \"Saiba mais\".",
+          "at_seconds": 19.1
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/cuts.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0c1dab9da0aafa0ca17515fe23383f40a6ac5ff5de277a5a1a93a96dc774a149",
+          "bytes": 162178,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee",
+          "caption": "Picos se levantando como cartões verticais tocando cortes.",
+          "at_seconds": 5.5
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "099d662e648db0afa75ac197fa4131f6caa342b7fbd519d1b17c6cd8e01ee5fc",
+          "bytes": 236277,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee",
+          "caption": "Gancho: o vídeo longo grande com a frase \"Me dá um vídeo longo.\"",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/peaks.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9c17e32610b34a49126541f5edab679b5b75fe57a3299e3763ed907bc21e381f",
+          "bytes": 257856,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee",
+          "caption": "A cordilheira do áudio com os picos numerados acendendo.",
+          "at_seconds": 3.4
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/range.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f878bfdd2c5c1cdfc526f5d0536b7f8af4c14d58a72c27b7082f3d9e68e269e0",
+          "bytes": 155202,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee",
+          "caption": "A câmera recua: cordilheira inteira com os cortes.",
+          "at_seconds": 14.6
+        },
+        {
+          "path": "examples/reference-library/F44/cordilheira-de-cortes/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "0bd9c2896fd4da1386924472c8a5776bb6796f0973e50e0e77fb630f410de7f4",
+          "bytes": 6006954,
+          "source_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee"
+        }
+      ],
+      "missing_sources": []
+    },
+    "F45": {
+      "code": "F45",
+      "name": "Estúdio de Marca",
+      "uid": "official.738bf9237508476aaf602711a81d6174",
+      "references": [
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/README.md",
+          "kind": "reference_analysis",
+          "sha256": "c89fa0c1c78668a72ab5eefa4354d5523f9bc53cffdeb11558180e311be4d577",
+          "bytes": 810,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b"
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "71ea92038de015dea87968f8ecad5b7be383630b19e1ae02c6c2ae94204d7d6d",
+          "bytes": 6851,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b"
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/colors.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c5ed5cb7f718f911f54d9c92fe19e9c6a29cb4e10e6f22299b8028a7aa5fa519",
+          "bytes": 148451,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b",
+          "caption": "Gancho: leque laqueado de cores reais com nome e código em cada lâmina.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "068c0553395d4aaf660e8e20cf6237b04f99128ec984c0bf8d25923fb5b2d299",
+          "bytes": 178979,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b",
+          "caption": "Cartão final: \"Com a sua cara.\" e o botão \"Saiba mais\".",
+          "at_seconds": 18.7
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/fonts.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "03ad77de76124b3cbb244259460310884e974fed270352d1951a35bea6141380",
+          "bytes": 158885,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b",
+          "caption": "Tipos de metal com \"Aa\" nas fontes reais.",
+          "at_seconds": 2.7
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/identity.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7afe37d5484df4141c2ed1e355cda88b181cca4ea276bee83b0d1ae8d1f11023",
+          "bytes": 149629,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b",
+          "caption": "A prancha \"sua identidade visual\" recebendo cor, fonte e legenda.",
+          "at_seconds": 4.8
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "28b721adbb6f5cedb6e30d75fb90ed9f82816cf7a3be0c975a27f22eca4e1a00",
+          "bytes": 4168907,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b"
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/reskin.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "a077e5b03cd41b0ac1079412f3c9c7459a420d3969276739a2985a696b9f4037",
+          "bytes": 179820,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b",
+          "caption": "O mesmo vídeo com uma das identidades aplicada.",
+          "at_seconds": 7.5
+        },
+        {
+          "path": "examples/reference-library/F45/estudio-de-marca/your-way.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5ea08f7a0d92d4c5a579e644ab5ac417732fec3633d95238f8ce52101f771a27",
+          "bytes": 180607,
+          "source_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b",
+          "caption": "Arco de entregas reais em identidades diferentes.",
+          "at_seconds": 13.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F46": {
+      "code": "F46",
+      "name": "Molde de Peças",
+      "uid": "official.00aa54afe2024bc7a2b2fec935d72af4",
+      "references": [
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/README.md",
+          "kind": "reference_analysis",
+          "sha256": "b0b5a59554066596c6c23ffef50a2cf0b64698d732cc3d7ebb96bdbe0579c37d",
+          "bytes": 795,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711"
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "126874633508b697a0a64d99d11ac6c43e3f96cb2690c195900905eb1dfba52d",
+          "bytes": 6733,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711"
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/cover.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "74d6f952822507a813fc6e28e79accf8af9387d24d1b96c26826406752bf48f0",
+          "bytes": 193963,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711",
+          "caption": "Uma capa real entrando na sua vaga.",
+          "at_seconds": 4.2
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "de2ccceafcbd60327d2822282d6d1706050234cdb8497e08fe90d5fb37c1a88f",
+          "bytes": 153288,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711",
+          "caption": "Cartão final: \"Do começo ao fim.\" com um vídeo sem apresentador e o botão \"Saiba mais\".",
+          "at_seconds": 21.6
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/fused.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "69ca76e03b2ab2e748aa461e15062685eb039432e5f406c829b81c6a3785e039",
+          "bytes": 144611,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711",
+          "caption": "Os blocos fundidos no vídeo pronto.",
+          "at_seconds": 12.0
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "20c4f596dca17ad97bc001f832077bba66d271ddac78ebda137cce54ff90caa1",
+          "bytes": 153950,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711",
+          "caption": "Gancho: a voz como placa de ouro desenhada pela narração real.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/mould.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "7ceac16e8c8a75ae9e23cfff2c5a85caf5b0bc88b7608166775b4a9ddc6856d4",
+          "bytes": 137652,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711",
+          "caption": "O molde 9:16 com as vagas tracejadas e rotuladas.",
+          "at_seconds": 2.6
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/pieces.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f6312c73c63bab366058d95e3da4d8e08e29148c1c5a789b72f8a32d15776eab",
+          "bytes": 215155,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711",
+          "caption": "Peças preenchendo o molde com o contador.",
+          "at_seconds": 7.5
+        },
+        {
+          "path": "examples/reference-library/F46/molde-de-pecas/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "500f2563b70db064b5dcdecb198baef420fa04950e4d1c10adf171be9eeb6497",
+          "bytes": 7175366,
+          "source_sha256": "0cb40977c03eda9c38edca7966aced35c6acf8e8909ca25e9ed1a5427f0c8711"
+        }
+      ],
+      "missing_sources": []
+    },
+    "F47": {
+      "code": "F47",
+      "name": "Linha do Tempo que se Organiza",
+      "uid": "official.5b2dad34db064c7581836935079777ba",
+      "references": [
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/README.md",
+          "kind": "reference_analysis",
+          "sha256": "4922b1741b374454fc9f9c02a8081182128a5cf1aedbb5e34e653688bc8710c3",
+          "bytes": 839,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c"
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "59a35278875d24e4770e51df1fc4a75f77dddeb02c5ac1d12d421dc4e442b6be",
+          "bytes": 7167,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c"
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "cd10aa7d05324fc300e711e10a093be6382d60f5275fb6f8c6c9b32bfca011a3",
+          "bytes": 99403,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c",
+          "caption": "Cartão final: \"Pare de perder horas editando.\" e o botão \"Saiba mais\".",
+          "at_seconds": 17.1
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/day.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0b363798818fb56c755c7776fe5b81c2ed6c07017f9da94c7bf3974ae27a326b",
+          "bytes": 166767,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c",
+          "caption": "A noite vira dia: cartões de tarefas do negócio (ilustração).",
+          "at_seconds": 10.2
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "1768b60a817afb220cb643845d6b74e37630e5c1f29a4a353f242601cb9b85f9",
+          "bytes": 146847,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c",
+          "caption": "Gancho: contador de horas editando sobre a linha do tempo lotada, de noite.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/manual.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "23dbb18fda5e8c663eadd5c2542b52df593d7d6b19e167da0a6f97a5c40ea3ab",
+          "bytes": 184902,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c",
+          "caption": "Janela de áudio com a lâmina cortando silêncios à mão.",
+          "at_seconds": 3.0
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/organize.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f1dc024c66dca9ab7ec42247119e961b1c5e71114a175642548e3de8aae332b2",
+          "bytes": 98708,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c",
+          "caption": "Virada: os clipes decolam e se organizam.",
+          "at_seconds": 5.9
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "39791b6a5ffbcb9a0eadfaebc3f7e66e57e81dacfb6c4d6247a1524a86f47075",
+          "bytes": 5027996,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c"
+        },
+        {
+          "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/result.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f2d6c25ae607351a7bd341279d775a23c3c7c2100112ae60547c9ff74af0c0e2",
+          "bytes": 181868,
+          "source_sha256": "ff091ba47fc9344088127afa422d86a5a8995dd73e001aaf3288cd63564e3c8c",
+          "caption": "O resultado real tocando com selos do que foi feito.",
+          "at_seconds": 7.5
+        }
+      ],
+      "missing_sources": []
+    },
+    "F48": {
+      "code": "F48",
+      "name": "Pilha de Versões",
+      "uid": "official.44340f5a06d141c5bd62b9957efa92a4",
+      "references": [
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/README.md",
+          "kind": "reference_analysis",
+          "sha256": "3c25a80c59640a25c1475651b393e1704b392d1b6315dd9356362eb9b92ba9d1",
+          "bytes": 790,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237"
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "44bef927a5b65baf607dc898bd8ba2606afeea67e852b160c20971ac2a22bf1e",
+          "bytes": 6775,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237"
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "9fc5d892c5f9febe2a8ebb89b0b583cfcd1ef8e2bbe94408d725b720e04ec92a",
+          "bytes": 87486,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237",
+          "caption": "Cartão final: \"Me fala. Eu ajusto.\" e o botão \"Saiba mais\".",
+          "at_seconds": 17.3
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/many.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "c3bf4fae7acd282946af1f5526bda1d5076c950212e82c147206fe3a60fe2dea",
+          "bytes": 124635,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237",
+          "caption": "Muitas versões: a pilha sobe.",
+          "at_seconds": 9.8
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "d646e29d0b29773476c9d686711a3d23dd6a78732cf200cac38ef196de60282b",
+          "bytes": 3929680,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237"
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/stack.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "f71f08f90f6efa656791c561638c24291f5733d38b7286c08e1a7094a7a6beb3",
+          "bytes": 124228,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237",
+          "caption": "A pilha de placas de versão sob o suporte.",
+          "at_seconds": 6.5
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/v1.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "185c69916d54bf2135dd19e3ac529f2bd8ca3088a1cf01a52c31d5e3850a927c",
+          "bytes": 115441,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237",
+          "caption": "Gancho: o vídeo real na tela 3D, versão 1, com as cantoneiras.",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/v2-scene.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "880d25ca08f3bea486537f09040e0201b5584e43e10e00de6f5846926d605597",
+          "bytes": 146876,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237",
+          "caption": "Versão 2: a cena trocada, com o rótulo do ajuste.",
+          "at_seconds": 2.2
+        },
+        {
+          "path": "examples/reference-library/F48/pilha-de-versoes/v3-caption.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "0f219040c9881d95eb334ef581312eafb11e9253f1bfca446585c01fdbc7bac2",
+          "bytes": 155528,
+          "source_sha256": "ba1f6d8dc919ee5157380c99f2dbb6faca2e0d72a3544b1a42dfa7e77fa44237",
+          "caption": "Versão 3: a legenda maior.",
+          "at_seconds": 4.0
+        }
+      ],
+      "missing_sources": []
+    },
+    "F49": {
+      "code": "F49",
+      "name": "Celular de Teste",
+      "uid": "official.669223f0164d449c893f64b368378c34",
+      "references": [
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/README.md",
+          "kind": "reference_analysis",
+          "sha256": "5b1b4c54acdb13413c1eeaf770a2f727b99c34716081e54324c332a1c344edac",
+          "bytes": 799,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061"
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/analysis.json",
+          "kind": "reference_analysis",
+          "sha256": "5ac95537da416d5af122f1d22130db173bfed78cb472f7680bb802f4a30c77e9",
+          "bytes": 6838,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061"
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/back.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "d4009e4018e92067b90dd5d12896cd142e9d2b637b54f92dcfe3cc968a4be855",
+          "bytes": 140220,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061",
+          "caption": "O vídeo volta pronto ao celular com as etiquetas entrando.",
+          "at_seconds": 10.2
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/cta.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ca606a8718a98fa6d6bb97673412ac7c13ec810d04592a39b529ac91e15f6090",
+          "bytes": 100057,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061",
+          "caption": "Cartão final: \"Manda o vídeo parado. Ele volta pronto.\" e o botão \"Saiba mais\".",
+          "at_seconds": 17.6
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/done.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "af6a9d9ba934ceaebf428776207e86090dac1a0c972d082ce3f9fe05d59ff7d0",
+          "bytes": 104057,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061",
+          "caption": "O celular de frente tocando o resultado.",
+          "at_seconds": 12.8
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/hook.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "2b15a3b50b7d523f1e3ed57d4122b35b52f62696f68165af5af8ef22e7270b4b",
+          "bytes": 148383,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061",
+          "caption": "Gancho: celular 3D com a galeria e a frase \"Faz um teste comigo.\"",
+          "at_seconds": 0.8
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/progress.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "5eb2e7059839568c055e939b69c5bded6831046c32c7528f6f352e2bbbb5dc1c",
+          "bytes": 93526,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061",
+          "caption": "O vídeo na pasta com o anel de tempo correndo.",
+          "at_seconds": 7.0
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/reference.mp4",
+          "kind": "actual_reference_video",
+          "sha256": "5ebfed06737184f13924af1cd360e733db215648b7c322ccc97893ec4255c8ad",
+          "bytes": 3871126,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061"
+        },
+        {
+          "path": "examples/reference-library/F49/celular-de-teste/stopped.jpg",
+          "kind": "actual_reference_image",
+          "sha256": "ed1c46bd618e2f5bad3f078da1642c53109d498a867af14f8646f87249432a8b",
+          "bytes": 149495,
+          "source_sha256": "5d0eddaa114b86dcad5726c3a1a6106e725173c1260137ac8ad6edf5a3f7a061",
+          "caption": "O vídeo parado destacado na galeria com a etiqueta \"sem editar\".",
+          "at_seconds": 3.0
+        }
+      ],
+      "missing_sources": []
     }
   },
   "files": {
@@ -3572,6 +4651,123 @@
     "examples/reference-library/F36/interface-em-3d/page.jpg": "7820452a7f196f3e590260d812a3d62ad49ea37510b8ea9cfa664d32d1da5a67",
     "examples/reference-library/F36/interface-em-3d/reference.mp4": "3ad84f3ef0984aa3107beab14590f93028870c25d893112babd3f14948a0f052",
     "examples/reference-library/F36/interface-em-3d/result.jpg": "746ac929d376c1126147e01cbc7a1d09b8a6ba61e8f345a3d3491b12facbc923",
+    "examples/reference-library/F37/depoimento-em-chat-3d/README.md": "6095f9e2fc7a6788c7ba52feb35f261eda562fe650788fd788e9bb70b1ebe975",
+    "examples/reference-library/F37/depoimento-em-chat-3d/analysis.json": "1bb2a3486189bfc74809c7ac096d417f24402fc3ed6c7d71ca53dc96fb0ad4e2",
+    "examples/reference-library/F37/depoimento-em-chat-3d/client-video.jpg": "e39557c03efbda92ecefc21811535266f274d2bda15058d9534110269c5ff86b",
+    "examples/reference-library/F37/depoimento-em-chat-3d/cta.jpg": "b4a82621d414af959b1c1177e9102504beaf9f916b918da945a74b07b811a1be",
+    "examples/reference-library/F37/depoimento-em-chat-3d/hook.jpg": "97a3fa39b59b2d00c63b0101cf0c5bf7f92f973b0aba7e089fb2fa6b0c037d43",
+    "examples/reference-library/F37/depoimento-em-chat-3d/key-phrase.jpg": "c8558194db79266291d22f8c2e45601ed818def43d609e30f5308e6a193ab838",
+    "examples/reference-library/F37/depoimento-em-chat-3d/reference.mp4": "74b09b70814529f97ba9f7568925d52127a280ed90ec1a0faf5917e34948f92a",
+    "examples/reference-library/F37/depoimento-em-chat-3d/styles.jpg": "7c905744f775c51cb275c033c62414a9d49631ef5917b287017853b675ab4be1",
+    "examples/reference-library/F37/depoimento-em-chat-3d/voice-note.jpg": "035a35e412fe1885ed44847d10bc3c1c52bb046d18995cf3afb4be892db8d4e1",
+    "examples/reference-library/F38/paisagem-de-audio/README.md": "c103bdc09ff0aa21bcfe9f7da9bb898c5bb2b1929e8ca14100b40eeb699a3d8b",
+    "examples/reference-library/F38/paisagem-de-audio/analysis.json": "6f4a2e3a8047f887b499311ecd2f70998e892fda738c75f8485aa51dc890147e",
+    "examples/reference-library/F38/paisagem-de-audio/cta.jpg": "ca4bb9487eb8f6581f6cd7cb4fb899c3495c459615a0aaa7a0973141e3d8262a",
+    "examples/reference-library/F38/paisagem-de-audio/hook.jpg": "60b31246d6d946553c66d4a19ef7eb06579dddf75952fbf00b65246ebd3b8e3f",
+    "examples/reference-library/F38/paisagem-de-audio/keyword.jpg": "327f90e2e30a1ea77a9a8f886c48dd1e97f67c68e3d0dbfa722a524e2276a5ab",
+    "examples/reference-library/F38/paisagem-de-audio/person.jpg": "78bb6f05a1a16e082a8589f79e5d98b0de5c3ca48a0e8b8c8e3b61e3db1704b3",
+    "examples/reference-library/F38/paisagem-de-audio/proof.jpg": "7ede050c934b8df48ae16bbb806f3ddfa227ba32539ad6443d5bcca12447c0c4",
+    "examples/reference-library/F38/paisagem-de-audio/reference.mp4": "d3b5e13ae3fece9d9a1932c8eed6f154de708e1e367e25d46ad00f9d9f00443e",
+    "examples/reference-library/F38/paisagem-de-audio/street.jpg": "d0f481aedb474e7ff39f38f32fb97bb35595463e8bc70cb23209bb54093820b0",
+    "examples/reference-library/F39/escada-de-testes/README.md": "8070f7582d6d89a8a73429820c37eba96227a64d7638ceb334b4f5dc4009afe2",
+    "examples/reference-library/F39/escada-de-testes/analysis.json": "e97d71fc37b4059f2ca499addea8b411c58ab9ae4ff0fc6b204742c70d4ce0b8",
+    "examples/reference-library/F39/escada-de-testes/cta.jpg": "46b437334455b1006c0d5e6830f38b00525f721578b59f7ad7256166015730c6",
+    "examples/reference-library/F39/escada-de-testes/hook.jpg": "7c999da7e5fd6401b90923c7151be0292c9457dba079d914ceb0da7a3e40dac0",
+    "examples/reference-library/F39/escada-de-testes/reference.mp4": "674920c941984319fc2e8d945d06b159a29375d78f60144209535b9dacdf4008",
+    "examples/reference-library/F39/escada-de-testes/request.jpg": "b0206c4c4d0c4d819c04d7802d6a8bf8d015e5eaeaf32de7cc510cbbef7d5350",
+    "examples/reference-library/F39/escada-de-testes/result.jpg": "bd6b030ef885c966bf9d7cf257fb23fa90e352970bedf1c827e5ecfc1711b3fd",
+    "examples/reference-library/F39/escada-de-testes/test-1.jpg": "f7239c068aaf4aa80021a6634467c6a2c3ec49e86ee77a5d3b5076970b517682",
+    "examples/reference-library/F39/escada-de-testes/test-2.jpg": "4c8b34b7437ff1fdbb1e9b276692bcbcd211fb28a93a76efa73599ee59c77338",
+    "examples/reference-library/F40/iris-de-depoimento/README.md": "0ef18027a862fec2b3db3f74a2d1b1700e8a7d4e52cfc211fb228b3e3799b3ff",
+    "examples/reference-library/F40/iris-de-depoimento/ai-back.jpg": "906e34269d9c231616fcb1719904af79c81d6e0d6357ab89a26fac1d3e4bd139",
+    "examples/reference-library/F40/iris-de-depoimento/analysis.json": "8b480be4602522bc97fdc4921461f3a70440a542d6842b377bb5d1d9ccbda597",
+    "examples/reference-library/F40/iris-de-depoimento/cta.jpg": "89eeafc87b52e018cf401563ea1ee45401acae38f1904b6f2b7ad253279d6622",
+    "examples/reference-library/F40/iris-de-depoimento/hook.jpg": "72ac81f3a2f4225f3dbb0e69bcb01815cc91d404abf299a8ea5dea71d1865c27",
+    "examples/reference-library/F40/iris-de-depoimento/orbit.jpg": "12d7698149b4c05650e049888a0e30db92cbec7b0794f08671a48a9f88be6c08",
+    "examples/reference-library/F40/iris-de-depoimento/reference.mp4": "04d34b6ec9b4195de6e9314c729290a8eae21f599abad18f3a4ab33f170cb228",
+    "examples/reference-library/F40/iris-de-depoimento/reveal.jpg": "4e0693bcf3b632d4986e6bd3cf088b6a4a3983b09e28c07937628d205d9ad711",
+    "examples/reference-library/F40/iris-de-depoimento/testimony.jpg": "48622c0444fbf3fc63db4d5046811022d5b063dfa7b5a89f697f5538640ba8d4",
+    "examples/reference-library/F41/gavetas-de-pesquisa/README.md": "6df809db32dec4b8ef7bf8e16a4b976f252554f397d4694668a68a93d3ea84c0",
+    "examples/reference-library/F41/gavetas-de-pesquisa/analysis.json": "0fcb38f5706074ab4bfa6c80901c192faf32355e5e3cfa0444ad6c8b104b401e",
+    "examples/reference-library/F41/gavetas-de-pesquisa/cta.jpg": "a1348367bdd1476d7199445cde15e675fc4cff33cce3a3317a14a81f76b1a925",
+    "examples/reference-library/F41/gavetas-de-pesquisa/drawers.jpg": "09b6d7a98acf66c3b8ec337e2a79fd4023c2a25d81dd567e0ed7a057f114c3db",
+    "examples/reference-library/F41/gavetas-de-pesquisa/generic.jpg": "3200c34070c5877619cbd04736f8b95c21a06d6a50b0f7d3814424d010504950",
+    "examples/reference-library/F41/gavetas-de-pesquisa/hook.jpg": "470577ba6bbb176c296a08d0346ce1074135aecbbe0d4535aeebe97d89353a4b",
+    "examples/reference-library/F41/gavetas-de-pesquisa/reference.mp4": "9e510491a8fdab625a76cde794e437b4fe28fc6a2a7d4cb5bf74b0b97028b046",
+    "examples/reference-library/F41/gavetas-de-pesquisa/research.jpg": "42fe64adb286736e705107f042efe12f1c46f3d5cf7d707d9e59e193c1cde0eb",
+    "examples/reference-library/F41/gavetas-de-pesquisa/results.jpg": "57ab060384d8085dc4071531b15d6dd2877621c4fbc049f79541ea4c5bfd326f",
+    "examples/reference-library/F42/tunel-da-pasta/README.md": "e0b0fb39b421b7e70a5ec6b3a89a9f39209d641442b26ee3e57df30896f4afa3",
+    "examples/reference-library/F42/tunel-da-pasta/analysis.json": "23f818b66ca39174d3f03f700f52e278e68d234f4479bdfde350efee6f127017",
+    "examples/reference-library/F42/tunel-da-pasta/appear.jpg": "7c943bd8f5828653b9e69ae4dd67abb43b9872204040e0fe549cd76097b01626",
+    "examples/reference-library/F42/tunel-da-pasta/cta.jpg": "5476d97263baaece079af07dfb1fd2187e167a88126e51f4c7d3b5b7a259f4cc",
+    "examples/reference-library/F42/tunel-da-pasta/drop.jpg": "75d0236a902492d05da385b81bbd9c425ae8e6fd78767becb552c846d5f5788d",
+    "examples/reference-library/F42/tunel-da-pasta/hook.jpg": "2fcbf59eedc687b2d1f5296f6e46ac361efc0c3db40019ef66008e30238dde30",
+    "examples/reference-library/F42/tunel-da-pasta/no-timeline.jpg": "1b6ea7454ecca104b729863e11763a85ac1b4b02a6f0849ba1db4ed90828e3a8",
+    "examples/reference-library/F42/tunel-da-pasta/reference.mp4": "183f555453144cd426a7b2e557e9e58e66df70cf1069c1b7289659bdaaa06646",
+    "examples/reference-library/F42/tunel-da-pasta/tunnel.jpg": "6ea26507390a14ea4e837181294f78ad0ca03576fc6272066036056dcc94387e",
+    "examples/reference-library/F43/tomadas-de-vidro/README.md": "52eb3bc55b168fb5da6e7048a12c94498fd538c8fbe9f2dc0aa834f2f3075507",
+    "examples/reference-library/F43/tomadas-de-vidro/after.jpg": "ea7a2c76b23009e09a5dc297891e96267573bee9dda2eaa00978b23b86793846",
+    "examples/reference-library/F43/tomadas-de-vidro/analysis.json": "2b4574390a13fe3766e5c0286e2858aa76b0fa0d5dad428c2ba57b61f1c26bf5",
+    "examples/reference-library/F43/tomadas-de-vidro/best.jpg": "d4555654576eecd710205666e1cc0bda938e4253422768d809ea45dfc4d16160",
+    "examples/reference-library/F43/tomadas-de-vidro/cta.jpg": "82b261b2f25547b3923f938d53894197a1bf0f402437e1fbbf04d7019117693b",
+    "examples/reference-library/F43/tomadas-de-vidro/hook.jpg": "4819adc2c944fbb538d4e77bef2a90ff342fd59c96a47dcf7dfa382676fb14c1",
+    "examples/reference-library/F43/tomadas-de-vidro/reference.mp4": "d21e0949aeddf6082d2228849838f4224e1e9af41b9b633e797c4ea6aae90884",
+    "examples/reference-library/F43/tomadas-de-vidro/repeated.jpg": "e4235180d78bfeee6a9b859be1f5593acc811e250cd5845497f816d35e1af2bc",
+    "examples/reference-library/F43/tomadas-de-vidro/scan.jpg": "2c3a0834758ec0717fa2fcf4615e7de1b3ec6a89525351272ffed2119fec929c",
+    "examples/reference-library/F44/cordilheira-de-cortes/README.md": "0a1ec350f4cfa69fe8075848ebf159bab22cfd734b7c1a6cf84f7fcc8d589f3a",
+    "examples/reference-library/F44/cordilheira-de-cortes/analysis.json": "d285ae46d58080538e43520d72226846df7fc71916bfc96b39ec530bb0e6e420",
+    "examples/reference-library/F44/cordilheira-de-cortes/client.jpg": "a7e04ef761935eb6d470af5d07f6026b9d57789a5c035fc0e0c8c68d0928bf4c",
+    "examples/reference-library/F44/cordilheira-de-cortes/cta.jpg": "20186b279993f69b4adddedc0bfd4357b6ff62bc64fe7430b046d7b5717a2614",
+    "examples/reference-library/F44/cordilheira-de-cortes/cuts.jpg": "0c1dab9da0aafa0ca17515fe23383f40a6ac5ff5de277a5a1a93a96dc774a149",
+    "examples/reference-library/F44/cordilheira-de-cortes/hook.jpg": "099d662e648db0afa75ac197fa4131f6caa342b7fbd519d1b17c6cd8e01ee5fc",
+    "examples/reference-library/F44/cordilheira-de-cortes/peaks.jpg": "9c17e32610b34a49126541f5edab679b5b75fe57a3299e3763ed907bc21e381f",
+    "examples/reference-library/F44/cordilheira-de-cortes/range.jpg": "f878bfdd2c5c1cdfc526f5d0536b7f8af4c14d58a72c27b7082f3d9e68e269e0",
+    "examples/reference-library/F44/cordilheira-de-cortes/reference.mp4": "0bd9c2896fd4da1386924472c8a5776bb6796f0973e50e0e77fb630f410de7f4",
+    "examples/reference-library/F45/estudio-de-marca/README.md": "c89fa0c1c78668a72ab5eefa4354d5523f9bc53cffdeb11558180e311be4d577",
+    "examples/reference-library/F45/estudio-de-marca/analysis.json": "71ea92038de015dea87968f8ecad5b7be383630b19e1ae02c6c2ae94204d7d6d",
+    "examples/reference-library/F45/estudio-de-marca/colors.jpg": "c5ed5cb7f718f911f54d9c92fe19e9c6a29cb4e10e6f22299b8028a7aa5fa519",
+    "examples/reference-library/F45/estudio-de-marca/cta.jpg": "068c0553395d4aaf660e8e20cf6237b04f99128ec984c0bf8d25923fb5b2d299",
+    "examples/reference-library/F45/estudio-de-marca/fonts.jpg": "03ad77de76124b3cbb244259460310884e974fed270352d1951a35bea6141380",
+    "examples/reference-library/F45/estudio-de-marca/identity.jpg": "7afe37d5484df4141c2ed1e355cda88b181cca4ea276bee83b0d1ae8d1f11023",
+    "examples/reference-library/F45/estudio-de-marca/reference.mp4": "28b721adbb6f5cedb6e30d75fb90ed9f82816cf7a3be0c975a27f22eca4e1a00",
+    "examples/reference-library/F45/estudio-de-marca/reskin.jpg": "a077e5b03cd41b0ac1079412f3c9c7459a420d3969276739a2985a696b9f4037",
+    "examples/reference-library/F45/estudio-de-marca/your-way.jpg": "5ea08f7a0d92d4c5a579e644ab5ac417732fec3633d95238f8ce52101f771a27",
+    "examples/reference-library/F46/molde-de-pecas/README.md": "b0b5a59554066596c6c23ffef50a2cf0b64698d732cc3d7ebb96bdbe0579c37d",
+    "examples/reference-library/F46/molde-de-pecas/analysis.json": "126874633508b697a0a64d99d11ac6c43e3f96cb2690c195900905eb1dfba52d",
+    "examples/reference-library/F46/molde-de-pecas/cover.jpg": "74d6f952822507a813fc6e28e79accf8af9387d24d1b96c26826406752bf48f0",
+    "examples/reference-library/F46/molde-de-pecas/cta.jpg": "de2ccceafcbd60327d2822282d6d1706050234cdb8497e08fe90d5fb37c1a88f",
+    "examples/reference-library/F46/molde-de-pecas/fused.jpg": "69ca76e03b2ab2e748aa461e15062685eb039432e5f406c829b81c6a3785e039",
+    "examples/reference-library/F46/molde-de-pecas/hook.jpg": "20c4f596dca17ad97bc001f832077bba66d271ddac78ebda137cce54ff90caa1",
+    "examples/reference-library/F46/molde-de-pecas/mould.jpg": "7ceac16e8c8a75ae9e23cfff2c5a85caf5b0bc88b7608166775b4a9ddc6856d4",
+    "examples/reference-library/F46/molde-de-pecas/pieces.jpg": "f6312c73c63bab366058d95e3da4d8e08e29148c1c5a789b72f8a32d15776eab",
+    "examples/reference-library/F46/molde-de-pecas/reference.mp4": "500f2563b70db064b5dcdecb198baef420fa04950e4d1c10adf171be9eeb6497",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/README.md": "4922b1741b374454fc9f9c02a8081182128a5cf1aedbb5e34e653688bc8710c3",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/analysis.json": "59a35278875d24e4770e51df1fc4a75f77dddeb02c5ac1d12d421dc4e442b6be",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/cta.jpg": "cd10aa7d05324fc300e711e10a093be6382d60f5275fb6f8c6c9b32bfca011a3",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/day.jpg": "0b363798818fb56c755c7776fe5b81c2ed6c07017f9da94c7bf3974ae27a326b",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/hook.jpg": "1768b60a817afb220cb643845d6b74e37630e5c1f29a4a353f242601cb9b85f9",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/manual.jpg": "23dbb18fda5e8c663eadd5c2542b52df593d7d6b19e167da0a6f97a5c40ea3ab",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/organize.jpg": "f1dc024c66dca9ab7ec42247119e961b1c5e71114a175642548e3de8aae332b2",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/reference.mp4": "39791b6a5ffbcb9a0eadfaebc3f7e66e57e81dacfb6c4d6247a1524a86f47075",
+    "examples/reference-library/F47/linha-do-tempo-que-se-organiza/result.jpg": "f2d6c25ae607351a7bd341279d775a23c3c7c2100112ae60547c9ff74af0c0e2",
+    "examples/reference-library/F48/pilha-de-versoes/README.md": "3c25a80c59640a25c1475651b393e1704b392d1b6315dd9356362eb9b92ba9d1",
+    "examples/reference-library/F48/pilha-de-versoes/analysis.json": "44bef927a5b65baf607dc898bd8ba2606afeea67e852b160c20971ac2a22bf1e",
+    "examples/reference-library/F48/pilha-de-versoes/cta.jpg": "9fc5d892c5f9febe2a8ebb89b0b583cfcd1ef8e2bbe94408d725b720e04ec92a",
+    "examples/reference-library/F48/pilha-de-versoes/many.jpg": "c3bf4fae7acd282946af1f5526bda1d5076c950212e82c147206fe3a60fe2dea",
+    "examples/reference-library/F48/pilha-de-versoes/reference.mp4": "d646e29d0b29773476c9d686711a3d23dd6a78732cf200cac38ef196de60282b",
+    "examples/reference-library/F48/pilha-de-versoes/stack.jpg": "f71f08f90f6efa656791c561638c24291f5733d38b7286c08e1a7094a7a6beb3",
+    "examples/reference-library/F48/pilha-de-versoes/v1.jpg": "185c69916d54bf2135dd19e3ac529f2bd8ca3088a1cf01a52c31d5e3850a927c",
+    "examples/reference-library/F48/pilha-de-versoes/v2-scene.jpg": "880d25ca08f3bea486537f09040e0201b5584e43e10e00de6f5846926d605597",
+    "examples/reference-library/F48/pilha-de-versoes/v3-caption.jpg": "0f219040c9881d95eb334ef581312eafb11e9253f1bfca446585c01fdbc7bac2",
+    "examples/reference-library/F49/celular-de-teste/README.md": "5b1b4c54acdb13413c1eeaf770a2f727b99c34716081e54324c332a1c344edac",
+    "examples/reference-library/F49/celular-de-teste/analysis.json": "5ac95537da416d5af122f1d22130db173bfed78cb472f7680bb802f4a30c77e9",
+    "examples/reference-library/F49/celular-de-teste/back.jpg": "d4009e4018e92067b90dd5d12896cd142e9d2b637b54f92dcfe3cc968a4be855",
+    "examples/reference-library/F49/celular-de-teste/cta.jpg": "ca606a8718a98fa6d6bb97673412ac7c13ec810d04592a39b529ac91e15f6090",
+    "examples/reference-library/F49/celular-de-teste/done.jpg": "af6a9d9ba934ceaebf428776207e86090dac1a0c972d082ce3f9fe05d59ff7d0",
+    "examples/reference-library/F49/celular-de-teste/hook.jpg": "2b15a3b50b7d523f1e3ed57d4122b35b52f62696f68165af5af8ef22e7270b4b",
+    "examples/reference-library/F49/celular-de-teste/progress.jpg": "5eb2e7059839568c055e939b69c5bded6831046c32c7528f6f352e2bbbb5dc1c",
+    "examples/reference-library/F49/celular-de-teste/reference.mp4": "5ebfed06737184f13924af1cd360e733db215648b7c322ccc97893ec4255c8ad",
+    "examples/reference-library/F49/celular-de-teste/stopped.jpg": "ed1c46bd618e2f5bad3f078da1642c53109d498a867af14f8646f87249432a8b",
     "examples/reference-library/README.md": "3892096a187ac161989cf33137860f92186d37d6f1dd13078bc5e8f837303ca1"
   },
   "retired_generations": {

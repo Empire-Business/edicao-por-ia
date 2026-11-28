@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F39",
+  "format_uid": "official.f3a50372df8f4b35a26db6ce2cf96da4",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F39/escada-de-testes/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Relato de experiência em 9:16 contado como uma escada de vidro num céu claro. O gancho é a reação mais forte (\"nossa, quanta edição boa\"). A pergunta abre a escada; cada teste citado é um degrau maior, com o resultado real numa tela (vídeo curto com selo \"Postado\", vídeo longo em 16:9). O pedido feito à ferramenta é digitado num cartão de vidro no ritmo da fala; no resultado, cinco vagas pontilhadas recebem os cortes e uma cópia do vídeo longo se divide em cinco telas verticais. Vídeos publicados pela pessoa entram com o rótulo dela. Cartão final com \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Mapear cada teste dito para um degrau e para o resultado real que o mostra; marcar a palavra do pedido (cartão digitado) e a do resultado (vagas preenchidas).",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/escada-de-testes com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Não usar brilho que estoure o céu claro. Cortes que são ilustração devem dizer \"exemplo\"; vídeo publicado pela pessoa só com o rótulo dela. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/reference.mp4",
+      "sha256": "674920c941984319fc2e8d945d06b159a29375d78f60144209535b9dacdf4008"
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/hook.jpg",
+      "sha256": "7c999da7e5fd6401b90923c7151be0292c9457dba079d914ceb0da7a3e40dac0"
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/test-1.jpg",
+      "sha256": "f7239c068aaf4aa80021a6634467c6a2c3ec49e86ee77a5d3b5076970b517682"
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/test-2.jpg",
+      "sha256": "4c8b34b7437ff1fdbb1e9b276692bcbcd211fb28a93a76efa73599ee59c77338"
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/request.jpg",
+      "sha256": "b0206c4c4d0c4d819c04d7802d6a8bf8d015e5eaeaf32de7cc510cbbef7d5350"
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/result.jpg",
+      "sha256": "bd6b030ef885c966bf9d7cf257fb23fa90e352970bedf1c827e5ecfc1711b3fd"
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/cta.jpg",
+      "sha256": "46b437334455b1006c0d5e6830f38b00525f721578b59f7ad7256166015730c6"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/hook.jpg",
+      "sha256": "7c999da7e5fd6401b90923c7151be0292c9457dba079d914ceb0da7a3e40dac0",
+      "at_seconds": 1.0,
+      "caption": "Gancho: a reação mais forte com o vídeo longo de exemplo e o cartão da pessoa."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/test-1.jpg",
+      "sha256": "f7239c068aaf4aa80021a6634467c6a2c3ec49e86ee77a5d3b5076970b517682",
+      "at_seconds": 6.5,
+      "caption": "Degrau 1: o vídeo curto publicado, com rótulo de quem publicou."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/test-2.jpg",
+      "sha256": "4c8b34b7437ff1fdbb1e9b276692bcbcd211fb28a93a76efa73599ee59c77338",
+      "at_seconds": 12.5,
+      "caption": "Degrau 2: o vídeo longo em 16:9 numa tela maior."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/request.jpg",
+      "sha256": "b0206c4c4d0c4d819c04d7802d6a8bf8d015e5eaeaf32de7cc510cbbef7d5350",
+      "at_seconds": 21.0,
+      "caption": "O pedido feito à ferramenta sendo digitado num cartão de vidro."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/result.jpg",
+      "sha256": "bd6b030ef885c966bf9d7cf257fb23fa90e352970bedf1c827e5ecfc1711b3fd",
+      "at_seconds": 31.5,
+      "caption": "Resultado: o vídeo longo e as vagas dos cinco cortes."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/cta.jpg",
+      "sha256": "46b437334455b1006c0d5e6830f38b00525f721578b59f7ad7256166015730c6",
+      "at_seconds": 39.5,
+      "caption": "Cartão final: cinco cortes no último degrau e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/escada-de-testes",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E131 V2",
+    "original_filename": "E131 V2 - Corte 11 Primeiro teste (previa).mp4",
+    "original_sha256": "1aec607d9d284c32947ec36f53e08f05b7f90de7ba48d16dfd4f7992b5eaf9e7",
+    "duration_s": 40.73,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

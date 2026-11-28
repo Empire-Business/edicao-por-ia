@@ -1,11 +1,11 @@
 {
   "scope": "author_distributed_stock_only",
-  "catalog_sha256": "a8db93986b925c8b095e21e7f4176f72aaf6b6e94936d9f4e135a371323c779e",
-  "publication_sha256": "85d7da84280c3d50a2ad3dd5c2bff5b2791012e78f9f06538b198f743baa788e",
+  "catalog_sha256": "d0136f4795b1a24f4e6d542cca67390e8884829aa3d15a51c28d9ffa05a6c7f3",
+  "publication_sha256": "e656be99489f04e26e241b584dd332f18a74157138cfd393147556b10c896ba5",
   "excluded_codes": [],
   "sources": {
-    "config/design-defaults.json": "7b207a647ce715ce3c1ec1088f8f66b5e8edb67f0da1716c781e6fc17bafea52",
-    "config/reference-library.json": "441240951de943da2749660242dc7101b17f90709798861c4354a6f6f6365167",
+    "config/design-defaults.json": "55c8d7fa24f0c276913a67cfdd5cfcb9849e323127e178e3a236bb179817ff45",
+    "config/reference-library.json": "9011750b778f72c75006bbdb6f1aff3b4344ac4e1f40d87d38c9e8ea9028a996",
     "tools/format_guides.py": "3bb287fec8d308d9c73f1cd20be5ffd163bd97a86e77ab53066a6feb70805a15",
     "web/modelos-edicao/vimeo.json": "19b0c49d065cca6bd853f8ea521d4acb7f877bf24c1541e6852cdfbd84cbd849"
   },

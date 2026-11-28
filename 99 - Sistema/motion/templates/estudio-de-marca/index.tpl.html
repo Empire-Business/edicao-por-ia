@@ -1,0 +1,386 @@
+<!-- MODELO F45 Estúdio de Marca: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · "Com a sua cara" (F10 · ID05 · voz de IA)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID05 Roxo — fundo #F7F4FB · texto #17092C · roxo #820AD1 · superfície #FFFFFF · apoio #5C0F8B · Manrope (títulos/texto) + JetBrains Mono (etiquetas).
+   F10 com voz de IA do Cortez: um "kit de marca" em 3D (leque de cores laqueado, tipos de metal com as fontes reais das IDs, placas de legenda)
+   se monta na identidade da pessoa; o mesmo vídeo troca de identidade; modelo pronto e cara de IA são descartados; entregas reais em IDs diferentes.
+   three.js r186 (ESM), sombras suaves reais, tudo em função do tempo do quadro. */
+@font-face { font-family:"Manrope"; src:url("assets/manrope-variable.ttf") format("truetype"); font-weight:200 800; }
+@font-face { font-family:"Baskerville"; src:url("assets/libre-baskerville-variable.ttf") format("truetype"); font-weight:400 700; }
+@font-face { font-family:"Instrument"; src:url("assets/InstrumentSerif-Regular.ttf") format("truetype"); font-weight:400; font-style:normal; }
+@font-face { font-family:"Instrument"; src:url("assets/InstrumentSerif-Italic.ttf") format("truetype"); font-weight:400; font-style:italic; }
+@font-face { font-family:"JBMono"; src:url("assets/jetbrains-mono-variable.ttf") format("truetype"); font-weight:100 800; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin-ext.woff2") format("woff2"); font-weight:400; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin.woff2") format("woff2"); font-weight:600 700; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+* { box-sizing:border-box; }
+body { margin:0; background:#F7F4FB; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; font-family:"Manrope", sans-serif;
+  background:radial-gradient(120% 70% at 50% 42%, #FFFFFF 0%, #F7F4FB 46%, #EDE5F7 100%); }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:2; }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.035; mix-blend-mode:multiply; }
+#fadeTop { position:absolute; left:0; right:0; top:0; height:420px; z-index:3; pointer-events:none; background:linear-gradient(180deg, rgba(247,244,251,.92) 0%, rgba(247,244,251,.55) 55%, rgba(247,244,251,0) 100%); }
+
+.lab { position:absolute; left:70px; top:104px; z-index:8; display:flex; align-items:center; gap:14px; opacity:0; white-space:nowrap;
+  font-family:"JBMono", monospace; font-weight:700; font-size:26px; letter-spacing:.14em; text-transform:uppercase; color:#820AD1; }
+.lab i { width:10px; height:10px; border-radius:50%; background:#820AD1; display:block; flex:none; }
+.lab b { color:#17092C; font-weight:700; }
+.hd { position:absolute; left:64px; right:64px; top:150px; z-index:8; }
+.hd .ln { display:block; overflow:hidden; padding:0 0 .12em; font-weight:800; font-size:112px; line-height:1.0; letter-spacing:-.04em; color:#17092C; white-space:nowrap; }
+.hd .ln .in { display:inline-block; }
+.hd .ln em { font-style:normal; color:#820AD1; }
+
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:60px; right:60px; text-align:center; opacity:0; }
+.cap .cl { display:block; white-space:nowrap; font-weight:700; font-size:56px; line-height:1.2; letter-spacing:-.02em; color:#17092C;
+  text-shadow:0 0 18px rgba(255,255,255,.95), 0 0 6px rgba(255,255,255,.9); }
+.cap .k { color:#820AD1; }
+
+.cta-h { position:absolute; left:50px; right:50px; top:150px; z-index:10; text-align:center; }
+.cta-h .ln { display:block; overflow:hidden; padding:0 0 .12em; font-weight:800; font-size:110px; line-height:1.0; letter-spacing:-.04em; color:#17092C; white-space:nowrap; }
+.cta-h .ln .in { display:inline-block; }
+.cta-h .ln em { font-style:normal; color:#820AD1; }
+.cta-s { position:absolute; left:60px; right:60px; top:300px; z-index:10; text-align:center; opacity:0; font-weight:500; font-size:38px; color:#5C0F8B; }
+.cta-s b { font-weight:800; color:#17092C; }
+#btn { position:absolute; left:270px; top:{{BTN_TOP}}px; width:540px; height:118px; z-index:10; opacity:0; display:flex; align-items:center; justify-content:center; gap:18px; border-radius:999px;
+  background:linear-gradient(180deg,#9A2BE6,#820AD1); color:#FFFFFF; font-weight:800; font-size:48px; letter-spacing:-.01em; white-space:nowrap; box-shadow:0 24px 60px rgba(92,15,139,.35); }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }{{CTA_CSS}}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="fadeTop"></div>
+  {{LABS}}
+  {{HEADS}}
+  <div id="caps">{{CAPS}}</div>
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Com a <em>sua cara.</em></span></span></div>
+  <div class="cta-s" id="cs">Você grava. <b>O Cortez edita.</b> Você aprova.</div>
+  {{CTA_HTML}}
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#17092C" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd:not(#hd0) .in, #ch1',{yPercent:112});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.55,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at,d)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:d||.26,ease:'power3.in',immediateRender:false},at);
+  // títulos: o primeiro já está na tela no quadro 0
+  DATA.heads.forEach((h,i)=>{ if(i>0) IN(`#hd${i} .in`,h.s,.5);
+    if(h.e<T.end-.01) OUT(`#hd${i} .in`,h.e-.24,.24); });
+  DATA.labs.forEach((l,i)=>{ if(i===0) gsap.set('#lb0',{opacity:1}); else tl.fromTo('#lb'+i,{opacity:0,x:-14},{opacity:1,x:0,duration:.3,ease:'power2.out',immediateRender:false},l.s);
+    tl.to('#lb'+i,{opacity:0,duration:.18},l.e-.18); });
+  IN('#ch1',T.cta0+.3,.8);
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+.75);
+{{CTA_TL}}
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},g.s); tl.set(`#cg${i}`,{opacity:0},g.e); });
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+
+const DATA = window.__DATA, T = DATA.T;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const sm=(a,b,x)=>{ const u=clamp((x-a)/(b-a),0,1); return u*u*(3-2*u); };
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const lerp=(a,b,u)=>a+(b-a)*u;
+const gauss=(t,c,w)=>Math.exp(-Math.pow((t-c)/w,2));
+const spring=(u)=>u<=0?0:1-Math.exp(-6.0*u)*Math.cos(8.0*u);
+const V3=(x,y,z)=>new THREE.Vector3(x,y,z);
+
+const INK='#17092C', PUR='#820AD1', PUR2='#5C0F8B', BG='#F7F4FB', WHITE='#FFFFFF';
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,alpha:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.setClearColor(0x000000,0);
+R.toneMapping=THREE.NeutralToneMapping; R.toneMappingExposure=1.0; R.outputColorSpace=THREE.SRGBColorSpace;
+R.shadowMap.enabled=true; R.shadowMap.type=THREE.PCFShadowMap;
+const S=new THREE.Scene();
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity=0.55;
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,20,20000);
+const key=new THREE.DirectionalLight(0xffffff,1.3); key.position.set(-1100,1900,1700); key.castShadow=true;
+key.shadow.mapSize.set(2048,2048); key.shadow.camera.left=-1600; key.shadow.camera.right=1600; key.shadow.camera.top=1600; key.shadow.camera.bottom=-1600;
+key.shadow.camera.near=100; key.shadow.camera.far=6000; key.shadow.radius=6; key.shadow.bias=-0.0004; S.add(key); S.add(key.target);
+const fill=new THREE.DirectionalLight(0xF1E6FF,0.30); fill.position.set(1400,300,1200); S.add(fill);
+const rim=new THREE.DirectionalLight(0xC58BFF,0.6); rim.position.set(900,700,-1600); S.add(rim);
+const FLOOR_Y=-430;
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(9000,9000),new THREE.ShadowMaterial({color:0x3A1366,opacity:.20}));
+floor.rotation.x=-Math.PI/2; floor.position.y=FLOOR_Y; floor.receiveShadow=true; S.add(floor);
+
+function canvas(w,h){ const c=document.createElement('canvas'); c.width=w; c.height=h; return [c,c.getContext('2d')]; }
+function ctex(c,aniso){ const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=aniso||8; return t; }
+function roundMask(w,h,r){ const [c,g]=canvas(w,h); g.fillStyle='#000'; g.fillRect(0,0,w,h); g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+function loadOnce(src){ return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>rej(new Error(src)); im.src=src; }); }
+let INFLIGHT=0; const QUEUE=[];
+function pump(){ while(INFLIGHT<16 && QUEUE.length){ const job=QUEUE.shift(); INFLIGHT++; job().finally(()=>{ INFLIGHT--; pump(); }); } }
+function loadImg(src){ return new Promise((res,rej)=>{ const attempt=(k)=>()=>loadOnce(src+(k?('?r='+k):'')).then(res,(e)=>{ if(k<4){ QUEUE.push(attempt(k+1)); } else rej(e); });
+  QUEUE.push(attempt(0)); pump(); }); }
+const SEQ={};
+function frameOf(name,t,t0){ const a=SEQ[name]; const i=Math.floor(Math.max(0,(t-t0))*30+1e-6); return a[Math.min(i,a.length-1)]; }
+function loopOf(name,t,t0){ const a=SEQ[name]; const i=Math.floor(Math.max(0,(t-t0))*30+1e-6); const n=a.length, p=i%(2*n-2); return a[p<n?p:2*n-2-p]; }
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+function lacquer(color,extra){ return new THREE.MeshPhysicalMaterial(Object.assign({color:new THREE.Color(color),roughness:.26,metalness:0,clearcoat:1,clearcoatRoughness:.05},extra||{})); }
+function shadowy(m){ m.traverse(o=>{ if(o.isMesh){ o.castShadow=true; } }); return m; }
+
+// ---------- 1) leque de cores laqueado (cores reais das IDs) ----------
+const SW=DATA.swatches;                    // [{code,name,hex,ink}]
+const fan=new THREE.Group(); S.add(fan);
+const STRIPS=[];
+const SWW=200, SWH=860, SWD=16;
+function stripTex(s){ const [c,g]=canvas(336,1200);
+  g.fillStyle=s.hex; g.fillRect(0,0,336,860); const gr=g.createLinearGradient(0,0,0,860); gr.addColorStop(0,'rgba(255,255,255,.10)'); gr.addColorStop(1,'rgba(0,0,0,.10)'); g.fillStyle=gr; g.fillRect(0,0,336,860);
+  g.fillStyle='#FFFFFF'; g.fillRect(0,860,336,340);
+  g.fillStyle=INK; g.font='800 44px Manrope'; g.textBaseline='alphabetic'; g.fillText(s.name,30,950);
+  g.fillStyle=PUR2; g.font='700 28px JBMono'; g.fillText(s.code,30,1010); g.fillStyle='#7d7290'; g.fillText(s.hex.toUpperCase(),30,1060);
+  g.strokeStyle='rgba(23,9,44,.10)'; g.lineWidth=2; g.beginPath(); g.moveTo(30,1100); g.lineTo(306,1100); g.stroke();
+  return ctex(c,16); }
+SW.forEach((s,i)=>{ const pivot=new THREE.Group(); fan.add(pivot);
+  const geo=new RoundedBoxGeometry(SWW,SWH,SWD,4,7);
+  const front=new THREE.Mesh(geo,new THREE.MeshPhysicalMaterial({map:null,color:0xffffff,roughness:.38,clearcoat:1,clearcoatRoughness:.04}));
+  front.position.y=SWH/2-40; pivot.add(front); front.castShadow=true;
+  pivot.userData={front,s,i}; STRIPS.push(pivot); });
+// pino do leque
+const pin=new THREE.Mesh(new THREE.CylinderGeometry(18,18,40,32),new THREE.MeshStandardMaterial({color:0xD8D2E2,metalness:1,roughness:.25})); pin.rotation.x=Math.PI/2; fan.add(pin);
+
+// ---------- 2) tipos de metal com as fontes reais das IDs ----------
+const SORTS=[]; const sortsG=new THREE.Group(); S.add(sortsG);
+const metal=new THREE.MeshStandardMaterial({color:0xF2EEF8,metalness:.8,roughness:.3});
+// ---------- 3) placas de estilo de legenda ----------
+const PLATES=[]; const platesG=new THREE.Group(); S.add(platesG);
+// ---------- 4) prancha "sua identidade" ----------
+const board=new THREE.Group(); S.add(board);
+const BW=680, BH=930;
+const boardBody=new THREE.Mesh(new RoundedBoxGeometry(BW,BH,30,4,26),lacquer('#F3EDFA',{roughness:.34})); boardBody.castShadow=true; board.add(boardBody);
+const [bc,bg]=canvas(1200,1640); const btx=ctex(bc,16);
+const boardFace=new THREE.Mesh(new THREE.PlaneGeometry(BW-20,BH-20),new THREE.MeshBasicMaterial({map:btx,transparent:true,depthWrite:false,toneMapped:false})); boardFace.position.z=15.8; board.add(boardFace);
+// ---------- 5) a placa do vídeo (o mesmo vídeo, várias identidades) ----------
+const plate=new THREE.Group(); S.add(plate);
+const PW=540, PH=960;
+const plateBody=new THREE.Mesh(new RoundedBoxGeometry(PW+18,PH+18,22,4,30),lacquer('#FFFFFF',{roughness:.3})); plateBody.castShadow=true; plate.add(plateBody);
+const [pc,pg]=canvas(720,1280); const ptx=ctex(pc,16);
+const plateFace=new THREE.Mesh(new THREE.PlaneGeometry(PW,PH),new THREE.MeshBasicMaterial({map:ptx,alphaMap:roundMask(270,480,14),transparent:true,depthWrite:false,toneMapped:false})); plateFace.position.z=11.6; plate.add(plateFace);
+// ---------- 6) cartões descartados ----------
+const CARDS=[]; const cardsG=new THREE.Group(); S.add(cardsG);
+// ---------- 7) parede final de entregas reais ----------
+const PROOF=[]; const proofG=new THREE.Group(); S.add(proofG);
+
+let FONTS={}, READY=null, BUILT=false;
+function text3d(str,font,size,mat){ const g=new TextGeometry(str,{font,size,depth:size*0.26,curveSegments:10,bevelEnabled:true,bevelThickness:size*0.02,bevelSize:size*0.014,bevelSegments:3});
+  g.computeBoundingBox(); const b=g.boundingBox; g.translate(-(b.max.x+b.min.x)/2,-b.min.y,-(b.max.z+b.min.z)/2); return new THREE.Mesh(g,mat); }
+function labelTex(txt,w,h,col,font){ const [c,g]=canvas(w*2,h*2); g.fillStyle=col||INK; g.font=font||'700 30px JBMono'; g.textBaseline='middle'; g.textAlign='center';
+  g.fillText(txt,w,h); return ctex(c,16); }
+
+function build(){
+  STRIPS.forEach(p=>{ const m=p.userData.front.material; m.map=stripTex(p.userData.s); m.needsUpdate=true; });
+  // tipos
+  DATA.sorts.forEach((s,i)=>{ const g=new THREE.Group(); sortsG.add(g);
+    const blk=new THREE.Mesh(new RoundedBoxGeometry(214,180,214,4,16),metal); blk.castShadow=true; g.add(blk);
+    const inkM=new THREE.MeshPhysicalMaterial({color:new THREE.Color(INK),roughness:.35,clearcoat:.6});
+    const glyph=text3d(s.glyph,FONTS[s.font],s.size*1.25,inkM); glyph.position.set(0,90,10); glyph.castShadow=true; g.add(glyph);
+    const lab=new THREE.Mesh(new THREE.PlaneGeometry(206,44),new THREE.MeshBasicMaterial({map:labelTex(s.label,206,44,'#3d2a5c','800 24px JBMono'),transparent:true,depthWrite:false,toneMapped:false}));
+    lab.position.set(0,-14,108); g.add(lab);
+    g.userData={blk,glyph,inkM,lab,s,i}; SORTS.push(g); });
+  // placas de legenda
+  DATA.plates.forEach((p,i)=>{ const g=new THREE.Group(); platesG.add(g);
+    const body=new THREE.Mesh(new RoundedBoxGeometry(420,150,16,4,18),lacquer('#FFFFFF',{roughness:.35})); body.castShadow=true; g.add(body);
+    const [c,x]=canvas(840,300); drawPlate(x,p); const face=new THREE.Mesh(new THREE.PlaneGeometry(410,140),new THREE.MeshBasicMaterial({map:ctex(c,16),transparent:true,depthWrite:false,toneMapped:false}));
+    face.position.z=8.6; g.add(face); g.userData={body,face,p,i}; PLATES.push(g); });
+  // cartões genéricos
+  DATA.cards.forEach((k,i)=>{ const g=new THREE.Group(); cardsG.add(g);
+    const body=new THREE.Mesh(new RoundedBoxGeometry(480,720,14,4,22),new THREE.MeshStandardMaterial({color:0xE9E7EC,roughness:.7})); body.castShadow=true; g.add(body);
+    const [c,x]=canvas(960,1440); drawGeneric(x,k); const face=new THREE.Mesh(new THREE.PlaneGeometry(470,710),new THREE.MeshBasicMaterial({map:ctex(c,16),alphaMap:roundMask(235,355,10),transparent:true,depthWrite:false,toneMapped:false}));
+    face.position.z=7.6; g.add(face);
+    const slash=new THREE.Mesh(new THREE.PlaneGeometry(640,16),new THREE.MeshBasicMaterial({color:new THREE.Color(PUR),toneMapped:false})); slash.position.z=12; slash.rotation.z=0.52; g.add(slash);
+    const tag=new THREE.Mesh(new THREE.PlaneGeometry(300,56),new THREE.MeshBasicMaterial({map:labelTex(k.tag,300,56,WHITE,'800 26px JBMono'),transparent:true,depthWrite:false,toneMapped:false}));
+    const tagBg=new THREE.Mesh(new THREE.PlaneGeometry(300,56),new THREE.MeshBasicMaterial({color:new THREE.Color(INK),toneMapped:false})); tagBg.position.set(0,-410,9); tag.position.set(0,-410,10);
+    g.add(tagBg); g.add(tag); g.userData={body,face,slash,tag,tagBg,k,i}; CARDS.push(g); });
+  // entregas reais
+  DATA.proof.forEach((p,i)=>{ const g=new THREE.Group(); proofG.add(g);
+    const body=new THREE.Mesh(new RoundedBoxGeometry(312,546,12,4,20),lacquer('#FFFFFF',{roughness:.3})); body.castShadow=true; g.add(body);
+    const tx=videoTex(); const face=new THREE.Mesh(new THREE.PlaneGeometry(300,533),new THREE.MeshBasicMaterial({map:tx,alphaMap:roundMask(150,266,9),transparent:true,depthWrite:false,toneMapped:false}));
+    face.position.z=6.6; g.add(face);
+    const tag=new THREE.Mesh(new THREE.PlaneGeometry(320,52),new THREE.MeshBasicMaterial({map:labelTex(p.label,320,52,PUR2,'800 25px JBMono'),transparent:true,depthWrite:false,toneMapped:false})); tag.position.set(0,-308,0); g.add(tag);
+    g.userData={tx,face,tag,p,i}; PROOF.push(g); });
+  shadowy(fan); shadowy(sortsG);
+}
+
+function drawPlate(g,p){ g.clearRect(0,0,840,300); g.textBaseline='middle'; g.textAlign='center';
+  if(p.kind==='pill'){ g.font='800 64px Manrope'; const w1=g.measureText('sua ').width, w2=g.measureText('legenda').width; const x0=420-(w1+w2+36)/2;
+    g.fillStyle=INK; g.textAlign='left'; g.fillText('sua',x0,150); g.fillStyle=PUR; g.beginPath(); g.roundRect(x0+w1-6,104,w2+36,92,46); g.fill(); g.fillStyle=WHITE; g.fillText('legenda',x0+w1+12,152); }
+  else if(p.kind==='serif'){ g.font='italic 400 76px Instrument'; g.fillStyle=INK; g.fillText('sua legenda',420,150); g.fillStyle='#C9A54E'; g.fillRect(300,214,240,4); }
+  else { g.font='800 50px JBMono'; g.fillStyle=WHITE; g.fillStyle=INK; g.beginPath(); g.roundRect(170,100,500,100,10); g.fill(); g.fillStyle='#D7FF3A'; g.fillText('SUA LEGENDA',420,152); }
+  g.textAlign='left'; g.fillStyle='#7d7290'; g.font='700 22px JBMono'; g.fillText(p.label,28,40); }
+
+function drawGeneric(g,k){ const W=960,H=1440;
+  if(k.kind==='template'){ g.fillStyle='#F1F1F1'; g.fillRect(0,0,W,H);
+    g.fillStyle='#D5D5D5'; g.fillRect(70,120,820,640); g.fillStyle='#BDBDBD'; g.beginPath(); g.moveTo(170,700); g.lineTo(380,420); g.lineTo(520,600); g.lineTo(620,500); g.lineTo(800,700); g.closePath(); g.fill();
+    g.beginPath(); g.arc(700,300,60,0,Math.PI*2); g.fill();
+    g.fillStyle='#8E8E8E'; g.font='700 86px Arial, Helvetica, sans-serif'; g.textBaseline='alphabetic'; g.fillText('TÍTULO AQUI',70,900);
+    g.fillStyle='#C9C9C9'; [980,1040,1100].forEach((y,j)=>{ g.fillRect(70,y,j===2?520:800,26); });
+    g.fillStyle='#B0B0B0'; g.beginPath(); g.roundRect(70,1190,360,100,50); g.fill(); g.fillStyle='#F1F1F1'; g.font='700 40px Arial, sans-serif'; g.fillText('BOTÃO',160,1254); }
+  else { const gr=g.createLinearGradient(0,0,W,H); gr.addColorStop(0,'#6A5CFF'); gr.addColorStop(.5,'#FF5CB8'); gr.addColorStop(1,'#35D0FF'); g.fillStyle=gr; g.fillRect(0,0,W,H);
+    const rg=g.createRadialGradient(480,600,40,480,600,620); rg.addColorStop(0,'rgba(255,255,255,.55)'); rg.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle=rg; g.fillRect(0,0,W,H);
+    g.fillStyle='#FFFFFF'; g.textAlign='center'; g.font='800 92px Arial, Helvetica, sans-serif'; g.fillText('✦ INCRÍVEL ✦',480,640); g.font='700 54px Arial, sans-serif'; g.fillText('vídeo gerado por IA',480,740);
+    g.globalAlpha=.85; ['✦','✧','✦','✧'].forEach((s,j)=>{ g.font='700 70px Arial'; g.fillText(s,[160,800,220,760][j],[300,360,1080,1150][j]); }); g.globalAlpha=1; }
+}
+
+// ---------- pele da placa de vídeo (desenhada a cada quadro; o vídeo por baixo é sempre o mesmo) ----------
+const SKINS=DATA.skins;
+function drawSkin(g,sk,img,a){ const W=720,H=1280; g.save(); g.globalAlpha=a;
+  g.fillStyle=sk.bg; g.fillRect(0,0,W,H);
+  const x=40,y=sk.raw?40:132,w=W-80,h=sk.raw?H-80:860;
+  g.save(); g.beginPath(); g.roundRect(x,y,w,h,sk.raw?22:26); g.clip(); const s=Math.max(w/img.width,h/img.height); const iw=img.width*s, ih=img.height*s;
+  g.drawImage(img,x+(w-iw)/2,y+(h-ih)/2,iw,ih); g.restore();
+  if(sk.raw){ g.fillStyle='rgba(23,9,44,.72)'; g.beginPath(); g.roundRect(64,70,330,54,27); g.fill(); g.fillStyle='#FFFFFF'; g.font='700 24px JBMono'; g.textBaseline='middle'; g.fillText('SEU VÍDEO · SEM IDENTIDADE',84,98); g.restore(); return; }
+  g.textBaseline='middle'; g.font='700 24px JBMono'; g.fillStyle=sk.accent; g.beginPath(); g.arc(56,72,7,0,Math.PI*2); g.fill(); g.fillText(sk.tagL,74,73);
+  g.textAlign='right'; g.fillStyle=sk.muted; g.fillText(sk.tagR,W-42,73); g.textAlign='left';
+  const cy=1100; // legenda no estilo da ID
+  if(sk.cap==='serif'){ g.font='700 64px Baskerville'; g.textAlign='center'; g.fillStyle=sk.fg; g.fillText('Com a',W/2,cy-40); g.font='italic 700 72px Baskerville'; g.fillStyle=sk.accent; g.fillText('sua cara.',W/2,cy+44); }
+  else if(sk.cap==='box'){ g.font='800 66px Inter'; g.textAlign='left'; const a1='Com a ', a2='sua cara.'; const w1=g.measureText(a1).width, w2=g.measureText(a2).width; const x0=(W-w1-w2-24)/2;
+    g.fillStyle=sk.fg; g.fillText(a1,x0,cy); g.fillStyle=sk.accent; g.fillRect(x0+w1-6,cy-46,w2+24,92); g.fillStyle=sk.boxText; g.fillText(a2,x0+w1+6,cy+2); }
+  else if(sk.cap==='under'){ g.font='800 66px Inter'; g.textAlign='center'; g.fillStyle=sk.fg; g.fillText('Com a sua cara.',W/2,cy); const w2=g.measureText('sua cara.').width, wt=g.measureText('Com a sua cara.').width;
+    g.fillStyle=sk.accent; g.fillRect(W/2+wt/2-w2,cy+44,w2,10); }
+  else if(sk.cap==='instrument'){ g.font='400 86px Instrument'; g.textAlign='center'; g.fillStyle=sk.fg; const a1='Com a ', a2='sua cara.'; g.font='400 86px Instrument'; const w1=g.measureText(a1).width; g.font='italic 400 86px Instrument'; const w2=g.measureText(a2).width;
+    const x0=(W-w1-w2)/2; g.textAlign='left'; g.font='400 86px Instrument'; g.fillText(a1,x0,cy); g.font='italic 400 86px Instrument'; g.fillStyle=sk.accent; g.fillText(a2,x0+w1,cy); }
+  else { g.font='800 70px Manrope'; g.textAlign='left'; const a1='Com a ', a2='sua cara.'; const w1=g.measureText(a1).width, w2=g.measureText(a2).width; const x0=(W-w1-w2-36)/2;
+    g.fillStyle=sk.fg; g.fillText(a1,x0,cy); g.fillStyle=sk.accent; g.beginPath(); g.roundRect(x0+w1-8,cy-50,w2+36,100,50); g.fill(); g.fillStyle='#FFFFFF'; g.fillText(a2,x0+w1+10,cy+2); }
+  g.textAlign='left'; g.restore(); }
+
+function drawBoard(t){ const g=bg, W=1200, H=1640; g.clearRect(0,0,W,H);
+  g.fillStyle=PUR; g.beginPath(); g.arc(78,96,10,0,Math.PI*2); g.fill(); g.font='700 34px JBMono'; g.textBaseline='middle'; g.fillText('SUA IDENTIDADE VISUAL',102,98);
+  g.fillStyle=INK; g.font='800 118px Manrope'; g.textBaseline='alphabetic'; g.fillText('Sua marca',70,262);
+  g.strokeStyle='rgba(23,9,44,.10)'; g.lineWidth=3; g.setLineDash([16,12]);
+  [[70,330,470,470],[630,330,500,470],[70,1180,1060,300]].forEach(r=>{ g.beginPath(); g.roundRect(r[0],r[1],r[2],r[3],26); g.stroke(); }); g.setLineDash([]);
+  const rows=[['COR','#820AD1 · roxo',T.dock1],['FONTE','Manrope',T.dock2],['LEGENDA','pílula roxa',T.dock3]];
+  rows.forEach(([k,v,at],j)=>{ const a=sm(at+0.05,at+0.35,t); if(a<=0) return; g.globalAlpha=a; const y=870+j*96;
+    g.fillStyle=PUR2; g.font='800 36px JBMono'; g.textBaseline='middle'; g.fillText(k,70,y); g.fillStyle=INK; g.font='800 54px Manrope'; g.fillText(v,330,y);
+    g.fillStyle=PUR; g.beginPath(); g.arc(1110,y,14,0,Math.PI*2); g.fill(); g.strokeStyle='#FFFFFF'; g.lineWidth=5; g.beginPath(); g.moveTo(1102,y); g.lineTo(1108,y+7); g.lineTo(1120,y-7); g.stroke(); g.globalAlpha=1; });
+  btx.needsUpdate=true; }
+
+function prepare(){ if(READY) return READY;
+  const loader=new FontLoader();
+  const jobs=[document.fonts.ready, document.fonts.load('800 70px Manrope'), document.fonts.load('700 30px JBMono'), document.fonts.load('700 64px Baskerville'), document.fonts.load('italic 700 64px Baskerville'),
+    document.fonts.load('400 86px Instrument'), document.fonts.load('italic 400 86px Instrument'), document.fonts.load('800 66px Inter')];
+  Object.entries(DATA.typefaces).forEach(([k,f])=>jobs.push(fetch(f).then(r=>r.json()).then(j=>{ FONTS[k]=loader.parse(j); })));
+  Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  READY=Promise.all(jobs).then(()=>{ build(); BUILT=true; }); return READY; }
+
+// ---------- quadro ----------
+function render(t){
+  const ex=T;
+  // ===== câmera: frontal, leve paralaxe; aproxima nos momentos-chave; recua no fim
+  let dist=D*1.0, yaw=0.10, pitch=0.045, ty=40, tx=0;
+  const ks=[[0,{dist:D*1.0,yaw:0.10,pitch:0.05,ty:40,tx:0}],[T.cores-0.1,{dist:D*0.98,yaw:0.05,pitch:0.05,ty:30,tx:0}],[T.fonte-0.25,{dist:D*0.96,yaw:-0.06,pitch:0.07,ty:-20,tx:0}],
+    [T.estilo-0.2,{dist:D*0.97,yaw:-0.10,pitch:0.06,ty:0,tx:40}],[T.monto-0.3,{dist:D*1.0,yaw:0.0,pitch:0.04,ty:20,tx:0}],[T.visual,{dist:D*0.94,yaw:0.05,pitch:0.04,ty:30,tx:0}],
+    [T.e0-0.05,{dist:D*1.02,yaw:-0.08,pitch:0.04,ty:20,tx:60}],[T.cara,{dist:D*0.95,yaw:-0.03,pitch:0.035,ty:20,tx:40}],[T.nao-0.1,{dist:D*1.0,yaw:0.0,pitch:0.04,ty:20,tx:0}],
+    [T.eu2-0.05,{dist:D*1.0,yaw:0.06,pitch:0.06,ty:-10,tx:0}],[T.jeito,{dist:D*0.97,yaw:0.0,pitch:0.05,ty:-10,tx:0}],[T.cta0,{dist:D*1.16,yaw:0.0,pitch:0.04,ty:-150,tx:0}]];
+  for(let k=1;k<ks.length;k++){ const [a,s]=ks[k]; const prev=ks[k-1][0]; const dur=Math.min(0.9,Math.max(0.35,(a-prev)*0.8)); const u=eio((t-a)/dur);
+    if(u>0){ dist=lerp(dist,s.dist,u); yaw=lerp(yaw,s.yaw,u); pitch=lerp(pitch,s.pitch,u); ty=lerp(ty,s.ty,u); tx=lerp(tx,s.tx,u); } }
+  yaw+=0.018*Math.sin(t*0.6);
+  const tgt=V3(tx,ty,0);
+  C.position.set(tgt.x+dist*Math.sin(yaw)*Math.cos(pitch), tgt.y+dist*Math.sin(pitch), tgt.z+dist*Math.cos(yaw)*Math.cos(pitch)); C.lookAt(tgt);
+
+  // ===== 4a) prancha: entra no "Eu monto", recebe cor / fonte / legenda, vai para a esquerda quando o vídeo entra, carimba a placa no "sua cara"
+  const bIn=spring((t-T.eu)/0.9), bAside=eio((t-T.e0+0.15)/0.7), bStamp=eio((t-T.sua+0.32)/0.34)*(1-eio((t-T.cara+0.02)/0.42)), bGone=eio((t-T.nao+0.05)/0.6);
+  board.visible=t>T.eu-0.1 && bGone<0.999;
+  board.position.set(lerp(lerp(0,-300,bAside),150,bStamp),lerp(-1500,10,clamp(bIn,0,1.2))+lerp(0,-20,bAside),lerp(lerp(0,-260,bAside),300,bStamp)-1100*bGone);
+  board.rotation.set(0,lerp(lerp(0,0.34,bAside),-0.16,bStamp),0); board.scale.setScalar(lerp(lerp(1,0.7,bAside),0.8,bStamp));
+  board.updateMatrixWorld(true);
+  if(board.visible) drawBoard(t);
+  const slot=(loc)=>loc.clone().applyMatrix4(board.matrixWorld);
+  const dockU=(at)=>eio((t-at+0.45)/0.5);
+
+  // ===== 1) leque de cores (cores reais das IDs)
+  const fanOut=eio((t-T.fonte+0.35)/0.55), fanGone=eio((t-T.monto+0.12)/0.42);
+  fan.visible=t<T.nao+0.7;
+  fan.position.set(-1500*fanGone,lerp(-430,-470,fanOut)+120*fanGone,lerp(0,-560,fanOut)-300*fanGone); fan.scale.setScalar(lerp(1,0.8,fanOut));
+  fan.rotation.y=lerp(-0.18,0,eio((t-T.cores+0.25)/0.6))+0.04*Math.sin(t*0.7)*(1-fanOut);
+  const open=lerp(0.55,0.92,spring((t-T.cores+0.05)/0.9));
+  const N=STRIPS.length; pin.visible=fanGone<0.99;
+  fan.updateMatrixWorld(true);
+  STRIPS.forEach((p,i)=>{ const u=(i-(N-1)/2)/((N-1)/2); const ang=-u*1.02*open; p.rotation.set(0,0,ang); p.position.set(0,0,i*2.2);
+    const hero=p.userData.s.hero, f=p.userData.front; const pick=hero?spring((t-T.marca+0.02)/0.8):0;
+    f.position.set(0,SWH/2-60+lerp(0,170,clamp(pick,0,1.1)),lerp(0,140,clamp(pick,0,1.1))); f.rotation.set(lerp(0,-0.08,clamp(pick,0,1)),0,0); f.scale.setScalar(1);
+    p.visible=hero?board.visible||t<T.monto:fanGone<0.99;
+    if(hero){ const d=dockU(T.dock1); if(d>0){ p.updateMatrixWorld(true); const restW=new THREE.Vector3(); f.getWorldPosition(restW);
+        const w=restW.lerp(slot(V3(-170,140,44)),d); f.position.copy(p.worldToLocal(w.clone()));
+        f.rotation.set(lerp(-0.08,0,d),lerp(0,board.rotation.y-fan.rotation.y,d),lerp(0,-ang,d)); f.scale.setScalar(lerp(1,0.42*board.scale.x/fan.scale.x,d)); } } });
+
+  // ===== 2) tipos de metal com as fontes reais das IDs
+  const sortsIn=T.fonte-0.42, sortsGone=eio((t-T.monto+0.12)/0.42);
+  sortsG.visible=t>sortsIn-0.05;
+  SORTS.forEach((g,i)=>{ const u=spring((t-sortsIn-i*0.06)/0.8);  const hero=g.userData.s.hero; const pick=hero?eio((t-T.fonte-0.12)/0.4):0;
+    const u0=eo((t-sortsIn-i*0.06)/0.7); const rest=V3((i-1.5)*232,FLOOR_Y+85+lerp(0,70,pick)+40*Math.sin(Math.PI*clamp(u0,0,1))*(1-u0),lerp(-1900,250,u0)+lerp(0,80,pick));
+    const ry=lerp(0.35,0,eio((t-sortsIn)/0.8))-0.05*(i-1.5);
+    g.userData.inkM.color.set(pick>0.5?PUR:INK);
+    if(hero){ const d=dockU(T.dock2); g.position.copy(rest.lerp(slot(V3(170,60,90)),d)); g.rotation.set(0,lerp(ry,board.rotation.y,d),0); g.scale.setScalar(lerp(1,0.6*board.scale.x,d));
+      g.visible=board.visible||t<T.monto; }
+    else { g.position.copy(rest).add(V3(-1400*sortsGone,60*sortsGone,-200*sortsGone)); g.rotation.set(0,ry,0); g.scale.setScalar(1-0.3*sortsGone); g.visible=sortsGone<0.99; } });
+
+  // ===== 3) placas de estilo de legenda
+  const platesIn=T.estilo-0.32, platesGone=eio((t-T.monto+0.12)/0.42);
+  platesG.visible=t>platesIn-0.05;
+  PLATES.forEach((g,i)=>{ const u=eio((t-platesIn-i*0.07)/0.55); const hero=g.userData.p.hero; const pick=hero?spring((t-T.estilo-0.15)/0.7):0;
+    const rest=V3(lerp(1300,250,u)-lerp(0,80,clamp(pick,0,1)),(1-i)*175-40,lerp(420,470,u)+lerp(0,90,clamp(pick,0,1)));
+    const ry=lerp(-0.6,-0.28,u)+lerp(0,0.2,clamp(pick,0,1));
+    if(hero){ const d=dockU(T.dock3); g.position.copy(rest.lerp(slot(V3(0,-300,44)),d)); g.rotation.set(0,lerp(ry,board.rotation.y,d),0); g.scale.setScalar(lerp(1,1.12*board.scale.x,d));
+      g.visible=board.visible||t<T.monto; }
+    else { g.position.copy(rest).add(V3(1100*platesGone,0,-200*platesGone)); g.rotation.set(0,ry,0); g.visible=platesGone<0.99; } });
+
+  // ===== 5) placa do vídeo (o mesmo vídeo, várias identidades); no "Eu sou o Cortez" encolhe e entra no centro do arco de entregas reais
+  const pIn=eio((t-T.e0+0.25)/0.7), pCenter=eio((t-T.eu2+0.05)/0.85), pCta=eio((t-T.cta0)/1.0);
+  plate.visible=t>T.e0-0.35;
+  plate.position.set(lerp(1300,150,pIn)-150*pCenter,20-lerp(0,10,pCenter),lerp(60,120,pIn)-lerp(0,80,pCenter));
+  plate.rotation.set(0,lerp(-0.5,-0.16,pIn)+0.16*pCenter+0.03*Math.sin(t*0.8)*(1-pCenter),0); plate.scale.setScalar(lerp(1,0.64,pCenter));
+  if(plate.visible){ const img=loopOf('base',t,T.e0-0.3); const sch=DATA.skinAt; let cur=0; for(let k=0;k<sch.length;k++) if(t>=sch[k].t) cur=k;
+    const prev=Math.max(0,cur-1); const w=eio((t-sch[cur].t)/0.28);
+    if(cur>0 && w<1){ drawSkin(pg,SKINS[sch[prev].skin],img,1); pg.save(); pg.beginPath(); pg.rect(0,0,720*w,1280); pg.clip(); drawSkin(pg,SKINS[sch[cur].skin],img,1); pg.restore();
+      pg.fillStyle=SKINS[sch[cur].skin].accent; pg.fillRect(720*w-4,0,8,1280); }
+    else drawSkin(pg,SKINS[sch[cur].skin],img,1);
+    ptx.needsUpdate=true; }
+
+  // ===== 6) cartões descartados ("modelo pronto", "cara de IA")
+  CARDS.forEach((g,i)=>{ const k=g.userData.k; const a=k.at, kill=k.kill; const side=i===0?-1:1;
+    const u=eio((t-a)/0.5), cut=eio((t-kill)/0.22), out=eio((t-kill-0.2)/0.55);
+    g.visible=t>a-0.05 && out<0.999;
+    g.position.set(lerp(side*1200,side*40+(i?120:-60),u)+side*900*out,lerp(60,30,u)-600*out,lerp(380,420,u));
+    g.rotation.set(0,side*lerp(0.7,0.12,u),side*(lerp(0.12,0.04,u)+0.5*out));
+    g.userData.slash.scale.x=Math.max(0.001,cut); g.userData.face.material.opacity=1-0.35*cut; });
+
+  // ===== 7) entregas reais em IDs diferentes ("do seu jeito"): arco com a placa da pessoa no centro
+  PROOF.forEach((g,i)=>{ const c=[-2,-1,1,2][i]; const u=spring((t-T.cortez+0.12-Math.abs(c)*0.08)/0.9);
+    g.visible=t>T.cortez-0.35;
+    g.position.set(c*262,lerp(-1600,10,clamp(u,0,1.15))-Math.abs(c)*14,-Math.abs(c)*170-60);
+    g.rotation.set(0,-c*0.27,0);
+    if(g.visible){ setFrame(g.userData.tx,loopOf(g.userData.p.seq,t,T.cortez-0.3)); } });
+
+  // ===== sombra acompanha o enquadramento
+  key.target.position.set(tx,0,0); key.position.set(tx-1100,1900,1700);
+  R.render(S,C);
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!BUILT){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

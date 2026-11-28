@@ -300,6 +300,110 @@
         "sha256": "3ad84f3ef0984aa3107beab14590f93028870c25d893112babd3f14948a0f052"
       },
       "reference_conflicts": []
+    },
+    "official.012adc4cdd2f4a23a440a64499eaa76c": {
+      "code": "F37",
+      "primary_reference": {
+        "path": "examples/reference-library/F37/depoimento-em-chat-3d/reference.mp4",
+        "sha256": "74b09b70814529f97ba9f7568925d52127a280ed90ec1a0faf5917e34948f92a"
+      },
+      "reference_conflicts": []
+    },
+    "official.e3b19582ad674e88ad4463e098217c05": {
+      "code": "F38",
+      "primary_reference": {
+        "path": "examples/reference-library/F38/paisagem-de-audio/reference.mp4",
+        "sha256": "d3b5e13ae3fece9d9a1932c8eed6f154de708e1e367e25d46ad00f9d9f00443e"
+      },
+      "reference_conflicts": []
+    },
+    "official.f3a50372df8f4b35a26db6ce2cf96da4": {
+      "code": "F39",
+      "primary_reference": {
+        "path": "examples/reference-library/F39/escada-de-testes/reference.mp4",
+        "sha256": "674920c941984319fc2e8d945d06b159a29375d78f60144209535b9dacdf4008"
+      },
+      "reference_conflicts": []
+    },
+    "official.9a0e188f96a949c2879f1cd28df8cce9": {
+      "code": "F40",
+      "primary_reference": {
+        "path": "examples/reference-library/F40/iris-de-depoimento/reference.mp4",
+        "sha256": "04d34b6ec9b4195de6e9314c729290a8eae21f599abad18f3a4ab33f170cb228"
+      },
+      "reference_conflicts": []
+    },
+    "official.c5675bb0f39a4277b7143556510a95c0": {
+      "code": "F41",
+      "primary_reference": {
+        "path": "examples/reference-library/F41/gavetas-de-pesquisa/reference.mp4",
+        "sha256": "9e510491a8fdab625a76cde794e437b4fe28fc6a2a7d4cb5bf74b0b97028b046"
+      },
+      "reference_conflicts": []
+    },
+    "official.aa963f0abedc46c49e98fab476c78794": {
+      "code": "F42",
+      "primary_reference": {
+        "path": "examples/reference-library/F42/tunel-da-pasta/reference.mp4",
+        "sha256": "183f555453144cd426a7b2e557e9e58e66df70cf1069c1b7289659bdaaa06646"
+      },
+      "reference_conflicts": []
+    },
+    "official.91f4032b7736478484358f61c019a60d": {
+      "code": "F43",
+      "primary_reference": {
+        "path": "examples/reference-library/F43/tomadas-de-vidro/reference.mp4",
+        "sha256": "d21e0949aeddf6082d2228849838f4224e1e9af41b9b633e797c4ea6aae90884"
+      },
+      "reference_conflicts": []
+    },
+    "official.711e1739e46041f295cc297ac31f4f9f": {
+      "code": "F44",
+      "primary_reference": {
+        "path": "examples/reference-library/F44/cordilheira-de-cortes/reference.mp4",
+        "sha256": "0bd9c2896fd4da1386924472c8a5776bb6796f0973e50e0e77fb630f410de7f4"
+      },
+      "reference_conflicts": []
+    },
+    "official.738bf9237508476aaf602711a81d6174": {
+      "code": "F45",
+      "primary_reference": {
+        "path": "examples/reference-library/F45/estudio-de-marca/reference.mp4",
+        "sha256": "28b721adbb6f5cedb6e30d75fb90ed9f82816cf7a3be0c975a27f22eca4e1a00"
+      },
+      "reference_conflicts": []
+    },
+    "official.00aa54afe2024bc7a2b2fec935d72af4": {
+      "code": "F46",
+      "primary_reference": {
+        "path": "examples/reference-library/F46/molde-de-pecas/reference.mp4",
+        "sha256": "500f2563b70db064b5dcdecb198baef420fa04950e4d1c10adf171be9eeb6497"
+      },
+      "reference_conflicts": []
+    },
+    "official.5b2dad34db064c7581836935079777ba": {
+      "code": "F47",
+      "primary_reference": {
+        "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/reference.mp4",
+        "sha256": "39791b6a5ffbcb9a0eadfaebc3f7e66e57e81dacfb6c4d6247a1524a86f47075"
+      },
+      "reference_conflicts": []
+    },
+    "official.44340f5a06d141c5bd62b9957efa92a4": {
+      "code": "F48",
+      "primary_reference": {
+        "path": "examples/reference-library/F48/pilha-de-versoes/reference.mp4",
+        "sha256": "d646e29d0b29773476c9d686711a3d23dd6a78732cf200cac38ef196de60282b"
+      },
+      "reference_conflicts": []
+    },
+    "official.669223f0164d449c893f64b368378c34": {
+      "code": "F49",
+      "primary_reference": {
+        "path": "examples/reference-library/F49/celular-de-teste/reference.mp4",
+        "sha256": "5ebfed06737184f13924af1cd360e733db215648b7c322ccc97893ec4255c8ad"
+      },
+      "reference_conflicts": []
     }
   }
 }

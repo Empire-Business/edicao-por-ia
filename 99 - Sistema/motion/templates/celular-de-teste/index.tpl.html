@@ -1,0 +1,409 @@
+<!-- MODELO F49 Celular de Teste: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · "Faz um teste comigo" (F10 · ID08 · voz de IA)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID08 Azul e Papel — fundo #141B25 · texto #F5F4F0 · azul #67ACE0 · papel #EDE9DF · apoio #9AA8B8 · Inter + IBM Plex Mono (rótulos).
+   F10 com voz de IA do Cortez: o desafio tátil. Um celular 3D (alumínio e vidro) com a galeria de vídeos; o vídeo parado (gravação bruta
+   real) acende, sai da tela como cartão 3D e voa para a pasta de papel do Cortez; um anel de progresso enche 20 → 30 min; o vídeo pronto
+   (EXEMPLO_2, feito pelo Cortez a partir dessa gravação) volta e encaixa na tela; etiquetas de papel entram em "limpo, cortado, legendado, com
+   cena e música". three.js r186 (ESM) + EffectComposer, tudo em função do tempo do quadro. */
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin-ext.woff2") format("woff2"); font-weight:400; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-700-latin.woff2") format("woff2"); font-weight:600 700; }
+@font-face { font-family:"Inter"; src:url("assets/inter-700-latin-ext.woff2") format("woff2"); font-weight:600 700; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin-ext.woff2") format("woff2"); font-weight:800; unicode-range:U+0100-024F; }
+@font-face { font-family:"Plex"; src:url("assets/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; background:#141B25; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#141B25; font-family:"Inter", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#vig { position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(20,27,37,.82) 0%, rgba(20,27,37,.2) 15%, rgba(20,27,37,0) 22%, rgba(20,27,37,0) 70%, rgba(20,27,37,.42) 80%, rgba(20,27,37,.86) 100%); }
+#dim { position:absolute; inset:0; z-index:4; background:#141B25; opacity:0; pointer-events:none; }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.045; mix-blend-mode:overlay; }
+
+#title { position:absolute; left:60px; right:60px; top:118px; z-index:8; text-align:left; }
+#title .ln { display:block; overflow:hidden; padding:0 0 .08em; font-weight:800; font-size:104px; line-height:1.02; letter-spacing:-.04em; color:#F5F4F0; white-space:nowrap; }
+#title .ln .in { display:inline-block; }
+#title em { font-style:normal; color:#67ACE0; }
+#title .k { display:block; margin-bottom:18px; font-family:"Plex", monospace; font-weight:500; font-size:26px; letter-spacing:.14em; text-transform:uppercase; color:#9AA8B8; }
+
+.chip { position:absolute; left:64px; top:146px; z-index:7; display:flex; align-items:center; gap:14px; opacity:0; white-space:nowrap;
+  font-family:"Plex", monospace; font-weight:500; font-size:28px; letter-spacing:.08em; text-transform:uppercase; color:#67ACE0; }
+.chip i { width:11px; height:11px; border-radius:50%; background:#67ACE0; display:block; flex:none; }
+.chip b { color:#F5F4F0; font-weight:500; }
+.chip b:before { content:"·"; color:#9AA8B8; margin-right:14px; }
+#ptag { position:absolute; left:64px; top:202px; z-index:7; opacity:0; display:flex; align-items:center; gap:10px; padding:9px 18px 9px 14px; border-radius:999px;
+  background:rgba(30,40,54,.9); border:1.5px solid rgba(103,172,224,.5); font-family:"Plex", monospace; font-weight:500; font-size:22px; letter-spacing:.08em;
+  text-transform:uppercase; color:#F5F4F0; white-space:nowrap; }
+#ptag i { width:8px; height:8px; border-radius:50%; background:#67ACE0; display:block; }
+#ptag span { display:none; }
+#ptagL { position:absolute; left:0; right:0; margin:0 auto; width:max-content; top:1356px; z-index:8; opacity:0; display:flex; align-items:center; gap:10px; padding:9px 18px 9px 14px; border-radius:999px;
+  background:rgba(20,27,37,.88); border:1.5px solid rgba(103,172,224,.55); font-family:"Plex", monospace; font-weight:500; font-size:22px; letter-spacing:.08em;
+  text-transform:uppercase; color:#F5F4F0; white-space:nowrap; }
+#ptagL i { width:8px; height:8px; border-radius:50%; background:#67ACE0; display:block; }
+
+/* L05 — caixa azul na palavra falada */
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:20px; right:20px; top:1452px; text-align:center; opacity:0; white-space:nowrap; }
+.cw { display:inline-block; margin:0 2px; padding:4px 14px 9px; border-radius:16px; font-family:"Inter", sans-serif; font-weight:800; font-size:64px;
+  line-height:1.12; letter-spacing:-.025em; color:#F5F4F0; text-shadow:0 3px 14px rgba(10,14,20,.75), 0 0 2px rgba(10,14,20,.9); }
+.cw.em { color:#9CCBEE; }
+
+.cta-h { position:absolute; left:40px; right:40px; top:300px; z-index:10; text-align:center; }
+.cta-h .ln { display:block; overflow:hidden; padding:0 0 .1em; font-weight:800; font-size:96px; line-height:1.03; letter-spacing:-.035em; color:#F5F4F0; white-space:nowrap; }
+.cta-h .ln .in { display:inline-block; }
+.cta-h .ln em { font-style:normal; color:#67ACE0; }
+.cta-s { position:absolute; left:60px; right:60px; top:668px; z-index:10; text-align:center; opacity:0; font-weight:400; font-size:38px; color:#9AA8B8; }
+.cta-s b { font-weight:700; color:#F5F4F0; }
+#btn { position:absolute; left:250px; top:{{BTN_TOP}}px; width:580px; height:124px; z-index:10; opacity:0; display:flex; align-items:center; justify-content:center; gap:18px; border-radius:999px;
+  background:linear-gradient(180deg,#9CCBEE,#67ACE0); color:#141B25; font-weight:800; font-size:50px; letter-spacing:-.01em; white-space:nowrap; box-shadow:0 24px 60px rgba(0,0,0,.6); }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }{{CTA_CSS}}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="vig"></div>
+  <div id="dim"></div>
+  <div id="title"><span class="k">Cortez · IA que edita vídeo</span><span class="ln"><span class="in" id="t1">Faz um <em>teste</em></span></span><span class="ln"><span class="in" id="t2">comigo.</span></span></div>
+  {{CHIPS}}
+  <div id="ptag"><i></i><span id="pt1">Entrega real · editada pelo Cortez</span></div>
+  <div id="ptagL"><i></i><span>Gravação bruta real · exemplo</span></div>
+  <div id="caps">{{CAPS}}</div>
+
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Manda o vídeo</span></span><span class="ln"><span class="in" id="ch2"><em>parado.</em></span></span><span class="ln"><span class="in" id="ch3">Ele volta pronto.</span></span></div>
+  <div class="cta-s" id="cs">Você grava. <b>O Cortez edita.</b> Você aprova.</div>
+  {{CTA_HTML}}
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#F5F4F0" stroke="#141B25" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('#ch1, #ch2, #ch3',{yPercent:112});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  // gancho: título já no quadro 0 (o rótulo sobe junto), sai para cima quando a voz segue
+  tl.to('#title',{y:-60,opacity:0,duration:.35,ease:'power2.in'},T.pega+.02);
+  // capítulos (topo)
+  DATA.chips.forEach((c,i)=>{ tl.fromTo('#'+c.id,{opacity:0,x:-14},{opacity:1,x:0,duration:.28,ease:'power2.out',immediateRender:false},c.s);
+    tl.to('#'+c.id,{opacity:0,duration:.16},c.e-.16); });
+  // etiqueta de prova (o que é cada imagem)
+  const P=(i,a,b)=>{ tl.set('#pt'+i,{display:'inline'},a); tl.set('#pt'+i,{display:'none'},b); };
+  tl.fromTo('#ptagL',{opacity:0,y:8},{opacity:1,y:0,duration:.25,immediateRender:false},T.parado+.1); tl.to('#ptagL',{opacity:0,duration:.18},T.manda+.1);
+  tl.fromTo('#ptag',{opacity:0,y:-8},{opacity:1,y:0,duration:.25,immediateRender:false},T.pronto+.35);
+  P(1,T.pronto+.35,T.end); tl.to('#ptag',{opacity:0,duration:.2},T.cta0-.1);
+  // legendas L05: o bloco aparece inteiro e a caixa azul passa de palavra em palavra
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},g.s); tl.set(`#cg${i}`,{opacity:0},g.e);
+    g.w.forEach((w,j)=>{ tl.set(`#cg${i}w${j}`,{backgroundColor:'#67ACE0',color:'#141B25',textShadow:'none'},w.s);
+      tl.set(`#cg${i}w${j}`,{backgroundColor:'rgba(103,172,224,0)',clearProps:'color,textShadow'},w.e); }); });
+  // CTA escrito (a voz já terminou)
+  tl.to('#dim',{opacity:.8,duration:.7,ease:'power2.inOut'},T.cta0+.05);
+  IN('#ch1',T.cta0+.3,.8); IN('#ch2',T.cta0+.45,.8); IN('#ch3',T.cta0+.6,.8);
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+.95);
+{{CTA_TL}}
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const DATA = window.__DATA, T = DATA.T;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const sm=(a,b,x)=>{ const u=clamp((x-a)/(b-a),0,1); return u*u*(3-2*u); };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),3);
+const ei=(x)=>{ x=clamp(x,0,1); return x*x*x; };
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const ebk=(x)=>{ x=clamp(x,0,1); const c1=1.5,c3=c1+1; return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2); };
+const lerp=(a,b,u)=>a+(b-a)*u;
+const gauss=(t,c,w)=>Math.exp(-Math.pow((t-c)/w,2));
+const settle=(dt)=>dt<=0?0:Math.exp(-dt*9)*Math.sin(dt*30);
+
+const BLUE='#67ACE0', INK='#F5F4F0', MUTED='#9AA8B8', NAVY='#141B25', PAPER='#EDE9DF';
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.ACESFilmicToneMapping; R.toneMappingExposure=1.0;
+const S=new THREE.Scene();
+{ const c=document.createElement('canvas'); c.width=540; c.height=960; const g=c.getContext('2d');
+  const gr=g.createRadialGradient(250,470,40,270,520,820); gr.addColorStop(0,'#24324A'); gr.addColorStop(.45,'#18212F'); gr.addColorStop(1,'#0C1118');
+  g.fillStyle=gr; g.fillRect(0,0,540,960); const bt=new THREE.CanvasTexture(c); bt.colorSpace=THREE.SRGBColorSpace; S.background=bt; }
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity=0.55;
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,10,40000);
+const key=new THREE.DirectionalLight(0xfff3e4,1.7); key.position.set(-1500,2300,2600); S.add(key);
+const rim=new THREE.DirectionalLight(0x67ACE0,2.2); rim.position.set(2200,900,-2000); S.add(rim);
+const fill=new THREE.DirectionalLight(0xbfd6ea,0.5); fill.position.set(1800,-400,2200); S.add(fill);
+
+const composer=new EffectComposer(R,new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4})); composer.setPixelRatio(1); composer.setSize(1080,1920);
+composer.addPass(new RenderPass(S,C));
+const bokeh=new BokehPass(S,C,{focus:D,aperture:0.0,maxblur:0.008}); composer.addPass(bokeh);
+const bloom=new UnrealBloomPass(new THREE.Vector2(1080,1920),0.06,0.35,1.5); composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+// ---------- utilidades ----------
+function rr(shape,W,H,Rr){ shape.moveTo(-W/2+Rr,-H/2); shape.lineTo(W/2-Rr,-H/2); shape.absarc(W/2-Rr,-H/2+Rr,Rr,-Math.PI/2,0,false); shape.lineTo(W/2,H/2-Rr);
+  shape.absarc(W/2-Rr,H/2-Rr,Rr,0,Math.PI/2,false); shape.lineTo(-W/2+Rr,H/2); shape.absarc(-W/2+Rr,H/2-Rr,Rr,Math.PI/2,Math.PI,false); shape.lineTo(-W/2,-H/2+Rr);
+  shape.absarc(-W/2+Rr,-H/2+Rr,Rr,Math.PI,Math.PI*1.5,false); return shape; }
+function ring(W,H,Rr,th){ const s=rr(new THREE.Shape(),W+th,H+th,Rr+th/2); s.holes.push(rr(new THREE.Path(),W-th,H-th,Math.max(1,Rr-th/2))); return new THREE.ShapeGeometry(s,24); }
+function roundMask(w,h,r){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,w,h);
+  g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+function shadowTex(){ const c=document.createElement('canvas'); c.width=256; c.height=256; const g=c.getContext('2d');
+  const gr=g.createRadialGradient(128,128,10,128,128,128); gr.addColorStop(0,'rgba(0,0,0,.85)'); gr.addColorStop(.5,'rgba(0,0,0,.45)'); gr.addColorStop(1,'rgba(0,0,0,0)');
+  g.fillStyle=gr; g.fillRect(0,0,256,256); return new THREE.CanvasTexture(c); }
+const SHT=shadowTex();
+const SEQ={}, ROLL=[]; let READY=null, BUILT=false;
+function loadImg(src,k=0){ return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>{ if(k<14) setTimeout(()=>loadImg(src,k+1).then(res,rej),150*(k+1)); else rej(new Error(src)); }; im.src=k?src+'?r='+k:src; }); }
+function frameOf(name,t,t0){ const a=SEQ[name]; const i=Math.floor(Math.max(0,(t-t0))*30+1e-6); return a[Math.min(i,a.length-1)]; }
+function loopOf(name,t,t0){ const a=SEQ[name]; const i=Math.floor(Math.max(0,(t-t0))*30+1e-6); const n=a.length, p=i%(2*n-2); return a[p<n?p:2*n-2-p]; }
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+
+// ---------- celular 3D ----------
+const PW=470, PH=980, PD=44, SWd=440, SHd=950, SCN=2;          // corpo; tela (unidades locais); canvas da tela em 2x
+const phone=new THREE.Group(); S.add(phone);
+const bodyMat=new THREE.MeshPhysicalMaterial({color:0x26303E,metalness:.86,roughness:.27,clearcoat:.6,clearcoatRoughness:.18});
+const body=new THREE.Mesh(new RoundedBoxGeometry(PW,PH,PD,8,62),bodyMat); phone.add(body);
+const bezel=new THREE.Mesh(new THREE.ShapeGeometry(rr(new THREE.Shape(),PW-10,PH-10,56),24),new THREE.MeshPhysicalMaterial({color:0x07090D,roughness:.12,metalness:0,clearcoat:1,clearcoatRoughness:.05}));
+bezel.position.z=PD/2+0.3; phone.add(bezel);
+const scrCanvas=document.createElement('canvas'); scrCanvas.width=SWd*SCN; scrCanvas.height=SHd*SCN; const sg=scrCanvas.getContext('2d');
+const scrTex=new THREE.CanvasTexture(scrCanvas); scrTex.colorSpace=THREE.SRGBColorSpace; scrTex.anisotropy=16;
+const screen=new THREE.Mesh(new THREE.PlaneGeometry(SWd,SHd),new THREE.MeshBasicMaterial({map:scrTex,alphaMap:roundMask(440,950,46),transparent:true,toneMapped:false}));
+screen.position.z=PD/2+0.8; phone.add(screen);
+// reflexo muito sutil no vidro (acompanha o giro do aparelho)
+function sheenTex(){ const c=document.createElement('canvas'); c.width=256; c.height=512; const g=c.getContext('2d'); const gr=g.createLinearGradient(0,0,256,512);
+  gr.addColorStop(0,'rgba(255,255,255,0)'); gr.addColorStop(.42,'rgba(255,255,255,0)'); gr.addColorStop(.5,'rgba(255,255,255,1)'); gr.addColorStop(.6,'rgba(255,255,255,0)'); gr.addColorStop(1,'rgba(255,255,255,0)');
+  g.fillStyle=gr; g.fillRect(0,0,256,512); return new THREE.CanvasTexture(c); }
+const sheen=new THREE.Mesh(new THREE.PlaneGeometry(SWd,SHd),new THREE.MeshBasicMaterial({map:sheenTex(),alphaMap:roundMask(440,950,46),transparent:true,opacity:0.05,blending:THREE.AdditiveBlending,depthWrite:false}));
+sheen.position.z=PD/2+1.2; phone.add(sheen);
+const island=new THREE.Mesh(new THREE.ShapeGeometry(rr(new THREE.Shape(),104,28,14),12),new THREE.MeshBasicMaterial({color:0x000000})); island.position.set(0,SHd/2-30,PD/2+1.0); phone.add(island);
+const btn1=new THREE.Mesh(new RoundedBoxGeometry(8,110,16,2,3),bodyMat); btn1.position.set(PW/2+2,190,0); phone.add(btn1);
+const btn2=new THREE.Mesh(new RoundedBoxGeometry(8,70,16,2,3),bodyMat); btn2.position.set(-PW/2-2,250,0); phone.add(btn2);
+const btn3=new THREE.Mesh(new RoundedBoxGeometry(8,70,16,2,3),bodyMat); btn3.position.set(-PW/2-2,160,0); phone.add(btn3);
+
+// galeria (rolo da câmera ilustrativo): 3 colunas de vídeos verticais; o vídeo parado é o bloco 4 (2ª linha, centro)
+const GP=12, GG=8, TWc=(SWd*SCN-2*GP-2*GG)/3, THc=TWc*16/9, GY0=214;
+const TILES=[]; { let r=0; const order=['r00','p0','r01','p1','HL','r02','p2','r03','r04','r05','p3','r06','r07','p4','p5'];
+  const dur=['0:32','','1:12','','1:43','0:48','','0:21','2:05','0:57','','0:39','1:20','',''];
+  order.forEach((k,i)=>{ const col=i%3,row=Math.floor(i/3); TILES.push({k,d:dur[i],x:GP+col*(TWc+GG),y:GY0+row*(THc+GG)}); }); }
+const HL=TILES[4];
+const HLlocal={x:(HL.x+TWc/2)/SCN-SWd/2, y:SHd/2-(HL.y+THc/2)/SCN, w:TWc/SCN, h:THc/SCN};
+const PH_COL=[['#EDE9DF','#C9D8E6'],['#67ACE0','#24324A'],['#2E3B4E','#141B25'],['#D9E6F2','#9AB8D6'],['#3A4A5E','#1B2533'],['#EDE9DF','#9AA8B8']];
+function cover(g,img,x,y,w,h){ const ar=img.width/img.height, tr=w/h; let sw=img.width, sh=img.height, sx=0, sy=0;
+  if(ar>tr){ sw=img.height*tr; sx=(img.width-sw)/2; } else { sh=img.width/tr; sy=(img.height-sh)/2; } g.drawImage(img,sx,sy,sw,sh,x,y,w,h); }
+function rrect(g,x,y,w,h,r){ g.beginPath(); g.roundRect(x,y,w,h,r); }
+function drawScreen(t){
+  const g=sg, Wc=scrCanvas.width, Hc=scrCanvas.height;
+  const docked=t>=T.pronto+0.32;
+  if(docked){ g.fillStyle='#000'; g.fillRect(0,0,Wc,Hc); cover(g,frameOf('fin',t,T.pronto+0.32),0,0,Wc,Hc);
+    const gr=g.createLinearGradient(0,0,0,240); gr.addColorStop(0,'rgba(0,0,0,.35)'); gr.addColorStop(1,'rgba(0,0,0,0)'); g.fillStyle=gr; g.fillRect(0,0,Wc,240);
+    scrTex.needsUpdate=true; return; }
+  g.fillStyle='#0E131B'; g.fillRect(0,0,Wc,Hc);
+  g.fillStyle=MUTED; g.font='500 26px Plex, monospace'; g.textBaseline='alphabetic'; g.fillText('RECENTES · 15 VÍDEOS',32,112);
+  g.fillStyle=INK; g.font='800 64px Inter'; g.fillText('Galeria',30,184);
+  const hl=sm(T.parado-0.1,T.parado+0.35,t);                       // o vídeo parado acende; os outros escurecem
+  const gone=t>=T.me+0.02;                                           // o cartão saiu da tela
+  TILES.forEach((tl,i)=>{
+    const {x,y}=tl; g.save(); rrect(g,x,y,TWc,THc,18); g.clip();
+    if(tl.k==='HL'){ if(gone){ g.fillStyle='#121821'; g.fillRect(x,y,TWc,THc); } else cover(g,loopOf('raw',t,0),x,y,TWc,THc); }
+    else if(tl.k[0]==='r'){ cover(g,ROLL[+tl.k.slice(1)],x,y,TWc,THc); }
+    else { const c=PH_COL[+tl.k.slice(1)%PH_COL.length]; const gr=g.createLinearGradient(x,y,x+TWc,y+THc); gr.addColorStop(0,c[0]); gr.addColorStop(1,c[1]); g.fillStyle=gr; g.fillRect(x,y,TWc,THc); }
+    if(tl.k!=='HL' && hl>0){ g.fillStyle=`rgba(10,14,20,${0.62*hl})`; g.fillRect(x,y,TWc,THc); }
+    if(tl.d && !(tl.k==='HL'&&gone)){ g.fillStyle='rgba(0,0,0,.45)'; rrect(g,x+TWc-104,y+THc-54,92,40,12); g.fill(); g.fillStyle='#fff'; g.font='700 26px Inter'; g.textAlign='center'; g.fillText(tl.d,x+TWc-58,y+THc-25); g.textAlign='left'; }
+    g.restore();
+  });
+  // destaque do vídeo parado
+  if(hl>0 && !gone){ g.save(); g.globalAlpha=hl; g.strokeStyle=BLUE; g.lineWidth=7; rrect(g,HL.x+3.5,HL.y+3.5,TWc-7,THc-7,16); g.stroke();
+    const bw=196,bh=46,bx=HL.x+14,by=HL.y+14; g.fillStyle=BLUE; rrect(g,bx,by,bw,bh,23); g.fill(); g.fillStyle=NAVY; g.font='500 24px Plex, monospace'; g.fillText('SEM EDITAR',bx+18,by+31);
+    g.restore(); }
+  if(gone){ const a=1-sm(T.volta,T.pronto,t); g.save(); g.globalAlpha=a; g.setLineDash([14,10]); g.strokeStyle='rgba(103,172,224,.75)'; g.lineWidth=4; rrect(g,HL.x+6,HL.y+6,TWc-12,THc-12,14); g.stroke(); g.restore(); }
+  scrTex.needsUpdate=true;
+}
+
+// ---------- cartão que sai da tela (vídeo parado) e cartão que volta (vídeo pronto) ----------
+const TX={raw:videoTex(),fin:videoTex()};
+const cardOut=new THREE.Group(); S.add(cardOut); cardOut.visible=false;
+{ const body_=new THREE.Mesh(new RoundedBoxGeometry(HLlocal.w+6,HLlocal.h+6,5,3,9),new THREE.MeshPhysicalMaterial({color:0x1B2430,roughness:.35,metalness:.4,clearcoat:.8}));
+  body_.position.z=-3.2; cardOut.add(body_);
+  const f=new THREE.Mesh(new THREE.PlaneGeometry(HLlocal.w,HLlocal.h),new THREE.MeshBasicMaterial({map:TX.raw,alphaMap:roundMask(140,249,9),transparent:true,toneMapped:false})); f.position.z=0.2; cardOut.add(f);
+  const e=new THREE.Mesh(ring(HLlocal.w,HLlocal.h,9,2.4),new THREE.MeshBasicMaterial({color:0x67ACE0})); e.position.z=0.4; cardOut.add(e);
+  const b=new THREE.Mesh(new THREE.PlaneGeometry(HLlocal.w,HLlocal.h),new THREE.MeshBasicMaterial({map:TX.raw,alphaMap:roundMask(140,249,9),transparent:true,toneMapped:false})); b.rotation.y=Math.PI; b.position.z=-6.6; cardOut.add(b); }
+// o cartão de volta tem a proporção da tela (o vídeo pronto recortado ao centro) e encaixa nela
+const TXfinC=videoTex(); TXfinC.wrapS=TXfinC.wrapT=THREE.ClampToEdgeWrapping; { const rep=(SWd/SHd)/(720/1280); TXfinC.repeat.set(rep,1); TXfinC.offset.set((1-rep)/2,0); }
+const cardIn=new THREE.Group(); S.add(cardIn); cardIn.visible=false;
+{ const body_=new THREE.Mesh(new RoundedBoxGeometry(SWd+10,SHd+10,6,3,48),new THREE.MeshPhysicalMaterial({color:0x1B2430,roughness:.35,metalness:.4,clearcoat:.8}));
+  body_.position.z=-3.4; cardIn.add(body_);
+  const f=new THREE.Mesh(new THREE.PlaneGeometry(SWd,SHd),new THREE.MeshBasicMaterial({map:TXfinC,alphaMap:roundMask(440,950,46),transparent:true,toneMapped:false})); f.position.z=0.2; cardIn.add(f);
+  const e=new THREE.Mesh(ring(SWd,SHd,46,5),new THREE.MeshBasicMaterial({color:0x67ACE0,transparent:true,opacity:1})); e.position.z=0.4; cardIn.add(e); cardIn.userData.edge=e; }
+
+// ---------- pasta de papel do Cortez + anel de progresso ----------
+const F=new THREE.Vector3(800,-300,-160);
+const folder=new THREE.Group(); folder.position.copy(F); S.add(folder);
+function paperTex(lines){ const c=document.createElement('canvas'); c.width=1040; c.height=640; const g=c.getContext('2d');
+  g.fillStyle='#E6E1D6'; g.fillRect(0,0,1040,640);
+  for(let i=0;i<5200;i++){ const x=(i*977)%1040, y=(i*613)%640; g.fillStyle=`rgba(80,70,50,${0.018+0.012*((i*37)%7)/7})`; g.fillRect(x,y,2,2); }
+  lines(g); const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=16; return t; }
+const paperMat=(map)=>new THREE.MeshStandardMaterial({color:0xD9D4C8,map,roughness:.94,metalness:0,envMapIntensity:.6});
+const backT=paperTex(g=>{}), frontT=paperTex(g=>{ g.fillStyle='#141B25'; g.font='500 40px Plex, monospace'; g.fillText('CORTEZ · PASTA DE TRABALHO',62,108);
+  g.font='800 104px Inter'; g.fillText('01 · Enviar',58,300); g.fillText('vídeos',58,410); g.fillStyle=BLUE; g.fillRect(62,470,220,10); });
+const fBack=new THREE.Mesh(new RoundedBoxGeometry(560,400,8,2,10),[paperMat(null),paperMat(null),paperMat(null),paperMat(null),paperMat(backT),paperMat(null)]);
+fBack.material.forEach(m=>{ m.color.set(0xD4CEC1); }); fBack.position.set(0,0,0); folder.add(fBack);
+const fTab=new THREE.Mesh(new RoundedBoxGeometry(200,54,8,2,10),paperMat(null)); fTab.material.color.set(0xD4CEC1); fTab.position.set(-170,216,0); folder.add(fTab);
+const frontPivot=new THREE.Group(); frontPivot.position.set(0,-200,34); folder.add(frontPivot);
+const fFront=new THREE.Mesh(new RoundedBoxGeometry(560,330,8,2,10),[paperMat(null),paperMat(null),paperMat(null),paperMat(null),paperMat(frontT),paperMat(null)]);
+fFront.material.forEach((m,i)=>{ if(i!==4) m.color.set(0xCBC5B8); }); fFront.position.set(0,165,0); frontPivot.add(fFront);
+const fShadow=new THREE.Mesh(new THREE.PlaneGeometry(760,560),new THREE.MeshBasicMaterial({map:SHT,transparent:true,depthWrite:false,opacity:.55}));
+fShadow.position.set(16,-22,-30); folder.add(fShadow);
+const R0=340;
+const ringBase=new THREE.Mesh(new THREE.TorusGeometry(R0,5,12,220),new THREE.MeshBasicMaterial({color:0x9AA8B8,transparent:true,opacity:.18})); ringBase.position.set(0,20,-40); folder.add(ringBase);
+const ringMat=new THREE.MeshStandardMaterial({color:0x67ACE0,emissive:0x67ACE0,emissiveIntensity:.55,roughness:.3,metalness:.2});
+let ringArc=null; const ringHolder=new THREE.Group(); ringHolder.position.set(0,20,-40); ringHolder.rotation.z=Math.PI/2; folder.add(ringHolder);
+let lastArc=-1;
+function setArc(p){ const a=Math.round(clamp(p,0,1)*600)/600; if(a===lastArc) return; lastArc=a; if(ringArc){ ringHolder.remove(ringArc); ringArc.geometry.dispose(); }
+  if(a<=0.001){ ringArc=null; return; } ringArc=new THREE.Mesh(new THREE.TorusGeometry(R0,9,14,Math.max(8,Math.round(260*a)),-Math.PI*2*a),ringMat); ringHolder.add(ringArc); }
+function labelTex(main,sub,col){ const c=document.createElement('canvas'); c.width=640; c.height=200; const g=c.getContext('2d'); g.textAlign='center';
+  g.fillStyle=col; g.font='800 108px Inter'; g.fillText(main,320,112); g.fillStyle=MUTED; g.font='500 30px Plex, monospace'; g.fillText(sub,320,172);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=8; return t; }
+const LBL={};
+const label=new THREE.Mesh(new THREE.PlaneGeometry(320,100),new THREE.MeshBasicMaterial({transparent:true,toneMapped:false,depthWrite:false})); label.position.set(0,435,30); folder.add(label);
+
+// ---------- etiquetas de papel (limpo · cortado · legendado · com cena · com música) ----------
+function tagTex(txt){ const c=document.createElement('canvas'); c.width=620; c.height=176; const g=c.getContext('2d');
+  g.fillStyle='#EDE9DF'; g.fillRect(0,0,620,176);
+  g.fillStyle=BLUE; g.beginPath(); g.arc(88,88,46,0,Math.PI*2); g.fill(); g.strokeStyle=NAVY; g.lineWidth=11; g.lineCap='round'; g.lineJoin='round';
+  g.beginPath(); g.moveTo(66,90); g.lineTo(82,106); g.lineTo(112,72); g.stroke();
+  g.fillStyle=NAVY; g.font='800 70px Inter'; g.textBaseline='middle'; g.fillText(txt,160,92);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=16; return t; }
+const TAGS=[['Limpo','limpo',-1,330],['Cortado','cortado',1,175],['Legendado','legendado',-1,20],['Com cena','cena',1,-135],['Com música','musica',-1,-290]];
+const tags=TAGS.map(([txt,k,side,y],i)=>{ const w=txt.length>8?318:262;
+  const m=new THREE.Mesh(new RoundedBoxGeometry(w,90,12,3,14),[paperMat(null),paperMat(null),paperMat(null),paperMat(null),new THREE.MeshStandardMaterial({map:tagTex(txt),roughness:.9}),paperMat(null)]);
+  m.material.forEach((mm,j)=>{ if(j!==4) mm.color.set(0xDCD6C9); });
+  const g=new THREE.Group(); g.add(m); m.scale.set(1,1,1); S.add(g); g.visible=false; g.userData={k,side,y,w}; return g; });
+// as texturas de etiqueta usam proporção 620×176 sobre caixas de 262–318×90: ajusta o repeat para não esticar
+tags.forEach(g=>{ const m=g.children[0]; const tx=m.material[4].map; const ar=(g.userData.w/90)/(620/176); if(ar<1){ tx.repeat.set(ar,1); tx.offset.set(0,0); } else { tx.repeat.set(1,1/ar); tx.offset.set(0,(1-1/ar)/2); } });
+
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.ready, document.fonts.load('500 40px Plex'), document.fonts.load('800 70px Inter'), document.fonts.load('700 26px Inter')];
+  const todo=[]; Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) todo.push(['seq',name,i]); });
+  DATA.roll.forEach((f,i)=>todo.push(['roll',f,i]));
+  let next=0; const worker=()=>{ if(next>=todo.length) return Promise.resolve(); const [kind,name,i]=todo[next++];
+    const src=kind==='seq'?`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`:`assets/roll/${name}`;
+    return loadImg(src).then(im=>{ if(kind==='seq') SEQ[name][i]=im; else ROLL[i]=im; return worker(); }); };
+  for(let k=0;k<8;k++) jobs.push(worker());
+  READY=Promise.all(jobs).then(()=>{
+    LBL.w=labelTex('— min','tempo de máquina',INK); LBL.a=labelTex('20 min','tempo de máquina',INK); LBL.b=labelTex('30 min','tempo de máquina',INK); LBL.c=labelTex('Pronto','✓ voltou para o celular',BLUE);
+    // as etiquetas e a pasta foram desenhadas antes das fontes: redesenha com as fontes carregadas
+    tags.forEach((g,i)=>{ const m=g.children[0]; const old=m.material[4].map; const nt=tagTex(TAGS[i][0]); nt.repeat.copy(old.repeat); nt.offset.copy(old.offset); m.material[4].map=nt; m.material[4].needsUpdate=true; });
+    const nf=paperTex(g=>{ g.fillStyle='#141B25'; g.font='500 40px Plex, monospace'; g.fillText('CORTEZ · PASTA DE TRABALHO',62,108);
+      g.font='800 104px Inter'; g.fillText('01 · Enviar',58,300); g.fillText('vídeos',58,410); g.fillStyle=BLUE; g.fillRect(62,470,220,10); });
+    fFront.material[4].map=nf; fFront.material[4].needsUpdate=true;
+    BUILT=true; }).catch(err=>{ READY=null; throw err; }); return READY; }
+
+// ---------- câmera ----------
+const tmpV=new THREE.Vector3();
+function camAt(t){
+  const st={px:-300,py:200,pz:2500,tx:0,ty:120,tz:0};
+  const mix=(s,u)=>{ for(const k in s) st[k]=lerp(st[k],s[k],u); };
+  mix({px:-230,py:190,pz:2330,tx:0,ty:110,tz:0},sm(0,T.pega,t));                                    // aproximação lenta no gancho
+  mix({px:40,py:20,pz:1700,tx:0,ty:-6,tz:0},eio((t-T.pega+0.05)/(T.celular-T.pega+0.25)));          // entra na galeria até o vídeo parado
+  mix({px:60,py:40,pz:1950,tx:0,ty:-6,tz:0},sm(T.editar-0.2,T.me+0.05,t));                           // recua um pouco: vê o vídeo aceso entre os outros
+  mix({px:700,py:-120,pz:2500,tx:700,ty:-220,tz:-120},eio((t-T.me+0.05)/0.62));                        // segue o cartão até a pasta
+  mix({px:840,py:-210,pz:2350,tx:800,ty:-280,tz:-160},eio((t-T.em+0.1)/0.7));                       // pasta + anel
+  mix({px:40,py:120,pz:2950,tx:0,ty:70,tz:0},eio((t-T.ele+0.05)/0.85));                               // volta ao celular
+  mix({px:0,py:110,pz:2780,tx:0,ty:60,tz:0},sm(T.limpo,T.eu,t));                                       // aproximação lenta com as etiquetas
+  mix({px:0,py:150,pz:3250,tx:0,ty:90,tz:0},eio((t-T.eu+0.05)/0.9));                                  // "Eu sou o Cortez": recua
+  mix({px:0,py:120,pz:3500,tx:0,ty:-120,tz:0},eio((t-T.cta0)/1.2));                                    // CTA: o celular desce e fica atrás do texto
+  C.position.set(st.px,st.py,st.pz); C.lookAt(st.tx,st.ty,st.tz);
+  return tmpV.set(st.tx,st.ty,st.tz);
+}
+
+function render(t){
+  camAt(t);
+  // celular: entra girando no gancho; encara a câmera na galeria; balanço leve depois
+  const ent=eo(t/0.75), sp=settle(t-0.75);
+  const face=eio((t-T.pega+0.1)/1.2);
+  phone.position.set(0,lerp(-150,0,ent)+6*sp,0);
+  phone.rotation.set(lerp(0.2,0.06,ent)*(1-face)+0.02*Math.sin(t*0.9)*sm(T.limpo,T.limpo+1,t),
+                     lerp(-0.62,-0.24,ent)*(1-face)+lerp(0,0.07,sm(T.eu,T.eu+0.8,t))+0.035*Math.sin(t*1.1)*sm(T.limpo,T.limpo+1,t), lerp(0.05,0.0,ent)*(1-face));
+  phone.updateMatrixWorld(true);
+  sheen.material.opacity=0.035+0.04*Math.abs(Math.sin(phone.rotation.y*3+0.6));
+  sheen.material.map.offset.set(-phone.rotation.y*0.8,0);
+  drawScreen(t);
+  // cartão do vídeo parado: sai da tela, gira, voa até a pasta e cai dentro dela
+  const a0=T.me-0.04, a1=T.manda+0.08, b1=T.em+0.22, c1=T.em+0.55;
+  cardOut.visible=t>=a0 && t<c1;
+  if(cardOut.visible){ setFrame(TX.raw, loopOf('raw',t,0));
+    const P0=new THREE.Vector3(HLlocal.x,HLlocal.y,PD/2+1.5).applyMatrix4(phone.matrixWorld);
+    const lift=eo((t-a0)/(a1-a0)), fly=eio((t-a1)/(b1-a1)), drop=ei((t-b1)/(c1-b1));
+    const P1=P0.clone().add(new THREE.Vector3(30,40,340));
+    const P2=new THREE.Vector3(F.x,F.y+200,F.z+18);
+    const p=P0.clone().lerp(P1,lift); const pf=P1.clone().lerp(P2,fly); pf.y+=260*Math.sin(Math.PI*fly);
+    if(fly>0) p.copy(pf); p.y-=260*drop;
+    cardOut.position.copy(p);
+    cardOut.rotation.set(-0.12*lift*(1-fly), phone.rotation.y*(1-lift)+Math.PI*eio((t-a1)/(b1-a1-0.05)), 0.18*Math.sin(Math.PI*fly));
+    cardOut.scale.setScalar(lerp(1,1.55,lift)*lerp(1,0.92,fly));
+  }
+  // pasta: a frente abre um pouco para receber e para devolver
+  const open=0.22*gauss(t,T.em+0.25,0.28)+0.3*sm(T.ele-0.15,T.ele+0.1,t)*(1-sm(T.volta+0.25,T.volta+0.6,t));
+  frontPivot.rotation.x=-0.08-open;
+  folder.position.set(F.x+1100*eio((t-T.pronto-0.1)/0.9),F.y+8*Math.sin(t*1.3),F.z); folder.visible=t<T.limpo+1.2; folder.rotation.y=-0.16+0.03*Math.sin(t*0.8);
+  // anel de progresso: 0 → 20 min (2/3) → 30 min
+  const p1=eio((t-T.vinte+0.05)/(T.trinta-T.vinte+0.05))*0.667, p2=eio((t-T.trinta+0.02)/(T.minutosE-T.trinta+0.1))*0.333;
+  setArc(p1+p2); ringMat.emissiveIntensity=0.5+0.7*gauss(t,T.minutosE+0.12,0.18);
+  if(LBL.w){ const L= t<T.vinte?LBL.w : t<T.trinta?LBL.a : t<T.volta?LBL.b : LBL.c; if(label.material.map!==L){ label.material.map=L; label.material.needsUpdate=true; }
+    label.material.opacity=sm(T.em-0.1,T.em+0.25,t); }
+  // cartão do vídeo pronto: sobe da pasta e encaixa na tela do celular
+  const r0=T.ele-0.05, r1=T.volta+0.25, r2=T.pronto+0.32;
+  cardIn.visible=t>=r0 && t<r2+0.02;
+  if(cardIn.visible){ setFrame(TXfinC, frameOf('fin',t,T.pronto+0.32-0.5));
+    const rise=eo((t-r0)/(r1-r0)), go=eio((t-r1)/(r2-r1));
+    const A=new THREE.Vector3(F.x,F.y-40,F.z+16), B=new THREE.Vector3(F.x-40,F.y+330,F.z+120);
+    const Ph=new THREE.Vector3(0,0,PD/2+1.6).applyMatrix4(phone.matrixWorld);
+    const p=A.clone().lerp(B,rise); if(go>0){ p.copy(B.clone().lerp(Ph,go)); p.z+=220*Math.sin(Math.PI*go); }
+    cardIn.position.copy(p);
+    cardIn.rotation.set(0, lerp(-0.5,0,go)+Math.PI*2*eio((t-r1)/(r2-r1))*0+phone.rotation.y*go, lerp(0.12,0,go));
+    cardIn.scale.setScalar(lerp(0.4,1,go));
+    cardIn.userData.edge.material.opacity=1-sm(r2-0.15,r2,t);
+  }
+  // etiquetas de papel nas palavras
+  tags.forEach((g,i)=>{ const {k,side,y,w}=g.userData; const t0=T[k]-0.04;
+    g.visible=t>=t0 && t<T.eu+0.5;
+    if(!g.visible) return;
+    const u=ebk((t-t0)/0.42), out=eio((t-T.eu+0.05)/0.38);
+    g.position.set(side*(PW/2-50)+side*28*(1-u)+side*1100*out, 60+y+6*Math.sin(t*1.4+i), 120+60*(1-u));
+    g.rotation.set(0.04*Math.sin(t+i), -side*0.12+side*0.22*(1-u), side*(0.035*((i%2)?1:-1))+side*0.25*(1-u));
+    g.scale.setScalar(Math.max(0.001,lerp(0.55,1,u)));
+    g.children[0].material.forEach(m=>{ m.transparent=out>0; m.opacity=1-out; });
+  });
+  // foco e brilho
+  const subj=new THREE.Vector3();
+  if(t>=T.me+0.3 && t<T.ele+0.4) subj.copy(folder.position); else subj.set(0,phone.position.y,PD/2);
+  if(t>=T.pega && t<T.me) { subj.set(HLlocal.x,HLlocal.y,PD/2).applyMatrix4(phone.matrixWorld); }
+  bokeh.uniforms.focus.value=C.position.distanceTo(subj);
+  bokeh.uniforms.aperture.value=0.0000026;
+  bloom.strength=0.05+0.08*gauss(t,T.minutosE+0.12,0.2)+0.05*gauss(t,T.pronto+0.32,0.15);
+  composer.render();
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!BUILT){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F45",
+  "format_uid": "official.738bf9237508476aaf602711a81d6174",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F45/estudio-de-marca/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Criativo 9:16 claro sobre identidade visual, guiado por narração. Um leque laqueado de cores reais (código, nome e hex em cada lâmina), tipos de metal com \"Aa\" em 3D nas fontes reais e placas de estilo de legenda entram nas palavras ditas; uma prancha \"sua identidade visual\" sobe e recebe cor, fonte e legenda. A placa com o mesmo vídeo entra sem identidade e troca de pele ao vivo em várias identidades (legenda, cor e fonte mudam, o vídeo é o mesmo). Cartões de \"modelo pronto\" genérico e \"cara de IA\" são recusados e deslizam para fora. Fecha num arco de entregas reais. Cartão final com \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Usar paletas, fontes e estilos de legenda reais das identidades; preparar o mesmo trecho de vídeo em 3 ou 4 identidades.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/estudio-de-marca com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Cores e fontes mostradas devem ser as reais das identidades citadas. Cartões \"genéricos\" só com formas abstratas. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/reference.mp4",
+      "sha256": "28b721adbb6f5cedb6e30d75fb90ed9f82816cf7a3be0c975a27f22eca4e1a00"
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/colors.jpg",
+      "sha256": "c5ed5cb7f718f911f54d9c92fe19e9c6a29cb4e10e6f22299b8028a7aa5fa519"
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/fonts.jpg",
+      "sha256": "03ad77de76124b3cbb244259460310884e974fed270352d1951a35bea6141380"
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/identity.jpg",
+      "sha256": "7afe37d5484df4141c2ed1e355cda88b181cca4ea276bee83b0d1ae8d1f11023"
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/reskin.jpg",
+      "sha256": "a077e5b03cd41b0ac1079412f3c9c7459a420d3969276739a2985a696b9f4037"
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/your-way.jpg",
+      "sha256": "5ea08f7a0d92d4c5a579e644ab5ac417732fec3633d95238f8ce52101f771a27"
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/cta.jpg",
+      "sha256": "068c0553395d4aaf660e8e20cf6237b04f99128ec984c0bf8d25923fb5b2d299"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/colors.jpg",
+      "sha256": "c5ed5cb7f718f911f54d9c92fe19e9c6a29cb4e10e6f22299b8028a7aa5fa519",
+      "at_seconds": 0.8,
+      "caption": "Gancho: leque laqueado de cores reais com nome e código em cada lâmina."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/fonts.jpg",
+      "sha256": "03ad77de76124b3cbb244259460310884e974fed270352d1951a35bea6141380",
+      "at_seconds": 2.7,
+      "caption": "Tipos de metal com \"Aa\" nas fontes reais."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/identity.jpg",
+      "sha256": "7afe37d5484df4141c2ed1e355cda88b181cca4ea276bee83b0d1ae8d1f11023",
+      "at_seconds": 4.8,
+      "caption": "A prancha \"sua identidade visual\" recebendo cor, fonte e legenda."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/reskin.jpg",
+      "sha256": "a077e5b03cd41b0ac1079412f3c9c7459a420d3969276739a2985a696b9f4037",
+      "at_seconds": 7.5,
+      "caption": "O mesmo vídeo com uma das identidades aplicada."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/your-way.jpg",
+      "sha256": "5ea08f7a0d92d4c5a579e644ab5ac417732fec3633d95238f8ce52101f771a27",
+      "at_seconds": 13.0,
+      "caption": "Arco de entregas reais em identidades diferentes."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/cta.jpg",
+      "sha256": "068c0553395d4aaf660e8e20cf6237b04f99128ec984c0bf8d25923fb5b2d299",
+      "at_seconds": 18.7,
+      "caption": "Cartão final: \"Com a sua cara.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/estudio-de-marca",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E141 V1",
+    "original_filename": "E141 V1 - IA 10 Com a sua cara (previa).mp4",
+    "original_sha256": "56e788960fc8df8065f2ae33ab26e65def53228a44bbc1811ce67daeee64bd3b",
+    "duration_s": 19.93,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

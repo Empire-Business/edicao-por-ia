@@ -78,6 +78,32 @@ test('shared links do not assign a default identity or restore a retired format'
   assert.equal(selectionFromHash('#modelo=F35', catalog).identity, null);
   assert.equal(selectionFromHash('#modelo=F36&id=ID05', catalog).format.pattern, 'f36-interface-em-3d-v1');
   assert.equal(selectionFromHash('#modelo=F36', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F37&id=ID01', catalog).format.pattern, 'f37-depoimento-em-chat-3d-v1');
+  assert.equal(selectionFromHash('#modelo=F37', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F38&id=ID03', catalog).format.pattern, 'f38-paisagem-de-audio-v1');
+  assert.equal(selectionFromHash('#modelo=F38', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F39&id=ID06', catalog).format.pattern, 'f39-escada-de-testes-v1');
+  assert.equal(selectionFromHash('#modelo=F39', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F40&id=ID04', catalog).format.pattern, 'f40-iris-de-depoimento-v1');
+  assert.equal(selectionFromHash('#modelo=F40', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F41&id=ID07', catalog).format.pattern, 'f41-gavetas-de-pesquisa-v1');
+  assert.equal(selectionFromHash('#modelo=F41', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F42&id=ID06', catalog).format.pattern, 'f42-tunel-da-pasta-v1');
+  assert.equal(selectionFromHash('#modelo=F42', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F43&id=IDP02', catalog).format.pattern, 'f43-tomadas-de-vidro-v1');
+  assert.equal(selectionFromHash('#modelo=F43', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F44&id=ID03', catalog).format.pattern, 'f44-cordilheira-de-cortes-v1');
+  assert.equal(selectionFromHash('#modelo=F44', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F45&id=ID05', catalog).format.pattern, 'f45-estudio-de-marca-v1');
+  assert.equal(selectionFromHash('#modelo=F45', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F46&id=IDP01', catalog).format.pattern, 'f46-molde-de-pecas-v1');
+  assert.equal(selectionFromHash('#modelo=F46', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F47&id=ID07', catalog).format.pattern, 'f47-linha-do-tempo-que-se-organiza-v1');
+  assert.equal(selectionFromHash('#modelo=F47', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F48&id=ID01', catalog).format.pattern, 'f48-pilha-de-versoes-v1');
+  assert.equal(selectionFromHash('#modelo=F48', catalog).identity, null);
+  assert.equal(selectionFromHash('#modelo=F49&id=ID08', catalog).format.pattern, 'f49-celular-de-teste-v1');
+  assert.equal(selectionFromHash('#modelo=F49', catalog).identity, null);
   assert.equal(selectionFromHash('#modelo=F09', catalog).format.pattern, 'f09-personagem-v1');
   assert.equal(selectionFromHash('#modelo=F11', catalog).format.pattern, 'f11-narracao-ilustrada-v1');
   assert.equal(selectionFromHash('#modelo=F17', catalog).format.pattern, 'f17-colunas-v1');
@@ -166,7 +192,7 @@ test("numeric code order is stable for library, favorites and searches", () => {
  const shuffled=[catalog.formats.find(x=>x.code==="F16"),catalog.formats.find(x=>x.code==="F04"),catalog.formats.find(x=>x.code==="F01")];
  assert.deepEqual(filterFormats(shuffled).map(x=>x.code),["F01","F04","F16"]);
  assert.deepEqual(filterFormats(shuffled,{favoritesOnly:true,favorites:["F16","F01"]}).map(x=>x.code),["F01","F16"]);
- assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20","F21","F22","F23","F24","F25","F26","F27","F28","F29","F30","F31","F32","F33","F34","F35","F36"]);
+ assert.deepEqual(catalog.formats.map(x=>x.code),["F01","F02","F03","F04","F05","F06","F07","F08","F09","F10","F11","F12","F13","F14","F15","F16","F17","F18","F19","F20","F21","F22","F23","F24","F25","F26","F27","F28","F29","F30","F31","F32","F33","F34","F35","F36","F37","F38","F39","F40","F41","F42","F43","F44","F45","F46","F47","F48","F49"]);
 });
 
 test('the authorized new F02 uses its actual full example and a fresh media generation', () => {

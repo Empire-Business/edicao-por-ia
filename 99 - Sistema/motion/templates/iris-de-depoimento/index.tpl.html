@@ -1,0 +1,364 @@
+<!-- MODELO F40 Íris de Depoimento: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · "Ouve quem usa" (voz de IA + cliente real · F10 · ID04)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID04 Dourado — fundo #171714 · texto #F1EEE5 · primária #D6B46A · superfície #282720 · apoio #B6B09F · Libre Baskerville + Inter + IBM Plex Mono.
+   Ideia: a IA é um diafragma (íris) de ouro — precisa, sintética — que pulsa com a própria voz; "é melhor você ouvir quem já usa":
+   a íris abre e revela o Convidado, pessoa real, quente. A IA volta para fechar com o fato. */
+@font-face { font-family:"Libre Baskerville"; src:url("assets/libre-baskerville-variable.ttf") format("truetype"); font-weight:400 700; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin-ext.woff2") format("woff2"); font-weight:400; unicode-range:U+0100-024F; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin.woff2") format("woff2"); font-weight:600; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; background:#171714; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#171714; font-family:"Inter", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#vig { position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(23,23,20,.95) 0%, rgba(23,23,20,.78) 14%, rgba(23,23,20,0) 27%, rgba(23,23,20,0) 70%, rgba(23,23,20,.72) 84%, rgba(23,23,20,.9) 100%); }
+#grain { position:absolute; left:-64px; top:-64px; width:1208px; height:2048px; z-index:30; pointer-events:none; background:url("assets/grain.png"); opacity:.055; mix-blend-mode:overlay; }
+
+.hd { position:absolute; left:84px; right:84px; top:206px; z-index:6; }
+.lab { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:23px; letter-spacing:.16em; text-transform:uppercase; color:#D6B46A; overflow:hidden; height:34px; }
+.lab .in { display:inline-flex; align-items:center; gap:14px; }
+.lab i { width:9px; height:9px; border-radius:50%; background:#D6B46A; display:block; flex:none; }
+.ttl { margin-top:10px; }
+.ln { display:block; overflow:hidden; padding:0 0 .12em; font-family:"Libre Baskerville", serif; font-weight:700; font-size:70px; line-height:1.04; letter-spacing:-.025em; color:#F1EEE5; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:italic; font-weight:400; color:#D6B46A; }
+#h4 .ln { font-size:60px; } #h5 .ln { font-size:52px; }
+
+#who { position:absolute; left:0; right:0; top:1404px; z-index:8; display:flex; justify-content:center; }
+#who .in { display:flex; align-items:center; gap:12px; padding:10px 20px 10px 16px; border-radius:999px; background:rgba(23,23,20,.74); border:1.5px solid rgba(214,180,106,.42);
+  font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:20px; letter-spacing:.13em; text-transform:uppercase; color:#F1EEE5; white-space:nowrap; opacity:0; }
+#who i { width:9px; height:9px; border-radius:50%; background:#D6B46A; display:block; }
+#who .j { position:absolute; }
+#proof { position:absolute; left:0; right:0; top:1404px; z-index:8; display:flex; justify-content:center; }
+#proof .in { padding:10px 20px; border-radius:999px; background:rgba(23,23,20,.74); border:1.5px solid rgba(214,180,106,.42); font-family:"IBM Plex Mono", monospace; font-weight:500;
+  font-size:20px; letter-spacing:.13em; text-transform:uppercase; color:#F1EEE5; opacity:0; }
+
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:40px; right:40px; top:1466px; text-align:center; opacity:0; }
+.cap .bx { display:inline-block; white-space:nowrap; font-family:"Inter", sans-serif; font-weight:800; font-size:86px; line-height:1.1; letter-spacing:-.03em; color:#F1EEE5;
+  text-shadow:0 4px 22px rgba(0,0,0,.55); }
+.cap.ia .bx { color:#E8D3A0; }
+.cap .k { color:#D6B46A; }
+.cap.ia .k { color:#F6DC9A; }
+
+.cta-h { position:absolute; left:50px; right:50px; top:206px; z-index:10; text-align:center; }
+.cta-h .ln { font-size:78px; text-align:center; }
+.cta-s { position:absolute; left:60px; right:60px; top:1124px; z-index:10; text-align:center; opacity:0; font-family:"Inter", sans-serif; font-weight:400; font-size:38px; color:#F1EEE5; }
+.cta-s b { font-weight:800; color:#D6B46A; }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }{{CTA_CSS}}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="vig"></div>
+
+  {{HEADS}}
+  <div id="who"><span class="in" id="whoA"><i></i>Cortez · inteligência artificial</span></div>
+  <div id="who2" style="position:absolute;left:0;right:0;top:1404px;z-index:8;display:flex;justify-content:center"><span class="in" id="whoJ" style="display:flex;align-items:center;gap:12px;padding:10px 20px 10px 16px;border-radius:999px;background:rgba(23,23,20,.74);border:1.5px solid rgba(241,238,229,.5);font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:20px;letter-spacing:.13em;text-transform:uppercase;color:#F1EEE5;white-space:nowrap;opacity:0"><i style="width:9px;height:9px;border-radius:50%;background:#F1EEE5;display:block"></i>Convidado · cliente · trecho real da live</span></div>
+  <div id="proof"><span class="in">Vídeos editados pelo Cortez</span></div>
+  <div id="reelc" style="position:absolute;left:0;right:0;top:1404px;z-index:8;display:flex;justify-content:center"><span class="in" id="whoR" style="display:flex;align-items:center;gap:12px;padding:10px 20px 10px 16px;border-radius:999px;background:rgba(23,23,20,.78);border:1.5px solid rgba(214,180,106,.55);font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:20px;letter-spacing:.13em;color:#F1EEE5;white-space:nowrap;opacity:0"><i style="width:9px;height:9px;border-radius:50%;background:#D6B46A;display:block"></i>REEL DO CONVIDADO · @perfil-do-convidado</span></div>
+
+  <div id="caps">{{CAPS}}</div>
+
+  <div class="cta-h" id="ch"><span class="ln"><span class="in" id="ch1">Não acredite em mim.</span></span><span class="ln"><span class="in" id="ch2"><em>Ouça quem usa.</em></span></span></div>
+  <div class="cta-s" id="cs">Você grava. <b>O Cortez edita.</b> Você aprova.</div>
+  {{CTA_HTML}}
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#171714" stroke="#F1EEE5" stroke-width="4" stroke-linejoin="round"/></svg>
+  <div id="grain"></div>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1, #ch2',{yPercent:112});
+  gsap.set('#h1 .lab .in, #h1l0 .in, #h1l1 .in',{yPercent:0});
+  if(DATA.caps.length && DATA.caps[0].s<0.05){ gsap.set('#cg0',{opacity:1}); }
+  gsap.set('#whoA',{opacity:1});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:.3,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.7); });
+    OUT(`${sel} .lab .in`,h.end-.3); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.3+j*.03)); });
+  // quem fala: IA (dourado) ↔ Convidado (cliente, trecho real)
+  const B=DATA.blocks;
+  tl.to('#whoA',{opacity:0,duration:.25},B.j1.start-.25);
+  tl.fromTo('#whoJ',{opacity:0,y:10},{opacity:1,y:0,duration:.35,ease:'power3.out',immediateRender:false},B.j1.start);
+  tl.to('#whoJ',{opacity:0,duration:.25},B.d6b.start-.2);
+  tl.fromTo('#whoA',{opacity:0},{opacity:1,duration:.3,immediateRender:false},B.d6b.start);
+  tl.to('#whoA',{opacity:0,duration:.3},T.cta0-.3);
+  tl.set('#who',{opacity:1},0);
+  // Reel real do Convidado dentro da íris: selo próprio (sem "editado pelo Cortez")
+  [[T.rA0,T.rA1,'#whoJ','#whoA'],[T.rB0,T.rB1,'#whoA','#whoA']].forEach(([a,b,before,after])=>{
+    tl.to(before,{opacity:0,duration:.12},a-.02);
+    tl.fromTo('#whoR',{opacity:0,y:8},{opacity:1,y:0,duration:.25,ease:'power3.out',immediateRender:false},a+.05);
+    tl.to('#whoR',{opacity:0,duration:.15},b-.05);
+    tl.fromTo(after,{opacity:0},{opacity:1,duration:.25,immediateRender:false},b+.1); });
+  // selo da prova enquanto os cartões orbitam (o selo da IA sai nesse intervalo)
+  tl.to('#whoA',{opacity:0,duration:.2},T.cards0+.1);
+  tl.fromTo('#proof .in',{opacity:0,y:10},{opacity:1,y:0,duration:.3,immediateRender:false},T.cards0+.2);
+  tl.to('#proof .in',{opacity:0,duration:.25},T.cardsOut+.6);
+  tl.fromTo('#whoA',{opacity:0},{opacity:1,duration:.25,immediateRender:false},T.cardsOut+.85);
+  // fechamento
+  IN('#ch1',T.cta0+.2,.8); IN('#ch2',T.cta0+.45,.8);
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+.8);
+{{CTA_TL}}
+  DATA.caps.forEach((g,i)=>{ tl.set(`#cg${i}`,{opacity:1},Math.max(0.001,g.s)); tl.set(`#cg${i}`,{opacity:0},g.e); });
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const DATA = window.__DATA, T = DATA.T, B = DATA.blocks;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const sm=(a,b,x)=>{ const t=clamp((x-a)/(b-a),0,1); return t*t*(3-2*t); };
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const ecub=(x)=>{ x=clamp(x,0,1); return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2; };
+const lerp=(a,b,u)=>a+(b-a)*u;
+const V3=(x,y,z)=>new THREE.Vector3(x,y,z);
+
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true,stencil:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.NeutralToneMapping; R.toneMappingExposure=1.0;
+const BG=new THREE.Color(0x171714);
+const S=new THREE.Scene(); S.background=BG.clone();
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity=0.85; S.environmentRotation.set(-0.18,0.4,0);
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,10,40000);
+const key=new THREE.DirectionalLight(0xfff1dc,1.8); key.position.set(-2400,1500,2600); S.add(key);
+const rim=new THREE.DirectionalLight(0xffcf7a,2.0); rim.position.set(1800,600,-1400); S.add(rim);
+const fill=new THREE.DirectionalLight(0xd8e2ff,0.35); fill.position.set(1400,-900,2000); S.add(fill);
+const amb=new THREE.HemisphereLight(0xfff4e0,0x1c1812,0.22); S.add(amb);
+
+const rt=new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4,depthBuffer:true,stencilBuffer:true});
+const composer=new EffectComposer(R,rt); composer.setPixelRatio(1); composer.setSize(1080,1920);
+composer.addPass(new RenderPass(S,C));
+const bokeh=new BokehPass(S,C,{focus:3600,aperture:0.0,maxblur:0.01}); composer.addPass(bokeh);
+const bloom=new UnrealBloomPass(new THREE.Vector2(1080,1920),0.12,0.45,0.92); composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+function roundMask(w,h,r){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,w,h);
+  g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+function rr(shape,W,H,Rr){ shape.moveTo(-W/2+Rr,-H/2); shape.lineTo(W/2-Rr,-H/2); shape.absarc(W/2-Rr,-H/2+Rr,Rr,-Math.PI/2,0,false); shape.lineTo(W/2,H/2-Rr);
+  shape.absarc(W/2-Rr,H/2-Rr,Rr,0,Math.PI/2,false); shape.lineTo(-W/2+Rr,H/2); shape.absarc(-W/2+Rr,H/2-Rr,Rr,Math.PI/2,Math.PI,false); shape.lineTo(-W/2,-H/2+Rr);
+  shape.absarc(-W/2+Rr,-H/2+Rr,Rr,Math.PI,Math.PI*1.5,false); return shape; }
+function frameShape(W,H,Rr,th){ const s=rr(new THREE.Shape(),W,H,Rr); s.holes.push(rr(new THREE.Path(),W-2*th,H-2*th,Math.max(1,Rr-th))); return new THREE.ShapeGeometry(s,24); }
+const SEQ={}; let READY=null, LOADED=false;
+function loadImg(src,n){ n=n||0; return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>{ if(n<10) setTimeout(()=>loadImg(src,n+1).then(res,rej),150*(n+1)); else rej(new Error(src)); }; im.src=src+(n?('?r='+n):''); }); }
+function frameIdx(name,t,t0){ const a=SEQ[name]; return a[clamp(Math.floor((t-t0)*30+1e-6),0,a.length-1)]; }
+function vtex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+
+// ---------- geometria da íris (unidades = pixels no plano z=0 com a câmera frontal a D) ----------
+const IC=V3(0,100,0);          // centro da íris
+const RH=392, RB=470;           // raio do alojamento (onde as lâminas aparecem) e raio externo do aro
+const iris=new THREE.Group(); iris.position.copy(IC); S.add(iris);
+
+// fundo: brilho quente + mostrador gravado (parallax lento)
+const glowTex=(()=>{ const c=document.createElement('canvas'); c.width=512; c.height=512; const g=c.getContext('2d'); const gr=g.createRadialGradient(256,256,0,256,256,256);
+  gr.addColorStop(0,'rgba(214,180,106,0.42)'); gr.addColorStop(.42,'rgba(150,112,52,0.16)'); gr.addColorStop(1,'rgba(23,23,20,0)'); g.fillStyle=gr; g.fillRect(0,0,512,512);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; return t; })();
+const glow=new THREE.Mesh(new THREE.PlaneGeometry(4200,4200),new THREE.MeshBasicMaterial({map:glowTex,transparent:true,depthWrite:false,toneMapped:false,opacity:.5}));
+glow.position.set(0,IC.y,-1500); S.add(glow);
+const dialTex=(()=>{ const c=document.createElement('canvas'); c.width=2048; c.height=2048; const g=c.getContext('2d'); g.translate(1024,1024);
+  g.strokeStyle='rgba(214,180,106,.20)'; g.lineWidth=2; [620,700,860,980].forEach(r=>{ g.beginPath(); g.arc(0,0,r,0,Math.PI*2); g.stroke(); });
+  g.strokeStyle='rgba(214,180,106,.13)'; g.lineWidth=1; for(let r=520;r<1020;r+=24){ g.beginPath(); g.arc(0,0,r,0,Math.PI*2); g.stroke(); }
+  for(let i=0;i<240;i++){ const a=i/240*Math.PI*2, l=i%10===0?42:(i%5===0?26:14); g.strokeStyle=i%10===0?'rgba(214,180,106,.42)':'rgba(214,180,106,.22)'; g.lineWidth=i%10===0?3:2;
+    g.beginPath(); g.moveTo(Math.cos(a)*(700-l),Math.sin(a)*(700-l)); g.lineTo(Math.cos(a)*700,Math.sin(a)*700); g.stroke(); }
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; return t; })();
+const dial=new THREE.Mesh(new THREE.PlaneGeometry(2700,2700),new THREE.MeshBasicMaterial({map:dialTex,transparent:true,depthWrite:false,opacity:.75}));
+dial.position.set(0,IC.y,-520); S.add(dial);
+
+// janela do Convidado (atrás das lâminas)
+const jTex=vtex();
+const jMat=new THREE.MeshBasicMaterial({map:jTex,toneMapped:false,color:0xffffff});
+const jDisk=new THREE.Mesh(new THREE.CircleGeometry(RH+6,160),jMat); jDisk.position.z=-46; jDisk.renderOrder=0; iris.add(jDisk);
+// Reel real do Convidado (9:16, cartão inteiro dentro da janela da íris, sobre fundo escuro)
+const rTex=vtex();
+const reelBack=new THREE.Mesh(new THREE.CircleGeometry(RH+6,160),new THREE.MeshBasicMaterial({color:0x14120e,toneMapped:false})); reelBack.position.z=-45; iris.add(reelBack);
+const reelCard=new THREE.Mesh(new THREE.PlaneGeometry(371,660),new THREE.MeshBasicMaterial({map:rTex,alphaMap:roundMask(371,660,22),transparent:true,toneMapped:false}));
+reelCard.position.set(0,-4,-44); iris.add(reelCard);
+const reelFrame=new THREE.Mesh(frameShape(381,670,26,4),new THREE.MeshBasicMaterial({color:0xD6B46A,transparent:true,toneMapped:false})); reelFrame.position.set(0,-4,-43.5); iris.add(reelFrame);
+// fundo escuro do alojamento (aparece só nas bordas)
+const back=new THREE.Mesh(new THREE.CircleGeometry(RB-10,128),new THREE.MeshStandardMaterial({color:0x0e0d0b,roughness:.9,metalness:.2})); back.position.z=-60; iris.add(back);
+
+// máscara por stencil: as lâminas só aparecem dentro do círculo do alojamento
+const maskMat=new THREE.MeshBasicMaterial({colorWrite:false,depthWrite:false,stencilWrite:true,stencilRef:1,stencilFunc:THREE.AlwaysStencilFunc,stencilZPass:THREE.ReplaceStencilOp});
+const mask=new THREE.Mesh(new THREE.CircleGeometry(RH+2,160),maskMat); mask.position.z=-30; mask.renderOrder=1; iris.add(mask);
+
+// lâminas: placas extrudadas com borda interna levemente curva; cada uma cobre o semiplano além da reta tangente à abertura
+const NBL=9, BL=600, BW=820, BOW=34;
+const bShape=new THREE.Shape(); bShape.moveTo(0,-BL); bShape.quadraticCurveTo(BOW,0,0,BL); bShape.lineTo(BW,BL); bShape.lineTo(BW,-BL); bShape.lineTo(0,-BL);
+const bGeo=new THREE.ExtrudeGeometry(bShape,{depth:3,bevelEnabled:true,bevelThickness:1.6,bevelSize:2.2,bevelSegments:3,curveSegments:48}); bGeo.translate(0,0,-1.5);
+const bladeMat=new THREE.MeshPhysicalMaterial({color:0x6a5532,metalness:.95,roughness:.36,clearcoat:.35,clearcoatRoughness:.3,envMapIntensity:1.3,
+  stencilWrite:true,stencilRef:1,stencilFunc:THREE.EqualStencilFunc,stencilFail:THREE.KeepStencilOp,stencilZFail:THREE.KeepStencilOp,stencilZPass:THREE.KeepStencilOp});
+const blades=[]; for(let k=0;k<NBL;k++){ const m=new THREE.Mesh(bGeo,bladeMat); m.renderOrder=2; iris.add(m); blades.push(m); }
+const TILT=0.034;
+function setAperture(a,psi){
+  for(let k=0;k<NBL;k++){ const ph=psi+k*Math.PI*2/NBL; const b=blades[k];
+    b.position.set(a*Math.cos(ph),a*Math.sin(ph),-14); b.rotation.set(TILT,0,ph,'ZYX'); } }
+
+// aro dourado (extrudado com bisel) + marcas gravadas + inscrições em arco
+const bz=new THREE.Shape(); bz.absarc(0,0,RB,0,Math.PI*2,false); const hole=new THREE.Path(); hole.absarc(0,0,RH-6,0,Math.PI*2,true); bz.holes.push(hole);
+const bezelGeo=new THREE.ExtrudeGeometry(bz,{depth:22,bevelEnabled:true,bevelThickness:7,bevelSize:6,bevelSegments:8,curveSegments:180});
+const bezelMat=new THREE.MeshPhysicalMaterial({color:0xD0AE63,metalness:1,roughness:.26,clearcoat:.5,clearcoatRoughness:.16,envMapIntensity:1.05});
+const bezel=new THREE.Mesh(bezelGeo,bezelMat); bezel.position.z=6; iris.add(bezel);
+const FACE=6+22+7;      // frente do aro
+const tickGeo=new THREE.BoxGeometry(3,1,2.2); tickGeo.translate(0,.5,0);
+const tickMat=new THREE.MeshStandardMaterial({color:0x2e2416,roughness:.65,metalness:.4});
+const NT=90, ticks=new THREE.InstancedMesh(tickGeo,tickMat,NT); iris.add(ticks);
+{ const M=new THREE.Matrix4(), Q=new THREE.Quaternion(), Sx=new THREE.Vector3();
+  for(let i=0;i<NT;i++){ const a=i/NT*Math.PI*2, major=i%15===0, mid=i%5===0, len=major?30:(mid?20:12), r0=RB-14-len;
+    Q.setFromAxisAngle(V3(0,0,1),a-Math.PI/2); Sx.set(major?1.6:1,len,1); M.compose(V3(Math.cos(a)*r0,Math.sin(a)*r0,FACE+.6),Q,Sx); ticks.setMatrixAt(i,M); } }
+function arcText(g,text,r,ang,top,font,color){ g.save(); g.font=font; g.fillStyle=color; g.textAlign='center'; g.textBaseline='middle';
+  const chars=[...text], widths=chars.map(c=>g.measureText(c).width+3), tot=widths.reduce((a,b)=>a+b,0); let a=ang+(top?1:-1)*tot/2/r;
+  chars.forEach((ch,i)=>{ const w=widths[i]; a+=(top?-1:1)*w/2/r; g.save(); g.rotate(-a); g.translate(r,0); g.rotate(top?Math.PI/2:-Math.PI/2); g.fillText(ch,0,0); g.restore(); a+=(top?-1:1)*w/2/r; }); g.restore(); }
+const engr=(()=>{ const c=document.createElement('canvas'); c.width=1200; c.height=1200; const g=c.getContext('2d'); g.translate(600,600); const s=600/RB;
+  const f='500 '+Math.round(23*s)+'px "IBM Plex Mono"', ink='rgba(30,22,10,.95)';
+  arcText(g,'CORTEZ  ·  INTELIGÊNCIA ARTIFICIAL',(RH+22)*s,-Math.PI/2,false,f,ink);
+  arcText(g,'0',(RH+22)*s,Math.PI*0.5+0.62,true,f,ink); arcText(g,'1 DIA',(RH+22)*s,Math.PI*0.5+0.06,true,f,ink); arcText(g,'2 DIAS',(RH+22)*s,Math.PI*0.5-0.56,true,f,ink);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=8; return t; })();
+const engrMesh=new THREE.Mesh(new THREE.PlaneGeometry(RB*2,RB*2),new THREE.MeshBasicMaterial({map:engr,transparent:true,depthWrite:false,toneMapped:false}));
+engrMesh.position.z=FACE+.9; iris.add(engrMesh);
+// ponteiro dos dias (entalhe luminoso no aro)
+const ptr=new THREE.Mesh(new THREE.CylinderGeometry(0,17,40,3),new THREE.MeshBasicMaterial({color:0xFFE2A0,toneMapped:false,transparent:true}));
+ptr.rotation.x=Math.PI/2; const ptrG=new THREE.Group(); ptrG.add(ptr); ptr.position.set(0,0,0); iris.add(ptrG);
+const DAY0=Math.PI*0.5+0.62, DAY2=Math.PI*0.5-0.56;
+function setPtr(a,o){ ptrG.position.set(Math.cos(a)*(RH+2),Math.sin(a)*(RH+2),FACE+4); ptrG.rotation.z=a-Math.PI/2; ptr.material.opacity=o; ptrG.visible=o>0.01; }
+// arco de progresso (100%) na borda interna do aro
+const arcCurve=new THREE.Curve(); arcCurve.getPoint=function(u,tgt=new THREE.Vector3()){ const a=Math.PI/2-u*Math.PI*2; return tgt.set(Math.cos(a)*(RH-1),Math.sin(a)*(RH-1),FACE-1); };
+const ARC_SEG=360, ARC_RAD=8;
+const arcGeo=new THREE.TubeGeometry(arcCurve,ARC_SEG,3.6,ARC_RAD,false);
+const arcMat=new THREE.MeshBasicMaterial({color:0xFFE6A8,toneMapped:false,transparent:true});
+const arc=new THREE.Mesh(arcGeo,arcMat); iris.add(arc);
+function setArc(u,o){ arcGeo.setDrawRange(0,Math.floor(clamp(u,0,1)*ARC_SEG)*ARC_RAD*6); arcMat.opacity=o; arc.visible=u>0.002&&o>0.01; }
+
+// cartões de prova ("eu poderia passar o dia dizendo que sou bom")
+const CARDS=DATA.cards, cardMask=roundMask(270,480,16), cards=[];
+CARDS.forEach((n,i)=>{ const g=new THREE.Group(); const m=new THREE.Mesh(new THREE.PlaneGeometry(270,480),new THREE.MeshBasicMaterial({map:vtex(),alphaMap:cardMask,transparent:true,toneMapped:false}));
+  const fr=new THREE.Mesh(frameShape(282,492,20,4),new THREE.MeshBasicMaterial({color:0xD6B46A,transparent:true,toneMapped:false})); fr.position.z=.5;
+  g.add(m); g.add(fr); g.visible=false; S.add(g); cards.push({g,m,fr,name:n}); });
+
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.load('700 70px "Libre Baskerville"'), document.fonts.load('600 30px "IBM Plex Mono"'), document.fonts.load('800 80px Inter'), document.fonts.ready];
+  Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  READY=Promise.all(jobs).then(()=>{ engr.image=(()=>{ const c=document.createElement('canvas'); c.width=1200; c.height=1200; const g=c.getContext('2d'); g.translate(600,600); const s=600/RB;
+      const f='500 '+Math.round(23*s)+'px "IBM Plex Mono"', ink='rgba(30,22,10,.95)';
+      arcText(g,'CORTEZ  ·  INTELIGÊNCIA ARTIFICIAL',(RH+22)*s,-Math.PI/2,false,f,ink);
+      arcText(g,'0',(RH+22)*s,DAY0,true,f,ink); arcText(g,'1 DIA',(RH+22)*s,(DAY0+DAY2)/2,true,f,ink); arcText(g,'2 DIAS',(RH+22)*s,DAY2,true,f,ink); return c; })(); engr.needsUpdate=true; LOADED=true; });
+  return READY; }
+
+// ---------- câmera ----------
+function frameCam(dist,yawDeg,screenY,pitch){ const ty=IC.y-(960-screenY)*dist/D; const yaw=yawDeg*Math.PI/180, p=pitch||0.04;
+  const tgt=V3(0,ty,0); return [V3(Math.sin(yaw)*dist*Math.cos(p), ty+Math.sin(p)*dist, Math.cos(yaw)*dist*Math.cos(p)), tgt]; }
+const KEYS=[
+  [0,            [V3(-330,330,1320), V3(-150,150,0)]],
+  [0.55,         [V3(-380,300,1700), V3(-120,140,0)]],
+  [T.uma+0.2,    frameCam(3700,-16,900,0.05)],
+  [T.s2-0.05,    frameCam(3800,-9,900,0.04)],
+  [T.s2+1.2,     frameCam(4700,4,930,0.06)],
+  [T.s3,         frameCam(4600,9,930,0.05)],
+  [T.open0+0.1,  frameCam(3750,2,890,0.03)],
+  [B.j1.start,   frameCam(3420,-7,900,0.0)],
+  [T.caramba-0.15, frameCam(3260,3,900,0.0)],
+  [T.caramba+0.7,  frameCam(2980,0,912,0.0)],
+  [B.j1.end,     frameCam(3150,-2,905,0.0)],
+  [T.postei+0.3, frameCam(3380,8,900,0.0)],
+  [T.editado-0.15, frameCam(3240,3,900,0.0)],
+  [T.pct+0.35,   frameCam(3020,0,908,0.0)],
+  [B.j2.end,     frameCam(3250,-3,900,0.0)],
+  [T.close1,     frameCam(3800,-8,900,0.04)],
+  [T.dois,       frameCam(3650,-3,900,0.03)],
+  [T.reopen1,    frameCam(3480,3,900,0.0)],
+  [T.cta0,       frameCam(3560,0,900,0.0)],
+  [T.cta0+0.95,  frameCam(6150,0,800,0.0)],
+  [T.end,        frameCam(6300,0,800,0.0)] ];
+function camAt(t){ let i=0; while(i<KEYS.length-2 && t>=KEYS[i+1][0]) i++;
+  const [t0,[p0,q0]]=KEYS[i], [t1,[p1,q1]]=KEYS[i+1]; const u=t1>t0?clamp((t-t0)/(t1-t0),0,1):1; const e=(i===0)?ecub(u):eio(u);
+  return [p0.clone().lerp(p1,e), q0.clone().lerp(q1,e)]; }
+
+// ---------- abertura da íris ao longo do tempo ----------
+const OPEN=RH+40, PSI0=0.17;
+function apertureAt(t){
+  const env=DATA.env[Math.min(DATA.env.length-1,Math.floor(t*30))]||0;
+  const speakAI=(t<T.open0)?1:0;
+  let a=6+20*env*speakAI;                                                   // fechada, "respira" com a voz da IA
+  a=lerp(a,OPEN,ecub((t-T.open0)/(T.open1-T.open0)));                      // abre e revela o Convidado
+  a=lerp(a,RH*0.58,eio((t-T.close0)/(T.close1-T.close0)));                  // volta a IA: fecha em parte
+  a=lerp(a,OPEN,ecub((t-T.reopen0)/(T.reopen1-T.reopen0)));                 // "editado cem por cento por mim": abre de novo
+  if(t>=T.close1 && t<T.reopen0) a+=12*env;                                // a IA fala de novo: a borda pulsa de leve
+  [T.rA0,T.rA1,T.rB0,T.rB1].forEach(tb=>{ const g=Math.exp(-Math.pow((t-tb)/0.11,2)); a=lerp(a,-10,g); });   // piscada de obturador nas trocas
+  return a; }
+
+function render(t){
+  const a=apertureAt(t); setAperture(a, PSI0+0.62*(a/OPEN)+0.05*t);
+  // janela do Convidado: rindo (antes da fala) → fala 1 → fala 2 → ouvindo (depois); quadros indexados pelo tempo
+  let img;
+  if(t<B.j1.start) img=frameIdx('jpre',t,B.j1.start-1.8);
+  else if(t<B.j2.start) img=frameIdx('j1',t,B.j1.start);
+  else if(t<B.j2.end) img=frameIdx('j2',t,B.j2.start);
+  else img=frameIdx('jpost',t,B.j2.end);
+  setFrame(jTex,img);
+  const inA=t>=T.rA0 && t<T.rA1, inB=t>=T.rB0 && t<T.rB1, reel=inA||inB;
+  reelBack.visible=reelCard.visible=reelFrame.visible=reel;
+  if(inA) setFrame(rTex,frameIdx('rA',t,T.rA0)); else if(inB) setFrame(rTex,frameIdx('rB',t,T.rB0));
+  const openK=clamp((a-40)/(OPEN-40),0,1);
+  jMat.color.setScalar(t<T.open0 ? 0.0 : lerp(0.0,1.0,sm(T.open0,T.open0+0.7,t))*lerp(.6,1.0,openK));   // fechada: pupila escura
+  // aquece a cena quando o Convidado aparece
+  const warm=sm(T.open0,T.open1,t)*(1-.35*sm(T.close0,T.close1,t));
+  glow.material.opacity=lerp(.16,.30,warm); glow.scale.setScalar(lerp(1,1.12,warm));
+  dial.rotation.z=-0.035*t; dial.material.opacity=lerp(.75,.45,warm);
+  // aro: ponteiro dos dias e arco 100%
+  const ptrO=sm(T.close0+.2,T.close1,t)*(1-sm(T.cta0+.2,T.cta0+.7,t));
+  setPtr(lerp(DAY0,DAY2,ecub((t-T.dois+0.05)/0.55)), ptrO);
+  const au=ecub((t-T.arc0)/(T.arc1-T.arc0)); const pulse=1+0.35*Math.exp(-Math.pow((t-T.cem-0.1)/.35,2));
+  setArc(au, sm(T.arc0,T.arc0+.15,t));
+  arcMat.color.setRGB(1.0*pulse,0.90*pulse,0.66*pulse);
+  // cartões de prova: entram, orbitam a íris (alguns passam por trás), recuam e somem
+  cards.forEach((c,i)=>{ const st=T.cards0+i*0.07; const k=eo((t-st)/0.6); const out=ecub((t-T.cardsOut)/1.3);
+    c.g.visible = t>st && out<0.999;
+    if(!c.g.visible) return;
+    const th=i/CARDS.length*Math.PI*2 + 0.42*(t-T.cards0) + 0.6;
+    const Rr=lerp(1600,660,k)+lerp(0,900,out);
+    c.g.position.set(Math.cos(th)*Rr, IC.y+Math.sin(th)*Rr*0.16 - 40, Math.sin(th)*Rr*0.92 - lerp(0,1400,out));
+    c.g.quaternion.copy(C.quaternion); c.g.scale.setScalar(lerp(.55,1,k));
+    const o=k*(1-out); c.m.material.opacity=o; c.fr.material.opacity=o;
+    setFrame(c.m.material.map, frameIdx(c.name, t - (Math.floor(Math.max(0,t-T.cards0)/2.5)*2.5), T.cards0)); });
+  // câmera
+  const [cp,cq]=camAt(t); C.position.copy(cp); C.lookAt(cq); C.updateMatrixWorld();
+  // pós: foco raso no gancho (macro das lâminas) e enquanto os cartões orbitam (foco na íris)
+  const hook=1-sm(0.5,T.uma,t), orbit=sm(T.cards0+.2,T.cards0+.8,t)*(1-sm(T.cardsOut+.6,T.cardsOut+1.2,t));
+  bokeh.uniforms.focus.value=cp.distanceTo(V3(IC.x,IC.y,IC.z+20));
+  bokeh.uniforms.aperture.value=hook*0.000045+orbit*0.0000075;
+  bloom.strength=0.12+0.16*sm(T.arc0,T.arc1,t)*(1-sm(T.d6b,T.d6b+.8,t))+0.22*Math.exp(-Math.pow((t-T.cem-0.1)/.3,2));
+  composer.render();
+  const f=Math.floor(t*30+1e-6); document.getElementById('grain').style.transform='translate('+(-((f*97)%64))+'px,'+(-((f*61)%64))+'px)';
+}
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!LOADED){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

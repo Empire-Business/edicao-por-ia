@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F41",
+  "format_uid": "official.c5675bb0f39a4277b7143556510a95c0",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F41/gavetas-de-pesquisa/reference.mp4",
+  "mechanism_details": {
+    "inputs": "A gravação de uma live, podcast, entrevista ou depoimento (pode juntar mais de uma fonte) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. A ID visual e o estilo de legenda são escolhidos separadamente.",
+    "mechanism": "Criativo 9:16 sobre pesquisa e qualidade. Uma parede 3D escura de gavetas de arquivo com etiquetas; a cada tipo de material citado, uma gaveta abre e entrega o material real pesquisado (prints de matérias, telas reais, cenas usadas na entrega) com grifos animados. O genérico (fichas cinzas de banco de imagens, chips de \"animação pronta\") recebe um carimbo e volta para a gaveta, que bate. Entregas reais sobem para mostrar a qualidade; o fecho é um mural de entregas com varredura na palavra-chave. Quem fala aparece em círculo; legenda forte. Cartão final com \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Separar o material pesquisado real que aparece nas entregas (com a origem conferida) e o que é \"genérico\" só em formas abstratas; marcar a gaveta de cada palavra.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/gavetas-de-pesquisa com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Nunca usar trecho com outro áudio tocando por baixo da fala. Prints de terceiros só os que já fazem parte da entrega própria, sem logotipos em destaque. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/reference.mp4",
+      "sha256": "9e510491a8fdab625a76cde794e437b4fe28fc6a2a7d4cb5bf74b0b97028b046"
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/hook.jpg",
+      "sha256": "470577ba6bbb176c296a08d0346ce1074135aecbbe0d4535aeebe97d89353a4b"
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/generic.jpg",
+      "sha256": "3200c34070c5877619cbd04736f8b95c21a06d6a50b0f7d3814424d010504950"
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/research.jpg",
+      "sha256": "42fe64adb286736e705107f042efe12f1c46f3d5cf7d707d9e59e193c1cde0eb"
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/drawers.jpg",
+      "sha256": "09b6d7a98acf66c3b8ec337e2a79fd4023c2a25d81dd567e0ed7a057f114c3db"
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/results.jpg",
+      "sha256": "57ab060384d8085dc4071531b15d6dd2877621c4fbc049f79541ea4c5bfd326f"
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/cta.jpg",
+      "sha256": "a1348367bdd1476d7199445cde15e675fc4cff33cce3a3317a14a81f76b1a925"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/hook.jpg",
+      "sha256": "470577ba6bbb176c296a08d0346ce1074135aecbbe0d4535aeebe97d89353a4b",
+      "at_seconds": 0.8,
+      "caption": "Gancho: entrega real em destaque sobre a parede de gavetas, com a frase sobre qualidade."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/generic.jpg",
+      "sha256": "3200c34070c5877619cbd04736f8b95c21a06d6a50b0f7d3814424d010504950",
+      "at_seconds": 3.5,
+      "caption": "O genérico: chips de \"animação pronta\" e \"efeito genérico\" saindo riscados."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/research.jpg",
+      "sha256": "42fe64adb286736e705107f042efe12f1c46f3d5cf7d707d9e59e193c1cde0eb",
+      "at_seconds": 11.8,
+      "caption": "Gaveta aberta entregando prints reais pesquisados com grifo."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/drawers.jpg",
+      "sha256": "09b6d7a98acf66c3b8ec337e2a79fd4023c2a25d81dd567e0ed7a057f114c3db",
+      "at_seconds": 14.0,
+      "caption": "A parede de gavetas com as etiquetas marcadas."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/results.jpg",
+      "sha256": "57ab060384d8085dc4071531b15d6dd2877621c4fbc049f79541ea4c5bfd326f",
+      "at_seconds": 21.0,
+      "caption": "Mural de entregas reais sobre as gavetas."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/cta.jpg",
+      "sha256": "a1348367bdd1476d7199445cde15e675fc4cff33cce3a3317a14a81f76b1a925",
+      "at_seconds": 30.7,
+      "caption": "Cartão final: \"Pesquisa de verdade. Edição de editor.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/gavetas-de-pesquisa",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E137 V2",
+    "original_filename": "E137 V2 - Corte 14 Pesquisa de verdade (previa).mp4",
+    "original_sha256": "4e3539ade34fae62dc62b3e7324d764b2664a100e9eb6de3330c2255927b1e79",
+    "duration_s": 31.9,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

@@ -87,3 +87,16 @@ Novos formatos do catálogo do autor também precisam ser publicados na galeria 
 - `f34-arquivo-de-fichas-v1`: F34 Arquivo de Fichas, criado pelo autor em 28/11/2026 a partir do criativo real E133 V1. Draft. Código-base da composição em `motion/templates/arquivo-de-fichas`.
 - `f35-blocos-de-tempo-v1`: F35 Blocos de Tempo, criado pelo autor em 28/11/2026 a partir do criativo real E134 V1. Draft. Código-base da composição em `motion/templates/blocos-de-tempo`.
 - `f36-interface-em-3d-v1`: F36 Interface em 3D, criado pelo autor em 28/11/2026 a partir do criativo real E136 V1. Draft. Código-base da composição em `motion/templates/interface-em-3d`.
+- `f37-depoimento-em-chat-3d-v1`: F37 Depoimento em Chat 3D, criado pelo autor em 28/11/2026 a partir do criativo real E120 V2. Draft. Código-base da composição em `motion/templates/depoimento-em-chat-3d`.
+- `f38-paisagem-de-audio-v1`: F38 Paisagem de Áudio, criado pelo autor em 28/11/2026 a partir do criativo real E126 V2. Draft. Código-base da composição em `motion/templates/paisagem-de-audio`.
+- `f39-escada-de-testes-v1`: F39 Escada de Testes, criado pelo autor em 28/11/2026 a partir do criativo real E131 V2. Draft. Código-base da composição em `motion/templates/escada-de-testes`.
+- `f40-iris-de-depoimento-v1`: F40 Íris de Depoimento, criado pelo autor em 28/11/2026 a partir do criativo real E135 V2. Draft. Código-base da composição em `motion/templates/iris-de-depoimento`.
+- `f41-gavetas-de-pesquisa-v1`: F41 Gavetas de Pesquisa, criado pelo autor em 28/11/2026 a partir do criativo real E137 V2. Draft. Código-base da composição em `motion/templates/gavetas-de-pesquisa`.
+- `f42-tunel-da-pasta-v1`: F42 Túnel da Pasta, criado pelo autor em 28/11/2026 a partir do criativo real E138 V1. Draft. Código-base da composição em `motion/templates/tunel-da-pasta`.
+- `f43-tomadas-de-vidro-v1`: F43 Tomadas de Vidro, criado pelo autor em 28/11/2026 a partir do criativo real E139 V1. Draft. Código-base da composição em `motion/templates/tomadas-de-vidro`.
+- `f44-cordilheira-de-cortes-v1`: F44 Cordilheira de Cortes, criado pelo autor em 28/11/2026 a partir do criativo real E140 V1. Draft. Código-base da composição em `motion/templates/cordilheira-de-cortes`.
+- `f45-estudio-de-marca-v1`: F45 Estúdio de Marca, criado pelo autor em 28/11/2026 a partir do criativo real E141 V1. Draft. Código-base da composição em `motion/templates/estudio-de-marca`.
+- `f46-molde-de-pecas-v1`: F46 Molde de Peças, criado pelo autor em 28/11/2026 a partir do criativo real E142 V1. Draft. Código-base da composição em `motion/templates/molde-de-pecas`.
+- `f47-linha-do-tempo-que-se-organiza-v1`: F47 Linha do Tempo que se Organiza, criado pelo autor em 28/11/2026 a partir do criativo real E143 V1. Draft. Código-base da composição em `motion/templates/linha-do-tempo-que-se-organiza`.
+- `f48-pilha-de-versoes-v1`: F48 Pilha de Versões, criado pelo autor em 28/11/2026 a partir do criativo real E144 V1. Draft. Código-base da composição em `motion/templates/pilha-de-versoes`.
+- `f49-celular-de-teste-v1`: F49 Celular de Teste, criado pelo autor em 28/11/2026 a partir do criativo real E145 V1. Draft. Código-base da composição em `motion/templates/celular-de-teste`.

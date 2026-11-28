@@ -1,0 +1,368 @@
+<!-- MODELO F39 Escada de Testes: arquivo derivado do criativo de exemplo; textos, tempos, falas, provas e caminhos são do exemplo e devem ser trocados. -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>EXEMPLO_1 — Cortez · corte da live "Primeiro teste" (F22 · ID06)</title>
+<script src="assets/gsap.min.js"></script>
+<script>(function(){let a=0x9E3779B9;Math.random=function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};})();</script>
+<script type="importmap">{"imports":{"three":"./assets/three/three.module.js","three/addons/":"./assets/three/addons/"}}</script>
+<style>
+/* ID06 Azul Claro — fundo #F5F8FC · texto #13233C · azul #0A4DFF · superfície #FFFFFF · apoio #64748B · Inter + IBM Plex Mono.
+   F22 Corte de Live 3D — estilo deste corte: "escada de testes" — plataformas de vidro subindo num céu claro; cada teste do Convidado é um
+   degrau maior (vídeo curto → vídeo longo → 1 longo vira 5 cortes). three.js r186 (ESM) + EffectComposer, tudo em função do tempo do quadro. */
+@font-face { font-family:"Inter"; src:url("assets/inter-400-latin.woff2") format("woff2"); font-weight:400; }
+@font-face { font-family:"Inter"; src:url("assets/inter-500-latin.woff2") format("woff2"); font-weight:500; }
+@font-face { font-family:"Inter"; src:url("assets/inter-600-latin.woff2") format("woff2"); font-weight:600; }
+@font-face { font-family:"Inter"; src:url("assets/inter-700-latin.woff2") format("woff2"); font-weight:700; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin.woff2") format("woff2"); font-weight:800; }
+@font-face { font-family:"Inter"; src:url("assets/inter-800-latin-ext.woff2") format("woff2"); font-weight:800; unicode-range:U+0100-024F; }
+@font-face { font-family:"IBM Plex Mono"; src:url("assets/ibm-plex-mono-500-latin.woff2") format("woff2"); font-weight:500; }
+* { box-sizing:border-box; }
+body { margin:0; background:#F5F8FC; }
+#root { position:relative; width:1080px; height:1920px; overflow:hidden; background:#F5F8FC; font-family:"Inter", sans-serif; }
+#gl { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:0; }
+#haze { position:absolute; left:0; top:0; width:1080px; height:1920px; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(245,248,252,.94) 0%, rgba(245,248,252,.80) 13%, rgba(245,248,252,0) 23%, rgba(245,248,252,0) 66%, rgba(245,248,252,.55) 73%, rgba(245,248,252,.82) 81%, rgba(245,248,252,.90) 100%); }
+
+.hd { position:absolute; left:80px; right:300px; top:150px; z-index:6; }
+.lab { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:24px; letter-spacing:.14em; text-transform:uppercase; color:#0A4DFF; overflow:hidden; height:34px; }
+.lab .in { display:inline-flex; align-items:center; gap:14px; }
+.lab i { width:10px; height:10px; border-radius:3px; background:#0A4DFF; display:block; flex:none; transform:rotate(45deg); }
+.ttl { margin-top:12px; }
+.ln { display:block; overflow:hidden; padding:0 0 .1em; font-family:"Inter", sans-serif; font-weight:800; font-size:76px; line-height:1.02; letter-spacing:-.035em; color:#13233C; white-space:nowrap; }
+.ln .in { display:inline-block; }
+.ln em { font-style:normal; color:#0A4DFF; }
+
+#person { position:absolute; left:64px; top:860px; width:400px; height:400px; border-radius:44px; overflow:hidden; z-index:5; background:#DCE6F5;
+  box-shadow:0 0 0 6px #FFFFFF, 0 28px 60px rgba(19,35,60,.28); }
+#person video { position:absolute; left:0; top:0; width:100%; height:100%; object-fit:cover; display:block; }
+#vb { opacity:0; }
+#pgrad { position:absolute; left:0; right:0; bottom:0; height:170px; background:linear-gradient(180deg, rgba(10,22,48,0), rgba(10,22,48,.72)); }
+#ptag { position:absolute; left:92px; top:1168px; z-index:6; display:flex; flex-direction:column; gap:6px; }
+#ptag b { font-family:"Inter", sans-serif; font-weight:800; font-size:36px; letter-spacing:-.02em; color:#FFFFFF; }
+#ptag span { font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:16px; letter-spacing:.12em; text-transform:uppercase; color:#CFDDFF; }
+#pip-tags { position:absolute; left:820px; width:220px; top:362px; z-index:5; text-align:center; opacity:0; }
+.pt { position:absolute; left:0; right:0; top:0; font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:17px; letter-spacing:.1em; text-transform:uppercase; color:#13233C; line-height:1.35; }
+.pt em { font-style:normal; color:#0A4DFF; display:block; }
+#ptb { opacity:0; }
+
+.pill { position:absolute; z-index:8; top:1296px; display:flex; align-items:center; gap:10px; padding:10px 18px 10px 15px; border-radius:999px; background:rgba(255,255,255,.92);
+  box-shadow:0 0 0 1.5px rgba(10,77,255,.22), 0 10px 26px rgba(19,35,60,.12);
+  font-family:"IBM Plex Mono", monospace; font-weight:500; font-size:18px; letter-spacing:.1em; text-transform:uppercase; color:#13233C; opacity:0; white-space:nowrap; }
+.pill i { width:8px; height:8px; border-radius:50%; background:#0A4DFF; display:block; }
+
+#caps { position:absolute; left:0; right:0; top:0; z-index:9; }
+.cap { position:absolute; left:40px; right:40px; top:1380px; height:150px; display:flex; align-items:center; justify-content:center; gap:28px; opacity:0; }
+.cap span { font-family:"Inter", sans-serif; font-weight:800; font-size:100px; line-height:1; letter-spacing:-.04em; color:#13233C; white-space:nowrap;
+  text-shadow:0 0 22px rgba(245,248,252,.95), 0 0 6px rgba(245,248,252,.9); }
+.cap span.em { color:#0A4DFF; }
+
+.cta-h { position:absolute; left:40px; right:40px; top:150px; z-index:10; text-align:center; }
+.cta-h .ln { font-size:92px; text-align:center; }
+.cta-s { position:absolute; left:60px; right:60px; top:392px; z-index:10; text-align:center; opacity:0; font-family:"Inter", sans-serif; font-weight:500; font-size:38px; color:#13233C; }
+.cta-s b { font-weight:700; color:#0A4DFF; }
+#btn { position:absolute; left:290px; top:1236px; width:500px; height:116px; z-index:10; opacity:0; display:flex; align-items:center; justify-content:center; gap:18px; border-radius:999px;
+  background:#0A4DFF; color:#FFFFFF; font-family:"Inter", sans-serif; font-weight:800; font-size:46px; letter-spacing:-.01em; white-space:nowrap; box-shadow:0 24px 56px rgba(10,77,255,.35); }
+#cursor { position:absolute; z-index:11; width:84px; height:84px; opacity:0; left:0; top:0; }{{CTA_CSS}}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="{{DUR}}">
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="haze"></div>
+  <div id="person">
+    <video id="vj" class="clip" src="assets/convidado.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="1" muted playsinline></video>
+    <video id="vb" class="clip" src="assets/apresentador.mp4" data-start="0" data-duration="{{SPEECH}}" data-track-index="2" muted playsinline></video>
+    <div id="pgrad"></div>
+  </div>
+  <div id="ptag"><b>Convidado</b><span>cliente do Cortez</span></div>
+  <div id="pip-tags"><div class="pt" id="ptj">Convidado<em>cliente</em></div><div class="pt" id="ptb">Apresentador<em>equipe do Cortez</em></div></div>
+  {{HEADS}}
+  <div class="pill" id="pl1" style="left:{{PL1X}}px"><i></i>Exemplo · vídeo longo editado pelo Cortez</div>
+  <div class="pill" id="pl2" style="left:{{PL2X}}px"><i></i>Reel do Convidado · @perfil-do-convidado</div>
+  <div class="pill" id="pl3" style="left:{{PL3X}}px"><i></i>Exemplo · vídeo longo editado pelo Cortez</div>
+  <div class="pill" id="pl6" style="left:{{PL6X}}px;top:1240px"><i></i>Centro: Reel do Convidado · @perfil-do-convidado</div>
+  <div class="pill" id="pl4" style="left:{{PL4X}}px"><i></i>Demais: ilustração com vídeo longo editado pelo Cortez</div>
+  <div class="pill" id="pl5" style="left:{{PL5X}}px;top:1090px"><i></i>Centro: Reel do Convidado · @perfil-do-convidado</div>
+  <div id="caps">{{CAPS}}</div>
+  <div class="cta-h"><span class="ln" id="ch1"><span class="in">Faça o seu</span></span><span class="ln" id="ch2"><span class="in"><em>primeiro teste.</em></span></span></div>
+  <div class="cta-s" id="cs">Você grava. <b>O Cortez edita.</b> Você aprova.</div>
+  {{CTA_HTML}}
+  <svg id="cursor" viewBox="0 0 84 84"><path d="M16 6 L16 64 L30 51 L40 74 L51 69 L41 47 L60 47 Z" fill="#FFFFFF" stroke="#13233C" stroke-width="4" stroke-linejoin="round"/></svg>
+</div>
+
+<script>
+const DATA = {{DATA}};
+const T = DATA.T;
+window.__DATA = DATA;
+(function(){
+  gsap.set('.hd .lab .in, .hd .ln .in, #ch1 .in, #ch2 .in',{yPercent:112});
+  gsap.set('#h1 .lab .in, #h1l0 .in, #h1l1 .in',{yPercent:0});
+  const tl=gsap.timeline({paused:true});
+  const IN=(sel,at,d)=>tl.fromTo(sel,{yPercent:112},{yPercent:0,duration:d||.6,ease:'power4.out',immediateRender:false},at);
+  const OUT=(sel,at)=>tl.fromTo(sel,{yPercent:0},{yPercent:-112,duration:.3,ease:'power3.in',immediateRender:false},at);
+  DATA.heads.forEach(h=>{ const sel=`#${h.id}`;
+    if(h.start>0.001) IN(`${sel} .lab .in`,h.start,.5);
+    h.lines.forEach((l,j)=>{ if(l.at>0.001) IN(`#${h.id}l${j} .in`,l.at,l.d||.7); });
+    OUT(`${sel} .lab .in`,h.end-.3); h.lines.forEach((l,j)=>OUT(`#${h.id}l${j} .in`,h.end-.3+j*.03)); });
+  // pessoa: cartão grande no gancho → círculo no canto; troca de quem fala com um pulso curto
+  tl.to('#person',{left:836,top:150,width:200,height:200,borderRadius:100,boxShadow:'0 0 0 5px #FFFFFF, 0 16px 36px rgba(19,35,60,.25)',duration:.6,ease:'power3.inOut'},T.q0-.32);
+  tl.to('#ptag',{opacity:0,y:20,duration:.25},T.q0-.32); tl.to('#pgrad',{opacity:0,duration:.3},T.q0-.32);
+  tl.fromTo('#pip-tags',{opacity:0},{opacity:1,duration:.3,immediateRender:false},T.q0+.2);
+  DATA.swaps.forEach(s=>{ const toB=s.to==='apresentador';
+    tl.to('#vb',{opacity:toB?1:0,duration:.22},s.t-.11); tl.to('#ptb',{opacity:toB?1:0,duration:.2},s.t-.1); tl.to('#ptj',{opacity:toB?0:1,duration:.2},s.t-.1);
+    tl.fromTo('#person',{scale:1},{scale:1.07,duration:.14,yoyo:true,repeat:1,ease:'power2.out',immediateRender:false},s.t-.1); });
+  tl.to('#person, #pip-tags',{opacity:0,scale:.8,duration:.35,ease:'power2.in'},T.speechEnd-.3);
+  // rótulos honestos da prova
+  DATA.pills.forEach(p=>{ tl.fromTo('#'+p.id,{opacity:0,y:12},{opacity:1,y:0,duration:.35,ease:'power2.out',immediateRender:false},p.a); tl.to('#'+p.id,{opacity:0,duration:.22},p.b); });
+  // legenda L03: uma palavra (ou par curto) por vez
+  DATA.caps.forEach((c,i)=>{ tl.set(`#cp${i}`,{opacity:1},c.s); tl.fromTo(`#cp${i} span`,{scale:.86,y:10},{scale:1,y:0,duration:.16,ease:'back.out(2.2)',immediateRender:false},c.s); tl.set(`#cp${i}`,{opacity:0},c.e); });
+  // fechamento escrito
+  IN('#ch1 .in',T.cta0+.2,.8); IN('#ch2 .in',T.cta0+.4,.8);
+  tl.fromTo('#cs',{opacity:0,y:20},{opacity:1,y:0,duration:.6,ease:'power3.out',immediateRender:false},T.cta0+.75);
+{{CTA_TL}}
+  tl.set({},{},T.end);
+  window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { BokehPass } from 'three/addons/postprocessing/BokehPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+const DATA = window.__DATA, T = DATA.T;
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const eo=(x)=>1-Math.pow(1-clamp(x,0,1),4);
+const eio=(x)=>{ x=clamp(x,0,1); return x<.5?8*x*x*x*x:1-Math.pow(-2*x+2,4)/2; };
+const ebk=(x)=>{ x=clamp(x,0,1); const c=1.9; return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2); };
+const lerp=(a,b,u)=>a+(b-a)*u;
+const V3=(x,y,z)=>new THREE.Vector3(x,y,z);
+const NAVY='#13233C', BLUE='#0A4DFF';
+
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('gl'),antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(1); R.setSize(1080,1920,false); R.toneMapping=THREE.NeutralToneMapping; R.toneMappingExposure=1.0;
+R.shadowMap.enabled=true; R.shadowMap.type=THREE.PCFSoftShadowMap;
+const S=new THREE.Scene();
+S.environment=new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(),0.04).texture; S.environmentIntensity=0.85;
+S.fog=new THREE.Fog(0xEEF3FB,7000,17000);
+const FOV=30, D=960/Math.tan(FOV*Math.PI/360);              // no plano a D da câmera, 1 unidade = 1 px do quadro
+const C=new THREE.PerspectiveCamera(FOV,1080/1920,20,40000);
+
+// céu claro com profundidade: azul no alto, horizonte quase branco, um halo de luz atrás do 3º degrau (leva o olho para cima)
+const SUN=new THREE.Vector3(0.0,0.42,-1).normalize();
+const sky=new THREE.Mesh(new THREE.SphereGeometry(30000,64,32), new THREE.ShaderMaterial({side:THREE.BackSide,depthWrite:false,fog:false,
+  uniforms:{top:{value:new THREE.Color(0x3C6CEF)},up:{value:new THREE.Color(0x9AB7FF)},hor:{value:new THREE.Color(0xEEF3FC)},bot:{value:new THREE.Color(0xC2D2F1)},sun:{value:SUN}},
+  vertexShader:'varying vec3 p; void main(){ p=normalize(position); gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+  fragmentShader:`varying vec3 p; uniform vec3 top,up,hor,bot,sun; void main(){ float h=p.y; vec3 c;
+    if(h>-0.02){ c=mix(hor,up,smoothstep(-0.02,0.13,h)); c=mix(c,top,smoothstep(0.13,0.62,h)); } else { c=mix(hor,bot,smoothstep(0.0,0.16,-h-0.02)); }
+    float s=max(dot(p,sun),0.0); c+=vec3(1.0,0.98,0.94)*(pow(s,30.0)*0.65+pow(s,5.0)*0.22); gl_FragColor=vec4(c,1.0); }`}));
+S.add(sky);
+S.add(new THREE.HemisphereLight(0xFFFFFF,0xB9CBEE,1.15));
+const key=new THREE.DirectionalLight(0xFFFFFF,2.3); key.position.set(2300,4800,-900); key.target.position.set(0,700,-2400); S.add(key); S.add(key.target);
+key.castShadow=true; key.shadow.mapSize.set(4096,4096); key.shadow.radius=5; key.shadow.bias=-0.0004; key.shadow.normalBias=2;
+Object.assign(key.shadow.camera,{left:-3800,right:3800,top:3800,bottom:-3800,near:100,far:15000}); key.shadow.camera.updateProjectionMatrix();
+const rim=new THREE.DirectionalLight(0xA9C2FF,1.2); rim.position.set(-2600,900,3400); S.add(rim);
+
+const composer=new EffectComposer(R,new THREE.WebGLRenderTarget(1080,1920,{type:THREE.HalfFloatType,samples:4})); composer.setPixelRatio(1); composer.setSize(1080,1920);
+composer.addPass(new RenderPass(S,C));
+const bloom=new UnrealBloomPass(new THREE.Vector2(1080,1920),0.0,0.5,0.9); composer.addPass(bloom);
+const bokeh=new BokehPass(S,C,{focus:D,aperture:0.000004,maxblur:0.010}); composer.addPass(bokeh);
+composer.addPass(new OutputPass());
+
+// ---------- utilidades ----------
+function roundMask(w,h,r){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); g.fillStyle='#000'; g.fillRect(0,0,w,h);
+  g.fillStyle='#fff'; g.beginPath(); g.roundRect(0,0,w,h,r); g.fill(); return new THREE.CanvasTexture(c); }
+const SEQ={}; let READY=null, BUILT=false;
+function loadImg(src,n=0){ return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>{ if(n<4) setTimeout(()=>loadImg(src,n+1).then(res,rej),120*(n+1)); else rej(new Error(src)); }; im.src=src+(n?('?r='+n):''); }); }
+function frameOf(name,t,t0,offset){ const a=SEQ[name]; const i=Math.floor(Math.max(0,(t-t0))*30+1e-6+(offset||0)); return a[((i%a.length)+a.length)%a.length]; }
+function videoTex(){ const tx=new THREE.Texture(); tx.colorSpace=THREE.SRGBColorSpace; tx.minFilter=THREE.LinearFilter; tx.generateMipmaps=false; return tx; }
+function setFrame(tx,img){ if(tx.image!==img){ tx.image=img; tx.needsUpdate=true; } }
+function canvasTex(w,h){ const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d'); const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.anisotropy=8; return {tex:t,canvas:c,g}; }
+
+// acrílico azul-gelo (transmissão parcial: o degrau tem corpo e cor, não some no céu claro)
+const glassMat=()=>new THREE.MeshPhysicalMaterial({color:0xDCE7FF,transmission:0.66,thickness:120,roughness:0.15,ior:1.48,attenuationColor:new THREE.Color(0x3D6FE8),attenuationDistance:130,
+  clearcoat:1,clearcoatRoughness:0.05,metalness:0,envMapIntensity:1.35,specularIntensity:1});
+const whiteMat=()=>new THREE.MeshPhysicalMaterial({color:0xFFFFFF,roughness:0.3,metalness:0.0,clearcoat:0.8,clearcoatRoughness:0.2,envMapIntensity:0.95});
+function rrLine(w,d,r,y,color,op){ const s=new THREE.Shape(); s.moveTo(-w/2+r,-d/2); s.lineTo(w/2-r,-d/2); s.absarc(w/2-r,-d/2+r,r,-Math.PI/2,0); s.lineTo(w/2,d/2-r); s.absarc(w/2-r,d/2-r,r,0,Math.PI/2);
+  s.lineTo(-w/2+r,d/2); s.absarc(-w/2+r,d/2-r,r,Math.PI/2,Math.PI); s.lineTo(-w/2,-d/2+r); s.absarc(-w/2+r,-d/2+r,r,Math.PI,Math.PI*1.5);
+  const pts=s.getPoints(16).map(p=>new THREE.Vector3(p.x,y,p.y)); return new THREE.LineLoop(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({color,transparent:true,opacity:op})); }
+
+// ---------- plataformas (degraus da escada, em zigue-zague) ----------
+const PL=[ {c:V3(-200,-600,0), w:900, d:640, lab:'TESTE 01  ·  VÍDEO CURTO'}, {c:V3(230,520,-2200), w:1300, d:780, lab:'TESTE 02  ·  VÍDEO LONGO'},
+           {c:V3(0,1900,-4600), w:1600, d:860, lab:'TESTE 03  ·  1 LONGO → 5 CORTES'} ];
+const TH=90;
+PL.forEach(p=>{ const g=new THREE.Group(); g.position.copy(p.c); S.add(g); p.g=g; p.top=p.c.y+TH/2;
+  const slab=new THREE.Mesh(new RoundedBoxGeometry(p.w,TH,p.d,6,22), glassMat()); slab.receiveShadow=true; g.add(slab);
+  g.add(rrLine(p.w-26,p.d-26,26,TH/2+0.8,0x0A4DFF,0.9)); g.add(rrLine(p.w-6,p.d-6,30,-TH/2+2,0x0A4DFF,0.35));
+  const sh=new THREE.Mesh(new THREE.PlaneGeometry(p.w-30,p.d-30), new THREE.ShadowMaterial({color:0x0F2550,opacity:.30})); sh.rotation.x=-Math.PI/2; sh.position.y=TH/2+1.2; sh.receiveShadow=true; g.add(sh);
+  const lt=canvasTex(1024,96); p.plate=lt;
+  const plate=new THREE.Mesh(new THREE.PlaneGeometry(560,52.5), new THREE.MeshBasicMaterial({map:lt.tex,transparent:true,depthWrite:false})); plate.position.set(0,-2,p.d/2+1.5); g.add(plate); });
+function drawPlates(){ PL.forEach(p=>{ const c=p.plate.g; c.clearRect(0,0,1024,96); c.fillStyle='rgba(255,255,255,.9)'; c.beginPath(); c.roundRect(40,10,944,76,38); c.fill();
+  c.font='500 40px "IBM Plex Mono"'; c.textBaseline='middle'; c.textAlign='center'; c.fillStyle='#13233C'; c.letterSpacing='5px'; c.fillText(p.lab,512,50); p.plate.tex.needsUpdate=true; }); }
+// degraus entre as plataformas
+const steps=[];
+[[0,1],[1,2]].forEach(([a,b])=>{ for(let k=1;k<=3;k++){ const u=k/4; const A=PL[a], B=PL[b];
+  const m=new THREE.Mesh(new RoundedBoxGeometry(300,70,300,5,18), glassMat()); m.receiveShadow=true; m.castShadow=true;
+  const side=(a===0?1:-1);
+  m.position.set(lerp(A.c.x,B.c.x,u)+side*(Math.max(A.w,B.w)*0.5+60), lerp(A.top,B.top,u)-35, lerp(A.c.z,B.c.z,u)); S.add(m); steps.push(m); } });
+
+// ---------- telas (displays brancos com pé) ----------
+function makeDisplay(sw,sh,kind){ const g=new THREE.Group();
+  const body=new THREE.Mesh(new RoundedBoxGeometry(sw+30,sh+30,24,5,kind==='v'?26:16), whiteMat()); body.castShadow=true; g.add(body);
+  const bez=new THREE.Mesh(new THREE.PlaneGeometry(sw+8,sh+8), new THREE.MeshBasicMaterial({color:0x0B1220})); bez.position.z=12.2; g.add(bez);
+  const tx=videoTex(); const scr=new THREE.Mesh(new THREE.PlaneGeometry(sw,sh), new THREE.MeshBasicMaterial({map:tx,alphaMap:roundMask(Math.round(sw/2),Math.round(sh/2),kind==='v'?10:6),transparent:true}));
+  scr.position.z=12.6; g.add(scr);
+  if(kind==='h'){ const neck=new THREE.Mesh(new RoundedBoxGeometry(46,150,22,3,8), whiteMat()); neck.position.set(0,-(sh+30)/2-60,-14); neck.castShadow=true; g.add(neck);
+    const foot=new THREE.Mesh(new RoundedBoxGeometry(300,16,170,4,8), whiteMat()); foot.position.set(0,-(sh+30)/2-135+8,-14); foot.castShadow=true; g.add(foot); g.userData.base=(sh+30)/2+135; }
+  else { const foot=new THREE.Mesh(new RoundedBoxGeometry(sw*0.55,16,120,4,8), whiteMat()); foot.position.set(0,-(sh+30)/2-8,-6); foot.castShadow=true; g.add(foot); g.userData.base=(sh+30)/2+16; }
+  const sheen=new THREE.Mesh(new THREE.PlaneGeometry(sw,sh), new THREE.ShaderMaterial({transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,uniforms:{p:{value:-1},a:{value:0}},
+    vertexShader:'varying vec2 v; void main(){ v=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+    fragmentShader:'varying vec2 v; uniform float p,a; void main(){ float d=(v.x*0.8+v.y*0.45)-p; float b=exp(-d*d/0.004); gl_FragColor=vec4(vec3(1.0),b*a); }'}));
+  sheen.position.z=13; g.add(sheen);
+  g.userData.tx=tx; g.userData.sheen=sheen; g.userData.scr=scr; g.userData.body=body; g.userData.bez=bez; return g; }
+const S1=makeDisplay(405,720,'v'); S1.position.set(PL[0].c.x,PL[0].top+S1.userData.base,60); S.add(S1);
+const S2=makeDisplay(960,540,'h'); S2.position.set(PL[1].c.x,PL[1].top+S2.userData.base,-2140); S.add(S2);
+const S1C=S1.position.clone(), S2C=S2.position.clone();
+// selo "postado" (ao lado da tela do teste 1)
+const bdg=canvasTex(512,128);
+const badge=new THREE.Mesh(new THREE.PlaneGeometry(256,64), new THREE.MeshBasicMaterial({map:bdg.tex,transparent:true,depthWrite:false})); badge.position.set(S1C.x+215,S1C.y+150,S1C.z+40); badge.visible=false; S.add(badge);
+function drawBadge(){ const c=bdg.g; c.clearRect(0,0,512,128); c.fillStyle='#0A4DFF'; c.beginPath(); c.roundRect(4,4,504,120,60); c.fill();
+  c.strokeStyle='#FFFFFF'; c.lineWidth=11; c.lineCap='round'; c.lineJoin='round'; c.beginPath(); c.moveTo(62,66); c.lineTo(86,90); c.lineTo(130,40); c.stroke();
+  c.fillStyle='#FFFFFF'; c.font='700 52px Inter'; c.textBaseline='middle'; c.fillText('Postado',160,67); bdg.tex.needsUpdate=true; }
+
+// ---------- 3º degrau: vista, fichas, cópia do longo e as 5 telas ----------
+const P3=PL[2], VW=252, VH=448;
+const P3S=V3(P3.c.x, P3.top+16+VH/2+15, P3.c.z);
+const CP3=P3S.clone().add(V3(0,230,4750)), QP3=P3S.clone().add(V3(0,-30,-150));
+const SLOTS=[]; for(let k=0;k<5;k++){ const a=(k-2)*0.22; SLOTS.push({x:P3.c.x+Math.sin(a)*1150, z:P3.c.z+60-(1-Math.cos(a))*1150, ry:-a}); }
+// o pedido do Convidado — cartão de vidro na frente do 3º degrau ainda vazio
+const CARD={W:640,H:400};
+const vdir=QP3.clone().sub(CP3).normalize();
+CARD.pos=CP3.clone().add(vdir.clone().multiplyScalar(2750)).add(V3(0,150,0));
+const cardG=new THREE.Group(); cardG.position.copy(CARD.pos); cardG.lookAt(CP3); S.add(cardG); cardG.visible=false;
+const cardSlab=new THREE.Mesh(new RoundedBoxGeometry(CARD.W+26,CARD.H+26,22,5,32), glassMat()); cardSlab.castShadow=true; cardG.add(cardSlab);
+const cardTx=canvasTex(1280,800); const cardFace=new THREE.Mesh(new THREE.PlaneGeometry(CARD.W,CARD.H), new THREE.MeshBasicMaterial({map:cardTx.tex,transparent:true,depthWrite:false}));
+cardFace.position.z=11.6; cardG.add(cardFace);
+let cardN=-1;
+function drawCard(n,caret){ const c=cardTx.g, w=1280, h=800; c.clearRect(0,0,w,h);
+  c.fillStyle='rgba(255,255,255,.97)'; c.beginPath(); c.roundRect(0,0,w,h,56); c.fill();
+  c.strokeStyle='rgba(10,77,255,.30)'; c.lineWidth=4; c.beginPath(); c.roundRect(2,2,w-4,h-4,54); c.stroke();
+  c.fillStyle=BLUE; c.font='500 30px "IBM Plex Mono"'; c.textBaseline='alphabetic'; c.letterSpacing='4px'; c.fillText('O PEDIDO DO CONVIDADO · NAS PALAVRAS DELE',64,96); c.letterSpacing='0px';
+  c.fillStyle='rgba(19,35,60,.12)'; c.fillRect(64,124,w-128,3);
+  const words=DATA.card.words.slice(0,n); c.font='700 74px Inter'; c.fillStyle=NAVY;
+  let x=64, y=232; const lh=96, maxw=w-128; let last=[x,y];
+  words.forEach((wd,i)=>{ const s=(x>64?' ':'')+wd; const ww=c.measureText(s).width; if(x+ww>64+maxw && x>64){ x=64; y+=lh; c.fillText(wd,x,y); x+=c.measureText(wd).width; }
+    else { c.fillText(s,x,y); x+=ww; } last=[x,y]; });
+  if(caret){ c.fillStyle=BLUE; c.fillRect(last[0]+10,last[1]-62,8,74); }
+  cardTx.tex.needsUpdate=true; }
+// fichas "1..5 CORTE"
+const tiles=[]; for(let k=0;k<5;k++){ const ct=canvasTex(512,200); const m=new THREE.Mesh(new THREE.PlaneGeometry(220,86), new THREE.MeshBasicMaterial({map:ct.tex,transparent:true,depthWrite:false})); m.userData.ct=ct; m.visible=false; S.add(m); tiles.push(m); }
+function drawTiles(){ tiles.forEach((m,k)=>{ const c=m.userData.ct.g, w=512, h=200; c.clearRect(0,0,w,h);
+  c.fillStyle='rgba(255,255,255,.98)'; c.beginPath(); c.roundRect(4,4,w-8,h-8,44); c.fill(); c.strokeStyle='rgba(10,77,255,.4)'; c.lineWidth=5; c.beginPath(); c.roundRect(5,5,w-10,h-10,42); c.stroke();
+  c.fillStyle=BLUE; c.font='800 104px Inter'; c.textBaseline='middle'; c.letterSpacing='0px'; c.fillText(String(k+1),56,h/2+6);
+  c.fillStyle=NAVY; c.font='500 40px "IBM Plex Mono"'; c.letterSpacing='4px'; c.fillText('CORTE',156,h/2+4); m.userData.ct.tex.needsUpdate=true; }); }
+const holders=[]; for(let k=0;k<5;k++){ const ct=canvasTex(560,960); const c=ct.g; c.clearRect(0,0,560,960);
+  c.fillStyle='rgba(10,77,255,.07)'; c.beginPath(); c.roundRect(10,10,540,940,52); c.fill();
+  c.setLineDash([34,22]); c.strokeStyle='rgba(10,77,255,.75)'; c.lineWidth=7; c.beginPath(); c.roundRect(10,10,540,940,52); c.stroke(); ct.tex.needsUpdate=true;
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(VW+18,VH+18), new THREE.MeshBasicMaterial({map:ct.tex,transparent:true,depthWrite:false,opacity:0}));
+  m.position.set(SLOTS[k].x,P3S.y,SLOTS[k].z); m.rotation.y=SLOTS[k].ry; m.visible=false; S.add(m); holders.push(m); }
+const verts=[]; for(let k=0;k<5;k++){ const d=makeDisplay(VW,VH,'v'); d.visible=false; d.userData.scr.visible=false; S.add(d); verts.push(d); }
+const longTx=videoTex();
+const strips=[]; for(let k=0;k<5;k++){ const tB=videoTex();
+  const m=new THREE.Mesh(new THREE.PlaneGeometry(1,1), new THREE.ShaderMaterial({transparent:true,depthWrite:false,
+    uniforms:{mA:{value:longTx},mB:{value:tB},k:{value:k},m:{value:0},rad:{value:0},sz:{value:new THREE.Vector2(192,540)},op:{value:1}},
+    vertexShader:'varying vec2 v; void main(){ v=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
+    fragmentShader:`varying vec2 v; uniform sampler2D mA,mB; uniform float k,m,rad,op; uniform vec2 sz;
+      float rr(vec2 p, vec2 b, float r){ vec2 q=abs(p)-b+r; return length(max(q,0.0))+min(max(q.x,q.y),0.0)-r; }
+      void main(){ vec4 a=texture2D(mA,vec2((k+v.x)/5.0, v.y)); vec4 b=texture2D(mB,v); vec4 c=mix(a,b,m);
+        float d=rr((v-0.5)*sz, sz*0.5, rad); float al=1.0-smoothstep(-1.0,0.5,d); gl_FragColor=vec4(c.rgb, al*op); }`}));
+  m.renderOrder=2; m.userData.tB=tB; m.visible=false; S.add(m); strips.push(m); }
+const ghost=new THREE.Group(); S.add(ghost); ghost.visible=false;
+const gBody=new THREE.Mesh(new RoundedBoxGeometry(990,570,22,5,16), new THREE.MeshPhysicalMaterial({color:0xFFFFFF,roughness:.3,clearcoat:.7})); gBody.castShadow=true; ghost.add(gBody);
+const gScr=new THREE.Mesh(new THREE.PlaneGeometry(960,540), new THREE.MeshBasicMaterial({map:longTx})); gScr.position.z=11.6; ghost.add(gScr);
+
+function prepare(){ if(READY) return READY;
+  const jobs=[document.fonts.ready, document.fonts.load('700 74px Inter'), document.fonts.load('800 104px Inter'), document.fonts.load('500 40px "IBM Plex Mono"')];
+  Object.entries(DATA.seq).forEach(([name,n])=>{ SEQ[name]=new Array(n); for(let i=0;i<n;i++) jobs.push(loadImg(`assets/seq/${name}/${String(i).padStart(4,'0')}.jpg`).then(im=>SEQ[name][i]=im)); });
+  READY=Promise.all(jobs).then(()=>{ drawPlates(); drawTiles(); drawBadge(); BUILT=true; });
+  return READY; }
+
+// ---------- câmera: planos encadeados ----------
+const shots=[
+  {s:0, d:0, f:(t)=>{ const u=clamp(t/T.q0,0,1); return {p:S2C.clone().add(V3(lerp(330,170,u),lerp(-40,-10,u),lerp(3250,2950,u))), q:S2C.clone().add(V3(-70,-30,0))}; }},
+  {s:T.q0-0.3, d:1.3, f:(t)=>({p:V3(-420-40*(t-T.q0),-1050+40*(t-T.q0),4500-80*(t-T.q0)), q:V3(60,420,-1500)})},
+  {s:T.t1-0.15, d:1.15, f:(t)=>{ const u=clamp((t-T.t1)/(T.t2-T.t1),0,1); return {p:S1C.clone().add(V3(lerp(-400,-170,u),lerp(330,280,u),lerp(3000,2780,u))), q:S1C.clone().add(V3(0,-40,0))}; }},
+  {s:T.t2-0.2, d:1.5, f:(t)=>{ const u=clamp((t-T.t2)/(T.br-T.t2),0,1); return {p:S2C.clone().add(V3(lerp(160,0,u),140,lerp(3600,3350,u))), q:S2C.clone().add(V3(0,10,0))}; }},
+  {s:T.br-0.05, d:2.4, f:(t)=>{ const u=clamp((t-T.br)/(T.speechEnd-T.br),0,1), a=lerp(0.05,-0.05,u);
+      return {p:CP3.clone().add(V3(Math.sin(a)*900-0, lerp(0,-60,u), lerp(0,-280,eio(u)))), q:QP3.clone().add(V3(0,lerp(0,-20,u),0))}; }},
+  {s:T.speechEnd-0.1, d:1.6, f:(t)=>({p:P3S.clone().add(V3(-30*(t-T.speechEnd),40,5300-40*(t-T.speechEnd))), q:P3S.clone().add(V3(0,-230,0))})},
+];
+function camAt(t){ let st=shots[0].f(t); for(let i=1;i<shots.length;i++){ const sh=shots[i]; if(t<sh.s) break; const u=eio((t-sh.s)/sh.d); const n=sh.f(t);
+    st={p:st.p.clone().lerp(n.p,u), q:st.q.clone().lerp(n.q,u)}; } return st; }
+const _v=new THREE.Vector3(); let TILE3=-1;
+
+function render(t){
+  const cam=camAt(t); C.position.copy(cam.p); C.lookAt(cam.q);
+  setFrame(S1.userData.tx, frameOf('jreel',t,T.t1-0.3,0));   // V2: o Reel real do Convidado (@perfil-do-convidado) no teste 1
+  setFrame(S2.userData.tx, frameOf('long',t,0,0));
+  setFrame(longTx, frameOf('long',t,0,0));
+  // selo "postado"
+  const bu=t-T.postar; badge.visible = bu>-0.02 && t<T.t2+0.7;
+  if(badge.visible){ badge.scale.setScalar(Math.max(0.001,ebk(bu/0.45))); badge.material.opacity=1-clamp((t-T.t2-0.2)/0.4,0,1); badge.lookAt(C.position); }
+  // brilho na tela do vídeo longo no "nossa"
+  const sw=(t-T.nossa)/0.7; S2.userData.sheen.material.uniforms.p.value=lerp(-0.4,1.6,clamp(sw,0,1)); S2.userData.sheen.material.uniforms.a.value=(sw>0&&sw<1)?0.5:0;
+  // cartão do pedido (entra na frente do 3º degrau vazio; sai para o alto quando as ideias aparecem)
+  const cu=t-T.pd, cv=t-T.id;
+  cardG.visible = cu>-0.05 && cv<1.5;
+  if(cardG.visible){ const k=eo(cu/0.75), out=eio((cv-0.15)/1.1);
+    cardG.position.copy(CARD.pos).add(V3(0, -(1-k)*260 + out*900, (1-k)*-400 - out*300)); cardG.lookAt(CP3);
+    cardG.rotateX((1-k)*0.35); cardG.scale.setScalar(lerp(0.9,1,k)*(1-0.25*out));
+    let n=0; DATA.card.t.forEach((tt,i)=>{ if(t>=tt) n=i+1; }); const caret = t<DATA.card.end+0.3 && (n<DATA.card.words.length || (Math.floor(t*3.6)%2)===0);
+    const key2=n*10+(caret?1:0); if(key2!==cardN){ drawCard(n,caret); cardN=key2; } }
+  // V2: a ficha do centro passa a dizer "REEL DO CONVIDADO" quando a tela dele pousa
+  { const want = t>=T.fez+0.9 ? 1 : 0; if(want!==TILE3){ TILE3=want; const m=tiles[2], c=m.userData.ct.g, w=512, h=200; c.clearRect(0,0,w,h);
+      c.fillStyle='rgba(255,255,255,.98)'; c.beginPath(); c.roundRect(4,4,w-8,h-8,44); c.fill(); c.strokeStyle='rgba(10,77,255,.4)'; c.lineWidth=5; c.beginPath(); c.roundRect(5,5,w-10,h-10,42); c.stroke();
+      if(want){ c.fillStyle=BLUE; c.font='800 58px Inter'; c.textBaseline='middle'; c.letterSpacing='0px'; c.textAlign='center'; c.fillText('Reel do Convidado',w/2,h/2+4); c.textAlign='left'; }
+      else { c.fillStyle=BLUE; c.font='800 104px Inter'; c.textBaseline='middle'; c.letterSpacing='0px'; c.fillText('3',56,h/2+6); c.fillStyle=NAVY; c.font='500 40px "IBM Plex Mono"'; c.letterSpacing='4px'; c.fillText('CORTE',156,h/2+4); }
+      m.userData.ct.tex.needsUpdate=true; } }
+  // 5 fichas: saem do cartão e pousam na borda do 3º degrau, uma sob cada lugar de corte
+  tiles.forEach((m,k)=>{ const u=(t-T.varias-k*0.12)/1.3; m.visible = u>0;
+    if(m.visible){ const e=eio(u); const from=CARD.pos.clone().add(V3(-260+k*130, 0, 30)), sl=SLOTS[k];
+      const to=V3(sl.x, P3S.y+VH/2+78, sl.z+24); const mid=from.clone().lerp(to,0.5).add(V3(0,420,150));
+      const a=from.clone().lerp(mid,e), b=mid.clone().lerp(to,e); m.position.copy(a.lerp(b,e)); m.lookAt(C.position);
+      m.scale.setScalar(lerp(1.5,1,e)*(u<0.15?eo(u/0.15):1)); } });
+  // a cópia do vídeo longo sobe do 2º degrau e se divide em 5 cortes
+  const G3=P3S.clone().add(V3(0,10,170));
+  const gu=(t-T.pedi)/1.7; ghost.visible = gu>0 && t<T.fez+0.05;
+  if(ghost.visible){ const e=eio(gu); const mid=S2C.clone().lerp(G3,0.5).add(V3(-300,250,900));
+    const a=S2C.clone().lerp(mid,e), b=mid.clone().lerp(G3,e); ghost.position.copy(a.lerp(b,e)); ghost.scale.setScalar(lerp(1,0.92,e)); ghost.rotation.set(0,0.25*Math.sin(e*Math.PI),0); }
+  strips.forEach((m,k)=>{ const u=(t-T.fez-k*0.07)/1.15; m.visible = t>=T.fez; const sl=SLOTS[k];
+    if(m.visible){ const e=eio(u), mm=clamp(u/0.55,0,1);
+      const start=G3.clone().add(V3((k-2)*192*0.92,0,13));
+      _v.set(0,0,13.2).applyAxisAngle(V3(0,1,0),sl.ry); const end=V3(sl.x,P3S.y,sl.z).add(_v);
+      m.position.copy(start.lerp(end,e)); m.position.z += Math.sin(clamp(u,0,1)*Math.PI)*260; m.rotation.set(0,lerp(0,sl.ry,e),0);
+      const w=lerp(192*0.92,VW,e), h=lerp(540*0.92,VH,e); m.scale.set(w,h,1);
+      const U=m.material.uniforms; U.m.value=mm; U.rad.value=lerp(0,10,e); U.sz.value.set(w,h);
+      setFrame(m.userData.tB, frameOf(k===2?'jcut':'v'+(k+1),t,T.fez,0)); } });   // V2: tela do centro = Reel real do Convidado
+  verts.forEach((d,k)=>{ const u=(t-T.fez-0.95-k*0.07)/0.45; d.visible=u>0; const sl=SLOTS[k];
+    if(d.visible){ d.position.set(sl.x, P3S.y, sl.z); d.rotation.y=sl.ry; const e=eo(u); d.scale.setScalar(lerp(0.94,1,e));
+      d.userData.body.material.transparent=true; d.userData.body.material.opacity=e; d.userData.bez.visible=e>0.98;
+      const sh=d.userData.sheen.material.uniforms; const s2=(t-T.muito-k*0.08)/0.8; sh.p.value=lerp(-0.4,1.6,clamp(s2,0,1)); sh.a.value=(s2>0&&s2<1)?0.5:0; } });
+  { const pl=PL[2].g.children[PL[2].g.children.length-1]; pl.material.opacity=1-clamp((t-T.speechEnd)/0.5,0,1); }
+  holders.forEach((m,k)=>{ const op=clamp((t-T.br-0.9-k*0.08)/0.5,0,1)*(1-clamp((t-T.fez-0.9-k*0.07)/0.4,0,1)); m.visible=op>0.001; m.material.opacity=op; });
+  bloom.strength = 0.0;   // cena clara: o bloom lavava as telas no clímax; o brilho fica só no reflexo que atravessa as telas
+  bokeh.uniforms.focus.value = C.position.distanceTo(cam.q);
+  bokeh.uniforms.aperture.value = t>T.speechEnd-0.2 ? 0.0000010 : 0.0000030;
+  composer.render();
+}
+window.addEventListener('hf-seek', e=>{ const t=e.detail.time; if(!BUILT){ e.detail.waitUntil(prepare().then(()=>render(t))); } else render(t); });
+</script>
+</body>
+</html>

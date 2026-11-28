@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "format_code": "F38",
+  "format_uid": "official.e3b19582ad674e88ad4463e098217c05",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F38/paisagem-de-audio/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um depoimento em áudio ou vídeo (por exemplo, um áudio de cliente tocado numa live) com frases inteiras, a apresentação de quem mostra o depoimento (opcional) e as provas do próprio usuário. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Depoimento em 9:16 em que o áudio é a estrela. O envelope real da voz vira uma paisagem 3D de barras (uma barra a cada 50 ms) com material físico, topo luminoso e uma luz que percorre as barras junto com o áudio. Palavras-chave ditas sobem em 3D (CARACA, CRAQUE, PROMPT); a foto de quem fala entra num disco; a cada coisa citada aparece a prova correspondente (pedido digitado como ilustração, estilos/cores em cartões, vídeo longo virando cortes, vídeo real publicado pela pessoa, rotulado). No fim, a câmera sobe e percorre uma rua de vídeos reais enquanto quem apresenta fecha a fala. Cartão final com \"Saiba mais\".",
+    "steps": [
+      "Transcrever as fontes e escolher trechos com sentido completo: gancho forte, frases inteiras, nada de conector solto no começo nem lista cortada no fim.",
+      "Montar o EDL pelas palavras reais com limiar de silêncio relativo à própria voz: nunca cortar dentro de palavra, folga de pelo menos 0,15 s depois do fim real da última palavra, cortar só pausas de 0,30 s ou mais; conferir as bordas e retranscrever.",
+      "Descartar trechos com outro áudio tocando por baixo (vídeo de exemplo, música da live): o isolamento de voz não separa duas vozes.",
+      "Limpar a voz (local por padrão; isolamento pago só com o sim do usuário), igualar o nível entre as pessoas e normalizar para cerca de −16 LUFS.",
+      "Calcular o envelope real da voz para as barras (sem barras aleatórias) e marcar as palavras-chave que sobem em 3D e as provas que entram.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/paisagem-de-audio com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Palavras 3D nunca atrás de etiquetas ou legendas. Não parecer um \"visualizador de áudio\" genérico: barras com material premium e foco claro a cada momento. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/reference.mp4",
+      "sha256": "d3b5e13ae3fece9d9a1932c8eed6f154de708e1e367e25d46ad00f9d9f00443e"
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/hook.jpg",
+      "sha256": "60b31246d6d946553c66d4a19ef7eb06579dddf75952fbf00b65246ebd3b8e3f"
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/person.jpg",
+      "sha256": "78bb6f05a1a16e082a8589f79e5d98b0de5c3ca48a0e8b8c8e3b61e3db1704b3"
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/keyword.jpg",
+      "sha256": "327f90e2e30a1ea77a9a8f886c48dd1e97f67c68e3d0dbfa722a524e2276a5ab"
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/proof.jpg",
+      "sha256": "7ede050c934b8df48ae16bbb806f3ddfa227ba32539ad6443d5bcca12447c0c4"
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/street.jpg",
+      "sha256": "d0f481aedb474e7ff39f38f32fb97bb35595463e8bc70cb23209bb54093820b0"
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/cta.jpg",
+      "sha256": "ca4bb9487eb8f6581f6cd7cb4fb899c3495c459615a0aaa7a0973141e3d8262a"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/hook.jpg",
+      "sha256": "60b31246d6d946553c66d4a19ef7eb06579dddf75952fbf00b65246ebd3b8e3f",
+      "at_seconds": 0.6,
+      "caption": "Gancho: a palavra-chave em 3D sobre a paisagem de barras da voz real."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/person.jpg",
+      "sha256": "78bb6f05a1a16e082a8589f79e5d98b0de5c3ca48a0e8b8c8e3b61e3db1704b3",
+      "at_seconds": 5.5,
+      "caption": "Quem fala entra num disco com a foto, sobre as barras."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/keyword.jpg",
+      "sha256": "327f90e2e30a1ea77a9a8f886c48dd1e97f67c68e3d0dbfa722a524e2276a5ab",
+      "at_seconds": 9.0,
+      "caption": "Outra palavra-chave em 3D enquanto a luz corre pelas barras."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/proof.jpg",
+      "sha256": "7ede050c934b8df48ae16bbb806f3ddfa227ba32539ad6443d5bcca12447c0c4",
+      "at_seconds": 16.5,
+      "caption": "Prova citada aparecendo sobre a paisagem (vídeo longo/exemplo)."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/street.jpg",
+      "sha256": "d0f481aedb474e7ff39f38f32fb97bb35595463e8bc70cb23209bb54093820b0",
+      "at_seconds": 25.0,
+      "caption": "Rua de vídeos reais ao longo das barras no fechamento."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/cta.jpg",
+      "sha256": "ca4bb9487eb8f6581f6cd7cb4fb899c3495c459615a0aaa7a0973141e3d8262a",
+      "at_seconds": 37.3,
+      "caption": "Cartão final: promessa e botão \"Saiba mais\" sobre a rua de vídeos."
+    }
+  ],
+  "template": "motion/templates/paisagem-de-audio",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E126 V2",
+    "original_filename": "E126 V2 - Corte 9 O audio do cliente (previa).mp4",
+    "original_sha256": "c938e187e20ad25a45918e475997a3ccca59b456cc3aa4dad7e71745e83eccc1",
+    "duration_s": 38.53,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

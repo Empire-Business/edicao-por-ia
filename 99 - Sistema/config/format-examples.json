@@ -970,5 +970,421 @@
       "sha256": "da436ba0003747be06222de7b41d1cd3bc4d22e1d6227d8bfa3ccd6c3706f599",
       "caption": "Cartão final com exemplos e o botão \"Saiba mais\"."
     }
+  ],
+  "F37": [
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/hook.jpg",
+      "sha256": "97a3fa39b59b2d00c63b0101cf0c5bf7f92f973b0aba7e089fb2fa6b0c037d43",
+      "caption": "Gancho: bolha de áudio real do cliente com onda viva saindo do celular de vidro 3D."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/key-phrase.jpg",
+      "sha256": "c8558194db79266291d22f8c2e45601ed818def43d609e30f5308e6a193ab838",
+      "caption": "A frase-chave (\"isso daqui é sinistro\") em destaque, com o círculo de vídeo da pessoa."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/voice-note.jpg",
+      "sha256": "035a35e412fe1885ed44847d10bc3c1c52bb046d18995cf3afb4be892db8d4e1",
+      "caption": "Outra bolha de áudio com a fita de onda 3D que acompanha a voz."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/styles.jpg",
+      "sha256": "7c905744f775c51cb275c033c62414a9d49631ef5917b287017853b675ab4be1",
+      "caption": "Mergulho pela tela: leque de vídeos em estilos diferentes, rotulados."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/client-video.jpg",
+      "sha256": "e39557c03efbda92ecefc21811535266f274d2bda15058d9534110269c5ff86b",
+      "caption": "Vídeo publicado pelo próprio cliente, com rótulo do perfil, e o placar indo a 100%."
+    },
+    {
+      "path": "examples/reference-library/F37/depoimento-em-chat-3d/cta.jpg",
+      "sha256": "b4a82621d414af959b1c1177e9102504beaf9f916b918da945a74b07b811a1be",
+      "caption": "Cartão final: promessa, botão \"Saiba mais\" e o celular com a conversa."
+    }
+  ],
+  "F38": [
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/hook.jpg",
+      "sha256": "60b31246d6d946553c66d4a19ef7eb06579dddf75952fbf00b65246ebd3b8e3f",
+      "caption": "Gancho: a palavra-chave em 3D sobre a paisagem de barras da voz real."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/person.jpg",
+      "sha256": "78bb6f05a1a16e082a8589f79e5d98b0de5c3ca48a0e8b8c8e3b61e3db1704b3",
+      "caption": "Quem fala entra num disco com a foto, sobre as barras."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/keyword.jpg",
+      "sha256": "327f90e2e30a1ea77a9a8f886c48dd1e97f67c68e3d0dbfa722a524e2276a5ab",
+      "caption": "Outra palavra-chave em 3D enquanto a luz corre pelas barras."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/proof.jpg",
+      "sha256": "7ede050c934b8df48ae16bbb806f3ddfa227ba32539ad6443d5bcca12447c0c4",
+      "caption": "Prova citada aparecendo sobre a paisagem (vídeo longo/exemplo)."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/street.jpg",
+      "sha256": "d0f481aedb474e7ff39f38f32fb97bb35595463e8bc70cb23209bb54093820b0",
+      "caption": "Rua de vídeos reais ao longo das barras no fechamento."
+    },
+    {
+      "path": "examples/reference-library/F38/paisagem-de-audio/cta.jpg",
+      "sha256": "ca4bb9487eb8f6581f6cd7cb4fb899c3495c459615a0aaa7a0973141e3d8262a",
+      "caption": "Cartão final: promessa e botão \"Saiba mais\" sobre a rua de vídeos."
+    }
+  ],
+  "F39": [
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/hook.jpg",
+      "sha256": "7c999da7e5fd6401b90923c7151be0292c9457dba079d914ceb0da7a3e40dac0",
+      "caption": "Gancho: a reação mais forte com o vídeo longo de exemplo e o cartão da pessoa."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/test-1.jpg",
+      "sha256": "f7239c068aaf4aa80021a6634467c6a2c3ec49e86ee77a5d3b5076970b517682",
+      "caption": "Degrau 1: o vídeo curto publicado, com rótulo de quem publicou."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/test-2.jpg",
+      "sha256": "4c8b34b7437ff1fdbb1e9b276692bcbcd211fb28a93a76efa73599ee59c77338",
+      "caption": "Degrau 2: o vídeo longo em 16:9 numa tela maior."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/request.jpg",
+      "sha256": "b0206c4c4d0c4d819c04d7802d6a8bf8d015e5eaeaf32de7cc510cbbef7d5350",
+      "caption": "O pedido feito à ferramenta sendo digitado num cartão de vidro."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/result.jpg",
+      "sha256": "bd6b030ef885c966bf9d7cf257fb23fa90e352970bedf1c827e5ecfc1711b3fd",
+      "caption": "Resultado: o vídeo longo e as vagas dos cinco cortes."
+    },
+    {
+      "path": "examples/reference-library/F39/escada-de-testes/cta.jpg",
+      "sha256": "46b437334455b1006c0d5e6830f38b00525f721578b59f7ad7256166015730c6",
+      "caption": "Cartão final: cinco cortes no último degrau e o botão \"Saiba mais\"."
+    }
+  ],
+  "F40": [
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/hook.jpg",
+      "sha256": "72ac81f3a2f4225f3dbb0e69bcb01815cc91d404abf299a8ea5dea71d1865c27",
+      "caption": "Gancho: macro das lâminas douradas da íris com a frase de apresentação do narrador."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/orbit.jpg",
+      "sha256": "12d7698149b4c05650e049888a0e30db92cbec7b0794f08671a48a9f88be6c08",
+      "caption": "Entregas reais orbitando a íris enquanto a narração fala."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/reveal.jpg",
+      "sha256": "4e0693bcf3b632d4986e6bd3cf088b6a4a3983b09e28c07937628d205d9ad711",
+      "caption": "Passagem: as lâminas começam a abrir sobre o rosto da pessoa real."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/testimony.jpg",
+      "sha256": "48622c0444fbf3fc63db4d5046811022d5b063dfa7b5a89f697f5538640ba8d4",
+      "caption": "Depoimento real com selo de trecho da live dentro do aro dourado."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/ai-back.jpg",
+      "sha256": "906e34269d9c231616fcb1719904af79c81d6e0d6357ab89a26fac1d3e4bd139",
+      "caption": "A narração volta: a íris fecha em parte sobre a pessoa."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/cta.jpg",
+      "sha256": "89eeafc87b52e018cf401563ea1ee45401acae38f1904b6f2b7ad253279d6622",
+      "caption": "Cartão final: \"Não acredite em mim. Ouça quem usa.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F41": [
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/hook.jpg",
+      "sha256": "470577ba6bbb176c296a08d0346ce1074135aecbbe0d4535aeebe97d89353a4b",
+      "caption": "Gancho: entrega real em destaque sobre a parede de gavetas, com a frase sobre qualidade."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/generic.jpg",
+      "sha256": "3200c34070c5877619cbd04736f8b95c21a06d6a50b0f7d3814424d010504950",
+      "caption": "O genérico: chips de \"animação pronta\" e \"efeito genérico\" saindo riscados."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/research.jpg",
+      "sha256": "42fe64adb286736e705107f042efe12f1c46f3d5cf7d707d9e59e193c1cde0eb",
+      "caption": "Gaveta aberta entregando prints reais pesquisados com grifo."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/drawers.jpg",
+      "sha256": "09b6d7a98acf66c3b8ec337e2a79fd4023c2a25d81dd567e0ed7a057f114c3db",
+      "caption": "A parede de gavetas com as etiquetas marcadas."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/results.jpg",
+      "sha256": "57ab060384d8085dc4071531b15d6dd2877621c4fbc049f79541ea4c5bfd326f",
+      "caption": "Mural de entregas reais sobre as gavetas."
+    },
+    {
+      "path": "examples/reference-library/F41/gavetas-de-pesquisa/cta.jpg",
+      "sha256": "a1348367bdd1476d7199445cde15e675fc4cff33cce3a3317a14a81f76b1a925",
+      "caption": "Cartão final: \"Pesquisa de verdade. Edição de editor.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F42": [
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/hook.jpg",
+      "sha256": "2fcbf59eedc687b2d1f5296f6e46ac361efc0c3db40019ef66008e30238dde30",
+      "caption": "Gancho: close na pasta de entrada 3D com a frase de abertura."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/drop.jpg",
+      "sha256": "75d0236a902492d05da385b81bbd9c425ae8e6fd78767becb552c846d5f5788d",
+      "caption": "O material bruto real cai na pasta de entrada."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/appear.jpg",
+      "sha256": "7c943bd8f5828653b9e69ae4dd67abb43b9872204040e0fe549cd76097b01626",
+      "caption": "O resultado sobe de dentro da pasta de saída."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/tunnel.jpg",
+      "sha256": "6ea26507390a14ea4e837181294f78ad0ca03576fc6272066036056dcc94387e",
+      "caption": "Dentro do túnel: o clipe passa por um portão e a etapa narrada acontece."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/no-timeline.jpg",
+      "sha256": "1b6ea7454ecca104b729863e11763a85ac1b4b02a6f0849ba1db4ed90828e3a8",
+      "caption": "Um painel genérico de programa de edição tomba e some."
+    },
+    {
+      "path": "examples/reference-library/F42/tunel-da-pasta/cta.jpg",
+      "sha256": "5476d97263baaece079af07dfb1fd2187e167a88126e51f4c7d3b5b7a259f4cc",
+      "caption": "Cartão final: \"Joga o bruto. Pega pronto.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F43": [
+    {
+      "path": "examples/reference-library/F43/tomadas-de-vidro/hook.jpg",
+      "sha256": "4819adc2c944fbb538d4e77bef2a90ff342fd59c96a47dcf7dfa382676fb14c1",
+      "caption": "Gancho: a tomada real que trava, numa lâmina de vidro com legenda."
+    },
+    {
+      "path": "examples/reference-library/F43/tomadas-de-vidro/repeated.jpg",
+      "sha256": "e4235180d78bfeee6a9b859be1f5593acc811e250cd5845497f816d35e1af2bc",
+      "caption": "As tomadas repetidas da mesma frase lado a lado, com o título dos erros."
+    },
+    {
+      "path": "examples/reference-library/F43/tomadas-de-vidro/scan.jpg",
+      "sha256": "2c3a0834758ec0717fa2fcf4615e7de1b3ec6a89525351272ffed2119fec929c",
+      "caption": "Apresentação: linha de luz varrendo o leque de lâminas."
+    },
+    {
+      "path": "examples/reference-library/F43/tomadas-de-vidro/best.jpg",
+      "sha256": "d4555654576eecd710205666e1cc0bda938e4253422768d809ea45dfc4d16160",
+      "caption": "Só a melhor tomada no centro."
+    },
+    {
+      "path": "examples/reference-library/F43/tomadas-de-vidro/after.jpg",
+      "sha256": "ea7a2c76b23009e09a5dc297891e96267573bee9dda2eaa00978b23b86793846",
+      "caption": "A melhor tomada vira o resultado final, rotulado."
+    },
+    {
+      "path": "examples/reference-library/F43/tomadas-de-vidro/cta.jpg",
+      "sha256": "82b261b2f25547b3923f938d53894197a1bf0f402437e1fbbf04d7019117693b",
+      "caption": "Cartão final: \"Errou? Relaxa.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F44": [
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/hook.jpg",
+      "sha256": "099d662e648db0afa75ac197fa4131f6caa342b7fbd519d1b17c6cd8e01ee5fc",
+      "caption": "Gancho: o vídeo longo grande com a frase \"Me dá um vídeo longo.\""
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/peaks.jpg",
+      "sha256": "9c17e32610b34a49126541f5edab679b5b75fe57a3299e3763ed907bc21e381f",
+      "caption": "A cordilheira do áudio com os picos numerados acendendo."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/cuts.jpg",
+      "sha256": "0c1dab9da0aafa0ca17515fe23383f40a6ac5ff5de277a5a1a93a96dc774a149",
+      "caption": "Picos se levantando como cartões verticais tocando cortes."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/client.jpg",
+      "sha256": "a7e04ef761935eb6d470af5d07f6026b9d57789a5c035fc0e0c8c68d0928bf4c",
+      "caption": "Grade de cortes com o vídeo real do cliente em destaque, rotulado."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/range.jpg",
+      "sha256": "f878bfdd2c5c1cdfc526f5d0536b7f8af4c14d58a72c27b7082f3d9e68e269e0",
+      "caption": "A câmera recua: cordilheira inteira com os cortes."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/cta.jpg",
+      "sha256": "20186b279993f69b4adddedc0bfd4357b6ff62bc64fe7430b046d7b5717a2614",
+      "caption": "Cartão final: \"Um vídeo longo. Vários cortes prontos.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F45": [
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/colors.jpg",
+      "sha256": "c5ed5cb7f718f911f54d9c92fe19e9c6a29cb4e10e6f22299b8028a7aa5fa519",
+      "caption": "Gancho: leque laqueado de cores reais com nome e código em cada lâmina."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/fonts.jpg",
+      "sha256": "03ad77de76124b3cbb244259460310884e974fed270352d1951a35bea6141380",
+      "caption": "Tipos de metal com \"Aa\" nas fontes reais."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/identity.jpg",
+      "sha256": "7afe37d5484df4141c2ed1e355cda88b181cca4ea276bee83b0d1ae8d1f11023",
+      "caption": "A prancha \"sua identidade visual\" recebendo cor, fonte e legenda."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/reskin.jpg",
+      "sha256": "a077e5b03cd41b0ac1079412f3c9c7459a420d3969276739a2985a696b9f4037",
+      "caption": "O mesmo vídeo com uma das identidades aplicada."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/your-way.jpg",
+      "sha256": "5ea08f7a0d92d4c5a579e644ab5ac417732fec3633d95238f8ce52101f771a27",
+      "caption": "Arco de entregas reais em identidades diferentes."
+    },
+    {
+      "path": "examples/reference-library/F45/estudio-de-marca/cta.jpg",
+      "sha256": "068c0553395d4aaf660e8e20cf6237b04f99128ec984c0bf8d25923fb5b2d299",
+      "caption": "Cartão final: \"Com a sua cara.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F46": [
+    {
+      "path": "examples/reference-library/F46/molde-de-pecas/hook.jpg",
+      "sha256": "20c4f596dca17ad97bc001f832077bba66d271ddac78ebda137cce54ff90caa1",
+      "caption": "Gancho: a voz como placa de ouro desenhada pela narração real."
+    },
+    {
+      "path": "examples/reference-library/F46/molde-de-pecas/mould.jpg",
+      "sha256": "7ceac16e8c8a75ae9e23cfff2c5a85caf5b0bc88b7608166775b4a9ddc6856d4",
+      "caption": "O molde 9:16 com as vagas tracejadas e rotuladas."
+    },
+    {
+      "path": "examples/reference-library/F46/molde-de-pecas/cover.jpg",
+      "sha256": "74d6f952822507a813fc6e28e79accf8af9387d24d1b96c26826406752bf48f0",
+      "caption": "Uma capa real entrando na sua vaga."
+    },
+    {
+      "path": "examples/reference-library/F46/molde-de-pecas/pieces.jpg",
+      "sha256": "f6312c73c63bab366058d95e3da4d8e08e29148c1c5a789b72f8a32d15776eab",
+      "caption": "Peças preenchendo o molde com o contador."
+    },
+    {
+      "path": "examples/reference-library/F46/molde-de-pecas/fused.jpg",
+      "sha256": "69ca76e03b2ab2e748aa461e15062685eb039432e5f406c829b81c6a3785e039",
+      "caption": "Os blocos fundidos no vídeo pronto."
+    },
+    {
+      "path": "examples/reference-library/F46/molde-de-pecas/cta.jpg",
+      "sha256": "de2ccceafcbd60327d2822282d6d1706050234cdb8497e08fe90d5fb37c1a88f",
+      "caption": "Cartão final: \"Do começo ao fim.\" com um vídeo sem apresentador e o botão \"Saiba mais\"."
+    }
+  ],
+  "F47": [
+    {
+      "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/hook.jpg",
+      "sha256": "1768b60a817afb220cb643845d6b74e37630e5c1f29a4a353f242601cb9b85f9",
+      "caption": "Gancho: contador de horas editando sobre a linha do tempo lotada, de noite."
+    },
+    {
+      "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/manual.jpg",
+      "sha256": "23dbb18fda5e8c663eadd5c2542b52df593d7d6b19e167da0a6f97a5c40ea3ab",
+      "caption": "Janela de áudio com a lâmina cortando silêncios à mão."
+    },
+    {
+      "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/organize.jpg",
+      "sha256": "f1dc024c66dca9ab7ec42247119e961b1c5e71114a175642548e3de8aae332b2",
+      "caption": "Virada: os clipes decolam e se organizam."
+    },
+    {
+      "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/result.jpg",
+      "sha256": "f2d6c25ae607351a7bd341279d775a23c3c7c2100112ae60547c9ff74af0c0e2",
+      "caption": "O resultado real tocando com selos do que foi feito."
+    },
+    {
+      "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/day.jpg",
+      "sha256": "0b363798818fb56c755c7776fe5b81c2ed6c07017f9da94c7bf3974ae27a326b",
+      "caption": "A noite vira dia: cartões de tarefas do negócio (ilustração)."
+    },
+    {
+      "path": "examples/reference-library/F47/linha-do-tempo-que-se-organiza/cta.jpg",
+      "sha256": "cd10aa7d05324fc300e711e10a093be6382d60f5275fb6f8c6c9b32bfca011a3",
+      "caption": "Cartão final: \"Pare de perder horas editando.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F48": [
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v1.jpg",
+      "sha256": "185c69916d54bf2135dd19e3ac529f2bd8ca3088a1cf01a52c31d5e3850a927c",
+      "caption": "Gancho: o vídeo real na tela 3D, versão 1, com as cantoneiras."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v2-scene.jpg",
+      "sha256": "880d25ca08f3bea486537f09040e0201b5584e43e10e00de6f5846926d605597",
+      "caption": "Versão 2: a cena trocada, com o rótulo do ajuste."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/v3-caption.jpg",
+      "sha256": "0f219040c9881d95eb334ef581312eafb11e9253f1bfca446585c01fdbc7bac2",
+      "caption": "Versão 3: a legenda maior."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/stack.jpg",
+      "sha256": "f71f08f90f6efa656791c561638c24291f5733d38b7286c08e1a7094a7a6beb3",
+      "caption": "A pilha de placas de versão sob o suporte."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/many.jpg",
+      "sha256": "c3bf4fae7acd282946af1f5526bda1d5076c950212e82c147206fe3a60fe2dea",
+      "caption": "Muitas versões: a pilha sobe."
+    },
+    {
+      "path": "examples/reference-library/F48/pilha-de-versoes/cta.jpg",
+      "sha256": "9fc5d892c5f9febe2a8ebb89b0b583cfcd1ef8e2bbe94408d725b720e04ec92a",
+      "caption": "Cartão final: \"Me fala. Eu ajusto.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "F49": [
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/hook.jpg",
+      "sha256": "2b15a3b50b7d523f1e3ed57d4122b35b52f62696f68165af5af8ef22e7270b4b",
+      "caption": "Gancho: celular 3D com a galeria e a frase \"Faz um teste comigo.\""
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/stopped.jpg",
+      "sha256": "ed1c46bd618e2f5bad3f078da1642c53109d498a867af14f8646f87249432a8b",
+      "caption": "O vídeo parado destacado na galeria com a etiqueta \"sem editar\"."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/progress.jpg",
+      "sha256": "5eb2e7059839568c055e939b69c5bded6831046c32c7528f6f352e2bbbb5dc1c",
+      "caption": "O vídeo na pasta com o anel de tempo correndo."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/back.jpg",
+      "sha256": "d4009e4018e92067b90dd5d12896cd142e9d2b637b54f92dcfe3cc968a4be855",
+      "caption": "O vídeo volta pronto ao celular com as etiquetas entrando."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/done.jpg",
+      "sha256": "af6a9d9ba934ceaebf428776207e86090dac1a0c972d082ce3f9fe05d59ff7d0",
+      "caption": "O celular de frente tocando o resultado."
+    },
+    {
+      "path": "examples/reference-library/F49/celular-de-teste/cta.jpg",
+      "sha256": "ca606a8718a98fa6d6bb97673412ac7c13ec810d04592a39b529ac91e15f6090",
+      "caption": "Cartão final: \"Manda o vídeo parado. Ele volta pronto.\" e o botão \"Saiba mais\"."
+    }
   ]
 }

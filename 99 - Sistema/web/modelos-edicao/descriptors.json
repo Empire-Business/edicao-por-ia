@@ -1663,5 +1663,621 @@
       "criativo",
       "saiba mais"
     ]
+  },
+  "F37": {
+    "category": "presenter",
+    "categories": [
+      "presenter",
+      "products"
+    ],
+    "tags": [
+      "Depoimento real",
+      "Áudio de cliente",
+      "Anúncio"
+    ],
+    "use": "Transformar o áudio ou a mensagem real de um cliente em criativo de prova social, com a conversa num celular 3D.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Áudio ou mensagem real do cliente",
+      "Trechos de live/entrevista com ele",
+      "Provas reais (e vídeos dele, rotulados)"
+    ],
+    "buildingBlocks": [
+      "Celular de vidro 3D",
+      "Bolhas de áudio com onda real",
+      "Placar de palhetas",
+      "Mergulho pela tela",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "depoimento",
+      "áudio",
+      "audio de whatsapp",
+      "mensagem",
+      "chat",
+      "conversa",
+      "cliente",
+      "prova social",
+      "testemunho",
+      "celular 3d",
+      "vidro",
+      "placar",
+      "feedback",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais",
+      "reels"
+    ]
+  },
+  "F38": {
+    "category": "presenter",
+    "categories": [
+      "presenter",
+      "stories"
+    ],
+    "tags": [
+      "Depoimento real",
+      "Áudio em 3D",
+      "Anúncio"
+    ],
+    "use": "Dar protagonismo a um depoimento em áudio (de cliente ou parceiro), com a voz real virando cenário e as provas aparecendo nas palavras.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Depoimento em áudio ou vídeo",
+      "Fala de quem apresenta (opcional)",
+      "Provas reais citadas no depoimento"
+    ],
+    "buildingBlocks": [
+      "Paisagem 3D das barras da voz",
+      "Luz que corre com o áudio",
+      "Palavras-chave em 3D",
+      "Provas nas palavras",
+      "Rua de vídeos",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "depoimento",
+      "áudio",
+      "voz",
+      "audio de cliente",
+      "testemunho",
+      "prova social",
+      "ondas",
+      "barras",
+      "visualizador",
+      "paisagem",
+      "3d",
+      "cliente",
+      "feedback",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F39": {
+    "category": "presenter",
+    "categories": [
+      "presenter",
+      "stories"
+    ],
+    "tags": [
+      "Jornada",
+      "Antes da compra",
+      "Anúncio"
+    ],
+    "use": "Contar a jornada de quem testou um produto, teste a teste, com cada resultado real num degrau maior.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação em que a pessoa conta os testes",
+      "Os resultados reais de cada teste",
+      "Vídeos publicados pela pessoa (opcional, rotulados)"
+    ],
+    "buildingBlocks": [
+      "Escada de vidro no céu",
+      "Um degrau por teste",
+      "Selo \"Postado\"",
+      "Pedido digitado",
+      "Vagas que viram cortes",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "jornada",
+      "teste",
+      "primeiro teste",
+      "experiência",
+      "resultado",
+      "história",
+      "depoimento",
+      "cliente",
+      "escada",
+      "degraus",
+      "evolução",
+      "passo a passo",
+      "vidro",
+      "céu",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F40": {
+    "category": "presenter",
+    "categories": [
+      "presenter",
+      "stories"
+    ],
+    "tags": [
+      "Narração + depoimento",
+      "Prova social",
+      "Anúncio"
+    ],
+    "use": "Juntar uma narração (de IA ou própria) com um depoimento real: a marca fala pouco e passa a palavra para quem usa.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Narração curta de abertura e fecho",
+      "Trecho real de depoimento com frases inteiras",
+      "Provas reais (e vídeos da pessoa, rotulados)"
+    ],
+    "buildingBlocks": [
+      "Íris dourada 3D que pulsa com a voz",
+      "Entregas orbitando",
+      "Abertura que revela a pessoa",
+      "Aro que enche até o número",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "depoimento",
+      "narração",
+      "voz de ia",
+      "híbrido",
+      "prova social",
+      "cliente",
+      "testemunho",
+      "íris",
+      "diafragma",
+      "câmera",
+      "dourado",
+      "luxo",
+      "revelação",
+      "ouça quem usa",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F41": {
+    "category": "products",
+    "categories": [
+      "products",
+      "explain"
+    ],
+    "tags": [
+      "Pesquisa",
+      "Qualidade",
+      "Anúncio"
+    ],
+    "use": "Provar que um trabalho tem pesquisa de verdade por trás (notícias, prints, cenas reais), contra o genérico de banco de imagens.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Gravação da fala sobre pesquisa/qualidade",
+      "Entregas reais com o material pesquisado",
+      "Nada de terceiros fora das entregas"
+    ],
+    "buildingBlocks": [
+      "Parede 3D de gavetas",
+      "Gaveta que entrega material real",
+      "Carimbo no genérico",
+      "Mural de entregas",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "pesquisa",
+      "pesquisa de cenas",
+      "notícias",
+      "prints",
+      "banco de imagens",
+      "genérico",
+      "qualidade",
+      "arquivo",
+      "gavetas",
+      "curadoria",
+      "conteúdo real",
+      "prova",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F42": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "products"
+    ],
+    "tags": [
+      "Processo",
+      "Por dentro",
+      "Narração"
+    ],
+    "use": "Explicar um serviço que transforma algo \"sozinho\": entra por uma pasta, passa por dentro da máquina, sai pronto.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "O material bruto real e o resultado pronto",
+      "Lista das etapas do processo"
+    ],
+    "buildingBlocks": [
+      "Pastas 3D de entrada e saída",
+      "Mergulho no tubo",
+      "Túnel com portões por etapa",
+      "Painel genérico que some",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "pasta",
+      "computador",
+      "por dentro",
+      "túnel",
+      "processo",
+      "automático",
+      "sozinho",
+      "sem programa",
+      "sem linha do tempo",
+      "entrada e saída",
+      "transformação",
+      "narração",
+      "voz de ia",
+      "sem aparecer",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F43": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "products"
+    ],
+    "tags": [
+      "Erros e retakes",
+      "Antes e depois",
+      "Narração"
+    ],
+    "use": "Tirar o medo de gravar: mostrar que erros, gaguejadas e repetições saem e só a melhor versão fica.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": true,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Gravação bruta com tomadas repetidas",
+      "O resultado pronto"
+    ],
+    "buildingBlocks": [
+      "Lâminas de vidro por tomada",
+      "Etiquetas dos erros",
+      "Linha de luz de corte",
+      "Melhor tomada no centro",
+      "Pilha descartada",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "erros",
+      "gaguejar",
+      "travar",
+      "repetir",
+      "retake",
+      "tomadas",
+      "melhor versão",
+      "limpar erros",
+      "gravação",
+      "medo de gravar",
+      "vidro",
+      "antes e depois",
+      "narração",
+      "voz de ia",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F44": {
+    "category": "explain",
+    "categories": [
+      "explain",
+      "stories"
+    ],
+    "tags": [
+      "Vídeo longo e cortes",
+      "Topografia",
+      "Narração"
+    ],
+    "use": "Explicar como um vídeo longo (live, podcast, aula) vira vários cortes prontos, escolhidos pelos melhores momentos.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Um vídeo longo real",
+      "Cortes reais feitos a partir dele"
+    ],
+    "buildingBlocks": [
+      "Placa do vídeo longo",
+      "Cordilheira do áudio",
+      "Picos numerados",
+      "Cartões 9:16 que se levantam",
+      "Grade de cortes",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "vídeo longo",
+      "cortes",
+      "live",
+      "podcast",
+      "aula",
+      "melhores momentos",
+      "trechos",
+      "reaproveitar conteúdo",
+      "shorts",
+      "reels",
+      "cordilheira",
+      "topografia",
+      "picos",
+      "narração",
+      "voz de ia",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F45": {
+    "category": "products",
+    "categories": [
+      "products",
+      "explain"
+    ],
+    "tags": [
+      "Identidade visual",
+      "Personalização",
+      "Narração"
+    ],
+    "use": "Vender personalização: mostrar cores, fontes e legenda montando uma identidade e o mesmo vídeo mudando de cara.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Paletas, fontes e estilos de legenda reais",
+      "O mesmo trecho de vídeo em várias identidades"
+    ],
+    "buildingBlocks": [
+      "Leque de cores laqueado",
+      "Tipos de metal \"Aa\"",
+      "Placas de legenda",
+      "Prancha da identidade",
+      "Mesmo vídeo trocando de pele",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "identidade visual",
+      "marca",
+      "branding",
+      "cores",
+      "paleta",
+      "fonte",
+      "tipografia",
+      "legenda",
+      "estilo",
+      "personalização",
+      "sua cara",
+      "kit de marca",
+      "design",
+      "narração",
+      "voz de ia",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F46": {
+    "category": "products",
+    "categories": [
+      "products",
+      "stories"
+    ],
+    "tags": [
+      "Entregáveis",
+      "Do começo ao fim",
+      "Narração"
+    ],
+    "use": "Mostrar tudo o que um produto/serviço entrega (peça por peça) se juntando num resultado só.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Exemplos reais de cada peça entregue",
+      "O resultado final real"
+    ],
+    "buildingBlocks": [
+      "Placa de ouro da voz",
+      "Molde 9:16 com vagas",
+      "Peças que encaixam",
+      "Contador de peças",
+      "Fusão no vídeo pronto",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "entregáveis",
+      "peças",
+      "tudo incluso",
+      "completo",
+      "do começo ao fim",
+      "capa",
+      "thumbnail",
+      "legenda",
+      "trilha",
+      "animação",
+      "voz de ia",
+      "molde",
+      "montagem",
+      "narração",
+      "sem aparecer",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F47": {
+    "category": "products",
+    "categories": [
+      "products",
+      "explain"
+    ],
+    "tags": [
+      "Dor e solução",
+      "Tempo",
+      "Narração"
+    ],
+    "use": "Mostrar a dor do trabalho manual (horas na edição) e a virada para o resultado pronto, organizado sozinho.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Material bruto real e resultado pronto",
+      "Lista das tarefas manuais que somem"
+    ],
+    "buildingBlocks": [
+      "Linha do tempo lotada à noite",
+      "Contador de horas",
+      "Janelas do trabalho manual",
+      "Clipes que se organizam",
+      "Noite vira dia",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "linha do tempo",
+      "timeline",
+      "edição manual",
+      "horas",
+      "trabalho manual",
+      "dor",
+      "cansaço",
+      "produtividade",
+      "automatizar",
+      "organizar",
+      "noite",
+      "virada",
+      "narração",
+      "voz de ia",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F48": {
+    "category": "products",
+    "categories": [
+      "products",
+      "explain"
+    ],
+    "tags": [
+      "Ajustes e revisões",
+      "Atendimento",
+      "Narração"
+    ],
+    "use": "Mostrar que o serviço aceita ajustes e revisões sem dor: cada pedido vira uma mudança visível e uma nova versão.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "O vídeo real e as variações dele (cena, legenda, trilha)"
+    ],
+    "buildingBlocks": [
+      "Tela 3D sobre suporte",
+      "Cantoneiras do que muda",
+      "Troca de cena/legenda/trilha",
+      "Placas de versão empilhadas",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "ajustes",
+      "revisões",
+      "correções",
+      "versões",
+      "pedido",
+      "alteração",
+      "atendimento",
+      "flexibilidade",
+      "feedback",
+      "refação",
+      "pilha",
+      "narração",
+      "voz de ia",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
+  },
+  "F49": {
+    "category": "products",
+    "categories": [
+      "products",
+      "explain"
+    ],
+    "tags": [
+      "Convite ao teste",
+      "Celular 3D",
+      "Narração"
+    ],
+    "use": "Convidar a testar o serviço com algo que a pessoa já tem parado no celular, mostrando a ida e a volta.",
+    "cameraRequired": false,
+    "hasPersonOnScreen": false,
+    "startingMaterials": [
+      "Roteiro curto e narração",
+      "Uma gravação bruta real \"parada\"",
+      "O resultado pronto feito com ela"
+    ],
+    "buildingBlocks": [
+      "Celular 3D girando",
+      "Galeria genérica",
+      "Cartão que voa para a pasta",
+      "Anel de tempo",
+      "Etiquetas do resultado",
+      "Cartão final"
+    ],
+    "searchTerms": [
+      "teste",
+      "experimente",
+      "faça um teste",
+      "celular",
+      "galeria",
+      "vídeo parado",
+      "sem tempo",
+      "envie",
+      "resultado",
+      "antes e depois",
+      "convite",
+      "narração",
+      "voz de ia",
+      "anuncio",
+      "anúncio",
+      "criativo",
+      "saiba mais"
+    ]
   }
 }

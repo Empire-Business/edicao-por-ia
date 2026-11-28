@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F44",
+  "format_uid": "official.711e1739e46041f295cc297ac31f4f9f",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F44/cordilheira-de-cortes/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto em primeira pessoa (cerca de 50 a 70 palavras) só com afirmações verdadeiras, a narração (voz própria ou voz de IA; serviço pago só com o sim do usuário) e as provas do próprio usuário: vídeos ou telas reais do resultado, sem logotipos de terceiros. Opcional: trilha própria ou licenciada. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Explicação de \"vídeo longo → cortes\" em 9:16 guiada por narração. O vídeo longo aparece grande e deita como uma placa; uma linha de leitura varre e desenha uma cordilheira topográfica com a energia real do áudio. Nos \"melhores trechos\", os picos acendem com etiquetas numeradas e cada um se levanta como um cartão 9:16 tocando um corte; o primeiro ganha camadas (legenda, cena, música) ao subir. Os cortes formam uma grade e um vídeo real publicado pelo cliente vem à frente, rotulado. A câmera recua mostrando a cordilheira inteira com os cortes. Cartão final \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Calcular a curva de energia real do vídeo longo para a cordilheira e marcar os trechos escolhidos como picos numerados.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/cordilheira-de-cortes com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Cortes de exemplo rotulados como exemplo; vídeo publicado por cliente só com o rótulo dele, sem afirmar quem o editou se não for confirmado. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/reference.mp4",
+      "sha256": "0bd9c2896fd4da1386924472c8a5776bb6796f0973e50e0e77fb630f410de7f4"
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/hook.jpg",
+      "sha256": "099d662e648db0afa75ac197fa4131f6caa342b7fbd519d1b17c6cd8e01ee5fc"
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/peaks.jpg",
+      "sha256": "9c17e32610b34a49126541f5edab679b5b75fe57a3299e3763ed907bc21e381f"
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/cuts.jpg",
+      "sha256": "0c1dab9da0aafa0ca17515fe23383f40a6ac5ff5de277a5a1a93a96dc774a149"
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/client.jpg",
+      "sha256": "a7e04ef761935eb6d470af5d07f6026b9d57789a5c035fc0e0c8c68d0928bf4c"
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/range.jpg",
+      "sha256": "f878bfdd2c5c1cdfc526f5d0536b7f8af4c14d58a72c27b7082f3d9e68e269e0"
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/cta.jpg",
+      "sha256": "20186b279993f69b4adddedc0bfd4357b6ff62bc64fe7430b046d7b5717a2614"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/hook.jpg",
+      "sha256": "099d662e648db0afa75ac197fa4131f6caa342b7fbd519d1b17c6cd8e01ee5fc",
+      "at_seconds": 0.8,
+      "caption": "Gancho: o vídeo longo grande com a frase \"Me dá um vídeo longo.\""
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/peaks.jpg",
+      "sha256": "9c17e32610b34a49126541f5edab679b5b75fe57a3299e3763ed907bc21e381f",
+      "at_seconds": 3.4,
+      "caption": "A cordilheira do áudio com os picos numerados acendendo."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/cuts.jpg",
+      "sha256": "0c1dab9da0aafa0ca17515fe23383f40a6ac5ff5de277a5a1a93a96dc774a149",
+      "at_seconds": 5.5,
+      "caption": "Picos se levantando como cartões verticais tocando cortes."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/client.jpg",
+      "sha256": "a7e04ef761935eb6d470af5d07f6026b9d57789a5c035fc0e0c8c68d0928bf4c",
+      "at_seconds": 11.0,
+      "caption": "Grade de cortes com o vídeo real do cliente em destaque, rotulado."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/range.jpg",
+      "sha256": "f878bfdd2c5c1cdfc526f5d0536b7f8af4c14d58a72c27b7082f3d9e68e269e0",
+      "at_seconds": 14.6,
+      "caption": "A câmera recua: cordilheira inteira com os cortes."
+    },
+    {
+      "path": "examples/reference-library/F44/cordilheira-de-cortes/cta.jpg",
+      "sha256": "20186b279993f69b4adddedc0bfd4357b6ff62bc64fe7430b046d7b5717a2614",
+      "at_seconds": 19.1,
+      "caption": "Cartão final: \"Um vídeo longo. Vários cortes prontos.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/cordilheira-de-cortes",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E140 V1",
+    "original_filename": "E140 V1 - IA 9 Um video longo vira cortes (previa).mp4",
+    "original_sha256": "4c71ec0de408b11a2d4f5340be0da3144d17d0eb06456cd9f38c45494a9140ee",
+    "duration_s": 20.3,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

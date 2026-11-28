@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "format_code": "F40",
+  "format_uid": "official.9a0e188f96a949c2879f1cd28df8cce9",
+  "example_url": "https://github.com/Empire-Business/edicao-por-ia/blob/main/99%20-%20Sistema/examples/reference-library/F40/iris-de-depoimento/reference.mp4",
+  "mechanism_details": {
+    "inputs": "Um roteiro curto para a narração (voz própria ou de IA; serviço pago só com o sim do usuário), um trecho real de depoimento (live, entrevista ou vídeo do cliente) com frases inteiras e as provas do próprio usuário, sem logotipos de terceiros. ID visual e legenda escolhidas separadamente.",
+    "mechanism": "Criativo híbrido em 9:16: narração + depoimento real. O narrador é uma íris dourada em 3D (lâminas de diafragma) com pupila escura que pulsa com a voz; entregas reais orbitam ao redor. Na frase de passagem (\"é melhor você ouvir quem já usa\"), as lâminas abrem e revelam a pessoa real num trecho de live/entrevista com selo de trecho real; a câmera aproxima nas palavras fortes e o aro dourado enche até o número citado. A narração volta: a íris fecha em parte, um ponteiro marca o dado (ex.: \"2 dias\") e reabre com a prova (vídeo publicado pela pessoa, rotulado). Cartão final \"Não acredite em mim. Ouça quem usa.\" com \"Saiba mais\".",
+    "steps": [
+      "Escrever o roteiro curto em primeira pessoa, com gancho na primeira frase e só afirmações verdadeiras; gerar a narração e conferir por transcrição que todas as palavras saíram certas.",
+      "Usar o alinhamento por palavra da narração para marcar as âncoras de cena (cada cena entra na palavra que a justifica).",
+      "Escrever a narração de abertura e de fecho em volta de frases inteiras do depoimento real; casar a abertura da íris com a frase de passagem.",
+      "Separar as provas próprias, conferir quadro a quadro que não têm marca, pessoa ou documento de terceiros e rotular com honestidade.",
+      "Montar a composição pelo modelo em motion/templates/iris-de-depoimento com as cores e fontes da ID escolhida, renderizar e mixar a trilha bem abaixo da voz (final −15 LUFS).",
+      "Conferir: retranscrição da mix, nível da trilha sozinha, quadros cheios do gancho, dos picos 3D e do cartão final, ausência de preto, de sobreposição de textos e de logotipos."
+    ],
+    "avoid": "Equilibrar o volume entre narração e depoimento nas trocas. O depoimento real precisa de selo e não pode ser recortado fora de contexto. Não usar efeitos baratos (partículas aleatórias, holofotes, neon, lens flare, glitch genérico) nem 3D que não mostra nada. Não deixar a música competir com a fala. Não usar vídeo, logotipo ou documento de terceiros como prova nem atribuir a prova a quem não a fez. Não falar por cima do cartão final. Não herdar a pessoa, os nomes, o assunto, a prova, as cores ou as fontes do exemplo: cores e fontes vêm da ID escolhida; logotipo só com pedido do trabalho."
+  },
+  "references": [
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/reference.mp4",
+      "sha256": "04d34b6ec9b4195de6e9314c729290a8eae21f599abad18f3a4ab33f170cb228"
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/hook.jpg",
+      "sha256": "72ac81f3a2f4225f3dbb0e69bcb01815cc91d404abf299a8ea5dea71d1865c27"
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/orbit.jpg",
+      "sha256": "12d7698149b4c05650e049888a0e30db92cbec7b0794f08671a48a9f88be6c08"
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/reveal.jpg",
+      "sha256": "4e0693bcf3b632d4986e6bd3cf088b6a4a3983b09e28c07937628d205d9ad711"
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/testimony.jpg",
+      "sha256": "48622c0444fbf3fc63db4d5046811022d5b063dfa7b5a89f697f5538640ba8d4"
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/ai-back.jpg",
+      "sha256": "906e34269d9c231616fcb1719904af79c81d6e0d6357ab89a26fac1d3e4bd139"
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/cta.jpg",
+      "sha256": "89eeafc87b52e018cf401563ea1ee45401acae38f1904b6f2b7ad253279d6622"
+    }
+  ],
+  "observations": [
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/hook.jpg",
+      "sha256": "72ac81f3a2f4225f3dbb0e69bcb01815cc91d404abf299a8ea5dea71d1865c27",
+      "at_seconds": 0.8,
+      "caption": "Gancho: macro das lâminas douradas da íris com a frase de apresentação do narrador."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/orbit.jpg",
+      "sha256": "12d7698149b4c05650e049888a0e30db92cbec7b0794f08671a48a9f88be6c08",
+      "at_seconds": 4.5,
+      "caption": "Entregas reais orbitando a íris enquanto a narração fala."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/reveal.jpg",
+      "sha256": "4e0693bcf3b632d4986e6bd3cf088b6a4a3983b09e28c07937628d205d9ad711",
+      "at_seconds": 7.5,
+      "caption": "Passagem: as lâminas começam a abrir sobre o rosto da pessoa real."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/testimony.jpg",
+      "sha256": "48622c0444fbf3fc63db4d5046811022d5b063dfa7b5a89f697f5538640ba8d4",
+      "at_seconds": 14.5,
+      "caption": "Depoimento real com selo de trecho da live dentro do aro dourado."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/ai-back.jpg",
+      "sha256": "906e34269d9c231616fcb1719904af79c81d6e0d6357ab89a26fac1d3e4bd139",
+      "at_seconds": 23.0,
+      "caption": "A narração volta: a íris fecha em parte sobre a pessoa."
+    },
+    {
+      "path": "examples/reference-library/F40/iris-de-depoimento/cta.jpg",
+      "sha256": "89eeafc87b52e018cf401563ea1ee45401acae38f1904b6f2b7ad253279d6622",
+      "at_seconds": 32.6,
+      "caption": "Cartão final: \"Não acredite em mim. Ouça quem usa.\" e o botão \"Saiba mais\"."
+    }
+  ],
+  "template": "motion/templates/iris-de-depoimento",
+  "source": {
+    "kind": "author_preview_published_on_request",
+    "requested": "2026-11-28",
+    "edition": "E135 V2",
+    "original_filename": "E135 V2 - IA 6 Ouve quem usa (previa).mp4",
+    "original_sha256": "d8b7b579739c0ba351226e966cf5aa593de3723ed998b7b31d64025097627205",
+    "duration_s": 33.77,
+    "width": 1080,
+    "height": 1920,
+    "codec": "h264",
+    "reference_copy_transcoded": true,
+    "reference_copy_note": "Cópia H.264 leve (limite do GitHub e da galeria); o original fica na instalação do autor."
+  },
+  "review": {
+    "date": "2026-11-28",
+    "method": "Folha de quadros do criativo inteiro, 6 quadros nomeados em resolução cheia e o plano de cenas da própria edição",
+    "auditory_review": false,
+    "artistic_execution_certified": false,
+    "third_party_media": "Provas são entregas do próprio autor editadas pelo Cortez; sem logotipos de terceiros acrescentados. Pessoas publicadas por decisão do autor."
+  }
+}

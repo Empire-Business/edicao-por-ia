@@ -52,6 +52,19 @@ A origem ativa é **Empire-Business/edicao-por-ia**, branch **main**, ID **14086
 | F34 | Arquivo de Fichas |
 | F35 | Blocos de Tempo |
 | F36 | Interface em 3D |
+| F37 | Depoimento em Chat 3D |
+| F38 | Paisagem de Áudio |
+| F39 | Escada de Testes |
+| F40 | Íris de Depoimento |
+| F41 | Gavetas de Pesquisa |
+| F42 | Túnel da Pasta |
+| F43 | Tomadas de Vidro |
+| F44 | Cordilheira de Cortes |
+| F45 | Estúdio de Marca |
+| F46 | Molde de Peças |
+| F47 | Linha do Tempo que se Organiza |
+| F48 | Pilha de Versões |
+| F49 | Celular de Teste |
 
 Os códigos e nomes consolidados são preservados. Novos formatos oficiais ocupam o menor número ativo disponível com identidade interna própria; um código reaproveitado não herda a geração retirada. Todo oficial novo também precisa aparecer na galeria com exemplo real.
 
